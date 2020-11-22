@@ -700,50 +700,58 @@ start_digging_deeper = {
 			duration = -1
 		}
 		
-		random_list = {
-			5 = { set_province_flag = strike_1 }
-			5 = { set_province_flag = strike_2 }
-			5 = { set_province_flag = strike_3 }
-			5 = { set_province_flag = strike_4 }
-			5 = { set_province_flag = strike_5 }
-			5 = { set_province_flag = strike_6 }
-			5 = { set_province_flag = strike_7 }
-			5 = { set_province_flag = strike_8 }
-			5 = { set_province_flag = strike_9 }
-			5 = { set_province_flag = strike_10 }
-			5 = { set_province_flag = strike_11 }
-			5 = { set_province_flag = strike_12 }
-			5 = { set_province_flag = strike_13 }
-			5 = { set_province_flag = strike_14 }
-			5 = { set_province_flag = strike_15 }
-			5 = { set_province_flag = strike_16 }
-			5 = { set_province_flag = strike_17 }
-			5 = { set_province_flag = strike_18 }
-			5 = { set_province_flag = strike_19 }
-			5 = { set_province_flag = strike_20 }
+		random_province = {
+			limit = { province_group = random_d20 }
+			trigger_switch = {
+				on_trigger = province_group
+				random_d1 = { PREV = { set_province_flag = strike_1 } }
+				random_d2 = { PREV = { set_province_flag = strike_2 } }
+				random_d3 = { PREV = { set_province_flag = strike_3 } }
+				random_d4 = { PREV = { set_province_flag = strike_4 } }
+				random_d5 = { PREV = { set_province_flag = strike_5 } }
+				random_d6 = { PREV = { set_province_flag = strike_6 } }
+				random_d7 = { PREV = { set_province_flag = strike_7 } }
+				random_d8 = { PREV = { set_province_flag = strike_8 } }
+				random_d9 = { PREV = { set_province_flag = strike_9 } }
+				random_d10 = { PREV = { set_province_flag = strike_10 } }
+				random_d11 = { PREV = { set_province_flag = strike_11 } }
+				random_d12 = { PREV = { set_province_flag = strike_12 } }
+				random_d13 = { PREV = { set_province_flag = strike_13 } }
+				random_d14 = { PREV = { set_province_flag = strike_14 } }
+				random_d15 = { PREV = { set_province_flag = strike_15 } }
+				random_d16 = { PREV = { set_province_flag = strike_16 } }
+				random_d17 = { PREV = { set_province_flag = strike_17 } }
+				random_d18 = { PREV = { set_province_flag = strike_18 } }
+				random_d19 = { PREV = { set_province_flag = strike_19 } }
+				random_d20 = { PREV = { set_province_flag = strike_20 } }
+			}
 		}
 		
-		random_list = {
-			5 = { set_province_flag = swear_1 }
-			5 = { set_province_flag = swear_2 }
-			5 = { set_province_flag = swear_3 }
-			5 = { set_province_flag = swear_4 }
-			5 = { set_province_flag = swear_5 }
-			5 = { set_province_flag = swear_6 }
-			5 = { set_province_flag = swear_7 }
-			5 = { set_province_flag = swear_8 }
-			5 = { set_province_flag = swear_9 }
-			5 = { set_province_flag = swear_10 }
-			5 = { set_province_flag = swear_11 }
-			5 = { set_province_flag = swear_12 }
-			5 = { set_province_flag = swear_13 }
-			5 = { set_province_flag = swear_14 }
-			5 = { set_province_flag = swear_15 }
-			5 = { set_province_flag = swear_16 }
-			5 = { set_province_flag = swear_17 }
-			5 = { set_province_flag = swear_18 }
-			5 = { set_province_flag = swear_19 }
-			5 = { set_province_flag = swear_20 }
+		random_province = {
+			limit = { province_group = random_d20 }
+			trigger_switch = {
+				on_trigger = province_group
+				random_d1 = { PREV = { set_province_flag = swear_1 } }
+				random_d2 = { PREV = { set_province_flag = swear_2 } }
+				random_d3 = { PREV = { set_province_flag = swear_3 } }
+				random_d4 = { PREV = { set_province_flag = swear_4 } }
+				random_d5 = { PREV = { set_province_flag = swear_5 } }
+				random_d6 = { PREV = { set_province_flag = swear_6 } }
+				random_d7 = { PREV = { set_province_flag = swear_7 } }
+				random_d8 = { PREV = { set_province_flag = swear_8 } }
+				random_d9 = { PREV = { set_province_flag = swear_9 } }
+				random_d10 = { PREV = { set_province_flag = swear_10 } }
+				random_d11 = { PREV = { set_province_flag = swear_11 } }
+				random_d12 = { PREV = { set_province_flag = swear_12 } }
+				random_d13 = { PREV = { set_province_flag = swear_13 } }
+				random_d14 = { PREV = { set_province_flag = swear_14 } }
+				random_d15 = { PREV = { set_province_flag = swear_15 } }
+				random_d16 = { PREV = { set_province_flag = swear_16 } }
+				random_d17 = { PREV = { set_province_flag = swear_17 } }
+				random_d18 = { PREV = { set_province_flag = swear_18 } }
+				random_d19 = { PREV = { set_province_flag = swear_19 } }
+				random_d20 = { PREV = { set_province_flag = swear_20 } }
+			}
 		}
 	}
 }
@@ -1194,50 +1202,58 @@ start_digging_deeper_non_capital = {
 			duration = -1
 		}
 		
-		random_list = {
-			5 = { set_province_flag = strike_1 }
-			5 = { set_province_flag = strike_2 }
-			5 = { set_province_flag = strike_3 }
-			5 = { set_province_flag = strike_4 }
-			5 = { set_province_flag = strike_5 }
-			5 = { set_province_flag = strike_6 }
-			5 = { set_province_flag = strike_7 }
-			5 = { set_province_flag = strike_8 }
-			5 = { set_province_flag = strike_9 }
-			5 = { set_province_flag = strike_10 }
-			5 = { set_province_flag = strike_11 }
-			5 = { set_province_flag = strike_12 }
-			5 = { set_province_flag = strike_13 }
-			5 = { set_province_flag = strike_14 }
-			5 = { set_province_flag = strike_15 }
-			5 = { set_province_flag = strike_16 }
-			5 = { set_province_flag = strike_17 }
-			5 = { set_province_flag = strike_18 }
-			5 = { set_province_flag = strike_19 }
-			5 = { set_province_flag = strike_20 }
+		random_province = {
+			limit = { province_group = random_d20 }
+			trigger_switch = {
+				on_trigger = province_group
+				random_d1 = { PREV = { set_province_flag = strike_1 } }
+				random_d2 = { PREV = { set_province_flag = strike_2 } }
+				random_d3 = { PREV = { set_province_flag = strike_3 } }
+				random_d4 = { PREV = { set_province_flag = strike_4 } }
+				random_d5 = { PREV = { set_province_flag = strike_5 } }
+				random_d6 = { PREV = { set_province_flag = strike_6 } }
+				random_d7 = { PREV = { set_province_flag = strike_7 } }
+				random_d8 = { PREV = { set_province_flag = strike_8 } }
+				random_d9 = { PREV = { set_province_flag = strike_9 } }
+				random_d10 = { PREV = { set_province_flag = strike_10 } }
+				random_d11 = { PREV = { set_province_flag = strike_11 } }
+				random_d12 = { PREV = { set_province_flag = strike_12 } }
+				random_d13 = { PREV = { set_province_flag = strike_13 } }
+				random_d14 = { PREV = { set_province_flag = strike_14 } }
+				random_d15 = { PREV = { set_province_flag = strike_15 } }
+				random_d16 = { PREV = { set_province_flag = strike_16 } }
+				random_d17 = { PREV = { set_province_flag = strike_17 } }
+				random_d18 = { PREV = { set_province_flag = strike_18 } }
+				random_d19 = { PREV = { set_province_flag = strike_19 } }
+				random_d20 = { PREV = { set_province_flag = strike_20 } }
+			}
 		}
 		
-		random_list = {
-			5 = { set_province_flag = swear_1 }
-			5 = { set_province_flag = swear_2 }
-			5 = { set_province_flag = swear_3 }
-			5 = { set_province_flag = swear_4 }
-			5 = { set_province_flag = swear_5 }
-			5 = { set_province_flag = swear_6 }
-			5 = { set_province_flag = swear_7 }
-			5 = { set_province_flag = swear_8 }
-			5 = { set_province_flag = swear_9 }
-			5 = { set_province_flag = swear_10 }
-			5 = { set_province_flag = swear_11 }
-			5 = { set_province_flag = swear_12 }
-			5 = { set_province_flag = swear_13 }
-			5 = { set_province_flag = swear_14 }
-			5 = { set_province_flag = swear_15 }
-			5 = { set_province_flag = swear_16 }
-			5 = { set_province_flag = swear_17 }
-			5 = { set_province_flag = swear_18 }
-			5 = { set_province_flag = swear_19 }
-			5 = { set_province_flag = swear_20 }
+		random_province = {
+			limit = { province_group = random_d20 }
+			trigger_switch = {
+				on_trigger = province_group
+				random_d1 = { PREV = { set_province_flag = swear_1 } }
+				random_d2 = { PREV = { set_province_flag = swear_2 } }
+				random_d3 = { PREV = { set_province_flag = swear_3 } }
+				random_d4 = { PREV = { set_province_flag = swear_4 } }
+				random_d5 = { PREV = { set_province_flag = swear_5 } }
+				random_d6 = { PREV = { set_province_flag = swear_6 } }
+				random_d7 = { PREV = { set_province_flag = swear_7 } }
+				random_d8 = { PREV = { set_province_flag = swear_8 } }
+				random_d9 = { PREV = { set_province_flag = swear_9 } }
+				random_d10 = { PREV = { set_province_flag = swear_10 } }
+				random_d11 = { PREV = { set_province_flag = swear_11 } }
+				random_d12 = { PREV = { set_province_flag = swear_12 } }
+				random_d13 = { PREV = { set_province_flag = swear_13 } }
+				random_d14 = { PREV = { set_province_flag = swear_14 } }
+				random_d15 = { PREV = { set_province_flag = swear_15 } }
+				random_d16 = { PREV = { set_province_flag = swear_16 } }
+				random_d17 = { PREV = { set_province_flag = swear_17 } }
+				random_d18 = { PREV = { set_province_flag = swear_18 } }
+				random_d19 = { PREV = { set_province_flag = swear_19 } }
+				random_d20 = { PREV = { set_province_flag = swear_20 } }
+			}
 		}
 	}
 }

@@ -159,3 +159,273 @@ triunic_road = {
 	5144 5142 5139 5132 5133 5130 5128 5071 5074 5073 5092 5093 5094 5096 5099 5127 5067 5113 5112 5123 5122 5120 5063 5059 5058 5062 5061 5015 5013 5004 5303
 	5088 5103 5104 5105 4117
 }
+
+random_d1 = {
+	4301 #1 - Kartli.txt
+}
+
+random_d2 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+}
+
+random_d3 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+}
+
+random_d4 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+}
+
+random_d5 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+}
+
+random_d6 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+	4312 #6 - Eskesehir.txt
+}
+
+random_d7 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+	4312 #6 - Eskesehir.txt
+	4313 #7 - Cangiri.txt
+}
+
+random_d8 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+	4312 #6 - Eskesehir.txt
+	4313 #7 - Cangiri.txt
+	4314 #8 - Kirsehir.txt
+}
+
+random_d9 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+	4312 #6 - Eskesehir.txt
+	4313 #7 - Cangiri.txt
+	4314 #8 - Kirsehir.txt
+	4315 #9 - Tokat.txt
+}
+
+random_d10 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+	4312 #6 - Eskesehir.txt
+	4313 #7 - Cangiri.txt
+	4314 #8 - Kirsehir.txt
+	4315 #9 - Tokat.txt
+	4316 #10 - Mansura.txt
+}
+
+random_d11 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+	4312 #6 - Eskesehir.txt
+	4313 #7 - Cangiri.txt
+	4314 #8 - Kirsehir.txt
+	4315 #9 - Tokat.txt
+	4316 #10 - Mansura.txt
+	4317 #11 - Buhaira.txt
+}
+
+random_d12 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+	4312 #6 - Eskesehir.txt
+	4313 #7 - Cangiri.txt
+	4314 #8 - Kirsehir.txt
+	4315 #9 - Tokat.txt
+	4316 #10 - Mansura.txt
+	4317 #11 - Buhaira.txt
+	4318 #12 - Atfih.txt
+}
+
+random_d13 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+	4312 #6 - Eskesehir.txt
+	4313 #7 - Cangiri.txt
+	4314 #8 - Kirsehir.txt
+	4315 #9 - Tokat.txt
+	4316 #10 - Mansura.txt
+	4317 #11 - Buhaira.txt
+	4318 #12 - Atfih.txt
+	4324 #13 - Ghuriyan.txt
+}
+
+random_d14 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+	4312 #6 - Eskesehir.txt
+	4313 #7 - Cangiri.txt
+	4314 #8 - Kirsehir.txt
+	4315 #9 - Tokat.txt
+	4316 #10 - Mansura.txt
+	4317 #11 - Buhaira.txt
+	4318 #12 - Atfih.txt
+	4324 #13 - Ghuriyan.txt
+	4325 #14 - Sarakhs.txt
+}
+
+random_d15 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+	4312 #6 - Eskesehir.txt
+	4313 #7 - Cangiri.txt
+	4314 #8 - Kirsehir.txt
+	4315 #9 - Tokat.txt
+	4316 #10 - Mansura.txt
+	4317 #11 - Buhaira.txt
+	4318 #12 - Atfih.txt
+	4324 #13 - Ghuriyan.txt
+	4325 #14 - Sarakhs.txt
+	4326 #15 - Nishapur.txt
+}
+
+random_d16 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+	4312 #6 - Eskesehir.txt
+	4313 #7 - Cangiri.txt
+	4314 #8 - Kirsehir.txt
+	4315 #9 - Tokat.txt
+	4316 #10 - Mansura.txt
+	4317 #11 - Buhaira.txt
+	4318 #12 - Atfih.txt
+	4324 #13 - Ghuriyan.txt
+	4325 #14 - Sarakhs.txt
+	4326 #15 - Nishapur.txt
+	4327 #16 - Jask.txt
+}
+
+random_d17 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+	4312 #6 - Eskesehir.txt
+	4313 #7 - Cangiri.txt
+	4314 #8 - Kirsehir.txt
+	4315 #9 - Tokat.txt
+	4316 #10 - Mansura.txt
+	4317 #11 - Buhaira.txt
+	4318 #12 - Atfih.txt
+	4324 #13 - Ghuriyan.txt
+	4325 #14 - Sarakhs.txt
+	4326 #15 - Nishapur.txt
+	4327 #16 - Jask.txt
+	4329 #17 - Fasa.txt
+}
+
+random_d18 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+	4312 #6 - Eskesehir.txt
+	4313 #7 - Cangiri.txt
+	4314 #8 - Kirsehir.txt
+	4315 #9 - Tokat.txt
+	4316 #10 - Mansura.txt
+	4317 #11 - Buhaira.txt
+	4318 #12 - Atfih.txt
+	4324 #13 - Ghuriyan.txt
+	4325 #14 - Sarakhs.txt
+	4326 #15 - Nishapur.txt
+	4327 #16 - Jask.txt
+	4329 #17 - Fasa.txt
+	4334 #18 - Tabas.txt
+}
+
+random_d19 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+	4312 #6 - Eskesehir.txt
+	4313 #7 - Cangiri.txt
+	4314 #8 - Kirsehir.txt
+	4315 #9 - Tokat.txt
+	4316 #10 - Mansura.txt
+	4317 #11 - Buhaira.txt
+	4318 #12 - Atfih.txt
+	4324 #13 - Ghuriyan.txt
+	4325 #14 - Sarakhs.txt
+	4326 #15 - Nishapur.txt
+	4327 #16 - Jask.txt
+	4329 #17 - Fasa.txt
+	4334 #18 - Tabas.txt
+	4335 #19 - Kashan.txt
+}
+
+random_d20 = {
+	4301 #1 - Kartli.txt
+	4308 #2 - Denizli.txt
+	4309 #3 - Aydin.txt
+	4310 #4 - Divrigi.txt
+	4311 #5 - Karahisar.txt
+	4312 #6 - Eskesehir.txt
+	4313 #7 - Cangiri.txt
+	4314 #8 - Kirsehir.txt
+	4315 #9 - Tokat.txt
+	4316 #10 - Mansura.txt
+	4317 #11 - Buhaira.txt
+	4318 #12 - Atfih.txt
+	4324 #13 - Ghuriyan.txt
+	4325 #14 - Sarakhs.txt
+	4326 #15 - Nishapur.txt
+	4327 #16 - Jask.txt
+	4329 #17 - Fasa.txt
+	4334 #18 - Tabas.txt
+	4335 #19 - Kashan.txt
+	4336 #20 - Tus.txt
+}
