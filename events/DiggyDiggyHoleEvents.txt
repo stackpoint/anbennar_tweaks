@@ -102,7 +102,7 @@ country_event = {
 			name = dig_prod
 			duration = -1
 		}
-		capital_scope = { add_construction_progress = 0.05 }
+		capital_scope = { change_variable = { cons_prog = 0.025 } }
 	}
 	
 	option = {
@@ -148,7 +148,7 @@ country_event = {
 			chance = 30
 			add_stability_or_adm_power = yes
 		}
-		capital_scope = { add_construction_progress = -0.05 }
+		capital_scope = { change_variable = { cons_prog = -0.025 } }
 	}
 	
 	option = {
@@ -203,7 +203,7 @@ country_event = {
 			name = dig_manpower
 			duration = -1
 		}
-		capital_scope = { add_construction_progress = 0.05 }
+		capital_scope = { change_variable = { cons_prog = 0.025 } }
 	}
 	
 	option = {
@@ -257,7 +257,7 @@ country_event = {
 			set_country_flag = dig_through
 			clr_country_flag = not_dig_through
 		}
-		capital_scope = { add_construction_progress = 0.15 }
+		capital_scope = { change_variable = { cons_prog = 0.075 } }
 	}
 	#Make detour
 	option = {
@@ -269,7 +269,7 @@ country_event = {
 			set_country_flag = not_dig_through
 			clr_country_flag = dig_through
 		}
-		capital_scope = { add_construction_progress = -0.15 }
+		capital_scope = { change_variable = { cons_prog = -0.075 } }
 	}
 }
 
@@ -317,7 +317,7 @@ country_event = {
 			set_country_flag = dig_through
 			clr_country_flag = not_dig_through
 		}
-		capital_scope = { add_construction_progress = 0.15 }
+		capital_scope = { change_variable = { cons_prog = 0.075 } }
 	}
 	#Make detour
 	option = {
@@ -329,7 +329,7 @@ country_event = {
 			set_country_flag = not_dig_through
 			clr_country_flag = dig_through
 		}
-		capital_scope = { add_construction_progress = -0.15 }
+		capital_scope = { change_variable = { cons_prog = -0.075 } }
 	}
 }
 
@@ -375,7 +375,7 @@ country_event = {
 			set_country_flag = dig_through
 			clr_country_flag = not_dig_through
 		}
-		capital_scope = { add_construction_progress = 0.15 }
+		capital_scope = { change_variable = { cons_prog = 0.075 } }
 	}
 	#Make detour
 	option = {
@@ -387,7 +387,7 @@ country_event = {
 			set_country_flag = not_dig_through
 			clr_country_flag = dig_through
 		}
-		capital_scope = { add_construction_progress = -0.15 }
+		capital_scope = { change_variable = { cons_prog = -0.075 } }
 	}
 }
 
@@ -432,7 +432,7 @@ country_event = {
 			set_country_flag = dig_through
 			clr_country_flag = not_dig_through
 		}
-		capital_scope = { add_construction_progress = 0.15 }
+		capital_scope = { change_variable = { cons_prog = 0.075 } }
 	}
 	#Make detour
 	option = {
@@ -444,7 +444,7 @@ country_event = {
 			set_country_flag = not_dig_through
 			clr_country_flag = dig_through
 		}
-		capital_scope = { add_construction_progress = -0.15 }
+		capital_scope = { change_variable = { cons_prog = -0.075 } }
 	}
 }
 
@@ -488,7 +488,7 @@ country_event = {
 			set_country_flag = dig_through
 			clr_country_flag = not_dig_through
 		}
-		capital_scope = { add_construction_progress = 0.15 }
+		capital_scope = { change_variable = { cons_prog = 0.075 } }
 	}
 	#Make detour
 	option = {
@@ -500,7 +500,7 @@ country_event = {
 			set_country_flag = not_dig_through
 			clr_country_flag = dig_through
 		}
-		capital_scope = { add_construction_progress = -0.15 }
+		capital_scope = { change_variable = { cons_prog = -0.075 } }
 	}
 }
 
@@ -544,7 +544,7 @@ country_event = {
 			set_country_flag = dig_through
 			clr_country_flag = not_dig_through
 		}
-		capital_scope = { add_construction_progress = 0.15 }
+		capital_scope = { change_variable = { cons_prog = 0.075 } }
 	}
 	#Make detour
 	option = {
@@ -556,7 +556,7 @@ country_event = {
 			set_country_flag = not_dig_through
 			clr_country_flag = dig_through
 		}
-		capital_scope = { add_construction_progress = -0.15 }
+		capital_scope = { change_variable = { cons_prog = -0.075 } }
 	}
 }
 
@@ -595,7 +595,7 @@ country_event = {
 			name = dig_explosive
 			duration = -1
 		}
-		capital_scope = { add_construction_progress = 0.1 }
+		capital_scope = { change_variable = { cons_prog = 0.05 } }
 	}
 	
 	option = {
@@ -760,7 +760,7 @@ country_event = {
 				add_base_tax = -1
 			}
 		}
-		capital_scope = { add_construction_progress = -0.2 }
+		capital_scope = { change_variable = { cons_prog = -0.1 } }
 	}
 }
 ##Lead to Goblin Tide disaster, found treasure
@@ -959,7 +959,7 @@ country_event = {
 				add_base_production = -1
 			}
 		}
-		capital_scope = { add_construction_progress = -0.10 }
+		capital_scope = { change_variable = { cons_prog = -0.05 } }
 	}
 }
 ##Easily diggable rock
@@ -994,7 +994,7 @@ country_event = {
 				duration = 1800
 			}
 		}
-		capital_scope = { add_construction_progress = 0.05 }
+		capital_scope = { change_variable = { cons_prog = 0.025 } }
 	}
 }
 
@@ -1035,7 +1035,7 @@ country_event = {
 				duration = 1800
 			}
 		}
-		capital_scope = { add_construction_progress = -0.05 }
+		capital_scope = { change_variable = { cons_prog = -0.025 } }
 	}
 }
 
@@ -1226,7 +1226,7 @@ country_event = {
 				}
 			}
 		}
-		capital_scope = { add_construction_progress = -0.5 }
+		capital_scope = { change_variable = { cons_prog = -0.25 } }
 	}
 }
 
@@ -1478,7 +1478,7 @@ country_event = {
 			30 = { }
 			60 = { reduce_stability_or_adm_power = yes }
 		}
-		capital_scope = { add_construction_progress = -0.15 }
+		capital_scope = { change_variable = { cons_prog = -0.075 } }
 	}
 }
 ###Hold Specialization
@@ -1815,7 +1815,7 @@ country_event = {
 			remove_province_modifier = hold_farm_2
 			remove_province_modifier = hold_military_2
 			hidden_effect = { clr_province_flag = specialized_hold }
-			add_construction_progress = -0.25
+			change_variable = { cons_prog = -0.125 }
 		}
 	}
 	
@@ -1824,7 +1824,7 @@ country_event = {
         ai_chance = { factor = 10 }
 		add_stability = 2
 		capital_scope = {
-			add_construction_progress = -0.25
+			change_variable = { cons_prog = -0.125 }
 			change_trade_goods = unknown
 		}
 	}
@@ -5427,7 +5427,7 @@ country_event = {
         name = diggy.1.a
         ai_chance = { factor = 100 }
 		capital_scope = { 
-			add_construction_progress = 1
+			change_variable = { cons_prog = 0.5 }
 		}
 	}
 	
@@ -5474,5 +5474,61 @@ country_event = {
         name = diggy.116.a
         ai_chance = { factor = 100 }
 		remove_country_modifier = dont_colonize_but_migrate
+	}
+}
+
+province_event = {
+	id = diggy.117
+	title = diggy.117.t
+	desc = diggy.117.d
+	picture = FORT_eventPicture
+	
+	hidden = yes
+	
+	trigger = {
+		has_construction = digging_deeper
+		check_variable = { cons_prog = 0 }
+		variable_arithmetic_trigger = {
+			export_to_variable = {
+				which = cProgress
+				value = trigger_value:construction_progress
+			}
+			change_variable = {
+				which = cProgress
+				which = cons_prog
+			}
+			check_variable = {
+				cProgress = 1
+			}
+		}
+	}
+	
+	option = {
+        name = diggy.117.a
+		
+		cancel_construction = yes
+		dig_rebate = yes
+		add_building = digging_deeper
+	}
+}
+
+province_event = {
+	id = diggy.118
+	title = diggy.118.t
+	desc = diggy.118.d
+	picture = FORT_eventPicture
+	
+	hidden = yes
+	
+	trigger = {
+		has_province_modifier = cons_prog_mod
+		NOT = { has_construction = digging_deeper }
+	}
+	
+	option = {
+        name = diggy.117.a
+		
+        remove_province_modifier = cons_prog_mod
+		set_variable = { cons_prog = 0.5 }
 	}
 }

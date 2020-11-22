@@ -1441,3 +1441,8 @@
   
   DADV_extended_borders_title:0 "Extended Borders"
   DADV_extended_borders_desc:0 "It is difficult to believe a band of adventurers, whose only wealth was virtue, could build a dominion so extensive as the one we now command. It is time we begin to exploit that dominion more effectively."
+  
+  cons_prog: "Construction Progress"
+  cons_prog_mod:0 "Added Construction Progress"
+  desc_cons_prog_mod:0 "[This.cons_prog.GetValue]"
+  
