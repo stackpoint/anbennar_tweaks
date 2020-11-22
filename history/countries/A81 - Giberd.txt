@@ -1,0 +1,22 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+mercantilism = 25
+primary_culture = imperial_gnome
+religion = regent_court
+technology_group = tech_gnomish
+capital = 271 #Giberd
+
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+1000.1.1 = { set_estate_privilege = estate_artificers_organization_independent_unions }
+
+1399.1.1 = {
+	monarch = {
+		name = "City Council"
+		adm = 2
+		dip = 2
+		mil = 2
+		regent = yes
+	}
+}

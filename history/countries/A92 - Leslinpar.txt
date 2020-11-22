@@ -1,0 +1,24 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = esmari
+religion = regent_court
+technology_group = tech_cannorian
+capital = 901 # Leslinpar
+
+add_historical_rival = A93 #Estallen
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+1422.1.1 = { set_country_flag = lilac_wars_moon_party }
+
+1440.1.12 = {
+	monarch = {
+		name = "Brandon III"
+		dynasty = "síl Leslinpár"
+		birth_date = 1410.3.10
+		adm = 4
+		dip = 3
+		mil = 1
+	}
+}

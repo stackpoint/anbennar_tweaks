@@ -1,0 +1,21 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = blue_reachman
+religion = regent_court
+technology_group = tech_cannorian
+capital = 706
+
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1430.12.12 = {
+	monarch = {
+		name = "Coreg II"
+		dynasty = "Frostwall"
+		birth_date = 1427.10.13
+		adm = 0
+		dip = 0
+		mil = 3
+	}
+}

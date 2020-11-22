@@ -1,0 +1,23 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = arannese
+religion = regent_court
+technology_group = tech_cannorian
+capital = 322
+
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+1403.1.4 = {
+	monarch = {
+		name = "Walter V"
+		dynasty = "Brinkwick"
+		birth_date = 1378.12.2
+		adm = 0
+		dip = 1
+		mil = 1
+	}
+}
+
+1422.1.1 = { set_country_flag = lilac_wars_moon_party }

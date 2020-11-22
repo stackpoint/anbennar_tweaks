@@ -1,0 +1,29 @@
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+primary_culture = moon_elf
+religion = regent_court
+technology_group = tech_elven
+capital = 115 # Ioriellen
+
+historical_friend = A01 #Lorent
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1422.1.1 = { set_country_flag = lilac_wars_rose_party }
+
+1443.2.2 = {
+	monarch = {
+		name = "Elthariel"
+		dynasty = "Gladeguard"
+		birth_date = 1199.5.11
+		adm = 6
+		dip = 6
+		mil = 1
+		female = yes
+	}
+	add_ruler_personality = immortal_personality
+	add_ruler_personality = calm_personality
+	add_ruler_personality = careful_personality
+	set_ruler_flag = set_immortality
+}

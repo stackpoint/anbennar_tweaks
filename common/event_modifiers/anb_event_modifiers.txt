@@ -1,0 +1,891 @@
+strong_colonial_rush = {
+	colonists = 1
+	global_colonial_growth = 50
+	development_cost = -0.75
+	land_maintenance_modifier = -0.66
+	naval_maintenance_modifier = -0.66
+	global_manpower_modifier = 0.25
+	manpower_recovery_speed = 0.25
+	land_forcelimit = 10
+	land_morale = 0.3
+	naval_morale = 0.3
+	global_tax_income = 34	#28 allows some to do it but not all hmm
+}
+
+pioneer_rush = {
+	colonists = 1
+	global_colonial_growth = 50
+	global_tax_income = 10
+}
+
+spawned_adventurer_boost = {
+	land_maintenance_modifier = -0.8
+	global_manpower_modifier = 0.5
+	manpower_recovery_speed = 0.5
+	land_forcelimit = 20
+	land_morale = 0.5
+	naval_morale = 0.15
+	global_supply_limit_modifier = 1
+	migration_cooldown = -0.33
+}
+
+magic_enchantment_hysteria = {
+	global_unrest = -2
+}
+
+ruler_cooldown_10yr = {
+}
+ruler_cooldown_5yr = {
+}
+ruler_cooldown_1yr = {
+}
+
+birth_of_a_new_people = {
+	culture_conversion_cost = -0.5
+	core_decay_on_your_own = -0.5
+	enemy_core_creation = 0.25
+	
+	prestige = 1
+}
+
+corinite_zeal = {
+	global_missionary_strength = 0.03
+}
+
+subsidized_income = {
+	global_tax_income = 3
+}
+
+anbennar_a_dream_realised = {
+	prestige = 1
+	global_unrest = -5
+}
+
+applied_for_dukedom_modifier = {
+	diplomatic_reputation = -1
+}
+
+orcish_slaves_in_colonies = {
+	global_colonial_growth = 20
+}
+orcish_slaves_in_colonies_cooldown = {
+
+}
+
+#Rivers Stuff
+
+arrag_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+gannag_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+darag_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+ynn_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+brelynn_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+lady_isobel_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+harafroy_estuary_modifier = {	#gnomish
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+ormam_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+vyech_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+kalavend_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+hjora_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+munasin_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+portroy_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+sornroy_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+bloodwine_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+middanroy_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+oddanroy_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+widderoy_estuary_modifier = {
+	province_trade_power_value = 5 #cos its in 2 provinces
+	picture = "estuary_icon"
+}
+
+dostanesck_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+alen_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+vroren_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+esmar_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+pearlywine_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+luna_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+mothers_sorrow_estuary_modifier = {
+	province_trade_power_value = 2
+	picture = "estuary_icon"
+}
+
+hapa_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+suran_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+sella_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+kharunyana_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+dhenbasana_estuary_modifier = {
+	province_trade_power_value = 5
+	picture = "estuary_icon"
+}
+
+telebei_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+hukai_estuary_modifier = {
+	province_trade_power_value = 10
+	picture = "estuary_icon"
+}
+
+#Trade province stuff
+
+damespearl_toll = {
+	province_trade_power_value = 10
+}
+
+damesteeth_toll = {
+	province_trade_power_value = 10
+}
+
+ainway_river_toll = {
+	province_trade_power_value = 10
+}
+
+ynnic_dam_modifier = {
+	province_trade_power_value = 10
+	
+	picture = "ynnic_dam_modifier"
+}
+
+vanaans_tears = {
+	province_trade_power_value = 10
+	
+	picture = "vanaans_tears"
+}
+
+ancient_giant_tower = {
+	province_trade_power_value = 10
+}
+
+#Misc Province Stuff
+calasandurs_elven_castle = {
+	local_defensiveness = 0.25
+}
+
+castanorian_citadel = {
+	local_defensiveness = 0.25
+}
+
+ruined_castanorian_citadel = {
+	local_defensiveness = 0.1
+}
+
+rebuilding_castanorian_citadel = {
+	local_tax_modifier = -0.5
+	local_production_efficiency = -0.5
+}
+
+bulwark_fortifications = {
+	local_defensiveness = 0.1
+}
+
+white_walls_of_castanor = {
+	local_defensiveness = 0.25
+}
+
+dwarven_hold_level_0 = {
+	local_defensiveness = 0.5	#Ruined Dwarven Hold
+}
+
+dwarven_hold_level_1 = {	#Dwarven Hold
+	local_defensiveness = 1
+}
+
+dwarven_hold_level_2 = {	#Reinforced Dwarven Holde
+	local_defensiveness = 2
+}
+
+dwarven_hold_level_3 = {	#Fortified Dwarven Hold
+	local_defensiveness = 3
+}
+
+dwarven_hold_level_4 = {	#Impenetrable Dwarven Hold
+	local_defensiveness = 4
+}
+
+castonath_the_city_of_stone_modifier = {
+	local_institution_spread = 0.10
+	province_trade_power_value = 10
+	local_development_cost = -0.05
+	picture = "province_trade_power_value"
+}
+
+ruined_city = {
+	development_cost = 1
+}
+
+
+#Greentide Modifiers
+
+legacy_of_adventurers_modifier = {
+	colonists = 1
+	land_morale = 0.05
+	prestige_from_land = 0.1
+	development_cost = -0.1
+	global_colonial_growth = 20
+	colonist_placement_chance = 0.1
+	build_cost = -0.10
+
+	culture_conversion_cost = -0.75
+	
+	diplomatic_upkeep = -1
+	administrative_efficiency = -0.5
+}
+
+legacy_of_greentide_invaders_modifier = {
+	global_manpower_modifier = 0.25
+	land_forcelimit_modifier = 0.1
+	land_maintenance_modifier = -0.15
+	land_morale = 0.05
+	reinforce_cost_modifier = -0.25
+	
+	colonists = 1
+	global_colonial_growth = 20
+	colonist_placement_chance = 0.1
+	
+	global_institution_spread = -0.25
+	reform_progress_growth = -0.25
+	diplomatic_upkeep = -1
+	administrative_efficiency = -0.5
+	stability_cost_modifier = 0.5
+}
+
+#Countries
+
+liberated_dragon_coast = {
+	culture_conversion_cost = -0.2
+	prestige = 1
+}
+
+arannese_lacemakers_guild = {
+	trade_goods_size = 2.0
+}
+
+vanbury_steel_foundry = {
+	trade_goods_size = 2.0
+}
+
+istralore_support_of_the_corinite_military = {
+	army_tradition = 0.5
+}
+
+white_harbor_of_celmaldor = {
+	naval_forcelimit = 10
+	province_trade_power_modifier = 1
+	ship_recruit_speed = -0.2
+}
+
+#Estates
+
+drafted_siege_engineers = {
+	siege_ability = 0.075
+	defensiveness = 0.075
+}
+
+for_knowledge = {
+	technology_cost = -0.1
+}
+
+adventurer_settlers = {
+	colonist_placement_chance = 0.1
+}
+
+adventurers_leading_own_troops = {
+	army_tradition_decay = 0.1
+	infantry_power = 0.1
+	movement_speed = 0.1
+}	
+
+adventurer_dominance = {
+	global_autonomy = 0.07
+	mercenary_discipline = -0.2
+	merc_maintenance_modifier = 0.5
+	administrative_efficiency = -0.33
+}
+
+mages_dominance = {
+	technology_cost = 1
+	global_autonomy = 0.03
+	global_tax_modifier = -0.25
+	all_power_cost = 0.33
+}
+
+conscripted_mages = {
+	siege_ability = 0.5
+	infantry_power = 1
+	discipline = 0.1
+	land_maintenance_modifier = 0.5
+	diplomatic_reputation = -1
+	global_tax_modifier = -0.33
+	
+}
+
+talented_battlemage_cohort = {
+	siege_ability = 0.25
+	infantry_power = 0.25
+	discipline = 0.05
+}
+
+peoples_mage_rejected = {
+	local_unrest = 5
+}
+
+magical_spell_gone_wrong = {
+	trade_goods_size = -0.5
+	local_development_cost = 1
+}
+
+mage_organization_magisterium = {
+	land_morale = 0.05
+	imperial_authority = 0.05
+	picture = "cardinal_icon"
+}
+
+mage_organization_centralized = {
+	global_tax_modifier = -0.1
+	land_morale = 0.05
+	picture = "cardinal_icon"
+}
+
+mage_organization_decentralized = {
+	global_tax_modifier = 0.05
+	picture = "cardinal_icon"
+}
+
+expelled_mages = {
+	prestige_decay = 0.05
+	all_power_cost = 0.1
+	diplomatic_reputation = -1
+}
+
+#Goblinic shamanism
+
+fertility_cult = {
+	global_tax_income = 0.05
+	global_manpower_modifier = 0.05
+	religion = yes
+}
+
+temple_destroyers = {
+	loot_amount = 0.05
+	land_morale = 0.05
+	tolerance_heathen = -1
+	religion = yes
+}
+
+conversion_of_temples = {
+	global_missionary_strength = 0.01
+	tolerance_heathen = -2
+	religion = yes
+}
+
+#River Parties
+river_party_aftermath = {
+	prestige = 0.1
+}
+# Kheterata Bonuses/Maluses
+khetarch_baqtkhet_ii = {
+	manpower_recovery_speed = 0.1
+	stability_cost_modifier = -0.1
+}
+
+khetarch_regency = {
+	global_tax_modifier = -0.1
+	stability_cost_modifier = 0.15
+}
+
+paid_for_khetarch_burial = {
+	global_tax_modifier = -0.05
+	stability_cost_modifier = 0.1
+}
+
+khetarch_amsiskhet_III = {
+	global_institution_spread = 0.1
+	technology_cost = -0.05
+}
+
+khetarch_shurkhet = {
+	global_tax_modifier = -0.1
+	yearly_absolutism = 0.5
+	max_absolutism = 15
+}
+
+khetarch_sematkhet_ii = {
+	land_morale = 0.1
+	global_autonomy = -0.05
+}
+
+# Khetarch assassination modifiers. Not yet used, as the events aren't completed.
+
+khetarch_assassinated = {
+	stability_cost_modifier = 0.2
+	global_unrest = 2
+}
+
+no_khet_in_kheterata = {
+	stability_cost_modifier = 0.5
+	global_unrest = 5
+}
+
+no_khet_in_government = {
+	max_absolutism = 30
+	yearly_absolutism = 0.5
+}
+
+khet_in_hiding = {
+	stability_cost_modifier = 0.1
+	global_unrest = 1
+}
+
+assassin_caught = {
+	stability_cost_modifier = -0.2
+	global_unrest = -2
+}
+pirate_legacy = {
+global_ship_trade_power = 0.25
+}
+
+#Tradegoods Event Modifier
+
+pr_great_ruin = {
+	trade_goods_size = 3
+}
+
+dye_of_europe = {
+	trade_goods_size = 1
+}
+
+damestear_rich_deposit = {
+	trade_goods_size = 3
+}
+
+eordellonian_expedition_site = {
+	trade_goods_size = 1
+}
+
+soulstones_of_isle_vroren = {
+	trade_goods_size = 2
+	local_development_cost = 0.2
+}
+
+growth_of_soulstone_trade = {
+	trade_goods_size = 1
+	local_development_cost = -0.1
+}
+
+grombar_fleet_advancements = {
+	dip_tech_cost_modifier = -0.1
+}
+
+ordal_fish_market = {
+	trade_goods_size = 2.5
+}
+
+#Eordand Courts
+eordand_spring_court = {
+	production_efficiency = 0.05
+}
+eordand_summer_court = {
+	naval_morale = 0.05
+}
+eordand_autumn_court = {
+	infantry_power = 0.05
+}
+eordand_winter_court = {
+	legitimacy = 0.5
+	devotion = 0.25
+	republican_tradition = 0.25
+}
+eordand_domandrod = {
+	yearly_absolutism = 0.5
+}
+gawed_regent_court = {
+	local_religious_conversion_resistance = 0.25
+}
+
+#Gerudia
+gerudia_appeased_vassals = {
+	vassal_income = -0.1
+	reduced_liberty_desire = -5
+	global_trade_power = -0.1
+}
+gerudia_empowered_revrhavn = {
+	global_tax_modifier = 0.15
+	global_trade_power = 0.15
+}
+
+#Castanor Trials
+castanortrials_castan = {
+	legitimacy = 1
+	prestige_decay = -0.01
+	war_exhaustion = -0.02
+	war_taxes_cost_modifier = -1
+}
+castanortrials_refused_trial = {
+	legitimacy = -1
+	prestige = -0.5
+	global_unrest = 1
+}
+castanortrials_failed_alive = {
+	legitimacy = -2
+	prestige = -1
+	global_unrest = 2
+	stability_cost_modifier = 0.2
+}
+castanortrials_failed_dead = {
+	global_unrest = 2
+}
+
+#Jadd
+jaddempire_azka_sur_capital = {
+	prestige = 1
+	core_creation = -0.1
+	global_autonomy = -0.1
+}
+jaddempire_religious_capital = {
+	legitimacy = 1
+	global_missionary_strength = 0.01
+	land_morale = 0.2
+}
+jaddempire_bulwar_capital = {
+	diplomatic_reputation = 1
+	global_trade_goods_size_modifier = 0.1
+	development_cost = -0.1
+}
+jaddempire_court_area = {
+	local_development_cost = -0.1
+	local_unrest = -1
+	local_build_cost = -0.1
+}
+jaddempire_court_seat = {
+	local_development_cost = -0.2
+	local_tax_modifier = 0.2
+	local_production_efficiency = 0.2
+	local_build_cost = -0.1
+}
+eor_monster_slayer = {
+	prestige_decay = -0.01
+	legitimacy = 0.25
+	devotion = 0.25
+	republican_tradition = 0.1
+	land_morale = 0.05
+}
+
+#Orcs
+gray_orc_fearsome_conqueror = {
+	prestige_decay = -0.01
+	vassal_income = 0.25
+	reduced_liberty_desire = 50
+	diplomatic_reputation = 1
+}
+orc_conversion_zeal = {
+	global_missionary_strength = 0.10
+	missionary_maintenance_cost = -0.33
+}
+ozarm_chadash_without_fight = {
+	stability_cost_modifier = 0.5
+}
+ozarm_chadash_outraged_by_dishonor ={
+	global_unrest = 4
+	stability_cost_modifier = 0.33
+}
+ozarm_chadash_shift_of_power = {
+	stability_cost_modifier = 0.33
+}
+ozarm_chadash_defeated_pretender = {
+	land_morale = 0.05
+}
+
+#Rahen
+porcelain_city = {
+	trade_goods_size = 1
+	trade_value_modifier = 0.5
+	picture = "porcelain_city"
+}
+
+#The Jadd
+the_jadd_divine_inspiration = {
+	land_morale = 0.1
+}
+jaddari_religious_massacre = {
+	local_manpower_modifier = -0.25
+	local_tax_modifier = -0.25
+	local_missionary_strength = 0.02
+}
+jaddari_visiting_jaddari_missionaries = {
+	global_manpower_modifier = 0.1
+	# global_institution_spread = 0.25
+	global_missionary_strength = -0.05
+}
+jaddari_speading_the_truth_of_surael = {
+	local_missionary_strength = 0.01
+}
+jaddari_burning_out_the_xhazobkult = {
+	local_missionary_strength = 0.05
+	local_unrest = 5
+}
+
+tluukt_receiving_zokka_refugees = {
+	manpower_recovery_speed = 0.25
+	land_forcelimit_modifier = 0.2
+	land_maintenance_modifier = -0.2
+	global_regiment_recruit_speed = -0.5
+}
+tluukt_the_rule_of_tluukt = {
+	hostile_attrition = 2
+	land_morale = 0.2
+	defensiveness = 0.25
+}
+zokka_the_rule_of_zokka = {
+	land_morale = 0.2
+	core_creation = -0.25
+	years_of_nationalism = -5
+	diplomatic_upkeep = 1
+	
+}
+zokka_monsters_among_the_monsters = {
+	ae_impact = 0.1
+}
+zokka_influx_of_fresh_slaves = {
+	global_trade_goods_size_modifier = 0.1
+}
+
+baywic_goblin_quarter = {
+	local_unrest = 2
+	trade_goods_size = 0.5
+}
+
+jaddari_religious_massacre = {
+	local_manpower_modifier = -0.25
+	local_tax_modifier = -0.25
+	local_missionary_strength = 0.02
+}
+
+artificier_city = {
+	idea_cost = -0.05
+}
+
+harpy_roost_under_construction = {
+	local_development_cost = 0.2
+	local_defensiveness = -0.5
+}
+
+#Monster Colonial
+monster_demonstration_of_power = {
+	local_unrest = -1
+}
+
+lichdom_destroyed_phylactery = {
+	diplomatic_reputation = 1
+	ae_impact = -0.1
+}
+
+halfling_revolt_modifier = {
+	local_unrest = 10
+}
+
+# Grombar
+grombar_clans_angered = {
+	local_unrest = 6
+}
+
+grombar_clans_are_restricted = {
+	global_unrest = 1
+	global_tax_modifier = 0.05
+}
+
+corintar_gray_orc_allies = {
+	diplomatic_reputation = -1
+	global_manpower_modifier = 0.1
+	manpower_recovery_speed = 0.15
+}
+
+grombar_corintari_influence = {
+	tolerance_own = -3
+	tolerance_heathen = 2
+	technology_cost = -0.05
+	advisor_cost = -0.25
+	global_institution_spread = 0.2
+	embracement_cost = -0.2
+	manpower_recovery_speed = -0.2
+}
+
+grombar_escanni_half_orc_migrants = {
+	local_development_cost = -0.05
+	local_build_cost = -0.2
+}
+
+grombar_religious_violence = {
+	local_unrest = 12
+	local_missionary_strength = -0.1
+}
+
+grombar_conversion_zeal = {
+	tolerance_own = 3
+	tolerance_heretic = -1
+	tolerance_heathen = -1
+	global_missionary_strength = 0.1
+	missionary_maintenance_cost = -0.33
+}
+
+grombar_weak_religion = {
+	religious_unity = -0.5
+	tolerance_heretic = -1
+	tolerance_heathen = -1
+	global_missionary_strength = -0.01
+}
+
+grombar_edict_of_sadar = {
+	tolerance_own = -1
+	tolerance_heretic = 2
+	tolerance_heathen = 2
+	religious_unity = 0.25
+	stability_cost_modifier = -0.1
+}
+
+grombar_strength_of_our_faith = {
+	church_power_modifier = 0.33
+	tolerance_heretic = 1
+	tolerance_heathen = 1
+}
+
+grombar_example_for_all_of_us = {
+	shock_damage = 0.1
+}
+
+grombar_coward_ruler = {
+	land_morale = -0.1
+}
+
+crovis_vrorenmarch = {
+	prestige = 1
+	stability_cost_modifier = 0.25
+	administrative_efficiency = -0.2
+}
+
+icon_of_corin_good = {
+	land_morale = 0.05
+}
+
+icon_of_corin_bad = {
+	land_morale = -0.05
+}
+
+constant_rains = {
+	local_development_cost = 0.20
+	local_tax_modifier = -0.5
+	trade_goods_size_modifier = -0.5
+	local_monthly_devastation = 0.1
+}
+
+crimson_deluge_province = {
+	local_monthly_devastation = 0.35
+	local_unrest = 2
+}

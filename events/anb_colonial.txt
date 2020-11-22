@@ -1,0 +1,692 @@
+# AnbennarDependencies
+# Replaced reference to regions with continent america until we have actual regions
+# This has references to ages too
+# replaced christian with cannorian
+# native culture references are still in this
+
+namespace = anb_colonial
+
+#Escanni Migrants
+province_event = {
+	id =  anb_colonial.1
+	title = anb_colonial.1.t
+	desc = anb_colonial.1.d
+	picture = COLONIZATION_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		colonysize = 200
+		OR = {
+			region = inner_castanor_region
+			region = west_castanor_region
+			region = south_castanor_region
+		}
+		owner = {
+			NOT = { 
+				culture_group = orcish
+				culture_group = goblin
+			}
+		}
+	}
+
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = anb_colonial.1.a
+		
+		if = {
+			limit = { region = inner_castanor_region }
+			change_culture = castellyrian
+		}
+		if = {
+			limit = { region = west_castanor_region }
+			change_culture = adenner
+		}
+		if = {
+			limit = { region = south_castanor_region }
+			change_culture = marcher
+		}
+
+		change_religion = regent_court
+		add_colonysize = 800
+		
+		owner = {
+			add_years_of_income = -0.5
+			
+			add_faction_influence = {	#will need to make this into an effect later
+				faction = adv_pioneers
+				influence = 10
+			}
+		}
+	}
+	
+	option = {
+		name = anb_colonial.1.b
+		
+		owner = {
+			add_faction_influence = {	#will need to make this into an effect later
+				faction = adv_fortune_seekers
+				influence = 10
+			}
+			add_prestige = -5
+		}
+	}
+}
+
+#Disbanded Adventuring Company joins us
+province_event = {
+	id =  anb_colonial.2
+	title = anb_colonial.2.t
+	desc = anb_colonial.2.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_colony = yes
+		#colonysize = 600
+		OR = {
+			continent = europe
+		}
+		OR = {	
+			region = west_castanor_region
+			region = inner_castanor_region
+			region = south_castanor_region
+		}
+		owner = {
+			NOT = { 
+				culture_group = orcish
+				culture_group = goblin
+			}
+		}
+	}
+
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	#Help us settle these new lands!
+	option = {
+		name = anb_colonial.2.a
+		
+		add_colonysize = 500
+		
+		owner = {
+			add_faction_influence = {	#will need to make this into an effect later
+				faction = adv_pioneers
+				influence = 10
+			}
+			if = {
+				limit = { has_dlc = "Rights of Man" }
+				add_militarised_society = -10
+			}
+		}
+		
+		# event_target:disbanded_company_province = {
+			# add_colonysize = 500
+		# }
+
+		
+	}
+	
+	#Can some of you still fight?
+	option = {
+		name = anb_colonial.2.b
+		
+		owner = {
+			add_yearly_manpower = 0.5
+			
+			add_faction_influence = {	#will need to make this into an effect later
+				faction = adv_marchers
+				influence = 10
+			}
+			if = {
+				limit = { has_dlc = "Rights of Man" }
+				add_militarised_society = 5
+			}
+		}
+
+	}
+	
+	#Only take in those with adventuring spirit
+	option = {
+		name = anb_colonial.2.c
+		
+		owner = {
+			add_prestige = 15
+			
+			add_faction_influence = {	#will need to make this into an effect later
+				faction = adv_fortune_seekers
+				influence = 10
+			}
+			
+			if = {
+				limit = { has_dlc = "Rights of Man" }
+				add_militarised_society = 10
+			}
+		}
+	}
+}
+
+#Settlers from home
+province_event = {
+	id =  anb_colonial.3
+	title = anb_colonial.3.t
+	desc = anb_colonial.3.d
+	picture = COLONIZATION_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_colony = yes
+		#colonysize = 600
+		OR = {
+			region = west_castanor_region
+			region = south_castanor_region
+			region = inner_castanor_region
+		}
+		owner = {
+			NOT = { 
+				culture_group = orcish
+				culture_group = goblin
+				culture_group = escanni
+			}
+		}
+	}
+	
+	# immediate = {
+			# hidden_effect = {
+				# random_owned_province = {
+					# limit = {
+						# is_colony = yes
+						# colonysize = 600
+					# }
+					# save_event_target_as = cannorian_migrant_province
+				# }
+			# }
+	# }
+
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	#Alright then, but we don't need adventurers we need settlers.
+	option = {
+		name = anb_colonial.3.a
+		
+		# event_target:cannorian_migrant_province = {
+			# change_religion = regent_court
+			# change_culture = ROOT
+			# add_colonysize = 400
+		# }
+		
+		add_colonysize = 400
+
+		# owner = {
+			# random_owned_province = {
+				# limit = {
+					# is_colony = yes
+					# #colonysize = 600
+					# culture = ROOT
+				# }
+				# #change_culture = ROOT
+				# change_religion = regent_court
+				# add_colonysize = 400
+			# }
+		# }
+
+		
+		owner = {
+			add_faction_influence = {	#will need to make this into an effect later
+				faction = adv_pioneers
+				influence = 10
+			}
+			add_years_of_income = -0.25
+			if = {
+				limit = { has_dlc = "Rights of Man" }
+				add_militarised_society = -10
+			}
+		}
+	}
+	
+	#It's not safe enough, we need more fighters!
+	option = {
+		name = anb_colonial.3.b
+		owner = {
+			add_faction_influence = {	#will need to make this into an effect later
+				faction = adv_marchers
+				influence = 10
+			}
+			add_prestige = 5
+			add_yearly_manpower = 0.5
+			add_years_of_income = -0.25
+		}
+	}
+	
+}
+
+#Orcish Warband massacres colony
+province_event = {
+	id =  anb_colonial.4
+	title = anb_colonial.4.t
+	desc = anb_colonial.4.d
+	picture = VILLAGE_BURNING_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_colony = yes
+		OR = {
+			region = west_castanor_region
+			region = south_castanor_region
+			region = inner_castanor_region
+		}
+		owner = {
+			NOT = { 
+				culture_group = orcish
+				culture_group = goblin
+			}
+		}
+		has_empty_adjacent_province = yes
+		# owner = {
+			# is_colonial_nation = yes
+			# religion_group = cannorian
+			# colonial_parent = {
+				# religion = PREV
+				# any_owned_province = {
+					# is_overseas = no
+					# religion_group = ROOT
+					# NOT = { religion = ROOT }
+				# }
+			# }
+		# }
+	}
+	
+	# immediate = {
+		# hidden_effect = {
+			 # random_owned_province = {
+				 # limit = {
+					# is_colony = yes
+				 # }
+				 # save_event_target_as = massacred_province
+			 # }
+		# }
+	# }
+
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	#Order a counter-attack!
+	option = {
+		name = anb_colonial.4.a
+		trigger = {
+			owner = { manpower = 1000 }
+		}
+		
+				
+		change_native_size = -5
+		add_colonysize = -1000
+		
+		owner = {
+			add_faction_influence = {	#will need to make this into an effect later
+				faction = adv_marchers
+				influence = 10
+			}
+			add_yearly_manpower = -1
+		}
+	}
+	
+	#Dark clouds and ashen skies!
+	option = {
+		name = anb_colonial.4.b
+		
+		add_colonysize = -1000
+		
+		change_native_ferocity = 2
+		
+		owner = {
+			add_prestige = -10
+		}
+	}
+	
+}
+
+#Orc Raid
+province_event = {
+	id =  anb_colonial.5
+	title = anb_colonial.5.t
+	desc = anb_colonial.5.d
+	picture = VILLAGE_RAIDED_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_colony = yes
+		colonysize = 400
+		has_any_orcish_pop_trigger = yes
+		OR = {
+			region = west_castanor_region
+			region = south_castanor_region
+			region = inner_castanor_region
+		}
+		owner = {
+			NOT = { 
+				culture_group = orcish
+				culture_group = goblin
+			}
+		}
+		# owner = {
+			# is_colonial_nation = yes
+			# religion_group = cannorian
+			# colonial_parent = {
+				# religion = PREV
+				# any_owned_province = {
+					# is_overseas = no
+					# religion_group = ROOT
+					# NOT = { religion = ROOT }
+				# }
+			# }
+		# }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	#They managed to loot the treasury before departing
+	option = {
+		name = anb_colonial.5.a
+		
+		# event_target:raided_province = {
+			# add_colonysize = -200
+		# }
+		# owner = {
+			# random_owned_province = {
+				# limit = {
+					# is_colony = yes
+					# colonysize = 400
+				# }
+				# add_colonysize = -100
+			# }
+		# }
+		
+		add_colonysize = -100
+		
+		owner = {
+			add_years_of_income = -0.35
+		}
+	}
+	
+	#We fought them off... at a high cost.
+	option = {
+		name = anb_colonial.5.b
+		# event_target:raided_province = {
+			# add_colonysize = -300
+		# }
+		
+		add_colonysize = -300
+		
+
+		
+		owner = {
+			add_prestige = -5
+		}
+	}
+	
+}
+
+#Adventurers retiring to our settlements
+province_event = {
+	id =  anb_colonial.6
+	title = anb_colonial.6.t
+	desc = anb_colonial.6.d
+	picture = EXPLORERS_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_colony = yes
+		colonysize = 500
+		OR = {
+			continent = europe
+		}
+		OR = {
+			region = west_castanor_region
+			region = south_castanor_region
+			region = inner_castanor_region
+		}
+		owner = {
+			NOT = { 
+				culture_group = orcish
+				culture_group = goblin
+			}
+		}
+		# owner = {
+			# is_colonial_nation = yes
+			# religion_group = cannorian
+			# colonial_parent = {
+				# religion = PREV
+				# any_owned_province = {
+					# is_overseas = no
+					# religion_group = ROOT
+					# NOT = { religion = ROOT }
+				# }
+			# }
+		# }
+	}
+
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	#You deserve it!
+	option = {
+		name = anb_colonial.6.a
+		
+		add_colonysize = 500
+
+		
+		owner = {
+			if = {
+				limit = { has_dlc = "Rights of Man" }
+				add_militarised_society = -25
+			}
+		}
+	}
+	
+	#Why don't you train a new generation of adventurers instead?
+	option = {
+		name = anb_colonial.6.b
+		
+		owner = {
+			add_years_of_income = -1
+			if = {
+				limit = { has_dlc = "Rights of Man" }
+				add_militarised_society = 25
+			}
+		}
+	}
+	
+}
+
+
+
+#Settler Initiative - equivalent of colonial.1
+province_event = {
+	id =  anb_colonial.7
+	title = anb_colonial.7.t
+	desc = anb_colonial.7.d
+	picture = COLONIZATION_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_colony = yes
+		has_empty_adjacent_province = yes
+		owner = { NOT = { num_of_colonies = 2 } }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = "EVTOPTA6138"
+		random_empty_neighbor_province = {
+			create_colony = 200
+		}
+	}
+	option = {
+		name = anb_colonial.7.b
+		trigger = {
+			owner = {
+			num_of_colonies = 1
+			}
+		}
+		owner = {
+			random_owned_province = {
+				limit = {
+					is_colony = yes
+				}
+				add_colonysize = 50
+			}
+		}
+	}
+}
+
+#Pioneer Bonus - insta complete
+province_event = {
+	id =  anb_colonial.8
+	title = anb_colonial.8.t
+	desc = anb_colonial.8.d
+	picture = COLONIZATION_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = { faction_in_power = adv_pioneers }
+		is_colony = yes
+		NOT = { colonysize = 750 }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = anb_colonial.8.a
+		add_colonysize = 1000
+	}
+}
+
+#Marcher Bonus - adds some colonists, reduces ferocity and hostility
+province_event = {
+	id =  anb_colonial.9
+	title = anb_colonial.9.t
+	desc = anb_colonial.9.d
+	picture = COLONIZATION_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = { faction_in_power = adv_marchers }
+		is_colony = yes
+		NOT = { colonysize = 750 }
+		
+		native_ferocity = 4
+		native_hostileness = 4
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = anb_colonial.9.a
+		add_colonysize = 300
+		
+		change_native_hostileness = -3
+		change_native_ferocity = -3
+		
+	}
+}
+
+
+#Pioneer Bonus - completes colony, +1 prod
+province_event = {
+	id =  anb_colonial.10
+	title = anb_colonial.10.t
+	desc = anb_colonial.10.d
+	picture = COLONIZATION_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = { faction_in_power = adv_fortune_seekers }
+		is_colony = yes
+		NOT = { colonysize = 750 }
+		
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = anb_colonial.10.a
+		add_colonysize = 250
+		
+		add_base_production = 1
+		
+	}
+}
+
+
+#Generic Pacification of Natives
+province_event = {
+	id =  anb_colonial.11
+	title = anb_colonial.11.t
+	desc = anb_colonial.11.d
+	picture = COLONIZATION_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_colony = yes
+		
+		native_ferocity = 4
+		native_hostileness = 4
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = anb_colonial.11.a
+		
+		change_native_hostileness = -1
+		change_native_ferocity = -1
+		
+	}
+}

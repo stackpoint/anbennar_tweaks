@@ -1,0 +1,2507 @@
+aelnar_1 = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z43
+	}
+	
+	Z43_rebuild_noruin = {
+		icon = mission_colonial
+		position = 1
+		
+		trigger = {
+			if = {
+				limit = { ai = no }
+				num_of_owned_provinces_with = {
+					value = 5
+					colonial_region = colonial_noruin
+					has_trade_building_trigger = yes
+				}
+				
+				num_of_owned_provinces_with = {
+					value = 5
+					colonial_region = colonial_noruin
+					has_tax_building_trigger = yes
+				}
+				
+				num_of_owned_provinces_with = {
+					value = 5
+					colonial_region = colonial_noruin
+					has_production_building_trigger = yes
+				}
+			}
+			else = {
+				always = yes
+			}
+		}
+		
+		effect = {
+			add_inflation = -3
+			add_country_modifier = {
+				name = growing_economy
+				duration = 10950
+			}
+		}
+	}
+	
+	Z43_study_the_ecosystem = {
+		icon = mission_iberian_conquistador
+		position = 2
+		
+		required_missions = {
+			Z43_rebuild_noruin
+		}
+		
+		trigger = {
+			colonial_noruin = {
+				has_discovered = Z43
+			}
+		}
+		
+		effect = {
+			add_prestige = 15
+			add_dip_power = 75
+			add_adm_power = 75
+		}
+	}
+	
+	Z43_prepare_construction_palace = {
+		icon = mission_rb_the_bank_of_scotland
+		position = 3
+		
+		required_missions = {
+			Z43_study_the_ecosystem
+		}
+		
+		trigger = {
+			adm_power = 150
+		}
+		
+		effect = {
+			add_prestige = 15
+			add_adm_power = -150
+		}
+	}
+	
+	Z43_setup_castle_fondation = {
+		icon = mission_early_game_buildings
+		position = 4
+		
+		required_missions = {
+			Z43_prepare_construction_palace
+		}
+		
+		trigger = {
+			years_of_income	 = 0.5
+		}
+		
+		effect = {
+			add_years_of_income = -0.5
+			capital_scope = {
+				add_permanent_province_modifier = {
+					name = aelnar_castle_fondation
+					duration = 912
+				}
+				hidden_effect = { set_province_flag = aelnar_arca_ore }
+			}
+		}
+	}
+	
+	Z43_build_commoner_quarter = {
+		icon = mission_rb_the_education_acts
+		position = 5
+		
+		required_missions = {
+			Z43_setup_castle_fondation
+		}
+		
+		trigger = {
+			years_of_income	 = 0.5
+			capital_scope = {
+				NOT = { has_province_modifier = aelnar_castle_fondation }
+			}
+		}
+		
+		effect = {
+			add_years_of_income = -0.5
+			capital_scope = {
+				add_permanent_province_modifier = {
+					name = aelnar_commoner_quarter
+					duration = 912
+				}
+			}
+		}
+	}
+	
+	Z43_arca_ore = {
+		icon = mission_arca_ore
+		position = 8
+		
+		required_missions = {
+			Z43_build_commoner_quarter
+		}
+		
+		trigger = {
+			years_of_income	 = 1
+			capital_scope = {
+				NOT = { has_province_modifier = aelnar_commoner_quarter }
+			}
+		}
+		
+		effect = {
+			add_years_of_income = -1
+			capital_scope = {
+				add_permanent_province_modifier = {
+					name = aelnar_arca_ore
+					duration = -1
+				}
+			}
+			country_event = { id = aelnar.1 days = 360 random = 100 }
+		}
+	}
+	
+	Z43_proclaim_the_empire = {
+		icon = mission_kanbawzathadi_palace
+		position = 9
+		
+		required_missions = {
+			Z43_arca_ore
+		}
+		
+		trigger = {
+			adm = 6
+			dip = 6
+			mil = 6
+			stability = 3
+			is_at_war = no
+			NOT = { has_disaster = aelnar_civil_war }
+		}
+		
+		effect = {
+			country_event = {id = aelnar.2}
+		}
+	}
+	
+	Z43_southern_legion = {
+		icon = mission_assemble_an_army
+		position = 12
+		
+		required_missions = {
+			Z43_south_capital
+		}
+		
+		trigger = {
+			army_size = 200
+		}
+		
+		effect = {
+			add_mil_power = 150
+			add_country_modifier = {
+				name = aelnar_south_legion
+				duration = 29200
+			}
+		}
+	}
+	
+	Z43_silvers_mountain = {
+		icon = mission_african_gold
+		position = 14
+		
+		required_missions = {
+			Z43_amadia_province
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 2
+				
+				region = amadia_region
+				trade_goods = gold
+			}
+		}
+		
+		effect = {
+			add_years_of_income = 2.5
+			add_inflation = 3
+			add_country_modifier = {
+				name = aelnar_making_money
+				duration = 3650
+			}
+		}
+	}
+}
+
+
+aelnar_2 = {
+	slot = 2
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z43
+	}
+	
+	Z43_drill_academy = {
+		icon = mission_cannons_firing
+		position = 3
+		
+		trigger = {
+			barracks = 20
+		}
+		
+		effect = {
+			### allow military faction
+			add_country_modifier = {
+				name = aelnar_drill_academy
+				duration = 18250
+			}
+		}
+	}
+	
+	Z43_prepare_ynn_excursion = {
+		icon = mission_asian_trader
+		position = 4
+		
+		required_missions = {
+			Z43_trollsbay_expansion
+		}
+		
+		trigger = {
+			OR = {
+				owns = 1901
+				owns = 1031
+			}
+			army_size = 70
+		}
+		
+		effect = {
+			sarda_region  = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+			veykoda_region  = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+			add_country_modifier = {
+				name = thriving_arms_industry
+				duration = 18250
+			}
+			add_faction_influence = {
+				faction = aelnar_blaiddtar
+				influence = 25
+			}
+		}
+	}
+	
+	Z43_sarda_conquest = {
+		icon = mission_crusade_for_varna
+		position = 5
+		
+		required_missions = {
+			Z43_prepare_ynn_excursion
+		}
+		
+		provinces_to_highlight = {
+			region = sarda_region
+			NOT = { country_or_non_sovereign_subject_holds = Z43 }
+		}
+		
+		trigger = {
+			sarda_region  = {
+				type = all
+				country_or_non_sovereign_subject_holds = Z43
+			}
+		}
+		
+		effect = {
+			dolindha_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+			epednan_expanse_region  = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+		}
+	}
+	
+	Z43_the_empire_granary = {
+		icon = mission_collect_yasak
+		position = 6
+		
+		required_missions = {
+			Z43_sarda_conquest
+		}
+		
+		provinces_to_highlight = {
+			region = dolindha_region
+			NOT = { country_or_non_sovereign_subject_holds = Z43 }
+		}
+		
+		trigger = {
+			dolindha_region  = {
+				type = all
+				country_or_non_sovereign_subject_holds = Z43
+			}
+		}
+		
+		effect = {
+			colonial_ynn = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+			add_country_modifier = {
+				name = aelnar_food_influx
+				duration = 18250
+			}
+		}
+	}
+	
+	Z43_control_the_flow = {
+		icon = mission_reconquer_vologda
+		position = 7
+		
+		required_missions = {
+			Z43_the_empire_granary
+		}
+		
+		provinces_to_highlight = {
+			colonial_region = colonial_ynn
+			
+			NOT = { country_or_non_sovereign_subject_holds = Z43 }
+		}
+		
+		trigger = {
+			colonial_ynn = {
+				type = all
+			
+				country_or_non_sovereign_subject_holds = Z43
+			}
+		}
+		
+		effect = {
+			add_prestige = 15
+			add_stability_or_adm_power = yes
+			add_country_modifier = {
+				name = aelnar_purity_effort
+				duration = 7300
+			}
+		}
+	}
+	
+	Z43_racial_superiority = {
+		icon = mission_racial
+		position = 8
+		
+		required_missions = {
+			Z43_control_the_flow
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 50
+				
+				if = {
+					limit = { ROOT = { has_country_flag = lithiel_ideas } }
+					OR = {
+						culture = star_elf
+						culture = starborn
+						culture = duskers
+					}
+				}
+				else = {
+					culture = star_elf
+				}
+				OR = {
+					region = sarda_region
+					region = dolindha_region
+				}
+			}
+		}
+		
+		effect = {
+			add_prestige = 20
+			add_stability_or_adm_power = yes
+			add_country_modifier = {
+				name = aelnar_ynn_purity_done
+				duration = -1
+			}
+		}
+	}
+	
+	Z43_manifest_destiny = {
+		icon = mission_manifest_destiny
+		position = 9
+		
+		required_missions = {
+			Z43_arca_ore
+		}
+		
+		trigger = {
+			legitimacy = 100
+			stability = 3
+		}
+		
+		effect = {
+			add_prestige = 20
+			add_country_modifier = {
+				name = aelnar_manifest_destiny
+				duration = 10950
+			}
+			###Manifest Destiny event
+		}
+	}
+	
+	Z43_south_capital = {
+		icon = mission_heart_of_the_hansa
+		position = 11
+		
+		required_missions = {
+			Z43_consolidate_our_holding
+		}
+		
+		trigger = {
+			any_owned_province = {
+				region = soruin_region
+				development = 20
+			}
+		}
+		
+		effect = {
+			random_owned_province = {
+				limit = {
+					region = soruin_region
+					development = 20
+				}
+				add_base_manpower = 4
+				add_base_production = 4
+				add_base_tax = 4
+				change_trade_goods = paper
+			}
+		}
+	}
+	
+	Z43_central_hegemony = {
+		icon = mission_unite_home_region
+		position = 12
+		
+		required_missions = {
+			Z43_soruin_gates
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				region = ruined_isles_region
+				region = soruin_region
+				colonial_region = colonial_noruin
+				area = northern_bluff_area
+				area = red_harbor_area
+				area = endralvar_area
+				area = seaway_corridor_area
+				area = trapwall_jungle_area
+				area = despondence_coast_area
+				area = silvertennar_area
+			}
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			#Artifical Circle
+			ruined_isles_region = {
+				type = all
+				owned_by = Z43
+			}
+			colonial_noruin = {
+				type = all
+				owned_by = Z43
+			}
+			soruin_region = {
+				type = all
+				owned_by = Z43
+			}
+			northern_bluff_area = {
+				type = all
+				owned_by = Z43
+			}
+			red_harbor_area = {
+				type = all
+				owned_by = Z43
+			}
+			endralvar_area = {
+				type = all
+				owned_by = Z43
+			}
+			seaway_corridor_area = {
+				type = all
+				owned_by = Z43
+			}
+			trapwall_jungle_area = {
+				type = all
+				owned_by = Z43
+			}
+			despondence_coast_area = {
+				type = all
+				owned_by = Z43
+			}
+			silvertennar_area = {
+				type = all
+				owned_by = Z43
+			}
+		}
+		
+		effect = {
+			add_prestige = 25
+			add_stability_or_adm_power = yes
+			add_country_modifier = {
+				name = aelnar_central_hegemony
+				duration = 36500
+			}
+		}
+	}
+	
+	Z43_amadia_province = {
+		icon = mission_raid_christian_trade
+		position = 13
+		
+		required_missions = {
+			Z43_west_effelai
+		}
+		
+		provinces_to_highlight = {
+			region = amadia_region
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 12
+				region = amadia_region
+			}
+		}
+		
+		effect = {
+			amadia_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+					NOT = { is_claim = Z43 }
+				}
+				add_claim = Z43
+			}
+		}
+	}
+	
+	Z43_the_southern_jewel = {
+		icon = mission_invade_mali
+		position = 14
+		
+		required_missions = {
+			Z43_amadia_province
+		}
+		
+		provinces_to_highlight = {
+			region = amadia_region
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 30
+				region = amadia_region
+			}
+		}
+		
+		effect = {
+			amadia_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+			alecand_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+					NOT = { is_claim = Z43 }
+				}
+				add_claim = Z43
+			}
+		}
+	}
+	
+	Z43_alecand_beach = {
+		icon = mission_rb_take_gibraltar
+		position = 15
+		
+		required_missions = {
+			Z43_the_southern_jewel
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				region = alecand_region
+			}
+			
+			has_port = yes
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 2
+				
+				region = alecand_region
+				has_port = yes
+			}
+		}
+		
+		effect = {
+			alecand_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+		}
+	}
+	
+	Z43_alecand = {
+		icon = mission_portuguese_interference
+		position = 16
+		
+		required_missions = {
+			Z43_alecand_beach
+		}
+		
+		
+		provinces_to_highlight = {
+			region = alecand_region
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 20
+				
+				region = alecand_region
+			}
+		}
+		
+		effect = {
+			devand_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+					NOT = { is_claim = Z43 }
+				}
+				add_claim = Z43
+			}
+		}
+	}
+	
+	Z43_kheionai_beach = {
+		icon = mission_caribbean_cn
+		position = 17
+		
+		required_missions = {
+			Z43_alecand
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				region = devand_region
+			}
+			
+			has_port = yes
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 3
+				has_port = yes
+				region = devand_region
+			}
+		}
+		
+		effect = {
+			devand_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+		}
+	}
+	
+	Z43_complete_control = {
+		icon = mission_colonise_brazil
+		position = 18
+		
+		required_missions = {
+			Z43_kheionai_beach
+		}
+		
+		provinces_to_highlight = {
+			colonial_region = colonial_kheionai
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 100
+				colonial_region = colonial_kheionai
+			}
+		}
+		
+		effect = {
+			add_prestige = 25
+			add_mil_power = 100
+			add_adm_power = 100
+			add_dip_power = 100
+			add_stability_or_adm_power = yes
+			add_country_modifier = {
+				name = aelnar_kheionia_trade
+				duration = 14600
+			}
+		}
+	}
+}
+
+aelnar_3 = {
+	slot = 3
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z43
+	}
+	
+	Z43_trade_freely = {
+		icon = mission_high_income
+
+		position = 1
+		
+		trigger = {
+			home_trade_node = {
+				is_strongest_trade_power = Z43
+			}
+			if = {
+				limit = {ai = no}
+				NOT = {inflation = 3}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = aelnar_trade_efficiency
+				duration = 14600
+			}
+			bloodgroves_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+		}
+	}
+	
+	Z43_protect_the_capital = {
+		icon = mission_italian_condottiere
+		position = 2
+		
+		required_missions = {
+			Z43_trade_freely
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				region = bloodgroves_region
+			}
+			is_city = yes
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			bloodgroves_region = {
+				type = all
+				is_city = yes
+				owned_by = Z43
+			}
+		}
+		
+		effect = {
+			increase_legitimacy_large_effect = yes
+			trollsbay_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+					NOT = { is_claim = Z43 }
+				}
+				add_claim = Z43
+			}
+		}
+	}
+	
+	Z43_trollsbay_expansion = {
+		icon = mission_invade_island
+		position = 3
+		
+		required_missions = {
+			Z43_protect_the_capital
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				region = trollsbay_region
+			}
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 30
+				region = trollsbay_region
+			}
+		}
+		
+		effect = {
+			trollsbay_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+			reapers_coast_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+					NOT = { is_claim = Z43 }
+				}
+				add_claim = Z43
+			}
+		}
+	}
+	
+	Z43_reapers_due = {
+		icon = mission_rb_a_mighty_fleet
+		position = 5
+		
+		required_missions = {
+			Z43_trollsbay_expansion
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				region = reapers_coast_region
+			}
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				region = reapers_coast_region
+			}
+		}
+		
+		effect = {
+			reapers_coast_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+		}
+	}
+	
+	Z43_the_northern_wall = {
+		icon = mission_conquer_50_development
+		position = 6
+		
+		required_missions = {
+			Z43_reapers_due
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1130
+				province_id = 1946
+				province_id = 1876
+				province_id = 1901
+				province_id = 1031
+				province_id = 1042
+				province_id = 1128
+			}
+			
+			NOT = { owned_by = ROOT }
+			
+		}
+		
+		trigger = {
+			owns = 1130
+			owns = 1946
+			owns = 1876
+			owns = 1901
+			owns = 1031
+			owns = 1128
+			owns = 1042
+		}
+		
+		effect = {
+			1130 = {
+				add_permanent_province_modifier = {
+					name = aelnar_northern_wall
+					duration = -1
+				}
+			}
+			1946 = {
+				add_permanent_province_modifier = {
+					name = aelnar_northern_wall
+					duration = -1
+				}
+			}
+			1876 = {
+				add_permanent_province_modifier = {
+					name = aelnar_northern_wall
+					duration = -1
+				}
+			}
+			1901 = {
+				add_permanent_province_modifier = {
+					name = aelnar_northern_wall
+					duration = -1
+				}
+			}
+			1031 = {
+				add_permanent_province_modifier = {
+					name = aelnar_northern_wall
+					duration = -1
+				}
+			}
+			1128 = {
+				add_permanent_province_modifier = {
+					name = aelnar_northern_wall
+					duration = -1
+				}
+			}
+			1042 = {
+				add_permanent_province_modifier = {
+					name = aelnar_northern_wall
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	Z43_prepare_southern_invasion = {
+		icon = mission_great_wall
+		position = 7
+		
+		required_missions = {
+			Z43_trade_monopole
+			Z43_the_northern_wall
+		}
+		
+		trigger = {
+			num_of_transport = 20
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = aelnar_southern_invasion
+				duration = 10950
+			}
+			galindas_point_area = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+		}
+	}
+	
+	Z43_land_on_the_beach = {
+		icon = mission_control_the_barbary_coast
+		position = 9
+		
+		required_missions = {
+			Z43_prepare_southern_invasion
+		}
+		
+		trigger = {
+			any_owned_province = {
+				has_port = yes
+				region = soruin_region
+			}
+		}
+		
+		effect = {
+			random_owned_province = {
+				limit = {
+					has_port = yes
+					region = soruin_region
+				}
+				set_province_flag = aelnar_soruin
+				add_base_production = 2
+				add_base_tax = 2
+				add_base_manpower = 2
+				area = {
+					limit = {
+						NOT = { is_core = Z43 }
+						NOT = { is_permanent_claim = Z43 }
+					}
+					add_permanent_claim = Z43
+				}
+			}
+		}
+	}
+	
+	Z43_consolidate_our_holding = {
+		icon = mission_conquer_alexandria
+		position = 10
+		
+		required_missions = {
+			Z43_land_on_the_beach
+		}
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = aelnar_soruin_tooltip
+				any_owned_province = {
+					has_province_flag = aelnar_soruin
+				}
+			}
+			adm_power = 150
+		}
+		
+		effect = {
+			add_adm_power = -150
+			soruin_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+		}
+	}
+	
+	Z43_soruin_gates = {
+		icon = mission_raid_on_genoa
+		position = 11
+		
+		required_missions = {
+			Z43_consolidate_our_holding
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2196
+				province_id = 2191
+				province_id = 2204
+			}
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			owns = 2196
+			owns = 2191
+			owns = 2204
+		}
+		
+		effect = {
+			leechdens_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+					NOT = { is_claim = Z43 }
+				}
+				add_claim = Z43
+			}
+			
+			west_effelai_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+					NOT = { is_claim = Z43 }
+				}
+				add_claim = Z43
+			}
+		}
+	}
+	
+	Z43_west_effelai = {
+		icon = mission_portuguese_malabar
+		position = 12
+		
+		required_missions = {
+			Z43_soruin_gates
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				region = west_effelai_region
+			}
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 8
+				region = west_effelai_region
+			}
+		}
+		
+		effect = {
+			west_effelai_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+			amadia_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+					NOT = { is_claim = Z43 }
+				}
+				add_claim = Z43
+			}
+		}
+	}
+	
+	Z43_racial_supremacy = {
+		icon = mission_racial
+		position = 13
+		
+		required_missions = {
+			Z43_west_effelai
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				region = west_effelai_region
+				region = leechdens_region
+			}
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			religion = soise_vio
+			west_effelai_region = {
+				type = all
+				owned_by = Z43
+			}
+			leechdens_region = {
+				type = all
+				owned_by = Z43
+			}
+		}
+		
+		effect = {
+			leechdens_region = {
+				limit = {
+					NOT = { culture = star_elf }
+					NOT = { culture = starborn }
+					NOT = { culture = duskers }
+				}
+				change_religion = soise_vio
+				change_culture = star_elf
+				add_permanent_province_modifier = {
+					name = aelnar_genocide
+					duration = 14600
+				}
+			}
+			west_effelai_region = {
+				limit = {
+					NOT = { culture = star_elf }
+					NOT = { culture = starborn }
+					NOT = { culture = duskers }
+				}
+				change_religion = soise_vio
+				change_culture = star_elf
+				add_permanent_province_modifier = {
+					name = aelnar_genocide
+					duration = 14600
+				}
+			}
+		}
+	}
+	
+	Z43_racial_purity = {
+		icon = mission_racial
+		position = 19
+		
+		required_missions = {
+			Z43_racial_supremacy
+			Z43_taychend_end
+			Z43_complete_control
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 500
+				
+				if = {
+					limit = { ROOT = { has_country_flag = lithiel_ideas } }
+					OR = {
+						culture = star_elf
+						culture = starborn
+						culture = duskers
+					}
+				}
+				else = {
+					culture = star_elf
+				}
+				OR = {
+					continent = north_america
+					continent = south_america
+				}
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = aelnar_racial_purity
+				duration = -1
+			}
+		}
+	}
+	
+	Z43_star_ascendancy = {
+		icon = mission_star_ascendency
+		position = 20
+		
+		required_missions = {
+			Z43_racial_purity
+		}
+		
+		trigger = {
+			capital_scope = {
+				development = 70
+			}
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = aelnar_star_ascendancy
+				duration = -1
+			}
+		}
+	}
+}
+
+aelnar_4 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z43
+	}
+	
+	Z43_maintain_naval_supremacy = {
+		icon = mission_launch_a_flagship
+		position = 2
+		
+		required_missions = {
+			Z43_trade_freely
+		}
+		
+		trigger = {
+			navy_size_percentage = 0.9
+		}
+		
+		effect = {
+			add_country_modifier = {
+				name = aelnar_fleet
+				duration = 18250
+			}
+			927 = {
+				add_permanent_claim = Z43
+			}
+		}
+	}
+	
+	Z43_through_the_sea = {
+		icon = mission_look_west
+		position = 4
+		
+		required_missions = {
+			Z43_maintain_naval_supremacy
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = mykx_isles_area
+				area = breccia_peaks_area
+				area = verten_area
+				area = the_bend_area
+				area = isles_of_plenty_area
+				area = wet_trickster_isle_area
+				area = dry_trickster_isle_area
+				area = wanderers_gate_area
+			}
+		}
+		
+		trigger = {
+			OR = {
+				mykx_isles_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = Z43
+				}
+				breccia_peaks_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = Z43
+				}
+				verten_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = Z43
+				}
+				the_bend_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = Z43
+				}
+				isles_of_plenty_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = Z43
+				}
+				wet_trickster_isle_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = Z43
+				}
+				dry_trickster_isle_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = Z43
+				}
+				wanderers_gate_area  = {
+					type = all
+					country_or_non_sovereign_subject_holds = Z43
+				}
+			}
+		}
+		
+		effect = {
+			ruined_isles_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+		}
+	}
+	
+	Z43_trade_capital = {
+		icon = mission_trade_with_japan
+		position = 5
+		
+		required_missions = {
+			Z43_through_the_sea
+		}
+		
+		trigger = {
+			any_core_province = {
+				development = 20
+				is_city = yes
+				region = ruined_isles_region
+				has_port = yes
+			}
+		}
+		
+		effect = {
+			random_core_province = {
+				limit = {
+					development = 20
+					is_city = yes
+					region = ruined_isles_region
+					has_port = yes
+				}
+				add_base_production = 3
+				add_base_tax = 2
+				center_of_trade = 2
+				set_province_flag = aelnar_trade_capital
+			}
+		}
+	}
+	
+	Z43_trade_monopole = {
+		icon = mission_portuguese_burma
+		position = 6
+		
+		required_missions = {
+			Z43_trade_capital
+		}
+		
+		trigger = {
+			1527 = {
+				trade_share = {
+					country = ROOT
+					share = 50
+				}
+			}
+			any_core_province = {
+				custom_trigger_tooltip = {
+					tooltip = aelnar_trade_capital_tooltip
+					has_province_flag = aelnar_trade_capital
+				}
+			}
+		}
+		
+		provinces_to_highlight = {
+			has_province_flag = aelnar_trade_capital
+		}
+		
+		effect = {
+			random_core_province = {
+				limit = {
+					has_province_flag = aelnar_trade_capital
+				}
+				add_base_production = 4
+				add_base_tax = 1
+			}
+			add_country_modifier = {
+				name = aelnar_trade_efficiency
+				duration = 10950
+			}
+			endralliande_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+					NOT = { is_claim = Z43 }
+				}
+				add_claim = Z43
+			}
+		}
+	}
+	
+	Z43_endralliande_holdings = {
+		icon = mission_retake_ceuta
+		position = 7
+		
+		required_missions = {
+			Z43_trade_monopole
+		}
+		
+		provinces_to_highlight = {
+			region = endralliande_region
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				region = endralliande_region
+			}
+		}
+		
+		effect = {
+			endralliande_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+			ravenous_isle_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+					NOT = { is_claim = Z43 }
+				}
+				add_claim = Z43
+			}
+		}
+	}
+	
+	Z43_presence_in_ravenous_island = {
+		icon = mission_combat_barbary_piracy
+		position = 8
+		
+		required_missions = {
+			Z43_endralliande_holdings
+		}
+		
+		provinces_to_highlight = {
+			region = ravenous_isle_region
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 8
+				region = ravenous_isle_region
+			}
+		}
+		
+		effect = {
+			ravenous_isle_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+		}
+	}
+}
+
+aelnar_4_lithiel = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z43
+		has_country_flag = lithiel_ideas
+	}
+	
+	Z43_open_up_the_administration = {
+		icon = mission_portuguese_ceylon
+		position = 9
+		
+		required_missions = {
+			Z43_draft_integration_plan
+		}
+		
+		trigger = {
+			treasury = 500
+			adm_power = 350
+		}
+		
+		effect = {
+			add_treasury = -500
+			add_adm_power = -350
+			add_country_modifier = {
+				name = aelnar_adapting_administration
+				duration = 3650
+			}
+		}
+	}
+	
+	Z43_second_class_citizen = {
+		icon = mission_the_ganges_campaign
+		position = 10
+		
+		required_missions = {
+			Z43_open_up_the_administration
+		}
+		
+		trigger = {
+			dip_power = 250
+			adm_power = 150
+			stability = 3
+			NOT = { has_country_modifier = aelnar_adapting_administration }
+		}
+		
+		effect = {
+			add_dip_power = -250
+			add_adm_power = -150
+			reduce_stability_or_adm_power = yes
+			every_owned_province = {
+				limit = { has_ruinborn_culture = yes }				
+				change_culture = duskers
+			}
+			hidden_effect = { set_country_flag = duskers_flag }
+		}
+	}
+}
+
+aelnar_4_elsa = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z43
+		has_country_modifier = aelnar_icy_ambitions
+	}
+	
+	Z43_the_queen_nest = {
+		icon = mission_amur_acquisition
+		position = 9
+		
+		required_missions = {
+			Z43_the_ice_concordat
+		}
+		
+		provinces_to_highlight = {
+			province_id = 2787
+		}
+		
+		trigger = {
+			owns = 2787
+			2787 = { is_city = yes }
+			treasury = 2000
+		}
+		
+		effect = {
+			add_treasury = -2000
+			2787 = {
+				add_base_manpower = 1
+				add_base_tax = 1
+				add_base_production = 1
+			}
+		}
+	}
+	
+	Z43_build_from_the_rubbles = {
+		icon = mission_protect_white_sea_trade
+		position = 10
+		
+		required_missions = {
+			Z43_the_queen_nest
+		}
+		
+		provinces_to_highlight = {
+			province_id = 2787
+		}
+		
+		trigger = {
+			owns = 2787
+			treasury = 4000
+		}
+		
+		effect = {
+			add_treasury = -4000
+			2787 = {
+				add_base_manpower = 2
+				add_base_tax = 2
+				add_base_production = 2
+				add_center_of_trade_level = 1
+			}
+		}
+	}
+}
+
+aelnar_4_2 = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z43
+	}
+	
+	Z43_west_gateway = {
+		icon = mission_invade_gujarat
+		position = 11
+		
+		required_missions = {
+			Z43_consolidate_our_holding
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 1130
+				province_id = 2191
+			}
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			owns = 1130
+			owns = 2191
+		}
+		
+		effect = {
+			tor_nayyi_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+					NOT = { is_claim = Z43 }
+				}
+				add_claim = Z43
+			}
+		}
+	}
+	
+	Z43_leechdens = {
+		icon = mission_steer_trade_to_bengal
+		position = 12
+		
+		required_missions = {
+			Z43_soruin_gates
+		}
+		
+		provinces_to_highlight = {
+			region = leechdens_region
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 8
+				region = leechdens_region
+			}
+		}
+		
+		effect = {
+			leechdens_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+		}
+	}
+	
+	Z43_the_southern_path = {
+		icon = mission_invade_the_deccan_ori
+		position = 13
+		
+		required_missions = {
+			Z43_leechdens
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				province_id = 2219
+				province_id = 2264
+				province_id = 2267
+				province_id = 2340
+			}
+		}
+		
+		trigger = {
+			owns = 2219
+			owns = 2264
+			owns = 2267
+			owns = 2340
+		}
+		
+		effect = {
+			taychend_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+					NOT = { is_claim = Z43 }
+				}
+				add_claim = Z43
+			}
+		}
+	}
+	
+	Z43_spices_land = {
+		icon = mission_dominate_persian_gulf
+		position = 14
+		
+		required_missions = {
+			Z43_the_southern_path
+		}
+		
+		provinces_to_highlight = {
+			region = taychend_region
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 20
+				region = taychend_region
+			}
+		}
+		
+		effect = {
+			taychend_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+			larankarha_highlands_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+					NOT = { is_claim = Z43 }
+				}
+				add_claim = Z43
+			}
+		}
+	}
+	
+	Z43_spokane_fall = {
+		icon = mission_crush_delhi
+		position = 15
+		
+		required_missions = {
+			Z43_spices_land
+		}
+		
+		provinces_to_highlight = {
+			province_id = 2487
+		}
+		
+		trigger = {
+			owns = 2487
+		}
+		
+		effect = {
+			larankarha_highlands_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+			chendhya_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+		}
+	}
+	
+	Z43_taychend_end = {
+		icon = mission_rb_control_state_religion
+		position = 18
+		
+		required_missions = {
+			Z43_spokane_fall
+		}
+		
+		provinces_to_highlight = {
+			NOT = { owned_by = Z43 }
+			OR = {
+				region = taychend_region
+				region = chendhya_region
+				region = larankarha_highlands_region
+			}
+		}
+		
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 40
+				region = taychend_region
+			}
+			num_of_owned_provinces_with = {
+				value = 40
+				region = chendhya_region
+			}
+			num_of_owned_provinces_with = {
+				value = 25
+				region = larankarha_highlands_region
+			}
+		}
+		
+		effect = {
+			add_prestige = 25
+			add_mil_power = 100
+			add_adm_power = 100
+			add_dip_power = 100
+			add_stability_or_adm_power = yes
+			add_country_modifier = {
+				name = aelnar_spices_flow
+				duration = 7300
+			}
+		}
+	}
+}
+
+aelnar_5 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z43
+	}
+	
+	Z43_holy_site = {
+		icon = mission_rb_inland_india
+		position = 3
+		
+		required_missions = {
+			Z43_maintain_naval_supremacy
+		}
+		
+		provinces_to_highlight = {
+			province_id = 927
+		}
+		
+		trigger = {
+			owns = 927
+		}
+		
+		effect = {
+			silsenald_isles_area = {
+				limit = {
+						NOT = { is_core = Z43 }
+						NOT = { is_permanent_claim = Z43 }
+					}
+				add_permanent_claim = Z43
+			}
+		}
+	}
+	
+	Z43_sanctified_the_land = {
+		icon = mission_european_church
+		position = 4
+		
+		required_missions = {
+			Z43_holy_site
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = silsenald_isles_area
+			}
+			NOT = { 
+				owned_by = Z43
+				has_tax_building_trigger = yes
+			}
+		}
+		
+		trigger = {
+			OR = {	
+				mission_completed = Z43_proclaim_the_empire
+				has_ruler_modifier = aelnar_the_crystal_queen
+			}
+			if = {
+				limit = { ai = no }
+				silsenald_isles_area  = {
+					type = all
+					has_tax_building_trigger = yes
+					owned_by = Z43
+				}
+			}
+		}
+		
+		effect = {
+			country_event = { id = aelnar.12 } ## We swap religion
+		}
+	}
+	
+	Z43_the_firstborn = {
+		icon = mission_rb_rein_in_the_highland_clans
+		position = 5
+		
+		required_missions = {
+			Z43_sanctified_the_land
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				owned_by = Z43
+			}
+			
+			NOT = {
+				culture = star_elf
+			}
+		}
+		
+		trigger = {
+			stability = 3
+			adm_power = 150
+		}
+		
+		effect = {
+			add_adm_power = -150
+			add_country_modifier = {
+				name = aelnar_firstborn
+				duration = 3650
+			}
+		}
+	}
+	
+	Z43_protect_elven_purity = {
+		icon = mission_rb_weather_the_reformation
+		position = 6
+		
+		required_missions = {
+			Z43_the_firstborn
+		}
+		
+		trigger = {
+			colonial_noruin = {
+				type = all
+				
+				owned_by = ROOT
+				if = {
+					limit = { ROOT = { has_country_flag = lithiel_ideas } }
+					OR = {
+						culture = star_elf
+						culture = starborn
+						culture = duskers
+					}
+				}
+				else = {
+					culture = star_elf
+				}
+			}
+		}
+		
+		effect = {
+			add_stability_or_adm_power = yes
+			add_prestige = 25
+			increase_legitimacy_large_effect = yes
+			add_country_modifier = {
+				name = aelnar_same_people
+				duration = 14600
+			}
+		}
+	}
+}
+
+aelnar_5_lithiel = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z43
+		has_country_flag = lithiel_ideas
+	}
+	
+	Z43_draft_integration_plan = {
+		icon = mission_establish_the_prikazy
+		position = 8
+		
+		trigger = {
+			adm_power = 250
+			dip_power = 250
+			stability = 3
+		}
+		
+		effect = {
+			add_dip_power = -250
+			add_adm_power = -250
+			reduce_stability_or_adm_power = yes
+			reduce_legitimacy_medium_effect = yes
+			add_country_modifier = {
+				name = aelnar_draft_integration_plan
+				duration = 3650
+			}
+		}
+	}
+	
+	Z43_a_part_in_the_army = {
+		icon = mission_build_up_to_force_limit
+		position = 9
+		
+		required_missions = {
+			Z43_draft_integration_plan
+		}
+		
+		trigger = {
+			NOT = { has_country_modifier = aelnar_draft_integration_plan }
+			adm_power = 100
+			mil_power = 100
+			stability = 3
+		}
+		
+		effect = {
+			add_mil_power = -100
+			add_adm_power = -100
+			reduce_stability_or_adm_power = yes
+			reduce_legitimacy_medium_effect = yes
+			add_country_modifier = {
+				name = aelnar_adapt_the_army
+				duration = 3650
+			}
+		}
+	}
+	
+	Z43_the_auxiliaries = {
+		icon = mission_recruit_streltsy
+		position = 10
+		
+		required_missions = {
+			Z43_a_part_in_the_army
+		}
+		
+		trigger = {
+			mil_power = 150
+			stability = 3
+			NOT = { has_country_modifier = aelnar_adapt_the_army }
+		}
+		
+		effect = {
+			add_mil_power = -150
+			reduce_stability_or_adm_power = yes
+			add_country_modifier = {
+				name = aelnar_the_auxiliaries
+				duration = -1
+			}
+		}
+	}
+	
+	Z43_edict_21_b = {
+		icon = mission_consulate_of_the_sea
+		position = 11
+		
+		required_missions = {
+			Z43_the_auxiliaries
+			Z43_second_class_citizen
+		}
+		
+		trigger = {
+			has_country_modifier = aelnar_the_auxiliaries
+			adm_power = 350
+			mil_power = 350
+			dip_power = 350
+			stability = 3
+		}
+		
+		effect = {
+			add_mil_power = -350
+			add_adm_power = -350
+			add_dip_power = -350
+			add_stability = -2
+			remove_country_modifier = aelnar_the_auxiliaries
+			remove_country_modifier = aelnar_citizenship
+			add_country_modifier = {
+				name = aelnar_the_starborn
+				duration = -1
+			}
+			add_accepted_culture = starborn
+			add_accepted_culture = duskers
+			hidden_effect = {
+				every_owned_province = {
+					limit = { culture = duskers }
+					random = {
+						chance = 50
+						
+						change_culture = starborn
+					}
+				}
+			}
+			hidden_effect = { set_country_flag = starborn_flag }
+		}
+	}
+}
+
+aelnar_5_elsa = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z43
+		has_country_modifier = aelnar_icy_ambitions
+	}
+	
+	Z43_snow_allegiance = {
+		icon = mission_monarch_in_throne_room
+
+		position = 7
+		
+		trigger = {
+			adm_power = 150
+			dip_power = 150
+			mil_power = 150
+		}
+		
+		effect = {
+			add_dip_power = -150
+			add_adm_power = -150
+			add_mil_power = -150
+			add_stability = -2
+			increase_legitimacy_huge_effect = yes
+		}
+	}
+	
+	Z43_the_ice_concordat = {
+		icon = mission_scholar_officials
+		position = 8
+		
+		required_missions = {
+			Z43_snow_allegiance
+		}
+		
+		trigger = {
+			stability = 3
+			is_at_war = no
+			adm_power = 150
+			has_estate = estate_mages
+		}
+		
+		effect = {
+			add_adm_power = -150
+			add_estate_loyalty_modifier = {
+				estate = estate_mages
+				desc = AELNAR_MAGE_USE_BATTERY_LOYALTY
+				loyalty = 10
+				duration = -1
+			}
+			add_estate_influence_modifier = {
+				estate = estate_mages
+				desc = AELNAR_MAGE_USE_BATTERY_INFLUENCE
+				influence = 10
+				duration = -1
+			}
+		}
+	}
+	
+	Z43_the_crystal_tiara = {
+		icon = mission_the_crystal_tiara
+		position = 9
+		
+		required_missions = {
+			Z43_the_ice_concordat
+		}
+		
+		trigger = {
+			adm_power = 300
+			treasury = 3000
+		}
+		
+		effect = {
+			add_adm_power = -150
+			add_treasury = -3000
+			add_country_modifier = {
+				name = aelnar_the_crystal_tiara
+				duration = -1
+			}
+		}
+	}
+	
+	Z43_edict_21 = {
+		icon = mission_rb_monopolize_the_channel
+		position = 10
+		
+		required_missions = {
+			Z43_the_crystal_tiara
+			Z43_the_queen_nest
+		}
+		
+		trigger = {
+			legitimacy = 100
+			stability = 3
+			adm_power = 300
+			dip_power = 150
+		}
+		
+		effect = {
+			add_adm_power = -300
+			add_dip_power = -150
+			custom_tooltip = edict_21_tooltip
+			hidden_effect = { set_country_flag = edict_21 }
+			hidden_effect = {
+				set_variable = {
+					which = nbConnadh
+					value = 0
+				}
+			}
+		}
+	}
+	
+	Z43_the_frozen_star = {
+		icon = mission_frozen_star
+		position = 11
+		
+		required_missions = {
+			Z43_edict_21
+			Z43_build_from_the_rubbles
+		}
+		
+		provinces_to_highlight = {
+			province_id = 2787
+		}
+		
+		trigger = {
+			owns = 2787
+			prestige = 80
+			if = {
+				limit = { has_country_flag = edict_21 }
+				custom_trigger_tooltip = {
+					tooltip = nbConnadh_tooltip
+					check_variable = {
+						which = variable:nbConnadh
+						value = 10000
+					}
+				}
+			}
+		}
+		
+		effect = {
+			country_event = { id = aelnar.35 }
+			hidden_effect = { set_country_flag = harvested_connadh }
+		}
+	}
+}
+
+aelnar_5_2 = {
+	slot = 5
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		tag = Z43
+	}
+	
+	Z43_own_tor_nayyi = {
+		icon = mission_rb_scottish_the_darien_scheme
+		position = 12
+		
+		required_missions = {
+			Z43_west_gateway
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = west_vanburia_area
+				area = north_vanburia_area
+				area = east_vanburia_area
+			}
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			west_vanburia_area  = {
+				type = all
+				owned_by = Z43
+			}
+			north_vanburia_area  = {
+				type = all
+				owned_by = Z43
+			}
+			east_vanburia_area  = {
+				type = all
+				owned_by = Z43
+			}
+		}
+		
+		effect = {
+			tor_nayyi_region = {
+				limit = {
+					NOT = { is_core = Z43 }
+					NOT = { is_permanent_claim = Z43 }
+				}
+				add_permanent_claim = Z43
+			}
+		}
+	}
+	
+	Z43_home_of_the_sil_blaidd = {
+		icon = mission_silblaidd
+		position = 13
+		
+		required_missions = {
+			Z43_own_tor_nayyi
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				area = west_vanburia_area
+				area = north_vanburia_area
+				area = east_vanburia_area
+			}
+			
+			NOT = { owned_by = Z43 }
+		}
+		
+		trigger = {
+			adm_power = 150
+			mil_power = 150
+			religion = soise_vio
+			primary_culture = star_elf
+			west_vanburia_area  = {
+				type = all
+				owned_by = Z43
+			}
+			north_vanburia_area  = {
+				type = all
+				owned_by = Z43
+			}
+			east_vanburia_area  = {
+				type = all
+				owned_by = Z43
+			}
+		}
+		
+		effect = {
+			add_mil_power = -150
+			add_adm_power = -150
+			country_event = { id = aelnar.3 }
+		}
+	}
+	
+	Z43_haraf_conquest = {
+		icon = mission_rb_conquer_brittany
+		position = 14
+		
+		required_missions = {
+			Z43_home_of_the_sil_blaidd
+		}
+		
+		provinces_to_highlight = {
+			OR = {
+				colonial_region = colonial_haraf
+			}
+			
+			NOT = { country_or_vassal_holds = Z43 }
+		}
+		
+		trigger = {
+			colonial_haraf = {
+				type = all
+				country_or_vassal_holds = Z43
+			}
+		}
+		
+		effect = {
+			add_stability_or_adm_power = yes
+			add_prestige = 25
+		}
+	}
+}
+

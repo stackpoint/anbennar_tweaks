@@ -1,0 +1,26 @@
+# No previous file for Alptborg
+owner = Z08
+controller = Z08
+add_core = Z08
+culture = east_dalr
+religion = skaldhyrric_faith
+
+hre = no
+
+base_tax = 2
+base_production = 2
+base_manpower = 2
+
+trade_goods = grain
+
+capital = ""
+
+is_city = yes
+
+
+
+latent_trade_goods = {
+	coal
+}
+
+

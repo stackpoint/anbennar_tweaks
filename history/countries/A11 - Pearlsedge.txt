@@ -1,0 +1,27 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = pearlsedger
+religion = regent_court
+technology_group = tech_cannorian
+capital = 43 #Pearlsedge
+
+historical_rival = A33 #Verne
+
+elector = yes
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+1000.1.2 = { set_country_flag = avoids_colonist_settlement_growth }
+
+1422.1.1 = { set_country_flag = lilac_wars_rose_party }
+
+1427.3.11 = {
+	monarch = {
+		name = "Caylen V"
+		dynasty = "síl na Trísfer"
+		birth_date = 1423.11.4
+		adm = 5
+		dip = 4
+		mil = 2
+	}
+}

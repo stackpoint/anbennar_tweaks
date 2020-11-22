@@ -1,0 +1,29 @@
+#518 - Aezbel
+
+owner = F17
+controller = F17
+add_core = F17
+add_core = F18
+culture = crathanori
+religion = regent_court
+
+
+base_tax = 2
+base_production = 3
+base_manpower = 3
+
+trade_goods = livestock
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+
+
+
+

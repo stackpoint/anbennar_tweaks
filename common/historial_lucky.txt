@@ -1,0 +1,44 @@
+# Order here is the priority for taking them, if trigger is true.
+
+A01 = { #Lorent
+	always = yes
+}
+
+A13 = { #Gawed
+	always = yes
+}
+
+A06 = { #Nimscodd
+	always = yes
+}
+
+A02 = { #Deranne
+	always = yes
+}
+
+F46 = { #Jaddari
+	always = yes
+}
+
+A29 = { #Busilar
+	always = yes
+}
+
+A11 = { #Pearlsedge
+	always = yes
+}
+
+R38 = { #Bhuvauri
+	always = yes
+}
+
+
+#9 onwards
+
+A47 = { #Eborthil
+	always = yes
+}
+
+F01 = { #Kheterata
+	always = yes
+}

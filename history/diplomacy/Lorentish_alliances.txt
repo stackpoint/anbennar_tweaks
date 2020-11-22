@@ -1,0 +1,71 @@
+# Lorent - Redglades vassal
+march = {
+	first = A01
+	second = A03
+	start_date = 1087.1.1
+	end_date = 1500.1.1
+}
+
+# Lorent - Sorncost vassal
+vassal = {
+	first = A01
+	second = A09
+	start_date = 1444.1.1
+	end_date = 1500.1.1
+}
+
+#Lorent - South Viswall vassal
+vassal = {
+	first = A01
+	second = A08
+	start_date = 1443.2.6
+	end_date = 1500.1.1
+}
+
+#Lorent - Appleton vassal
+vassal = {
+	first = A01
+	second = A64
+	start_date = 1443.2.6
+	end_date = 1500.1.1
+}
+
+#Rubenaire - Lasean union
+union = {
+	first = A18
+	second = A96
+	start_date = 1441.5.30
+	end_date = 1500.1.1
+}
+
+#Rubenaire - Lasean union
+union = {
+	first = A18
+	second = Z05
+	start_date = 1441.5.30
+	end_date = 1500.1.1
+}
+
+#Wesdam - Madelaire union
+union = {
+	first = A04
+	second = A14
+	start_date = 1441.5.30
+	end_date = 1500.1.1
+}
+
+#Lorent - Wex alliance
+alliance = {
+	first = A01
+	second = A30
+	start_date = 1422.1.1
+	end_date = 1500.1.1
+}
+
+#Rubenaire - Eilisin alliance
+alliance = {
+	first = A18
+	second = A15
+	start_date = 1422.1.1
+	end_date = 1500.1.1
+}

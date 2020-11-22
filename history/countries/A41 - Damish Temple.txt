@@ -1,0 +1,20 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = east_damerian
+religion = regent_court
+technology_group = tech_cannorian
+capital = 4
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+
+1404.1.1 = {
+	monarch = {
+		name = "Calas sína Arb"
+		birth_date = 1380.1.7
+		adm = 3
+		dip = 0
+		mil = 1
+	}
+}

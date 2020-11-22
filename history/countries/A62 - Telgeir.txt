@@ -1,0 +1,24 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = esmari
+religion = regent_court
+technology_group = tech_cannorian
+national_focus = MIL
+capital = 911 #Telgeir
+historical_friend = G97 #Vanbury Guild
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+1422.1.1 = { set_country_flag = lilac_wars_rose_party }
+
+1422.2.3 = {
+	monarch = {
+		name = "Artus II"
+		dynasty = "of Vanbury"
+		birth_date = 1402.6.2
+		adm = 4
+		dip = 4
+		mil = 3
+	}
+}

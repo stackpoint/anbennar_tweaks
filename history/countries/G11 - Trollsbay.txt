@@ -1,0 +1,7 @@
+government = republic
+technology_group = tech_cannorian
+primary_culture = pearlsedger
+religion = regent_court
+capital = 1028
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }

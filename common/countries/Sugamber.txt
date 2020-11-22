@@ -1,0 +1,109 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 70  90  190 }
+
+
+
+historical_idea_groups = {
+	quality_ideas
+	administrative_ideas
+	diplomatic_ideas
+	offensive_ideas
+	economic_ideas
+	defensive_ideas	
+	maritime_ideas
+	innovativeness_ideas
+}
+
+historical_units = {
+	western_medieval_infantry
+	chevauchee
+	western_men_at_arms
+	swiss_landsknechten
+	dutch_maurician
+	french_caracolle
+	anglofrench_line
+	french_dragoon
+	french_bluecoat
+	french_cuirassier
+	french_impulse
+	mixed_order_infantry
+	open_order_cavalry
+	napoleonic_square
+	napoleonic_lancers
+}
+
+monarch_names = {
+	"Ewald #2" = 100
+	"Ethelbert #2" = 80
+	"Baldwin #1" = 60
+	"Edgar #0" = 40
+	"Gerard #1" = 40
+	"Liselotte #0" = -1
+	"Marie #0" = -1
+	"Charlotte #0" = -1
+	"Rosemary #0" = -1
+	"Cristel #0" = -1
+	"Irma #0" = -1
+}
+
+leader_names = {
+	#Country Specific
+	"of Amber District" "of Sighston" "of Tusmark"
+	
+	#Province Neighbours
+	"of Rhinmond" "of Countsbridge" "of Escandar" "of Butchersfield" "of Stumpwood" "of Lockcastle" "of Rupellion" "of Hawkshot" 
+	
+	#Country Neighbours
+	"of Wex" "of Arannen" "of Busilar" "of Celliande"
+	
+	#Geographic Neighbours
+	"of the Diven" 
+	
+	#Noble Families
+	
+	
+	#Generic English names and occupational names
+	Smith Youngheart Adamson Henryson Donaldson Cook Baker Rider Lampman Fisher Fischer Tanner Miller Banks Taylor Cobble Jones Davies Williams Roberts White Black Grey Gray Green Red Blue Edwards Wood Woods Clarke Davis Nicholson
+	Priestley Campman Wright Parker Stewart Berry Porter Shepherd Freeman Potter Pitcher Alderman Arkwright Barber Baker Bailey Bender Bowyer Chapman Chandler Cheeseman Cook Cooper Cowell Crocker Cutler Earl Farmer 
+	
+	#Titles
+	"" "'the Blue'"
+	"'the Tall'" "'the Younger'" "'the Clever'" "'the Vigilant'" "'the Stern'" "'the Mighty'" "'Halfblood'" "'the Mudblooded'" "'the Kind'" "'the Able'" "'the Good'" "'the Fat'"
+}
+
+ship_names = {
+	#Generic Cannorian
+	Adamant Advantage Adventure Advice Answer Ardent Armada Arrogant Assistance Association Assurance Atlas Audacious 
+	Bear Beaver "Black Galley" "Black Pinnace" "Black Prince" "Black Blood" Captain Centurion Coronation Courage Crocodile Crown
+	Daisy Defence Defiance Devastation Diamond Director Dolphin Dragon Drake Dreadnaught Duke Duchess Eagle Elephant Excellent Exchange Expedition Experiment
+	Falcon Fame Favourite Fellowship Fleetwood Flight Flirt Formidable Forrester Fortitude Fortune Gillyflower Globe "Golden Horse" "Golden Lion" "Golden Phoenix" Goliath Goodgrace Governor
+	"Grand Mistress" "Great Bark" "Great Charity" "Great Galley" "Great Gift"  "Great Pinnace" "Great Zebra" "Green Dragon" Greyhound Griffin Guide "Half Moon" Hare Harpy Hawke Hazardous Heart
+	Hero Hope "Hope Bark" "Hopeful Adventure" Humble Hunter Illustrious Impregnable Increase Indefatigable Inflexible Intrepid Invincible "Less Bark" "Less Pinnace" "Less Zebra"
+	Lively Lizard Lion Magnanime Magnificent Majestic Makeshift Medusa Minotaur Moderate Monarch Moon Moor "New Bark" Ocean 
+	Pansy Panther Parrot Porcupine Powerful President Prince "Prince Consort" "Prince Royal"
+	Redoubtable Reformation Regent Renown Repulse Research Reserve Resistance Resolution Restoration Revenge 
+	Salamander Sandwich Sapphire Satisfaction Seahorse Search Sheerness Speaker Speedwell Sphinx Splendid Sprite Stag Standard Stately Success Sunlight Sunbeam Superb Swan Sweepstake Swift Swiftsure
+	Terrible Terror Thunderer Tiger Tremendous Trident Trinity Triumph Trusty
+	Unicorn Union Unity Valiant Vanguard Venerable Vestal Veteran Victor Vindictive Virtue Violet
+	Warrior Warspite "Young Prince" Zealous
+
+	Survey Surveillance Cow Ox Bird Hawk Sovereign Emperor Count Lord Baron
+
+	Knight Paladin Dragonslayer Cleric Rogue Fighter Ranger Sorcerer Wizard Warlock Monk Druid
+	Strength Dexterity Constitution Intelligence Wisdom Charisma
+	
+	#Regent Court Deities
+	Castellos Dame "The Dame" Halanna Ysh Yshtralania Agradls Adean Esmaryal Ryala Edronias Falah Nerat Ara Minara Munas Moonsinger Nathalyne Begga Corin Balgar
+	Uelos Drax'os
+}
+
+army_names = {
+	"Sugambrian Army" "Army of $PROVINCE$"
+}
+
+fleet_names = {
+	"Sugambrian Fleet" "Diven Squadron" "Amber Squadron"
+}

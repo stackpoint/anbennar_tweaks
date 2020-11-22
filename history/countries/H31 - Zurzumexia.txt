@@ -1,0 +1,9 @@
+government = republic
+add_government_reform = technocracy_republic_reform
+government_rank = 1
+primary_culture = bluescale_kobold
+religion = the_thought
+technology_group = tech_kobold
+capital = 177 #Oddansbay
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_state }

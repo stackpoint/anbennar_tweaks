@@ -1,0 +1,15 @@
+# No previous file for Santa Catalina
+owner = G33
+controller = G33
+add_core = G33
+culture = dolindhan
+religion = ynn_river_worship
+capital = ""
+
+hre = no
+
+base_tax = 4
+base_production = 4
+base_manpower = 3
+
+trade_goods = incense

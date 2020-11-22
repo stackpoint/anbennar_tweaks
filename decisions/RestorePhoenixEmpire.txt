@@ -1,0 +1,94 @@
+country_decisions = {
+
+	restore_phoenix_empire = {
+		major = yes
+		potential = {
+			OR = {
+				primary_culture = sun_elf
+				ruler_culture = sun_elf
+			}
+			religion_group = bulwari
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = restored_phoenix_empire_flag }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			NOT = { tag = F38 }
+			NOT = { exists = F38 }
+		}
+		provinces_to_highlight = {
+			OR = {
+				superregion = bulwar_superregion
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		allow = {
+			# bulwar_superregion = {
+				# type = all
+				# owned_by = ROOT
+			# }
+			is_at_war = no
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 100
+				superregion = bulwar_superregion
+			}
+		}
+		effect = {
+			change_tag = F38
+			swap_non_generic_missions = yes
+			every_subject_country = {
+				limit = { capital_scope = { superregion = bulwar_superregion } }
+				ROOT = { inherit = PREV }
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						is_part_of_hre = yes
+					}
+					set_in_empire = no
+				}
+			}
+			set_government_rank = 3
+			add_prestige = 50
+			#if = {
+			#	limit = {
+			#		is_part_of_hre = yes
+			#		is_elector = no
+			#	}
+			#	every_owned_province = {
+			#		limit = {
+			#			is_part_of_hre = yes
+			#		}
+			#		set_in_empire = no
+			#	}
+			#}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			bulwar_superregion = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = restored_phoenix_empire_flag
+			
+			set_country_flag = locked_racial_administration
+			custom_tooltip = locked_racial_administration_tt
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}

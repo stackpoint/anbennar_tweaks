@@ -1,0 +1,32 @@
+#520 - Akrad-til
+
+owner = F14
+controller = F14
+add_core = F14
+add_core = F16
+add_core = F18
+culture = ourdi
+religion = regent_court
+
+
+base_tax = 3
+base_production = 3
+base_manpower = 2
+
+trade_goods = wool
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+
+
+
+
+
+add_nationalism = 10

@@ -1,0 +1,23 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = crownsman
+religion = regent_court
+technology_group = tech_cannorian
+capital = 262 # Aranmas
+
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+1422.1.1 = { set_country_flag = lilac_wars_rose_party }
+
+1427.1.12 = {
+	monarch = {
+		name = "Andrel V"
+		dynasty = "síl Aranmas"
+		birth_date = 1390.2.8
+		adm = 1
+		dip = 3
+		mil = 1
+	}
+}

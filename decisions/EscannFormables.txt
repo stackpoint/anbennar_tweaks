@@ -1,0 +1,624 @@
+country_decisions = {
+
+	castellyr_nation = {
+		major = yes
+		potential = {
+			culture_group = escanni
+			capital_scope = {
+				superregion = escann_superregion
+			}
+			NOT = { exists = B31 } #Castellyr doesn't exist
+			# NOT = { exists = Z34 } #Black Castanor doesn't exist
+			# NOT = { exists = B32 } #Castanor doesn't exist
+			NOT = { tag = B56 } #Silvermere
+			NOT = { tag = B33 } #Blademarches
+			NOT = { tag = Z45 } #Vrorenmarch
+			NOT = { tag = B58 } #Adenica
+			
+			NOT = { has_country_flag = feudal_escann_kingdom }	#prevents countries like Blademarches from forming
+			NOT = { has_country_flag = orc_nation_formed }	#prevents orc formables from forming it
+
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_castellyr_flag }
+		}
+		allow = {
+			adm_tech = 7
+			government_rank = 1
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			#num_of_cities = 5
+			owns_core_province = 840	#North Citadel
+			num_of_owned_provinces_with = {
+				value = 10
+				region = inner_castanor_region
+			}
+		}
+		effect = {
+			set_country_flag = feudal_escann_kingdom
+			clr_country_flag = is_a_county
+			change_tag = B31
+			custom_tooltip = tooltip_castellyrian_culture_provinces
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_owner_culture = yes
+						owner = {
+							NOT = { culture_is_half_orcish = yes }
+						}
+					}
+					change_culture = castellyrian
+				}
+			}
+			change_primary_culture = castellyrian
+			remove_non_electors_emperors_from_empire_effect = yes
+			swap_non_generic_missions = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = {
+					has_reform = adventurer_reform
+				}
+				set_country_flag = adventurer_derived_government
+			}
+			
+			#Claims
+			castonath_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B31
+			}
+			trialmount_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B31
+			}
+			lower_nath_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B31
+			}
+			upper_nath_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B31
+			}
+			westgate_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B31
+			}
+			southgate_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B31
+			}
+			nortmere_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B31
+			}
+			
+			
+			add_prestige = 50
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = formed_castellyr_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	castanor_nation = {
+		major = yes
+		potential = {
+			OR = {
+				culture_group = escanni
+				culture_group = dostanorian
+			}
+			NOT = { has_country_flag = formed_castanor_flag }
+			NOT = { has_reform = adventurer_reform }
+			NOT = { exists = B32 } #Castanor doesn't exist
+			#NOT = { exists = Z34 } #Black Castanor doesn't exist
+			
+			NOT = { tag = Z34 }	#Black Castanor cannot into Castanor
+			NOT = { has_country_flag = orc_nation_formed }	#prevents orc formables from forming it
+			
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+			normal_or_historical_nations = yes
+		}
+		allow = {
+			#adm_tech = 10
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			#num_of_cities = 5
+			
+			#Requires provinces
+			owns_core_province = 840	#North Citadel
+			owns_core_province = 833	#North Castonath
+			owns_core_province = 831	#South Castonath
+			owns_core_province = 832	#West Castonath
+			owns_core_province = 754	#Westgate
+			owns_core_province = 827
+			
+			owns_core_province = 823	#Burnoll
+			owns_core_province = 229	#Balmire
+			
+			inner_castanor_region = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			change_tag = B32
+			custom_tooltip = tooltip_castanorian_culture_provinces
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_owner_culture = yes
+					}
+					change_culture = castanorian
+				}
+			}
+			change_primary_culture = castanorian
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			add_government_reform = castanor_trials_reform
+			840 = {	#To North Citadel
+				move_capital_effect = yes
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_owner_culture = yes
+						owner = {
+							NOT = { culture_is_half_orcish = yes }
+						}
+					}
+					change_culture = castanorian
+				}
+			}
+			
+			#Claims
+			inner_castanor_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = B32
+			}
+			west_castanor_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = B32
+			}
+			south_castanor_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = B32
+			}
+			
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			
+			add_prestige = 50
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = formed_castanor_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+
+	blademarches_nation = {
+		major = yes
+		potential = {
+			capital_scope = {
+				OR = {
+					region = west_castanor_region
+					region = south_castanor_region
+					region = inner_castanor_region
+				}
+			}
+			
+			NOT = { has_country_flag = feudal_escann_kingdom }
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { has_country_flag = formed_blademarches_flag }
+			NOT = { exists = B33 } #Blademarches doesn't exist
+			NOT = { tag = B56 } #Silvermere
+			NOT = { tag = B31 } #Castellyr
+			NOT = { tag = Z45 } #Vrorenmarch
+			NOT = { tag = B58 } #Adenica
+		}
+		allow = {
+			adm_tech = 7
+			government_rank = 1
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			NOT = { has_country_modifier = monstrous_nation }
+			
+			
+			#num_of_cities = 5
+			
+			#Ruler Prerequisites
+			OR = {
+				mil = 5 #Ruler has at least 5 mil
+				ruler_has_personality = just_personality
+				ruler_has_personality = righteous_personality
+				ruler_has_personality = bold_fighter_personality
+				ruler_has_personality = inspiring_leader_personality
+			}
+			NOT = { ruler_has_personality = craven_personality }
+			
+			#Province Prerequisites
+			num_of_owned_provinces_with = {
+				value = 5
+				OR = {
+					area = blademarch_area
+					area = clovenwood_area
+					area = banesfork_area
+					area = beastgrave_area
+					area = vernham_area
+					area = dostans_way_area
+					area = devaced_area
+				}
+			}
+		}
+		effect = {
+			if = {
+				limit = {
+					has_reform = adventurer_reform
+				}
+				adventurer_legacy_effect = yes
+			}
+			if = {
+				limit = {
+					has_country_modifier = human_administration
+				}
+				custom_tooltip = tooltip_marcher_culture_provinces
+				hidden_effect = { 
+					every_owned_province = {
+						limit = {
+							has_owner_culture = yes
+						}
+						change_culture = marcher
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_country_modifier = human_administration
+				}
+				change_primary_culture = marcher
+			}
+			
+			
+			set_country_flag = feudal_escann_kingdom
+			change_tag = B33
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					has_reform = adventurer_reform
+				}
+				country_event = { id = flavor_blademarches.1 days = 1 }
+				set_country_flag = adventurer_derived_government
+			}
+			if = {
+				limit = { NOT = { government = monarchy } }
+				change_government = monarchy
+			}
+			add_government_reform = blademarches_kingdom_reform
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			
+			#Claims
+			blademarch_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B33
+			}
+			clovenwood_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B33
+			}
+			banesfork_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B33
+			}
+			beastgrave_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B33
+			}
+			vernham_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B33
+			}
+			dostans_way_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B33
+			}
+			
+			
+			add_prestige = 25
+			set_country_flag = formed_blademarches_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			country_event = { id = flavor_blademarches.2 days = 5 }
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {	#Orcish Formables won't form Blademarches
+				OR = {
+					tag = Z50
+					tag = Z51
+					tag = Z52
+					tag = Z53
+				}
+				factor = 0
+			}
+		}
+		ai_importance = 400
+	}
+	
+	adenica_nation = {
+		major = yes
+		potential = {
+			culture_group = escanni
+			religion = regent_court
+			NOT = { has_country_flag = formed_adenica_flag }
+			NOT = { exists = B58 } #Adenica doesn't exist
+			NOT = { tag = B56 } #Silvermere
+			NOT = { tag = B31 } #Castellyr
+			NOT = { tag = B33 } #Blademarches
+			NOT = { tag = Z45 } #Vrorenmarch
+			
+			NOT = { has_country_flag = feudal_escann_kingdom }	#prevents countries like Blademarches from forming
+			NOT = { has_country_flag = orc_nation_formed }	#prevents orc formables from forming it
+
+			OR = {
+				ai = no
+				is_playing_custom_nation = no
+			}
+			OR = {
+				ai = no
+				AND = {
+					ai = yes
+					num_of_cities = 3
+				}
+			}
+			is_colonial_nation = no
+			OR = {
+				is_former_colonial_nation = no
+				AND = {
+					is_former_colonial_nation = yes
+					ai = no
+				}
+			}
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+		}
+		allow = {
+			adm_tech = 7
+			government_rank = 1
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			#num_of_cities = 5
+			owns_core_province = 774	#Taranton
+			num_of_owned_provinces_with = {
+				value = 10
+				region = west_castanor_region
+			}
+		}
+		effect = {
+			set_country_flag = feudal_escann_kingdom
+			change_tag = B58
+			custom_tooltip = tooltip_adenner_culture_provinces
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_owner_culture = yes
+						owner = {
+							NOT = { culture_is_half_orcish = yes }
+						}
+					}
+					change_culture = adenner
+				}
+			}
+			change_primary_culture = adenner
+			remove_non_electors_emperors_from_empire_effect = yes
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			if = {
+				limit = {
+					has_reform = adventurer_reform
+				}
+				set_country_flag = adventurer_derived_government
+			}
+			
+			#Claims
+			rohibon_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B58
+			}
+			adenica_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B58
+			}
+			taran_plains_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B58
+			}
+			balmire_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B58
+			}
+			falsemire_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B58
+			}
+			verteben_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B58
+			}
+			valefort_area = {
+				limit = {
+					NOT = { owned_by = ROOT }
+				}
+				add_claim = B58
+			}
+			
+			
+			add_prestige = 50
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			set_country_flag = formed_adenica_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+}

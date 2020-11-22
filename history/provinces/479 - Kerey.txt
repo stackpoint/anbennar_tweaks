@@ -1,0 +1,29 @@
+#479 - Kerey
+
+owner = F09
+controller = F09
+add_core = F09
+add_core = F01
+culture = kheteratan
+religion = khetist
+
+hre = no
+
+base_tax = 8
+base_production = 8
+base_manpower = 8
+
+trade_goods = gold
+center_of_trade = 1
+
+capital = ""
+
+is_city = yes
+fort_15th = yes 
+
+
+
+
+
+
+

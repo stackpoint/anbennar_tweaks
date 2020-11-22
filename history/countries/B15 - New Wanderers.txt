@@ -1,0 +1,9 @@
+government = theocracy
+add_government_reform = adventurer_reform
+government_rank = 1
+primary_culture = kheteratan
+religion = khetist
+technology_group = tech_salahadesi
+capital = 769
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }

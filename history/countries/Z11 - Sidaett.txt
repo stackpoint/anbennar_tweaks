@@ -1,0 +1,50 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = east_dalr
+religion = skaldhyrric_faith
+technology_group = tech_cannorian
+capital = 967
+
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_religious }
+1410.2.4 = {
+	monarch = {
+		name = "Iver III"
+		dynasty = "Sidaett"
+		birth_date = 1389.3.7
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+	add_ruler_personality = industrious_personality
+	add_ruler_personality = obsessive_perfectionist_personality
+	add_ruler_personality = kind_hearted_personality
+	queen = {
+		country_of_origin = Z11
+		name = "Svanhild"
+		dynasty = "Ravman"
+		birth_date = 1388.1.12
+		death_date = 1453.7.3
+		female = yes
+		adm = 3
+		dip = 3
+		mil = 1
+	}
+	add_queen_personality = calm_personality
+}
+
+1425.1.15 = {
+	heir = {
+		name = "Rolf"
+		monarch_name = "Rolf I"
+		dynasty = "Sidaett"
+		birth_date = 1425.1.15
+		death_date = 1483.8.20
+		claim = 95
+		adm = 2
+		dip = 1
+		mil = 6
+	}
+	add_heir_personality = strict_personality
+}

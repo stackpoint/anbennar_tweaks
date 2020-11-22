@@ -1,0 +1,25 @@
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+primary_culture = cliff_gnome
+religion = the_thought
+technology_group = tech_gnomish
+capital = 169 #Nimscodd
+
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_state }
+1000.1.1 = { set_estate_privilege = estate_artificers_organization_independent_unions }
+
+1401.6.11 = {
+	monarch = {
+		name = "Mordibam"
+		dynasty = "Quintain"
+		birth_date = 1204.5.3
+		adm = 4
+		dip = 5
+		mil = 6
+	}
+	add_ruler_personality = immortal_personality
+	add_ruler_personality = tactical_genius_personality
+	set_ruler_flag = set_immortality
+}

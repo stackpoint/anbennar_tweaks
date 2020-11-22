@@ -1,0 +1,22 @@
+government = theocracy
+add_government_reform = secular_order_reform
+government_rank = 1
+primary_culture = aldresian
+religion = regent_court
+technology_group = tech_cannorian
+capital = 423
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+1400.1.1 = {
+	monarch = {
+		name = "Delian"
+		dynasty = "síl Arannen"
+		birth_date = 1378.3.11
+		adm = 3
+		dip = 1
+		mil = 1
+	}
+}
+
+1422.1.1 = { set_country_flag = lilac_wars_moon_party }

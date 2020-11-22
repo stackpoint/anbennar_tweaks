@@ -1,0 +1,25 @@
+government = republic
+add_government_reform = merchants_reform
+government_rank = 1
+mercantilism = 25
+primary_culture = creek_gnome
+religion = regent_court
+technology_group = tech_gnomish
+
+capital = 126
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+1000.1.1 = { set_estate_privilege = estate_artificers_organization_independent_unions }
+
+1432.2.19 = {
+	monarch = {
+		name = "Pordolt Somberwazey"
+		birth_date = 1232.12.3
+		adm = 2
+		dip = 3
+		mil = 4
+	}
+	add_ruler_personality = immortal_personality
+	add_ruler_personality = embezzler_personality
+	set_ruler_flag = set_immortality
+}

@@ -1,0 +1,23 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = uelairey
+religion = regent_court
+technology_group = tech_cannorian
+
+capital = 207
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+1406.2.6 = {
+	monarch = {
+		name = "Castén III"
+		dynasty = "síl Uelaire"
+		birth_date = 1401.3.11
+		adm = 2
+		dip = 4
+		mil = 6
+	}
+}
+
+1422.1.1 = { set_country_flag = lilac_wars_rose_party }

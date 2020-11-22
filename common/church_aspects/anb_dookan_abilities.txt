@@ -1,0 +1,239 @@
+find_reincarnated_warrior_aspect = {
+	sprite = "GFX_dissolve_monasteries_icon"
+	cost = 50
+	
+	effect = {
+		create_general = { tradition = 40 }
+	}
+	
+	ai_will_do = {
+		factor = 8
+		modifier = {
+			factor = 0
+			num_of_generals = 2
+		}
+	}
+}
+
+gather_great_host_aspect = {
+	sprite = "GFX_dissolve_monasteries_icon"
+	cost = 200
+	
+	trigger = {
+		NOT = { manpower_percentage = 1 }
+	}
+	
+	effect = {
+		country_event = { id = great_dookan_events.3 }
+	}
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			OR = {
+				AND = {
+					manpower_percentage = 0.1
+					army_size_percentage = 0.1
+				}
+				NOT = { is_at_war = yes }
+			}
+		}
+	}
+}
+
+glorious_looting_aspect = {
+	sprite = "GFX_dissolve_monasteries_icon"
+	cost = 150
+	
+	trigger = {
+		is_at_war = yes
+		any_province = {
+			controlled_by = ROOT
+			NOT = { owned_by = ROOT }
+		}
+	}
+	
+	effect = {
+		country_event = { id = great_dookan_events.4 }
+	}
+	
+	ai_will_do = {
+		factor = 5
+	}
+}
+
+purge_the_weak_aspect = {
+	sprite = "GFX_dissolve_monasteries_icon"
+	cost = 100
+	
+	trigger = {
+		is_at_war = no
+		any_owned_province = {
+			OR = {
+				has_owner_religion = no
+				has_owner_religion = no
+			}
+		}
+	}
+	
+	effect = {
+		country_event = { id = great_dookan_events.2 }
+	}
+	
+	ai_will_do = {
+		factor = 3
+		modifier = {
+			factor = 0
+			is_at_war = yes
+		}
+	}
+}
+
+invoke_warrior_heritage_aspect = {
+	sprite = "GFX_dissolve_monasteries_icon"
+	cost = 100
+
+	effect = {
+		country_event = { id = great_dookan_events.1 }
+	}
+	
+		
+	ai_will_do = {
+		factor = 1000
+		modifier = {
+			factor = 0
+			NOT = {
+				any_province = {
+					unit_in_battle = yes
+					num_of_units_in_province = {
+						amount = 6
+					}
+					num_of_units_in_province = {
+						who = ROOT
+						amount = 3
+					}
+				}
+			}
+		}
+	}
+}
+
+assemble_shamans_aspect = {
+	sprite = "GFX_dissolve_monasteries_icon"
+	cost = 200
+
+	effect = {
+		increase_legitimacy_medium_effect = yes
+		add_absolutism = 2
+	}
+	
+		
+	ai_will_do = {
+		factor = 1000
+		modifier = {
+			factor = 0
+			legitimacy = 90
+		}
+	}
+}
+
+anoint_slave_herd = {
+	sprite = "GFX_dissolve_monasteries_icon"
+	cost = 100
+	
+	trigger = {
+		any_owned_province = {
+			trade_goods = slaves
+		}
+	}
+
+	effect = {
+		country_event = { id = great_dookan_events.5 }
+	}
+	
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 0
+			is_at_war = yes
+		}
+	}
+}
+
+look_for_omens = {
+	sprite = "GFX_dissolve_monasteries_icon"
+	cost = 50
+	
+	trigger = {
+		NOT = { has_country_modifier = dookan_omen_of_strength }
+		NOT = { has_country_modifier = dookan_omen_of_peace }
+		NOT = { has_country_modifier = dookan_omen_of_wisdom_adm }
+		NOT = { has_country_modifier = dookan_omen_of_wisdom_dip }
+		NOT = { has_country_modifier = dookan_omen_of_wisdom_mil }
+		NOT = { has_country_modifier = dookan_omen_of_destiny }
+		NOT = { has_country_modifier = dookan_no_omen }
+		NOT = { has_country_flag = dookan_is_angry_flag }
+		NOT = { has_country_modifier = dookans_mercy }
+	}
+
+	effect = {
+		custom_tooltip = dookan_look_for_omens_tooltip
+		hidden_effect = { 
+			random_list = {
+				20 = { country_event = { id = great_dookan_events.6 } }
+				20 = { country_event = { id = great_dookan_events.7 } }
+				20 = { country_event = { id = great_dookan_events.8 } }
+				20 = { country_event = { id = great_dookan_events.9 } }
+				20 = { country_event = { id = great_dookan_events.10 } }
+			}
+		}
+	}
+	
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			is_at_war = yes
+		}
+	}
+}
+
+shake_the_earth = {
+	sprite = "GFX_dissolve_monasteries_icon"
+	cost = 100
+
+	effect = {
+		country_event = { id = great_dookan_events.11 }
+	}
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 100
+			any_army = {
+				unit_in_siege = yes
+			}
+		}
+	}
+}
+
+ask_for_dookan_guidance = {
+	sprite = "GFX_dissolve_monasteries_icon"
+	cost = 200
+
+	effect = {
+		country_event = { id = great_dookan_events.12 }
+	}
+	
+	
+	ai_will_do = {
+		factor = 100
+		modifier = {
+			factor = 0
+			is_at_war = yes
+		}
+	}
+}

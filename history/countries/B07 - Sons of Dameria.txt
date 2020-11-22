@@ -1,0 +1,20 @@
+government = theocracy
+add_government_reform = adventurer_reform
+government_rank = 1
+primary_culture = east_damerian
+religion = regent_court
+technology_group = tech_cannorian
+capital = 765
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1443.11.4 = {
+	monarch = {
+		name = "Rogier"
+		dynasty = "Silmuna"
+		birth_date = 1406.1.1
+		adm = 3
+		dip = 1
+		mil = 5
+	}
+}

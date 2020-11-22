@@ -1,0 +1,23 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = esmari
+religion = regent_court
+technology_group = tech_cannorian
+
+capital = 301
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+1422.1.1 = { set_country_flag = lilac_wars_rose_party }
+
+1443.2.1 = {
+	monarch = {
+		name = "Petran V"
+		dynasty = "síl Terr"
+		birth_date = 1442.8.19
+		adm = 2
+		dip = 3
+		mil = 0
+	}
+}

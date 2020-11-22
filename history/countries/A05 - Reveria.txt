@@ -1,0 +1,23 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = reverian
+religion = regent_court
+technology_group = tech_cannorian
+capital = 138
+
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1397.6.11 = {
+	monarch = {
+		name = "Lothane III"
+		dynasty = "síl Rever"
+		birth_date = 1390.1.1
+		adm = 4
+		dip = 2
+		mil = 2
+	}
+}
+
+1422.1.1 = { set_country_flag = lilac_wars_rose_party }

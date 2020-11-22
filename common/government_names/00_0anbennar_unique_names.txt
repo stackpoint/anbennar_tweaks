@@ -1,0 +1,1068 @@
+# For specific combinations of culture, religion and other such triggers
+# Will pick the first valid one it finds in list
+
+#Heir and consort titles are generally kept simple for clarity unless there is something special in particular that can be used.
+
+rainforest_king = {
+	rank = {
+		1 = CHIEFDOM
+		2 = TRIBAL_KINGDOM
+		3 = TRIBAL_EMPIRE
+	}
+	
+	ruler_male = {
+		1 = KING
+		2 = HARI
+		3 = GREAT_HARI
+	}
+	
+	ruler_female = {
+		1 = QUEEN
+		2 = HARIN
+		3 = GREAT_HARIN
+	}
+	
+	consort_male  = {
+		1 = PRINCE_CONSORT
+		2 = PRINCE_CONSORT
+		3 = PRINCE_CONSORT
+	}
+
+	consort_female = {
+		1 = CONSORT
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR_fem
+		2 = HEIR_fem
+		3 = HEIR_fem
+	}
+
+	trigger = {
+		has_reform = tribal_kingdom
+		culture_group = yanglam
+	}
+}
+
+acromton_monarchy = {
+	rank = {
+		1 = DUCHY
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = DUKE_CROSSGUARD
+		2 = KING_CROSSGUARD
+		3 = EMPEROR_CROSSGUARD
+	}
+	
+	ruler_female = {
+		1 = DUCHESS_CROSSGUARD
+		2 = QUEEN_CROSSGUARD
+		3 = EMPRESS_CROSSGUARD
+	}
+
+	trigger = {
+		government = monarchy
+		OR = {
+			tag = Z40			#you're Acromton
+			AND = {
+				tag = A18		#you're Rubenaire with cores on Acromton (1444 start)
+				276 = {
+					is_core = A18
+				}
+				330 = {
+					is_core = A18
+				}
+				# A18 = {
+					# is_core = 276
+					# is_core = 330
+				# }
+			}
+			has_country_flag = rubenaire_the_crossguard
+		}
+	}
+}
+
+rezankand = {
+	rank = {
+		1 = SANCTIFIED_STATE
+		2 = ENLIGHTENED_KINGDOM
+		3 = ENLIGHTENED_EMPIRE
+	}
+	
+	ruler_male = {
+		1 = SANCTIFIED_KING
+		2 = SANCTIFIED_KING
+		3 = SANCTIFIED_EMPEROR
+	}
+	
+	ruler_female = {
+		1 = SANCTIFIED_QUEEN
+		2 = SANCTIFIED_QUEEN
+		3 = SANCTIFIED_EMPRESS
+	}
+	
+	heir_male = {
+		1 = HOLY_CHOSEN
+		2 = HOLY_CHOSEN
+		3 = HOLY_CHOSEN
+	}
+
+	heir_female = {
+		1 = HOLY_CHOSEN
+		2 = HOLY_CHOSEN
+		3 = HOLY_CHOSEN
+	}
+
+	trigger = {
+		has_reform = rezankand_reform
+	}
+}
+
+desert_legion = {
+	rank = {
+		1 = CHIEFDOM
+		2 = TRIBAL_KINGDOM
+		3 = TRIBAL_EMPIRE
+	}
+	
+	ruler_male = {
+		1 = COMMANDER
+		2 = HERALD
+		3 = DIVINE_HERALD
+	}
+	
+	ruler_female = {
+		1 = COMMANDER
+		2 = HERALD
+		3 = DIVINE_HERALD
+	}
+	
+	consort_male  = {
+		1 = PRINCE_CONSORT
+		2 = PRINCE_CONSORT
+		3 = PRINCE_CONSORT
+	}
+
+	consort_female = {
+		1 = CONSORT
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	government_reform = tribe_mechanic
+
+	trigger = {
+		has_reform = desert_legion
+	}
+}
+
+
+jadd_empire = {
+	rank = {
+		1 = KINGDOM
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = COMMANDER
+		2 = HERALD
+		3 = DIVINE_HERALD
+	}
+	
+	ruler_female = {
+		1 = COMMANDER
+		2 = HERALD
+		3 = DIVINE_HERALD
+	}
+	
+	consort_male  = {
+		1 = PRINCE_CONSORT
+		2 = KING_CONSORT
+		3 = EMPEROR_CONSORT
+	}
+
+	consort_female = {
+		1 = CONSORT
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	government_reform = tribe_mechanic
+
+	trigger = {
+		has_reform = jadd_empire
+	}
+}
+
+black_demense_magocracy = {
+	rank = {
+		1 = BLACK_DEMENSE
+		2 = BLACK_DEMENSE
+		3 = BLACK_DEMENSE
+	}
+
+	ruler_male = {
+		1 = DARK_LORD
+		2 = DARK_LORD
+		3 = DARK_LORD
+	}
+
+	ruler_female = {
+		1 = DARK_LADY
+		2 = DARK_LADY
+		3 = DARK_LADY
+	}
+
+	trigger = {
+		tag = Z99
+		government = theocracy
+	}
+}
+
+grombar_monarchy = {
+	rank = {
+		1 = GRAY_DUCHY
+		2 = GRAY_KINGDOM
+		3 = GRAY_EMPIRE
+	}
+	
+	ruler_male = {
+		1 = GRAY_DUKE
+		2 = GRAY_KING
+		3 = GRAY_EMPEROR
+	}
+	ruler_female = {
+		1 = GRAY_DUCHESS
+		2 = GRAY_QUEEN
+		3 = GRAY_EMPRESS
+	}
+	consort_male = {
+		1 = GRAY_DUKE
+		2 = GRAY_KING
+		3 = GRAY_EMPEROR
+	}
+	consort_female = {
+		1 = GRAY_DUCHESS
+		2 = GRAY_QUEEN
+		3 = GRAY_EMPRESS
+	}
+	heir_male = {
+		1 = GRAY_LORD
+		2 = GRAY_PRINCE
+		3 = GRAY_PRINCE
+	}
+	heir_female = {
+		1 = GRAY_LADY
+		2 = GRAY_PRINCESS
+		3 = GRAY_PRINCESS
+	}
+	
+	trigger = {
+		tag = Z50
+		government = monarchy
+	}
+}
+
+counts_league = {
+	rank = {
+		1 = LEAGUE
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = COUNT
+		2 = KING
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = COUNTESS
+		2 = QUEEN
+		3 = EMPRESS
+	}
+	consort_male  = {
+		1 = CONSORT
+		2 = KING_CONSORT
+		3 = EMPEROR_CONSORT
+	}
+	
+	consort_female = {
+		1 = CONSORT
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	heir_female = {
+		1 = HEIR
+		2 = PRINCESS	
+		3 = PRINCESS
+	}
+	
+	trigger = {
+		tag = B55
+	}
+}
+
+adventurer_iron_sceptre = {
+	rank = {
+		1 = ADVENTURER
+	}
+	
+	ruler_male = {
+		1 = MAGISTER
+	}
+
+	ruler_female = {
+		1 = MAGISTRIX
+	}
+	consort_male  = {
+		1 = CONSORT
+	}
+	
+	consort_female = {
+		1 = CONSORT
+	}
+	
+	heir_male = {
+		1 = MAGISTER
+	}
+	
+	heir_female = {
+		1 = MAGISTRIX
+	}
+	
+	trigger = {
+		tag = B20
+		has_reform = adventurer_reform
+	}
+}
+
+adventurer_sword_covenant = {
+	rank = {
+		1 = ADVENTURER
+	}
+	
+	ruler_male = {
+		1 = KNIGHT_CAPTAIN
+	}
+
+	ruler_female = {
+		1 = KNIGHT_CAPTAIN
+	}
+	consort_male  = {
+		1 = CONSORT
+	}
+	
+	consort_female = {
+		1 = CONSORT
+	}
+	
+	heir_male = {
+		1 = SER
+	}
+	
+	heir_female = {
+		1 = LADY
+	}
+	
+	trigger = {
+		tag = B19
+		has_reform = adventurer_reform
+	}
+}
+
+smallcountry_free_republic = {
+	rank = {
+		1 = REPUBLIC
+		2 = GRAND_REPUBLIC
+		3 = GREAT_REPUBLIC
+	}
+
+	ruler_male = {
+		1 = FREEMAN
+		2 = FREEMAN
+		3 = FREEMAN
+	}
+	
+	ruler_female = {
+		1 = FREEWOMAN
+		2 = FREEWOMAN
+		3 = FREEWOMAN
+	}
+
+	trigger = {
+		tag = A97
+		government = republic
+		#is_vassal = no
+	}
+}
+
+tellum_republic = {
+	rank = {
+		1 = REPUBLIC
+		2 = GRAND_REPUBLIC
+		3 = GREAT_REPUBLIC
+	}
+
+	ruler_male = {
+		1 = LORD_CRIER
+		2 = LORD_CRIER
+		3 = LORD_CRIER
+	}
+	
+	ruler_female = {
+		1 = LADY_CRIER
+		2 = LADY_CRIER
+		3 = LADY_CRIER
+	}
+
+	heir_male = {
+		1 = YELLER_APPARENT
+		2 = YELLER_APPARENT
+		3 = YELLER_APPARENT
+	}
+
+	heir_female = {
+		1 = YELLER_APPARENT
+		2 = YELLER_APPARENT
+		3 = YELLER_APPARENT
+	}
+	trigger = {
+		tag = A86 #Tellum
+		government = republic
+	}
+}
+
+gnollish_viakkoc = {
+	rank = {
+		1 = PACK
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = PACK_LORD
+		2 = CORSAIR_KING
+		3 = SEA_SCOURGE
+	}
+
+	ruler_female = {
+		1 = PACK_MISTRESS
+		2 = CORSAIR_QUEEN
+		3 = SEA_SCOURGE
+	}
+	consort_male  = {
+		1 = CONSORT
+		2 = KING_CONSORT
+		3 = EMPEROR_CONSORT
+	}
+	
+	consort_female = {
+		1 = CONSORT
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	heir_female = {
+		1 = HEIR
+		2 = PRINCESS	
+		3 = PRINCESS
+	}
+	
+	trigger = {
+		culture_group = gnollish
+		tag = F07
+	}
+}
+
+gerudian_monarchy = {
+	rank = {
+		1 = JARLDOM
+		2 = KONUNGDOMR
+		3 = KONUNGRIK
+	}
+	
+	ruler_male = {
+		1 = JARL
+		2 = KONUNGR
+		3 = OZTRKONUNGR
+	}
+	ruler_female = {
+		1 = JARL
+		2 = DROTTNING
+		3 = OZTRDROTTNING
+	}
+	consort_male = {
+		1 = TELJARL
+		2 = KONUNGR
+		3 = OZTRKONUNGR
+	}
+	consort_female = {
+		1 = GREVINNA
+		2 = DROTTNING
+		3 = OZTRDROTTNING
+	}
+	heir_male = {
+		1 = JARLSSON
+		2 = KONUNGSSON
+		3 = OZTRKONUNGSSON
+	}
+	heir_female = {
+		1 = JARLSDOTTIR
+		2 = KONUNGSDOTTIR
+		3 = OZTRKONUNGSDOTTIR
+	}
+	
+	trigger = {
+		culture_group = gerudian
+		government = monarchy
+	}
+}
+skaldskola_theocracy = {
+	rank = {
+		1 = TEMPLE
+		2 = GREAT_TEMPLE
+		3 = HOLY_EMPIRE
+	}
+
+	ruler_male = {
+		1 = MASTER_SKALD_PRIEST
+		2 = MASTER_SKALD_PRIEST
+		3 = MASTER_SKALD_PRIEST
+	}
+
+	ruler_female = {
+		1 = MASTER_SKALD_PRIESTESS
+		2 = MASTER_SKALD_PRIESTESS
+		3 = MASTER_SKALD_PRIESTESS
+	}
+
+	trigger = {
+		government = theocracy
+		religion = skaldhyrric_faith
+		tag = Z09
+	}
+}
+
+cannorian_minaran_theocracy = {
+	rank = {
+		1 = TEMPLE
+		2 = GREAT_TEMPLE
+		3 = HOLY_EMPIRE
+	}
+
+	ruler_male = {
+		1 = EXALTED_COMPANION
+		2 = EXALTED_COMPANION
+		3 = EXALTED_COMPANION
+	}
+
+	ruler_female = {
+		1 = EXALTED_COMPANION
+		2 = EXALTED_COMPANION
+		3 = EXALTED_COMPANION
+	}
+
+	trigger = {
+		government = theocracy
+		tag = A10
+	}
+}
+
+cannorian_dame_theocracy = {
+	rank = {
+		1 = TEMPLE
+		2 = GREAT_TEMPLE
+		3 = HOLY_EMPIRE
+	}
+
+	ruler_male = {
+		1 = LUMINARY
+		2 = HIGH_LUMINARY
+		3 = LUMINARY
+	}
+
+	ruler_female = {
+		1 = LUMINARY
+		2 = HIGH_LUMINARY
+		3 = HIGH_LUMINARY
+	}
+
+	trigger = {
+		government = theocracy
+		tag = A41
+	}
+}
+
+eordand_magocracy = {
+	rank = {
+		1 = DRATHEAS
+		2 = DRATHEAS
+		3 = DRATHEAS
+	}
+	
+	ruler_male = {
+		1 = ARD_DRADH
+		2 = ARD_DRADH
+		3 = ARD_DRADH
+	}
+	
+	ruler_female = {
+		1 = ARD_BANNDRADH
+		2 = ARD_BANNDRADH
+		3 = ARD_BANNDRADH
+	}
+	
+	heir_male = {
+		1 = PRANT
+		2 = PRANT
+		3 = PRANT
+	}
+	
+	heir_female = {
+		1 = PRANT
+		2 = PRANT
+		3 = PRANT
+	}
+	
+	trigger = {
+		government = theocracy
+		has_reform = magocracy_reform
+		culture_group = eordellon_ruinborn_elf
+	}
+}
+
+nathalaire_shadow = {
+	rank = {
+		1 = SHADOW_COUNCIL
+		2 = SHADOW_COUNCIL
+		3 = SHADOW_COUNCIL
+	}
+	
+	ruler_male = {
+		1 = SHADOW_MALE
+		2 = SHADOW_MALE
+		3 = SHADOW_MALE
+	}
+	
+	ruler_female = {
+		1 = SHADOW_FEMALE
+		2 = SHADOW_FEMALE
+		3 = SHADOW_FEMALE
+	}
+	
+	heir_male = {
+		1 = SHADOW_HEIR
+		2 = SHADOW_HEIR
+		3 = SHADOW_HEIR
+	}
+	
+	heir_female = {
+		1 = SHADOW_HEIRESS
+		2 = SHADOW_HEIRESS
+		3 = SHADOW_HEIRESS
+	}
+	
+	trigger = {
+		tag = A74
+		government = republic
+	}
+}
+
+aelnar_crystal_queen = {
+	rank = {
+		1 = CRYSTAL_EMPIRE
+		2 = CRYSTAL_KINGDOM
+		3 = CRYSTAL_EMPIRE
+	}
+	
+	ruler_female = {
+		1 = CRYSTAL_QUEEN
+		2 = CRYSTAL_QUEEN
+		3 = CRYSTAL_EMPRESS
+	}
+	
+	trigger = {
+		tag = Z43
+		has_ruler_modifier = aelnar_the_crystal_queen
+		government = monarchy
+	}
+}
+
+obsidian_council = {
+	rank = {
+		1 = OBSIDIAN_COUNCIL
+		2 = OBSIDIAN_COUNCIL
+		3 = OBSIDIAN_COUNCIL
+	}
+	
+	ruler_male = {
+		1 = OBSIDIAN_MALE
+		2 = OBSIDIAN_MALE
+		3 = OBSIDIAN_MALE
+	}
+	
+	ruler_female = {
+		1 = OBSIDIAN_FEMALE
+		2 = OBSIDIAN_FEMALE
+		3 = OBSIDIAN_FEMALE
+	}
+	
+	trigger = {
+		has_reform = obsidian_council_reform
+	}
+}
+
+obsidian_invasion = {
+	rank = {
+		1 = OBSIDIAN_INVASION
+		2 = OBSIDIAN_INVASION
+		3 = OBSIDIAN_INVASION
+	}
+	
+	ruler_male = {
+		1 = OBSIDIAN_INVASION_MALE
+		2 = OBSIDIAN_INVASION_MALE
+		3 = OBSIDIAN_INVASION_MALE
+	}
+	
+	ruler_female = {
+		1 = OBSIDIAN_INVASION_FEMALE
+		2 = OBSIDIAN_INVASION_FEMALE
+		3 = OBSIDIAN_INVASION_FEMALE
+	}
+	
+	trigger = {
+		tag = H94
+		has_reform = invasion_forces
+	}
+}
+
+hobgoblin_command = {
+	rank = {
+		1 = COMMAND
+		2 = COMMAND
+		3 = GREAT_COMMAND
+	}
+	
+	ruler_male = {
+		1 = COMMANDER
+		2 = MARSHAL
+		3 = GRAND_MARSHAL
+	}
+	
+	ruler_female = {
+		1 = COMMANDER
+		2 = MARSHAL
+		3 = GRAND_MARSHAL
+	}
+	
+	trigger = {
+		has_reform = hobgoblin_stratocracy_reform
+	}
+}
+
+sarisungi_gangs = {
+	rank = {
+		1 = CRIMINAL_GANG
+		2 = CRIMINAL_ORGANISATION
+		3 = CRIMINAL_EMPIRE
+	}
+	
+	ruler_male = {
+		1 = GANG_LEADER
+		2 = GREY_EMINENCE
+		3 = GREY_EMINENCE
+	}
+	
+	ruler_female = {
+		1 = GANG_LEADER
+		2 = GREY_EMINENCE
+		3 = GREY_EMINENCE
+	}
+	
+	trigger = {
+		has_reform = gang_control_reform
+	}
+}
+
+mengotsa = {
+	rank = {
+		1 = MENGOTSA
+		2 = MENGOTSA
+		3 = MENGOTSA
+	}
+	
+	ruler_male = {
+		1 = MENGURKHA
+		2 = MENGURKHA
+		3 = MENGURKHA
+	}
+	
+	ruler_female = {
+		1 = MENGARKHA
+		2 = MENGARKHA
+		3 = MENGARKHA
+	}
+	
+	trigger = {
+		has_reform = mengotsa
+	}
+}
+
+ogre_horde = {
+	rank = {
+		1 = GREAT_CLAN
+		2 = GREAT_CLAN
+		3 = GREAT_CLAN
+	}
+	
+	ruler_male = {
+		1 = BAOZH
+		2 = BAOZH
+		3 = BAOZH
+	}
+	
+	ruler_female = {
+		1 = BAOZHA
+		2 = BAOZHA
+		3 = BAOZHA
+	}
+	
+	trigger = {
+		has_reform = ogre_horde
+	}
+}
+
+great_ogre_horde = {
+	rank = {
+		1 = DEVOURING_HORDE
+		2 = DEVOURING_HORDE
+		3 = DEVOURING_HORDE
+	}
+	
+	ruler_male = {
+		1 = BIIGH_BAOZH
+		2 = BIIGH_BAOZH
+		3 = BIIGH_BAOZH
+	}
+	
+	ruler_female = {
+		1 = BIIGH_BAOZHA
+		2 = BIIGH_BAOZHA
+		3 = BIIGH_BAOZHA
+	}
+	
+	trigger = {
+		has_reform = great_ogre_horde
+	}
+}
+
+ogre_kingdom = {
+	rank = {
+		1 = GREAT_CLAN
+		2 = KINGDOM
+		3 = MENGOTSA
+	}
+	
+	ruler_male = {
+		1 = OJKAGMA
+		2 = MENGURM
+		3 = MENGURKHA
+	}
+	
+	ruler_female = {
+		1 = OJKODIRD
+		2 = MENGURMA
+		3 = MENGARKHA
+	}
+	
+	trigger = {
+		has_reform = ogre_kingdom
+	}
+}
+
+ogre_empire = {
+	rank = {
+		1 = GHALRDONTSA
+		2 = GHALRDONTSA
+		3 = GHALRDONTSA
+	}
+	
+	ruler_male = {
+		1 = GHALRDON
+		2 = GHALRDON
+		3 = GHALRDON
+	}
+	
+	ruler_female = {
+		1 = GHALRDAL
+		2 = GHALRDAL
+		3 = GHALRDAL
+	}
+	
+	trigger = {
+		has_reform = ogre_empire
+	}
+}
+
+great_centaur_horde = {
+	rank = {
+		1 = CLAN
+		2 = HORDE
+		3 = GREAT_HORDE
+	}
+	
+	ruler_male = {
+		1 = CAEHN
+		2 = CAEHN
+		3 = GREAT_CAEHN
+	}
+	
+	ruler_female = {
+		1 = CAEHTEN
+		2 = CAEHTEN
+		3 = GREAT_CAEHTEN
+	}
+	
+	trigger = {
+		has_reform = great_centaur_horde
+	}
+}
+
+larankar_monarchy = {
+	rank = {
+		1 = AMARADAM
+		2 = AMARARAM
+		3 = AMARAYAM
+	}
+	
+	ruler_male = {
+		1 = AMARAWOR
+		2 = AMARAWOR
+		3 = AMARAWOR
+	}
+	ruler_female = {
+		1 = AMARAWORNI
+		2 = AMARAWORNI
+		3 = AMARAWORNI
+	}
+	consort_male = {
+		1 = AMARAWOR
+		2 = AMARAWOR
+		3 = AMARAWOR
+	}
+	consort_female = {
+		1 = AMARAWORNI
+		2 = AMARAWORNI
+		3 = AMARAWORNI
+	}
+	heir_male = {
+		1 = AMARAVARA
+		2 = AMARAVARA
+		3 = AMARAVARAJU
+	}
+	heir_female = {
+		1 = AMARASURA
+		2 = AMARASURA
+		3 = AMARASURUNI
+	}
+	
+	trigger = {
+		tag = G64
+		OR = {
+		    has_reform = tribal_kingdom
+		    government = monarchy
+		}
+	}
+}
+		
+malacnar_stratocracy = {
+	rank = {
+		1 = KNIGHTLY_ORDER
+		2 = STRATOCRACY
+		3 = STRATOCRACY
+	}
+	
+	ruler_male = {
+		1 = BATTLEKING
+		2 = BATTLEKING
+		3 = BATTLEKING
+	}
+	
+	ruler_female = {
+		1 = BATTLEQUEEN
+		2 = BATTLEQUEEN
+		3 = BATTLEQUEEN
+	}
+	
+	heir_male = {
+		1 = BATTLEPRINCE
+		2 = BATTLEPRINCE
+		3 = BATTLEPRINCE
+	}
+	
+	heir_female = {
+		1 = BATTLEPRINCESS
+		2 = BATTLEPRINCESS
+		3 = BATTLEPRINCESS
+	}
+	
+	trigger = {
+		TAG = G32
+		OR = {
+			government = theocracy
+			government = monarchy
+			has_reform = prussian_republic_reform
+		}
+	}
+}

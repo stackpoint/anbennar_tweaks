@@ -1,0 +1,19 @@
+government = tribal
+add_government_reform = roaming_horde
+government_rank = 1
+primary_culture = west_sandfang_gnoll
+religion = xhazobkult
+technology_group = tech_gnollish
+
+capital = 460
+
+1439.2.1 = {
+	monarch = {
+		name = "Brrtekuh"
+		dynasty = "Splitter-of-Sands"
+		birth_date = 1431.9.7
+		adm = 0
+		dip = 0
+		mil = 0
+	}
+}

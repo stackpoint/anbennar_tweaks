@@ -1,0 +1,446 @@
+kroozmuta_zemna_cult =
+{
+	land_maintenance_modifier = -0.05
+	land_attrition = -0.10
+
+	allow = {
+		OR = {
+			has_unlocked_cult = kroozmuta_zemna_cult
+			primary_culture = cave_goblin
+		}
+	}
+	sprite = 1
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			primary_culture = cave_goblin
+			factor = 2
+		}
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+kroozbuto_nubo_cult =
+{
+	trade_steering = 0.10
+	movement_speed = 0.10
+
+	allow = {
+		OR = {
+			has_unlocked_cult = kroozbuto_nubo_cult
+			primary_culture = hill_goblin
+		}
+	}
+	sprite = 2
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			primary_culture = hill_goblin
+			factor = 2
+		}
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+	}
+}
+
+tewaka_sunka_cult = {
+	idea_cost = -0.10
+	global_institution_spread = 0.05
+
+	allow = {
+		OR = {
+			has_unlocked_cult = tewaka_sunka_cult
+			primary_culture = exodus_goblin
+		}
+	}
+	sprite = 3
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			primary_culture = exodus_goblin
+			factor = 2
+		}
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+		modifier = {
+			factor = 0.5
+			NOT = { neighbors_tech_discount = 0.1 }
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.2
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.3
+		}
+		modifier = {
+			factor = 2
+			neighbors_tech_discount = 0.4
+		}
+	}
+}
+
+muta_mestika_cult = {
+	sprite = 4
+		
+	stability_cost_modifier = -0.10
+	legitimacy = 0.3
+
+	allow = {
+		OR = {
+			has_unlocked_cult = muta_mestika_cult
+			primary_culture = hill_goblin
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			primary_culture = hill_goblin
+			factor = 2
+		}
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+		modifier = { 
+			NOT = { stability = 1 }
+			factor = 2
+		}
+		modifier = { 
+			stability = 2
+			factor = 0.5
+		}
+		modifier = { 
+			NOT = { legitimacy = 50 }
+			factor = 2
+		}
+		modifier = { 
+			legitimacy = 75
+			factor = 0.5
+		}
+	}
+}
+
+apzarko_hrom_cult = {
+	sprite = 5
+		
+	discipline = 0.03
+	leader_land_shock = 1
+
+	allow = {
+		OR = {
+			has_unlocked_cult = apzarko_hrom_cult
+			primary_culture = common_goblin
+		}
+	}
+	
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			primary_culture = common_goblin
+			factor = 2
+		}
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+		modifier = {
+			has_idea_group = religious_ideas
+			factor = 2
+		}
+		modifier = {
+			has_idea_group = humanist_ideas
+			factor = 0.5
+		}
+		modifier = {
+			religious_unity = 0.8
+			factor = 2
+		}
+		modifier = {
+			NOT = { religious_unity = 0.5 }
+			factor = 0.5
+		}
+	}
+}
+
+vortza_lesa_cult = {
+	sprite = 6
+	
+	hostile_attrition = 1.0
+	build_cost = -0.05
+	
+	allow  = {
+		OR = {
+			has_unlocked_cult = vortza_lesa_cult
+			primary_culture = forest_goblin
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			primary_culture = forest_goblin
+			factor = 2
+		}
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+vortzo_laukuno_cult = {
+
+	global_manpower_modifier = 0.1
+	global_tax_modifier = 0.05
+	
+	allow = {
+		OR = {
+			has_unlocked_cult = vortzo_laukuno_cult
+			primary_culture = exodus_goblin
+		}
+	}
+	sprite = 7
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			primary_culture = exodus_goblin
+			factor = 2
+		}
+		modifier = {
+			tax_income_percentage = 0.7
+			factor = 2
+		}
+		modifier = {
+			tax_income_percentage = 0.5
+			factor = 2
+		}
+		modifier = {
+			NOT = { tax_income_percentage = 0.25 }
+			factor = 0.5
+		}
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+vortza_krpa_cult = {
+		trade_efficiency = 0.1
+		development_cost = -0.05
+
+	allow = {
+		OR = {
+			has_unlocked_cult = vortza_krpa_cult	
+			cloth = 1
+		}
+	}
+	sprite = 8
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			trade_income_percentage = 0.7
+			factor = 2
+		}
+		modifier = {
+			trade_income_percentage = 0.5
+			factor = 2
+		}
+		modifier = {
+			NOT = { trade_income_percentage = 0.25 }
+			factor = 0.5
+		}
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+zvaiko_udenzo_cult = {
+	navy_tradition = 1
+	privateer_efficiency = 0.10
+
+	allow = {
+		OR = {
+			has_unlocked_cult = zvaiko_udenzo_cult
+			has_privateers = yes
+		}
+	}
+	sprite = 9
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+zvaika_kirba_cult = {
+
+	global_unrest = -1
+	religious_unity = 0.05
+
+	sprite = 10
+	allow = {
+			has_unlocked_cult = zvaika_kirba_cult
+		}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+vortzo_liezmo_cult = {
+
+	production_efficiency = 0.15
+	
+	sprite = 11
+	allow = {
+		OR = {
+			has_unlocked_cult = vortzo_liezmo_cult
+			primary_culture = cave_goblin
+		}
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			primary_culture = cave_goblin
+			factor = 2
+		}
+		modifier = {
+			production_income_percentage = 0.7
+			factor = 2
+		}
+		modifier = {
+			production_income_percentage = 0.5
+			factor = 2
+		}
+		modifier = {
+			NOT = { production_income_percentage = 0.25 }
+			factor = 0.5
+		}
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+#foreign imports
+
+cannorian_cult = {
+
+	prestige = 0.5
+	free_leader_pool = 1
+	
+	sprite = 12
+	allow  = {
+		has_unlocked_cult = cannorian_cult
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_balanced
+			factor = 2
+		}
+	}
+}
+
+ancestor_worship_cult = {
+	sprite = 13
+	
+	legitimacy = 0.5
+	tolerance_own = 2
+	
+	allow  = {
+		has_unlocked_cult = ancestor_worship_cult
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+gnomish_cult = {
+	sprite = 14
+	
+	technology_cost = -0.10
+	
+	allow  = {
+		has_unlocked_cult = gnomish_cult
+	}
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_militarist
+			factor = 2
+		}
+	}
+}
+
+norse_cult = {
+	sprite = 15
+	allow  = {
+		has_unlocked_cult = norse_cult
+	}
+	tolerance_heathen = 2
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+jewish_cult = {
+	sprite = 16
+	allow = {
+		has_unlocked_cult = jewish_cult
+	}
+	advisor_cost = -0.1
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}
+
+zoroastrian_cult = {
+	sprite = 17
+	allow = {
+		has_unlocked_cult = zoroastrian_cult
+	}
+	merchants = 2
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			personality = ai_capitalist
+			factor = 2
+		}
+	}
+}

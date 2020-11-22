@@ -1,0 +1,1515 @@
+namespace = magic_project_lichdom
+
+#Homunculus
+#1 - Find tome how to do it
+#2 - Phylactery 1 - Constructing the Container
+#3 - Phylactery 2 - Carving the Interiors Walls
+#4 - Phylactery 3 - Enchanting the Phylactery
+#5 - Phylactery 4 - Priming via Clone (you transfer ur soul to a clone and kill your true body, so that technically your soul has no true home)
+# FYI a lich can only have one phylactery (as it stores it soul), if the phylactery is destroyed the lich can die 
+#5 - Potion 1 - Collecting Reagents 1
+#6 - Potion 2 - Collecting Reagents 2 (this should have like abcde variants for sending quests)
+#7 - Potion 3 - Getting the vessel (aka heart of a loved one/innocent, heart of a unicorn) quest time!
+#8 - Dark Ritual 1 - Preparing everything, getting all sorts of dark wards and shit
+#9 - Dark Ritual 2 - Cleansing and putting yourself to near death
+#10 - Dark Ritual 3 - drinking it (success rate determined by how much money you spent before)
+#11 - Lichdom
+
+#Events
+# Topping up your Phylactery with souls
+# Prob in another event file really
+# Resurrection system (you get country flag that says you have an active phylactery, if ruler dies it defines a new ruler with the saved name)
+
+# 1 - Finding out how to do it
+country_event = {
+	id = magic_project_lichdom.1
+	title = magic_project_lichdom.1.t
+	desc = magic_project_lichdom.1.d
+	picture = END_OF_TIME_eventPicture
+	
+	trigger = {
+		has_ruler_flag = magic_project_lichdom_started
+		NOT = { has_ruler_flag = magic_project_lichdom_1 }
+		NOT = { has_ruler_flag = magic_project_lichdom_complete }
+	}
+	
+	mean_time_to_happen = {
+		months = 3
+	}
+	
+	option = {	#Send Adventurers to find a lost tome
+		name = magic_project_lichdom.1.a
+		trigger = {
+			has_estate = estate_adventurers
+		}
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_treasury = -100
+		
+		set_ruler_flag = magic_project_lichdom_1
+		
+		set_ruler_flag = magic_project_lichdom_1_adventurers
+		
+		custom_tooltip = tooltip_magic_project_advance
+	}
+	option = {	#Use state resources
+		name = magic_project_lichdom.1.b
+		ai_chance = {
+			factor = 50
+		}
+		add_adm_power = -30
+		add_dip_power = -30
+		add_mil_power = -30
+		
+		add_treasury = -50
+		
+		set_ruler_flag = magic_project_lichdom_1
+		
+		set_ruler_flag = magic_project_lichdom_1_state
+		
+		custom_tooltip = tooltip_magic_project_advance
+	}
+	option = {	#I'll find it myself!
+		name = magic_project_lichdom.1.c
+		ai_chance = {
+			factor = 50
+		}
+		add_adm_power = -50
+		add_dip_power = -50
+		
+		set_ruler_flag = magic_project_lichdom_1
+		
+		set_ruler_flag = magic_project_lichdom_1_myself
+		
+		custom_tooltip = tooltip_magic_project_advance
+	}
+}
+
+# 2 - Phylactery 1 - Constructing the Container
+country_event = {
+	id = magic_project_lichdom.2
+	title = magic_project_lichdom.2.t
+	desc = magic_project_lichdom.2.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	trigger = {
+		has_ruler_flag = magic_project_lichdom_1
+		NOT = { has_ruler_flag = magic_project_lichdom_2 }
+		NOT = { has_ruler_flag = magic_project_lichdom_complete }
+	}
+	
+	mean_time_to_happen = {
+		months = 30
+		modifier = {
+			factor = 0.5
+			has_ruler_flag = magic_project_lichdom_1_adventurers
+		}
+		modifier = {
+			factor = 0.75
+			has_ruler_flag = magic_project_lichdom_1_state
+		}
+	}
+	
+	option = {	#An amulet capable of containing a small object
+		name = magic_project_lichdom.2.a
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_treasury = -100
+		
+		set_ruler_flag = magic_project_lichdom_2
+		set_ruler_flag = magic_project_lichdom_2_amulet
+
+		custom_tooltip = tooltip_magic_project_advance
+		
+	}
+	
+	option = {	#An ornate, jewel-encrusted box
+		name = magic_project_lichdom.2.b
+		trigger = {
+		
+		}
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_treasury = -200
+		
+		set_ruler_flag = magic_project_lichdom_2
+		set_ruler_flag = magic_project_lichdom_2_box
+
+		custom_tooltip = tooltip_magic_project_advance
+		
+	}
+}
+
+# 3 - Phylactery 2 - Carving the Interiors Walls
+country_event = {
+	id = magic_project_lichdom.3
+	title = magic_project_lichdom.3.t
+	desc = magic_project_lichdom.3.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	trigger = {
+		has_ruler_flag = magic_project_lichdom_2
+		NOT = { has_ruler_flag = magic_project_lichdom_3 }
+		NOT = { has_ruler_flag = magic_project_lichdom_complete }
+
+	}
+	
+	mean_time_to_happen = {
+		months = 30
+	}
+	
+	option = {	#Scribe dark spells on tiny magical parchments to put inside
+		name = magic_project_lichdom.3.a
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_adm_power = -100
+		
+		set_ruler_flag = magic_project_lichdom_3
+
+		custom_tooltip = tooltip_magic_project_advance
+	}
+	
+	option = {	#Carve unholy runes on the interior walls and fill them with liquified Damestear
+		name = magic_project_lichdom.3.b
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_dip_power = -100
+		
+		set_ruler_flag = magic_project_lichdom_3
+
+		custom_tooltip = tooltip_magic_project_advance
+	}
+	
+	option = {	#Coat the insides with enchanted blood of a magical beast
+		name = magic_project_lichdom.3.c
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_mil_power = -100
+		
+		set_ruler_flag = magic_project_lichdom_3
+
+		custom_tooltip = tooltip_magic_project_advance
+	}
+}
+
+#4 - Phylactery 3 - Enchanting the Phylactery
+country_event = {
+	id = magic_project_lichdom.4
+	title = magic_project_lichdom.4.t
+	desc = magic_project_lichdom.4.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	trigger = {
+		has_ruler_flag = magic_project_lichdom_3
+		NOT = { has_ruler_flag = magic_project_lichdom_4 }
+		NOT = { has_ruler_flag = magic_project_lichdom_complete }
+
+	}
+	
+	mean_time_to_happen = {
+		months = 20
+	}
+	
+	option = {	#Perform Dark Enchantments
+		name = magic_project_lichdom.4.a
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_adm_power = -100
+		
+		set_ruler_flag = magic_project_lichdom_4
+		
+		increase_witch_king_points_large = yes
+
+		custom_tooltip = tooltip_magic_project_advance
+	}
+}
+
+#5 - Potion 1 - Collecting Reagents 1
+country_event = {
+	id = magic_project_lichdom.5
+	title = magic_project_lichdom.5.t
+	desc = magic_project_lichdom.5.d
+	picture = TRADEGOODS_eventPicture
+	
+	trigger = {
+		has_ruler_flag = magic_project_lichdom_4
+		NOT = { has_ruler_flag = magic_project_lichdom_5 }
+		NOT = { has_ruler_flag = magic_project_lichdom_complete }
+
+	}
+	
+	mean_time_to_happen = {
+		months = 20
+	}
+	
+	option = {	#4 roots of Queen's Belladonna
+		name = magic_project_lichdom.5.a
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_treasury = -100
+		
+		set_ruler_flag = magic_project_lichdom_5
+		set_ruler_flag = magic_project_lichdom_5_a
+		
+		custom_tooltip = tooltip_magic_project_advance
+	}
+	
+	option = {	#2 bowls of grounded Halanna's Tears
+		name = magic_project_lichdom.5.b
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_treasury = -200
+		
+		set_ruler_flag = magic_project_lichdom_5
+		set_ruler_flag = magic_project_lichdom_5_b
+		
+		custom_tooltip = tooltip_magic_project_advance
+	}
+	
+	option = {	#10 blooms of Fey-touched Hemlock
+		name = magic_project_lichdom.5.c
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_treasury = -300
+		
+		set_ruler_flag = magic_project_lichdom_5
+		set_ruler_flag = magic_project_lichdom_5_c
+		
+		custom_tooltip = tooltip_magic_project_advance
+	}
+}
+
+#6 - Potion 2 - Collecting Reagents 2
+country_event = {
+	id = magic_project_lichdom.6
+	title = magic_project_lichdom.6.t
+	desc = magic_project_lichdom.6.d
+	picture = TRADEGOODS_eventPicture
+	
+	trigger = {
+		has_ruler_flag = magic_project_lichdom_5
+		NOT = { has_ruler_flag = magic_project_lichdom_6 }
+		NOT = { has_ruler_flag = magic_project_lichdom_complete }
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {	#3 grams of Black Damestear
+		name = magic_project_lichdom.6.a
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_treasury = -100
+		
+		set_ruler_flag = magic_project_lichdom_6
+		set_ruler_flag = magic_project_lichdom_6_a
+		
+		custom_tooltip = tooltip_magic_project_advance
+	}
+	
+	option = {	#6 drops of Neratic Asp Venom
+		name = magic_project_lichdom.6.b
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_treasury = -200
+		
+		set_ruler_flag = magic_project_lichdom_6
+		set_ruler_flag = magic_project_lichdom_6_b
+		
+		custom_tooltip = tooltip_magic_project_advance
+	}
+	
+	option = {	#1 tincture of Wyvern Blood
+		name = magic_project_lichdom.6.c
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_treasury = -300
+		
+		set_ruler_flag = magic_project_lichdom_6
+		set_ruler_flag = magic_project_lichdom_6_c
+		
+		custom_tooltip = tooltip_magic_project_advance
+	}
+}
+
+#7 - Potion 3 - Getting the vessel (aka heart of a loved one/innocent, heart of a unicorn) quest time!
+country_event = {
+	id = magic_project_lichdom.7
+	title = magic_project_lichdom.7.t
+	desc = magic_project_lichdom.7.d
+	picture = NEW_HEIR_eventPicture
+	
+	trigger = {
+		has_ruler_flag = magic_project_lichdom_6
+		NOT = { has_ruler_flag = magic_project_lichdom_7 }
+		NOT = { has_ruler_flag = magic_project_lichdom_complete }
+	}
+	
+	mean_time_to_happen = {
+		months = 24
+	}
+	
+	option = {	#Obtain the heart of an innocent
+		name = magic_project_lichdom.7.a
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_mil_power = -100
+		
+		set_ruler_flag = magic_project_lichdom_7
+		set_ruler_flag = magic_project_lichdom_7_heart
+		
+		increase_witch_king_points_large = yes
+		
+		custom_tooltip = tooltip_magic_project_advance
+	}
+	
+	option = {	#Find me a unicorn and bring me its horn!
+		name = magic_project_lichdom.7.b
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_treasury = -100
+		add_mil_power = -100
+		
+		set_ruler_flag = magic_project_lichdom_7
+		set_ruler_flag = magic_project_lichdom_7_unicorn
+		
+		increase_witch_king_points_large = yes
+		
+		custom_tooltip = tooltip_magic_project_advance
+	}	
+}
+
+#8 - Dark Ritual 1 - Preparing everything, getting all sorts of dark wards and shit
+country_event = {
+	id = magic_project_lichdom.8
+	title = magic_project_lichdom.8.t
+	desc = magic_project_lichdom.8.d
+	picture = END_OF_TIME_eventPicture
+	
+	trigger = {
+		has_ruler_flag = magic_project_lichdom_7
+		NOT = { has_ruler_flag = magic_project_lichdom_8 }
+		NOT = { has_ruler_flag = magic_project_lichdom_complete }
+	}
+	
+	mean_time_to_happen = {
+		months = 6
+	}
+	
+	option = {	#Make the preparations
+		name = magic_project_lichdom.8.a
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_adm_power = -100
+		add_dip_power = -100
+		add_mil_power = -100
+		
+		set_ruler_flag = magic_project_lichdom_8
+		
+		custom_tooltip = tooltip_magic_project_advance
+	}
+	
+	option = {	#Draw a Circle of Power to improve my chances
+		name = magic_project_lichdom.8.b
+		trigger = {
+			has_ruler_flag = abjuration_2
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10
+				has_ruler_flag = abjuration_2
+			}
+		}
+		highlight = yes
+		
+		add_adm_power = -100
+		
+		set_ruler_flag = magic_project_lichdom_8
+		set_ruler_flag = magic_project_lichdom_8_a
+		
+		custom_tooltip = tooltip_magic_project_advance
+		
+		custom_tooltip = tooltip_option_abjuration_2
+	}
+	
+	#Summon an outsider to give its dark blessing
+	
+	#Pray to my Dark Patron
+	
+}
+
+#9 - Dark Ritual 2 - Cleansing and putting yourself to near death
+country_event = {
+	id = magic_project_lichdom.9
+	title = magic_project_lichdom.9.t
+	desc = magic_project_lichdom.9.d
+	picture = END_OF_TIME_eventPicture
+	
+	trigger = {
+		has_ruler_flag = magic_project_lichdom_8
+		NOT = { has_ruler_flag = magic_project_lichdom_9 }
+		NOT = { has_ruler_flag = magic_project_lichdom_complete }
+	}
+	
+	mean_time_to_happen = {
+		months = 12
+	}
+	
+	option = {	#Begin the cleanse
+		name = magic_project_lichdom.9.a
+		ai_chance = {
+			factor = 50
+		}
+		
+		add_ruler_modifier = {
+			name = magic_project_necromancy_ruler_cleansing
+			duration = 1095
+		}
+		
+		set_ruler_flag = magic_project_lichdom_9
+		
+		hidden_effect = { country_event = { id = magic_project_lichdom.10 days = 1095} }
+		
+		custom_tooltip = tooltip_magic_project_advance
+	}
+	
+	option = {	#Transmutation spells will help quicken the process
+		name = magic_project_lichdom.9.b
+		trigger = {
+			has_ruler_flag = transmutation_2
+		}
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 10
+				has_ruler_flag = transmutation_2
+			}
+		}
+		highlight = yes
+		
+		add_ruler_modifier = {
+			name = magic_project_necromancy_ruler_cleansing
+			duration = 365
+		}
+		
+		hidden_effect = { country_event = { id = magic_project_lichdom.10 days = 365} }
+		
+		set_ruler_flag = magic_project_lichdom_9
+		
+		custom_tooltip = tooltip_magic_project_advance
+		
+		custom_tooltip = tooltip_option_transmutation_1
+	}
+	
+}
+
+#10 - Dark Ritual 3 - drinking it (success rate determined by how much money you spent before)
+country_event = {
+	id = magic_project_lichdom.10
+	title = magic_project_lichdom.10.t
+	desc = magic_project_lichdom.10.d
+	picture = END_OF_TIME_eventPicture
+	
+	trigger = {
+		has_ruler_flag = magic_project_lichdom_9
+		NOT = { has_ruler_flag = magic_project_lichdom_10 }
+		NOT = { has_ruler_flag = magic_project_lichdom_complete }
+	}
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		hidden_effect = { 
+			calculate_lichdom_chance = {
+				which = lichChance
+			}
+		}
+	}
+	
+	option = {	#Drink
+		name = magic_project_lichdom.10.a
+		ai_chance = {
+			factor = 50
+		}
+		
+		#Some calculations depending on previous shit
+		if = {
+			limit = {
+				check_variable = { which = lichChance value = 1 }
+				NOT = { check_variable = { which = lichChance value = 2 } }
+			}
+			random_list = {
+				60 = {
+					country_event  = { id = magic_project_lichdom.11 days = 10 }
+				}
+				40 = {
+					kill_ruler = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = lichChance value = 2 }
+				NOT = { check_variable = { which = lichChance value = 3 } }
+			}
+			random_list = {
+				65 = {
+					country_event  = { id = magic_project_lichdom.11 days = 10 }
+				}
+				35 = {
+					kill_ruler = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = lichChance value = 3 }
+				NOT = { check_variable = { which = lichChance value = 4 } }
+			}
+			random_list = {
+				70 = {
+					country_event  = { id = magic_project_lichdom.11 days = 10 }
+				}
+				30 = {
+					kill_ruler = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = lichChance value = 4 }
+				NOT = { check_variable = { which = lichChance value = 5 } }
+			}
+			random_list = {
+				75 = {
+					country_event  = { id = magic_project_lichdom.11 days = 10 }
+				}
+				25 = {
+					kill_ruler = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = lichChance value = 5 }
+				NOT = { check_variable = { which = lichChance value = 6 } }
+			}
+			random_list = {
+				80 = {
+					country_event  = { id = magic_project_lichdom.11 days = 10 }
+				}
+				20 = {
+					kill_ruler = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = lichChance value = 6 }
+				NOT = { check_variable = { which = lichChance value = 7 } }
+			}
+			random_list = {
+				85 = {
+					country_event  = { id = magic_project_lichdom.11 days = 10 }
+				}
+				15 = {
+					kill_ruler = yes
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = { which = lichChance value = 7 }
+				#NOT = { check_variable = { which = lichChance value = 8 } }
+			}
+			random_list = {
+				90 = {
+					country_event  = { id = magic_project_lichdom.11 days = 10 }
+				}
+				10 = {
+					kill_ruler = yes
+				}
+			}
+		}
+		else = {
+			random_list = {
+				50 = {
+					country_event  = { id = magic_project_lichdom.11 days = 10 }
+				}
+				50 = {
+					kill_ruler = yes
+				}
+			}
+		}
+		
+		set_ruler_flag = magic_project_lichdom_complete
+
+		custom_tooltip = tooltip_magic_project_complete
+	}
+}
+
+#11 - Ascension to Lichdom
+country_event = {
+	id = magic_project_lichdom.11
+	title = magic_project_lichdom.11.t
+	desc = magic_project_lichdom.11.d
+	picture = END_OF_TIME_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		# set_saved_name = {
+			# key = lich_ruler_name
+			# type = advisor
+			# scope = Z99	#Black Demense holds Lich names
+		# }
+		
+		# hidden_effect = {
+			# export_to_variable = {
+				# variable_name = lichADM
+				# value = ADM
+			# }
+			# export_to_variable = {
+				# variable_name = lichDIP
+				# value = DIP
+			# }
+			# export_to_variable = {
+				# variable_name = lichMIL
+				# value = MIL
+			# }
+		# }
+		
+		#A way to save stats, religion, dynasty, etc
+		
+		ruler_save_spell_schools = yes
+		
+		#add_stability_or_adm_power = yes
+		
+		magic_project_clear_lichdom_flags = yes
+		
+		#NEED TO SAVE WHAT RULER SPELL SCHOOLS THEY HAVE INCASE THEY DIE
+		hidden_effect = { clear_scripted_personalities = yes }
+		hidden_effect = { add_ruler_personality = mage_personality }
+		#exile_ruler_as = my_lich_ruler	#we can use this for deposing them
+	}
+	
+	option = {	#Immortality is mine.
+		name = magic_project_lichdom.11.a
+		ai_chance = {
+			factor = 50
+		}
+
+		add_ruler_personality = immortal_personality
+		
+		increase_witch_king_points_large = yes
+		increase_witch_king_points_large = yes
+		increase_witch_king_points_large = yes
+		increase_witch_king_points_large = yes
+		increase_witch_king_points_large = yes
+		
+		set_ruler_flag = is_a_lich
+		set_ruler_flag = is_a_secret_lich
+		
+		set_country_flag = lich_ruler
+		set_country_flag = lich_ruler_has_phylactery
+		
+		if = {
+			limit = { is_female = yes }
+			set_country_flag = lich_ruler_female
+		}
+		else = {
+			set_country_flag = lich_ruler_male
+		}
+		
+		add_ruler_modifier = {
+			name = lich_ruler
+			duration = -1
+		}
+	}
+}
+
+#Lich Death - Regency Council
+country_event = {
+	id = magic_project_lichdom.12
+	title = magic_project_lichdom.12.t
+	desc = magic_project_lichdom.12.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	#is_triggered_only = yes	#this should be triggered by other events like adventurers destroying phylactery
+	
+	#hidden = yes
+	
+	trigger = {
+		has_country_flag = lich_ruler
+		has_country_flag = lich_ruler_has_phylactery
+		
+		NOT = { has_country_flag = interregnum }
+		
+		NOT = { has_ruler_flag = is_a_lich }
+		
+		NOT = { government = republic }
+	}
+	
+	mean_time_to_happen = {
+		days = 7
+	}
+	
+	immediate = {
+		#hidden_effect = { country_event = { id = magic_project_lichdom.13 days = 3 } }
+		
+		if = {
+			limit = {
+				has_regency = no
+			}
+			exile_ruler_as = old_heir_turned_ruler
+		}
+		if = {
+			limit = {
+				has_heir = yes
+			}
+			exile_heir_as = old_heir
+		}
+		
+		if = {
+			limit = {
+				NOT = { government = republic }
+			}
+			define_ruler = {
+				name = "(Interregnum)"
+				#dynasty = ROOT
+				adm = 0
+				mil = 0
+				dip = 0
+				regency = yes
+			}
+		}
+		# define_ruler = {
+			# name = "(Interregnum)"
+			# #dynasty = ROOT
+			# adm = 0
+			# mil = 0
+			# dip = 0
+			# regency = yes
+		# }
+	}
+	
+	# #Make heir with dynasty
+	# option = {
+		# name = magic_project_lichdom.12.a
+		# ai_chance = {
+			# factor = 1
+		# }
+		
+		# if = {
+			# limit = { has_country_flag = lich_ruler_female }
+			# define_heir = {
+				# age = 33
+				# dynasty = PREV
+				# no_consort_with_heir = yes
+				# female = yes
+			# }
+		# }
+		# else = {
+			# define_heir = {
+				# age = 33
+				# dynasty = PREV
+				# no_consort_with_heir = yes
+				# male = yes
+			# }
+		# }
+		
+		# set_heir_flag = is_a_lich
+		# set_heir_flag = new_lich_setup
+		# set_country_flag = interregnum
+		
+		# hidden_effect = { country_event = { id = magic_project_lichdom.13 days = 3 } }
+		
+	# }
+	
+	#Govs with heirs
+	#Make heir with no dynasty
+	option = {
+		name = magic_project_lichdom.12.b
+		trigger = {
+			has_government_attribute = heir
+		}
+		ai_chance = {
+			factor = 50
+		}
+		
+		if = {
+			limit = { has_country_flag = lich_ruler_female }
+			define_heir = {
+				age = 33
+				dynasty = " "
+				no_consort_with_heir = yes
+				female = yes
+			}
+		}
+		else = {
+			define_heir = {
+				age = 33
+				dynasty = " "
+				no_consort_with_heir = yes
+				male = yes
+			}
+		}
+		
+		set_heir_flag = is_a_lich
+		set_heir_flag = new_lich_setup
+		set_country_flag = interregnum
+		
+		hidden_effect = { country_event = { id = magic_project_lichdom.13 days = 3 } }
+	}
+	
+	#Govs without heirs - straight ruler boy
+	option = {
+		name = magic_project_lichdom.12.b
+		trigger = {
+			NOT = { has_government_attribute = heir }
+		}
+		ai_chance = {
+			factor = 50
+		}
+		
+		hidden_effect = { exile_ruler_as = old_ruler }
+		
+		if = {
+			limit = { has_country_flag = lich_ruler_female }
+			define_ruler = {
+				age = 33
+				dynasty = " "
+				female = yes
+			}
+		}
+		else = {
+			define_ruler = {
+				age = 33
+				dynasty = " "
+				male = yes
+			}
+		}
+		
+		set_ruler_flag = is_a_lich
+		set_ruler_flag = new_lich_setup
+		set_country_flag = interregnum
+
+		hidden_effect = { country_event = { id = magic_project_lichdom.13 days = 3 } }
+	}
+	
+}
+
+
+#Lich Reborn - initialization giving spell schools to ascending ruler
+country_event = {
+	id = magic_project_lichdom.13
+	title = magic_project_lichdom.13.t
+	desc = magic_project_lichdom.13.d
+	picture = END_OF_TIME_eventPicture
+	
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	trigger = {
+		#has_ruler_flag = is_a_lich
+		#has_country_flag = interregnum
+		#has_regency = no
+		
+		#has_ruler_flag = new_lich_setup
+		
+		#NOT = { has_ruler_modifier = lich_ruler }
+	}
+	
+	option = {
+		name = magic_project_lichdom.13.a
+		ai_chance = {
+			factor = 50
+		}
+		if = {
+			limit = {
+				NOT = { ruler_age = 33 }
+			}
+			kill_ruler = yes
+		}
+		clr_country_flag = interregnum
+		
+		clr_heir_flag = new_lich_setup
+		clr_ruler_flag = new_lich_setup
+		
+		clear_scripted_personalities = yes
+		add_ruler_personality = immortal_personality
+		add_ruler_personality = mage_personality
+		
+		increase_witch_king_points_large = yes
+		
+		ruler_give_saved_spell_schools = yes	#links to ruler_save_spell_schools
+		
+		set_heir = old_heir_turned_ruler
+		
+		add_ruler_modifier = {
+			name = lich_ruler
+			duration = -1
+		}
+	}
+}
+
+#Lich Destruction - Phylactery destroyed
+country_event = {
+	id = magic_project_lichdom.14
+	title = magic_project_lichdom.14.t
+	desc = magic_project_lichdom.14.d
+	picture = END_OF_TIME_eventPicture
+	
+	is_triggered_only = yes	#this should be triggered by other events like adventurers destroying phylactery
+	
+	trigger = {
+		has_ruler_flag = is_a_lich
+		has_country_flag = lich_ruler
+		has_country_flag = lich_ruler_has_phylactery
+	}
+	
+	immediate = {
+		clr_country_flag = lich_ruler
+		clr_country_flag = lich_ruler_has_phylactery
+		clr_country_flag = lich_ruler_female
+		clr_country_flag = lich_ruler_male
+		ruler_clear_saved_spell_schools = yes
+	}
+	
+	option = {
+		name = magic_project_lichdom.14.a
+		ai_chance = {
+			factor = 50
+		}
+		
+		kill_ruler = yes
+		add_prestige = -50
+		add_stability = -3
+		
+		hidden_effect = { country_event = { id = magic_project_lichdom.16 days = 7 } }
+		
+	}
+}
+
+#Lich - Gov change to Magocracy
+country_event = {
+	id = magic_project_lichdom.15
+	title = magic_project_lichdom.15.t
+	desc = magic_project_lichdom.15.d
+	picture = END_OF_TIME_eventPicture
+	
+	trigger = {
+		has_ruler_flag = is_a_lich
+		NOT = {
+			has_reform = magocracy_reform
+			has_reform = magisterium_reform
+		}
+		NOT = { government = tribal }
+		has_estate = estate_mages
+		#NOT = { has_ruler_flag = is_a_secret_lich }	#removed for now as we dont have any lich-outing events
+	}
+	
+	mean_time_to_happen = {
+		months = 32
+	}
+	
+	immediate = {
+		magic_project_clear_lichdom_government_flags = yes #In case government was changed
+		if = {
+			limit = {
+				government = monarchy
+			}
+			set_country_flag = wizard_king_magocracy
+			set_country_flag = original_gov_monarchy
+		}
+		else_if = {
+			limit = {
+				government = republic
+			}
+			set_country_flag = original_gov_republic
+		}
+		else_if = {
+			limit = {
+				government = theocracy
+			}
+			set_country_flag = original_gov_theocracy
+			if = {
+				limit = {
+					has_reform = leading_clergy_reform
+				}
+				set_country_flag = original_gov_clergy
+			}
+			else_if = {
+				limit = {
+					has_reform = monastic_order_reform
+				}
+				set_country_flag = original_gov_monastic
+			}
+			else_if = {
+				limit = {
+					has_reform = secular_order_reform
+				}
+				set_country_flag = original_gov_secular
+			}
+			else_if = {
+				limit = {
+					has_reform = adventurer_reform
+				}
+				set_country_flag = original_gov_adventurer
+			}
+			else_if = {
+				limit = {
+					has_reform = rezankand_reform
+				}
+				set_country_flag = original_gov_rezankand
+			}
+			else_if = {
+				limit = {
+					has_reform = oracular_order_reform
+				}
+				set_country_flag = original_gov_oracular
+			}
+		}
+		else_if = {
+			limit = {
+				government = tribal
+			}
+			set_country_flag = original_gov_tribal
+		}
+	}
+	
+	option = {
+		name = magic_project_lichdom.15.a
+		ai_chance = {
+			factor = 99
+		}
+		
+		add_stability_or_adm_power = yes
+		change_government = theocracy
+		
+		add_government_reform = magocracy_reform
+		
+	}
+	
+	option = {
+		name = magic_project_lichdom.15.b
+		ai_chance = {
+			factor = 1
+		}
+		
+		add_prestige = -10
+		
+	}
+}
+
+#Lichless Death - Gov change
+country_event = {
+	id = magic_project_lichdom.16
+	title = magic_project_lichdom.16.t
+	desc = magic_project_lichdom.16.d
+	picture = END_OF_TIME_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		government = theocracy
+	}
+	
+	#immediate = {
+	#	if = {
+	#		limit = {
+	#			government = monarchy
+	#		}
+	#		set_country_flag = wizard_king_magocracy
+	#		set_country_flag = lich_original_gov_monarchy
+	#	}
+	#	if = {
+	#		limit = {
+	#			government = republic
+	#		}
+	#		set_country_flag = lich_original_gov_republic
+	#	}
+	#	if = {
+	#		limit = {
+	#			government = monarchy
+	#		}
+	#		set_country_flag = lich_original_gov_theocracy
+	#	}
+	#}
+	
+	#...unfortunately late lich raised a worthy successor
+	option = {
+		name = magic_project_lichdom.16.a
+		trigger = {
+			ruler_has_personality = mage_personality 
+		}
+		ai_chance = {
+			factor = 75
+		}
+		
+		add_prestige = 10
+		
+	}
+	
+	#...the dark acolytes retained controlled of the state
+	option = {
+		name = magic_project_lichdom.16.b
+		ai_chance = {
+			factor = 33
+			modifier = {
+				factor = 100
+				OR = {
+					estate_influence = {
+						estate = estate_mages
+						influence = 60
+					}
+					estate_influence = {
+						estate = estate_acolytes	#maybe acolytes should just be mages?
+						influence = 60
+					}
+				}
+			}
+		}
+		
+		add_prestige = -10
+		
+	}
+	
+	#revert to old ways
+	option = {
+		name = magic_project_lichdom.16.c
+		ai_chance = {
+			factor = 66
+		}
+		
+		if = {
+			limit = {
+				has_country_flag = original_gov_monarchy
+			}
+			change_government = monarchy
+			
+			exile_ruler_as = old_lich_gov_ruler
+		}
+		else_if = {
+			limit = {
+				has_country_flag = original_gov_republic
+			}
+			change_government = republic
+			
+			exile_ruler_as = old_lich_gov_ruler
+		}
+		else_if = {
+			limit = {
+				has_country_flag = original_gov_theocracy
+			}
+			
+			if = {
+				limit = {
+					has_country_flag = original_gov_clergy
+				}
+				add_government_reform = leading_clergy_reform
+			}
+			else_if = {
+				limit = {
+					has_country_flag = original_gov_monastic
+				}
+				add_government_reform = monastic_order_reform
+			}
+			else_if = {
+				limit = {
+					has_country_flag = original_gov_secular
+				}
+				add_government_reform = secular_order_reform
+			}
+			else_if = {
+				limit = {
+					has_country_flag = original_gov_adventurer
+				}
+				add_government_reform = adventurer_reform
+			}
+			else_if = {
+				limit = {
+					has_country_flag = original_gov_rezankand
+				}
+				add_government_reform = rezankand_reform
+			}
+			else_if = {
+				limit = {
+					has_country_flag = original_gov_oracular
+				}
+				add_government_reform = oracular_order_reform
+			}
+			
+			exile_ruler_as = old_lich_gov_ruler
+		}
+		else_if = {
+			limit = {
+				has_country_flag = original_gov_tribal
+			}
+			change_government = tribal
+			
+			if = {
+				limit = {
+					primary_culture = emerald_orc
+				}
+				add_government_reform = emerald_horde
+			}
+			else_if = {
+				limit = {
+					OR = {
+						culture_group = goblin
+						culture_group = orcish
+					}
+					NOT = {
+						capital_scope = {
+							continent = serpentspine
+						}
+					}
+				}
+				add_government_reform = greentide_horde
+			}
+			else_if = {
+				limit = {
+					OR = {
+						culture_group = goblin
+						culture_group = orcish
+					}
+					capital_scope = {
+						continent = serpentspine
+						OR = {
+							has_terrain = dwarven_hold
+							has_terrain = dwarven_hold_surface
+						}
+					}
+				}
+				add_government_reform = dwarovar_squatter
+			}
+			else_if = {
+				limit = {
+					OR = {
+						culture_group = goblin
+						culture_group = orcish
+					}
+					capital_scope = {
+						continent = serpentspine
+						NOT = {
+							has_terrain = dwarven_hold
+							has_terrain = dwarven_hold_surface
+						}
+					}
+				}
+				add_government_reform = dwarovar_warband
+			}
+			else_if = {
+				limit = {
+					OR = {
+						culture_is_troll = yes
+						culture_group = kobold
+					}
+				}
+				add_government_reform = settled_horde
+			}
+			else_if = {
+				limit = {
+					OR = {
+						culture_group = harpy
+						culture_group = gnollish
+					}
+				}
+				add_government_reform = roaming_horde
+			}
+			else_if = {
+				limit = {
+					primary_culture = desert_elf
+				}
+				add_government_reform = desert_legion
+			}
+			
+			exile_ruler_as = old_lich_gov_ruler
+		}
+		magic_project_clear_lichdom_government_flags = yes
+		
+		add_stability_or_adm_power = yes
+		
+	}
+}
+	
+#Occupying army searches for phylactery
+province_event = {
+	id = magic_project_lichdom.17
+	title = magic_project_lichdom.17.t
+	desc = magic_project_lichdom.17.d
+	picture = END_OF_TIME_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		owner = {
+			has_ruler_flag = is_a_lich
+			has_country_flag = lich_ruler
+			has_country_flag = lich_ruler_has_phylactery
+		}
+		
+		is_capital = yes
+		NOT = { controlled_by = ROOT }
+	}
+	
+	immediate = {
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = { has_ruler_flag = abjuration_1 }
+				}
+				province_event = { id = magic_project_lichdom.18 days = 15 random = 15 }
+			}
+			else = {
+				trigger_switch = {
+					on_trigger = has_ruler_flag
+					
+					abjuration_3 = { province_event = { id = magic_project_lichdom.18 days = 90 random = 90 } }
+					abjuration_2 = { province_event = { id = magic_project_lichdom.18 days = 60 random = 60 } }
+					abjuration_1 = { province_event = { id = magic_project_lichdom.18 days = 30 random = 30 } }
+				}
+			}
+			controller = { country_event = { id = magic_project_lichdom.19 days = 1 } }
+		}
+	}
+	
+	#It is only a matter of time until the phylactery is found
+	option = {
+		name = magic_project_lichdom.17.a
+		trigger = {
+			NOT = { has_ruler_flag = abjuration_1 }
+		}
+		ai_chance = {
+			factor = 100
+		}
+		
+		owner = { add_prestige = -10 }
+	}
+	
+	#Wards will slow them down
+	option = {
+		name = magic_project_lichdom.17.b
+		trigger = {
+			has_ruler_flag = abjuration_1
+		}
+		ai_chance = {
+			factor = 100
+		}
+		
+		owner = { add_prestige = -5 }
+	}
+}
+
+#Phylactery found by occupiers if not retaken
+province_event = {
+	id = magic_project_lichdom.18
+	title = magic_project_lichdom.18.t
+	desc = magic_project_lichdom.18.d
+	picture = END_OF_TIME_eventPicture
+	goto = root
+	
+	is_triggered_only = yes
+	
+	hidden = yes
+	
+	trigger = {
+		owner = {
+			has_ruler_flag = is_a_lich
+			has_country_flag = lich_ruler
+			has_country_flag = lich_ruler_has_phylactery
+		}
+		
+		NOT = { controlled_by = ROOT }
+	}
+
+	#Phylactery destroyed
+	option = {
+		name = magic_project_lichdom.18.a
+		ai_chance = {
+			factor = 100
+		}
+		
+		owner = { country_event = { id = magic_project_lichdom.14 days = 1 } }
+		controller = { country_event = { id = magic_project_lichdom.20 days = 1 }}
+	}
+}
+
+#Occupier phylactery search notification
+country_event = {
+	id = magic_project_lichdom.19
+	title = magic_project_lichdom.19.t
+	desc = magic_project_lichdom.19.d
+	picture = END_OF_TIME_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Inform hold province to destroy phylactery
+	option = {
+		name = magic_project_lichdom.19.a
+		ai_chance = {
+			factor = 100
+		}
+	}
+}
+
+#Occupier destroys phylactery
+country_event = {
+	id = magic_project_lichdom.20
+	title = magic_project_lichdom.20.t
+	desc = magic_project_lichdom.20.d
+	picture = END_OF_TIME_eventPicture
+	
+	is_triggered_only = yes
+	
+	#Destroyed phylactery
+	option = {
+		name = magic_project_lichdom.20.a
+		ai_chance = {
+			factor = 100
+		}
+		
+		add_prestige = 20
+		add_country_modifier = {
+			name = lichdom_destroyed_phylactery
+			duration = 3650
+		}
+	}
+}

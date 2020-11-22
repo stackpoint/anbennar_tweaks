@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = plutocratic_reform
+government_rank = 1
+primary_culture = raghamidesh
+religion = high_philosophy
+technology_group = tech_raheni
+religious_school = silk_turban_school
+capital = 4367
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_state }
+
+1444.1.1 = {
+	monarch = {
+		name = "Virajdendar"
+		dynasty = "of the Grand Paw"
+		birth_date = 1399.11.19
+		adm = 1
+		dip = 3
+		mil = 4
+		culture = royal_harimari
+	}
+}

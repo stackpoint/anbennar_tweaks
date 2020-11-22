@@ -1,0 +1,20 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = esmari
+religion = regent_court
+technology_group = tech_cannorian
+capital = 265
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+1393.1.1 = {
+	monarch = {
+		name = "Adala of Estallen"
+		birth_date = 1355.1.1
+		adm = 3
+		dip = 0
+		mil = 1
+		female = yes
+	}
+}

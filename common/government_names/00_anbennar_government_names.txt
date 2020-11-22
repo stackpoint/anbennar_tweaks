@@ -1,0 +1,1956 @@
+# For specific combinations of culture, religion and other such triggers
+# Will pick the first valid one it finds in list
+
+#Heir and consort titles are generally kept simple for clarity unless there is something special in particular that can be used.
+
+wulin = {
+	rank = {
+		1 = WULIN
+		2 = WULIN
+		3 = WULIN
+	}
+
+	ruler_male = {
+		1 = FIRST_MASTER
+		2 = FIRST_MASTER
+		3 = FIRST_MASTER
+	}
+
+	ruler_female = {
+		1 = FIRST_MASTER
+		2 = FIRST_MASTER
+		3 = FIRST_MASTER
+	}
+
+	trigger = {
+		has_reform = wulin
+	}
+}
+
+xiaken = {
+	rank = {
+		1 = XIAKEN
+		2 = XIAKEN
+		3 = XIAKEN
+	}
+
+	ruler_male = {
+		1 = RIGHTEOUS_MASTER
+		2 = RIGHTEOUS_MASTER
+		3 = RIGHTEOUS_MASTER
+	}
+
+	ruler_female = {
+		1 = RIGHTEOUS_MASTER
+		2 = RIGHTEOUS_MASTER
+		3 = RIGHTEOUS_MASTER
+	}
+
+	trigger = {
+		OR = {
+			has_reform = xiaken
+			has_reform = indep_xiaken
+		}	
+	}
+}
+
+knightly_order = {
+	rank = {
+		1 = KNIGHTLY_ORDER
+		2 = KNIGHTLY_ORDER
+		3 = KNIGHTLY_ORDER
+	}
+
+	ruler_male = {
+		1 = GRANDMASTER
+		2 = GRANDMASTER
+		3 = GRANDMASTER
+	}
+
+	ruler_female = {
+		1 = GRANDMASTER
+		2 = GRANDMASTER
+		3 = GRANDMASTER
+	}
+
+	trigger = {
+		OR = {
+			has_reform = secular_order_reform
+			has_reform = monastic_order_reform
+			has_country_flag = knightly_order_adventurer
+		}	
+	}
+}
+
+monarchy_county = {	#For special counts, in the HRE/EOA this is by default. Like the HRE they stop being a count when they get 50 development
+	rank = {
+		1 = COUNTY
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = COUNT
+		2 = KING
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = COUNTESS
+		2 = QUEEN
+		3 = EMPRESS
+	}
+	consort_male  = {
+		1 = CONSORT 
+		2 = PRINCE_CONSORT
+		3 = PRINCE_CONSORT
+	}
+	
+	consort_female = {
+		1 = CONSORT
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	heir_female = {
+		1 = HEIR
+		2 = PRINCESS
+		3 = PRINCESS
+	}
+	
+	trigger = {
+		government = monarchy
+		OR = {
+			has_country_flag = is_a_county
+			AND = {
+				is_part_of_hre = yes
+				is_elector = no
+				is_emperor = no
+			}
+		}
+		NOT = { total_development = 50 }
+	}
+}
+
+revolutionary_gawedi_republic = {
+	rank = {
+		1 = GOV_REVOLUTIONARY_REPUBLIC
+		2 = GOV_REVOLUTIONARY_REPUBLIC
+		3 = GOV_REVOLUTIONARY_REPUBLIC
+	}
+	ruler_male = {
+		1 = CHAIRMAN
+		2 = CHAIRMAN
+		3 = CHAIRMAN
+	}
+
+	ruler_female = {
+		1 = CHAIRMAN_fem
+		2 = CHAIRMAN_fem
+		3 = CHAIRMAN_fem
+	}
+	trigger = {
+		is_revolutionary_republic_trigger = yes
+		OR = {
+			primary_culture = gawedi
+			primary_culture = old_alenic
+			primary_culture = moorman
+		}
+	}
+}
+
+revolutionary_damerian_republic = {
+	rank = {
+		1 = GOV_REVOLUTIONARY_REPUBLIC
+		2 = GOV_REVOLUTIONARY_REPUBLIC
+		3 = GOV_REVOLUTIONARY_REPUBLIC
+	}
+	ruler_male = {
+		1 = LUMINARY	#this is the equivalent of Consul in our world. The Damerian Republic was ruled by Luminaries as the Romans were ruled by Consuls
+		2 = LUMINARY
+		3 = LUMINARY
+	}
+
+	ruler_female = {
+		1 = LUMINARY
+		2 = LUMINARY
+		3 = LUMINARY
+	}
+	trigger = {
+		is_revolutionary_republic_trigger = yes
+		OR = {
+			primary_culture = east_damerian
+			primary_culture = west_damerian
+			primary_culture = rogieran
+			primary_culture = anbenncoster
+		}
+		
+	}
+}
+
+revolutionary_gnomish_republic = {
+	rank = {
+		1 = GOV_REVOLUTIONARY_REPUBLIC
+		2 = GOV_REVOLUTIONARY_REPUBLIC
+		3 = GOV_REVOLUTIONARY_REPUBLIC
+	}
+	ruler_male = {
+		1 = FIRST_HIERARCH
+		2 = FIRST_HIERARCH
+		3 = FIRST_HIERARCH
+	}
+
+	ruler_female = {
+		1 = FIRST_HIERARCH
+		2 = FIRST_HIERARCH
+		3 = FIRST_HIERARCH
+	}
+	trigger = {
+		is_revolutionary_republic_trigger = yes
+		culture_group = gnomish
+		
+	}
+}
+
+invasion_forces = {
+	rank = {
+		1 = INVASION_FORCE
+	}
+	
+	ruler_male = {
+		1 = GENERAL
+	}
+	
+	ruler_female = {
+		1 = GENERAL
+	}
+
+	trigger = {
+		has_reform = invasion_forces
+	}
+}
+
+trading_company = {
+	rank = {
+		1 = REPUBLIC
+		2 = GREAT_REPUBLIC
+		3 = GRAND_REPUBLIC
+	}
+	
+	ruler_male = {
+		1 = DIRECTOR
+		2 = GOVERNOR_GENERAL	
+		3 = VICEROY
+	}
+
+	ruler_female = {
+		1 = DIRECTOR
+		2 = GOVERNOR_GENERAL
+		3 = VICEREINE
+	}
+
+	trigger = {
+		OR = {
+			tag = G99	#DTC
+			tag = G98	#CTC
+			tag = G97	#VB
+		}
+	}
+}
+
+escann_witch_king_republic = {
+	rank = {
+		1 = REPUBLIC
+		2 = GREAT_REPUBLIC
+		3 = GRAND_REPUBLIC
+	}
+	
+	ruler_male = {
+		1 = CHANCELLOR
+		2 = SUPREME_CHANCELLOR	#good... good...
+		3 = SUPREME_CHANCELLOR
+	}
+
+	ruler_female = {
+		1 = CHANCELLOR
+		2 = SUPREME_CHANCELLOR
+		3 = SUPREME_CHANCELLOR
+	}
+
+	trigger = {
+		capital_scope = { superregion = escann_superregion }
+		government = republic
+		has_ruler_modifier = witch_king_modifier 
+	}
+}
+
+escann_witch_king_kingdom = {
+	rank = {
+		1 = KINGDOM
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = WITCH_KING
+		2 = WITCH_KING
+		3 = WITCH_EMPEROR
+	}
+
+	ruler_female = {
+		1 = WITCH_QUEEN
+		2 = WITCH_QUEEN
+		3 = WITCH_EMPRESS
+	}
+
+	trigger = {
+		capital_scope = { superregion = escann_superregion }
+		government = monarchy
+		has_ruler_modifier = witch_king_modifier 
+	}
+}
+
+kheionai_republic = {
+	rank = {
+		1 = REPUBLIC
+		2 = GREAT_REPUBLIC
+		3 = GRAND_REPUBLIC
+	}
+	
+	ruler_male = {
+		1 = KYLAKAS
+		2 = KYLAKAS
+		3 = DEGA_KYLAKAS
+	}
+
+	ruler_female = {
+		1 = KYLAKAS
+		2 = KYLAKAS
+		3 = DEGA_KYLAKAS
+	}
+
+	trigger = {
+		government = republic
+		culture_group = kheionai_ruinborn_elf
+	}
+}
+
+wizard_king_magocracy = {
+	rank = {
+		1 = MAGOCRACY
+		2 = MAGOCRACY
+		3 = MAGOCRACY
+	}
+
+	ruler_male = {
+		1 = WIZARD_KING
+		2 = WIZARD_KING
+		3 = WIZARD_KING
+	}
+
+	ruler_female = {
+		1 = WIZARD_QUEEN
+		2 = WIZARD_QUEEN
+		3 = WIZARD_QUEEN
+	}
+
+	trigger = {
+		government = theocracy
+		has_country_flag = wizard_king_magocracy
+	}
+}
+
+skaldhyrric_theocracy = {
+	rank = {
+		1 = TEMPLE
+		2 = GREAT_TEMPLE
+		3 = HOLY_EMPIRE
+	}
+
+	ruler_male = {
+		1 = SKALD_PRIEST
+		2 = SKALD_PRIEST
+		3 = MASTER_SKALD_PRIEST
+	}
+
+	ruler_female = {
+		1 = SKALD_PRIESTESS
+		2 = SKALD_PRIESTESS
+		3 = MASTER_SKALD_PRIESTESS
+	}
+
+	trigger = {
+		government = theocracy
+		religion = skaldhyrric_faith
+	}
+}
+
+elven_colonial_government = {
+	rank = {
+		1 = COLONY
+	}
+	
+	ruler_male = {
+		1 = RECLAIMER
+	}
+
+	ruler_female = {
+		1 = RECLAIMER
+	}
+	trigger = {
+		culture_group = elven
+		has_reform = colonial_government
+	}
+}
+
+viceroy_colonial_government = {
+	rank = {
+		1 = COLONY
+	}
+	
+	ruler_male = {
+		1 = VICEROY
+	}
+
+	ruler_female = {
+		1 = VICERINE
+	}
+	trigger = {
+		OR = {
+			culture_group = lencori
+			culture_group = businori
+			culture_group = divenori
+			culture_group = bulwari
+		}
+		has_reform = colonial_government
+	}
+}
+
+director_colonial_government = {
+	rank = {
+		1 = COLONY
+	}
+	
+	ruler_male = {
+		1 = DIRECTOR
+	}
+
+	ruler_female = {
+		1 = DIRECTORESS
+	}
+	trigger = {
+		OR = {
+			primary_culture = vertesker
+			primary_culture = crownsman
+			culture_group = gnomish
+		}
+		has_reform = colonial_government
+	}
+}
+
+eordand_theocracy = {
+	rank = {
+		1 = SGARBAG
+		2 = PROMAL
+		3 = ATPROMAL
+	}
+	
+	ruler_male = {
+		1 = ESBAGG
+		2 = SGARRT
+		3 = DECANN
+	}
+
+	ruler_female = {
+		1 = ESBAGG
+		2 = SGARRT
+		3 = DECANN
+	}
+
+	trigger = {
+		AND = {
+			government = theocracy
+			culture_group = eordellon_ruinborn_elf
+			OR = {
+				has_reform = monastic_order_reform
+				has_reform = leading_clergy_reform
+			}
+		}
+	}
+}
+
+goblin_clan = {
+	rank = {
+		1 = CLAN
+		2 = OVERCLAN
+		3 = SUPREMACY
+	}
+	
+	ruler_male = {
+		1 = CLANBOSS
+		2 = OVERBOSS
+		3 = SUPREME_BOSS
+	}
+
+	ruler_female = {
+		1 = CLANBOSSESS
+		2 = OVERBOSSESS
+		3 = SUPREME_BOSSESS
+	}
+	consort_male  = {
+		1 = FIRST_NOBLE_HUSBAND
+		2 = FIRST_ROYAL_HUSBAND
+		3 = FIRST_SUPREME_HUSBAND
+	}
+	
+	consort_female = {
+		1 = FIRST_NOBLE_WIFE
+		2 = FIRST_ROYAL_WIFE
+		3 = FIRST_SUPREME_WIFE
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	heir_female = {
+		1 = HEIR
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	trigger = {
+		culture_group = goblin
+		OR = {
+			government = monarchy
+			is_tribal = yes
+		}
+	}
+}
+
+orcish_clan = {
+	rank = {
+		1 = CLAN
+		2 = GREAT_CLAN
+		3 = HORDE
+	}
+	
+	ruler_male = {
+		1 = CHIEFTAIN
+		2 = WARCHIEF
+		3 = WARLORD
+	}
+	
+	ruler_female = {
+		1 = CHIEFTAIN
+		2 = WARCHIEF
+		3 = WARLORD
+	}
+
+	heir_male = {
+		1 = HEIR
+		1 = HEIR
+		1 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR
+		1 = HEIR
+		1 = HEIR
+	}
+	trigger = {
+		OR = {
+			government = orcish_horde
+			is_tribal = yes
+		}
+		culture_group = orcish
+	}
+}
+
+
+adventurer_government = {
+	rank = {
+		1 = ADVENTURER
+		2 = ADVENTURER
+		3 = ADVENTURER
+	}
+	
+	ruler_male = {
+		1 = CAPTAIN
+		2 = CAPTAIN
+		3 = CAPTAIN
+	}
+	
+	ruler_female = {
+		1 = CAPTAIN
+		2 = CAPTAIN
+		3 = CAPTAIN
+	}
+
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+
+	heir_female = {
+		1 = HEIR
+		2 = HEIR
+		3 = HEIR
+	}
+	trigger = {
+		has_reform = adventurer_reform
+	}
+}
+
+adventurer_monarchy = {
+	rank = {
+		1 = KINGDOM
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = PETTY_KING
+		2 = KING
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = PETTY_QUEEN
+		2 = QUEEN
+		3 = EMPRESS
+	}
+	consort_male  = {
+		1 = KING_CONSORT
+		2 = KING_CONSORT
+		3 = EMPEROR_CONSORT
+	}
+	
+	consort_female = {
+		1 = QUEEN_CONSORT
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = PRINCE
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	heir_female = {
+		1 = PRINCESS
+		2 = PRINCESS	
+		3 = PRINCESS
+	}
+	
+	trigger = {
+		OR = {
+			AND = {
+				OR = {
+					capital_scope = { superregion = escann_superregion }
+					capital_scope = { region = forlorn_vale_region }
+				}
+				government = monarchy
+				#has_country_flag = adventurer_derived_government
+			}
+			has_reform = adventurer_kingdom_reform
+		}
+	}
+}
+
+adventurer_republic = {
+	rank = {
+		1 = REPUBLIC
+		2 = GREAT_REPUBLIC
+		3 = GRAND_REPUBLIC
+	}
+	
+	ruler_male = {
+		1 = LORD
+		2 = LORD
+		3 = PRESIDENT
+	}
+
+	ruler_female = {
+		1 = LADY
+		2 = LADY
+		3 = PRESIDENT
+	}
+	
+	trigger = {
+		OR = {
+			AND = {
+				OR = {
+					capital_scope = { superregion = escann_superregion }
+					capital_scope = { region = forlorn_vale_region }
+				}
+				government = republic
+				#has_country_flag = adventurer_derived_government
+			}
+			has_reform = adventurer_republic_reform
+		}
+		#has_country_flag = adventurer_derived_government
+	}
+}
+
+magisterium = {
+	rank = {
+		2 = MAGISTERIUM
+	}
+	
+	ruler_male = {
+		2 = GRAND_MAGISTER
+	}
+	
+	ruler_female = {
+		2 = GRAND_MAGISTRIX
+	}
+
+	heir_male = {
+		2 = MAGISTER
+	}
+
+	heir_female = {
+		2 = MAGISTRIX
+	}
+	trigger = {
+		has_reform = magisterium_reform
+	}
+}
+
+magocracy_magister = {
+	rank = {
+		1 = MAGOCRACY
+		2 = MAGOCRACY
+		3 = MAGOCRACY
+	}
+	
+	ruler_male = {
+		1 = MAGISTER
+		2 = FIRST_MAGISTER
+		3 = GRAND_MAGISTER
+	}
+	
+	ruler_female = {
+		1 = MAGISTRIX
+		2 = FIRST_MAGISTRIX
+		3 = GRAND_MAGISTRIX
+	}
+
+	heir_male = {
+		1 = MAGISTER
+		2 = MAGISTER
+		3 = MAGISTER
+	}
+
+	heir_female = {
+		1 = MAGISTRIX
+		2 = MAGISTRIX
+		3 = MAGISTRIX
+	}
+	trigger = {
+		OR = {
+			has_reform = magisterium_reform
+			has_reform = magocracy_reform
+		}
+		OR = {
+			has_estate_privilege = estate_mages_organization_magisterium
+			tag = A85
+		}
+	}
+}
+
+magocracy_generic = {
+	rank = {
+		1 = MAGOCRACY
+		2 = MAGOCRACY
+		3 = MAGOCRACY
+	}
+	
+	ruler_male = {
+		1 = HIGH_MAGE
+		2 = ARCHMAGE
+		3 = ARCHMAGE
+	}
+	
+	ruler_female = {
+		1 = HIGH_MAGE
+		2 = ARCHMAGE
+		3 = ARCHMAGE
+	}
+
+	heir_male = {
+		1 = COUNCILLOR
+		2 = COUNCILLOR
+		3 = COUNCILLOR
+	}
+
+	heir_female = {
+		1 = COUNCILLOR
+		2 = COUNCILLOR
+		3 = COUNCILLOR
+	}
+	trigger = {
+		has_reform = magocracy_reform
+	}
+}
+
+elven_elector_any = {
+	rank = {
+		1 = PRINCIPALITY
+		2 = GRAND_PRINCIPALITY
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = PRINCE_ELECTOR
+		2 = PRINCE_ELECTOR
+		3 = EMPEROR
+	}
+	
+	ruler_female = {
+		1 = PRINCESS_ELECTOR
+		2 = GRAND_ELECTRESS
+		3 = EMPRESS
+	}
+	
+	consort_male = {
+		1 = PRINCE_CONSORT
+		2 = PRINCE_CONSORT
+		3 = PRINCE_CONSORT
+	}
+
+	consort_female = {
+		1 = CONSORT
+		2 = GRAND_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = PRINCE_APPARENT
+		2 = PRINCE_APPARENT
+		3 = HEIR_APPARENT
+	}
+
+	heir_female = {
+		1 = PRINCESS_APPARENT
+		2 = PRINCESS_APPARENT
+		3 = HEIR_APPARENT
+	}
+	trigger = {
+		#government = monarchy
+		culture_group = elven
+		is_elector = yes
+		is_emperor = no
+	}
+}
+
+dwarven_elector_any = {
+	rank = {
+		1 = HOLD
+		2 = GREAT_HOLD
+		3 = HIGH_KINGDOM
+	}
+	
+	ruler_male = {
+		1 = LORD_ELECTOR
+		2 = LORD_ELECTOR
+		3 = HIGH_KING
+	}
+
+	ruler_female = {
+		1 = LORD_ELECTOR
+		2 = LORD_ELECTOR
+		3 = HIGH_QUEEN
+	}
+	consort_male  = {
+		1 = PRINCE_CONSORT 
+		2 = PRINCE_CONSORT 
+		3 = KING_CONSORT
+	}
+	
+	consort_female = {
+		1 = CONSORT
+		2 = CONSORT
+		3 = QUEEN_CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = PRINCE
+	}
+	
+	heir_female = {
+		1 = HEIR
+		2 = HEIR
+		3 = PRINCE
+	}
+	trigger = {
+		#government = monarchy
+		culture_group = dwarven
+		is_elector = yes
+		is_emperor = no
+	}
+}
+
+anbennar_elector_monarchy = {
+	rank = {
+		1 = DUCHY
+		2 = GRAND_DUCHY
+		3 = EMPIRE
+	}
+
+	ruler_male = {
+		1 = DUKE_ELECTOR
+		2 = GRAND_ELECTOR
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = DUCHESS_ELECTOR
+		2 = GRAND_ELECTRESS
+		3 = EMPRESS
+	}
+	
+	consort_male  = {
+		1 = DUKE
+		2 = GRAND_DUKE_CONSORT
+		3 = PRINCE_CONSORT
+	}
+	
+	consort_female = {
+		1 = DUCHESS
+		2 = GRAND_DUCHESS
+		3 = EMPRESS_CONSORT
+	}
+	
+	#Standard titles for heirs.
+	
+	trigger = {
+		government = monarchy
+		is_elector = yes
+		is_emperor = no
+	}
+}
+
+anbennar_elector_republic = {
+	rank = {
+		1 = REPUBLIC
+		2 = GRAND_REPUBLIC
+		3 = GREAT_REPUBLIC
+	}
+	
+	ruler_male = {
+		1 = LORD_ELECTOR
+		2 = LORD_ELECTOR
+		3 = PRESIDENT
+	}
+
+	ruler_female = {
+		1 = LORD_ELECTOR
+		2 = LORD_ELECTOR
+		3 = PRESIDENT
+	}
+	trigger = {
+		OR = {
+			culture_group = anbennarian
+			culture_group = alenic
+			culture_group = halfling
+			culture_group = lencori			
+		}
+		government = republic
+		is_elector = yes
+		is_emperor = no
+	}
+}
+
+anbennar_elector_theocracy = {
+	rank = {
+		1 = TEMPLE
+		2 = GREAT_TEMPLE
+		3 = HOLY_EMPIRE
+	}
+
+	ruler_male = {
+		1 = PRIEST_ELECTOR
+		2 = PRIEST_ELECTOR
+		3 = PRIEST_ELECTOR
+	}
+
+	ruler_female = {
+		1 = PRIESTESS_ELECTOR
+		2 = PRIESTESS_ELECTOR
+		3 = PRIESTESS_ELECTOR
+	}
+	
+	#Standard titles for heirs.
+	
+	trigger = {
+		government = theocracy
+		is_elector = yes
+		is_emperor = no
+	}
+}
+
+anbennar_elector_knightly_theocracy = {
+	rank = {
+		1 = KNIGHTLY_ORDER
+		2 = KNIGHTLY_ORDER
+		3 = KNIGHTLY_ORDER
+	}
+
+	ruler_male = {
+		1 = IMPERIAL_GRANDMASTER
+		2 = IMPERIAL_GRANDMASTER
+		3 = IMPERIAL_GRANDMASTER
+	}
+
+	ruler_female = {
+		1 = IMPERIAL_GRANDMASTER
+		2 = IMPERIAL_GRANDMASTER
+		3 = IMPERIAL_GRANDMASTER
+	}
+
+	trigger = {
+		OR = {
+			has_reform = secular_order_reform
+			has_reform = monastic_order_reform
+			has_country_flag = knightly_order_adventurer
+		}	
+		government = theocracy
+		is_elector = yes
+		is_emperor = no
+	}
+}
+
+anbennar_grand_duchy = {	#For Dameria and Esmaria
+	rank = {
+		1 = GRAND_DUCHY
+		2 = GRAND_DUCHY
+		3 = GRAND_DUCHY
+	}
+	
+	ruler_male = {
+		1 = GRAND_DUKE
+		2 = GRAND_DUKE
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = GRAND_DUCHESS
+		2 = GRAND_DUCHESS
+		3 = EMPRESS
+	}
+	consort_male  = {
+		1 = GRAND_DUKE_CONSORT
+		2 = GRAND_DUKE_CONSORT
+		3 = PRINCE_CONSORT
+	}
+	
+	consort_female = {
+		1 = GRAND_DUCHESS
+		2 = GRAND_DUCHESS
+		3 = EMPRESS_CONSORT
+	}
+	
+	trigger = {
+		is_part_of_hre = yes
+		government = monarchy
+		OR = {
+			has_country_flag = is_a_grand_duchy
+		}
+	}
+}
+
+#NEEDS TESTING AS WELL AS OTHER MARCHES
+march_anbennar_monarchy = {
+	rank = {
+		1 = MARCH
+		2 = GRAND_MARCH
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = MARQUIS
+		2 = GRAND_MARQUIS
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = MARQUISE
+		2 = GRAND_MARQUISE	
+		3 = EMPRESS
+	}
+	
+	consort_male = {
+		1 = MARQUIS_CONSORT
+		2 = MARQUIS_CONSORT
+		3 = EMPEROR_CONSORT
+	}
+
+	consort_female = {
+		1 = MARQUISE
+		2 = MARQUISE
+		3 = EMPRESS
+	}
+
+	trigger = {
+		is_part_of_hre = yes
+		government = monarchy
+		OR = {	#You're either an actual March or a historical march of Anbennar
+			is_march = yes
+			has_country_flag = is_a_marquisate
+		}
+	}
+}
+
+march_alenic_monarchy = {
+	rank = {
+		1 = MARCH
+		2 = GREAT_MARCH
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = MARCHER_LORD
+		2 = MARCHER_LORD
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = MARCHER_LORD
+		2 = MARCHER_LORD	
+		3 = EMPRESS
+	}
+	
+	consort_male  = {
+		1 = CONSORT
+		2 = CONSORT
+		3 = EMPEROR_CONSORT
+	}
+	
+	consort_female = {
+		1 = CONSORT
+		2 = CONSORT
+		3 = EMPRESS_CONSORT
+	}
+	trigger = {
+		government = monarchy
+		culture_group = alenic
+		is_march = yes
+	}
+}
+
+moorman_monarchy = {
+	rank = {
+		1 = LORDSHIP
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = LORD
+		2 = MOOR_KING
+		3 = MOOR_EMPEROR
+	}
+
+	ruler_female = {
+		1 = LADY
+		2 = MOOR_QUEEN
+		3 = MOOR_EMPRESS
+	}
+	consort_male  = {
+		1 = CONSORT
+		2 = KING_CONSORT
+		3 = EMPEROR_CONSORT
+	}
+	
+	consort_female = {
+		1 = CONSORT
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	heir_female = {
+		1 = HEIR
+		2 = PRINCESS	
+		3 = PRINCESS
+	}
+	
+	trigger = {
+		primary_culture = moorman
+		government = monarchy
+		is_vassal = no
+	}
+}
+
+dwarven_clan_monarchy = {
+	rank = {
+		1 = KINGDOM
+		2 = KINGDOM
+		3 = KINGDOM
+	}
+	
+	ruler_male = {
+		1 = LORD
+		2 = KING
+		3 = HIGH_KING
+	}
+	
+	ruler_female = {
+		1 = LADY
+		2 = QUEEN
+		3 = HIGH_QUEEN
+	}
+	
+	heir_male = {
+		1 = LORD
+		2 = LORD
+		3 = LORD
+	}
+
+	heir_female = {
+		1 = LADY
+		2 = LADY
+		3 = LADY
+	}
+
+	trigger = {
+		government = monarchy
+		OR = {
+			has_reform = dwarven_clan_reform
+			culture_group = dwarven
+		}
+	}
+}
+
+bulwari_monarchy = {
+	rank = {
+		1 = AKALATE
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = AKAL
+		2 = KING
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = AKALA
+		2 = QUEEN
+		3 = EMPRESS
+	}
+	consort_male  = {
+		1 = CONSORT
+		2 = KING_CONSORT
+		3 = EMPEROR_CONSORT
+	}
+	
+	consort_female = {
+		1 = CONSORT
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	heir_female = {
+		1 = HEIR
+		2 = PRINCESS	
+		3 = PRINCESS
+	}
+	
+	trigger = {
+		OR = {
+			culture_group = bulwari
+			primary_culture = sun_elf
+		}
+		government = monarchy
+	}
+}
+
+gnollish_monarchy = {
+	rank = {
+		1 = PACK
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = PACK_LORD
+		2 = KING
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = PACK_MISTRESS
+		2 = QUEEN
+		3 = EMPRESS
+	}
+	consort_male  = {
+		1 = CONSORT
+		2 = KING_CONSORT
+		3 = EMPEROR_CONSORT
+	}
+	
+	consort_female = {
+		1 = CONSORT
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	heir_female = {
+		1 = HEIR
+		2 = PRINCESS	
+		3 = PRINCESS
+	}
+	
+	trigger = {
+		culture_group = gnollish
+		OR = {
+			has_reform = steppe_horde
+			is_tribal = yes
+		}
+	}
+}
+
+elven_principality_republic = {	#changed it to all elves
+	rank = {
+		1 = PRINCIPALITY
+		2 = GRAND_PRINCIPALITY
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = PRINCE
+		2 = GRAND_PRINCE
+		3 = EMPEROR
+	}
+	
+	ruler_female = {
+		1 = PRINCESS
+		2 = GRAND_PRINCESS
+		3 = EMPRESS
+	}
+	
+	consort_male = {
+		1 = PRINCE_CONSORT
+		2 = PRINCE_CONSORT
+		3 = PRINCE_CONSORT
+	}
+
+	consort_female = {
+		1 = CONSORT
+		2 = GRAND_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = PRINCE_APPARENT
+		2 = PRINCE_APPARENT
+		3 = HEIR_APPARENT
+	}
+
+	heir_female = {
+		1 = PRINCESS_APPARENT
+		2 = PRINCESS_APPARENT
+		3 = HEIR_APPARENT
+	}
+	
+	trigger = {
+		culture_group = elven
+		#government = republic
+		NOT = {has_reform = colonial_government}
+		#has_reform = elven_principality
+	}
+}
+
+anbennar_monarchy = {	
+	rank = {
+		1 = DUCHY
+		2 = GRAND_DUCHY
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = DUKE
+		2 = GRAND_DUKE
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = DUCHESS
+		2 = GRAND_DUCHESS	
+		3 = EMPRESS
+	}
+	consort_male  = {
+		1 = CONSORT 
+		2 = GRAND_DUKE_CONSORT
+		3 = EMPEROR_CONSORT
+	}
+	
+	consort_female = {
+		1 = CONSORT
+		2 = GRAND_DUCHESS
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = HEIR
+		3 = PRINCE
+	}
+	
+	heir_female = {
+		1 = HEIR
+		2 = HEIR	
+		3 = PRINCESS
+	}
+	
+	trigger = {
+	government = monarchy
+	is_part_of_hre = yes
+	OR = {
+		culture_group = anbennarian
+		culture_group = lencori
+		culture_group = alenic
+		}
+	}
+}
+
+anbennar_republic = {
+	rank = {
+		1 = REPUBLIC
+		2 = GRAND_REPUBLIC
+		3 = GREAT_REPUBLIC
+	}
+	
+	ruler_male = {
+		1 = LORD_MAYOR
+		2 = GRAND_MAYOR
+		3 = PRESIDENT
+	}
+
+	ruler_female = {
+		1 = LORD_MAYOR
+		2 = GRAND_MAYOR	
+		3 = PRESIDENT
+	}
+	trigger = {
+		OR = {
+			culture_group = anbennarian
+			culture_group = alenic
+			culture_group = halfling
+			culture_group = lencori			
+		}
+		government = republic
+		NOT = { has_reform = colonial_government }
+	}
+}
+
+lencori_monarchy = {	
+	rank = {
+		1 = DUCHY
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = DUKE
+		2 = KING
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = DUCHESS
+		2 = QUEEN	
+		3 = EMPRESS
+	}
+	consort_male  = {
+		1 = CONSORT 
+		2 = PRINCE_CONSORT
+		3 = EMPEROR_CONSORT
+	}
+	
+	consort_female = {
+		1 = CONSORT
+		2 = QUEEN
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	heir_female = {
+		1 = HEIR
+		2 = PRINCESS	
+		3 = PRINCESS
+	}
+	
+	trigger = {
+		government = monarchy
+		culture_group = lencori
+	}
+}
+
+alenic_monarchy = {
+	rank = {
+		1 = LORDSHIP
+		2 = KINGDOM
+		3 = EMPIRE
+	}
+	
+	ruler_male = {
+		1 = LORD
+		2 = KING
+		3 = EMPEROR
+	}
+
+	ruler_female = {
+		1 = LADY
+		2 = QUEEN
+		3 = EMPRESS
+	}
+	consort_male  = {
+		1 = CONSORT
+		2 = KING_CONSORT
+		3 = EMPEROR_CONSORT
+	}
+	
+	consort_female = {
+		1 = CONSORT
+		2 = QUEEN_CONSORT
+		3 = EMPRESS_CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	heir_female = {
+		1 = HEIR
+		2 = PRINCESS	
+		3 = PRINCESS
+	}
+	
+	trigger = {
+		culture_group = alenic
+		government = monarchy
+	}
+}
+
+gnomish_republic = {
+	rank = {
+		1 = HIERARCHY
+		2 = HIERARCHY
+		3 = SUPREME_HIERARCHY
+	}
+	
+	ruler_male = {
+		1 = HIERARCH
+		2 = HIERARCH
+		3 = SUPREME_HIERARCH
+	}
+
+	ruler_female = {
+		1 = HIERARCH
+		2 = HIERARCH	
+		3 = SUPREME_HIERARCH
+	}
+	trigger = {
+		culture_group = gnomish
+		government = republic
+	}
+}
+
+gnomish_kingdom = {
+	rank = {
+		1 = HIERARCHY
+		2 = HIERARCHY
+		3 = SUPREME_HIERARCHY
+	}
+	
+	ruler_male = {
+		1 = HIERARCH_MONARCHY
+		2 = HIERARCH_MONARCHY
+		3 = SUPREME_HIERARCH_MONARCHY
+	}
+
+	ruler_female = {
+		1 = HIERARCH_MONARCHY
+		2 = HIERARCH_MONARCHY
+		3 = SUPREME_HIERARCH_MONARCHY
+	}
+	trigger = {
+		NOT = { tag = A80 }	#Iochand is a Kingdom proper
+		culture_group = gnomish
+		government = monarchy
+	}
+}
+
+dwarven_monarchy = {
+	rank = {
+		1 = HOLD
+		2 = KINGDOM
+		3 = HIGH_KINGDOM
+	}
+	
+	ruler_male = {
+		1 = LORD
+		2 = KING
+		3 = HIGH_KING
+	}
+
+	ruler_female = {
+		1 = LADY
+		2 = QUEEN
+		3 = HIGH_QUEEN
+	}
+	consort_male  = {
+		1 = PRINCE_CONSORT 
+		2 = KING_CONSORT
+		3 = KING_CONSORT
+	}
+	
+	consort_female = {
+		1 = CONSORT
+		2 = QUEEN_CONSORT
+		3 = QUEEN_CONSORT
+	}
+	
+	heir_male = {
+		1 = HEIR
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	heir_female = {
+		1 = HEIR
+		2 = PRINCE
+		3 = PRINCE
+	}
+	
+	trigger = {
+		culture_group = dwarven
+		government = monarchy
+	}
+}
+
+akalate = {
+	rank = {
+		1 = AKALATE
+	}
+	
+	ruler_male = {
+		1 = AKAL
+	}
+
+	ruler_female = {
+		1 = AKALA
+	}
+	consort_male  = {
+		1 = AKAL
+	}
+	
+	consort_female = {
+		1 = AKALA
+	}
+	
+	heir_male = {
+		1 = HEIR
+	}
+	
+	heir_female = {
+		1 = HEIR
+	}
+	
+	trigger = {
+		culture_group = bulwari
+		government_rank = 1
+		government = monarchy
+	}
+}
+
+eordand_monarchy = {
+	rank = {
+		1 = DUKAD
+		2 = RIGAK
+		3 = ARD_RIGAK
+	}
+	
+	ruler_male = {
+		1 = SONAD
+		2 = FALT
+		3 = ARD_FALT
+	}
+	
+	ruler_female = {
+		1 = SURCAG
+		2 = BANRAG
+		3 = ARD_BANRAG
+	}
+
+	consort_male  = {
+		1 = DUKAD_CARD
+		2 = RIGAK_CARD
+		3 = ARDRIGAK_CARD
+	}
+	
+	consort_female = {
+		1 = SURCAG_CARD
+		2 = BANRAG_CARD
+		3 = ARDBANRAG_CARD
+	}
+	
+	heir_male = {
+		1 = OGHAR
+		2 = OGHAR
+		3 = OGHAR
+	}
+	
+	heir_female = {
+		1 = BANOGHAR
+		2 = BANOGHAR	
+		3 = BANOGHAR
+	}
+	
+	trigger = {
+		culture_group = eordellon_ruinborn_elf
+		government = monarchy
+	}
+}
+
+eordand_republic = {
+	rank = {
+		1 = COMARL
+		2 = POBLAK
+		3 = ARD_POBLAK
+	}
+	
+	ruler_male = {
+		1 = COMHAIR
+		2 = LABRAR
+		3 = CANSUDD
+	}
+
+	ruler_female = {
+		1 = COMHAIR
+		2 = LABRAR
+		3 = CANSUDD
+	}
+	
+	trigger = {
+		government = republic
+		culture_group = eordellon_ruinborn_elf
+	}
+}
+
+cannorian_theocracy = {
+	rank = {
+		1 = TEMPLE
+		2 = GREAT_TEMPLE
+		3 = HOLY_EMPIRE
+	}
+
+	ruler_male = {
+		1 = HIGH_PRIEST
+		2 = HIGH_PRIEST
+		3 = HIGH_PRIEST
+	}
+
+	ruler_female = {
+		1 = HIGH_PRIESTESS
+		2 = HIGH_PRIESTESS
+		3 = HIGH_PRIESTESS
+	}
+
+	trigger = {
+		government = theocracy
+		religion_group = cannorian
+	}
+}
+
+oracular_order = {
+	rank = {
+		1 = ORACLE_ORDER
+		2 = ORACLE_ORDER
+		3 = HOLY_EMPIRE
+	}
+
+	ruler_male = {
+		1 = FIRST_ORACLE_MALE
+		2 = FIRST_ORACLE_MALE
+		3 = FIRST_ORACLE_MALE
+	}
+
+	ruler_female = {
+		1 = FIRST_ORACLE_FEMALE
+		2 = FIRST_ORACLE_FEMALE
+		3 = FIRST_ORACLE_FEMALE
+	}
+
+	trigger = {
+		has_reform = oracular_order_reform
+	}
+}
+
+raja_of_rahen = {
+	rank = {
+		1 = RAJ
+		2 = RAJ
+		3 = RAJ
+	}
+
+	ruler_male = {
+		1 = RAJA
+		2 = RAJA
+		3 = RAJA
+	}
+
+	ruler_female = {
+		1 = RAJA
+		2 = RAJA
+		3 = RAJA
+	}
+
+	trigger = {
+	    OR = {
+		    has_reform = raja_reform
+		    tag = R70
+		    tag = R71
+	    }
+    }
+}
+
+senapti = {
+	rank = {
+		1 = SENAPTI
+		2 = SENAPTI
+		3 = SENAPTI
+	}
+
+	ruler_male = {
+		1 = SENAPTI
+		2 = SENAPTI
+		3 = SENAPTI
+	}
+
+	ruler_female = {
+		1 = SENAPTI
+		2 = SENAPTI
+		3 = SENAPTI
+	}
+
+	trigger = {
+		has_reform = great_jamindar_reform
+	}
+}
+
+prabhi = {
+	rank = {
+		1 = PRABHI
+		2 = PRABHI
+		3 = PRABHI
+	}
+
+	ruler_male = {
+		1 = PRABHI
+		2 = PRABHI
+		3 = PRABHI
+	}
+
+	ruler_female = {
+		1 = PRABHI
+		2 = PRABHI
+		3 = PRABHI
+	}
+
+	trigger = {
+		OR = {
+			has_reform = jamindar_reform
+			has_reform = indep_jamindar_reform
+		}
+	}
+}
+
+centaur_horde = {
+	rank = {
+		1 = CLAN
+		2 = HORDE
+		3 = GREAT_HORDE
+	}
+	
+	ruler_male = {
+		1 = CAEHN
+		2 = CAEHN
+		3 = GREAT_CAEHN
+	}
+	
+	ruler_female = {
+		1 = CAEHTEN
+		2 = CAEHTEN
+		3 = GREAT_CAEHTEN
+	}
+	
+	trigger = {
+		has_reform = centaur_horde
+	}
+}
+
+centaur_settled = {
+	rank = {
+		1 = CLAN
+		2 = HORDE
+		3 = GREAT_HORDE
+	}
+	
+	ruler_male = {
+		1 = CAEHN
+		2 = CAEHN
+		3 = GREAT_CAEHN
+	}
+	
+	ruler_female = {
+		1 = CAEHTEN
+		2 = CAEHTEN
+		3 = GREAT_CAEHTEN
+	}
+	
+	trigger = {
+		has_reform = centaur_settled
+	}
+}

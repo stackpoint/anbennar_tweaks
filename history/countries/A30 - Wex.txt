@@ -1,0 +1,59 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 2
+primary_culture = wexonard
+religion = regent_court
+technology_group = tech_cannorian
+capital = 306
+
+historical_rival = A13 #Gawed
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+1000.1.1 = { set_country_flag = is_a_grand_duchy }
+
+1417.1.10 = {
+	monarch = {
+		name = "Lothane III"
+		dynasty = "síl Wex"
+		birth_date = 1401.9.4
+		adm = 2
+		dip = 3
+		mil = 6
+	}
+	add_ruler_personality = conqueror_personality
+	add_ruler_personality = mage_personality
+	set_ruler_flag = conjuration_1
+	set_ruler_flag = evocation_1
+	set_ruler_flag = evocation_2
+	set_ruler_flag = abjuration_1
+	set_ruler_flag = abjuration_2
+	set_ruler_flag = enchantment_1
+	queen = {
+		country_of_origin = A01
+		name = "Eilísa"
+		dynasty = "Siloriel"
+		birth_date = 1413.4.1
+		death_date = 1492.6.8
+		female = yes
+		adm = 1
+		dip = 2
+		mil = 1
+	}
+	add_queen_personality = fertile_personality
+}
+
+1422.1.1 = { set_country_flag = lilac_wars_rose_party }
+
+1430.9.2 = {
+	heir = {
+		name = "Caylen"
+		monarch_name = "Caylen II"
+		dynasty = "síl Wex"
+		birth_date = 1430.9.2
+		death_date = 1480.1.1
+		claim = 95
+		adm = 2
+		dip = 2
+		mil = 1
+	}
+}

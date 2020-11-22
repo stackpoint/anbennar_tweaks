@@ -1,0 +1,31 @@
+government = theocracy
+add_government_reform = monastic_order_reform
+government_rank = 1
+primary_culture = selphereg
+religion = spring_court
+technology_group = tech_eordand
+capital = 2007
+historical_rival = H04
+historical_rival = H08
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1431.7.5 = {
+	monarch = {
+		name = "Filnar"
+		dynasty = "Dawnfire"
+		birth_date = 1403.5.9
+		adm = 2
+		dip = 4
+		mil = 4
+	}
+	add_ruler_personality = mage_personality
+	set_ruler_flag = divination_1
+	set_ruler_flag = divination_2
+	set_ruler_flag = conjuration_1
+	set_ruler_flag = conjuration_2
+	set_ruler_flag = conjuration_3
+	set_ruler_flag = evocation_1
+	set_ruler_flag = evocation_2
+	add_ruler_personality = careful_personality
+}

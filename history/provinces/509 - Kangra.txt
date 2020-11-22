@@ -1,0 +1,25 @@
+#509 - Mestikisorotin (moontent)
+
+owner = F12
+controller = F12
+add_core = F12
+culture = forest_goblin
+religion = goblinic_shamanism
+
+
+base_tax = 3
+base_production = 2
+base_manpower = 1
+
+trade_goods = naval_supplies
+
+capital = ""
+
+
+
+
+
+
+
+
+

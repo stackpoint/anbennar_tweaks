@@ -1,0 +1,34 @@
+#652 - Sedovcipastin (Grey sheep pasture)
+
+owner = F13
+controller = F13
+add_core = F13
+add_core = F22
+culture = exodus_goblin
+religion = goblinic_shamanism
+
+
+base_tax = 1
+base_production = 3
+base_manpower = 2
+
+trade_goods = wool
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+
+
+
+
+
+add_permanent_province_modifier = {
+	name = human_minority_coexisting_small
+	duration = -1
+}

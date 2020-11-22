@@ -1,0 +1,27 @@
+# No previous file for Ratchaburi
+owner = F01
+controller = F01
+add_core = F01
+culture = kheteratan
+religion = khetist
+
+hre = no
+
+base_tax = 1
+base_production = 2
+base_manpower = 1
+
+trade_goods = livestock
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+
+
+

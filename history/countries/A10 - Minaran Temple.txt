@@ -1,0 +1,22 @@
+government = theocracy
+add_government_reform = leading_clergy_reform
+government_rank = 1
+primary_culture = high_lorentish
+religion = regent_court
+technology_group = tech_cannorian
+historical_friend = A09 #Sorncost
+capital = 97
+fixed_capital = 97
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1444.1.1 = {
+	monarch = {
+		name = "Alessa of Roilsard"
+		birth_date = 1426.1.1
+		adm = 4
+		dip = 4
+		mil = 4
+		female = yes
+	}
+}

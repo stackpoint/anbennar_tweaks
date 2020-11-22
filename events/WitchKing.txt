@@ -1,0 +1,172 @@
+namespace = witch_king
+
+# Activation
+country_event = {
+	id =  witch_king.0
+	title =  witch_king.0.t
+	desc =  witch_king.0.d
+	picture = COMET_SIGHTED_eventPicture
+	
+	trigger = {
+		ruler_has_personality = mage_personality
+		check_variable = {
+			which = pointsWitchKing
+			value = 13
+		}
+		
+		OR = {
+			NOT = { has_country_flag = witch_king_flag }
+			NOT = { has_ruler_modifier = witch_king_modifier }
+		}
+		
+		# Doesn't fire before previous king's Witch King points are cleared in magic school initalization magic_ruler.1
+		OR = {
+			has_ruler_flag = abjuration_1
+			has_ruler_flag = conjuration_1
+			has_ruler_flag = divination_1
+			has_ruler_flag = enchantment_1
+			has_ruler_flag = evocation_1
+			has_ruler_flag = illusion_1
+			has_ruler_flag = necromancy_1
+			has_ruler_flag = transmutation_1
+		}
+		
+		has_regency = no
+		
+	}
+	
+	# immediate = {
+		# hidden_effect = {
+			
+		# }
+	# }
+	
+	mean_time_to_happen = {
+		months = 1200
+		modifier = {
+			factor = 0.75
+			check_variable = {
+				which = pointsWitchKing
+				value = 26
+			}
+		}
+		modifier = {
+			factor = 0.5
+			check_variable = {
+				which = pointsWitchKing
+				value = 39
+			}
+		}
+		modifier = {
+			factor = 0.7
+			has_ruler_flag = necromancy_1
+		}
+		modifier = {
+			factor = 0.5
+			has_ruler_flag = necromancy_2
+		}
+		modifier = {
+			factor = 0.2
+			has_ruler_flag = necromancy_3
+		}
+		modifier = {
+			factor = 0.001
+			has_country_modifier = undead_military
+		}
+	}
+
+	option = {
+		name = witch_king.0.a
+		
+		add_ruler_modifier = {
+			name = witch_king_modifier
+			duration = -1
+		}
+		
+		set_country_flag = witch_king_flag
+		
+		hidden_effect = {
+			country_event = { id = anbennar_setup.7 days = 1}
+		}
+	}
+}
+
+# Death of Witch King - Collapse
+country_event = {
+	id =  witch_king.1
+	title =  witch_king.1.t
+	desc =  witch_king.1.d
+	picture = DEATH_OF_HEIR_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		#had_ruler_flag = { flag = witch_king_flag days = 12 }
+		has_country_flag = witch_king_flag
+		NOT = { has_country_flag = lich_ruler_has_phylactery }
+	}
+
+	option = {
+		name = witch_king.1.a
+		trigger = {
+			OR = {
+				ruler_has_personality = mage_personality
+				has_ruler_flag = heir_consort_mage_personality
+			}
+		}
+		
+		add_ruler_modifier = {
+			name = witch_king_modifier
+			duration = -1
+		}
+		
+		set_country_flag = witch_king_flag
+		
+		add_country_modifier = {
+			name = witch_king_death
+			duration = 1825
+		}
+	}
+	
+	option = {
+		name = witch_king.1.b
+		trigger = {
+			NOT = {
+				ruler_has_personality = mage_personality
+				has_ruler_flag = heir_consort_mage_personality
+			}
+		}
+		
+		add_country_modifier = {
+			name = witch_king_death
+			duration = 3650
+		}
+		
+		clr_country_flag = witch_king_flag
+		
+		#Removes opinion malus
+		hidden_effect = {
+			country_event = { id = anbennar_setup.8 days = 1}
+		}
+	}
+	
+	#This only releases subjects, so if you have no vassals this means nothing
+	# option = {
+		# name = witch_king.1.c
+		# trigger = {
+			# NOT = {
+				# heir_has_personality = mage_personality
+				# has_heir_flag = heir_consort_mage_personality
+			# }
+		# }
+		
+		# release_all_subjects = yes
+		
+		# add_stability = 2
+		
+		# add_country_modifier = {
+			# name = witch_king_a_new_hope
+			# duration = 3650
+		# }
+	# }
+}

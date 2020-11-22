@@ -1,0 +1,366 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 209  197  154 }
+
+
+
+historical_idea_groups = {
+	economic_ideas
+	offensive_ideas
+	exploration_ideas
+	defensive_ideas	
+	administrative_ideas	
+	maritime_ideas
+	quality_ideas
+	innovativeness_ideas
+}
+
+historical_units = {
+	cannorian_1_medieval_infantry
+	cannorian_1_medieval_knights
+	cannorian_5_men_at_arms
+	cannorian_9_pike_and_shot
+	cannorian_10_gun_knights
+	cannorian_12_thorn_formation
+	cannorian_14_outriders
+	cannorian_15_volley_infantry
+	cannorian_18_reformed_outriders
+	cannorian_19_thorn_formation2
+	cannorian_23_line_infantry
+	cannorian_26_carabiners
+	cannorian_26_rosecoat_infantry
+	cannorian_28_impulse_infantry
+	cannorian_28_cuirassier
+	cannorian_30_drill_infantry
+}
+
+monarch_names = {
+
+	#Generic Anbennarian Name List
+	"Acromar #0" = 10
+	"Adelar #0" = 10
+	"Alain #0" = 10
+	"Alen #0" = 10
+	"Arnold #0" = 10
+	"Camir #0" = 10
+	"Camor #0" = 10
+	"Canrec #0" = 10
+	"Celgal #0" = 10
+	"Ciramod #0" = 10
+	"Clarimond #0" = 10
+	"Clothar #0" = 10
+	"Coreg #0" = 10
+	"Crovan #0" = 10
+	"Crovis #0" = 10
+	"Corac #0" = 10
+	"Corric #0" = 10
+	"Dalyon #0" = 10
+	"Delia #0" = 10
+	"Delian #0" = 10
+	"Devac #0" = 10
+	"Devan #0" = 10
+	"Dustyn #0" = 10
+	"Elecast #0" = 10
+	"Frederic #0" = 10
+	"Godwin #0" = 10
+	"Gracos #0" = 10
+	"Henric #0" = 10
+	"Humac #0" = 10
+	"Humban #0" = 10
+	"Humbar #0" = 10
+	"Jacob #0" = 10
+	"Lain #0" = 10
+	"Lan #0" = 10
+	"Madalac #0" = 10
+	"Marcan #0" = 10
+	"Ottrac #0" = 10
+	"Ottran #0" = 10
+	"Petran #0" = 10
+	"Peyter #0" = 10
+	"Rabac #0" = 10
+	"Rabard #0" = 10
+	"Rycan #0" = 10
+	"Rican #0" = 10
+	"Rogec #0" = 10
+	"Roger #0" = 10
+	"Stovan #0" = 10
+	"Teagan #0" = 10
+	"Tomac #0" = 10
+	"Tomar #0" = 10
+	"Tormac #0" = 10
+	"Venac #0" = 10
+	"Vencan #0" = 10
+	"Walter #0" = 10
+	"Wystan #0" = 10
+	"Bellac #0" = 10
+	
+
+	"Adela #0" = -1
+	"Alice #0" = -1
+	"Anna #0" = -1
+	"Anne #0" = -1
+	"Auci #0" = -1
+	"Bella #0" = -1
+	"Catherine #0" = -1
+	"Clarimonde #0" = -1
+	"Clarya #0" = -1
+	"Clothilde #0" = -1
+	"Constance #0" = -1
+	"Cora #0" = -1
+	"Coralinde #0" = -1
+	"Dalya #0" = -1
+	"Edith #0" = -1
+	"Eleanor #0" = -1
+	"Elenor #0" = -1
+	"Emma #0" = -1
+	"Etta #0" = -1
+	"Humba #0" = -1
+	"Lisban #0" = -1
+	"Lisbet #0" = -1
+	"Madala #0" = -1
+	"Magda #0" = -1
+	"Matilda #0" = -1
+	"Robyn #0" = -1
+	
+		#Generic Orc Name List
+		"Adûl #0" = 10
+		"Amug #0" = 10
+		"Azukor #0" = 10
+		"Bagga #0" = 10
+		"Bakbur #0" = 10
+		"Bhagzud #0" = 10
+		"Bolg #0" = 10
+		"Borgu #0" = 10
+		"Bork #0" = 10
+		"Bral #0" = 10
+		"Brasûr #0" = 10
+		"Burggob #0" = 10
+		"Bârog #0" = 10
+		"Bûbol #0" = 10
+		"Bûth #0" = 10
+		"Conakk #0" = 10
+		"Dhog #0" = 10
+		"Dramm #0" = 10
+		"Drazad #0" = 10
+		"Drok #0" = 10
+		"Dub #0" = 10
+		"Dugz #0" = 10
+		"Durg #0" = 10
+		"Dûsh #0" = 10
+		"Flak #0" = 10
+		"Flogg #0" = 10
+		"Fubar #0" = 10
+		"Gakk #0" = 10
+		"Garl #0" = 10
+		"Garm #0" = 10
+		"Ghad #0" = 10
+		"Ghash #0" = 10
+		"Ghudd #0" = 10
+		"Ghudrag #0" = 10
+		"Ghurâd #0" = 10
+		"Ghâm #0" = 10
+		"Gluk #0" = 10
+		"Gokk #0" = 10
+		"Golm #0" = 10
+		"Grisha #0" = 10
+		"Grom #0" = 10
+		"Gruk #0" = 10
+		"Grumger #0" = 10
+		"Gubû #0" = 10
+		"Gukk #0" = 10
+		"Gund #0" = 10
+		"Hoglik #0" = 10
+		"Hork #0" = 10
+		"Horza #0" = 10
+		"Hoshgrish #0" = 10
+		"Hura #0" = 10
+		"Ikom #0" = 10
+		"Ishmoz #0" = 10
+		"Kargath #0" = 10
+		"Khagor #0" = 10
+		"Khrosh #0" = 10
+		"Kilrogg #0" = 10
+		"Korgus #0" = 10
+		"Koth #0" = 10
+		"Krakhorn #0" = 10
+		"Krimp #0" = 10
+		"Krûk #0" = 10
+		"Kuga #0" = 10
+		"Kurd #0" = 10
+		"Larluk #0" = 10
+		"Lorm #0" = 10
+		"Luga #0" = 10
+		"Lurb #0" = 10
+		"Mabug #0" = 10
+		"Maknag #0" = 10
+		"Maku #0" = 10
+		"Mogg #0" = 10
+		"Mogru #0" = 10
+		"Mozû #0" = 10
+		"Mûg #0" = 10
+		"Mûl #0" = 10
+		"Muzû #0" = 10
+		"Norsko #0" = 10
+		"Norûk #0" = 10
+		"Nâkra #0" = 10
+		"Nârug #0" = 10
+		"Nâzu #0" = 10
+		"Ogal #0" = 10
+		"Ogbûr #0" = 10
+		"Ogg #0" = 10
+		"Okegg #0" = 10
+		"Olrok #0" = 10
+		"Orgrim #0" = 10
+		"Orlog #0" = 10
+		"Orok #0" = 10
+		"Orokâg #0" = 10
+		"Orthog #0" = 10
+		"Prak #0" = 10
+		"Pug #0" = 10
+		"Pushkrimp #0" = 10
+		"Ragdug #0" = 10
+		"Rakk #0" = 10
+		"Rash #0" = 10
+		"Ratak #0" = 10
+		"Regar #0" = 10
+		"Ronk #0" = 10
+		"Rug #0" = 10
+		"Samûr #0" = 10
+		"Shador #0" = 10
+		"Shaka #0" = 10
+		"Shâg #0" = 10
+		"Skak #0" = 10
+		"Skoth #0" = 10
+		"Skun #0" = 10
+		"Snafu #0" = 10
+		"Stakugâ #0" = 10
+		"Takra #0" = 10
+		"Tarz #0" = 10
+		"Thrak #0" = 10
+		"Thrâl #0" = 10
+		"Tugog #0" = 10
+		"Tuhorn #0" = 10
+		"Tûka #0" = 10
+		"Uddâg #0" = 10
+		"Ugakuga #0" = 10
+		"Ugol #0" = 10
+		"Ukbuk #0" = 10
+		"Urim #0" = 10
+		"Urimguk #0" = 10
+		"Ushak #0" = 10
+		"Uzûl #0" = 10
+		"Varbuk #0" = 10
+		"Varok #0" = 10
+		"Zathra #0" = 10
+		"Zhorg #0" = 10
+		"Zhuk #0" = 10
+		"Zog #0" = 10
+		"Zosh #0" = 10
+		"Zugor #0" = 10
+		"Zur #0" = 10
+		"Zêb #0" = 10
+		"Zûka #0" = 10
+		
+		"Ahe #0" = -1
+		"Ahza #0" = -1
+		"Atu #0" = -1
+		"Awa #0" = -1
+		"Aâdga #0" = -1
+		"Bhiel #0" = -1
+		"Borba #0" = -1
+		"Burâ #0" = -1
+		"Dhoulza #0" = -1
+		"Etrega #0" = -1
+		"Ghorza #0" = -1
+		"Glasha #0" = -1
+		"Grama #0" = -1
+		"Grane #0" = -1
+		"Gârona #0" = -1
+		"Khaara #0" = -1
+		"Lagba #0" = -1
+		"Lamma #0" = -1
+		"Lazga #0" = -1
+		"Mewa #0" = -1
+		"Muroga #0" = -1
+		"Neevnûz #0" = -1
+		"Ohdaka #0" = -1
+		"Orbha #0" = -1
+		"Orâph #0" = -1
+		"Ovga #0" = -1
+		"Rerkêl #0" = -1
+		"Rurti #0" = -1
+		"Shel #0" = -1
+		"Sheru #0" = -1
+		"Tidû #0" = -1
+		"Tâtga #0" = -1
+		"Uglâim #0" = -1
+		"Uroph #0" = -1
+		"Vogaa #0" = -1
+		"Voltga #0" = -1
+		"Yagza #0" = -1
+		"Zien #0" = -1
+}
+
+leader_names = {
+	#Inner Castanor Provinces
+	"of Burnoll" "of Silverdocks" "of Southgate" "of Caylensfort" "of Venacvord" "of Escerton" "of Alloysford" "of Khugsroad" "of Elderlan " "of Annistoft" "of Hagstow" "of Swapstoke" "of Nathwoud" "of Foarhal" "of Sapphirewatch"
+	"of Cadell's Rest" "of Coalwoud" "of Charwic" "of Pinevord" "of Narronath" "of Wardenhall" "of Canreced" "of Eswall" "of Acenort" "of Stenced" "of Kondunn" "of Núrced" "of Varced" "of Mintírley"
+	
+	#Generic English names and occupational names
+	Smith Youngheart Adamson Henryson Donaldson Cook Baker Rider Lampman Fisher Fischer Tanner Miller Banks Taylor Cobble Jones Davies Williams Roberts White Black Grey Gray Green Red Blue Edwards Wood Woods Clarke Davis Nicholson
+	Priestley Campman Wright Parker Stewart Berry Porter Shepherd Freeman Potter Pitcher Alderman Arkwright Barber Baker Bailey Bender Bowyer Chapman Chandler Cheeseman Cook Cooper Cowell Crocker Cutler Earl Farmer 
+	
+	#Titles
+	" " "'the Silver'"
+	"'the Tall'" "'the Younger'" "'the Clever'" "'the Vigilant'" "'the Stern'" "'the Mighty'" "'Halfblood'" "'the Mudblooded'" "'the Kind'" "'the Able'" "'the Good'" "'the Fat'"
+	#Occupational Surnames
+	Skullgrinder "Mountain-Eater" Ironskin Ironhide Deadhide Hammerfist Hammerspike Spikefist Swordfist "Dead-eye" Bloodspear Blackheart Manhunter Pureblood "Bright Eyes" "Eagle Eyes" "Half-Tongue" "Grog-Maker" Deathmonger
+	Swordmaster Warborn Stoneskin Warmonger Rockskull Skullblade Skullhorn Ogreborn Deadeye Longtooth Pigsnout Regehammer Crueldrum Stonefist Angerfang Steelsword Warpsteel Deathforge Cravenkiller Hellspitter Rocksnarler
+	Deadbreath Bitteraxe Shadowfeast Bloodfeast Redfeast Bloodscream Wildmarcher Brokenhammer Brokentusk "No-eyes" Silentblade Rageblood Rageblade Doomhammer Hellscream Blackhand Doomhammer Saurfang Bladefist Bloodreaver
+	Brightflesh Grandguard Armorskin Armorhide Steelhide Metalhide Metaljaw Sharpears Halfblood Ragechain Chaoschain Chaosblade Flameseeker Fireblood Battlefire Thunderstorm Thunderblood Thunderfang Axemaul Shadowblood
+	
+	
+	#Titles
+	"'the Stout'" "'the Rash'" "'the Deadly'" "'the Master'" "'the Slaver'" "'the Warlord'" "'the Relentless'" "'the Bold'" "'the Warrior'" "'the Death-bringer'" "'the Handsome'" "'the Greedy'" "'the Tyrant'" "'the Unbreakable'" "'the Great'"
+	"'the Defiler'" "'the Dead'" "'the Poker'" "'the Strangler'" "'the Twisted'" "'the Punisher'" "'the Devourer'" "'the Gravewalker'" "'the Crafty'" "'the Smart'" "'the Unwashed'" "'the Vile'" "'the Whisperer'" "'the Seer'" "'the Wicked'" "'the Brander'"
+	"'the Large'" "'the Tall'" "'the Fat'" "'the Small'" "'the Strong'" "'the Clever'" "'the Crusher'" "'the Halfblooded"
+}
+
+ship_names = {
+	#Generic Cannorian
+	Adamant Advantage Adventure Advice Answer Ardent Armada Arrogant Assistance Association Assurance Atlas Audacious 
+	Bear Beaver "Black Galley" "Black Pinnace" "Black Prince" "Black Blood" Captain Centurion Coronation Courage Crocodile Crown
+	Daisy Defence Defiance Devastation Diamond Director Dolphin Dragon Drake Dreadnaught Duke Duchess Eagle Elephant Excellent Exchange Expedition Experiment
+	Falcon Fame Favourite Fellowship Fleetwood Flight Flirt Formidable Forrester Fortitude Fortune Gillyflower Globe "Golden Horse" "Golden Lion" "Golden Phoenix" Goliath Goodgrace Governor
+	"Grand Mistress" "Great Bark" "Great Charity" "Great Galley" "Great Gift"  "Great Pinnace" "Great Zebra" "Green Dragon" Greyhound Griffin Guide "Half Moon" Hare Harpy Hawke Hazardous Heart
+	Hero Hope "Hope Bark" "Hopeful Adventure" Humble Hunter Illustrious Impregnable Increase Indefatigable Inflexible Intrepid Invincible "Less Bark" "Less Pinnace" "Less Zebra"
+	Lively Lizard Lion Magnanime Magnificent Majestic Makeshift Medusa Minotaur Moderate Monarch Moon Moor "New Bark" Ocean 
+	Pansy Panther Parrot Porcupine Powerful President Prince "Prince Consort" "Prince Royal"
+	Redoubtable Reformation Regent Renown Repulse Research Reserve Resistance Resolution Restoration Revenge 
+	Salamander Sandwich Sapphire Satisfaction Seahorse Search Sheerness Speaker Speedwell Sphinx Splendid Sprite Stag Standard Stately Success Sunlight Sunbeam Superb Swan Sweepstake Swift Swiftsure
+	Terrible Terror Thunderer Tiger Tremendous Trident Trinity Triumph Trusty
+	Unicorn Union Unity Valiant Vanguard Venerable Vestal Veteran Victor Vindictive Virtue Violet
+	Warrior Warspite "Young Prince" Zealous
+
+	Survey Surveillance Cow Ox Bird Hawk Sovereign Emperor Count Lord Baron
+
+	Knight Paladin Dragonslayer Cleric Rogue Fighter Ranger Sorcerer Wizard Warlock Monk Druid
+	Strength Dexterity Constitution Intelligence Wisdom Charisma
+	
+	#Elven
+	Lunetine Agraseina 
+	
+	#Regent Court Deities
+	Castellos Dame "The Dame" Halanna Ysh Yshtralania Agradls Adean Esmaryal Ryala Edronias Falah Nerat Ara Minara Munas Moonsinger Nathalyne Begga Corin Balgar
+	Uelos Drax'os
+}
+
+army_names = {
+	"Chipped Tooth Company" "Army of $PROVINCE$"
+}
+
+fleet_names = {
+	"Chipped Tooth Fleet" 
+}

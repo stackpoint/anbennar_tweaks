@@ -1,0 +1,85 @@
+march = {
+	first = Z22
+	second = Z21
+	start_date = 1420.1.1
+	end_date = 2019.9.25
+}
+alliance = {
+	first = Z22
+	second = Z24
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+alliance = {
+	first = Z22
+	second = Z29
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+alliance = {
+	first = Z22
+	second = Z31
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+alliance = {
+	first = Z28
+	second = Z25
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+alliance = {
+	first = Z28
+	second = Z30
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+alliance = {
+	first = Z22
+	second = Z32
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+alliance = {
+	first = Z28
+	second = Z33
+	trade_league = 1
+	start_date = 1380.1.1
+	end_date = 1581.1.1
+}
+vassal = {
+	first = Z18
+	second = Z47
+	start_date = 1420.1.1
+	end_date = 1609.4.5
+}
+vassal = {
+	first = Z18
+	second = Z23
+	start_date = 1444.1.1
+	end_date = 1609.4.5
+}
+vassal = {
+	first = Z18
+	second = Z27
+	start_date = 1444.1.1
+	end_date = 1609.4.5
+}
+vassal = {
+	first = Z18
+	second = Z48
+	start_date = 1444.1.1
+	end_date = 1609.4.5
+}
+vassal = {
+	first = Z18
+	second = Z49
+	start_date = 1444.1.1
+	end_date = 1609.4.5
+}

@@ -1,0 +1,733 @@
+F16_missions_main_slot = {
+	slot = 1
+	generic = no
+	ai = yes
+	potential = {
+		tag = F16
+		
+	}
+	has_country_shield = yes
+
+	F16_reclaim_ourdia = {
+		icon = mission_have_two_subjects
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				province_id = 507
+				province_id = 508
+				province_id = 511
+				province_id = 514
+				province_id = 520
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			owns_core_province = 507
+			owns_core_province = 508
+			owns_core_province = 511
+			owns_core_province = 514
+			owns_core_province = 520
+		}
+		effect = {
+			crathanor_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			medbahar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			reuyel_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			ourdia_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	F16_secure_the_bay = {
+		icon = mission_conquer_50_development
+		required_missions = { F16_reclaim_ourdia }
+		position = 2
+		provinces_to_highlight = {
+			OR = {
+				area = crathanor_area
+				province_id = 506
+				province_id = 515 }
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = { 
+			crathanor_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			owns_core_province = 506
+			owns_core_province = 515
+		}
+		effect = {
+			increase_legitimacy_medium_effect = yes
+			add_prestige = 10
+			magairous_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			tungr_mountains_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "ourdi_protected_trade"
+				duration = 7300
+			}
+		}
+	}
+	F16_establishing_in_bahar = {
+		icon = mission_unite_home_region
+		position = 3
+		required_missions = { F16_secure_the_bay }
+		provinces_to_highlight = {
+			OR = {
+				area = magairous_area
+				province_id = 528
+				province_id = 529
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			magairous_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			owns_core_province = 528
+			owns_core_province = 529
+		}
+		effect = {
+			add_prestige = 25
+			aqatbahar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			azka_evran_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "ourdi_settlers_stream"
+				duration = 7300
+			}
+		}	
+	}
+	F16_ourdian_crusade = {
+		icon = mission_conquer_5_states
+		required_missions = { F16_establishing_in_bahar }
+		position = 4
+		provinces_to_highlight = {
+		OR = {
+				area = azka_evran_area
+				area = aqatbahar_area
+			}
+		NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			aqatbahar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			azka_evran_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			increase_legitimacy_large_effect = yes
+			add_prestige = 50 
+			birsartenslib_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bahar_szel_uak_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			imuluses_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			kuz_mountains_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			add_country_modifier = {
+				name = "ourdi_crusading_zeal"
+				duration = 3650
+			}
+		}
+	}
+	F16_defeat_birsartanses = {
+		icon = mission_have_two_subjects 
+		required_missions = { F16_ourdian_crusade }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = imuluses_area
+				area = kuz_mountains_area
+				area = bahar_szel_uak_area
+				area = birsartenslib_area
+				owned_by = F21
+			}
+		NOT = {
+			country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			NOT = {
+				exists = F21
+			}
+			imuluses_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			kuz_mountains_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			bahar_szel_uak_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			birsartenslib_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			increase_legitimacy_large_effect = yes
+			add_prestige = 25
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			ur_monkande_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			alyzksaan_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}	
+	F16_free_the_bulwari = {
+		icon = mission_unite_home_region
+		required_missions = { F16_defeat_birsartanses }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				region = bahar_region
+				region = ourdia_region
+				area = alyzksaan_area
+				area = imuluses_area
+				area = ur_monkande_area
+				area = kuz_mountains_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			religion = corinite
+			alyzksaan_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = corinite
+			}
+			ur_monkande_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = corinite
+			}
+			imuluses_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = corinite
+			}
+			kuz_mountains_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = corinite
+			}
+			bahar_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = corinite
+			}
+			ourdia_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+				religion = corinite
+			}
+		}
+		effect = {
+			increase_legitimacy_large_effect = yes
+			add_prestige = 25
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			add_country_modifier = {
+				name = "ourdi_favoured_by_corin"
+				duration = 14600
+			}
+			harpy_hills_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			bulwar_proper_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			north_salahad_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}	
+	F16_the_final_push = {
+		icon = mission_assemble_an_army
+		required_missions = { 
+		F16_free_the_bulwari 
+		F16_taking_the_pass 
+		}
+		position = 7
+		provinces_to_highlight = {
+		OR = {
+				superregion = bulwar_superregion
+				superregion = salahad_superregion
+			}
+		NOT = {
+			country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			NOT = {
+				exists = F38
+				exists = F37
+				exists = F05
+				exists = F25
+				exists = F42
+			}
+			num_of_owned_provinces_with = {
+				value = 140
+				OR = { 
+				superregion = bulwar_superregion
+				superregion = salahad_superregion
+				}	
+			}
+		}
+		effect = {
+			increase_legitimacy_huge_effect = yes
+			add_prestige = 50
+			add_country_modifier = {
+				name = "ourdi_empire_of_men"
+				duration = -1
+			}
+		}
+	}
+}
+F16_westwards_missions = {
+	slot = 2
+	generic = no
+	ai = yes
+	potential = {
+		tag = F16
+	}
+	has_country_shield = yes
+	
+	F16_building_a_navy = {
+		icon = mission_sea_battles
+		required_missions = { 
+			F16_establishing_in_bahar
+			F16_securing_the_coast
+			}
+		position = 4
+		trigger = {
+			num_of_transport = 8
+			num_of_light_ship = 4
+		}
+		effect = {
+			add_country_modifier = {
+				name = "eng_channel_dominance"	#Its called Merchant Navy in-game
+				duration = 5475
+			}
+			lorbet_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			busilar_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	F16_taming_lions = {
+		icon = mission_african_soldier
+		required_missions = { F16_building_a_navy }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				area = lorbet_area
+				area = busilar_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			lorbet_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			busilar_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			busilari_straits_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			isle_of_tef_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	F16_taking_the_pass = {
+		icon = mission_unite_home_region
+		required_missions = { F16_taming_lions }
+		position = 6
+		provinces_to_highlight = {
+			OR = {
+				area = busilari_straits_area
+				area = isle_of_tef_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			busilari_straits_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			isle_of_tef_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			oris_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			akan_region = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+}
+
+F16_missions_north_slot = {
+	slot = 3
+	generic = no
+	ai = yes
+	potential = {
+		tag = F16
+	}
+	has_country_shield = yes
+	
+	F16_the_path_to_the_north = {
+		icon = mission_unite_home_region
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			OR = {
+				area = west_overmarch_area
+				area = east_overmarch_area
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			west_overmarch_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+			east_overmarch_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "nathalaire_resettlement_of_goblins"
+				duration = 10950
+			}
+			flooded_coast_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	F16_colonizing_the_flooded_coast = {
+		icon = mission_establish_high_seas_navy
+		required_missions = { F16_the_path_to_the_north }
+		position = 2
+		provinces_to_highlight = {
+			OR = { 
+			province_id = 447
+			province_id = 445
+			province_id = 451
+			}
+			NOT = {
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			owns_core_province = 447
+			owns_core_province = 445
+			owns_core_province = 451
+		}
+		effect = {
+			add_country_modifier = {
+				name = "ourdi_awakening_the_economy"
+				duration = 3650
+			}
+			dreadmire_area = {
+				limit = {
+					NOT = { is_core = ROOT }
+					NOT = { owned_by = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+	F16_securing_the_coast = {
+		icon = mission_high_income
+		required_missions = { F16_colonizing_the_flooded_coast }
+		position = 3
+		provinces_to_highlight = {
+			area = dreadmire_area
+			NOT = {
+			country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		trigger = {
+			dreadmire_area = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "ourdi_bustling_trade"
+				duration = 3650
+			}
+		}
+	}
+	F16_dominating_the_coast = {
+		icon = mission_galleys_in_port
+		required_missions = { 
+		F16_securing_the_coast 
+		F16_building_a_navy 
+		}
+		position = 5
+		trigger = {
+			home_trade_node = {
+				is_strongest_trade_power = ROOT
+			}
+		}
+		
+		effect = {
+			510 = {
+				add_base_tax = 2
+				add_base_production = 2
+				add_base_manpower = 2
+				center_of_trade  = 1
+				change_trade_goods = salt
+			}
+		}
+	}
+	F16_the_destiny_of_the_dostanorians = {
+		icon = mission_conquer_5_states
+		required_missions = { F16_dominating_the_coast }
+		position = 5
+		provinces_to_highlight = {
+			OR = {
+				region = dostanor_region
+				owned_by = A59
+			}
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			OR = {
+				A59 = { is_subject_of = ROOT }
+				NOT = { exists = A59 }
+			}
+			dostanor_region = {
+				type = all
+				country_or_non_sovereign_subject_holds = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "ourdi_dostanorian_unity"
+				duration = 7300
+			}
+			increase_legitimacy_large_effect = yes
+			add_prestige = 25
+		}
+	}
+}
+
+F16_masons_missions = {
+	slot = 4
+	generic = no
+	ai = yes
+	potential = {
+		tag = F16
+	}
+	has_country_shield = yes
+	
+	F16_a_suitable_capital = {
+		icon = mission_empire
+		required_missions = { }
+		position = 1
+		provinces_to_highlight = {
+			province_id = 510
+		}
+		trigger = {
+			510 = {
+				owned_by = ROOT
+				NOT = { has_province_modifier = ruined_castanorian_citadel }
+			}
+		}
+		effect = {
+			add_prestige = 20
+			increase_legitimacy_large_effect = yes
+			add_country_modifier = {
+				name = "ourdi_castanorian_lessons"
+				duration = 3650
+			}
+		}
+	}
+	F16_restore_corveld = {
+		icon = mission_early_game_buildings
+		required_missions = { F16_a_suitable_capital }
+		position = 2
+		provinces_to_highlight = {
+			province_id = 447
+		}
+		trigger = {
+			447 = {
+				owned_by = ROOT
+				NOT = { has_province_modifier = ruined_city }
+			}
+		}
+		effect = {
+			add_prestige = 20
+			increase_legitimacy_large_effect = yes
+		}
+	}
+
+}	

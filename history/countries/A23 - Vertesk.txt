@@ -1,0 +1,25 @@
+government = republic
+add_government_reform = merchants_reform
+government_rank = 1
+mercantilism = 25
+primary_culture = vertesker
+religion = regent_court
+technology_group = tech_cannorian
+capital = 216 # Vertesk
+
+fixed_capital = 216 # Cannot move capital away from this province & no power cost to move to it
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+1422.1.1 = { set_country_flag = lilac_wars_rose_party }
+
+1443.7.8 = {
+	monarch = {
+		name = "Arnos Tordan"
+		birth_date = 1397.6.12
+		adm = 3
+		dip = 3
+		mil = 3
+	}
+	add_ruler_personality = mage_personality
+}

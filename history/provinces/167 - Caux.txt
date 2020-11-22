@@ -1,0 +1,23 @@
+# 167 Caux - Principal cities: Rouen
+
+owner = A06
+controller = A06
+add_core = A06
+culture = cliff_gnome
+religion = the_thought
+hre = no
+base_tax = 5
+base_production = 5
+trade_goods = wool
+base_manpower = 3
+capital = "" 
+is_city = yes
+
+fort_15th = yes
+
+
+
+
+
+
+

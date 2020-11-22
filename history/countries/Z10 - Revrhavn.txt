@@ -1,0 +1,20 @@
+government = republic
+add_government_reform = pirate_republic_reform
+government_rank = 1
+primary_culture = west_dalr
+religion = skaldhyrric_faith
+technology_group = tech_cannorian
+capital = 959
+
+
+
+1442.5.7 = {
+	monarch = {
+	name = "Jansen the Tall"
+	birth_date = 1402.4.10
+	adm = 2
+	dip = 2
+	mil = 4
+	}
+}
+1000.1.1 = { set_estate_privilege = estate_mages_organization_religious }

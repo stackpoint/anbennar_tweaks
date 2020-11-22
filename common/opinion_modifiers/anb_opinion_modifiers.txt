@@ -1,0 +1,437 @@
+#########################################################################
+# OPINION MODIFIERS
+##########################################################################
+
+##########################################################################
+# HARD - DO NOT REMOVE OR RENAME ANY OF THESE
+##########################################################################
+
+##############
+# FIXED STATE
+##############
+
+opinion_fought_alongside_corin = {
+	opinion = 100
+	max = 100
+	years = 100
+	yearly_decay = 1
+}
+
+opinion_expelling_race = {
+	opinion = -100
+	max = -100
+}
+
+opinion_purging_race = {
+	opinion = -200
+	max = -200
+}
+
+opinion_persecuted_race = {
+	opinion = -100
+	max = -100
+	years = 50
+	yearly_decay = 2
+}
+
+opinion_magocracy_noble = {
+	opinion = 50
+	years = 50
+	yearly_decay = 1
+}
+
+opinion_adventurer_noble = {
+	opinion = 50
+	years = 50
+	yearly_decay = 1
+}
+
+root_evil = {
+	opinion = -50
+	min = -50
+}
+
+both_evil = {
+	opinion = 5
+	max = 5
+}
+
+refused_magisterium_org = {
+	opinion = -200
+	yearly_decay = 4
+}
+
+expelled_the_magisterium = {
+	opinion = -200
+}
+
+welcomed_the_magisterium = {
+	opinion = 50
+}
+
+magisterium_disagrees_with_direction = {
+	opinion = -50
+}
+
+opinion_countytoduchy_accept = {
+	opinion = 100
+	years = 20
+	yearly_decay = 5
+}
+
+opinion_countytoduchy_reject = {
+	opinion = -100
+	years = 20
+	yearly_decay = 5
+}
+
+root_monstrous = {
+	opinion = -100
+	min = -100
+}
+
+semi_monstrous = {
+	opinion = -50
+	min = -50
+}
+
+improved_relation_monstrous = {
+	opinion = 25
+	max = 100
+	yearly_decay = 1
+}
+
+decreased_relation_monstrous = {
+	opinion = -25
+	min = -100
+	yearly_decay = 1
+}
+
+both_monstrous = {
+	opinion = 20
+	max = 20
+}
+
+not_monstrous = {
+	opinion = 25
+}
+
+lilac_wars_moon_party_member = {	#Moon Party Member - Fought alongside us during the Lilac Wars
+	opinion = 40
+	years = 20
+	yearly_decay = 2
+}
+
+lilac_wars_moon_party_enemy = {	#Rose Party Member - Defeated us in the Lilac Wars
+	opinion = -40
+	years = 20
+	yearly_decay = 2
+}
+
+lilac_wars_rose_party_member = {	#Rose Party Member - Won the Lilac Wars together
+	opinion = 20
+	years = 20
+	yearly_decay = 1
+}
+
+lilac_wars_rose_party_enemy = {	#Moon Party Member - Defeated them during the Lilac Wars
+	opinion = -40
+	years = 40
+	yearly_decay = 1
+}
+
+lorent_claimed_wine_lords = {
+	opinion = -75
+	years = 75
+	yearly_decay = 1
+}
+
+lorent_did_not_claim_wine_lords = {
+	opinion = 60
+	years = 10
+	yearly_decay = 6
+}
+
+beepeck_secession = {
+	opinion = -100
+	years = 20
+	yearly_decay = 5
+}
+
+A04_laurens_rejected_high_lorentish = {
+	opinion = -20
+	years = 20
+	yearly_decay = 1
+}
+
+A04_laurens_rejected_west_damerian = {
+	opinion = -20
+	years = 20
+	yearly_decay = 1
+}
+
+A48_support_during_succession_war = {
+	opinion = 50
+	years = 50
+	yearly_decay = 1
+}
+
+A48_supported_rebels = {
+	opinion = -25
+	years = 25
+	yearly_decay = 1
+}
+
+A48_didnt_support_rebels = {
+	opinion = 20
+	years = 40
+	yearly_decay = 0.5
+}
+
+A48_gave_important_province = {
+	opinion = 50
+	years = 50
+	yearly_decay = 1
+}
+
+A48_didnt_paid_us_back = {
+	opinion = -50
+	years = 50
+	yearly_decay = 1
+}
+
+A13_burned_the_redglades_anb = {
+	opinion = -100
+	years = 50
+	yearly_decay = 2
+}
+
+A13_burned_the_redglades_elf = {
+	opinion = -200
+	years = 400
+	yearly_decay = 1
+}
+
+A38_sacked_anbenncost = {
+	opinion = -200
+	years = 100
+	yearly_decay = 2
+}
+
+destruction_of_temples = {	#Triggered by goblinic_shamanism_flavor.58
+	opinion = -50
+	years = 50
+	yearly_decay = 1
+}
+
+party_insult_mild = {
+	opinion = -50
+	years = 10
+	yearly_decay = 5
+}
+
+party_insult_severe = {
+	opinion = -100
+	years = 20
+	yearly_decay = 5
+}
+
+party_compliment_mild = {
+	opinion = 50
+	years = 10
+	yearly_decay = 5
+}
+
+party_compliment_huge = {
+	opinion = 100
+	years = 20
+	yearly_decay = 5
+}
+
+opinion_adv_ally = {
+	opinion = 50
+	max = 50
+	years = 50
+	yearly_decay = 1
+}
+pirate_republic_disbanded = {
+opinion = 150
+years = 50
+yearly_decay = 3
+}
+
+venail_damescrown_loan = {
+	opinion = 150
+	years = 100
+	yearly_decay = 1
+}
+
+jaddari_jasiene = {
+	opinion = 75
+}
+
+wesdam_high_marriage = {
+	opinion = 50
+	years = 100
+}
+eordand_colltin_offer_refused = {
+	opinion = -50
+	years = 25
+}
+eordand_colltin_demand = {
+	opinion = -100
+	years = 50
+}
+eordand_pelomar_alliance_honored = {
+	opinion = 100
+	years = 30
+}
+eordand_praisegranting_warm_welcome = {
+	opinion = 100
+	years = 30
+}
+eordand_praisegranting_betrayal = {
+	opinion = -200
+	years = 50
+}
+eordand_praisegranting_counsel = {
+	opinion = 50
+	years = 9125
+}
+
+rahen_raja_personal_visit = {
+	opinion = 50
+	yearly_decay = 5
+}
+rahen_raja_personal_insult = {
+	opinion = -50
+	yearly_decay = 5
+}
+rahen_raja_closed_senapti_a = {
+	opinion = 50
+	yearly_decay = 2
+}
+rahen_raja_closed_senapti_b = {
+	opinion = -50
+	yearly_decay = 5
+}
+rahen_raja_opened_up_senapti_a = {
+	opinion = 50
+	yearly_decay = 5
+}
+rahen_raja_opened_up_senapti_b = {
+	opinion = -50
+	yearly_decay = 5
+}
+
+the_hunt_raided_province = {
+	opinion = -50
+	yearly_decay = 5
+}
+
+the_jadd_converted_to_jadd = {
+	opinion = 100
+	yearly_decay = 3
+}
+bulwari_converted_to_jadd = {
+	opinion = -20
+	yearly_decay = 3
+}
+refused_conversion_to_jadd = {
+	opinion = 20
+	yearly_decay = 3
+}
+harpylen_reduced_hunts = {
+	opinion = 50
+	yearly_decay = 1
+}
+jaddari_returned_suran_valley = {
+	opinion = 100
+	yearly_decay = 3
+}
+damaged_warding = {
+	opinion = -50
+	yearly_decay = 1
+}
+broke_elder_pact = {
+	opinion = -50
+	yearly_decay = 1
+}
+gerudia_skald = {
+	opinion = -50
+	yearly_decay = 1
+}
+
+grombar_trade_privileges = {
+	opinion = 80
+	years = 50
+}
+grombar_cooperation = {
+	opinion = 100
+	yearly_decay = 2
+}
+grombar_betrayed_corin = {
+	opinion = -100
+	yearly_decay = 0.5
+}
+
+refused_our_right_as_elector = { #created for Beepeck but might be useful for other imperial incidents
+	opinion = -100
+	yearly_decay = 0.5
+}
+enforced_our_right_as_elector = {
+	opinion = 40
+	yearly_decay = 0.5
+}
+
+opinion_defy_new_first_master = {
+	opinion = -100
+	yearly_decay = 1
+}
+
+konwell_archives_expanded_opinion = {
+	opinion = 50
+	yearly_decay = 2
+}
+konwell_emperor_mad = {
+	opinion = -50
+	yearly_decay = 2
+}
+
+amldihr_dwarven_subject = {
+	opinion = 100
+	yearly_decay = 1
+}
+
+istralore_levied_manpower = {
+	opinion = -25
+	yearly_decay = 1
+}
+
+
+federation_pos_intrigue = {
+	opinion = 20
+	max = 200
+	yearly_decay = 2.5
+}
+
+federation_neg_intrigue = {
+	opinion = -20
+	min = -200
+	yearly_decay = 2.5
+}
+
+opinion_rival_tribe = {
+	opinion = -200
+	min = -200
+}
+
+decadent_royals = {
+	opinion = -100
+	min = -200
+}
+
+disobedient_tribals = {
+	opinion = -100
+	min = -200
+}

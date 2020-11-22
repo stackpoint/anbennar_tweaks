@@ -1,0 +1,19 @@
+government = tribal
+add_government_reform = settled_horde
+government_rank = 1
+primary_culture = redscale_kobold
+religion = kobold_dragon_cult
+technology_group = tech_kobold
+
+capital = 177
+
+1433.2.3 = {
+	monarch = {
+		name = "Levaz"
+		dynasty = "Sozax"
+		birth_date = 1420.4.3
+		adm = 5
+		dip = 5
+		mil = 5
+	}
+}

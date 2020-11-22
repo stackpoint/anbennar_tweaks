@@ -1,0 +1,24 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = arannese
+religion = regent_court
+technology_group = tech_cannorian
+capital = 922
+
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+1422.1.1 = {
+	monarch = {
+		name = "Adélaïde"
+		dynasty = "síl na Loop"	#From Loopuis in Roilsard
+		birth_date = 1410.7.2
+		adm = 3
+		dip = 1
+		mil = 3
+		female = yes
+	}
+}
+
+1422.1.1 = { set_country_flag = lilac_wars_rose_party }

@@ -1,0 +1,22 @@
+government = republic
+add_government_reform = merchants_reform
+government_rank = 1
+primary_culture = visfoot_halfling
+religion = regent_court
+technology_group = tech_cannorian
+
+capital = 66
+fixed_capital = 66 # Cannot move capital away from this province & no power cost to move to it
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1440.2.2 = {
+	monarch = {
+		name = "Darian"
+		dynasty = "Longfellow"
+		birth_date = 1399.12.12
+		adm = 1
+		dip = 3
+		mil = 1
+	}
+}

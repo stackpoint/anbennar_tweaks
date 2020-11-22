@@ -1,0 +1,28 @@
+#470 - Bayuly
+
+owner = F01
+controller = F01
+add_core = F01
+culture = kheteratan
+religion = khetist
+
+hre = no
+
+base_tax = 2
+base_production = 3
+base_manpower = 2
+
+trade_goods = grain
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+
+
+

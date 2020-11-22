@@ -1,0 +1,21 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+mercantilism = 25
+primary_culture = arannese
+religion = regent_court
+technology_group = tech_cannorian
+capital = 417
+
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+1440.1.1 = {
+	monarch = {
+		name = "City Council"
+		adm = 2
+		dip = 2
+		mil = 2
+		regent = yes
+	}
+}

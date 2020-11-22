@@ -1,0 +1,23 @@
+government = republic
+add_government_reform = free_city
+government_rank = 1
+mercantilism = 25
+primary_culture = east_damerian
+religion = regent_court
+technology_group = tech_cannorian
+
+capital = 329
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+1399.1.1 = {
+	monarch = {
+		name = "City Council"
+		adm = 2
+		dip = 2
+		mil = 4
+		regent = yes
+	}
+}
+
+1422.1.1 = { set_country_flag = lilac_wars_moon_party }

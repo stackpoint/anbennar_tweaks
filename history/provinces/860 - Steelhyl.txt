@@ -1,0 +1,33 @@
+# No previous file for Steelhyl
+owner = B25
+controller = B25
+add_core = B25
+culture = green_orc
+religion = great_dookan
+capital = ""
+
+hre = no
+
+base_tax = 2
+base_production = 4
+base_manpower = 3
+
+trade_goods = iron
+
+native_size = 67
+native_ferocity = 8
+native_hostileness = 8
+
+add_permanent_province_modifier = {
+	name = white_walls_of_castanor
+	duration = -1
+}
+
+add_permanent_province_modifier = {
+	name = half_orcish_minority_integrated_large
+	duration = -1
+}
+add_permanent_province_modifier = {
+	name = goblin_minority_integrated_large
+	duration = -1
+}

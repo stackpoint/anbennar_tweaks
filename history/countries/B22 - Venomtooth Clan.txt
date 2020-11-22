@@ -1,0 +1,19 @@
+government = tribal
+add_government_reform = greentide_horde
+government_rank = 1
+primary_culture = green_orc
+religion = great_dookan
+technology_group = tech_orcish
+capital = 232
+
+1443.5.11 = {
+	monarch = {
+		name = "Aâdga"
+		dynasty = "Venomtooth"
+		birth_date = 1400.12.1
+		adm = 1
+		dip = 2
+		mil = 5
+		female = yes
+	}
+}

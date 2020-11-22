@@ -1,0 +1,34 @@
+# No previous file for East Berar
+
+owner = F05
+controller = F05
+add_core = F05
+add_core = F04
+add_core = F01
+culture = kheteratan
+religion = khetist
+
+hre = no
+
+base_tax = 4
+base_production = 4
+base_manpower = 4
+
+trade_goods = grain
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+
+
+
+add_permanent_province_modifier = {
+	name = mothers_sorrow_estuary_modifier
+	duration = -1
+}

@@ -1,0 +1,22 @@
+government = monarchy
+add_government_reform = autocracy_reform
+government_rank = 1
+primary_culture = rajnadhid
+religion = high_philosophy
+technology_group = tech_raheni
+religious_school = starry_eye_school
+capital = 4474
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_state }
+
+1444.1.1 = {
+	monarch = {
+		name = "Gopalar"
+		dynasty = "of the Flower Oath"
+		birth_date = 1407.7.23
+		adm = 2
+		dip = 2
+		mil = 3
+		culture = royal_harimari
+	}
+}

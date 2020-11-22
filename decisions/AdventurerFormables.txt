@@ -1,0 +1,1173 @@
+country_decisions = {
+
+	luciande_nation = {
+		major = yes
+		potential = {
+			tag = B11
+			NOT = { has_country_flag = formed_luciande_flag }
+			NOT = { exists = B34 }
+		}
+		allow = {
+			adm_tech = 7	#around 1500
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = B34
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_luciande_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	ancardia_nation = {
+		major = yes
+		potential = {
+			tag = B06 
+			NOT = { has_country_flag = formed_ancardia_flag }
+			NOT = { exists = B35 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = B35
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_ancardia_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	rogieria_nation = {
+		major = yes
+		potential = {
+			tag = B07
+			NOT = { has_country_flag = formed_rogieria_flag }
+			NOT = { exists = B37 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = B37
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_rogieria_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	elikhand_nation = {
+		major = yes
+		potential = {
+			tag = B15
+			NOT = { has_country_flag = formed_elikhand_flag }
+			NOT = { exists = B38 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = B38
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_elikhand_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	wyvernheart_nation = {
+		major = yes
+		potential = {
+			tag = B12
+			NOT = { has_country_flag = formed_wyvernheart_flag }
+			NOT = { exists = B39 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = B39
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_wyvernheart_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	alenor_nation = {
+		major = yes
+		potential = {
+			tag = B03
+			NOT = { has_country_flag = formed_alenor_flag }
+			NOT = { exists = B40 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = B40
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_alenor_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	stalbor_nation = {
+		major = yes
+		potential = {
+			tag = B13
+			NOT = { has_country_flag = formed_stalbor_flag }
+			NOT = { exists = B47 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = B47
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_stalbor_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	ravenmarch_nation = {
+		major = yes
+		potential = {
+			tag = B14
+			NOT = { has_country_flag = formed_ravenmarch_flag }
+			NOT = { exists = B48 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = B48
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_ravenmarch_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	araionn_nation = {
+		major = yes
+		potential = {
+			tag = B09
+			NOT = { has_country_flag = formed_araionn_flag }
+			NOT = { exists = B49 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = B49
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_araionn_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	newshire_nation = {
+		major = yes
+		potential = {
+			tag = B10
+			NOT = { has_country_flag = formed_newshire_flag }
+			NOT = { exists = B50 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = B50
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_newshire_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	estaire_nation = {
+		major = yes
+		potential = {
+			tag = B08
+			NOT = { has_country_flag = formed_estaire_flag }
+			NOT = { exists = B51 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = B51
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_estaire_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	anbenland_nation = {
+		major = yes
+		potential = {
+			tag = B16
+			NOT = { has_country_flag = formed_anbenland_flag }
+			NOT = { exists = B52 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = B52
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_anbenland_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	nurcestir_nation = {
+		major = yes
+		potential = {
+			tag = B05
+			NOT = { has_country_flag = formed_nurcestir_flag }
+			NOT = { exists = B53 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = B53
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_nurcestir_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+
+	esthil_nation = {
+		major = yes
+		potential = {
+			tag = B20
+			NOT = { has_country_flag = formed_esthil_flag }
+			NOT = { exists = B54 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = B54
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_esthil_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	rosande_nation = {
+		major = yes
+		potential = {
+			tag = B04
+			NOT = { has_country_flag = formed_rosande_flag }
+			NOT = { exists = Z35 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = Z35
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_esthil_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	hammerhome_nation = {
+		major = yes
+		potential = {
+			tag = B18
+			NOT = { has_country_flag = formed_hammerhome_flag }
+			NOT = { exists = Z36 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = Z36
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_hammerhome_flag
+			set_country_flag = no_formable_culture_shift
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	covenblad_nation = {
+		major = yes
+		potential = {
+			tag = B19
+			NOT = { has_country_flag = formed_covenblad_flag }
+			NOT = { exists = Z37 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = Z37
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_covenblad_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+
+	silvermere_nation = {
+		major = yes
+		potential = {
+			owns_core_province = 756
+			NOT = { has_country_flag = formed_silvermere_flag }
+			NOT = { exists = B56 }
+			has_reform = adventurer_reform
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			owns_core_province = 756
+			num_of_owned_provinces_with = {
+				value = 9
+				OR = {
+					area = silvervord_area
+					area = nortmerewood_area
+					area = oudmerewood_area
+					area = oudeben_area
+					area = themin_area
+					area = burnoll_area
+					area = southgate_area
+					area = nortmere_area
+				}
+			}
+		}
+		effect = {
+			change_tag = B56
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_silvermere_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	
+	
+	#Aelantir
+	sornicande_nation = {
+		major = yes
+		potential = {
+			tag = H40
+			NOT = { has_country_flag = formed_sornicande_flag }
+			NOT = { exists = H41 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = H41
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_sornicande_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	neratica_nation = {
+		major = yes
+		potential = {
+			tag = H42
+			NOT = { has_country_flag = formed_neratica_flag }
+			NOT = { exists = H43 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = H43
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_neratica_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	beggaston_nation = {
+		major = yes
+		potential = {
+			tag = H44
+			NOT = { has_country_flag = formed_beggaston_flag }
+			NOT = { exists = H45 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = H45
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_beggaston_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	istranar_nation = {
+		major = yes
+		potential = {
+			tag = H46
+			NOT = { has_country_flag = formed_istranar_flag }
+			NOT = { exists = H47 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = H47
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_istranar_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	nur_menibor_nation = {
+		major = yes
+		potential = {
+			tag = H48
+			NOT = { has_country_flag = formed_nur_menibor_flag }
+			NOT = { exists = H49 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = H49
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_nur_menibor_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	freemarches_nation = {
+		major = yes
+		potential = {
+			tag = H50
+			NOT = { has_country_flag = formed_freemarches_flag }
+			NOT = { exists = H51 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = H51
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_freemarches_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	pelodaire_nation = {
+		major = yes
+		potential = {
+			tag = H52
+			NOT = { has_country_flag = formed_pelodaire_flag }
+			NOT = { exists = H53 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = H53
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_pelodaire_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	west_tipney_nation = {
+		major = yes
+		potential = {
+			tag = H54
+			NOT = { has_country_flag = formed_west_tipney_flag }
+			NOT = { exists = H55 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = H55
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_west_tipney_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	new_havoral_nation = {
+		major = yes
+		potential = {
+			tag = H56
+			NOT = { has_country_flag = formed_new_havoral_flag }
+			NOT = { exists = H57 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = H57
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_new_havoral_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	chippengard_nation = {
+		major = yes
+		potential = {
+			tag = H58
+			NOT = { has_country_flag = formed_chippengard_flag }
+			NOT = { exists = H59 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = H59
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_chippengard_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	plumstead_nation = {
+		major = yes
+		potential = {
+			tag = H60
+			NOT = { has_country_flag = formed_plumstead_flag }
+			NOT = { exists = H61 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = H61
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_plumstead_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	nur_dhanaenn_nation = {
+		major = yes
+		potential = {
+			tag = H62
+			NOT = { has_country_flag = formed_nur_dhanaenn_flag }
+			NOT = { exists = H63 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = H63
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_nur_dhanaenn_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	tellumtir_nation = {
+		major = yes
+		potential = {
+			tag = H64
+			NOT = { has_country_flag = formed_tellumtir_flag }
+			NOT = { exists = H65 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+		}
+		effect = {
+			change_tag = H65
+			remove_non_electors_emperors_from_empire_effect = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_tellumtir_flag
+			clr_country_flag = 	knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+	
+	rezankand_nation = {
+		major = yes
+		potential = {
+			tag = H66
+			NOT = { has_country_flag = formed_rezankand_flag }
+			NOT = { exists = H67 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			grown_by_development = 80
+		}
+		effect = {
+			change_tag = H67
+			remove_non_electors_emperors_from_empire_effect = yes
+			swap_non_generic_missions = yes
+
+			add_prestige = 25
+			adventurer_legacy_effect = yes
+			set_country_flag = adventurer_derived_government
+			set_country_flag = formed_rezankand_flag
+			clr_country_flag = knightly_order_adventurer
+			country_event = { id = marcher.1 days = 1 }
+			country_event = { id = adventurer.2 days = 1}
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+		ai_importance = 400
+	}
+}

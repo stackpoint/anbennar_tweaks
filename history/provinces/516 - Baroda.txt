@@ -1,0 +1,27 @@
+#515 - Westend
+
+owner = F17
+controller = F17
+add_core = F17
+culture = crathanori
+religion = regent_court
+
+
+base_tax = 4
+base_production = 5
+base_manpower = 3
+
+trade_goods = cloth
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+
+
+

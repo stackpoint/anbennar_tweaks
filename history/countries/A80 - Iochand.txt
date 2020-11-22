@@ -1,0 +1,11 @@
+government = monarchy
+add_government_reform = autocracy_reform
+government_rank = 2
+primary_culture = creek_gnome
+add_accepted_culture = iochander
+religion = regent_court
+technology_group = tech_gnomish
+capital = 142 #Iochand
+
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }

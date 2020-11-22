@@ -1,0 +1,21 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = west_damerian
+religion = regent_court
+technology_group = tech_cannorian
+capital = 22 # Woodwell
+
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+1427.1.12 = {
+	monarch = {
+		name = "Humbert IV"
+		dynasty = "Woodwell"
+		birth_date = 1390.2.8
+		adm = 1
+		dip = 0
+		mil = 1
+	}
+}

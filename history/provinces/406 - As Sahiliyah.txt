@@ -1,0 +1,27 @@
+#406 - As Sahiliyah
+
+owner = F07
+controller = F07
+add_core = F07
+culture = far_akani
+religion = mother_akan
+
+hre = no
+
+base_tax = 3
+base_production = 5
+base_manpower = 3
+
+trade_goods = slaves
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+
+

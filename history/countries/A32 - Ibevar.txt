@@ -1,0 +1,27 @@
+government = monarchy
+add_government_reform = autocracy_reform
+government_rank = 2
+primary_culture = moon_elf
+religion = regent_court
+technology_group = tech_elven
+capital = 352 #Ibevar
+
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+1420.5.9 = {
+	monarch = {
+		name = "Ibenion II"
+		dynasty = "ta'Luneteín"
+		birth_date = 1105.10.18
+		adm = 3
+		dip = 3
+		mil = 0
+	}
+	add_ruler_personality = immortal_personality
+	add_ruler_personality = craven_personality
+	add_ruler_personality = careful_personality
+	set_ruler_flag = set_immortality
+}
+
+1422.1.1 = { set_country_flag = lilac_wars_rose_party }

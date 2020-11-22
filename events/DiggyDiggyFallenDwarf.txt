@@ -1,0 +1,805 @@
+namespace = diggy_fallen
+
+#A fantastic place to dig
+country_event = {
+	id = diggy_fallen.1
+	title = diggy_fallen.1.t
+	desc = diggy_fallen.1.d
+	picture = ARTWORK_eventPicture
+	
+	mean_time_to_happen = {
+		years = 45
+	}
+	
+	trigger = {
+		is_year = 1535
+		NOT = { has_global_flag = onyx_hall_start }
+		num_of_owned_provinces_with = {
+			value = 3
+			OR = {
+				has_terrain = dwarven_hold
+				has_terrain = dwarven_hold_surface
+			}
+			NOT = { has_province_modifier = ruined_hold }
+			NOT = { has_province_modifier = infested_hold }
+			NOT = { area = amldihr_area } #Balance reasons
+			NOT = { region = jade_mines_region } #Their empire isn't present under here
+			
+		}
+		NOT = { has_country_flag = refused_fallen }
+		is_subject = no
+	}
+
+	
+	#Start the great excavation
+	option = {
+        name = diggy_fallen.1.a
+        ai_chance = { factor = 100 }
+		add_years_of_income = -1
+		random_owned_province = {
+			limit = {
+				OR = {
+					has_terrain = dwarven_hold
+					has_terrain = dwarven_hold_surface
+				}
+				NOT = { has_province_modifier = ruined_hold }
+				NOT = { has_province_modifier = infested_hold }
+				NOT = { area = amldihr_area }
+				NOT = { region = jade_mines_region }
+				is_capital = no
+				continent = serpentspine
+			}
+			add_permanent_province_modifier = {
+				name = fallen_great_excavation
+				duration = -1
+			}
+		}
+		hidden_effect = { set_global_flag = onyx_hall_start }
+	}
+	#Don't
+	option = {
+        name = diggy_fallen.1.b
+        ai_chance = { factor = 0 }
+		hidden_effect = { set_country_flag = refused_fallen }
+	}
+}
+
+#Rapid hold development
+province_event = {
+	id = diggy_fallen.2
+	title = diggy_fallen.2.t
+	desc = diggy_fallen.2.d
+	picture = ARTWORK_eventPicture
+	goto = root
+	
+	mean_time_to_happen = {
+		years = 3
+		
+	}
+	
+	trigger = {
+		has_province_modifier = fallen_great_excavation
+		owner = { NOT = { has_country_flag = fallen_invasion_ready } }
+		NOT = { has_province_modifier = dig_10 }
+		NOT = { has_province_flag = fallen_diggy_3 }
+		NOT = { has_province_modifier = ruined_hold }
+		NOT = { has_province_modifier = infested_hold }
+	}
+	
+	immediate = {
+		if = {
+			limit = {
+				NOT = { has_province_flag = fallen_diggy_1 }
+				NOT = { has_province_flag = fallen_diggy_2 }
+				NOT = { has_province_flag = fallen_diggy_3 }
+			}
+			set_province_flag = fallen_diggy_1
+		}
+		else_if = {
+			limit = { 
+				has_province_flag = fallen_diggy_1
+				NOT = { has_province_flag = fallen_diggy_2 }
+			}
+			set_province_flag = fallen_diggy_2
+		}
+		else_if = {
+			limit = { 
+				has_province_flag = fallen_diggy_2
+			}
+			set_province_flag = fallen_diggy_3
+			owner = { set_country_flag = fallen_invasion_ready }
+		}
+	}
+	
+	#dig through it
+	option = {
+        name = diggy_fallen.2.a
+        ai_chance = { factor = 100 }
+		upgrade_hold = yes
+	}
+}
+
+#Some strange shit
+country_event = {
+	id = diggy_fallen.3
+	title = diggy_fallen.3.t
+	desc = diggy_fallen.3.d
+	picture = ARTWORK_eventPicture
+	
+	fire_only_once = yes
+	
+	mean_time_to_happen = {
+		years = 15
+	}
+	
+	trigger = {
+		has_country_flag = fallen_invasion_ready
+		num_of_cities = 30
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_variable = {
+				which = nbFallen
+				value = 0
+			}
+			while = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = variable:nbFallen
+							value = 10
+						}
+					}
+				}
+				change_variable = {
+					which = variable:nbFallen
+					value = 1
+				}
+				random_owned_province = {
+					limit = { 
+						NOT = { has_province_modifier = strange_shit }
+						NOT = { has_province_modifier = fallen_great_excavation }
+						is_capital = no
+					}
+					add_province_modifier = {
+						name = strange_shit
+						duration = -1
+					}
+				}
+			}
+			set_variable = {
+				which = nbPortal
+				value = 0
+			}
+			#---
+			while = {
+				limit = {
+					NOT = {
+						check_variable = {
+							which = variable:nbPortal
+							value = 4
+						}
+					}
+				}
+				change_variable = {
+					which = variable:nbPortal
+					value = 1
+				}
+				random_owned_province = {
+					limit = { has_province_modifier = strange_shit NOT = { has_province_flag = fallen_portal } }
+					set_province_flag = fallen_portal
+				}
+			}
+			set_country_flag = fallen_can_start
+		}
+		
+	}
+	
+	#We need to inspect them
+	option = {
+        name = diggy_fallen.3.a
+        ai_chance = { factor = 100 }
+		custom_tooltip = strange_shit_tooltip
+		hidden_effect = { set_country_flag = investigate_strange_shit }
+	}
+}
+
+#After investigating
+province_event = {
+	id = diggy_fallen.4
+	title = diggy_fallen.4.t
+	desc = diggy_fallen.4.d
+	picture = ARTWORK_eventPicture
+	goto = root
+	
+	mean_time_to_happen = {
+		years = 1
+	}
+	
+	trigger = {
+		has_province_modifier = investigating_strange_shit
+		has_province_modifier = strange_shit
+		owner = { has_country_flag = investigating }
+	}
+	
+	#There was nothing
+	option = {
+        name = diggy_fallen.4.a
+        ai_chance = { factor = 100 }
+		trigger = { NOT = { has_province_flag = fallen_portal } }
+		owner = { add_prestige = -2.5 }
+		remove_province_modifier = strange_shit
+		remove_province_modifier = investigating_strange_shit
+		hidden_effect = { owner = { clr_country_flag = investigating } }
+	}
+	
+	#There was shit
+	option = {
+        name = diggy_fallen.4.b
+        ai_chance = { factor = 100 }
+		trigger = { has_province_flag = fallen_portal }
+		owner = { add_prestige = 5 }
+		remove_province_modifier = strange_shit
+		remove_province_modifier = investigating_strange_shit
+		hidden_effect = { clr_province_flag = fallen_portal }
+		hidden_effect = { owner = { clr_country_flag = investigating } }
+	}
+}
+
+#################
+###Disaster Start
+#################
+country_event = {
+	id = diggy_fallen.5
+	title = diggy_fallen.5.t
+	desc = diggy_fallen.5.d
+	picture = ARTWORK_eventPicture
+	
+	hidden = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	immediate = {
+		hidden_effect = {
+			set_country_flag = obsidian_debug_flag
+		}
+	}
+	
+	option = {
+        name = diggy_fallen.5.a
+        ai_chance = { factor = 100 }
+		random_owned_province = {
+			limit = { has_province_modifier = fallen_great_excavation }
+			add_core = H94
+			every_neighbor_province = {
+				limit = { is_capital = no }
+				add_core = H94
+				every_neighbor_province = {
+					limit = { is_capital = no }
+					add_core = H94
+					every_neighbor_province = {
+						limit = { is_capital = no }
+						add_core = H94
+						every_neighbor_province = {
+							limit = { is_capital = no }
+							add_core = H94
+							if = {
+								limit = { ROOT = { ai = yes } }
+								every_neighbor_province = {
+									limit = { is_capital = no }
+									add_core = H94
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+		every_owned_province = {
+			limit = { has_province_modifier = strange_shit }
+			if = {
+				limit = { has_province_flag = fallen_portal }
+				add_province_modifier = {
+					name = fallen_portal
+					duration = -1
+				}
+				clr_province_flag = fallen_portal
+			}
+			remove_province_modifier = strange_shit
+		}
+		country_event = { id = diggy_fallen.6 }
+	}
+}
+
+##The war start
+country_event = {
+	id = diggy_fallen.6
+	title = diggy_fallen.6.t
+	desc = diggy_fallen.6.d
+	picture = ARTWORK_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	immediate = {
+		hidden_effect = {
+			release = H94
+			H94 = {
+				declare_war_with_cb = {
+					who = ROOT
+					casus_belli = cb_sardonyx_invasion
+				}
+			}
+			H94 = {
+				capital_scope = { the_fallen_invasion_army = yes }
+				random_owned_province = { the_fallen_invasion_army = yes }
+				add_country_modifier = {
+					name = the_fallen_invasion
+					duration = -1
+				}
+				if = {
+					limit = { ROOT = { land_forcelimit = 60 } }
+					random_owned_province = { the_fallen_invasion_army = yes }
+				}
+				if = {
+					limit = { ROOT = { land_forcelimit = 90 } }
+					random_owned_province = { the_fallen_invasion_army = yes }
+				}
+				if = {
+					limit = { ROOT = { land_forcelimit = 120 } }
+					random_owned_province = { the_fallen_invasion_army = yes }
+					remove_country_modifier = the_fallen_invasion
+					add_country_modifier = {
+						name = the_fallen_invasion_2
+						duration = -1
+					}
+					define_general = {
+						shock = 4
+						fire = 5
+						manuever = 3
+						siege = 5
+						female = yes
+						name = "Nargulen Blackbarrel"
+					}
+					add_treasury = 3500
+					add_manpower = 25
+				}
+				if = {
+					limit = { ROOT = { land_forcelimit = 150 } }
+					random_owned_province = { the_fallen_invasion_army = yes }
+				}
+				if = {
+					limit = { ROOT = { land_forcelimit = 180 } }
+					random_owned_province = { the_fallen_invasion_army = yes }
+					remove_country_modifier = the_fallen_invasion_2
+					add_country_modifier = {
+						name = the_fallen_invasion_3
+						duration = -1
+					}
+					define_general = {
+						shock = 6
+						fire = 6
+						manuever = 6
+						siege = 6
+						name = "Dargaron Blackbarrel"
+					}
+					add_treasury = 3500
+					add_manpower = 25
+				}
+				add_treasury = 4500
+				add_manpower = 75
+				define_general = {
+					shock = 6
+					fire = 5
+					manuever = 3
+					siege = 4
+					name = "Ghaimbul Blackbarrel"
+				}
+				define_general = {
+					shock = 3
+					fire = 4
+					manuever = 6
+					siege = 6
+					name = "Raramesh Blackbarrel"
+					female = yes
+				}
+				
+				define_general = {
+					shock = 5
+					fire = 5
+					manuever = 5
+					siege = 2
+					name = "Dazmatir Blackbarrel"
+				}
+				define_ruler = {
+					adm = 5
+					dip = 1
+					mil = 6
+					age = 50
+					claim = 100
+					fixed = yes
+					male = yes
+					culture = obsidian_dwarf
+					religion = runefather_worship
+					name = "Rarzharr"
+					dynasty = "Bedrock"
+				}
+				capital_scope = {
+					change_culture = obsidian_dwarf
+					change_religion = runefather_worship
+				}
+				change_government = monarchy
+				add_government_reform = invasion_forces
+				change_religion = runefather_worship
+				every_owned_province = {
+					limit = {
+						OR = {
+							has_terrain = dwarven_hold
+							has_terrain = dwarven_hold_surface
+						}
+						NOT = { fort_level = 1 }
+					}
+					add_building = fort_16th
+				}
+				every_owned_province = {
+					limit = { has_province_modifier = fallen_portal }
+					the_fallen_invasion_infiltrator = yes
+				}
+			}
+		}
+		hidden_effect = {
+			every_owned_province = {
+				limit = { has_province_modifier = fallen_portal }
+				the_fallen_invasion_infiltrator = yes
+			}
+		}
+	}
+	
+	#We need to fight them
+	option = {
+        name = diggy_fallen.6.a
+        ai_chance = { factor = 100 }
+		custom_tooltip = sardonyx_invasion_tooltip
+	}
+	#Play as them
+	option = {
+        name = diggy_fallen.6.b
+        ai_chance = { factor = 0 }
+		custom_tooltip = sardonyx_invasion_play_tooltip
+		ROOT = { switch_tag = H94 }
+	}
+}
+
+##End Event
+country_event = {
+	id = diggy_fallen.7
+	title = diggy_fallen.7.t
+	desc = diggy_fallen.7.d
+	picture = ARTWORK_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = yes
+	}
+	
+	immediate = {
+		hidden_effect = {
+			every_province = {
+				clr_province_flag = fallen_portal
+				remove_province_modifier = strange_shit
+				remove_province_modifier = fallen_portal
+				remove_province_modifier = fallen_great_excavation
+			}
+			set_global_flag = fallen_dwarf_end
+		}
+	}
+	
+	#We've destroyed the invader
+	option = {
+        name = diggy_fallen.7.a
+        ai_chance = { factor = 100 }
+		trigger = { NOT = { exists = H94 } }
+		add_stability = 2
+		add_prestige = 50
+		add_country_modifier = {
+			name = onyx_breaker
+			duration = 36500
+		}
+		add_country_modifier = {
+			name = army_pride
+			duration = 36500
+		}
+		every_owned_province = {
+			limit = { religion =  runefather_worship }
+			change_religion = owner
+			change_culture = owner
+		}
+	}
+	#We've lost
+	option = {
+        name = diggy_fallen.7.b
+        ai_chance = { factor = 0 }
+		trigger = { exists = H94 }
+		add_stability = -2
+		add_prestige = -50
+		
+	}
+}
+
+###Spearhead established
+country_event = {
+	id = diggy_fallen.8
+	title = diggy_fallen.8.t
+	desc = diggy_fallen.8.d
+	picture = ARTWORK_eventPicture
+	
+	fire_only_once = yes
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	trigger = {
+		tag = H94
+		is_at_war = no
+	}
+	
+	option = {
+        name = diggy_fallen.8.a
+        ai_chance = { factor = 100 }
+		add_stability = 3
+		add_prestige = 30
+		increase_legitimacy_large_effect = yes
+		add_manpower = 30
+		add_treasury = 1500
+		remove_country_modifier = the_fallen_invasion
+		remove_country_modifier = the_fallen_invasion_2
+		remove_country_modifier = the_fallen_invasion_3
+		hidden_effect = {
+			every_owned_province = {
+				limit = { continent = serpentspine }
+				change_culture = obsidian_dwarf
+				change_religion = runefather_worship
+				add_core = ROOT
+			}
+		}
+	}
+}
+
+# Obsidian Elections
+country_event = {
+	id = diggy_fallen.9
+	title = diggy_fallen.9.t
+	desc = diggy_fallen.9.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = obsidian_council_reform
+	}
+	
+	#Blackbarrel - War dude
+	option = {
+		name = diggy_fallen.9.a
+		ai_chance = { factor = 100 }
+		
+		random_list = {
+			33 = {
+				reduce_stability_or_adm_power = yes
+			}
+			33 = {
+				add_stability_or_adm_power = yes
+			}
+			33 = { }
+		}
+		add_scaled_republican_tradition = -2
+		define_ruler = {
+			adm = 2
+			mil = 5
+			dip = 1
+			dynasty = "Blackbarrel"
+			religion = runefather_worship
+			culture = obsidian_dwarf
+			hide_skills = yes
+			random_gender = yes
+		}
+		add_ruler_modifier = {
+			name = blackbarrel_leadership
+			duration = -1
+		}
+		hidden_effect = {
+			random_list = {
+				20 = {
+					define_ruler_to_general = {
+						fire = 6
+						shock = 4
+						manuever = 2
+						siege = 3
+					}
+				}
+				20 = {
+					define_ruler_to_general = {
+						fire = 5
+						shock = 5
+						manuever = 3
+						siege = 1
+					}
+				}
+				20 = {
+					define_ruler_to_general = {
+						fire = 4
+						shock = 3
+						manuever = 1
+						siege = 2
+					}
+				}
+				20 = {
+					define_ruler_to_general = {
+						fire = 5
+						shock = 1
+						manuever = 1
+						siege = 4
+					}
+				}
+				20 = {
+					define_ruler_to_general = {
+						fire = 7
+						shock = 4
+						manuever = 2
+						siege = 4
+					}
+				}
+			}
+			add_ruler_personality = immortal_personality
+			add_ruler_personality = strict_personality
+		}
+	}
+	
+	#Bedrock - Stability dude
+	option = {
+		name = diggy_fallen.9.b
+		ai_chance = { factor = 100 }
+
+		random_list = {
+			33 = {
+				reduce_stability_or_adm_power = yes
+			}
+			33 = {
+				add_stability_or_adm_power = yes
+			}
+			33 = { }
+		}
+		add_scaled_republican_tradition = -2
+		define_ruler = {
+			adm = 3
+			mil = 3
+			dip = 3
+			dynasty = "Bedrock"
+			religion = runefather_worship
+			culture = obsidian_dwarf
+			hide_skills = yes
+			random_gender = yes
+		}
+		add_ruler_modifier = {
+			name = bedrock_leadership
+			duration = -1
+		}
+		hidden_effect = {
+			add_ruler_personality = immortal_personality
+			add_ruler_personality = incorruptible_personality
+		}
+	}
+	
+	#Darkstone - Underhanded dude
+	option = {
+		name = diggy_fallen.9.c
+		ai_chance = { factor = 100 }
+
+		random_list = {
+			33 = {
+				reduce_stability_or_adm_power = yes
+			}
+			33 = {
+				add_stability_or_adm_power = yes
+			}
+			33 = { }
+		}
+		add_scaled_republican_tradition = -2
+		define_ruler = {
+			adm = 2
+			mil = 1
+			dip = 5
+			dynasty = "Darkstone"
+			religion = runefather_worship
+			culture = obsidian_dwarf
+			hide_skills = yes
+			random_gender = yes
+		}
+		add_ruler_modifier = {
+			name = darkstone_leadership
+			duration = -1
+		}
+		hidden_effect = {
+			add_ruler_personality = immortal_personality
+			add_ruler_personality = malevolent_personality
+		}
+	}
+	
+	#Shadowhammer - Expantionist dude
+	option = {
+		name = diggy_fallen.9.e
+		ai_chance = { factor = 100 }
+
+		random_list = {
+			33 = {
+				reduce_stability_or_adm_power = yes
+			}
+			33 = {
+				add_stability_or_adm_power = yes
+			}
+			33 = { }
+		}
+		add_scaled_republican_tradition = -2
+		define_ruler = {
+			adm = 2
+			mil = 1
+			dip = 5
+			dynasty = "Shadowhammer"
+			religion = runefather_worship
+			culture = obsidian_dwarf
+			hide_skills = yes
+			random_gender = yes
+		}
+		add_ruler_modifier = {
+			name = shadowhammer_leadership
+			duration = -1
+		}
+		hidden_effect = {
+			add_ruler_personality = immortal_personality
+			add_ruler_personality = expansionist_personality
+		}
+	}
+	
+	#Runebeard - Religious dude
+	option = {
+		name = diggy_fallen.9.f
+		ai_chance = { factor = 100 }
+
+		random_list = {
+			33 = {
+				reduce_stability_or_adm_power = yes
+			}
+			33 = {
+				add_stability_or_adm_power = yes
+			}
+			33 = { }
+		}
+		add_scaled_republican_tradition = -2
+		define_ruler = {
+			adm = 4
+			mil = 2
+			dip = 4
+			dynasty = "Runebeard"
+			religion = runefather_worship
+			culture = obsidian_dwarf
+			hide_skills = yes
+			random_gender = yes
+		}
+		add_ruler_modifier = {
+			name = runebeard_leadership
+			duration = -1
+		}
+		hidden_effect = {
+			add_ruler_personality = immortal_personality
+			add_ruler_personality = zealot_personality
+		}
+	}
+}

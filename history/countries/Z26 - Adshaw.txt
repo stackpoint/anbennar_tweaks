@@ -1,0 +1,20 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = old_alenic
+religion = regent_court
+technology_group = tech_cannorian
+capital = 731
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1440.10.7 = {
+	monarch = {
+		name = "Rycan IV"
+		dynasty = "Adshaw"
+		birth_date = 1401.10.1
+		adm = 2
+		dip = 3
+		mil = 2
+	}
+}

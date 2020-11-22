@@ -1,0 +1,297 @@
+country_decisions = {
+	contribute_to_the_dragon_cult_hoard = {
+	
+		potential = {
+			religion = kobold_dragon_cult
+			NOT = { has_country_flag = kobold_hoard_menu }
+			NOT = { has_global_flag = dragon_roar }
+			NOT = { has_country_modifier = kobold_hoard_timer }
+		}
+
+		allow = {
+			owns = 189
+			treasury = 100
+			if = {
+				limit = { ai = no }
+				NOT = { num_of_loans = 1 }
+			}
+		}
+		ai_will_do = {
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { treasury = 200 }
+			}
+			modifier = {
+				factor = 0
+				is_at_war = yes
+			}
+			modifier = {
+				factor = 0
+				num_of_loans = 10
+			}
+			modifier = {
+				factor = 0
+				is_bankrupt = yes
+			}
+		}
+		effect = {
+			country_event = { id = flavor_kobildzan.3 }
+			hidden_effect = { set_country_flag = kobold_hoard_menu }
+			if = {
+				limit = { ai = yes }
+				add_country_modifier = {
+					name = kobold_hoard_timer
+					duration = 1825
+				}
+			}
+		}
+	}
+
+	kobold_nation = {
+		major = yes
+		potential = {
+			culture_group = kobold
+			normal_or_historical_nations = yes
+			was_never_end_game_tag_trigger = yes
+			NOT = { exists = Z38 } 
+			capital_scope = { continent = europe }
+		}
+		allow = {
+			
+			
+			adm_tech = 10
+			
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			
+			OR = {
+				owns = 173
+				owns = 197
+			}
+			owns = 189
+			
+			if = {
+				limit = {
+					tag = A26
+				}
+				NOT = { exists = A27 } 
+				NOT = { exists = A28 } 
+			}
+			else_if = {
+				limit = {
+					tag = A27
+				}
+				NOT = { exists = A26 } 
+				NOT = { exists = A28 } 
+			}
+			else_if = {
+				limit = {
+					tag = A28
+				}
+				NOT = { exists = A26 } 
+				NOT = { exists = A27 } 
+			}
+			else_if = {
+				limit = {
+					culture_group = kobold
+				}
+				NOT = { exists = A26 } 
+				NOT = { exists = A27 } 
+				NOT = { exists = A28 } 
+			}
+		}
+		effect = {
+			189 = {
+				move_capital_effect = yes
+				add_base_tax = 4
+				add_base_production = 4
+				add_base_manpower = 4
+			}
+			
+			
+			change_tag = Z38
+			swap_non_generic_missions = yes
+			custom_tooltip = tooltip_kobildzani_culture_provinces
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						culture_group = kobold
+					}
+					change_culture = kobildzani_kobold
+				}
+			}
+			if = {
+				limit = { ruler_culture = ROOT }
+				set_ruler_culture = kobildzani_kobold
+			}
+			if = {
+				limit = { has_heir = yes heir_culture = ROOT }
+				set_heir_culture = kobildzani_kobold
+			}
+			if = {
+				limit = { has_consort = yes consort_culture = ROOT }
+				set_consort_culture = kobildzani_kobold
+			}
+			change_primary_culture = kobildzani_kobold
+			hidden_effect = { save_primary_culture = yes }
+			
+			remove_non_electors_emperors_from_empire_effect = yes
+			
+			if = {
+				limit = {
+					NOT = { government_rank = 3 }
+				}
+				set_government_rank = 3
+			}
+			
+			dragon_coast_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_claim = ROOT }
+				}
+				add_permanent_claim = Z38
+			}
+			
+			add_prestige = 25
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			
+			set_country_flag = formed_kobildzan_flag
+			
+			set_country_flag = locked_racial_administration
+			custom_tooltip = locked_racial_administration_tt
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		ai_importance = 400
+	}
+	
+	steal_the_kobold_hoard = {
+	
+		potential = {
+			189 = { has_discovered = ROOT }
+			NOT = { religion = kobold_dragon_cult }
+			REB = { check_variable = { dragon_cult_hoard = 10 } }
+		}
+
+		allow = {
+			189 = { controlled_by = ROOT }
+		}
+		
+		effect = {
+			custom_tooltip = steal_the_kobold_hoard_tooltip
+			REB = { currency_effect = { currency=treasury addTo=ROOT which=dragon_cult_hoard } }
+			189 = {
+				remove_province_modifier = kobold_hoard_1
+				remove_province_modifier = kobold_hoard_2
+				remove_province_modifier = kobold_hoard_3
+				remove_province_modifier = kobold_hoard_4
+				remove_province_modifier = kobold_hoard_5
+				remove_province_modifier = kobold_hoard_6
+				remove_province_modifier = kobold_hoard_7
+				remove_province_modifier = kobold_hoard_8
+				remove_province_modifier = kobold_hoard_9
+				remove_province_modifier = kobold_hoard_10
+				remove_province_modifier = kobold_hoard_11
+			}
+			hidden_effect = { REB = { set_variable = { dragon_cult_hoard = 0 } } }
+		}
+	}
+
+	syzirzexi_nation = {
+		major = yes
+		potential = {
+			tag = Z55
+			culture_group = kobold
+			capital_scope = {continent = serpentspine}
+			normal_or_historical_nations = yes
+			NOT = { exists = Z56 }
+		}
+		allow = {
+			adm_tech = 7
+			is_free_or_tributary_trigger = yes
+			is_nomad = no
+			is_at_war = no
+			num_of_cities = 3
+			num_of_owned_provinces_with = {
+				value = 1
+				is_core = ROOT
+				is_city = yes
+				OR = {
+					has_terrain = dwarven_hold
+					has_terrain = dwarven_hold_surface
+				}
+			}
+		}
+		effect = {
+			change_tag = Z56
+			custom_tooltip = tooltip_syzirzexi_culture_provinces
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						culture_group = kobold
+					}
+					change_culture = syzirzexi_kobold
+				}
+			}
+			if = {
+				limit = { ruler_culture = ROOT }
+				set_ruler_culture = syzirzexi_kobold
+			}
+			if = {
+				limit = { has_heir = yes heir_culture = ROOT }
+				set_heir_culture = syzirzexi_kobold
+			}
+			if = {
+				limit = { has_consort = yes consort_culture = ROOT }
+				set_consort_culture = syzirzexi_kobold
+			}
+			change_primary_culture = syzirzexi_kobold
+			hidden_effect = {
+				save_primary_culture = yes
+			}
+			add_government_reform = settled_horde
+			remove_non_electors_emperors_from_empire_effect = yes
+			
+			if = {
+				limit = {
+					NOT = { government_rank = 2 }
+				}
+				set_government_rank = 2
+			}
+			
+			add_prestige = 25
+			if = {
+				limit = { has_custom_ideas = no }
+				country_event = { id = ideagroups.1 } #Swap Ideas
+			}
+			add_country_modifier = {
+				name = "centralization_modifier"
+				duration = 7300
+			}
+			
+			set_country_flag = formed_syzirzex_flag
+		
+			set_country_flag = locked_racial_administration
+			custom_tooltip = locked_racial_administration_tt
+		}
+		
+		ai_will_do = {
+			factor = 1
+		}
+		
+		ai_importance = 400
+	}
+}
+

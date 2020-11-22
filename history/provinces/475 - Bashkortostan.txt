@@ -1,0 +1,30 @@
+#475 - Bashkortostan
+
+owner = F01
+controller = F01
+add_core = F01
+culture = kheteratan
+religion = khetist
+
+hre = no
+
+base_tax = 12
+base_production = 12
+base_manpower = 12
+
+trade_goods = paper
+center_of_trade = 2
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+
+
+
+

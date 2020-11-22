@@ -1,0 +1,21 @@
+# No previous file for Sidmargbal
+owner = H06
+controller = H06
+add_core = H06
+culture = caamas
+religion = summer_court
+capital = "Sidmargbal"
+fort_15th = yes
+add_claim = H02
+
+hre = no
+
+base_tax = 4
+base_production = 4
+base_manpower = 3
+
+trade_goods = fur
+
+native_size = 14
+native_ferocity = 6
+native_hostileness = 6

@@ -1,0 +1,664 @@
+namespace = anb_miscevents
+
+#CountyToDuchy - vassal plea
+country_event = {
+	id = anb_miscevents.1
+	title = anb_miscevents.1.t
+	desc = anb_miscevents.1.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	
+	option = {	#Let us hope they accept our rightful elevation
+		name = anb_miscevents.1.a
+		custom_tooltip = ct_anb_miscevents.1
+		if = {
+			limit = {
+				is_subject = yes
+			}
+			overlord = { country_event = { id = anb_miscevents.2 days = 7 } }
+		}
+		if = {
+			limit = {
+				is_part_of_hre = yes
+				is_subject = no
+			}
+			emperor = { country_event = { id = anb_miscevents.2 days = 7 } }
+		}
+	}
+}
+
+#CountyToDuchy - overlord response
+country_event = {
+	id = anb_miscevents.2
+	title = anb_miscevents.2.t
+	desc = anb_miscevents.2.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+
+	option = {	#Of course, they've proven their worth
+		name = anb_miscevents.2.a
+		ai_chance = { 
+			factor = 20
+			modifier = {
+				factor = 3
+				ruler_has_personality = benevolent_personality
+			}
+			modifier = {
+				factor = 5
+				has_opinion = {
+					who = FROM
+					value = 140
+				}
+			}
+		}
+		FROM = { add_opinion = { who = ROOT modifier = opinion_countytoduchy_accept } }
+		custom_tooltip = ct_anb_miscevents.2a
+		add_prestige = -10
+		
+		hidden_effect = {
+			FROM = { country_event = { id = anb_miscevents.3 days = 7 } }
+		}
+		
+	}
+	option = {	#Oh I dont think so
+		name = anb_miscevents.2.b
+		ai_chance = { 
+			factor = 80
+			modifier = {
+				factor = 10
+				ruler_has_personality = malevolent_personality
+			}
+		}
+		FROM = { add_opinion = { who = ROOT modifier = opinion_countytoduchy_reject } }
+		custom_tooltip = ct_anb_miscevents.2b
+		
+		hidden_effect = {
+			FROM = { country_event = { id = anb_miscevents.4 days = 7 } }
+		}
+	}
+}
+
+#CountyToDuchy - overlord says yes
+country_event = {
+	id = anb_miscevents.3
+	title = anb_miscevents.3.t
+	desc = anb_miscevents.3.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+
+	option = {	#All hail the new Duchy of [CountryName]
+		name = anb_miscevents.3.a
+		hidden_effect = {
+			clr_country_flag = is_a_county
+		}
+		custom_tooltip = ct_anb_miscevents.3
+		add_prestige = 70
+		ROOT = { add_opinion = { who = FROM modifier = opinion_countytoduchy_accept } }
+	}
+}
+
+#CountyToDuchy - overlord says no
+country_event = {
+	id = anb_miscevents.4
+	title = anb_miscevents.4.t
+	desc = anb_miscevents.4.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	
+	option = {	#Rejection?! First of all, how dare you...
+		name = anb_miscevents.4.a
+		custom_tooltip = ct_anb_miscevents.4
+		add_prestige = -10
+		#ROOT = { add_opinion = { who = FROM modifier = opinion_countytoduchy_reject } }
+	}
+}
+
+#CountyToDuchy - independent automatically becomes duke
+country_event = {
+	id = anb_miscevents.5
+	title = anb_miscevents.5.t
+	desc = anb_miscevents.5.d
+	picture = COURT_eventPicture
+
+	is_triggered_only = yes
+
+	
+	option = {	#All hail the new Duchy of [CountryName]
+		name = anb_miscevents.5.a
+		hidden_effect = {
+			clr_country_flag = is_a_county
+		}
+		custom_tooltip = ct_anb_miscevents.3
+		add_prestige = 70
+	}
+}
+
+
+#To make countries fill out Escann and prevent blank spaces - tried making this a player-also thing, but for some reason it crashes for the player - AI dont have an issue though
+country_event = {
+	id =  anb_miscevents.6
+	title = anb_miscevents.6.t
+	desc = anb_miscevents.6.d
+	picture = COLONIZATION_eventPicture
+	
+	trigger = {
+		any_owned_province = {
+			OR = {
+				superregion = escann_superregion
+				region = forlorn_vale_region
+			}
+			has_empty_adjacent_province = yes
+		}
+		current_age = age_of_absolutism
+		ai = yes
+	}
+
+	mean_time_to_happen = {
+		months = 60
+		
+		modifier = {
+			factor = 0.5
+			capital_scope = { superregion = escann_superregion }
+		}
+		modifier = {
+			factor = 0.25
+			is_year = 1680
+		}
+	}
+	
+	option = {
+		name = anb_miscevents.6.a
+		random_owned_province = {
+			limit = {
+				OR = {
+					superregion = escann_superregion
+					region = forlorn_vale_region
+				}
+				has_empty_adjacent_province = yes
+			}
+			random_empty_neighbor_province = {
+				create_colony = 1000
+			}
+		}
+	}
+}
+
+#SpawnedColonistBoosts
+country_event = {
+	id =  anb_miscevents.7
+	title = anb_miscevents.7.t
+	desc = anb_miscevents.7.d
+	picture = COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	#	NOT = { has_country_modifier = strong_colonial_rush }
+	}
+	
+#	immediate = { 
+#		random_province = {
+#			limit = { 
+#				culture_group = ROOT
+#			}
+#			save_event_target_as = home_province
+#		}
+#		
+#	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = anb_miscevents.7.a
+		
+		set_country_flag = aelantir_spawnable
+		
+		create_explorer = {
+			tradition = 50
+		}
+	    create_conquistador = {
+			tradition = 50
+		}
+		add_country_modifier = { 
+			name = strong_colonial_rush
+			duration = 7300 #20 years
+		}
+		add_country_modifier = { 
+			name = pioneer_rush
+			duration = 18250 #50 years
+		}
+		
+		#Make the newfound place your core, etc
+		capital_scope = {
+			add_core = ROOT
+			change_culture = ROOT
+			#change_religion = event_target:home_province
+			change_religion = ROOT
+			
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_manpower = 2
+			
+			build_to_forcelimit = {
+				infantry = 0.7
+				cavalry = 0.2
+				artillery = 0.1
+				heavy_ship = 0.2
+				light_ship = 0.5
+				transport = 0.3
+			}
+			
+			if = {
+				limit = {
+					is_institution_enabled = feudalism
+					any_province = {
+							feudalism = 90 
+							culture_group = ROOT
+					}
+				}
+				add_institution_embracement = {
+					which = feudalism
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					is_institution_enabled = renaissance
+					any_province = {
+							renaissance = 90 
+							culture_group = ROOT
+					}
+				}
+				add_institution_embracement = {
+					which = renaissance
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					is_institution_enabled = new_world_i
+					any_province = {
+							new_world_i = 90 
+							culture_group = ROOT
+					}
+				}
+				add_institution_embracement = {
+					which = new_world_i
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					is_institution_enabled = printing_press
+					any_province = {
+							printing_press = 90 
+							culture_group = ROOT
+					}
+				}
+				add_institution_embracement = {
+					which = printing_press
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					is_institution_enabled = global_trade
+					any_province = {
+							global_trade = 90 
+							culture_group = ROOT
+					}
+				}
+				add_institution_embracement = {
+					which = global_trade
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					is_institution_enabled = manufactories
+					any_province = {
+							manufactories = 90 
+							culture_group = ROOT
+					}
+				}
+				add_institution_embracement = {
+					which = manufactories
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					is_institution_enabled = enlightenment
+					any_province = {
+							enlightenment = 90 
+							culture_group = ROOT
+					}
+				}
+				add_institution_embracement = {
+					which = enlightenment
+					value = 100
+				}
+			}
+		}
+		
+		#just in case they become corinite
+		# ROOT = {
+			# change_religion = event_target:home_province
+		# }
+		
+		# if = {
+			# limit = { 
+				# capital_scope = {
+					# OR = { 
+						# continent = north_america 
+						# continent = south_america
+					# }
+				# }
+			# }
+		# }
+		
+		#Make their first ruler a colonizer
+		if = {
+			limit = { ai = yes }
+			set_ai_personality = {
+				personality = ai_colonialist
+				locked = yes
+			}
+		}
+		
+		if = {
+			limit = {
+				NOT = { has_idea_group = exploration_ideas }
+			}
+			add_idea_group = exploration_ideas
+		}
+
+
+	}
+}
+
+
+#SpawnedColonistBoosts - Adventurers
+country_event = {
+	id =  anb_miscevents.8
+	title = anb_miscevents.8.t
+	desc = anb_miscevents.8.d
+	picture = COLONIZATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+	#	NOT = { has_country_modifier = strong_colonial_rush }
+	}
+	
+	immediate = { 
+		
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {
+		name = anb_miscevents.8.a
+		
+	    create_conquistador = {
+			tradition = 50
+		}
+		add_militarised_society = 50
+		if = {
+			limit = { capital_scope = { continent = serpentspine } }
+			add_country_modifier = {
+				name = dwarovar_claimer
+				duration = 14600
+			}
+		}
+		else = {
+			add_country_modifier = { 
+				name = spawned_adventurer_boost
+				duration = 7300 #20 years
+			}
+		}
+		
+		#Make the newfound place your core, etc
+		capital_scope = {
+			add_core = ROOT
+			change_culture = ROOT
+			#change_religion = event_target:home_province
+			change_religion = ROOT
+			
+			
+			build_to_forcelimit = {
+				infantry = 0.7
+				cavalry = 0.2
+				artillery = 0.1
+			}
+			
+			if = {
+				limit = {
+					is_institution_enabled = feudalism
+					any_province = {
+						feudalism = 90 
+						culture_group = ROOT
+					}
+				}
+				add_institution_embracement = {
+					which = feudalism
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					is_institution_enabled = renaissance
+					any_province = {
+						renaissance = 90 
+						culture_group = ROOT
+					}
+				}
+				add_institution_embracement = {
+					which = renaissance
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					is_institution_enabled = new_world_i
+					any_province = {
+							new_world_i = 90 
+							culture_group = ROOT
+					}
+				}
+				add_institution_embracement = {
+					which = new_world_i
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					is_institution_enabled = printing_press
+					any_province = {
+							printing_press = 90 
+							culture_group = ROOT
+					}
+				}
+				add_institution_embracement = {
+					which = printing_press
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					is_institution_enabled = global_trade
+					any_province = {
+							global_trade = 90 
+							culture_group = ROOT
+					}
+				}
+				add_institution_embracement = {
+					which = global_trade
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					is_institution_enabled = manufactories
+					any_province = {
+							manufactories = 90 
+							culture_group = ROOT
+					}
+				}
+				add_institution_embracement = {
+					which = manufactories
+					value = 100
+				}
+			}
+			if = {
+				limit = {
+					is_institution_enabled = enlightenment
+					any_province = {
+							enlightenment = 90 
+							culture_group = ROOT
+					}
+				}
+				add_institution_embracement = {
+					which = enlightenment
+					value = 100
+				}
+			}
+		}
+		
+		#just in case they become corinite
+		# ROOT = {
+			# change_religion = event_target:home_province
+		# }
+		
+		# if = {
+			# limit = { 
+				# capital_scope = {
+					# OR = { 
+						# continent = north_america 
+						# continent = south_america
+					# }
+				# }
+			# }
+		# }
+
+
+	}
+}
+# # Gov Reform Event
+# country_event = {
+	# id = anb_miscevents.9 
+	# title = "anb_miscevents.9.t"
+	# desc = "anb_miscevents.9.d"
+	# picture = ELECTION_REPUBLICAN_eventPicture
+	
+	# is_triggered_only = yes
+	
+	# option = {
+		# name = "anb_miscevents.9.a" #We need a Republic! 
+		# ai_chance = { factor = 0 }
+		# trigger = { 
+			# NOT = { government = republic } 
+			# NOT = { has_dlc = "Dharma" }
+		# }
+		# if = {
+			# limit = { NOT = { government = republic } }
+			# change_government = republic
+		# }
+		# set_legacy_government = administrative_republic
+		# add_republican_tradition = 100
+	# }
+	# option = {
+		# name = "anb_miscevents.9.b" #Form a Centralized Monarchy
+		# ai_chance = { factor = 0 }
+		# trigger = { 
+			# NOT = { government = monarchy }
+			# NOT = { has_dlc = "Dharma" }
+		# }
+		# if = {
+			# limit = { NOT = { government = monarchy } }
+			# change_government = monarchy
+		# }
+		# set_legacy_government = administrative_monarchy
+		# add_legitimacy = 100
+	# }
+	# option = {
+		# name = "anb_miscevents.9.c" #Elevate our leaders as a Theocracy 
+		# ai_chance = { factor = 0 }
+		# trigger = { 
+			# NOT = { government = theocracy }
+			# NOT = { has_dlc = "Dharma" }
+		# }
+		# if = {
+			# limit = { NOT = { government = theocracy  } }
+			# change_government = theocracy
+		# }
+		# set_legacy_government = theocratic_government
+		# add_devotion = 100
+	# }
+	# option = {
+		# name = "anb_miscevents.9.f" #Keep current government
+		# ai_chance = { factor = 0 }
+	# }
+# }
+
+# Make released adventurers become adventurers again
+country_event = {
+	id = anb_miscevents.10 
+	title = anb_miscevents.10.t
+	desc = anb_miscevents.10.d
+	picture = ELECTION_REPUBLICAN_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_adventurer = yes
+		NOT = { has_reform = adventurer_reform }
+		NOT = { has_country_flag = adventurer_derived_government }
+	}
+	
+	option = {
+		name = anb_miscevents.10.a
+		if = {
+			limit = { NOT = { government = theocracy } }
+			change_government = theocracy
+		}
+		add_government_reform = adventurer_reform
+		clr_country_flag = adventurer_derived_government
+	}
+}
+
+# Make released temples become theocracies again
+country_event = {
+	id = anb_miscevents.11 
+	title = anb_miscevents.11.t
+	desc = anb_miscevents.11.d
+	picture = RELIGION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		is_temple = yes
+		NOT = { has_reform = leading_clergy_reform }
+	}
+	
+	option = {
+		name = anb_miscevents.11.a
+		if = {
+			limit = { NOT = { government = theocracy } }
+			change_government = theocracy
+		}
+		add_government_reform = leading_clergy_reform
+	}
+}

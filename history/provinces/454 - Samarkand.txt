@@ -1,0 +1,27 @@
+#454 - Samarkand
+
+owner = F10
+controller = F10
+add_core = F10
+culture = kheteratan
+religion = khetist
+
+hre = no
+
+base_tax = 3
+base_production = 4
+base_manpower = 3
+
+trade_goods = livestock
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+
+

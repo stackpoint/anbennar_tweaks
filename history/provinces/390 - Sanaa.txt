@@ -1,0 +1,26 @@
+#390 - Sana'a
+
+owner = F07
+controller = F07
+add_core = F07
+culture = west_sandfang_gnoll
+religion = xhazobkult
+
+hre = no
+
+base_tax = 3
+base_production = 3
+base_manpower = 3
+
+trade_goods = wool
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+

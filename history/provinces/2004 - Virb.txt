@@ -1,0 +1,17 @@
+# No previous file for Virb
+owner = H01
+controller = H01
+add_core = H01
+culture = selphereg
+religion = spring_court
+capital = "Virb"
+add_claim = H04
+
+
+hre = no
+
+base_tax = 2
+base_production = 3
+base_manpower = 2
+
+trade_goods = cotton

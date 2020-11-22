@@ -1,0 +1,27 @@
+#384 - Medina
+
+owner = F07
+controller = F07
+add_core = F07
+culture = west_sandfang_gnoll
+religion = xhazobkult
+
+hre = no
+
+base_tax = 3
+base_production = 3
+base_manpower = 4
+
+trade_goods = grain
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+
+

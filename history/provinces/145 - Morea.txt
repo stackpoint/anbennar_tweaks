@@ -1,0 +1,21 @@
+#145 - Morea
+
+owner = A06
+controller = A06
+add_core = A06
+culture = cliff_gnome
+religion = the_thought
+hre = no
+base_tax = 4
+base_production = 4
+trade_goods = fish
+base_manpower = 3
+capital = "" 
+is_city = yes
+
+
+
+
+
+
+

@@ -1,0 +1,48 @@
+# No previous file for Strutmar
+government = monarchy
+add_government_reform = autocracy_reform
+government_rank = 1
+primary_culture = peitar
+religion = eordellon
+technology_group = tech_eordand
+capital = 1994
+historical_friend = H08 #Pelomar
+historical_friend = H20 #Trimgarb
+historical_friend = H06 #Sidpar
+historical_friend = H09 #Iadth
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1443.3.5 = {
+	monarch = {
+		name = "Danaran I"
+		dynasty = "Truearrow"
+		birth_date = 1417.7.2
+		adm = 2
+		dip = 2
+		mil = 5
+	}
+	add_ruler_personality = conqueror_personality
+	heir = {
+		name = "Kamnar"
+		monarch_name = "Kamnar I"
+		dynasty = "Truearrow"
+		birth_date = 1439.2.11
+		death_date = 1481.3.2
+		claim = 95
+		adm = 3
+		dip = 5
+		mil = 2
+	}
+	queen = {
+		country_of_origin = H19
+		name = "Lanhara"
+		dynasty = "Forestgate"
+		birth_date = 1416.11.20
+		death_date = 1480.4.10
+		female = yes
+		adm = 2
+		dip = 4
+		mil = 3
+	}
+}

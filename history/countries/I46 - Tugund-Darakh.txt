@@ -1,0 +1,8 @@
+government = monarchy
+add_government_reform = emerald_horde
+government_rank = 2
+primary_culture = emerald_orc
+religion = fey_court
+technology_group = tech_orcish
+capital = 874
+fixed_capital = 874

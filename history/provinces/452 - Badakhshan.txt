@@ -1,0 +1,27 @@
+#452 - Gemisle
+
+owner = F17
+controller = F17
+add_core = F17
+culture = crathanori
+religion = regent_court
+
+
+base_tax = 4
+base_production = 3
+base_manpower = 2
+
+trade_goods = gems
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+
+
+

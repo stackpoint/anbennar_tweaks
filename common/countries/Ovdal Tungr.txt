@@ -1,0 +1,249 @@
+#Country Name: Please see filename.
+
+graphical_culture = westerngfx
+
+color = { 204  117  21 }
+
+
+
+historical_idea_groups = {
+	trade_ideas
+	defensive_ideas	
+	maritime_ideas
+	economic_ideas
+	offensive_ideas
+	expansion_ideas
+	quality_ideas	
+	influence_ideas
+}
+
+historical_units = {
+	dwarven_1_shieldwall
+	dwarven_5_pepperers
+	dwarven_6_ram_cavalry
+	dwarven_9_pepper_and_phalanx
+	dwarven_10_ram_rangers
+	dwarven_12_gun_and_tortoise
+	dwarven_15_war_wagons
+	dwarven_17_improved_ram_rangers
+	dwarven_19_pepper_and_powder
+	dwarven_23_dragoons
+	dwarven_26_engineers
+	dwarven_28_reformed_gun_and_tortoise
+	dwarven_28_mecharams
+	dwarven_30_repeating_rifles
+}
+monarch_names = {
+
+	#Generic Dwarf Names
+	
+	"Adar #0" = 50
+	"Adranbur #0" = 50
+	"Adûn #0" = 50
+	"Balgar #0" = 50
+	"Balgor #0" = 50
+	"Balin #0" = 50
+	"Bardin #0" = 50
+	"Bardur #0" = 50
+	"Beldûn #0" = 50
+	"Belgar #0" = 50
+	"Bofur #0" = 50
+	"Bolin #0" = 50
+	"Bombur #0" = 50
+	"Borin #0" = 50
+	"Brann #0" = 50
+	"Brok #0" = 50
+	"Bruenor #0" = 50
+	"Calin #0" = 50
+	"Cûn #0" = 50
+	"Dagran #0" = 50
+	"Dain #0" = 50
+	"Dalbaran #0" = 50
+	"Dalmund #0" = 50
+	"Dolin #0" = 50
+	"Dorin #0" = 50
+	"Dorri #0" = 50
+	"Durbûr #0" = 50
+	"Durin #0" = 50
+	"Dwalin #0" = 50
+	"Dwarin #0" = 50
+	"Edûn #0" = 50
+	"Falstad #0" = 50
+	"Farûn #0" = 50
+	"Fimbur #0" = 50
+	"Flondi #0" = 50
+	"Foldan #0" = 50
+	"Gorar #0" = 50
+	"Goren #0" = 50
+	"Gotrek #0" = 50
+	"Grim #0" = 50
+	"Grimmar #0" = 50
+	"Grimmun #0" = 50
+	"Gromar #0" = 50
+	"Gronmar #0" = 50
+	"Grûaim #0" = 50
+	"Grûar #0" = 50
+	"Grûn #0" = 50
+	"Gundobad #0" = 50
+	"Gundobar #0" = 50
+	"Gundobin #0" = 50
+	"Gundomar #0" = 50
+	"Hardûn #0" = 50
+	"Harlûn #0" = 50
+	"Harrûk #0" = 50
+	"Hjal #0" = 50
+	"Hjalmar #0" = 50
+	"Karrom #0" = 50
+	"Kazadûr #0" = 50
+	"Khadan #0" = 50
+	"Kildan #0" = 50
+	"Kildar #0" = 50
+	"Kildûm #0" = 50
+	"Kûrgûm #0" = 50
+	"Lodûn #0" = 50
+	"Lorek #0" = 50
+	"Lorimbur #0" = 50
+	"Madarûn #0" = 50
+	"Magar #0" = 50
+	"Magni #0" = 50
+	"Magnus #0" = 50
+	"Magûn #0" = 50
+	"Morzad #0" = 50
+	"Muradin #0" = 50
+	"Nali #0" = 50
+	"Nalin #0" = 50
+	"Norbûn #0" = 50
+	"Norbûr #0" = 50
+	"Nori #0" = 50
+	"Norimbur #0" = 50
+	"Norin #0" = 50
+	"Odar #0" = 50
+	"Odur #0" = 50
+	"Odûn #0" = 50
+	"Okar #0" = 50
+	"Olin #0" = 50
+	"Orim #0" = 50
+	"Orin #0" = 50
+	"Ragun #0" = 50
+	"Ragund #0" = 50
+	"Runmar #0" = 50
+	"Rûnimûr #0" = 50
+	"Sevrund #0" = 50
+	"Simbûr #0" = 50
+	"Simur #0" = 50
+	"Simûn #0" = 50
+	"Sindri #0" = 50
+	"Snorri #0" = 50
+	"Storin #0" = 50
+	"Storlin #0" = 50
+	"Storum #0" = 50
+	"Thargas #0" = 50
+	"Thargor #0" = 50
+	"Thinbur #0" = 50
+	"Thindobar #0" = 50
+	"Thindri #0" = 50
+	"Thingrim #0" = 50
+	"Thinobad #0" = 50
+	"Thorar #0" = 50
+	"Thorgrim #0" = 50
+	"Thorin #0" = 50
+	"Thrain #0" = 50
+	"Thrair #0" = 50
+	"Thror #0" = 50
+	"Thrûn #0" = 50
+	"Thrûr #0" = 50
+	"Thudri #0" = 50
+	"Tungdil #0" = 50
+	"Ungrim #0" = 50
+	"Urist #0" = 50
+	"Urûr #0" = 50
+	
+	"Adala #0" = -1
+	"Aira #0" = -1
+	"Anvi #0" = -1
+	"Auci #0" = -1
+	"Balga #0" = -1
+	"Barila #0" = -1
+	"Barra #0" = -1
+	"Belga #0" = -1
+	"Belgia #0" = -1
+	"Bella #0" = -1
+	"Branma #0" = -1
+	"Brenla #0" = -1
+	"Brenleil #0" = -1
+	"Brenlel #0" = -1
+	"Brina #0" = -1
+	"Broga #0" = -1
+	"Bronis #0" = -1
+	"Cala #0" = -1
+	"Dalina #0" = -1
+	"Dwalra #0" = -1
+	"Edeth #0" = -1
+	"Etta #0" = -1
+	"Grelba #0" = -1
+	"Grimma #0" = -1
+	"Groria #0" = -1
+	"Gruia #0" = -1
+	"Isondi #0" = -1
+	"Lahgi #0" = -1
+	"Lisban #0" = -1
+	"Magda #0" = -1
+	"Mistri #0" = -1
+	"Moira #0" = -1
+	"Mori #0" = -1
+	"Moria #0" = -1
+	"Naim #0" = -1
+	"Ovondi #0" = -1
+	"Ronla #0" = -1
+	"Sivondi #0" = -1
+	"Tharkuni #0" = -1
+	"Thohga #0" = -1
+	"Ungi #0" = -1
+}
+
+leader_names = {
+
+	Battlehammer Axehammer Ettinkiller Minesmiter Minesmith Hammersmith Forgehammer Bloodsteel Earthfist Bronzebeard Goldbeard Stonebeard Hammerbeard Frostbeard Whitebeard
+	Breakbeard Ringbeard Gembeard Ogreslayer Orcslayer Spiderslayer Goblinslayer Graybeard Greybeard Redbeard Warhorn Gemhorn Longbeard Truebellow Blackbellow Strongbellow
+	Shalesmith Shaleaxe Shalehammer Shaleforger Shalebeard Heavyaxe Skullaxe Gemcraver Goodanvil Blackanvil Shaleanvil Forgeanvil Axeanvil Trueanvil Bloodanvil 
+	Thunderfist Thunderhammer Thunderaxe Stormfist Stormhammer Stormaxe Stormanvil Stormbeard Stromanvil Thundersteel Stormsteel Elderbeard Oldbeard Copperbeard Gritaxe
+	Flameforge Flameaxe Flamehammer Flamefist Hammerkeeper Stormkeeper Beardfist Hornfist Battlebeard Hardaxe Hardhammer Hammerhand Forgebar Ironbar Goldbar Bronzebar Steelbar
+	Ironstar Ironaxe Ironsteel Ironhammer Ironfist Ironhelm
+	
+}
+ship_names = {
+	#Generic Cannorian
+	Adamant Advantage Adventure Advice Answer Ardent Armada Arrogant Assistance Association Assurance Atlas Audacious 
+	Bear Beaver "Black Galley" "Black Pinnace" "Black Prince" "Black Blood" Captain Centurion Coronation Courage Crocodile Crown
+	Daisy Defence Defiance Devastation Diamond Director Dolphin Dragon Drake Dreadnaught Duke Duchess Eagle Elephant Excellent Exchange Expedition Experiment
+	Falcon Fame Favourite Fellowship Fleetwood Flight Flirt Formidable Forrester Fortitude Fortune Gillyflower Globe "Golden Horse" "Golden Lion" "Golden Phoenix" Goliath Goodgrace Governor
+	"Grand Mistress" "Great Bark" "Great Charity" "Great Galley" "Great Gift"  "Great Pinnace" "Great Zebra" "Green Dragon" Greyhound Griffin Guide "Half Moon" Hare Harpy Hawke Hazardous Heart
+	Hero Hope "Hope Bark" "Hopeful Adventure" Humble Hunter Illustrious Impregnable Increase Indefatigable Inflexible Intrepid Invincible "Less Bark" "Less Pinnace" "Less Zebra"
+	Lively Lizard Lion Magnanime Magnificent Majestic Makeshift Medusa Minotaur Moderate Monarch Moon Moor "New Bark" Ocean 
+	Pansy Panther Parrot Porcupine Powerful President Prince "Prince Consort" "Prince Royal"
+	Redoubtable Reformation Regent Renown Repulse Research Reserve Resistance Resolution Restoration Revenge 
+	Salamander Sandwich Sapphire Satisfaction Seahorse Search Sheerness Speaker Speedwell Sphinx Splendid Sprite Stag Standard Stately Success Sunlight Sunbeam Superb Swan Sweepstake Swift Swiftsure
+	Terrible Terror Thunderer Tiger Tremendous Trident Trinity Triumph Trusty
+	Unicorn Union Unity Valiant Vanguard Venerable Vestal Veteran Victor Vindictive Virtue Violet
+	Warrior Warspite "Young Prince" Zealous
+
+	Survey Surveillance Cow Ox Bird Hawk Sovereign Emperor Count Lord Baron
+
+	Knight Paladin Dragonslayer Cleric Rogue Fighter Ranger Sorcerer Wizard Warlock Monk Druid
+	Strength Dexterity Constitution Intelligence Wisdom Charisma
+	
+	#Elven
+	Lunetine Agraseina Estaforra
+	
+	#Regent Court Deities
+	Castellos Dame "The Dame" Halanna Ysh Yshtralania Agradls Adean Esmaryal Ryala Edronias Falah Nerat Ara Minara Munas Moonsinger Nathalyne Begga Corin Balgar
+	Uelos Drax'os
+}
+
+army_names = {
+	"Tûngric Army" "Army of $PROVINCE$"
+}
+
+fleet_names = {
+	"Tûngric Fleet" "Bronze Squadron" "Steel Squadron" "Iron Squadron" "Copper Squadron" "Gold Squadron"
+}

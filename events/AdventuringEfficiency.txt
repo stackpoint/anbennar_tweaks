@@ -1,0 +1,578 @@
+
+namespace = adventuring
+
+#Adventurers find treasure!
+country_event = {
+	id = adventuring.1
+	title = adventuring.1.t
+	desc = adventuring.1.d
+	picture = IMPORTANT_STATUE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = adventurer_reform
+		has_dlc = "Rights of Man"
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	#This will benefit the company as a whole!
+	option = {		
+		name = "adventuring.1.a"
+		ai_chance = {
+			factor = 40
+		}
+		add_years_of_income = 2
+	}
+	
+	#Give a fair share of the reward to the crew that found it!
+	option = {		
+		name = "adventuring.1.b"
+		ai_chance = {
+			factor = 40
+		}
+		add_years_of_income = 0.5
+		if = {
+			limit = { has_dlc = "Rights of Man" }
+			add_militarised_society = 5
+		}
+	}
+	
+	#Give them a reward instead! This should encourage more people to adventure!
+	option = {
+		name = "adventuring.1.c"
+		ai_chance = {
+			factor = 20
+			modifier = {
+				factor = 0
+				NOT = { years_of_income = 1.5 }
+			}
+		}
+		#trigger = {
+		#	has_dlc = "Rights of Man"
+		#}
+		add_years_of_income = -1
+		if = {
+			limit = { has_dlc = "Rights of Man" }
+			add_militarised_society = 10
+		}
+	}
+}
+
+#Company needs new equipment
+country_event = {
+	id = adventuring.2
+	title = adventuring.2.t
+	desc = adventuring.2.d
+	picture = TRADEGOODS_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = adventurer_reform
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	#Send a caravan to purchase some from the west
+	option = {		
+		name = "adventuring.2.a"
+		ai_chance = {
+			factor = 60
+			modifier = {
+				factor = 0
+				NOT = { years_of_income = 1 }
+			}
+			modifier = {
+				factor = 0.5
+				NOT = { years_of_income = 2 }
+			}
+		}
+		add_years_of_income = -2
+	}
+	
+	#We can't afford it right now
+	option = {	
+		name = "adventuring.2.b"
+		ai_chance = {
+			factor = 40
+		}
+		add_prestige = -10
+	}
+}
+
+#Maps!
+country_event = {
+	id = adventuring.3
+	title = adventuring.3.t
+	desc = adventuring.3.d
+	picture = GLOBAL_TRADE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = adventurer_reform
+		has_dlc = "Rights of Man"
+		
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	#Purchase those maps
+	option = {		
+		name = "adventuring.3.a"
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				NOT = { years_of_income = 1.5 }
+			}
+		}
+		add_years_of_income = -1
+		if = {
+			limit = { has_dlc = "Rights of Man" }
+			add_militarised_society = 5
+		}
+	}
+	
+	#Maybe we can use our fame to our advantage
+	option = {		
+		name = "adventuring.3.b"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = { prestige = 10 }
+			}
+		}
+		add_prestige = -10
+		if = {
+			limit = { has_dlc = "Rights of Man" }
+			add_militarised_society = 5
+		}
+	}
+	
+	#We don't need your maps!
+	option = {		
+		name = "adventuring.3.c"
+		ai_chance = {
+			factor = 10
+		}
+		add_prestige = -5
+	}
+}
+
+#Fat Adventurer Captains
+country_event = {
+	id = adventuring.4
+	title = adventuring.4.t
+	desc = adventuring.4.d
+	picture = {
+		trigger = { has_dlc = "Rights of Man" }
+		picture = MILITARISTICALLY_TALENTED_RULER_eventPicture
+	}
+	picture = {
+		trigger = { NOT = { has_dlc = "Rights of Man" } }
+		picture = LAND_MILITARY_eventPicture
+	}
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = adventurer_reform
+		treasury = 100
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	#Confiscate all their gold and redistribute it to the company!
+	option = {		
+		name = "adventuring.4.a"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = { treasury = 150 }
+			}
+			modifier = {
+				factor = 0
+				prestige = 50
+			}
+		}
+		add_treasury = -100
+	}
+	
+	#Confiscate some of their gold
+	option = {		
+		name = "adventuring.4.b"
+		ai_chance = {
+			factor = 40
+		}
+		add_treasury = -50
+		add_prestige = -5
+	}
+	
+	#So what?
+	option = {		
+		name = "adventuring.4.c"
+		ai_chance = {
+			factor = 10
+			modifier = {
+				factor = 0
+				corruption = 5
+			}
+		}
+		add_prestige = -5
+		add_corruption = 1
+	}
+}
+
+#Disloyal Adventurers
+country_event = {
+	id = adventuring.5
+	title = adventuring.5.t
+	desc = adventuring.5.d
+	picture = ACCUSATION_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = adventurer_reform
+		has_dlc = "Rights of Man"
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	#Maybe some gold can regain their loyalty?
+	option = {		
+		name = "adventuring.5.a"
+		ai_chance = {
+			factor = 50
+			modifier = {
+				factor = 0
+				NOT = { years_of_income = 1 }
+			}
+		}
+		add_years_of_income = -1
+		if = {
+			limit = { has_dlc = "Rights of Man" }
+			add_militarised_society = -5
+		}
+	}
+	
+	#Reprimand them
+	option = {		
+		name = "adventuring.5.b"
+		ai_chance = {
+			factor = 45
+			modifier = {
+				factor = 0
+				NOT = { prestige = 0 }
+			}
+		}
+		add_prestige = -5
+		if = {
+			limit = { has_dlc = "Rights of Man" }
+			add_militarised_society = -5
+		}
+	}
+	
+	#Expel them from the company!
+	option = {		
+		name = "adventuring.5.c"
+		ai_chance = {
+			factor = 5
+		}
+		if = {
+			limit = { has_dlc = "Rights of Man" }
+			add_militarised_society = -10
+		}
+	}
+}
+
+#Adventuring Party Wipes
+country_event = {
+	id = adventuring.6
+	title = adventuring.6.t
+	desc = adventuring.6.d
+	picture = COUNTRY_COLLAPSE_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = adventurer_reform
+		has_dlc = "Rights of Man"
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	#Goddamnit Leroy!
+	option = {		
+		name = "adventuring.6.a"
+		reduce_stability_or_adm_power = yes
+		if = {
+			limit = { has_dlc = "Rights of Man" }
+			add_militarised_society = -10
+		}
+	}
+}
+
+
+#A New Captain rises
+country_event = {
+	id = adventuring.7
+	title = adventuring.7.t
+	desc = adventuring.7.d
+	picture = MILITARISTICALLY_TALENTED_RULER_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = adventurer_reform
+		has_dlc = "Rights of Man"
+	}
+	
+	#Support the Marchers
+	option = {		
+		name = "adventuring.7.a"
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				personality = ai_diplomat
+			}
+		}
+		add_prestige = 5
+		if = {
+			limit = { has_dlc = "Rights of Man" }
+			add_militarised_society = 5
+		}
+		add_faction_influence = {	#will need to make this into an effect later
+			faction = adv_marchers
+			influence = 30
+		}
+	}
+	
+	#Support the Pioneers
+	option = {		
+		name = "adventuring.7.b"
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				personality = ai_capitalist
+			}
+		}
+		random_owned_province = { 
+			limit = { is_core = ROOT }
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+		add_faction_influence = {	#will need to make this into an effect later
+			faction = adv_pioneers
+			influence = 30
+		}
+	}
+	
+	#Support the Fortune Seekers
+	option = {		
+		name = "adventuring.7.c"
+		ai_chance = {
+			factor = 25
+			modifier = {
+				factor = 2
+				personality = ai_militarist
+			}
+		}
+		if = {
+			limit = { has_dlc = "Rights of Man" }
+			add_militarised_society = 10
+		}
+		add_faction_influence = {	#will need to make this into an effect later
+			faction = adv_fortune_seekers
+			influence = 30
+		}
+	}
+}
+
+#Rebuilding Province
+country_event = {
+	id =  adventuring.8
+	title = adventuring.8.t
+	desc = adventuring.8.d
+	picture = CITY_DEVELOPMENT_eventPicture
+	goto = rebuild_province
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = adventurer_reform
+		any_core_province = {
+			is_city = yes
+			OR = {	
+				region = west_castanor_region
+				region = inner_castanor_region
+				region = south_castanor_region
+			}
+			NOT = { 
+				culture_group = orcish
+				culture_group = goblin
+			}
+			NOT = { development = 10 }
+			NOT = { province_id = 896 } #Marrhold
+		}
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	immediate = {
+		hidden_effect = {
+			random_core_province = {
+				limit = {
+					NOT = { development = 10 }
+					is_city = yes
+					#is_core = yes
+					OR = {	
+						region = west_castanor_region
+						region = inner_castanor_region
+						region = south_castanor_region
+					}
+					NOT = { 
+						culture_group = orcish
+						culture_group = goblin
+					}
+					NOT = { province_id = 896 } #Marrhold
+				}
+				save_event_target_as = rebuild_province
+			}
+		}
+	}
+
+	#Good idea, the foundations are already there
+	option = {
+		name = adventuring.8.a
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				NOT = { years_of_income = 0.5 }
+			}
+		}
+		add_years_of_income = -0.5
+		event_target:rebuild_province = {
+			add_base_tax = 1
+			add_base_production = 1
+			add_base_manpower = 1
+		}
+	}
+	
+	#Not just rebuild, but improve!
+	option = {
+		name = adventuring.8.b
+		ai_chance = {
+			factor = 40
+			modifier = {
+				factor = 0
+				NOT = { years_of_income = 1.5 }
+			}
+		}
+		add_years_of_income = -1
+		add_faction_influence = {	#will need to make this into an effect later
+			faction = adv_fortune_seekers
+			influence = 10
+		}
+		event_target:rebuild_province = {
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_manpower = 1
+		}
+
+	}
+	
+	#We're here to fight and go on adventures, not build!
+	option = {
+		name = adventuring.8.c
+		ai_chance = {
+			factor = 20
+		}
+		add_prestige = -5
+		add_faction_influence = {	#will need to make this into an effect later
+			faction = adv_marchers
+			influence = 10
+		}
+		if = {
+			limit = { has_dlc = "Rights of Man" }
+			add_militarised_society = 10
+		}
+	}
+}
+
+#Adventurers Lay Down Their Arms
+country_event = {
+	id = adventuring.9
+	title = adventuring.9.t
+	desc = adventuring.9.d
+	picture = ECONOMY_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = adventurer_reform
+		has_dlc = "Rights of Man"
+		
+		total_development = 50
+		
+		militarised_society = 60
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {		
+		name = "adventuring.9.a"
+		add_militarised_society = -10
+	}
+}
+
+#Adventurers Leave
+country_event = {
+	id = adventuring.10
+	title = adventuring.10.t
+	desc = adventuring.10.d
+	picture = EXPLORERS_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		has_reform = adventurer_reform
+		has_dlc = "Rights of Man"
+
+		militarised_society = 60
+	}
+	
+	mean_time_to_happen = {
+		days = 1
+	}
+	
+	option = {		
+		name = "adventuring.10.a"
+		add_militarised_society = -5
+	}
+}

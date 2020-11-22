@@ -1,0 +1,20 @@
+government = republic
+add_government_reform = oligarchy_reform
+government_rank = 1
+primary_culture = bluefoot_halfling
+religion = regent_court
+technology_group = tech_cannorian
+
+capital = 137
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_guilds }
+
+1440.2.2 = {
+	monarch = {
+		name = "Willam of Cowskeep"
+		birth_date = 1399.12.12
+		adm = 3
+		dip = 1
+		mil = 1
+	}
+}

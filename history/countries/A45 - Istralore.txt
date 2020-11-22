@@ -1,0 +1,38 @@
+government = monarchy
+add_government_reform = feudalism_reform
+government_rank = 1
+primary_culture = east_damerian
+religion = regent_court
+technology_group = tech_cannorian
+
+capital = 277
+historical_friend = A31 #Moonhaven
+historical_friend = A58 #Dameria
+
+elector = yes
+
+1000.1.1 = { set_estate_privilege = estate_mages_organization_magisterium }
+
+1422.1.1 = { set_country_flag = lilac_wars_moon_party }
+
+1436.2.3 = {
+	monarch = {
+		name = "Aucanna I"
+		dynasty = "Silistra"
+		birth_date = 1423.6.20
+		adm = 1
+		dip = 1
+		mil = 5
+		female = yes
+	}
+	queen = {
+		country_of_origin = A45
+		name = "Ricain"
+		dynasty = "Silistra"
+		birth_date = 1420.3.7
+		death_date = 1492.6.8
+		adm = 3
+		dip = 3
+		mil = 2
+	}
+}

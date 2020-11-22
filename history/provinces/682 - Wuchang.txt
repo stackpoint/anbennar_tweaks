@@ -1,0 +1,27 @@
+# No previous file for Wuchang
+owner = F05
+controller = F05
+add_core = F05
+culture = brasanni
+religion = bulwari_sun_cult
+
+hre = no
+
+base_tax = 2
+base_production = 3
+base_manpower = 1
+
+trade_goods = copper
+
+capital = ""
+
+is_city = yes
+
+
+
+
+
+
+
+
+
