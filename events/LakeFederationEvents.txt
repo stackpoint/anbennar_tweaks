@@ -1661,7 +1661,7 @@ country_event = {
 	picture = BIG_BOOK_eventPicture
 	
 	fire_only_once = yes
-	is_triggered_only = yes
+	#is_triggered_only = yes
 	mean_time_to_happen = {
 		years = 50
 		
@@ -2721,11 +2721,13 @@ country_event = {
 			add_treasury = -100
 		}
 		event_target:country = {
-			limit = {
-				has_country_modifier = federation_fighter
-				any_enemy_country = { has_country_modifier = centaur_administration }
+			if = {
+				limit = {
+					has_country_modifier = federation_fighter
+					any_enemy_country = { has_country_modifier = centaur_administration }
+				}
+				country_event = { id = lake.65 }
 			}
-			country_event = { lake.65 }
 		}
 		add_country_modifier = {
 			name = recently_helped_federation
@@ -2762,8 +2764,10 @@ country_event = {
 				save_event_target_as = province
 			}
 			capital_scope = { 
-				limit = { controlled_by = ROOT }
-				save_event_target_as = province
+				if = {
+					limit = { controlled_by = ROOT }
+					save_event_target_as = province
+				}
 			}
 		}
 	}

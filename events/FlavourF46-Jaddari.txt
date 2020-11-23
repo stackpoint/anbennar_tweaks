@@ -520,7 +520,7 @@ country_event = {
 			}
 		}
 		
-		add_country_modifier_modifier = {
+		add_country_modifier = {
 			name = jaddari_abundant_wood
 			duration = 9125
 		}
