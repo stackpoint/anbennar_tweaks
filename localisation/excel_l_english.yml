@@ -1,0 +1,6 @@
+﻿l_english:
+ #Dev summary
+ dev_sum_clicks_decision_title:0 "Manual Development Growth Summary"
+ dev_sum_clicks_decision_desc:0 "To see a summary of your manual development growth via development clicks, hover over the 'requirements' for this decision."
+ dev_sum_clicks_decision_tooltip:0 "Manual Development:\n\n§W£adm£ Development Gained: §G[This.dev_adm_clicks.GetValue] \n§W£dip£ Development Gained: §G[This.dev_dip_clicks.GetValue] \n§W£mil£ Development Gained: §G[This.dev_mil_clicks.GetValue] \n\n§WTotal Development Gained: §Y[This.dev_sum_clicks.GetValue]"
+ 
