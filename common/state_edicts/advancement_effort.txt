@@ -4,7 +4,10 @@ edict_advancement_effort = {
 	}
 	
 	allow = {
-		always = yes
+		custom_trigger_tooltip = {
+			tooltip = disable_state_edicts_active.tooltip
+			NOT = { has_country_flag = disable_state_edicts_active }
+		}
 	}
 	
 	modifier = {
