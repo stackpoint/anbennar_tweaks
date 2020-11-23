@@ -425,6 +425,8 @@
  F55_ADJ:0 "Kogzallan"
  F56:0 "Maqet"
  F56_ADJ:0 "Maqeti"
+ F99:0 "Jadd Civil War"
+ F99_ADJ:0 "Jadd Civil War"
 
  G01:0 "Boek"
  G01_ADJ:0 "Boek"
@@ -803,7 +805,7 @@
  H87_ADJ:0 "Thieving Arrow"
  H88:0 "Ambersniffer"
  H88_ADJ:0 "Ambersniffer"
- H89:0 "Snotfinger "
+ H89:0 "Snotfinger"
  H89_ADJ:0 "Snotfinger"
  H90:0 "Spiderwretch"
  H90_ADJ:0 "Spiderwretch"
