@@ -9,7 +9,61 @@ country_decisions = {
 		}
 		effect = {
 			custom_tooltip = disable_state_edicts_active_decision_tooltip
-			set_country_flag = disable_state_edicts_active
+			hidden_effect = {
+				set_country_flag = disable_state_edicts_active
+				
+				export_to_variable = {
+					which = prevMonth
+					value = trigger_value:is_month
+				}
+				if = {
+					limit = {
+						check_variable = {
+							prevMonth = 11
+						}
+					}
+					set_variable = {
+						prevMonth = 0
+					}
+				}
+				else = {
+					change_variable = {
+						prevMonth = 1
+					}
+				}
+				
+				country_event = { id = edict_events.1	days = 1  }
+				country_event = { id = edict_events.1	days = 2  }
+				country_event = { id = edict_events.1	days = 3  }
+				country_event = { id = edict_events.1	days = 4  }
+				country_event = { id = edict_events.1	days = 5  }
+				country_event = { id = edict_events.1	days = 6  }
+				country_event = { id = edict_events.1	days = 7  }
+				country_event = { id = edict_events.1	days = 8  }
+				country_event = { id = edict_events.1	days = 9  }
+				country_event = { id = edict_events.1	days = 10 }
+				country_event = { id = edict_events.1	days = 11 }
+				country_event = { id = edict_events.1	days = 12 }
+				country_event = { id = edict_events.1	days = 13 }
+				country_event = { id = edict_events.1	days = 14 }
+				country_event = { id = edict_events.1	days = 15 }
+				country_event = { id = edict_events.1	days = 16 }
+				country_event = { id = edict_events.1	days = 17 }
+				country_event = { id = edict_events.1	days = 18 }
+				country_event = { id = edict_events.1	days = 19 }
+				country_event = { id = edict_events.1	days = 20 }
+				country_event = { id = edict_events.1	days = 21 }
+				country_event = { id = edict_events.1	days = 22 }
+				country_event = { id = edict_events.1	days = 23 }
+				country_event = { id = edict_events.1	days = 24 }
+				country_event = { id = edict_events.1	days = 25 }
+				country_event = { id = edict_events.1	days = 26 }
+				country_event = { id = edict_events.1	days = 27 }
+				country_event = { id = edict_events.1	days = 28 }
+				country_event = { id = edict_events.1	days = 29 }
+				country_event = { id = edict_events.1	days = 30 }
+				country_event = { id = edict_events.1	days = 31 }
+			}
 		}
 		ai_will_do = {
 			factor = 0

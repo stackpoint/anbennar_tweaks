@@ -1,0 +1,37 @@
+namespace = edict_events
+
+country_event = {
+	id = edict_events.1
+	title = edict_events.1.t
+	desc = edict_events.1.d
+	picture = CITY_VIEW_eventPicture
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		always = no
+		has_country_flag = disable_state_edicts_active
+		variable_arithmetic_trigger = {
+			export_to_variable = {
+				which = thisMonth
+				value = trigger_value:is_month
+			}
+			is_variable_equal = {
+				which = thisMonth
+				which = prevMonth
+			}
+		}
+	}
+	
+	after = {
+		clr_country_flag = disable_state_edicts_active
+	}
+	
+	option = {
+        name = edict_events.1.a
+		
+		#hidden
+	}
+}
+
