@@ -379,8 +379,10 @@ digging_deeper = {
 	
 	on_destroyed = {
 		hidden_effect = {
-			remove_province_modifier = cons_prog_mod
-			set_variable = { cons_prog = 0.5 }
+			if = {
+				limit = { is_capital = yes }
+				set_variable = { cons_prog = 0.5 }
+			}
 		}
 	}
 	

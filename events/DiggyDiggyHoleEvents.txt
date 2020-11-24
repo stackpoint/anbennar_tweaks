@@ -5530,6 +5530,7 @@ province_event = {
 	hidden = yes
 	
 	trigger = {
+		is_capital = yes
 		has_construction = digging_deeper
 		check_variable = { cons_prog = 0 }
 		variable_arithmetic_trigger = {
@@ -5553,26 +5554,5 @@ province_event = {
 		cancel_construction = yes
 		dig_rebate = yes
 		add_building = digging_deeper
-	}
-}
-
-province_event = {
-	id = diggy.118
-	title = diggy.118.t
-	desc = diggy.118.d
-	picture = FORT_eventPicture
-	
-	hidden = yes
-	
-	trigger = {
-		has_province_modifier = cons_prog_mod
-		NOT = { has_construction = digging_deeper }
-	}
-	
-	option = {
-        name = diggy.117.a
-		
-        remove_province_modifier = cons_prog_mod
-		set_variable = { cons_prog = 0.5 }
 	}
 }

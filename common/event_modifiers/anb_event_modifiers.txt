@@ -916,7 +916,3 @@ crimson_deluge_province = {
 	local_monthly_devastation = 0.35
 	local_unrest = 2
 }
-
-cons_prog_mod = {
-	#local_build_time = 0
-}
