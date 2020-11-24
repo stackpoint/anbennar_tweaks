@@ -484,7 +484,7 @@
   start_dig_deeper_0:0 "Our holds can always be expanded by digging down. This will increase its development and dig level over time.\n§TNon-Capital Holds dig passively, and will gain a Hold Level upon reaching their target dev. Despite being automatic, this process is much slower.§!"
   start_dig_deeper_1:0 "[Root.Capital.GetName]: [Root.Capital.dig_percent_loc]"
   dig_percent_plus:0 "§G[Root.Capital.dig_plus_loc]%§!"
-  dig_percent_minus:0 "§R[Root.Capital.dig_minus_loc]%§!"
+  dig_percent_minus:0 "§R-[Root.Capital.dig_minus_loc]%§!"
   dig_percent_zero:0 "0%"
   start_hold_restoration_title:0 "£icon_dig_deeper£ Start Hold Restoration"
   start_hold_restoration_desc:0 "Ruined or Damaged holds can be repaired to allow them to function properly again."
@@ -1446,6 +1446,8 @@
   
   DADV_extended_borders_title:0 "Extended Borders"
   DADV_extended_borders_desc:0 "It is difficult to believe a band of adventurers, whose only wealth was virtue, could build a dominion so extensive as the one we now command. It is time we begin to exploit that dominion more effectively."
+  
+  cons_prog: "Construction Progress"
   
   #value
   value_0:0 "0"

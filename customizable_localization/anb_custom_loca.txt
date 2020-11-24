@@ -3839,7 +3839,7 @@ defined_text = {
 }
 
 defined_text = {
-    name = dig_plus_loc
+    name = dig_minus_loc
     random = no
 	text = {				
 		localisation_key = value_1			
