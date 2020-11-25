@@ -6,7 +6,34 @@ edict_defensive_edict = {
 	allow = {
 		custom_trigger_tooltip = {
 			tooltip = disable_state_edicts_active.tooltip
-			NOT = { has_country_flag = disable_state_edicts_active }
+			OR = {
+				NOT = { has_country_flag = state_edicts_everywhere }
+				FROM = { has_state_edict = edict_defensive_edict }
+			}
+			OR = {
+				NOT = { has_country_flag = disable_state_edicts_active }
+				FROM = { has_new_edict = { edict = edict_defensive_edict } }
+			}
+			FROM = {
+				NOT = {
+					any_province_in_state = {
+						OR = {
+							has_province_modifier = edict_advancement_effort
+							has_province_modifier = edict_centralization_effort
+							has_province_modifier = edict_defensive_edict
+							has_province_modifier = state_council_edict
+							has_province_modifier = edict_of_absolutism
+							has_province_modifier = edict_encourage_development
+							has_province_modifier = edict_feudal_de_jure_law
+							has_province_modifier = edict_promote_military_recruitment
+							has_province_modifier = edict_protect_trade
+							has_province_modifier = edict_religion_enforced
+							has_province_modifier = edict_religious_unity
+							has_province_modifier = silvar_ishu_edict
+						}
+					}
+				}
+			}
 		}
 	}
 	

@@ -1,0 +1,12 @@
+set_edict_flag = {
+	clr_province_flag = $edict$
+	if = {
+		limit = {
+			has_state_edict = $edict$
+		}
+		every_province_in_state = {
+			limit = { NOT = { has_province_flag = $edict$ } }
+			set_province_flag = $edict$
+		}
+	}
+}

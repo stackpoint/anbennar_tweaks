@@ -1,0 +1,59 @@
+edict_advancement_effort = {
+	local_institution_spread = 0.33
+	local_state_maintenance_modifier = 2
+}
+
+edict_centralization_effort = {
+	local_autonomy = -0.03
+	local_state_maintenance_modifier = 2
+}
+
+edict_defensive_edict = {
+	local_defensiveness = 0.33
+	local_state_maintenance_modifier = 2
+}
+
+edict_of_absolutism = {
+	local_monthly_devastation = -0.25
+	local_state_maintenance_modifier = 2
+}
+
+edict_encourage_development = {
+	local_development_cost = -0.1
+	local_state_maintenance_modifier = 2
+}
+
+edict_feudal_de_jure_law = {
+	local_unrest = -5
+	local_state_maintenance_modifier = 2
+}
+
+edict_promote_military_recruitment = {
+	local_manpower_modifier = 0.25
+	local_state_maintenance_modifier = 2
+}
+
+edict_protect_trade = {
+	province_trade_power_modifier = 0.50
+	local_state_maintenance_modifier = 2
+}
+
+edict_religion_enforced = {
+	local_religious_conversion_resistance = 0.90
+	local_state_maintenance_modifier = 2
+}
+
+edict_religious_unity = {
+	local_missionary_strength = 0.01
+	local_state_maintenance_modifier = 2
+}
+
+silvar_ishu_edict = {
+	trade_goods_size_modifier = 0.33
+	local_state_maintenance_modifier = 2
+}
+
+state_council_edict = {
+	local_governing_cost = -0.33
+	local_state_maintenance_modifier = 2
+}

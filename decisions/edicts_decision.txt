@@ -4,8 +4,45 @@ country_decisions = {
 		potential = {
 			ai = no
 			NOT = { has_country_flag = disable_state_edicts_active }
+			NOT = { has_country_flag = state_edicts_everywhere }
+		}
+		provinces_to_highlight = {
+			owned_by = ROOT
+			is_state = yes
+			OR = {
+				had_province_flag = { flag = edict_advancement_effort				days = 335 }
+				had_province_flag = { flag = edict_centralization_effort			days = 335 }
+				had_province_flag = { flag = edict_defensive_edict					days = 335 }
+				had_province_flag = { flag = edict_of_absolutism					days = 335 }
+				had_province_flag = { flag = edict_encourage_development			days = 335 }
+				had_province_flag = { flag = edict_feudal_de_jure_law				days = 335 }
+				had_province_flag = { flag = edict_promote_military_recruitment		days = 335 }
+				had_province_flag = { flag = edict_protect_trade					days = 335 }
+				had_province_flag = { flag = edict_religion_enforced				days = 335 }
+				had_province_flag = { flag = edict_religious_unity					days = 335 }
+				had_province_flag = { flag = silvar_ishu_edict						days = 335 }
+				had_province_flag = { flag = state_council_edict					days = 335 }
+			}
 		}
 		allow = {
+			any_state = {
+				any_province_in_state = {
+					OR = {
+						had_province_flag = { flag = edict_advancement_effort				days = 335 }
+						had_province_flag = { flag = edict_centralization_effort			days = 335 }
+						had_province_flag = { flag = edict_defensive_edict					days = 335 }
+						had_province_flag = { flag = edict_of_absolutism					days = 335 }
+						had_province_flag = { flag = edict_encourage_development			days = 335 }
+						had_province_flag = { flag = edict_feudal_de_jure_law				days = 335 }
+						had_province_flag = { flag = edict_promote_military_recruitment		days = 335 }
+						had_province_flag = { flag = edict_protect_trade					days = 335 }
+						had_province_flag = { flag = edict_religion_enforced				days = 335 }
+						had_province_flag = { flag = edict_religious_unity					days = 335 }
+						had_province_flag = { flag = silvar_ishu_edict						days = 335 }
+						had_province_flag = { flag = state_council_edict					days = 335 }
+					}
+				}
+			}
 		}
 		effect = {
 			custom_tooltip = disable_state_edicts_active_decision_tooltip
@@ -74,12 +111,61 @@ country_decisions = {
 		potential = {
 			ai = no
 			has_country_flag = disable_state_edicts_active
+			NOT = { has_country_flag = state_edicts_everywhere }
 		}
 		allow = {
 		}
 		effect = {
 			custom_tooltip = disable_state_edicts_inactive_decision_tooltip
 			clr_country_flag = disable_state_edicts_active
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	enable_state_edicts_everywhere_decision = {
+		major = yes
+		potential = {
+			ai = no
+			NOT = { has_country_flag = disable_state_edicts_active }
+		}
+		provinces_to_highlight = {
+			owned_by = ROOT
+			is_state = yes
+			NOT = { has_new_edict = { edict = edict_advancement_effort } }
+			NOT = { has_new_edict = { edict = edict_centralization_effort } }
+			NOT = { has_new_edict = { edict = edict_defensive_edict } }
+			NOT = { has_new_edict = { edict = edict_of_absolutism } }
+			NOT = { has_new_edict = { edict = edict_encourage_development } }
+			NOT = { has_new_edict = { edict = edict_feudal_de_jure_law } }
+			NOT = { has_new_edict = { edict = edict_promote_military_recruitment } }
+			NOT = { has_new_edict = { edict = edict_protect_trade } }
+			NOT = { has_new_edict = { edict = edict_religion_enforced } }
+			NOT = { has_new_edict = { edict = edict_religious_unity } }
+			NOT = { has_new_edict = { edict = silvar_ishu_edict } }
+			NOT = { has_new_edict = { edict = state_council_edict } }
+		}
+		allow = {
+			any_state = {
+				any_province_in_state = {
+					NOT = { has_new_edict = { edict = edict_advancement_effort } }
+					NOT = { has_new_edict = { edict = edict_centralization_effort } }
+					NOT = { has_new_edict = { edict = edict_defensive_edict } }
+					NOT = { has_new_edict = { edict = edict_of_absolutism } }
+					NOT = { has_new_edict = { edict = edict_encourage_development } }
+					NOT = { has_new_edict = { edict = edict_feudal_de_jure_law } }
+					NOT = { has_new_edict = { edict = edict_promote_military_recruitment } }
+					NOT = { has_new_edict = { edict = edict_protect_trade } }
+					NOT = { has_new_edict = { edict = edict_religion_enforced } }
+					NOT = { has_new_edict = { edict = edict_religious_unity } }
+					NOT = { has_new_edict = { edict = silvar_ishu_edict } }
+					NOT = { has_new_edict = { edict = state_council_edict } }
+				}
+			}
+		}
+		effect = {
+			set_country_flag = state_edicts_everywhere
+			country_event = { id = edict_events.3 }
 		}
 		ai_will_do = {
 			factor = 0

@@ -1,0 +1,20 @@
+has_edict_flag = {
+	AND = {
+		has_state_edict = $edict$
+		NOT = { has_province_flag = $edict$ }
+	}
+}
+
+has_new_edict = {
+	AND = {
+		has_state_edict = $edict$
+		NOT = {
+			any_province_in_state = {
+				had_province_flag = {
+					flag = $edict$
+					days = 335
+				}
+			}
+		}
+	}
+}
