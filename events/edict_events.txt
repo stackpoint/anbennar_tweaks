@@ -10,7 +10,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		always = no
+		#always = no
 		has_country_flag = disable_state_edicts_active
 		variable_arithmetic_trigger = {
 			export_to_variable = {
