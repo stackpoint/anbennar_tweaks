@@ -17,5 +17,5 @@
  enable_state_edicts_everywhere_decision_title:0 "Apply Edict Everywhere"
  enable_state_edicts_everywhere_decision_desc:0 "Apply a state edict to all state provinces. The option to choose a state edict appears next month."
  edict_events.3.t:0 "Apply Edict Everywhere"
- edict_events.3.d:0 "Which state edict to apply to state provinces?"
+ edict_events.3.d:0 "Which state edict to apply to all state provinces?"
  edict_events.3.a:0 "None"
