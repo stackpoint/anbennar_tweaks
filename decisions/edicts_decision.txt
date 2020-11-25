@@ -5,7 +5,40 @@ country_decisions = {
 			ai = no
 			NOT = { has_country_flag = disable_state_edicts_active }
 		}
+		provinces_to_highlight = {
+			owned_by = ROOT
+			OR = {
+				has_state_edict = edict_advancement_effort
+				has_state_edict = edict_centralization_effort
+				has_state_edict = edict_defensive_edict
+				has_state_edict = edict_of_absolutism
+				has_state_edict = edict_encourage_development
+				has_state_edict = edict_feudal_de_jure_law
+				has_state_edict = edict_promote_military_recruitment
+				has_state_edict = edict_protect_trade
+				has_state_edict = edict_religion_enforced
+				has_state_edict = edict_religious_unity
+				has_state_edict = silvar_ishu_edict
+				has_state_edict = state_council_edict
+			}
+		}
 		allow = {
+			any_state = {
+				OR = {
+					has_state_edict = edict_advancement_effort
+					has_state_edict = edict_centralization_effort
+					has_state_edict = edict_defensive_edict
+					has_state_edict = edict_of_absolutism
+					has_state_edict = edict_encourage_development
+					has_state_edict = edict_feudal_de_jure_law
+					has_state_edict = edict_promote_military_recruitment
+					has_state_edict = edict_protect_trade
+					has_state_edict = edict_religion_enforced
+					has_state_edict = edict_religious_unity
+					has_state_edict = silvar_ishu_edict
+					has_state_edict = state_council_edict
+				}
+			}
 		}
 		effect = {
 			custom_tooltip = disable_state_edicts_active_decision_tooltip
@@ -80,6 +113,99 @@ country_decisions = {
 		effect = {
 			custom_tooltip = disable_state_edicts_inactive_decision_tooltip
 			clr_country_flag = disable_state_edicts_active
+			clr_country_flag = state_edicts_everywhere
+			
+			every_owned_province = {
+				remove_province_modifier = edict_advancement_effort
+				remove_province_modifier = edict_centralization_effort
+				remove_province_modifier = edict_defensive_edict
+				remove_province_modifier = edict_of_absolutism
+				remove_province_modifier = edict_encourage_development
+				remove_province_modifier = edict_feudal_de_jure_law
+				remove_province_modifier = edict_promote_military_recruitment
+				remove_province_modifier = edict_protect_trade
+				remove_province_modifier = edict_religion_enforced
+				remove_province_modifier = edict_religious_unity
+				remove_province_modifier = silvar_ishu_edict
+				remove_province_modifier = state_council_edict
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+	enable_state_edicts_everywhere_decision = {
+		major = yes
+		potential = {
+			ai = no
+			NOT = { has_country_flag = disable_state_edicts_active }
+		}
+		provinces_to_highlight = {
+			owned_by = ROOT
+			is_state = yes
+		}
+		allow = {
+			any_state = {
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			hidden_effect = {
+				set_country_flag = disable_state_edicts_active
+				set_country_flag = state_edicts_everywhere
+				
+				export_to_variable = {
+					which = prevMonth
+					value = trigger_value:is_month
+				}
+				if = {
+					limit = {
+						check_variable = {
+							prevMonth = 11
+						}
+					}
+					set_variable = {
+						prevMonth = 0
+					}
+				}
+				else = {
+					change_variable = {
+						prevMonth = 1
+					}
+				}
+			
+				country_event = { id = edict_events.3	days = 1  }
+				country_event = { id = edict_events.3	days = 2  }
+				country_event = { id = edict_events.3	days = 3  }
+				country_event = { id = edict_events.3	days = 4  }
+				country_event = { id = edict_events.3	days = 5  }
+				country_event = { id = edict_events.3	days = 6  }
+				country_event = { id = edict_events.3	days = 7  }
+				country_event = { id = edict_events.3	days = 8  }
+				country_event = { id = edict_events.3	days = 9  }
+				country_event = { id = edict_events.3	days = 10 }
+				country_event = { id = edict_events.3	days = 11 }
+				country_event = { id = edict_events.3	days = 12 }
+				country_event = { id = edict_events.3	days = 13 }
+				country_event = { id = edict_events.3	days = 14 }
+				country_event = { id = edict_events.3	days = 15 }
+				country_event = { id = edict_events.3	days = 16 }
+				country_event = { id = edict_events.3	days = 17 }
+				country_event = { id = edict_events.3	days = 18 }
+				country_event = { id = edict_events.3	days = 19 }
+				country_event = { id = edict_events.3	days = 20 }
+				country_event = { id = edict_events.3	days = 21 }
+				country_event = { id = edict_events.3	days = 22 }
+				country_event = { id = edict_events.3	days = 23 }
+				country_event = { id = edict_events.3	days = 24 }
+				country_event = { id = edict_events.3	days = 25 }
+				country_event = { id = edict_events.3	days = 26 }
+				country_event = { id = edict_events.3	days = 27 }
+				country_event = { id = edict_events.3	days = 28 }
+				country_event = { id = edict_events.3	days = 29 }
+				country_event = { id = edict_events.3	days = 30 }
+				country_event = { id = edict_events.3	days = 31 }
+			}
 		}
 		ai_will_do = {
 			factor = 0

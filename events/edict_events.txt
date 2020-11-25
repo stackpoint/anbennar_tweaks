@@ -10,7 +10,6 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		#always = no
 		has_country_flag = disable_state_edicts_active
 		variable_arithmetic_trigger = {
 			export_to_variable = {
@@ -25,7 +24,24 @@ country_event = {
 	}
 	
 	after = {
-		clr_country_flag = disable_state_edicts_active
+		hidden_effect = {
+			clr_country_flag = disable_state_edicts_active
+			
+			every_owned_province = {
+				remove_province_modifier = edict_advancement_effort
+				remove_province_modifier = edict_centralization_effort
+				remove_province_modifier = edict_defensive_edict
+				remove_province_modifier = edict_of_absolutism
+				remove_province_modifier = edict_encourage_development
+				remove_province_modifier = edict_feudal_de_jure_law
+				remove_province_modifier = edict_promote_military_recruitment
+				remove_province_modifier = edict_protect_trade
+				remove_province_modifier = edict_religion_enforced
+				remove_province_modifier = edict_religious_unity
+				remove_province_modifier = silvar_ishu_edict
+				remove_province_modifier = state_council_edict
+			}
+		}
 	}
 	
 	option = {
@@ -35,3 +51,298 @@ country_event = {
 	}
 }
 
+province_event = {
+	id = edict_events.2
+	title = edict_events.2.t
+	desc = edict_events.2.d
+	picture = CITY_VIEW_eventPicture
+	hidden = yes
+	
+	trigger = {
+		owner = { ai = yes }
+		OR = {
+			has_province_modifier = edict_advancement_effort
+			has_province_modifier = edict_centralization_effort
+			has_province_modifier = edict_defensive_edict
+			has_province_modifier = edict_of_absolutism
+			has_province_modifier = edict_encourage_development
+			has_province_modifier = edict_feudal_de_jure_law
+			has_province_modifier = edict_promote_military_recruitment
+			has_province_modifier = edict_protect_trade
+			has_province_modifier = edict_religion_enforced
+			has_province_modifier = edict_religious_unity
+			has_province_modifier = silvar_ishu_edict
+			has_province_modifier = state_council_edict
+		}
+	}
+	
+	option = {
+        name = edict_events.2.a
+		
+		every_owned_province = {
+			remove_province_modifier = edict_advancement_effort
+			remove_province_modifier = edict_centralization_effort
+			remove_province_modifier = edict_defensive_edict
+			remove_province_modifier = edict_of_absolutism
+			remove_province_modifier = edict_encourage_development
+			remove_province_modifier = edict_feudal_de_jure_law
+			remove_province_modifier = edict_promote_military_recruitment
+			remove_province_modifier = edict_protect_trade
+			remove_province_modifier = edict_religion_enforced
+			remove_province_modifier = edict_religious_unity
+			remove_province_modifier = silvar_ishu_edict
+			remove_province_modifier = state_council_edict
+		}
+	}
+}
+
+country_event = {
+	id = edict_events.3
+	title = edict_events.3.t
+	desc = edict_events.3.d
+	picture = COURT_eventPicture
+	
+	is_triggered_only = yes
+	
+	trigger = {
+		#always = no
+		has_country_flag = state_edicts_everywhere
+		variable_arithmetic_trigger = {
+			export_to_variable = {
+				which = thisMonth
+				value = trigger_value:is_month
+			}
+			is_variable_equal = {
+				which = thisMonth
+				which = prevMonth
+			}
+		}
+	}
+	
+	immediate = {
+		clr_country_flag = state_edicts_everywhere
+	}
+	
+	option = {
+        name = edict_events.3.a
+		
+		clr_country_flag = disable_state_edicts_active
+	}
+	
+	option = {
+        name = edict_advancement_effort
+		
+		#edict
+		every_owned_province = {
+			limit = {
+				is_state = yes
+			}
+			add_province_modifier = {
+				name = edict_advancement_effort
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+        name = edict_centralization_effort
+		
+		#edict
+		every_owned_province = {
+			limit = {
+				is_state = yes
+			}
+			add_province_modifier = {
+				name = edict_centralization_effort
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+        name = edict_defensive_edict
+		
+		#edict
+		every_owned_province = {
+			limit = {
+				is_state = yes
+			}
+			add_province_modifier = {
+				name = edict_defensive_edict
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+        name = edict_of_absolutism
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = edict_of_absolutism_tooltip
+				has_country_flag = edict_of_absolutism
+			}
+			current_age = age_of_absolutism
+		}
+		
+		#edict
+		every_owned_province = {
+			limit = {
+				is_state = yes
+			}
+			add_province_modifier = {
+				name = edict_of_absolutism
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+        name = edict_encourage_development
+		
+		#edict
+		every_owned_province = {
+			limit = {
+				is_state = yes
+			}
+			add_province_modifier = {
+				name = edict_encourage_development
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+        name = edict_religious_unity
+		
+		#edict
+		every_owned_province = {
+			limit = {
+				is_state = yes
+			}
+			add_province_modifier = {
+				name = edict_religious_unity
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+        name = edict_feudal_de_jure_law
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = edict_feudal_de_jure_law_tooltip
+				has_country_flag = feudal_de_jure_law
+			}
+			current_age = age_of_discovery
+		}
+		
+		#edict
+		every_owned_province = {
+			limit = {
+				is_state = yes
+			}
+			add_province_modifier = {
+				name = edict_feudal_de_jure_law
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+        name = edict_promote_military_recruitment
+		
+		#edict
+		every_owned_province = {
+			limit = {
+				is_state = yes
+			}
+			add_province_modifier = {
+				name = edict_promote_military_recruitment
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+        name = edict_protect_trade
+		
+		#edict
+		every_owned_province = {
+			limit = {
+				is_state = yes
+			}
+			add_province_modifier = {
+				name = edict_protect_trade
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+        name = edict_religion_enforced
+		
+		trigger = {
+			OR = {
+				AND = {
+					custom_trigger_tooltip = {
+						tooltip = edict_religion_enforced_tooltip
+						has_country_flag = religion_enforced_edict
+					}
+					current_age = age_of_reformation
+				}
+				current_age = age_of_absolutism
+			}
+		}
+		
+		#edict
+		every_owned_province = {
+			limit = {
+				is_state = yes
+			}
+			add_province_modifier = {
+				name = edict_religion_enforced
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+        name = silvar_ishu_edict
+		
+		trigger = {
+			has_country_flag = silvar_ishu
+		}
+		
+		#edict
+		every_owned_province = {
+			limit = {
+				is_state = yes
+			}
+			add_province_modifier = {
+				name = silvar_ishu_edict
+				duration = -1
+			}
+		}
+	}
+	
+	option = {
+        name = state_council_edict
+		
+		trigger = {
+			has_country_flag = federation_state_council
+		}
+		
+		#edict
+		every_owned_province = {
+			limit = {
+				is_state = yes
+			}
+			add_province_modifier = {
+				name = state_council_edict
+				duration = -1
+			}
+		}
+	}
+}
