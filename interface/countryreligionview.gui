@@ -2098,7 +2098,7 @@ guiTypes = {
 				name = "religions_listbox"
 				backGround = ""
 				position = { x=-30 y =180 }
-				size = { x=555 y =340 }
+				size = { x=555 y =667 } #was x=555 y =340
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 2
@@ -2108,7 +2108,7 @@ guiTypes = {
 			
 			guiButtonType = {
 				name = "back_button"
-				position = {  x=240 y =531}
+				position = {  x=240 y =858} #was x=240 y =531
 				quadTextureSprite ="GFX_standard_button_71"	
 				tooltip = ""
 				tooltipText =""
@@ -2142,7 +2142,7 @@ guiTypes = {
 				name ="deity_listbox"
 				position = { x=56 y = -55}
 				backGround=""
-				size = { x=319 y =300}
+				size = { x=319 y =552} #was x=319 y =300
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 1
@@ -2152,7 +2152,7 @@ guiTypes = {
 			
 			guiButtonType = {
 				name = "cancel"
-				position = { x=190 y = 230 }
+				position = { x=190 y = 558 } #was x=190 y = 230
 				quadTextureSprite ="GFX_standard_button_71"
 				buttonText = "BACK"
 				buttonFont = "vic_18"
@@ -2183,7 +2183,7 @@ guiTypes = {
 				name ="icon_listbox"
 				position = { x=56 y = -64}
 				backGround=""
-				size = { x=398 y =300}
+				size = { x=398 y =612} #was y =300
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 1
@@ -2193,7 +2193,7 @@ guiTypes = {
 			
 			guiButtonType = {
 				name = "cancel"
-				position = { x=190 y = 234 }
+				position = { x=190 y = 562 } #was y=234
 				quadTextureSprite ="GFX_standard_button_71"
 				buttonText = "BACK"
 				buttonFont = "vic_18"
@@ -2224,7 +2224,7 @@ guiTypes = {
 				name ="listbox"
 				position = { x=56 y = -60}
 				backGround=""
-				size = { x=398 y =290}
+				size = { x=398 y =552} #was y = 290
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 1
@@ -2234,7 +2234,7 @@ guiTypes = {
 
 			guiButtonType = {
 				name = "cancel"
-				position = { x=190 y = 234 }
+				position = { x=190 y = 562 } #was y = 234
 				quadTextureSprite ="GFX_standard_button_71"
 				buttonText = "BACK"
 				buttonFont = "vic_18"
@@ -2264,7 +2264,7 @@ guiTypes = {
 				name ="cult_listbox"
 				position = { x=16 y = -55}
 				backGround=""
-				size = { x=452 y=290 }
+				size = { x=452 y=552 } #was x=452 y=290
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 1
@@ -2274,7 +2274,7 @@ guiTypes = {
 			
 			guiButtonType = {
 				name = "cancel"
-				position = { x=190 y = 230 }
+				position = { x=190 y = 558 } #was x=190 y = 230
 				quadTextureSprite ="GFX_standard_button_71"
 				buttonText = "BACK"
 				buttonFont = "vic_18"
@@ -2318,7 +2318,7 @@ guiTypes = {
 				name ="aspect_listbox"
 				position = { x=56 y = -53}
 				backGround=""
-				size = { x=398 y =280}
+				size = { x=398 y =560} #was y=280
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 1
@@ -2328,7 +2328,7 @@ guiTypes = {
 			
 			guiButtonType = {
 				name = "cancel"
-				position = { x=190 y = 230 }
+				position = { x=190 y = 558 } #was x=190 y = 230
 				quadTextureSprite ="GFX_standard_button_71"
 				buttonText = "BACK"
 				buttonFont = "vic_18"

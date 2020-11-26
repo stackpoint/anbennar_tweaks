@@ -106,7 +106,7 @@ guiTypes = {
 			spriteType = "GFX_country_icon_religion"
 			position = { x= 74 y = 125 }
 			Orientation = "UPPER_LEFT"
-			scale = 1
+			scale = 0.7
 			hint_tag = "hint_religion"
 		}
 
@@ -1455,9 +1455,9 @@ guiTypes = {
 			listboxType =
 				{
 				name ="vassal_select_list"
-				position = { x=20 y =174}
+				position = { x= 30 y = 180 }
 				backGround=""
-				size = { x=500 y =350}
+				size = { x= 500 y = 650 }
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 2
@@ -1467,7 +1467,7 @@ guiTypes = {
 
 			guiButtonType = {
 				name = "back_button"
-				position = { x=240 y =531}
+				position = { x= 240 y = 831 }
 				quadTextureSprite ="GFX_standard_button_71"
 				tooltip = ""
 				tooltipText =""
@@ -1603,7 +1603,7 @@ guiTypes = {
 				name ="list"
 				position = { x = 110 y = 40 }
 				backGround=""
-				size = { x=410 y = 375}
+				size = { x=410 y = 660}
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 0
@@ -1614,7 +1614,7 @@ guiTypes = {
 
 			guiButtonType = {
 				name = "back"
-				position = { x= 235 y = 410 }
+				position = { x= 235 y = 695 }
 				quadTextureSprite ="GFX_province_back_button"
 				buttonText = "BACK"
 				buttonFont = "vic_18"
@@ -3600,6 +3600,7 @@ guiTypes = {
 			quadTextureSprite ="button_type_4"
 			tooltip = ""
 			tooltipText =""
+			shortcut = "c" #Arumba
 			delayedTooltipText = ""
 			buttonText = "WARTITLE"
 			buttonFont = "vic_18"
@@ -5263,7 +5264,7 @@ guiTypes = {
 			name ="armylist"
 			position = { x = 40 y = 210 }
 			backGround=""
-			size = { x=205 y =300}
+			size = { x=205 y =640}
 			Orientation = "UPPER_LEFT"
 			horizontal = 0
 			spacing = 0
@@ -5308,12 +5309,14 @@ guiTypes = {
 				name = "landslider_upButton"
 				quadTextureSprite = "GFX_scroll_left_gold"
 				position = { x=0 y =0}
+				shortcut = "x" #Arumba
 			}
 			guiButtonType = {
 				# parent = "landslider_SliderButton"
 				name = "landslider_downButton"
 				quadTextureSprite = "GFX_scroll_right_gold"
 				position = { x=0 y =120}
+				shortcut = "v" #Arumba 
 			}
 		}
 
@@ -5368,7 +5371,7 @@ guiTypes = {
 
 		guiButtonType = {
 			name = "AgreeButton"
-			position = { x=280 y =525}
+			position = { x=280 y =860}
 			quadTextureSprite ="button_type_4"
 			tooltip = ""
 			tooltipText =""
@@ -5383,7 +5386,7 @@ guiTypes = {
 
 		guiButtonType = {
 			name = "DeclineButton"
-			position = { x=50 y =525}
+			position = { x=40 y =860}
 			quadTextureSprite ="button_type_4"
 			tooltip = ""
 			tooltipText =""
@@ -5400,7 +5403,7 @@ guiTypes = {
 		name = "offer_condottieri_entry"
 		backGround=""
 		position = { x=0 y=0 }
-		size = { x=150 y= 90 }
+		size = { x=150 y= 65 }
 		moveable = 0
 		dontRender = ""
 		horizontalBorder= ""
@@ -5418,7 +5421,7 @@ guiTypes = {
 		}
 
 		instantTextBoxType={
-			position = {x = 23 y = 10 }
+			position = {x = -223 y = 10 }
 			name = "info_text"
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}
@@ -5444,7 +5447,7 @@ guiTypes = {
 				name = "unit1_type"
 				position = { x= 0 y = 30 }
 				quadTextureSprite = "GFX_unit_types_strip_nontransp"
-				scale= 0.7
+				scale= 0.6
 			}
 
 			instantTextBoxType = {
@@ -5463,7 +5466,7 @@ guiTypes = {
 				name = "unit2_type"
 				position = { x= 50 y = 30 }
 				quadTextureSprite = "GFX_unit_types_strip_nontransp"
-				scale= 0.7
+				scale= 0.6
 			}
 			instantTextBoxType = {
 				name = "unit2_count"
@@ -5481,7 +5484,7 @@ guiTypes = {
 				name = "unit3_type"
 				position = { x= 100 y = 30 }
 				quadTextureSprite = "GFX_unit_types_strip_nontransp"
-				scale= 0.7
+				scale= 0.6
 			}
 			instantTextBoxType = {
 				name = "unit3_count"
@@ -5499,7 +5502,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "leader_text"
-			position = { x = 0  y = 68 }
+			position = { x = 0  y = 9 }
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}
@@ -5632,7 +5635,7 @@ guiTypes = {
 			delayedTooltipText = ""
 			buttonText = "OK"
 			buttonFont = "vic_18"
-			shortcut = "RETURN"
+			shortcut = "c" #Arumba
 			clicksound = ok_click
 		}
 
@@ -5646,7 +5649,7 @@ guiTypes = {
 			delayedTooltipText = ""
 			buttonText = "CANCEL"
 			buttonFont = "vic_18"
-			shortcut = "ESCAPE"
+			shortcut = "z" #Arumba
 		}
 
 	}
