@@ -13,7 +13,7 @@ tags={
 	"Expansion"
 	"Gameplay"
 }
-name="Anbennar: A Fantasy Total Conversion Mod"
+name="Anbennar Tweaks: A Fantasy Total Conversion Mod"
 picture="thumbnail.png"
 replace_path="common/bookmarks"
 replace_path="common/province_names"
@@ -32,3 +32,4 @@ replace_path="history/provinces"
 replace_path="gfx/loadingscreens"
 supported_version="1.30.*"
 remote_file_id="1385440355"
+path="mod/anbennar_tweaks"
