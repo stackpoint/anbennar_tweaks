@@ -204,6 +204,68 @@ on_startup = {
 			set_variable = { dev_sum_clicks = 0 }
 		}
 	}
+	
+	every_province = {
+		add_province_triggered_modifier = iv_idea_1
+		add_province_triggered_modifier = iv_gov_building_1
+		add_province_triggered_modifier = iv_gov_building_2
+		add_province_triggered_modifier = iv_gov_building_3
+		add_province_triggered_modifier = iv_gov_building_4
+	
+		add_province_triggered_modifier = iv_university
+		
+		#add_province_triggered_modifier = iv_test_building_6
+		
+		add_province_triggered_modifier = iv_building_11_1
+		add_province_triggered_modifier = iv_building_11_2
+		add_province_triggered_modifier = iv_building_11_3
+		add_province_triggered_modifier = iv_building_11_4
+		add_province_triggered_modifier = iv_building_11_5
+		
+		add_province_triggered_modifier = iv_building_12_1
+		add_province_triggered_modifier = iv_building_12_2
+		add_province_triggered_modifier = iv_building_12_3
+		add_province_triggered_modifier = iv_building_12_4
+		
+		
+		add_province_triggered_modifier = iv_building_13_1
+		add_province_triggered_modifier = iv_building_13_2
+		add_province_triggered_modifier = iv_building_13_3
+		add_province_triggered_modifier = iv_building_13_4
+		
+		add_province_triggered_modifier = iv_building_14_1_1
+		add_province_triggered_modifier = iv_building_14_1_2
+		add_province_triggered_modifier = iv_building_14_1_3
+		add_province_triggered_modifier = iv_building_14_1_4
+		add_province_triggered_modifier = iv_building_14_1_5
+		
+		add_province_triggered_modifier = iv_building_14_2_1
+		add_province_triggered_modifier = iv_building_14_2_2
+		add_province_triggered_modifier = iv_building_14_2_3
+		add_province_triggered_modifier = iv_building_14_2_4
+		add_province_triggered_modifier = iv_building_14_2_5
+		
+		add_province_triggered_modifier = iv_building_14_3_1
+		add_province_triggered_modifier = iv_building_14_3_2
+		add_province_triggered_modifier = iv_building_14_3_3
+		add_province_triggered_modifier = iv_building_14_3_4
+		add_province_triggered_modifier = iv_building_14_3_5
+		
+		add_province_triggered_modifier = iv_building_15_1
+		add_province_triggered_modifier = iv_building_15_2
+		add_province_triggered_modifier = iv_building_15_3
+		
+		add_province_triggered_modifier = iv_building_16_1
+		add_province_triggered_modifier = iv_building_16_2
+		add_province_triggered_modifier = iv_building_16_3
+		add_province_triggered_modifier = iv_building_16_4
+		add_province_triggered_modifier = iv_building_16_5
+		add_province_triggered_modifier = iv_building_16_6
+		
+		add_province_triggered_modifier = iv_govreform_expan_1
+		add_province_triggered_modifier = iv_govreform_expan_2
+		add_province_triggered_modifier = iv_govreform_expan_3
+	}
 }
 
 # country
