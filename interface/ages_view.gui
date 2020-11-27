@@ -1,8 +1,8 @@
 guiTypes = {
 	windowType = {
 		name = "ages_view"
-		backGround=""	
-		position = { x = -290 y = -280 }	
+		backGround=""
+		position = { x = -290 y = -280 }
 		size = { x = 512 y = 512 }
 		moveable = 0
 		dontRender = ""
@@ -18,7 +18,7 @@ guiTypes = {
 			position = { x = 58 y = -5 }
 			Orientation = "UPPER_LEFT"
 		}
-		
+
 		iconType =
 		{
 			name ="background"
@@ -26,7 +26,7 @@ guiTypes = {
 			position = { x= -42 y = -43 }
 			Orientation = "UPPER_LEFT"
 		}
-		
+
 		WindowType = {
 			name = "age_of_discovery"
 			position = { x= 35 y = -29}
@@ -61,8 +61,8 @@ guiTypes = {
 				position = { x= -15 y = 152 }
 				frame = 4
 				}
-		}			
-		
+		}
+
 		WindowType = {
 			name = "age_of_reformation"
 			position = { x= 35 y = -29}
@@ -97,8 +97,8 @@ guiTypes = {
 				frame = 4
 				}
 
-		}	
-		
+		}
+
 		WindowType = {
 			name = "age_of_absolutism"
 			position = { x= 35 y = -29}
@@ -131,8 +131,8 @@ guiTypes = {
 				position = { x= -15 y = 152 }
 				frame = 4
 				}
-		}		
-		
+		}
+
 		WindowType = {
 			name = "age_of_revolutions"
 			position = { x= 35 y = -29}
@@ -152,7 +152,7 @@ guiTypes = {
 				name ="icon_age_of_reformation"
 				spriteType = "GFX_icon_age_of_reformation_g"
 				position = { x= -15 y = 63 }
-				}				
+				}
 			iconType = {
 				name ="icon_age_of_absolutism"
 				spriteType = "GFX_icon_age_of_absolutism_g"
@@ -164,8 +164,8 @@ guiTypes = {
 				position = { x= -30 y = 141 }
 				frame = 4
 				}
-		}		
-		
+		}
+
 		instantTextBoxType = {
 			name = "title"
 			position = { x = 86 y =-27 }
@@ -181,22 +181,22 @@ guiTypes = {
 			name ="icon_absolutism"
 			spriteType = "GFX_icon_absolutism"
 			position = { x= 59 y = 204 }
-			}			
-		
+			}
+
 		iconType = {
 			name ="icon_religious"
 			spriteType = "GFX_icon_religious"
 			position = { x= 22 y = 204 }
-			}		
-		
+			}
+
 		iconType = {
 			name ="splendor_icon"
 			spriteType = "GFX_icon_splendor_tiny"
 			position = { x= 20 y = 174 }
 			}
 
-		
-		
+
+
 		instantTextBoxType = {
 			name = "splendor"
 			position = { x = 40 y =174 }
@@ -207,7 +207,7 @@ guiTypes = {
 			maxHeight = 32
 			format = right
 		}
-		
+
 		guiButtonType = {
 			name = "golden_age"
 			quadTextureSprite ="GFX_age_golden_age_button"
@@ -215,19 +215,19 @@ guiTypes = {
 			buttonText = "START_GOLDEN_AGE"
 			buttonFont = "vic_18"
 		}
-		
+
 		iconType = {
 			name = "in_golden_age_banner"
 			spriteType = "GFX_golden_age_banner"
 			position = { x = 74 y = 130 }
-			alwaystransparent = yes 
+			alwaystransparent = yes
 		}
 
 		iconType = {
 			name = "after_golden_age_banner"
 			spriteType = "GFX_golden_age_banner_tattered"
 			position = { x = 74 y = 130 }
-			alwaystransparent = yes 
+			alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
@@ -240,7 +240,7 @@ guiTypes = {
 			maxHeight = 30
 			format = center
 		}
-			
+
 		instantTextBoxType = {
 			name = "desc"
 			position = { x = 100 y =180 }
@@ -251,9 +251,9 @@ guiTypes = {
 			maxHeight = 50
 			format = left
 		}
-		
 
-		
+
+
 		guiButtonType = {
 			name ="close_button"
             if_resolution = {
@@ -261,18 +261,18 @@ guiTypes = {
 				position = { x = 560 y = -48 }
 				quadTextureSprite = "GFX_button_close"
 				buttonText = ""
-            }	
+            }
             if_resolution = {
                 min_height = 868
 				quadTextureSprite ="button_type_1"
 				position = { x= 214 y = 664 }
-				buttonText = "CLOSE"				
-            }			
+				buttonText = "CLOSE"
+            }
 			buttonFont = "vic_18"
 			shortcut = "ESCAPE"
 		}
-		
-		listboxType = 
+
+		listboxType =
 		{
 			name ="objectives"
 			position = { x = 10 y = 280 }
@@ -285,7 +285,7 @@ guiTypes = {
 		}
 
 
-		listboxType = 
+		listboxType =
 		{
 			name ="abilities"
 			position = { x = 4 y = 244 }
@@ -301,33 +301,32 @@ guiTypes = {
 
 
 	}
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	###### OBJECTIVES ENTRY
 	windowType = {
 		name = "age_objectives_entry"
 		backGround=""
-		position = { x=0 y=0 }	
+		position = { x=0 y=0 }
 		size = { x=600 y= 54 }
 		moveable = 0
 		dontRender = ""
 		horizontalBorder= ""
 		verticalBorder= ""
 		fullScreen = no
-		
+
 		#remove
-#		iconType =
-#		{
-#			name ="_entry_bg"
-#			spriteType = "GFX_achievement_entry_bg"
-#			position = { x=-2 y = -4 }
-#			Orientation = "UPPER_LEFT"
-#		}
-		
+		iconType ={
+			name ="_entry_bg"
+			spriteType = "GFX_achievement_entry_bg"
+			position = { x=-2 y = -44444 }
+			Orientation = "UPPER_LEFT"
+		}
+
 		iconType =
 		{
 			name ="icon"
@@ -341,73 +340,73 @@ guiTypes = {
 			position = { x = 64 y = 2 }
 			font = "vic_22"
 			borderSize = {x = 0 y = 0}
-			text = "name"	
+			text = "name"
 			maxWidth = 390
 			maxHeight = 32
 			fixedsize = yes
-			format = left			
+			format = left
 		}
-		
+
 		instantTextBoxType = {
 			name = "desc"
 			position = { x = 64 y = 20 }
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}
-			text = "desc"	
+			text = "desc"
 			maxWidth = 390
 			maxHeight = 24
-			format = left			
+			format = left
 		}
 		## stuff to the right
-		
+
 		iconType =
 		{
 			name ="progress"
 			spriteType = "achievement_progress"
 			position = { x= 469 y = 34 }
 			Orientation = "UPPER_LEFT"
-			
+
 		}
-		
+
 		iconType =
 		{
 			name ="progress_overlay"
 			spriteType = "GFX_achievement_progress_frame"
 			position = { x= 454 y = 29 }
 			Orientation = "UPPER_LEFT"
-			
+
 		}
-		
-		
+
+
 		instantTextBoxType = {
 			name = "progress_text"
 			position = { x = 470 y = 8 }
 			font = "vic_22"
 			borderSize = {x = 0 y = 0}
-			text = "7/14"	
+			text = "7/14"
 			maxWidth = 70
 			maxHeight = 32
-			format = centre			
+			format = centre
 		}
 	}
-	
-	
-	
-	
+
+
+
+
 	###### ABILITIES ENTRY
 	windowType = {
 		name = "age_ability_entry"
 		backGround=""
-		position = { x=0 y=0 }	
+		position = { x=0 y=0 }
 		size = { x=50 y= 50 }
 		moveable = 0
 		dontRender = ""
 		horizontalBorder= ""
 		verticalBorder= ""
 		fullScreen = no
-		
-		
-		
+
+
+
 		iconType =
 		{
 			name ="icon"
@@ -415,7 +414,7 @@ guiTypes = {
 			position = { x= 16 y = -7 }
 			Orientation = "UPPER_LEFT"
 		}
-		
+
 		iconType =
 		{
 			name ="can_unlock"
@@ -431,7 +430,7 @@ guiTypes = {
 			position = { x= 16 y = -7 }
 			Orientation = "UPPER_LEFT"
 		}
-		
+
 		guiButtonType =
 		{
 			name ="button"
@@ -439,8 +438,8 @@ guiTypes = {
 			position = { x= 16 y = -7 }
 			Orientation = "UPPER_LEFT"
 		}
-		
-		
+
+
 
 	}
 }

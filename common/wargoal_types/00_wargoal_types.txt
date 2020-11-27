@@ -2153,9 +2153,9 @@ federation_war = {
 
 		deny_annex = yes
 	}
-	
-	war_name = FEDERATION_WAR_NAME
-}
+
+		war_name = FEDERATION_WAR_NAME	
+	}
 
 federation_war_gold_island = {
 	type = superiority
@@ -2380,8 +2380,8 @@ wargoal_killing_all_the_centaur = {
 	
 		deny_annex = yes
 	}
-	
-	war_name = KILLING_ALL_THE_CENTAUR_WAR_NAME
+		
+		war_name = KILLING_ALL_THE_CENTAUR_WAR_NAME
 }
 
 conquest_deioderan = {

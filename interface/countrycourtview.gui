@@ -174,7 +174,7 @@ guiTypes = {
 		listboxType = 
 		{
 			name ="monarch_ruler_personality_list"
-			position = { x=160 y =128}
+			position = { x=160 y =130}
 			backGround=""
 			size = { x=300 y =300}
 			Orientation = "UPPER_LEFT"
@@ -320,7 +320,7 @@ guiTypes = {
 		listboxType = 
 		{
 			name ="monarch_heir_personality_list"
-			position = { x=160 y =191}
+			position = { x=160 y =193}
 			backGround=""
 			size = { x=220 y =100}
 			Orientation = "UPPER_LEFT"
@@ -361,7 +361,7 @@ guiTypes = {
 			delayedTooltipText = ""
 			buttonFont = "vic_18"
 			clicksound = back_click
-		}
+		}	
 
 		### Queen ###
 		
@@ -474,7 +474,7 @@ guiTypes = {
 		listboxType = 
 		{
 			name ="monarch_queen_personality_list"
-			position = { x=160 y =254}
+			position = { x=160 y =256}
 			backGround=""
 			size = { x=220 y =100}
 			Orientation = "UPPER_LEFT"
@@ -1099,7 +1099,7 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			#this is actually advisor age, not desc #arumba
-			name = "desc"				# Alter
+			name = "desc"				# Alter 
 			position = { x = 210 y =20 }   # 270
 			format = right
 			textureFile = ""

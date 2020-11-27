@@ -381,7 +381,7 @@ digging_deeper = {
 		hidden_effect = {
 			if = {
 				limit = { is_capital = yes }
-				set_variable = { cons_prog = 0.5 }
+			set_variable = { cons_prog = 0.5 }
 			}
 		}
 	}
