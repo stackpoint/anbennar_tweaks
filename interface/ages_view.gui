@@ -320,13 +320,12 @@ guiTypes = {
 		fullScreen = no
 		
 		#remove
-#		iconType =
-#		{
-#			name ="_entry_bg"
-#			spriteType = "GFX_achievement_entry_bg"
-#			position = { x=-2 y = -4 }
-#			Orientation = "UPPER_LEFT"
-#		}
+		iconType ={
+			name ="_entry_bg"
+			spriteType = "GFX_achievement_entry_bg"
+			position = { x=-2 y = -44444 }
+			Orientation = "UPPER_LEFT"
+		}
 		
 		iconType =
 		{
