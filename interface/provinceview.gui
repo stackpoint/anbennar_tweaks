@@ -2764,13 +2764,13 @@ guiTypes = {
 
 				guiButtonType = {
 					name = "center_of_trade_button"
-					position = { x=168 y=278 }
+					position = { x=360 y=285 }
 					spriteType = "GFX_center_of_trade_inland_1"
 				}
 
 				iconType = {
 					name = "center_of_trade_icon"
-					position = { x=168 y=278 }
+					position = { x=360 y=285 }
 					spriteType = "GFX_center_of_trade_inland_1"
 				}
 			}
@@ -3071,7 +3071,7 @@ guiTypes = {
 			windowType = {
 				name = "select_building_large"
 				backGround=""
-				position = { x=480 y=26 }
+				position = { x=480 y=-281 }
 				size = { x=345 y=465 }
 				dontRender = ""
 				horizontalBorder= ""
@@ -3083,14 +3083,14 @@ guiTypes = {
 				iconType =
 				{
 					name ="background"
-					spriteType = "gfx_select_building_large_bg2"
+					spriteType = "gfx_select_building_large_bg2" ### it was y 580
 					position = { x= 0 y = 0 }
 					Orientation = "UPPER_LEFT"
 				}
 
 				guiButtonType = {
 					name = "back_button"
-					position = { x=160 y =534}
+					position = { x= 200 y = 834} # was y 534
 					quadTextureSprite ="GFX_standard_button_71"
 					tooltip = ""
 					tooltipText =""
@@ -3106,14 +3106,14 @@ guiTypes = {
 					name = "list1"
 					position = { x = 14 y = 47 }
 					backGround=""
-					size = { x=348 y = 624}
+					size = { x= 348 y = 1240}
 					Orientation = "UPPER_LEFT"
 					horizontal = 0
 					spacing = 2
 					scrollbartype = "standardlistbox_slider"
 					borderSize = {x = 0 y = 0}
 				}
-
+				 ## Buildings text at the top of the graphic
 				instantTextBoxType = {
 					name = "window_title"
 					position = { x = 0 y = 5 }
@@ -4442,17 +4442,17 @@ guiTypes = {
 
 	positionType = {
 		name = "building_start"
-		position = { x = 35 y = 142 }
+		position = { x = 27 y = 134 }
 	}
 
 	positionType = {
 		name = "building_offset"
-		position = { x = 64 y = 64 }
+		position = { x = 51 y = 51 }
 	}
 
 	positionType = {
 		name = "building_max_per_row"
-		position = { x = 4 y = 0 }
+		position = { x = 5 y = 0 }
 	}
 
 
