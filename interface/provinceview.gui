@@ -16,7 +16,7 @@ guiTypes = {
 		position = { x=0 y=62 }
 	}
 
-
+	
 	windowType = {
 		name = "province_estate_entry"
 		position = { x=0 y=0 }
@@ -2773,8 +2773,8 @@ guiTypes = {
 					position = { x=168 y=278 }
 					spriteType = "GFX_center_of_trade_inland_1"
 				}
-
 			}
+
 			### Province value window
 			windowType = {
 				name = "province_values_window"
@@ -2799,7 +2799,7 @@ guiTypes = {
 					maxHeight = 32
 					format = left
 				}
-
+                
 
 				iconType = {
 					name ="build_cost_modifier_icon"
@@ -2844,7 +2844,6 @@ guiTypes = {
 					position = { x= 33 y = 542 }
 					Orientation = "UPPER_LEFT"
 				}
-
 				instantTextBoxType = {
 					name = "naval_forcelimit_value"
 					position = { x = 72 y = 547 }
@@ -2863,7 +2862,6 @@ guiTypes = {
 					position = { x= 130 y = 542 }
 					Orientation = "UPPER_LEFT"
 				}
-
 				instantTextBoxType = {
 					name = "land_forcelimit_value"
 					position = { x = 148 y = 547 }
@@ -2875,7 +2873,7 @@ guiTypes = {
 					maxHeight = 20
 					format = right
 				}
-
+				
 				iconType = {
 					name ="governing_capacity_icon"
 					spriteType = "GFX_governing_capacity"
@@ -3007,7 +3005,7 @@ guiTypes = {
 					maxHeight = 32
 					format = left
 				}
-				}
+			}
 
 			#### Select buildings window for smaller resolutions
 			windowType = {
@@ -3069,9 +3067,7 @@ guiTypes = {
 					format = centre
 				}
 			}
-
 			#### for larger resolutions ####
-
 			windowType = {
 				name = "select_building_large"
 				backGround=""
@@ -3264,12 +3260,12 @@ guiTypes = {
 						maxHeight = 20
 						format = center
 					}
-
-
-
-
-
-
+					
+					
+				
+	
+				
+					
 					iconType =
 					{
 						name ="governing_capacity_icon"
@@ -3278,7 +3274,7 @@ guiTypes = {
 						Orientation = "UPPER_LEFT"
 						scale = 0.75
 					}
-
+					
 					instantTextBoxType = {
 						name = "capacity_value"
 						position = { x = 242 y = 600 } #was x=260 y=654
@@ -3351,11 +3347,8 @@ guiTypes = {
 						format = right
 					}
 				}
-
 			}
-
 			##### for larger resolutions ###
-
 			windowType = {
 				name = "natives_buildings_window_large"
 				backGround=""
@@ -3495,7 +3488,7 @@ guiTypes = {
 						Orientation = "UPPER_LEFT"
 						scale = 0.75
 					}
-
+					
 					instantTextBoxType = {
 						name = "capacity_value"
 						position = { x = 70 y = 95 }
@@ -3507,7 +3500,7 @@ guiTypes = {
 						maxHeight = 20
 						format = right
 					}
-
+	
 					iconType = {
 						name ="build_allowed_icon"
 						spriteType = "GFX_technologyView_show_buildings"
@@ -4567,7 +4560,6 @@ guiTypes = {
 			position = { x= 10 y = 10 }
 			#scale = 0.8
 		}
-
 
 		guiButtonType = {
 			name ="building_canbuild"
@@ -5996,7 +5988,7 @@ guiTypes = {
 		}
 
 
-
+		
 		iconType = {
 			name = "naval_defense_banner"
 			position = { x = 240 y = 291 }
@@ -6057,8 +6049,8 @@ guiTypes = {
 			position = { x = 312 y = 332 }
 			spriteType = "GFX_building_upgrade_icon"
 		}
-
-
+		
+		
 
 
 		iconType = {
@@ -6195,6 +6187,7 @@ guiTypes = {
 			maxHeight = 18
 			text = "2000¤"
 		}
+
 	}
 
 	windowType = {

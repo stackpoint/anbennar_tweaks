@@ -1101,8 +1101,8 @@ guiTypes = {
 			tooltip = ""
 			tooltipText =""
 			delayedTooltipText = ""
-#			buttonText = "INCREASE_TRUST"
-#			buttonFont = "vic_18"
+			#buttonText = "INCREASE_TRUST"
+			#buttonFont = "vic_18"
 		}
 
 		guiButtonType = {
@@ -1112,8 +1112,8 @@ guiTypes = {
 			tooltip = ""
 			tooltipText =""
 			delayedTooltipText = ""
-#			buttonText = "PREPARE_FOR_WAR"
-#			buttonFont = "vic_18"
+			#buttonText = "PREPARE_FOR_WAR"
+			#buttonFont = "vic_18"
 		}
 
 		iconType = {
