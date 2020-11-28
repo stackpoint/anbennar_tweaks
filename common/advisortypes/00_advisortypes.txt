@@ -19,7 +19,15 @@ philosopher = {
 	# Bonus
 	prestige = 1
 
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_3_burger_influence = 0.05
+	rat_2_3_burger_influence = 0.05
+	rat_3_3_burger_influence = 0.05
+	rat_1_6_minder_influence = 0.05
+	rat_2_6_minder_influence = 0.05
+	rat_3_6_minder_influence = 0.05
+	}
 
 	chance = {
 		factor = 1
@@ -37,7 +45,12 @@ natural_scientist = {
 	# Bonus
 	production_efficiency = 0.10
 
-	skill_scaled_modifier = { meritocracy = 0.25 }	
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_4_gilde_influence = 0.05
+	rat_2_4_gilde_influence = 0.05
+	rat_3_4_gilde_influence = 0.05
+	}	
 
 	chance = {
 		factor = 1
@@ -55,7 +68,17 @@ artist = {
 	# Bonus
 	stability_cost_modifier = -0.10
 
-	skill_scaled_modifier = { meritocracy = 0.25 }	
+	
+	skill_scaled_modifier = { 
+	meritocracy = 0.5 
+	legitimacy = 0.2
+	horde_unity = 0.2
+	devotion = 0.2
+	republican_tradition = 0.2
+	rat_1_3_burger_influence = 0.05
+	rat_2_3_burger_influence = 0.05
+	rat_3_3_burger_influence = 0.05
+	}	
 
 	chance = {
 		factor = 1
@@ -73,7 +96,12 @@ treasurer = {
 	# Bonus
 	global_tax_modifier = 0.1
 	
-	skill_scaled_modifier = { meritocracy = 0.25 }	
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_4_gilde_influence = 0.05
+	rat_2_4_gilde_influence = 0.05
+	rat_3_4_gilde_influence = 0.05
+	}	
 
 	chance = {
 		factor = 1
@@ -91,7 +119,12 @@ theologian = {
 	# Bonus
 	global_unrest = -2
 
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_2_klerus_influence = 0.05
+	rat_2_2_klerus_influence = 0.05 
+	rat_3_2_klerus_influence = 0.05 
+	}
 
 	chance = {
 		factor = 1
@@ -110,7 +143,12 @@ master_of_mint = {
 	# Bonus
 	inflation_reduction = 0.10
 	
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_4_gilde_influence = 0.05
+	rat_2_4_gilde_influence = 0.05
+	rat_3_4_gilde_influence = 0.05
+	}
 
 	chance = {
 		factor = 1
@@ -128,7 +166,12 @@ inquisitor = {
 	# Bonus
 	global_missionary_strength = 0.02
 	
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_2_klerus_influence = 0.05
+	rat_2_2_klerus_influence = 0.05 
+	rat_3_2_klerus_influence = 0.05 
+	}
 
 	chance = {
 		factor = 1
@@ -155,7 +198,12 @@ statesman = {
 	# Bonus
 	diplomatic_reputation = 1
 	
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_1_aristo_influence = 0.05
+	rat_2_1_aristo_influence = 0.05 
+	rat_3_1_aristo_influence = 0.05 
+	}
 
 	chance = {
 		factor = 1
@@ -174,7 +222,12 @@ naval_reformer = {
 	
 	naval_morale = 0.1 
 	
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_5_trader_influence = 0.05
+	rat_2_5_trader_influence = 0.05
+	rat_3_5_trader_influence = 0.05
+	}
 
 	chance = {
 		factor = 1
@@ -200,7 +253,12 @@ trader = {
 	# Bonus
 	trade_efficiency = 0.10
 	
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_5_trader_influence = 0.05
+	rat_2_5_trader_influence = 0.05
+	rat_3_5_trader_influence = 0.05
+	}
 
 	chance = {
 		factor = 1
@@ -218,7 +276,12 @@ spymaster = {
 	# Bonus
 	spy_offence = 0.25
 	
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_3_burger_influence = 0.05
+	rat_2_3_burger_influence = 0.05
+	rat_3_3_burger_influence = 0.05
+	}
 
 	chance = {
 		factor = 1
@@ -236,7 +299,12 @@ colonial_governor = {
 	# Bonus
 	global_tariffs = 0.10
 	
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_2_klerus_influence = 0.05
+	rat_2_2_klerus_influence = 0.05 
+	rat_3_2_klerus_influence = 0.05 
+	}
 
 	chance = {
 		factor = 1
@@ -266,7 +334,12 @@ diplomat = {
 	# Bonus
 	improve_relation_modifier = 0.2
 
-	skill_scaled_modifier = { meritocracy = 0.25 }	
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_2_klerus_influence = 0.05
+	rat_2_2_klerus_influence = 0.05 
+	rat_3_2_klerus_influence = 0.05 
+	}	
 
 	chance = {
 		factor = 1
@@ -282,19 +355,28 @@ navigator = {
 	monarch_power = DIP
 	
 	# Bonus
-	range = 0.20
+	range = 0.25
 	
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_5_trader_influence = 0.05
+	rat_2_5_trader_influence = 0.05
+	rat_3_5_trader_influence = 0.05
+	}
 
 	chance = {
 		factor = 1
 		modifier = {
 			factor = 0
-			owner = { NOT = { num_of_colonists = 1 } }
+			owner = { 
+			NOT = { 
+			has_idea_group = flottenbasis0
+			num_of_colonists = 1 } 
+			}
 		}
 		modifier = {
-			factor = 0
-			owner = { NOT = { num_of_ports = 1 } }
+			factor = 3
+			has_idea_group = flottenbasis0 
 		}
 	}
 	
@@ -313,9 +395,14 @@ army_reformer = {
 	monarch_power = MIL
 	
 	# Bonus
-	land_morale = 0.10
+	land_morale = 0.075
 
-	skill_scaled_modifier = { meritocracy = 0.25 }	
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_6_minder_influence = 0.05
+	rat_2_6_minder_influence = 0.05
+	rat_3_6_minder_influence = 0.05
+	}	
 
 	chance = {
 		factor = 1
@@ -331,9 +418,14 @@ army_organiser = {
 	monarch_power = MIL
 	
 	# Bonus
-	land_forcelimit_modifier = 0.10
+	land_forcelimit_modifier = 0.20
 	
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_4_gilde_influence = 0.05
+	rat_2_4_gilde_influence = 0.05
+	rat_3_4_gilde_influence = 0.05
+	}
 
 	chance = {
 		factor = 1
@@ -349,9 +441,14 @@ commandant = {
 	monarch_power = MIL
 	
 	# Bonus
-	discipline = 0.05
+	discipline = 0.035
 	
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_1_aristo_influence = 0.05
+	rat_2_1_aristo_influence = 0.05 
+	rat_3_1_aristo_influence = 0.05 
+	}
 
 	chance = {
 		factor = 1
@@ -369,7 +466,12 @@ quartermaster = {
 	# Bonus
 	reinforce_speed = 0.33
 
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_3_burger_influence = 0.05
+	rat_2_3_burger_influence = 0.05
+	rat_3_3_burger_influence = 0.05
+	}
 
 	chance = {
 		factor = 1
@@ -389,9 +491,15 @@ recruitmaster = {
 	monarch_power = MIL
 	
 	# Bonus
-	global_manpower_modifier = 0.10
 	
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	possible_mercenaries = 0.25
+	
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_5_trader_influence = 0.05
+	rat_2_5_trader_influence = 0.05
+	rat_3_5_trader_influence = 0.05
+	}
 
 	chance = {
 		factor = 1
@@ -411,9 +519,15 @@ fortification_expert = {
 	monarch_power = MIL
 	
 	# Bonus
-	defensiveness = 0.2
+	defensiveness = 0.1
+	global_manpower_modifier = 0.10
 	
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_6_minder_influence = 0.05
+	rat_2_6_minder_influence = 0.05
+	rat_3_6_minder_influence = 0.05
+	}
 
 	chance = {
 		factor = 1
@@ -432,7 +546,12 @@ grand_captain = {
 	# Bonus
 	land_maintenance_modifier = -0.10
 
-	skill_scaled_modifier = { meritocracy = 0.25 }
+	skill_scaled_modifier = {
+	meritocracy = 0.5
+	rat_1_1_aristo_influence = 0.05
+	rat_2_1_aristo_influence = 0.05 
+	rat_3_1_aristo_influence = 0.05 
+	}
 
 	chance = {
 		factor = 1

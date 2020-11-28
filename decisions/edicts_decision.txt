@@ -43,7 +43,7 @@ country_decisions = {
 		effect = {
 			custom_tooltip = disable_state_edicts_active_decision_tooltip
 			hidden_effect = {
-				set_country_flag = disable_state_edicts_active
+			set_country_flag = disable_state_edicts_active
 				
 				export_to_variable = {
 					which = prevMonth

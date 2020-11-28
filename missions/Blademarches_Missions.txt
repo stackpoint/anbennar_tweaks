@@ -648,7 +648,7 @@ blademarches_3 = {
 			mil = 5
 			dip = 5
 			adm = 5
-		}
+			}
 		effect = {
 			override_country_name = EMPIRE_OF_THE_BLADE
 		}

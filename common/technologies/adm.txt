@@ -58,7 +58,7 @@ technology = { #Feudal Monarchy
 technology = { #Medieval Administration
 	# Tech 3
 	year = 1440
-
+	allowed_idea_groups = 1
 	production_efficiency	=	0.02
 	may_support_rebels = yes
 	
@@ -70,6 +70,7 @@ technology = { #Temples
 	year = 1453
 	# Temple
 	temple = yes
+	allowed_idea_groups = 2
 	
 }
 
@@ -77,7 +78,7 @@ technology = { #National Ideas
 	# Tech 5
 	year = 1466
 
-	allowed_idea_groups = 1
+	allowed_idea_groups = 3
 	production_efficiency	 =	0.02
 }
 
@@ -96,7 +97,7 @@ technology = { #Renaissance Thought
 	year = 1492
 	
 	#Noble Republic
-	allowed_idea_groups = 2	
+	allowed_idea_groups = 4
 }
 
 technology = { #Courthouse
@@ -105,6 +106,7 @@ technology = { #Courthouse
 	year = 1505
 	courthouse = yes
 	governing_capacity = 100
+	allowed_idea_groups = 5
 
 }
 
@@ -122,7 +124,7 @@ technology = { #Modern Theocracy
 	# Tech 10
 	year = 1531
 	
-	allowed_idea_groups = 3
+	allowed_idea_groups = 6
 	theocratic_government = yes
 }
 
@@ -143,6 +145,7 @@ technology = { #Early Modern Administration
 	administrative_republic	= yes
 	governing_capacity = 100
 	state_house = yes
+	allowed_idea_groups = 7
 }
 
 technology = { #Improved Drainage
@@ -158,7 +161,7 @@ technology = { #Scientific Experimentation
 	year = 1583
 	
 	plantations = yes
-	allowed_idea_groups	= 4
+	allowed_idea_groups	= 8
 }
 
 technology = { #Military Administration
@@ -175,6 +178,7 @@ technology = { #Metallurgy
 	
 	mills = yes
 	production_efficiency 	=	0.02
+	allowed_idea_groups = 9
 
 
 }
@@ -194,7 +198,7 @@ technology = { #National Sovereignty
 	# Tech 18
 	year = 1635
 	
-	allowed_idea_groups	= 5
+	allowed_idea_groups	= 10
 }
 
 technology = { #Cathedral
@@ -211,6 +215,7 @@ technology = { #Absolute Rulership
 	
 	republican_dictatorship = yes
 	governing_capacity = 250
+	allowed_idea_groups = 11
 }
 
 technology = { #Land Clearance
@@ -229,7 +234,7 @@ technology = { #The Constitution
 	allowed_idea_groups = 6
 	constitutional_monarchy = yes
 	constitutional_republic = yes  
-
+	allowed_idea_groups = 12
 	town_hall = yes
 }
 
@@ -247,6 +252,7 @@ technology = { #Bonds and Tontines
 	
 	counting_house = yes  
 	governing_capacity = 250
+	allowed_idea_groups = 13
 }
 
 technology = { #Improved Production
@@ -261,7 +267,7 @@ technology = { #Separation of Powers
 	# Tech 26
 	year = 1745
 	
-	allowed_idea_groups 	= 	7
+	allowed_idea_groups 	= 	14
 }
 
 technology = { #Modern Bureaucracy
@@ -279,13 +285,14 @@ technology = { #Rotherham Plough
 	
 	#Rotherham Plough
 	production_efficiency 	=	0.02
+	allowed_idea_groups = 15
 }
 
 technology = { #Rights of Man
 	# Tech 29
 	year = 1790
 	
-	allowed_idea_groups = 8
+	allowed_idea_groups = 16
 	enlightened_despotism = yes
 	bureaucratic_despotism = yes
 }

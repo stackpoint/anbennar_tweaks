@@ -2722,10 +2722,10 @@ country_event = {
 		}
 		event_target:country = {
 			if = {
-				limit = {
-					has_country_modifier = federation_fighter
-					any_enemy_country = { has_country_modifier = centaur_administration }
-				}
+			limit = {
+				has_country_modifier = federation_fighter
+				any_enemy_country = { has_country_modifier = centaur_administration }
+			}
 				country_event = { id = lake.65 }
 			}
 		}
@@ -2765,8 +2765,8 @@ country_event = {
 			}
 			capital_scope = { 
 				if = {
-					limit = { controlled_by = ROOT }
-					save_event_target_as = province
+				limit = { controlled_by = ROOT }
+				save_event_target_as = province
 				}
 			}
 		}
