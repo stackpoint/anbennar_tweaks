@@ -1951,9 +1951,9 @@ unify_raj = {
 	allowed_provinces = {
 		owner = {
 			OR = {
-				has_reform = jamindar_reform
-				has_reform = indep_jamindar_reform
-				has_reform = great_jamindar_reform
+				has_reform = prabhi_reform
+				has_reform = indep_prabhi_reform
+				has_reform = senapti_reform
 				has_reform = raja_reform
 			}
 		}
@@ -2135,6 +2135,10 @@ federation_war = {
 			po_federation_cutdown
 			po_gold
 		}
+
+		deny_annex = yes
+
+		war_name = FEDERATION_WAR_NAME	
 	}
 	
 	defender = {
@@ -2152,9 +2156,9 @@ federation_war = {
 		}
 
 		deny_annex = yes
+
+		war_name = FEDERATION_WAR_NAME	
 	}
-	
-	war_name = FEDERATION_WAR_NAME
 }
 
 federation_war_gold_island = {
@@ -2176,6 +2180,8 @@ federation_war_gold_island = {
 		}
 
 		deny_annex = yes
+
+		war_name = FEDERATION_WAR_GOLD_NAME	
 	}
 	
 	defender = {
@@ -2194,8 +2200,9 @@ federation_war_gold_island = {
 		}
 
 		deny_annex = yes
+
+		war_name = FEDERATION_WAR_GOLD_NAME	
 	}
-	war_name = FEDERATION_WAR_GOLD_NAME	
 }
 
 federation_religious_war = {
@@ -2217,6 +2224,8 @@ federation_religious_war = {
 		}
 	
 		deny_annex = yes
+		
+		war_name = FEDERATION_RELIGIOUS_WAR_NAME
 	}
 	
 	defender = {
@@ -2235,8 +2244,9 @@ federation_religious_war = {
 		}
 	
 		deny_annex = yes
+		
+		war_name = FEDERATION_RELIGIOUS_WAR_NAME
 	}
-	war_name = FEDERATION_RELIGIOUS_WAR_NAME
 }
 
 federation_religious_war_kalyin = {
@@ -2258,6 +2268,8 @@ federation_religious_war_kalyin = {
 		}
 	
 		deny_annex = yes
+		
+		war_name = FEDERATION_RELIGIOUS_WAR_KALYIN_NAME
 	}
 	
 	defender = {
@@ -2276,8 +2288,9 @@ federation_religious_war_kalyin = {
 		}
 	
 		deny_annex = yes
+		
+		war_name = FEDERATION_RELIGIOUS_WAR_KALYIN_NAME
 	}
-	war_name = FEDERATION_RELIGIOUS_WAR_KALYIN_NAME
 }
 
 centaur_salgae = {
@@ -2379,9 +2392,9 @@ wargoal_killing_all_the_centaur = {
 		}
 	
 		deny_annex = yes
+		
+		war_name = KILLING_ALL_THE_CENTAUR_WAR_NAME
 	}
-	
-	war_name = KILLING_ALL_THE_CENTAUR_WAR_NAME
 }
 
 conquest_deioderan = {

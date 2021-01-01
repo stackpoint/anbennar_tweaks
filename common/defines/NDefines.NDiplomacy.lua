@@ -20,4 +20,4 @@ NDefines.NDiplomacy.JUSTIFY_TRADE_CONFLICT_LIMIT = 0.02		-- How big share of the
 NDefines.NDiplomacy.JUSTIFY_TRADE_CONFLICT_ACTOR_LIMIT = 0.01	-- How big share of the trade power needed on the actor to be able to justify a trade conflict
 NDefines.NDiplomacy.JUSTIFY_TRADE_CONFLICT_COST = 2
 
-NDefines.NDiplomacy.IMPERIAL_AUTHORITY_FROM_PRINCES = 0.1
+NDefines.NDiplomacy.IMPERIAL_AUTHORITY_FROM_PRINCES = 0.12

@@ -11,7 +11,7 @@ NDefines.NCountry.STATE_MAINTENANCE_CONTINENT_FACTOR = -0.5 --0.25 vanilla
 NDefines.NCountry.STATE_MAINTENANCE_CULTURE_FACTOR = 0.15 --0.25 vanilla
 NDefines.NCountry.SCRIPTED_ADVISOR_DISCOUNT = 0.33
 NDefines.NCountry.PS_BUY_IDEA = 300
-NDefines.NCountry.FREE_IDEA_GROUP_COST = 5
+NDefines.NCountry.FREE_IDEA_GROUP_COST = 2
 NDefines.NCountry.IDEA_TO_TECH = -0.01
 NDefines.NCountry.MAX_ACTIVE_POLICIES = 12
 NDefines.NCountry.BASE_POSSIBLE_POLICIES = 4
@@ -29,6 +29,7 @@ NDefines.NCountry.ESTATE_LOYALTY_DECAY_BASE_MAX = 9.0
 NDefines.NCountry.MONTHS_TO_CHANGE_CULTURE = 3
 NDefines.NCountry.SIBERIAN_FRONTIER_DAILY_BASE = 1		-- monthly..	anbennar ver this and bottom
 NDefines.NCountry.SIBERIAN_FRONTIER_DAILY_RANGE = 3
+NDefines.NCountry.PS_ESTABLISH_SIBERIAN_FRONTIER = 90
 
 NDefines.NCountry.CIRCUMNAVIGATION_PROVINCE_1 = 1502		-- Provinces for circumnavigation (coast of gambia)
 NDefines.NCountry.CIRCUMNAVIGATION_PROVINCE_2 = 1684		-- Provinces for circumnavigation (magellan strait)

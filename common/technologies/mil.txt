@@ -7,26 +7,31 @@ ahead_of_time = {
 }
 
 # Pre-era techs
-technology = {
-	# Tech 0
+
+# Tech 0
+technology = 
+{
+	#Early Warfare
 	year = 1350
 	
 	sprite_level = 1
-
 	infantry_fire		= 	0.25
 	infantry_shock 		= 	0.20	
 	cavalry_shock  		= 	0.8	
 	land_morale 		= 	2.0
+	mercenary_infantry_building = yes
+	mercenary_cavalry_building = yes
+	#mercenary_artillery_building = yes
 }
 
-technology = {
-	# Tech 1
+# Tech 1
+technology = 
+{
+	#Medieval Military
 	year = 1390
 	
 	infantry_shock		= 	0.1
 	infantry_fire 		= 	0.1
-	
-	fort_15th = yes
 	
 	enable = south_american_spearmen		
 	enable = native_indian_archer
@@ -119,43 +124,50 @@ technology = {
 	enable = halessi_1_peasant_spears
 	enable = halessi_1_wandering_swords
 	enable = halessi_1_archer_cavalry
+	
+	fort_15th = yes
 }
 
-technology = {
-	# Tech 2
+# Tech 2
+technology = 
+{
+	#Eastern Swarm
 	year = 1420
 	
+	combat_width = 5
 	infantry_shock		= 	0.2
 	cavalry_shock		= 	0.2
-	
-	combat_width = 5
 }
 
 # The 30 big techs from here on
 
-technology = {
-	# Tech 3
+# Tech 3
+technology = 
+{
+	#Late Medieval Military
 	year = 1440
 	
 	land_morale = 	0.5
 }
 
-technology = {
-	# Tech 4
-	year = 1453
-	
+# Tech 4
+technology = 
+{
 	#Pike Square
+	year = 1453	
 	
-
-	land_morale = 	0.5
 	military_tactics 	= 	0.25
+	land_morale = 0.5	
+	fortress_keep = yes
 }
 
-technology = {
-	# Tech 5
+# Tech 5
+technology = 
+{
+	#Standardised Pikes
 	year = 1466
 	
-	#Standardised Pikes
+	combat_width = 2
 	supply_limit 		= 	0.5
 	infantry_shock		= 	0.15
 	cavalry_shock		= 	0.2
@@ -216,22 +228,20 @@ technology = {
 	enable = halessi_5_mass_crossbowmen
 	enable = halessi_5_thidinkai_shield_runners
 	
-	combat_width = 2
+	
 }
 
-technology = {
-	# Tech 6
+# Tech 6
+technology = 
+{
+	#Arquebus
 	year = 1479
 	
-	#Arquebus
+	combat_width = 2
 	military_tactics 	= 	0.25
 	infantry_shock		= 	0.30
 	infantry_fire 		= 	0.20
 	
-	
-	barracks = yes
-
-
 	enable = african_somali_cavalry
 	enable = african_tuareg_cavalry
 	enable = slavic_stradioti	
@@ -271,39 +281,46 @@ technology = {
 	enable = east_kobold_6_mercenary_scouts
 	enable = halessi_6_bianfang_armoured_cavalry
 	
-	combat_width = 2
+	#barracks = yes
+	manpower_lvl_1 = yes
 }
 
-technology = {
-	# Tech 7
+# Tech 7
+technology = 
+{
+	#The limber
 	year = 1492
 	
-	#The limber
+	military_tactics 	= 	0.25
 	artillery_fire 		= 	1
 	artillery_shock 	=	0.05
-	military_tactics 	= 	0.25
+	
 	enable = large_cast_bronze_mortar 
 	enable = houfnice
+	
+	fortress_barracks = yes
 }
 
-technology = {
-	# Tech 8
+# Tech 8
+technology = 
+{
+	#Pike and Shot
 	year = 1505
 	
-	#Pike and Shot
 	infantry_fire		= 	0.25
 	cavalry_shock		=	0.8
-
-	
-	regimental_camp = yes
+	forcelimit_lvl_1 = yes
+	#regimental_camp = yes
 }
 
-technology = {
-	# Tech 9
-	
+# Tech 9
+technology = 
+{	
+	#Ditch
 	year = 1518
 	
-	#Ditch
+	combat_width = 1	
+	military_tactics = 0.25
 	
 	enable = south_indian_musketeer	
 	enable = mughal_musketeer		
@@ -352,16 +369,17 @@ technology = {
 	enable = halessi_9_bomdan_guardians
 	enable = halessi_9_halessi_repeater_crossbowmen
 	
-	military_tactics 	= 	0.25
-	combat_width = 1	
+	
 }
 
-technology = {
-	# Tech 10
+# Tech 10
+technology = 
+{
+	#Reiter
 	year = 1531
 	
-	#Reiter
 	maneuver_value 		= 	0.25
+	cavalry_fire = 0.25
 
 	enable = hungarian_hussar
 	enable = ottoman_spahi		
@@ -417,29 +435,29 @@ technology = {
 	enable = halessi_10_bokar_horse_archers
 }
 
-technology = {
-	# Tech 11
+# Tech 11
+technology = 
+{
+	#Matchlock Musket
 	year = 1544
 	
-	#Matchlock Musket
-	infantry_shock		= 	0.20
-	cavalry_fire		= 	0.5
-
-	
-	weapons = yes
-	
 	combat_width = 2
+	infantry_shock		= 	0.20
+	infantry_fire = 0.25
+	cavalry_fire		= 	0.5
+	fortress_towers = yes
+	weapons = yes
 }
 	
-technology = {
-	# Tech 12
+# Tech 12
+technology = 
+{
+	#Spanish Square
 	year = 1557
 	
-	#Spanish Square
 	sprite_level = 2
-	
-	supply_limit 		= 	0.5
 	military_tactics	=	0.25
+	supply_limit = 0.5	
 
 	enable = tofongchis_musketeer		
 	enable = ottoman_sekban		
@@ -493,13 +511,17 @@ technology = {
 	enable = east_kobold_12_scorch_sentinels
 	enable = halessi_12_kelino_thorn_formation
 	enable = halessi_12_peasant_mass_musketeers
+	
+	#manpower_lvl_2 = yes
+	barracks = yes
 }
 
-technology = {
-	# Tech 13
+# Tech 13
+technology = 
+{
+	#Trunnions
 	year = 1570
 	
-	#Trunnions
 	artillery_shock 	= 	0.1
 	artillery_fire 		= 	0.4
 	
@@ -507,13 +529,15 @@ technology = {
 	enable = large_cast_iron_bombard
 }
 
-technology = {
-	# Tech 14
+# Tech 14
+technology = 
+{
+	#Star Bastions
 	year = 1583
 	
-	#Star Bastions
-	fort_16th = yes
+	combat_width = 2
 	infantry_fire		=	0.3
+	cavalry_fire = 0.5
 	
 	enable = african_hussar
 	enable = french_caracolle 
@@ -562,18 +586,17 @@ technology = {
 	enable = eordand_14_arakepruni_caracole
 	enable = raheni_14_ghavaanaj_elephant_lords
 	
-	combat_width = 2
+	fort_16th = yes
 }
 
-technology = {
-	# Tech 15
+# Tech 15
+technology = 
+{
+	#Maurician Infantry
 	year = 1596
 	
-	#Maurician Infantry
-	land_morale 		=	1.0
 	military_tactics	=	0.25
-	
-
+	land_morale = 1.0
 	
 	enable = irish_charge 
 	enable = dutch_maurician	
@@ -612,26 +635,31 @@ technology = {
 	enable = east_kobold_15_balrijin_guardians
 	enable = east_kobold_15_champions_of_kiu
 	enable = halessi_15_conehat_gunners
+	
+	#forcelimit_lvl_2 = yes
+	regimental_camp = yes
 }
 
-technology = {
-	# Tech 16
+# Tech 16
+technology = 
+{
+	#Standardisation of Calibre
 	year = 1609
 	
-	#Standardisation of Calibre
+	combat_width = 1	
 	artillery_shock 	= 	0.1
 	artillery_fire 		= 	1.0	
 
-
-	training_fields = yes
-	
-	combat_width = 1
-	
 	enable = chambered_demi_cannon
+
+	#training_fields = yes
+	fortress_artillery = yes
 }
 
-technology = {
-	# Tech 17
+# Tech 17
+technology = 
+{
+	#Flintlock Musket
 	year = 1622
 	
 	cavalry_shock		=	1.0
@@ -647,16 +675,20 @@ technology = {
 	enable = goblin_17_tamed_monster_herders
 	enable = east_kobold_17_dragon_pistols
 	enable = halessi_17_kesanthi_lancers
+	
+	#manpower_lvl_3 = yes
+	training_fields = yes
 }
 
-technology = {
-	# Tech 18
+# Tech 18
+technology = 
+{
+	#Carbine
 	year = 1635
 	
-	#Carbine
+	combat_width = 2
 	maneuver_value 		= 	0.25
 
-		
 	enable = swedish_gallop	
 	enable = sikh_hit_and_run
 	enable = bhonsle_infantry	
@@ -700,20 +732,17 @@ technology = {
 	enable = east_ogre_18_grenade_warstarved
 	enable = east_harpy_18_zephyr_guns
 	
-	combat_width = 2
 }
 
-technology = {
-	# Tech 19
+# Tech 19
+technology = 
+{
+	#Gustavian Infantry
 	year = 1648
 	
-	#Gustavian Infantry
 	military_tactics 	= 	0.25
 	supply_limit		=	0.5
 
-	fort_17th = yes
-
-	
 	enable = austrian_tercio   
 	enable = swedish_gustavian		
 	enable = scottish_highlander	
@@ -752,62 +781,64 @@ technology = {
 	enable = east_kobold_19_twin_fires
 	enable = halessi_19_halessi_conscript_infantry
 	enable = halessi_19_shadow_warriors
+	
+	fort_17th = yes
 }
 
-technology = {
-	# Tech 20
-	year = 1661
-	
+# Tech 20
+technology = 
+{
 	#Killing Grounds
+	year = 1661	
 	
+	combat_width = 2
 	infantry_fire		= 	0.5
-		
+	
 	enable = swivel_cannon		
 
-	combat_width = 2
+	#forcelimit_lvl_3 = yes	
+	conscription_center = yes
 }
 
-technology = {
-	# Tech 21
+# Tech 21
+technology = 
+{
+	#Line Infantry
 	year = 1674
 	
-	#Line Infantry
 	sprite_level = 3
 	military_tactics 	= 	0.25
-	
 	infantry_shock 		=	0.5
 }
 
-technology = {
-	# Tech 22
+# Tech 22
+technology = 
+{
+	#Cartridge	(1620)?)
 	year = 1687
 	
-	#Cartridge	(1620)?)
+	combat_width = 2
 	cavalry_fire		=	0.5
 	artillery_shock 	=	0.1
 	artillery_fire		=	2.0
 	
-	combat_width = 2
-	
-	conscription_center = yes
-
-	
 	enable = polish_winged_hussar	
 	enable = muscovite_cossack	
-
 	enable = coehorn_mortar		
-}
 
-technology = {
-	# Tech 23
-	year = 1700
+	#conscription_center = yes
+}
 	
+# Tech 23
+technology = 
+{
 	#Light Cavalry
+	year = 1700
 	
 	cavalry_shock		=	1.0
 	military_tactics 	= 	0.25
 	maneuver_value 		= 	0.5
-
+	
 	enable = swedish_arme_blanche	
 	enable = french_dragoon		
 	enable = austrian_hussar	
@@ -893,37 +924,41 @@ technology = {
 	enable = east_kobold_23_aurum_capes
 	enable = halessi_23_thidinkai_light_horsemen
 	enable = halessi_23_yan_dragoons
+	
+	fortress_wall = yes
 }
 
-technology = {
-	# Tech 24
-	year = 1715
-	
+# Tech 24
+technology = 
+{
 	#Covered Way
-	fort_18th	= yes	
-	military_tactics 	= 	0.25
+	year = 1715	
 
 	combat_width = 2
+	military_tactics = 0.25	
+	fort_18th = yes
 }
 
-technology = {
-	# Tech 25
+# Tech 25
+technology = 
+{
+	#Metallurgy
 	year = 1730
 	
-	#Metallurgy
 	artillery_shock 	=	0.1
 	artillery_fire		=	2.0
 	
 	enable = royal_mortar	
 }
 
-technology = {
-	# Tech 26
+# Tech 26
+technology = 
+{	
+	#Light Infantry Companies
 	year = 1745
 	
-	#Light Infantry Companies
 	sprite_level = 4
-
+	combat_width = 2
 	land_morale			=	1.0
 
 	enable = austrian_white_coat	
@@ -994,25 +1029,28 @@ technology = {
 	enable = east_kobold_26_goldscale_cuirassiers
 	enable = halessi_26_organized_conscript_battalion
 	
-	combat_width = 2
+	fortress_supply = yes
 }
 
-technology = {
-	# Tech 27
+# Tech 27
+technology = 
+{
+	#Bayonet
 	year = 1760
 	
-	#Bayonet
 	supply_limit		=	0.5
 	infantry_fire		= 	0.5
 }
 
-technology = {
-	# Tech 28
+# Tech 28
+technology = 
+{
+	#Cuirassier
 	year = 1775
 	
-	#Cuirassier
 	maneuver_value 		= 	0.25
 	infantry_shock		=	0.5	
+	cavalry_fire = 0.25
 	
 	enable = african_cuirassier
 	enable = russian_cuirassier	
@@ -1077,24 +1115,24 @@ technology = {
 	enable = halessi_28_organized_cavalry
 }
 
-technology = {
-	# Tech 29
-	year = 1790
-	
+# Tech 29
+technology = 
+{
 	#Defense in Depth
+	year = 1790
 		
 	enable = flying_battery  
 	enable = centaur_29_charge_cataphract
 	enable = centaur_29_harasser_cataphract
 }
 
-technology = {
-	# Tech 30
+# Tech 30
+technology = 
+{
+	#Impulse Warfare
 	year = 1805
 	
-	#Impulse Warfare
 	#sprite_level = 5	
-	
 	military_tactics	=	0.25
 	land_morale			=	1.0
 	maneuver_value = 0.25
@@ -1147,21 +1185,23 @@ technology = {
 	enable = east_kobold_30_goldscale_cuirassiers
 }
 
-technology = {
-	# Tech 31
+# Tech 31
+technology = 
+{
+	#Rifle
 	year = 1820
 	
-	#Rifle
 	cavalry_shock		=	1.0
 	infantry_fire		=	1.0
 	supply_limit		=	0.5
 }
 
-technology = {
-	# Tech 32
+# Tech 32
+technology = 
+{
+	#Field Howitzer
 	year = 1835
 	
-	#Field Howitzer
 	military_tactics	=	0.25
 	artillery_shock		=	0.1
 	artillery_fire		=	2.0	

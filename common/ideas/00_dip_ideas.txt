@@ -1,0 +1,2386 @@
+########################################################
+####### Diplomatic Idea Groups
+########################################################
+
+########################################################
+####### Assimilation
+########################################################
+
+assimilation0 =
+{
+	category = DIP
+
+	bonus =
+	{		
+		dip_tech_cost_modifier = -0.05
+	}
+
+	assimilation1 =
+	{
+		culture_conversion_cost = -0.1
+		same_culture_advisor_cost = -0.1
+	}
+
+	assimilation2 =
+	{
+		diplomatic_annexation_cost = -0.1
+	}
+
+	assimilation3 =
+	{
+		global_manpower_modifier = 0.15
+	}
+
+	assimilation4 =
+	{
+		religious_unity = 0.15
+	}
+
+	assimilation5 =
+	{
+		years_of_nationalism = -5
+	}
+
+	assimilation6 =
+	{
+		reform_progress_growth = 0.1
+		stability_cost_modifier = -0.15
+	}
+
+	assimilation7 =
+	{
+		promote_culture_cost = -0.15
+		num_accepted_cultures = 1
+	}
+
+	ai_will_do =
+	{
+		factor = 10
+		modifier =
+		{
+			factor = 2
+			personality = ai_diplomat
+		}
+
+		modifier =
+		{
+			factor = 2
+			government_rank = 3  # Empire
+		}
+
+		modifier =
+		{
+			factor = 2
+			government_rank = 2  # Kingdom
+		}
+	}
+}
+
+########################################################
+####### Colonial Empire
+########################################################
+
+kolonialimperium0 =
+{
+	category = DIP
+
+	bonus =
+	{
+		idea_claim_colonies = yes
+	}
+	
+	kolonialimperium1 =
+	{
+		governing_capacity = 75
+	}
+
+	kolonialimperium2 =
+	{
+		province_warscore_cost = -0.1
+	}
+
+	kolonialimperium3 =
+	{
+		global_manpower_modifier = 0.05
+		global_sailors_modifier = 0.05
+		# <<WIKI>> global_manpower_modifier = 0.05/Colonial Nation
+		# <<WIKI>> global_sailors_modifier = 0.05/Colonial Nation
+	}
+
+	kolonialimperium4 =
+	{
+		global_tariffs = 0.25
+		# <<WIKI>> global_tariffs = 0.05/Colonial Nation
+	}
+
+	kolonialimperium5 =
+	{
+		expel_minorities_cost = -0.25
+		liberty_desire_from_subject_development = -0.1
+	}
+
+	kolonialimperium6 =
+	{
+		naval_forcelimit_modifier = 0.05
+		treasure_fleet_income = 0.2
+		# <<WIKI>> naval_forcelimit_modifier = 0.05/Colonial Nation
+	}
+
+	kolonialimperium7 =
+	{		
+		diplomatic_upkeep = 2
+	}
+
+	ai_will_do =
+	{
+		factor = 15
+		modifier =
+		{
+			factor = 0
+			num_of_colonists = 0
+		}
+
+		modifier =
+		{
+			factor = 5
+			num_of_colonists = 1
+		}
+
+		modifier =
+		{
+			factor = 10
+			num_of_colonists = 2
+		}
+
+		modifier =
+		{
+			factor = 2
+			personality = ai_diplomat
+		}
+
+		modifier =
+		{
+			factor = 2
+			personality = ai_militarist
+		}
+
+		modifier =
+		{
+			factor = 0
+			OR =
+			{
+				is_subject = yes
+				is_vassal = yes
+				is_colonial_nation = yes
+				is_tribal = yes
+				primitives = yes
+			}
+		}
+
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				num_of_ports = 1
+			}
+		}
+
+		modifier =
+		{
+			factor = 0.5
+			NOT =
+			{
+				num_of_ports = 2
+			}
+		}
+
+		modifier =
+		{
+			factor = 0.5
+			NOT =
+			{
+				num_of_ports = 3
+			}
+		}
+
+		modifier =
+		{
+			factor = 0.5
+			NOT =
+			{
+				num_of_ports = 4
+			}
+			num_of_cities = 4
+		}
+
+		modifier =
+		{
+			factor = 2.0
+			num_of_ports = 5
+		}
+
+		modifier =
+		{
+			factor = 2.0
+			num_of_ports = 10
+		}
+
+		modifier =
+		{
+			factor = 2.0
+			num_of_ports = 15
+		}
+
+		modifier =
+		{
+			factor = 2.0
+			num_of_ports = 20
+		}
+
+		modifier =
+		{
+			factor = 2
+			OR =
+			{
+				tag = GBR
+				tag = NED
+				tag = ENG
+				tag = FRA
+				tag = CAS
+				tag = POR
+			}
+		}
+
+		modifier =
+		{
+			factor = 2.5
+			OR =
+			{
+				has_idea_group = maritime_ideas
+				has_idea_group = flottenbasis0
+			}
+		}
+
+		modifier =
+		{
+			factor = 25
+			technology_group = western
+			capital_scope =
+			{
+				region = iberia_region
+			}
+
+			any_known_country =
+			{
+				has_idea_group = exploration_ideas
+			}
+
+			num_of_ports = 3
+		}
+
+		modifier =
+		{
+			factor = 10
+			personality = ai_colonialist
+		}
+
+		modifier =
+		{
+			factor = 0.5
+			personality = ai_militarist
+		}
+
+		modifier =
+		{
+			factor = 3
+			technology_group = western
+			num_of_ports = 5
+			any_neighbor_country =
+			{
+				has_idea_group = exploration_ideas
+				num_of_colonies = 1
+			}
+		}
+
+		modifier =
+		{
+			factor = 3
+			technology_group = western
+			num_of_ports = 3
+			any_rival_country =
+			{
+				has_idea_group = exploration_ideas
+				num_of_colonies = 1
+			}
+		}
+
+		modifier =
+		{
+			factor = 3
+			num_of_ports = 9
+			any_neighbor_country =
+			{
+				has_idea_group = exploration_ideas
+				num_of_colonies = 1
+			}
+		}
+
+		modifier =
+		{
+			factor = 3
+			num_of_ports = 7
+			any_rival_country =
+			{
+				has_idea_group = exploration_ideas
+				num_of_colonies = 1
+			}
+		}
+
+		modifier =
+		{
+			factor = 2.0
+			has_idea_group = exploration_ideas
+		}
+
+		modifier =
+		{
+			factor = 2.0
+			has_idea_group = expansion_ideas
+		}
+	}
+}
+
+########################################################
+####### Dynastic
+########################################################
+
+dynasty0 =
+{
+	category = DIP
+
+	bonus =
+	{
+		dip_tech_cost_modifier = -0.05	
+	}
+
+	foreign_embassies_2 =
+	{
+		diplomats = 1
+		# <<WIKI>> decision = dynastie_promoten
+		# <<WIKI>> elective_monarchy_dip_buff = yes
+	}
+
+	establish_cadet_branches =
+	{
+		legitimacy = 1
+		prestige = 1
+	}
+
+	cabinet =
+	{
+		diplomatic_upkeep = 2
+	}
+
+	diplomatic_corps_2 =
+	{
+		heir_chance = 0.25		
+		diplomatic_reputation = 2
+	}
+
+	benign_diplomats =
+	{
+		improve_relation_modifier = 0.1
+	}
+
+	experienced_diplomats =
+	{
+		reduced_stab_impacts = yes
+	}
+
+	dynastie4 =
+	{
+		# <<WIKI>> add_cb = cb_dynastie		
+	}
+
+	ai_will_do =
+	{
+		factor = 10
+		modifier =
+		{
+			factor = 7
+			is_emperor = yes
+		}
+
+		modifier = 
+		{
+			factor = 1
+			any_country = 
+			{
+				has_heir = no
+			}		
+		}
+
+		modifier =
+		{
+			factor = 4
+			any_country =
+			{
+				is_rival = ROOT
+			}
+
+			NOT =
+			{
+				is_vassal = yes
+			}
+
+			NOT =
+			{
+				is_subject = yes
+			}
+		}
+
+		modifier =
+		{
+			factor = 4
+			personality = ai_diplomat
+		}
+
+		modifier =
+		{
+			factor = 3
+			government = monarchy
+		}
+	}
+}
+
+########################################################
+####### Espionage
+########################################################
+
+spy_ideas =
+{
+	category = DIP
+
+	bonus =
+	{
+		rebel_support_efficiency = 0.5
+		advisor_cost = -0.1
+	}
+
+	efficient_spies =
+	{
+		spy_offence = 0.5
+		can_fabricate_for_vassals = yes
+	}
+
+
+	agent_training =
+	{
+		discipline = 0.025
+	}
+
+	vetting =
+	{
+		global_spy_defence = 0.5
+	}
+
+	additional_loyalist_recruitment =
+	{
+		reduced_liberty_desire = 10
+	}
+
+	spion5 =
+	{
+		diplomats = 1
+		trade_efficiency = 0.1
+	}
+
+	privateers =
+	{
+		embargo_efficiency = 0.25
+		privateer_efficiency = 0.33
+	}
+
+	audit_checks =
+	{
+		yearly_corruption = -0.1
+	}
+
+	ai_will_do =
+	{
+		factor = 10
+		modifier =
+		{
+			factor = 3
+			personality = ai_diplomat
+		}
+
+		modifier =
+		{
+			factor = 2
+			personality = ai_militarist
+		}
+		modifier =
+		{
+			factor = 3
+			government = monarchy
+		}
+
+		modifier =
+		{
+			factor = 2
+			government = republic
+		}
+	}
+}
+
+########################################################
+####### Exploration
+########################################################
+
+exploration_ideas =
+{
+	category = DIP
+
+	important = yes
+
+	bonus =
+	{
+		cb_on_overseas = yes
+	}
+
+	quest_for_the_new_world	=
+	{
+		may_explore = yes
+	}
+
+	colonial_ventures =
+	{
+		colonists = 1
+	}
+
+	overseas_exploration =
+	{
+		range = 0.5
+		treasure_fleet_income = 0.2
+	}
+
+	land_of_opportunity =
+	{
+		global_colonial_growth = 20
+	}
+
+	vice_roys  =
+	{
+ 		global_tariffs = 0.20
+ 	}
+
+	free_colonies =
+	{
+		colonist_placement_chance = 0.1
+		native_assimilation = 0.5
+	}
+
+	global_empire =
+	{
+		auto_explore_adjacent_to_colony = yes
+		may_establish_frontier = yes
+	}
+
+	ai_will_do =
+	{
+		factor = 10
+		modifier =
+		{
+			factor = 0
+			OR =
+			{
+				AND =
+				{
+					is_subject = yes
+					NOT =
+					{
+						is_subject_of_type = tributary_state
+					}
+				}
+				is_tribal = yes
+				primitives = yes
+			}
+		}
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				num_of_ports = 1
+			}
+		}
+
+		modifier =
+		{
+			factor = 0.5
+			NOT =
+			{
+				num_of_ports = 2
+			}
+		}
+
+		modifier =
+		{
+			factor = 0.5
+			NOT =
+			{
+				num_of_ports = 3
+			}
+		}
+
+		modifier =
+		{
+			factor = 0.5
+			NOT =
+			{
+				num_of_ports = 4
+			}
+		}
+
+		modifier =
+		{
+			factor = 50
+			OR =
+			{
+				tag = POR
+				tag = GAL
+				tag = ICE
+			}
+		}
+
+		modifier =
+		{
+			factor = 0.1
+			NOT =
+			{
+				technology_group = western
+			}
+
+			NOT =
+			{
+				technology_group = high_american
+			}
+		}
+
+		modifier =
+		{
+			factor = 0.1
+			capital_scope =
+			{
+				NOT =
+				{
+					OR =
+					{
+						region = france_region
+						region = iberia_region
+						region = british_isles_region
+						region = low_countries_region
+					}
+				}
+			}
+		}
+
+		modifier =
+		{
+			factor = 0.5
+			tag = ARA
+		}
+
+		modifier =
+		{
+			factor = 0.1
+			NOT =
+			{
+				dip_tech = 7
+			}
+
+			capital_scope =
+			{
+				NOT =
+				{
+					region = iberia_region
+				}
+			}
+		}
+
+		modifier =
+		{
+			factor = 10
+			technology_group = high_american
+		}
+
+		modifier =
+		{
+			factor = 2
+			num_of_ports = 5
+		}
+
+		modifier =
+		{
+			factor = 2
+			num_of_ports = 10
+		}
+
+		modifier =
+		{
+			factor = 2
+			num_of_ports = 15
+		}
+
+		modifier =
+		{
+			factor = 2
+			num_of_ports = 20
+		}
+
+		modifier =
+		{
+			factor = 40
+			OR =
+			{
+				tag = GBR
+				tag = NED
+				tag = ENG
+				tag = FRA
+				tag = CAS
+			}
+		}
+		modifier =
+		{
+			factor = 50
+			technology_group = western
+			capital_scope =
+			{
+				region = iberia_region
+			}
+
+			any_known_country =
+			{
+				has_idea_group = exploration_ideas
+			}
+
+			num_of_ports = 3
+		}
+
+		modifier =
+		{
+			factor = 10
+			personality = ai_colonialist
+			has_idea_group = expansion_ideas
+		}
+
+		modifier =
+		{
+			factor = 3
+			technology_group = western
+			num_of_ports = 5
+			any_neighbor_country =
+			{
+				has_idea_group = exploration_ideas
+				num_of_colonies = 1
+			}
+		}
+
+		modifier =
+		{
+			factor = 3
+			technology_group = western
+			num_of_ports = 3
+			any_rival_country =
+			{
+				has_idea_group = exploration_ideas
+				num_of_colonies = 1
+			}
+		}
+
+		modifier =
+		{
+			factor = 3
+			num_of_ports = 9
+			any_neighbor_country =
+			{
+				has_idea_group = exploration_ideas
+				num_of_colonies = 1
+			}
+		}
+
+		modifier =
+		{
+			factor = 3
+			num_of_ports = 7
+			any_rival_country =
+			{
+				has_idea_group = exploration_ideas
+				num_of_colonies = 1
+			}
+		}
+
+		modifier =
+		{
+			factor = 0.75
+			is_institution_enabled = global_trade
+		}
+	}
+}
+
+########################################################
+####### Fleet Base
+########################################################
+
+flottenbasis0 =
+{
+	category = DIP
+
+	bonus =
+	{
+		flagship_cost = -0.25
+		number_of_cannons_flagship_modifier = 0.1		
+	}
+
+	flottenbasis1 =
+	{
+		global_sailors = 10000
+		allowed_marine_fraction = 0.25		
+	}
+
+	flottenbasis2 =
+	{
+		naval_maintenance_modifier = -0.25
+		# <<WIKI>> add_building = navalbase_lvl_1
+		# <<WIKI>> add_building = navalbase_lvl_2
+	}
+
+	flottenbasis3 =
+	{
+		own_coast_naval_combat_bonus = 1.0
+		ship_durability = 0.1
+	}
+
+	flottenbasis4 =
+	{
+		naval_attrition = -0.1
+		sea_repair = yes
+	}
+
+	flottenbasis5 =
+	{
+		global_naval_barrage_cost = -0.25
+		naval_forcelimit_modifier = 0.15
+	}
+
+	flottenbasis6 =
+	{
+		flagship_durability = 0.25
+		flagship_morale = 0.25
+	}
+
+	flottenbasis7 =
+	{
+		# <<WIKI>> add_cb = cb_coast
+		naval_maintenance_flagship_modifier = -0.25
+	}
+
+	ai_will_do =
+	{
+		factor = 10
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				num_of_ports = 1
+			}
+		}
+
+		modifier =
+		{
+			factor = 0.5
+			NOT =
+			{
+				num_of_ports = 2
+			}
+		}
+
+		modifier =
+		{
+			factor = 0.5
+			NOT =
+			{
+				num_of_ports = 3
+			}
+		}
+
+		modifier =
+		{
+			factor = 0.5
+			NOT =
+			{
+				num_of_ports = 4
+			}
+
+			num_of_cities = 4
+		}
+
+		modifier =
+		{
+			factor = 1.5
+			num_of_ports = 16
+		}
+
+		modifier =
+		{
+			factor = 2
+			OR =
+			{
+				num_of_heavy_ship = 12
+				num_of_light_ship = 18
+				num_of_galley = 28
+			}
+		}
+
+		modifier =
+		{
+			factor = 1.5
+			any_neighbor_country =
+			{
+				is_rival = ROOT
+			}
+		}
+
+		modifier =
+		{
+			factor = 10
+			num_of_colonists = 1
+		}
+
+		modifier =
+		{
+			factor = 2
+			government_rank = 3  # Empire
+		}
+
+		modifier =
+		{
+			factor = 2
+			government_rank = 2  # Kingdom
+		}
+
+		modifier =
+		{
+			factor = 2
+			personality = ai_diplomat
+		}
+
+		modifier =
+		{
+			factor = 4
+			personality = ai_militarist
+		}
+	}
+}
+
+########################################################
+####### Imperialism / Emperor
+########################################################
+
+imperialismus0 =
+{
+	category = DIP
+
+	bonus =
+	{
+		all_power_cost = -0.015		
+	}
+
+	trigger =
+	{
+		OR =
+		{
+			government_rank = 3
+			is_emperor = yes
+		}
+	}
+
+	imperialismus1 =
+	{
+		land_forcelimit_modifier = 0.1
+		naval_forcelimit_modifier = 0.1
+	}
+
+	imperialismus2 =
+	{
+		imperial_authority_value = 0.05
+		imperial_mandate = 0.05
+		improve_relation_modifier = 0.05
+		# <<WIKI>> add_age_authority = 0.05
+	}
+
+	imperialismus3 =
+	{
+		reduced_liberty_desire = 5
+	}
+
+	imperialismus4 =
+	{
+		accept_vassalization_reasons = 5
+		transfer_trade_power_reasons = 5
+	}
+
+	imperialismus5 =
+	{
+		years_of_nationalism = -5
+	}
+
+	imperialismus6 =
+	{
+		vassal_income = 0.15
+		vassal_forcelimit_bonus = 0.25
+	}
+
+	imperialismus7 =
+	{
+		expand_administration_cost = -0.1
+	}
+
+	ai_will_do =
+	{
+		factor = 10
+		modifier =
+		{
+			factor = 3
+			total_development = 500
+		}
+
+		modifier =
+		{
+			factor = 4
+			total_development = 700
+		}
+
+		modifier =
+		{
+			factor = 5
+			total_development = 800
+		}
+
+		modifier =
+		{
+			factor = 6
+			total_development = 1000
+		}
+
+		modifier =
+		{
+			factor = 5
+			government = monarchy
+		}
+
+		modifier =
+		{
+			factor = 2.5
+			num_of_ports = 25
+		}
+
+		modifier =
+		{
+			factor = 2
+			OR =
+			{
+				num_of_heavy_ship = 12
+				num_of_light_ship = 18
+				num_of_galley = 28
+			}
+		}
+
+		modifier =
+		{
+			factor = 2
+			personality = ai_diplomat
+		}
+
+		modifier =
+		{
+			factor = 4
+			personality = ai_militarist
+		}
+
+		modifier =
+		{
+			factor = 4.5
+			any_neighbor_country =
+			{
+				is_rival = ROOT
+			}
+		}
+
+		modifier =
+		{
+			factor = 7
+			is_emperor = yes
+		}
+	}
+}
+
+########################################################
+####### Influence
+########################################################
+
+influence_ideas =
+{
+	category = DIP
+
+	bonus =
+	{
+		accept_vassalization_reasons = 15
+	}
+
+	tribute_system =
+	{
+		unjustified_demands = -0.15		
+	}
+
+	flexible_negotiation =
+	{
+		province_warscore_cost = -0.15
+	}
+
+	integrated_elites =
+	{
+		diplomatic_annexation_cost = -0.15
+		vassal_income = 0.15
+	}
+
+	state_propaganda =
+	{
+		ae_impact = -0.15
+	}
+
+	diplomatic_influence =
+	{
+		diplomatic_reputation = 2
+	}
+
+	postal_service =
+	{
+		diplomatic_upkeep = 2
+	}
+
+	marcher_lords =
+	{
+		land_forcelimit_modifier = 0.15
+		vassal_forcelimit_bonus = 0.25
+	}
+
+	ai_will_do =
+	{
+		factor = 10
+		modifier =
+		{
+			factor = 5
+			is_emperor = yes
+		}
+
+		modifier =
+		{
+			factor = 2
+			personality = ai_diplomat
+		}
+
+		modifier =
+		{
+			factor = 5
+			personality = ai_militarist
+		}
+
+		modifier =
+		{
+			factor = 3
+			num_of_subjects = 1
+		}
+
+		modifier =
+		{
+			factor = 3
+			num_of_subjects = 2
+		}
+
+		modifier =
+		{
+			factor = 5
+			num_of_subjects = 3
+		}
+
+		modifier =
+		{
+			factor = 1.5
+			government = monarchy
+		}
+	}
+}
+
+########################################################
+####### Kingdom Ideas
+########################################################
+
+konigreich0 =
+{
+	category = DIP
+
+	bonus =
+	{
+		land_morale = 0.025
+		discipline = 0.015
+	}
+
+	trigger =
+	{
+		government_rank = 2
+		NOT =
+		{
+			OR =
+			{
+				government_rank = 3
+				is_emperor = yes
+			}
+		}
+	}
+
+	konigreich1 =
+	{
+		prestige_decay = -0.01
+		# <<WIKI>> decision = konigreich_dec
+	}
+
+	konigreich2 =
+	{
+		land_forcelimit = 5
+		# <<WIKI>> add_age_forcelimit_land = 10
+	}
+
+	konigreich3 =
+	{
+		global_autonomy = -0.025
+	}
+
+	konigreich4 =
+	{
+		nobles_loyalty_modifier = 0.05
+		peasants_loyalty_modifier = 0.05
+		state_governing_cost = -0.025
+	}
+
+	konigreich5 =
+	{
+		naval_forcelimit = 10
+		# <<WIKI>> add_age_forcelimit_naval = 20
+	}
+
+	konigreich6 =
+	{
+		autonomy_change_time = -0.25
+		harsh_treatment_cost = -0.25
+	}
+
+	konigreich7 =
+	{
+		diplomatic_upkeep = 1
+		# <<WIKI>> add_cb = cb_herzog
+	}
+
+	ai_will_do =
+	{
+		factor = 10
+		modifier =
+		{
+			factor = 3
+			total_development = 500
+		}
+
+		modifier =
+		{
+			factor = 4
+			total_development = 700
+		}
+
+		modifier =
+		{
+			factor = 5
+			total_development = 800
+		}
+
+		modifier =
+		{
+			factor = 6
+			total_development = 1000
+		}
+
+		modifier =
+		{
+			factor = 5
+			government = monarchy
+		}
+
+		modifier =
+		{
+			factor = 2.5
+			num_of_ports = 25
+		}
+
+		modifier =
+		{
+			factor = 2
+			OR =
+			{
+				num_of_heavy_ship = 12
+				num_of_light_ship = 18
+				num_of_galley = 28
+			}
+		}
+
+		modifier =
+		{
+			factor = 2
+			personality = ai_diplomat
+		}
+
+		modifier =
+		{
+			factor = 2
+			personality = ai_militarist
+		}
+
+		modifier =
+		{
+			factor = 4.5
+			any_neighbor_country =
+			{
+				is_rival = ROOT
+			}
+		}
+	}
+}
+
+########################################################
+####### Maritime
+########################################################
+
+maritime_ideas =
+{
+	category = DIP
+
+	trigger =
+	{
+		primitives = no
+	}
+
+	bonus =
+	{
+		naval_forcelimit_modifier = 0.25
+		global_ship_repair = 0.25
+	}
+
+	sea_hawks =
+	{
+		allowed_marine_fraction = 1.0
+		navy_tradition = 0.5
+	}
+
+	merchant_marine_2 =
+	{
+		global_sailors = 20000
+		sailors_recovery_speed = 0.25
+		# <<WIKI>> add_building = shipyard
+		# <<WIKI>> add_building = dock
+		# <<WIKI>> add_building = drydock
+		# <<WIKI>> add_building = grand_shipyard
+	}
+
+	sheltered_ports =
+	{
+		global_naval_engagement_modifier = 0.1
+		naval_morale = 0.1
+	}
+
+	grand_navy_2 =
+	{
+		global_sailors_modifier = 0.5
+		sailor_maintenance_modifer = -0.85
+	}
+
+	ships_penny =
+	{
+		global_ship_recruit_speed = -0.35
+		global_ship_cost = -0.35
+	}
+
+	excellent_shipwrights =
+	{
+		transport_cost = -0.25
+		transport_power = 0.25
+	}
+
+	naval_fighting_instruction =
+	{
+		blockade_efficiency = 0.25
+		capture_ship_chance = 0.25
+	}
+
+	ai_will_do =
+	{
+		factor = 15
+        modifier =
+        {
+            factor = 0
+            NOT =
+            {
+                dip_tech = 6
+            }
+        }
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				num_of_ports = 3
+			}
+		}
+
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				num_of_ports = 5
+			}
+
+			num_of_cities = 5
+		}
+
+		modifier =
+		{
+			factor = 2
+			OR =
+			{
+				tag = SPA
+				tag = ENG
+				tag = GBR
+				tag = CAS
+				tag = POR
+				tag = NED
+				tag = HOL
+				tag = BUR
+			}
+		}
+
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				num_of_ports = 8
+			}
+
+			num_of_cities = 10
+		}
+
+		modifier =
+		{
+			factor = 3
+			OR =
+			{
+				num_of_heavy_ship = 20
+				num_of_light_ship = 50
+				num_of_galley = 70
+			}
+		}
+	}
+}
+
+########################################################
+####### Nationalism
+########################################################
+
+nationalismus0 =
+{
+	category = DIP
+
+	bonus =
+	{
+		land_morale = 0.025
+	}
+
+	nationalismus1 =
+	{
+		war_exhaustion_cost = -0.15
+		years_of_nationalism = -5
+		# <<WIKI>> add_stand = estate_nationalist
+	}
+
+	nationalismus3 =
+	{
+		unjustified_demands = -0.1
+	}
+
+	nationalismus4 =
+	{
+		stability_cost_modifier = -0.25
+		global_unrest = -1
+	}
+
+	nationalismus5 =
+	{
+		culture_conversion_cost = -0.1
+	}
+
+	nationalismus2 =
+	{
+		global_manpower = 2.5
+		# <<WIKI>> add_age_manpower = 2.5
+	}
+
+	nationalismus6 =
+	{
+		same_culture_advisor_cost = -0.15		
+	}
+
+	nationalismus7 =
+	{
+		global_religious_conversion_resistance = 0.2
+		warscore_cost_vs_other_religion = -0.1
+	}
+
+	ai_will_do =
+	{
+		factor = 15
+		modifier =
+		{
+			factor = 2
+			personality = ai_diplomat
+		}
+
+		modifier =
+		{
+			factor = 3
+			personality = ai_militarist
+		}
+
+		modifier =
+		{
+			factor = 5
+			any_neighbor_country =
+			{
+				is_rival = ROOT
+			}
+		}
+
+		modifier =
+		{
+			factor = 2
+			government_rank = 3  # Empire
+		}
+
+		modifier =
+		{
+			factor = 2
+			government_rank = 2  # Kingdom
+		}
+	}
+}
+
+########################################################
+####### Propaganda
+########################################################
+
+propaganda0 =
+{
+	category = DIP
+
+	bonus =
+	{
+		accept_vassalization_reasons = 10
+	}
+
+	propaganda1 =
+	{
+		war_taxes_cost_modifier = -0.25
+		leader_cost = -0.1
+	}
+
+	propaganda2 =
+	{
+		prestige_from_land = 0.5
+		global_manpower_modifier = 0.1
+	}
+
+	propaganda3 =
+	{
+		improve_relation_modifier = 0.1
+		fabricate_claims_cost = -0.25
+	}
+
+	propaganda4 =
+	{
+		diplomatic_reputation = 1
+		discovered_relations_impact = -0.1
+	}
+
+	propaganda5 =
+	{
+		reform_progress_growth = 0.15
+		legitimacy = 1
+		republican_tradition = 0.3				
+		devotion = 1
+		horde_unity = 1
+		meritocracy = 1
+	}
+
+	propaganda6 =
+	{
+		army_tradition = 1
+		nobles_loyalty_modifier = 0.05
+		peasants_loyalty_modifier = 0.05
+	}
+
+	propaganda7 =
+	{
+		church_loyalty_modifier = 0.05
+		burghers_loyalty_modifier = 0.05
+	}
+
+	ai_will_do =
+	{
+		factor = 10
+		modifier =
+		{
+			factor = 2
+			personality = ai_diplomat
+		}
+
+		modifier =
+		{
+			factor = 1.5
+			any_neighbor_country =
+			{
+				is_rival = ROOT
+			}
+		}
+
+		modifier =
+		{
+			factor = 3
+			government = monarchy
+		}
+
+		modifier =
+		{
+			factor = 3
+			government = republic
+		}
+
+		modifier =
+		{
+			factor = 2
+			government_rank = 3  # Empire
+		}
+
+		modifier =
+		{
+			factor = 2
+			government_rank = 2  # Kingdom
+		}
+	}
+}
+
+########################################################
+####### Society
+########################################################
+
+gesellschaft0 =
+{
+	category = DIP
+
+	bonus =
+	{
+		technology_cost = -0.025
+	}
+
+	gesellschaft1 =
+	{
+		burghers_influence_modifier = -0.1
+		global_own_trade_power = 0.1
+	}
+
+	gesellschaft2 =
+	{
+		nobles_influence_modifier = -0.1
+		peasants_influence_modifier = -0.1
+		stability_cost_modifier = -0.15
+	}
+
+	gesellschaft3 =
+	{
+		global_institution_spread = 0.1
+		# <<WIKI>> global_institution_growth = 0.05
+	}
+
+	gesellschaft4 =
+	{
+		church_influence_modifier = -0.1
+		tolerance_own = 1
+	}
+
+	gesellschaft5 =
+	{
+		inflation_reduction = 0.11
+		interest = -1
+	}
+
+	gesellschaft6 =
+	{
+		num_accepted_cultures = 1
+		promote_culture_cost = -0.15
+	}
+
+	gesellschaft7 =
+	{
+		min_autonomy_in_territories = -0.1
+	}
+
+	ai_will_do =
+	{
+		factor = 10
+		modifier =
+		{
+			factor = 5
+			personality = ai_diplomat
+		}
+
+		modifier =
+		{
+			factor = 2
+			personality = ai_militarist
+		}
+
+		modifier =
+		{
+			factor = 0.5
+			government = monarchy
+		}
+
+		modifier =
+		{
+			factor = 3
+			government = republic
+		}
+	}
+}
+
+########################################################
+####### Trade
+########################################################
+
+trade_ideas =
+{
+	category = DIP
+
+	bonus =
+	{
+		center_of_trade_upgrade_cost = -0.1
+		trade_company_investment_cost = -0.1
+	}
+
+	shrewd_commerce_practise =
+	{
+ 		global_trade_power = 0.2
+  	}
+
+  	free_trade =
+	{
+  		global_foreign_trade_power = 0.1
+		global_own_trade_power = 0.1
+  	}
+
+	merchant_adventures =
+	{
+		global_prov_trade_power_modifier = 0.2
+		mercantilism_cost = -0.1
+	}
+
+	national_trade_policy =
+	{
+		trade_efficiency = 0.15
+	}
+
+	overseas_merchants =
+	{
+		merchants = 3
+	}
+
+	trade_manipulation =
+	{
+		trade_steering = 0.25
+	}
+
+	fast_negotiations =
+	{
+		caravan_power = 0.25
+	}
+
+	ai_will_do =
+	{
+		factor = 10
+		modifier =
+		{
+			factor = 10
+			is_colonial_nation = yes
+		}
+
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				trade_income_percentage = 0.25
+			}
+			NOT =
+			{
+				is_colonial_nation = yes
+			}
+		}
+
+		modifier =
+		{
+			factor = 0.33
+			NOT =
+			{
+				trade_income_percentage = 0.33
+			}
+		}
+
+		modifier =
+		{
+			factor = 1.5
+			trade_income_percentage = 0.25
+			personality = ai_capitalist
+		}
+
+		modifier =
+		{
+			factor = 6
+			trade_income_percentage = 0.33
+		}
+	}
+}
+
+###################################################################
+## Special Diplomatic Ideas
+###################################################################
+
+########################################################
+####### Holy Roman Emperor Ambition  
+########################################################
+
+#hre0 =
+#{
+#	category = DIP
+#
+#	bonus =
+#	{
+#		imperial_authority = 0.1
+#	}
+#
+#	trigger =
+#	{
+#		
+#		OR = 
+#		{
+#			AND = 
+#			{
+#				is_part_of_hre = yes
+#				OR = 
+#				{
+#					is_emperor = yes 
+#					is_elector = yes
+#					total_development = 200					
+#				}
+#			}
+#		}
+#		
+#		NOT =
+#		{
+#			government = republic
+#			has_idea_group = imperialismus0
+#		}		
+#	}
+#
+#	hre1 =
+#	{
+#		legitimacy = 1		
+#	}
+#
+#	hre2 =
+#	{
+#		improve_relation_modifier = 0.1
+#	}
+#
+#	hre3 =
+#	{
+#		imperial_mercenary_cost = -0.1
+#	}
+#
+#	hre4 =
+#	{
+#		nobles_influence_modifier = -0.1
+#		nobles_loyalty_modifier = 0.1
+#	}
+#
+#	hre5 =
+#	{
+#		max_free_cities = 1
+#		free_city_imperial_authority = 0.1
+#	}
+#
+#	hre6 =
+#	{
+#		ae_impact = -0.1
+#	}
+#
+#	hre7 =
+#	{
+#		imperial_authority_value = 0.1		
+#	}
+#
+#	ai_will_do =
+#	{
+#		factor = 1
+#		modifier =
+#		{
+#			factor = 3
+#			total_development = 250
+#		}
+#
+#		modifier =
+#		{
+#			factor = 4
+#			total_development = 300
+#		}
+#
+#		modifier =
+#		{
+#			factor = 5
+#			total_development = 350
+#		}
+#
+#		modifier =
+#		{
+#			factor = 6
+#			total_development = 400
+#		}
+#		
+#		modifier =
+#		{
+#			factor = 9
+#			is_emperor = yes
+#		}
+#		
+#		modifier =
+#		{
+#			factor = 1
+#			government = monarchy
+#		}
+#
+#		modifier =
+#		{
+#			factor = 2
+#			personality = ai_diplomat
+#		}
+#	}
+#}
+
+###################################################################
+## Special Diplomatic: Ships
+###################################################################
+
+########################################################
+####### Heavy Ship
+########################################################
+
+gross0 =
+{
+	category = DIP
+
+	trigger =
+	{
+		primitives = no
+		NOT =
+		{
+			has_idea_group = handel0
+			has_idea_group = galle0
+		}
+	}
+
+	bonus =
+	{
+		recover_navy_morale_speed = 0.15
+		leader_naval_fire = 1
+	}
+
+	gross1 =
+	{
+		heavy_ship_cost = -0.15
+	}
+
+	gross2 =
+	{
+		heavy_ship_power = 0.1
+	}
+
+	gross3 =
+	{
+		global_ship_recruit_speed = -0.15
+	}
+
+	gross4 =
+	{
+		global_sailors_modifier = 0.15
+	}
+
+	gross5 =
+	{
+		ship_durability = 0.15
+	}
+
+	gross6 =
+	{
+		naval_forcelimit_modifier = 0.15
+		# <<WIKI>> add_building = shipyard
+		# <<WIKI>> add_building = dock
+		# <<WIKI>> add_building = drydock
+		# <<WIKI>> add_building = grand_shipyard
+	}
+
+	gross7 =
+	{
+		sailor_maintenance_modifer = -0.2
+		navy_tradition = 0.1
+	}
+
+	ai_will_do =
+	{
+		factor = 10
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				num_of_ports = 3
+			}
+		}
+
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				num_of_ports = 5
+			}
+			num_of_cities = 5
+		}
+
+		modifier =
+		{
+			factor = 10
+			OR =
+			{
+				tag = SPA
+				tag = ENG
+				tag = GBR
+				tag = CAS
+				tag = POR
+				tag = NED
+				tag = HOL
+				tag = BUR
+			}
+		}
+
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				num_of_ports = 8
+			}
+
+			num_of_cities = 10
+		}
+
+		modifier =
+		{
+			factor = 1.5
+			has_idea_group = maritime_ideas
+		}
+
+		modifier =
+		{
+			factor = 2
+			OR =
+			{
+				num_of_heavy_ship = 12
+				num_of_light_ship = 18
+				num_of_galley = 28
+			}
+
+			personality = ai_militarist
+		}
+	}
+}
+
+########################################################
+####### Galley
+########################################################
+
+galle0 =
+{
+	category = DIP
+
+	trigger =
+	{
+		primitives = no
+
+		NOT =
+		{
+			has_idea_group = handel0
+			has_idea_group = gross0
+		}
+
+	}
+
+	bonus =
+	{
+		global_sailors_modifier = 0.25
+		sailors_recovery_speed = 0.15
+	}
+
+	galle1 =
+	{
+		naval_forcelimit = 20		
+		# <<WIKI>> add_building = shipyard
+		# <<WIKI>> add_building = dock
+		# <<WIKI>> add_building = drydock
+		# <<WIKI>> add_building = grand_shipyard
+	}
+
+	galle2 =
+	{
+		galley_cost = -0.2
+	}
+
+	galle3 =
+	{
+		galley_power = 0.15
+	}
+
+	galle4 =
+	{
+		naval_morale = 0.1
+	}
+
+	galle5 =
+	{
+		sailor_maintenance_modifer = -0.25
+	}
+
+	galle6 =
+	{
+		ship_durability = 0.1
+		leader_naval_shock = 1
+	}
+
+	galle7 =
+	{
+		blockade_efficiency = 0.5
+		naval_tradition_from_battle = 0.1
+	}
+
+	ai_will_do =
+	{
+
+		factor = 10
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				num_of_ports = 3
+			}
+		}
+
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				num_of_ports = 5
+			}
+
+			num_of_cities = 5
+		}
+
+		modifier =
+		{
+			factor = 4
+			num_of_galley = 25
+		}
+
+		modifier =
+		{
+			factor = 10
+			capital_scope =
+			{
+				OR =
+				{
+					region = italy_region
+					region = baltic_region
+					region = balkan_region
+					region = maghreb_region
+					region = anatolia_region
+				}
+			}
+
+			NOT =
+			{
+				technology_group = high_american
+			}
+		}
+	}
+}
+
+########################################################
+####### Light Ship
+########################################################
+
+handel0 =
+{
+	category = DIP
+
+	trigger =
+	{
+		primitives = no
+		NOT =
+		{
+			has_idea_group = galle0
+			has_idea_group = gross0
+		}
+	}
+
+	bonus =
+	{
+		merchants = 1
+		naval_tradition_from_trade = 0.1
+	}
+
+	handel1 =
+	{
+		light_ship_cost = -0.2
+		transport_cost = -0.2
+	}
+
+	handel2 =
+	{
+		light_ship_power = 0.2
+		transport_power = 0.2
+	}
+
+	handel3 =
+	{
+		trade_efficiency = 0.15
+	}
+
+	handel4 =
+	{
+		sailor_maintenance_modifer = -0.15
+	}
+
+	handel5 =
+	{
+		naval_forcelimit_modifier = 0.15
+		global_ship_trade_power = 0.25
+		# <<WIKI>> add_building = shipyard
+		# <<WIKI>> add_building = dock
+		# <<WIKI>> add_building = drydock
+		# <<WIKI>> add_building = grand_shipyard
+	}
+
+	handel6 =
+	{
+		privateer_efficiency = 0.25
+		embargo_efficiency = 0.25
+	}
+
+	handel7 =
+	{
+		naval_morale = 0.1
+		leader_naval_manuever = 1
+	}
+
+	ai_will_do =
+	{
+
+		factor = 10
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				num_of_ports = 3
+			}
+		}
+
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				num_of_ports = 5
+			}
+
+			num_of_cities = 5
+		}
+
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				num_of_ports = 8
+			}
+
+			num_of_cities = 10
+		}
+
+		modifier =
+		{
+			factor = 1.5
+			has_idea_group = maritime_ideas
+		}
+
+		modifier =
+		{
+			factor = 1.5
+			has_idea_group = flottenbasis0
+		}
+
+		modifier =
+		{
+			factor = 20
+			num_of_light_ship = 50
+		}
+	}
+}

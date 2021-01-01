@@ -367,7 +367,7 @@ set_base_target = {
 	clr_country_flag = $base$_flag
 }
 
-binary_ad2 = {
+binary_ad20 = {
 	if = {
 		limit = {
 			check_variable = {
@@ -392,17 +392,17 @@ add_power = { #reddit.com/r/eu4/comments/dy7lyv
 		which = baseCost
 	}
 
-	binary_ad2 = { variable = temp	addcommand = $power$	valueAdd = 1024 	valueSub = -1024 }
-	binary_ad2 = { variable = temp	addcommand = $power$	valueAdd = 512		valueSub = -512 }
-	binary_ad2 = { variable = temp	addcommand = $power$	valueAdd = 256		valueSub = -256 }
-	binary_ad2 = { variable = temp	addcommand = $power$	valueAdd = 128		valueSub = -128 }
-	binary_ad2 = { variable = temp	addcommand = $power$	valueAdd = 64		valueSub = -64 }
-	binary_ad2 = { variable = temp	addcommand = $power$	valueAdd = 32		valueSub = -32 }
-	binary_ad2 = { variable = temp	addcommand = $power$	valueAdd = 16		valueSub = -16 }
-	binary_ad2 = { variable = temp	addcommand = $power$	valueAdd = 8		valueSub = -8 }
-	binary_ad2 = { variable = temp	addcommand = $power$	valueAdd = 4		valueSub = -4 }
-	binary_ad2 = { variable = temp	addcommand = $power$	valueAdd = 2		valueSub = -2 }
-	binary_ad2 = { variable = temp	addcommand = $power$	valueAdd = 1		valueSub = -1 }
+	binary_ad20 = { variable = temp	addcommand = $power$	valueAdd = 1024 	valueSub = -1024 }
+	binary_ad20 = { variable = temp	addcommand = $power$	valueAdd = 512		valueSub = -512 }
+	binary_ad20 = { variable = temp	addcommand = $power$	valueAdd = 256		valueSub = -256 }
+	binary_ad20 = { variable = temp	addcommand = $power$	valueAdd = 128		valueSub = -128 }
+	binary_ad20 = { variable = temp	addcommand = $power$	valueAdd = 64		valueSub = -64 }
+	binary_ad20 = { variable = temp	addcommand = $power$	valueAdd = 32		valueSub = -32 }
+	binary_ad20 = { variable = temp	addcommand = $power$	valueAdd = 16		valueSub = -16 }
+	binary_ad20 = { variable = temp	addcommand = $power$	valueAdd = 8		valueSub = -8 }
+	binary_ad20 = { variable = temp	addcommand = $power$	valueAdd = 4		valueSub = -4 }
+	binary_ad20 = { variable = temp	addcommand = $power$	valueAdd = 2		valueSub = -2 }
+	binary_ad20 = { variable = temp	addcommand = $power$	valueAdd = 1		valueSub = -1 }
 	#log = dev_info.4
 }
 
