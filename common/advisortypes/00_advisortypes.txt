@@ -278,6 +278,10 @@ colonial_governor = {
 			factor = 0
 			owner = { is_colonial_nation = yes }
 		}
+		modifier = {
+			factor = 0
+			owner = { NOT = { colony = 1 } }
+		}
 	}
 	
 	ai_will_do = {
@@ -310,7 +314,7 @@ navigator = {
 	monarch_power = DIP
 	
 	# Bonus
-	range = 0.25
+	range = 0.20
 	
 	skill_scaled_modifier = {
 	meritocracy = 0.5
@@ -433,12 +437,9 @@ recruitmaster = {
 	monarch_power = MIL
 	
 	# Bonus
+	global_manpower_modifier = 0.10
 	
-	mercenary_manpower = 0.25
-	
-	skill_scaled_modifier = {
-	meritocracy = 0.5
-	}
+	skill_scaled_modifier = { meritocracy = 0.25 }
 
 	chance = {
 		factor = 1
@@ -458,12 +459,9 @@ fortification_expert = {
 	monarch_power = MIL
 	
 	# Bonus
-	defensiveness = 0.1
-	global_manpower_modifier = 0.10
+	defensiveness = 0.2
 	
-	skill_scaled_modifier = {
-	meritocracy = 0.5
-	}
+	skill_scaled_modifier = { meritocracy = 0.25 }
 
 	chance = {
 		factor = 1
@@ -496,5 +494,28 @@ grand_captain = {
 			factor = 1.5
 			is_at_war = no
 		}
+	}
+}
+
+#Anbennar
+######################################################
+court_mage = {
+	monarch_power = ADM
+	
+	# Bonus
+	all_power_cost = -0.05
+
+	skill_scaled_modifier = { meritocracy = 0.33 }
+
+	chance = {
+		factor = 1
+		modifier = {
+			factor = 0
+			owner = { NOT = { has_estate = estate_mages } }
+		}
+	}
+	
+	ai_will_do = {
+		factor = 1
 	}
 }
