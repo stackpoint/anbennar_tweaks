@@ -910,57 +910,57 @@ guiTypes = {
 		spriteType = "GFX_building_upgrade_icon"
 	}
 
-  ##############################################################
-	######### Mercenaries
+  	##############################################################
+	######### Mercenaries Doesn't work with flogi ideas
 	##############################################################
-	iconType = {
-		name = "army_banner_3"
-		position = { x = 300 y = 394 }
-		spriteType = "GFX_banner_left_3"
-	}
-	iconType = {
-		name ="mercenary_icon"
-		spriteType = "GFX_macro_buildings_category_strip"
-		position = { x = 340 y = 397 }
-		frame = 5
-	}
-	instantTextBoxType = {
-		name = "title_mercenary"
-		position = {x = 360 y = 403 }
-		font = "vic_18"
-		borderSize = {x = 0 y = 0}
-		maxWidth = 160
-		maxHeight = 18
-		text = "MERCENARIES"
-	}
-	checkboxType = {
-		name = "build_mercenary_infantry_building"
-		position = { x = 335 y = 426 }
-		quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
-	}
-	instantTextBoxType = {
-		name = "a_mercenary_infantry_building_cost"
-		position = {x = 335 y = 476 }
-		font = "vic_18"
-		borderSize = {x = 0 y = 0}
-		maxWidth = 128
-		maxHeight = 18
-		text = ""
-	}
-	checkboxType = {
-		name = "build_mercenary_cavalry_building"
-		position = { x = 385 y = 426 }
-		quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
-	}
-	instantTextBoxType = {
-		name = "a_mercenary_cavalry_building_cost"
-		position = {x = 385 y = 476 }
-		font = "vic_18"
-		borderSize = {x = 0 y = 0}
-		maxWidth = 128
-		maxHeight = 18
-		text = ""
-	}
+	# iconType = {
+	# 	name = "army_banner_3"
+	# 	position = { x = 300 y = 394 }
+	# 	spriteType = "GFX_banner_left_3"
+	# }
+	# iconType = {
+	# 	name ="mercenary_icon"
+	# 	spriteType = "GFX_macro_buildings_category_strip"
+	# 	position = { x = 340 y = 397 }
+	# 	frame = 5
+	# }
+	# instantTextBoxType = {
+	# 	name = "title_mercenary"
+	# 	position = {x = 360 y = 403 }
+	# 	font = "vic_18"
+	# 	borderSize = {x = 0 y = 0}
+	# 	maxWidth = 160
+	# 	maxHeight = 18
+	# 	text = "MERCENARIES"
+	# }
+	# checkboxType = {
+	# 	name = "build_mercenary_infantry_building"
+	# 	position = { x = 335 y = 426 }
+	# 	quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
+	# }
+	# instantTextBoxType = {
+	# 	name = "a_mercenary_infantry_building_cost"
+	# 	position = {x = 335 y = 476 }
+	# 	font = "vic_18"
+	# 	borderSize = {x = 0 y = 0}
+	# 	maxWidth = 128
+	# 	maxHeight = 18
+	# 	text = ""
+	# }
+	# checkboxType = {
+	# 	name = "build_mercenary_cavalry_building"
+	# 	position = { x = 385 y = 426 }
+	# 	quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
+	# }
+	# instantTextBoxType = {
+	# 	name = "a_mercenary_cavalry_building_cost"
+	# 	position = {x = 385 y = 476 }
+	# 	font = "vic_18"
+	# 	borderSize = {x = 0 y = 0}
+	# 	maxWidth = 128
+	# 	maxHeight = 18
+	# 	text = ""
+	# }
 
 	##############################################################
 	######### Port Upgrades
@@ -1427,7 +1427,7 @@ guiTypes = {
 		borderSize = {x = 0 y = 0}
 		maxWidth = 200
 		maxHeight = 18
-		text = "MAGE TOWER"
+		text = "Mage Tower"
 	}
 	checkboxType = {
 		name = "build_mage_tower"
@@ -5026,7 +5026,7 @@ guiTypes = {
 		windowType = {
 			name = "institutions_window"
 			backGround=""
-			position = { x=480 y=67 }
+			position = { x=480 y=187 }
 			size = { x=475 y=540 }
 			dontRender = ""
 			horizontalBorder= ""
