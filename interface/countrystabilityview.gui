@@ -155,7 +155,7 @@ guiTypes = {
 			name = "stability_value"
 			position = { x = 89 y = 230 }
 			textureFile = ""
-			font = "vic_18"
+			font = "Stellaris_Small"
 			borderSize = {x = 4 y = 4}
 			text = "+3"
 			maxWidth = 22
