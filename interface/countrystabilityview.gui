@@ -479,7 +479,7 @@ guiTypes = {
 			font = "vic_18"
 			borderSize = {x = 4 y = 4}
 			text = "GOVERNING_CAPACITY"
-			maxWidth = 130
+			maxWidth = 150
 			maxHeight = 32
 			format = left
 		}
@@ -519,7 +519,7 @@ guiTypes = {
 			font = "vic_18"
 			borderSize = {x = 4 y = 4}
 			text = "STATES_AND_TERRITORIES"
-			maxWidth = 128
+			maxWidth = 150
 			maxHeight = 32
 			format = left
 		}
