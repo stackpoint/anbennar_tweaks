@@ -2952,7 +2952,7 @@ entwicklung0 =
 	#development4
 	entwicklung4 =
 	{
-		local_governing_cost = -0.1
+		state_governing_cost = -0.1
 	}
 
 	#development5
