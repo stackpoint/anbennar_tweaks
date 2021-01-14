@@ -2917,96 +2917,136 @@ justiz0 = {
 }
 
 ########################################################
-####### Development / Entwicklung
+####### Development
 ########################################################
 
-
-entwicklung0 = {
+#development0
+entwicklung0 =
+{
 	category = ADM
 
-	bonus = {
+	bonus =
+	{
 		development_cost = -0.1
 	}
-		
-	
-	entwicklung1 = {
-		development_cost = -0.05
-		# <<WIKI>> decision = improve_development
-		
-	}
-	entwicklung2 = {
-		production_efficiency = 0.05
-	}
-	entwicklung3 = {
-		global_tax_modifier = 0.05
+
+	#development1
+	entwicklung1 =
+	{
+		#add tooltip to see how often it fires
+		## <<WIKI>> decision = improve_development
 	}
 
-	entwicklung4 = {
-		trade_efficiency = 0.05
+	#development2
+	entwicklung2 =
+	{
+		production_efficiency = 0.1
 	}
 
-	entwicklung5 = {
-		global_autonomy = -0.05
+	#development3
+	entwicklung3 =
+	{
+		global_tax_modifier = 0.1
 	}
-	entwicklung6 = {
+
+	#development4
+	entwicklung4 =
+	{
+		statewide_governing_cost = -0.1
+	}
+
+	#development5
+	entwicklung5 =
+	{
+		global_autonomy = -0.1
+	}
+
+	#development6
+	entwicklung6 =
+	{
 		build_cost = -0.1
-		# <<WIKI>> build_cost_in_subject_nation = -0.25
+		build_time = -0.1
 	}
-	entwicklung7 = {
-		inflation_reduction = 0.05
+
+	#development7
+	entwicklung7 =
+	{
+		state_maintenance_modifier = -0.1
 	}
-	
-	ai_will_do = {
-		factor = 8
-		modifier = {
-			factor = 4
-				OR = {
-				is_march = yes
-				is_colonial_nation = yes
+
+	ai_will_do =
+	{
+		factor = 10
+		modifier =
+		{
+			factor = 0
+			NOT =
+			{
+				adm_tech = 5
 			}
 		}
-		modifier = {
-			factor = 2
-			personality = ai_capitalist 
+
+		modifier =
+		{
+			factor = 4
+				OR =
+				{
+					is_march = yes
+					is_colonial_nation = yes
+				}
 		}
-		modifier = {
+
+		modifier =
+		{
+			factor = 4
+			personality = ai_capitalist
+		}
+
+		modifier =
+		{
 			factor = 1.5
 			total_development = 20
 		}
-		modifier = {
+
+		modifier =
+		{
 			factor = 1.2
 			total_development = 50
 		}
-		modifier = {
+
+		modifier =
+		{
 			factor = 1.2
 			total_development = 100
 		}
-		modifier = {
+
+		modifier =
+		{
 			factor = 1.2
 			total_development = 150
 		}
-		modifier = {
+
+		modifier =
+		{
 			factor = 2
 			inflation = 5
 		}
-		modifier = {
+
+		modifier =
+		{
 			factor = 1.5
-			gold = 1
+				gold = 1
 		}
-		modifier = {
-			factor = 1.5
-			government_rank = 0 
-		}
-		modifier = {
-			factor = 1.5
-			government_rank = 1  
-		}
-		modifier = {
-			factor = 0.5
+
+		modifier =
+		{
+			factor = 2
 			government_rank = 2
 		}
-		modifier = {
-			factor = 0.5
+
+		modifier =
+		{
+			factor = 2
 			government_rank = 3
 		}
 	}
