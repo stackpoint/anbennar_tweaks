@@ -3035,7 +3035,7 @@ entwicklung0 =
 		modifier =
 		{
 			factor = 1.5
-				gold = 1
+			gold = 1
 		}
 
 		modifier =

@@ -1115,6 +1115,7 @@ weapons = {
 	manufactory = {
 		copper
 		iron
+		mithril
 	}
 	onmap = yes
 	show_separate = yes
@@ -1230,6 +1231,8 @@ tradecompany = {
 		spices
 		fur
 		incense
+		precursor_relics
+		damestear
 	}
 	onmap = yes
 	show_separate = yes
@@ -1310,6 +1313,7 @@ farm_estate = {
 		grain
 		livestock
 		wine
+		fungi
 	}
 
 	modifier = {

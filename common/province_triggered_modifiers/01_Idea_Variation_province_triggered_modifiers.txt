@@ -15,21 +15,22 @@
 # IV Idea Province Modifiers
 ###########################################
 
-iv_idea_1 = {
-	potential = {
-		has_idea = zentra3
-	}
+# iv_idea_1 = {
+	# potential = {
+		# has_idea = zentra3
+	# }
 
-	trigger = {
-		development = 25
-		owner = {
-			has_idea = zentra3
-		}
-	}
+	# trigger = {
+		# development = 25
+		# owner = {
+			# has_idea = zentra3
+		# }
+	# }
 
-	local_development_cost = -0.20
+	# local_development_cost = -0.20
 	
-}
+# }
+# Temporarily disabled because its being applied twice? uncertain why
 
 
 ###########################################
