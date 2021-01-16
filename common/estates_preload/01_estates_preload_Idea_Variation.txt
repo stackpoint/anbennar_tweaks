@@ -1,0 +1,47 @@
+###################################################################
+###################################################################
+####### Idea Variation Estate Preload by flogi
+###################################################################
+###################################################################
+
+###################################################################
+####### Janissaries
+###################################################################
+
+estate_janissary = {
+	modifier_definition = {
+		type = loyalty
+		key = janissary_loyalty_modifier
+		trigger = {
+			has_estate = estate_janissary
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = janissary_influence_modifier
+		trigger = {
+			has_estate = estate_janissary
+		}
+	}
+}
+
+###################################################################
+####### Nationalists
+###################################################################
+
+estate_nationalist = {
+	modifier_definition = {
+		type = loyalty
+		key = nationalist_loyalty_modifier
+		trigger = {
+			has_estate = estate_nationalist
+		}
+	}
+	modifier_definition = {
+		type = influence
+		key = nationalist_influence_modifier
+		trigger = {
+			has_estate = estate_nationalist
+		}
+	}
+}

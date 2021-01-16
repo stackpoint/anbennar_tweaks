@@ -1,0 +1,9116 @@
+###################################################################
+####### Idea Variation Estate Privileges and Laws by flogi
+###################################################################
+
+###################################################################
+###################################################################
+####### Clergy / Klerus Start
+###################################################################
+###################################################################
+
+###################################################################
+####### Adm Power
+###################################################################
+
+estate_priv_idea_variation_1_1 = {
+	icon = privilege_seek_support_of_clergy
+	influence = 0.20
+	loyalty = -0.1
+	
+	is_valid = {
+		estate_territory = {
+		estate = estate_church
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_church
+		territory = 15
+		}
+	}
+	benefits = {
+		country_admin_power = 1
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_church
+					influence = 80
+			}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 1 (Theologian)
+###################################################################
+
+estate_priv_idea_variation_1_2 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = theologian
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = theologian
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}				
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_1_2
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_church
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 2 (Inquisitor)
+###################################################################
+
+estate_priv_idea_variation_1_3 = {
+	icon = privilege_recruit_inouisitor
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = inquisitor
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = inquisitor
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}			
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_1_3
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_church
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Influence (Estate)
+###################################################################
+
+estate_priv_idea_variation_1_4 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+	loyalty = 0.1
+	is_valid = {
+		has_iv_gov_estate_2 = yes
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_church
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Power
+###################################################################
+
+estate_priv_idea_variation_1_5 = {
+	icon = privilege_empty_throne
+	influence = 0.2
+
+
+	penalties = {
+		nobles_influence_modifier = -0.05
+		burghers_influence_modifier = -0.05
+		nationalist_influence_modifier = -0.05
+		janissary_influence_modifier = -0.05
+		cossacks_influence_modifier = -0.05
+		dhimmi_influence_modifier = -0.05
+		brahmins_hindu_influence_modifier = -0.05
+		brahmins_muslim_influence_modifier = -0.05
+		brahmins_other_influence_modifier = -0.05
+		maratha_influence_modifier = -0.05
+		vaisyas_influence_modifier = -0.05
+		jains_influence_modifier = -0.05
+		rajput_influence_modifier = -0.05
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_church
+					influence = 75
+				}
+		}
+	}
+}
+
+
+###################################################################
+####### Tax the Land
+###################################################################
+
+estate_priv_idea_variation_1_6 = {
+	icon = privilege_give_money
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_church
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_church
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_tax_modifier = 1.0
+	}
+	
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_church
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_church
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_church
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_church
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_church
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_church
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_church
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_church
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_church
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_church
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_church
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_church
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Conscript from their lands
+###################################################################
+
+estate_priv_idea_variation_1_7 = {
+	icon = privilege_demand_more_troops
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_church
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_church
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		manpower_in_true_faith_provinces = 1.0
+		global_sailors_modifier = 0.5
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_church
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_church
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_church
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_church
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_church
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_church
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_church
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_church
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_church
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_church
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_church
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_church
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Support Reforms
+###################################################################
+
+estate_priv_idea_variation_1_8 = {
+	icon = IV_privileges_icon_1
+	influence = 0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_influence = {
+		estate = estate_church
+		influence = 20
+		}
+	}
+	can_select = {
+		estate_influence = {
+		estate = estate_church
+		influence = 50
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		reform_progress_growth = 0.5
+		institution_spread_from_true_faith = 0.5
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_church
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_church
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_church
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_church
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_church
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_church
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_church
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_church
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_church
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_church
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_church
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_church
+			territory = 30
+			}
+		}
+	}
+}
+
+###################################################################
+####### New World Rights
+###################################################################
+
+estate_priv_idea_variation_1_9 = {
+	icon = privilege_grant_new_world_charter
+	influence = 0.05
+
+	can_select = {
+		has_colonist = yes
+	}
+		
+	penalties = {
+		native_uprising_chance = 0.33
+	}
+	benefits = {
+		native_assimilation = 1.0
+	}
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_church
+					influence = 75
+				}
+		}
+	}
+}
+
+###################################################################
+####### Diplomatic Mission to the Pope
+###################################################################
+
+estate_priv_idea_variation_1_10 = {
+	icon = privilege_send_emissary_to_pope
+	influence = 0.05
+
+	is_valid = {
+		religion = catholic
+		NOT = { tag = PAP }
+	}
+	benefits = {
+		papal_influence = 1
+	}
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+			OR = {
+				estate_influence = {
+					estate = estate_church
+					influence = 75
+				}
+			}
+		}
+	}
+}
+
+###################################################################
+####### Recruit Conquistador
+###################################################################
+
+estate_priv_idea_variation_1_11 = {
+	icon = IV_privileges_icon_2
+	
+	can_select = {
+		estate_influence = {
+		estate = estate_church
+		influence = 20
+		}
+	}
+		
+	on_granted = {
+		
+			if = {
+				limit = { 
+					army_tradition = 100
+				}
+				create_conquistador = { tradition = 100 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 90
+					NOT = { army_tradition = 100 }
+				}
+				create_conquistador = { tradition = 90 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 80
+					NOT = { army_tradition = 90 }
+				}
+				create_conquistador = { tradition = 80 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 70
+					NOT = { army_tradition = 80 }
+				}
+				create_conquistador = { tradition = 70 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 60
+					NOT = { army_tradition = 70 }
+				}
+				create_conquistador = { tradition = 60 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 50
+					NOT = { army_tradition = 60 }
+				}
+				create_conquistador = { tradition = 50 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 0
+					NOT = { army_tradition = 50 }
+				}
+				create_conquistador = { tradition = 40 }
+			}
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.01
+		burghers_loyalty_modifier = -0.01
+		nationalist_loyalty_modifier = -0.01
+		janissary_loyalty_modifier = -0.01
+		cossacks_loyalty_modifier = -0.01
+		dhimmi_loyalty_modifier = -0.01
+		brahmins_hindu_loyalty_modifier = -0.01
+		brahmins_muslim_loyalty_modifier = -0.01 
+		brahmins_other_loyalty_modifier = -0.01
+		maratha_loyalty_modifier = -0.01
+		vaisyas_loyalty_modifier = -0.01
+		jains_loyalty_modifier = -0.01
+		rajput_loyalty_modifier = -0.01
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_1_11
+	}
+	
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+
+###################################################################
+####### Church Province Administration
+###################################################################
+
+estate_priv_idea_variation_1_12 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+
+	is_valid = {
+		estate_territory = {
+		estate = estate_church
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_church
+		territory = 15
+		}
+	}
+	penalties = {
+		state_maintenance_modifier = 0.1
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+	
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_church
+					influence = 90
+				}
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_territories = 1 }
+		}
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+	}
+}
+
+###################################################################
+###################################################################
+####### Clergy / Klerus Start End
+###################################################################
+###################################################################
+
+###################################################################
+###################################################################
+####### Nobility / Adel Start
+###################################################################
+###################################################################
+
+###################################################################
+####### Mil Power
+###################################################################
+
+estate_priv_idea_variation_2_1 = {
+	icon = privilege_military_power
+	influence = 0.20
+	loyalty = -0.1
+	
+	is_valid = {
+		estate_territory = {
+		estate = estate_nobles
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_nobles
+		territory = 15
+		}
+	}
+	benefits = {
+		country_military_power = 1
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_nobles
+					influence = 80
+			}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 1 (Diplomat)
+###################################################################
+
+estate_priv_idea_variation_2_2 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = diplomat
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = diplomat
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}				
+	}
+	
+	penalties = {
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_2_2
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_nobles
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 2 (Shock Damage)
+###################################################################
+
+estate_priv_idea_variation_2_3 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = idea_var_advisor_15
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = idea_var_advisor_15
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}			
+	}
+	
+	penalties = {
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_2_3
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_nobles
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Influence (Estate)
+###################################################################
+
+estate_priv_idea_variation_2_4 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+	loyalty = 0.1
+	is_valid = {
+		has_iv_gov_estate_1 = yes
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_nobles
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Power
+###################################################################
+
+estate_priv_idea_variation_2_5 = {
+	icon = privilege_empty_throne
+	influence = 0.2
+
+
+	penalties = {
+		church_influence_modifier = -0.05
+		burghers_influence_modifier = -0.05
+		nationalist_influence_modifier = -0.05
+		janissary_influence_modifier = -0.05
+		cossacks_influence_modifier = -0.05
+		dhimmi_influence_modifier = -0.05
+		brahmins_hindu_influence_modifier = -0.05
+		brahmins_muslim_influence_modifier = -0.05
+		brahmins_other_influence_modifier = -0.05
+		maratha_influence_modifier = -0.05
+		vaisyas_influence_modifier = -0.05
+		jains_influence_modifier = -0.05
+		rajput_influence_modifier = -0.05	
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_nobles
+					influence = 75
+				}
+		}
+	}
+}
+
+
+###################################################################
+####### Tax the Land
+###################################################################
+
+estate_priv_idea_variation_2_6 = {
+	icon = privilege_give_money
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_nobles
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_nobles
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_tax_modifier = 1.0
+	}
+	
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_nobles
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_nobles
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nobles
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_nobles
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nobles
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_nobles
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nobles
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_nobles
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nobles
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_nobles
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nobles
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_nobles
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Conscript from their lands
+###################################################################
+
+estate_priv_idea_variation_2_7 = {
+	icon = privilege_demand_more_troops
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_nobles
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_nobles
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_manpower_modifier = 1.0
+		global_sailors_modifier = 0.5
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_nobles
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_nobles
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nobles
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_nobles
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nobles
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_nobles
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nobles
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_nobles
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nobles
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_nobles
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nobles
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_nobles
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Support Reforms
+###################################################################
+
+estate_priv_idea_variation_2_8 = {
+	icon = IV_privileges_icon_1
+	influence = 0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_influence = {
+		estate = estate_nobles
+		influence = 20
+		}
+	}
+	can_select = {
+		estate_influence = {
+		estate = estate_nobles
+		influence = 50
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		reform_progress_growth = 0.5
+		global_institution_spread = 0.25
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_nobles
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_nobles
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nobles
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_nobles
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nobles
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_nobles
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nobles
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_nobles
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nobles
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_nobles
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nobles
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_nobles
+			territory = 30
+			}
+		}
+	}
+}
+
+###################################################################
+####### New World Rights
+###################################################################
+
+estate_priv_idea_variation_2_9 = {
+	icon = privilege_grant_new_world_charter
+	influence = 0.15
+
+	can_select = {
+	}
+		
+	penalties = {
+		native_uprising_chance = 0.33
+	}
+	benefits = {
+		colonists = 1
+	}
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_nobles
+					influence = 75
+				}
+		}
+	}
+}
+
+###################################################################
+####### Recruit General
+###################################################################
+
+estate_priv_idea_variation_2_11 = {
+	icon = IV_privileges_icon_6
+	
+	can_select = {
+		estate_influence = {
+		estate = estate_nobles
+		influence = 20
+		}
+	}
+		
+	on_granted = {
+		
+			if = {
+				limit = { 
+					army_tradition = 100
+				}
+				create_general = { tradition = 100 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 90
+					NOT = { army_tradition = 100 }
+				}
+				create_general = { tradition = 90 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 80
+					NOT = { army_tradition = 90 }
+				}
+				create_general = { tradition = 80 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 70
+					NOT = { army_tradition = 80 }
+				}
+				create_general = { tradition = 70 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 60
+					NOT = { army_tradition = 70 }
+				}
+				create_general = { tradition = 60 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 50
+					NOT = { army_tradition = 60 }
+				}
+				create_general = { tradition = 50 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 0
+					NOT = { army_tradition = 50 }
+				}
+				create_general = { tradition = 40 }
+			}
+	}
+	
+	penalties = {
+		church_loyalty_modifier = -0.01
+		burghers_loyalty_modifier = -0.01
+		nationalist_loyalty_modifier = -0.01
+		janissary_loyalty_modifier = -0.01
+		cossacks_loyalty_modifier = -0.01
+		dhimmi_loyalty_modifier = -0.01
+		brahmins_hindu_loyalty_modifier = -0.01
+		brahmins_muslim_loyalty_modifier = -0.01 
+		brahmins_other_loyalty_modifier = -0.01
+		maratha_loyalty_modifier = -0.01
+		vaisyas_loyalty_modifier = -0.01
+		jains_loyalty_modifier = -0.01
+		rajput_loyalty_modifier = -0.01
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_2_11
+	}
+	
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+
+###################################################################
+####### Nobles Province Administration
+###################################################################
+
+estate_priv_idea_variation_2_12 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+
+	is_valid = {
+		estate_territory = {
+		estate = estate_nobles
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_nobles
+		territory = 15
+		}
+	}
+	penalties = {
+		state_maintenance_modifier = 0.1
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+	
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_nobles
+					influence = 90
+				}
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_territories = 1 }
+		}
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+	}
+}
+
+###################################################################
+###################################################################
+####### Nobility / Adel End
+###################################################################
+###################################################################
+
+###################################################################
+###################################################################
+####### Burghers / Bürger Start
+###################################################################
+###################################################################
+
+###################################################################
+####### Dip Power
+###################################################################
+
+estate_priv_idea_variation_4_1 = {
+	icon = privilege_diplo_power
+	influence = 0.20
+	loyalty = -0.1
+	
+	is_valid = {
+		estate_territory = {
+		estate = estate_burghers
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_burghers
+		territory = 15
+		}
+	}
+	benefits = {
+		country_diplomatic_power = 1
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_burghers
+					influence = 80
+			}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 1 (Master of Mint)
+###################################################################
+
+estate_priv_idea_variation_4_2 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = master_of_mint
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = master_of_mint
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}				
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025	
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_4_2
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_burghers
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 2 (Naval Reformer)
+###################################################################
+
+estate_priv_idea_variation_4_3 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = naval_reformer
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = naval_reformer
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}			
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025	
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_4_3
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_burghers
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Influence (Estate)
+###################################################################
+
+estate_priv_idea_variation_4_4 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+	loyalty = 0.1
+	is_valid = {
+		has_iv_gov_estate_3 = yes
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_burghers
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Power
+###################################################################
+
+estate_priv_idea_variation_4_5 = {
+	icon = privilege_empty_throne
+	influence = 0.2
+
+
+	penalties = {
+		nobles_influence_modifier = -0.05
+		church_influence_modifier = -0.05
+		nationalist_influence_modifier = -0.05
+		janissary_influence_modifier = -0.05
+		cossacks_influence_modifier = -0.05
+		dhimmi_influence_modifier = -0.05
+		brahmins_hindu_influence_modifier = -0.05
+		brahmins_muslim_influence_modifier = -0.05
+		brahmins_other_influence_modifier = -0.05
+		maratha_influence_modifier = -0.05
+		vaisyas_influence_modifier = -0.05
+		jains_influence_modifier = -0.05
+		rajput_influence_modifier = -0.05
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_burghers
+					influence = 75
+				}
+		}
+	}
+}
+
+
+###################################################################
+####### Tax the Land
+###################################################################
+
+estate_priv_idea_variation_4_6 = {
+	icon = privilege_give_money
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_burghers
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_burghers
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_tax_modifier = 2.0
+	}
+	
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_burghers
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_burghers
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_burghers
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_burghers
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_burghers
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_burghers
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_burghers
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_burghers
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_burghers
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_burghers
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_burghers
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_burghers
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Conscript from their lands
+###################################################################
+
+estate_priv_idea_variation_4_7 = {
+	icon = privilege_demand_more_troops
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_burghers
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_burghers
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_manpower_modifier = 0.5
+		global_sailors_modifier = 1.0
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_burghers
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_burghers
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_burghers
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_burghers
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_burghers
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_burghers
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_burghers
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_burghers
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_burghers
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_burghers
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_burghers
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_burghers
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Support Reforms
+###################################################################
+
+estate_priv_idea_variation_4_8 = {
+	icon = IV_privileges_icon_1
+	influence = 0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_influence = {
+		estate = estate_burghers
+		influence = 20
+		}
+	}
+	can_select = {
+		estate_influence = {
+		estate = estate_burghers
+		influence = 50
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		reform_progress_growth = 0.5
+		global_institution_spread = 0.25
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_burghers
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_burghers
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_burghers
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_burghers
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_burghers
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_burghers
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_burghers
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_burghers
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_burghers
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_burghers
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_burghers
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_burghers
+			territory = 30
+			}
+		}
+	}
+}
+
+###################################################################
+####### New World Rights
+###################################################################
+
+estate_priv_idea_variation_4_9 = {
+	icon = privilege_grant_new_world_charter
+	influence = 0.15
+
+	benefits = {
+		global_colonial_growth = 10
+	}
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_burghers
+					influence = 75
+				}
+		}
+	}
+}
+
+###################################################################
+####### Recruit Admiral
+###################################################################
+
+estate_priv_idea_variation_4_10 = {
+	icon = privilege_admiral
+	
+	can_select = {
+		estate_influence = {
+		estate = estate_burghers
+		influence = 20
+		}
+	}
+		
+	on_granted = {
+		
+			if = {
+				limit = { 
+					army_tradition = 100
+				}
+				create_admiral = { tradition = 100 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 90
+					NOT = { army_tradition = 100 }
+				}
+				create_admiral = { tradition = 90 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 80
+					NOT = { army_tradition = 90 }
+				}
+				create_admiral = { tradition = 80 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 70
+					NOT = { army_tradition = 80 }
+				}
+				create_admiral = { tradition = 70 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 60
+					NOT = { army_tradition = 70 }
+				}
+				create_admiral = { tradition = 60 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 50
+					NOT = { army_tradition = 60 }
+				}
+				create_admiral = { tradition = 50 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 0
+					NOT = { army_tradition = 50 }
+				}
+				create_admiral = { tradition = 40 }
+			}
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.01
+		church_loyalty_modifier = -0.01
+		nationalist_loyalty_modifier = -0.01
+		janissary_loyalty_modifier = -0.01
+		cossacks_loyalty_modifier = -0.01
+		dhimmi_loyalty_modifier = -0.01
+		brahmins_hindu_loyalty_modifier = -0.01
+		brahmins_muslim_loyalty_modifier = -0.01 
+		brahmins_other_loyalty_modifier = -0.01
+		maratha_loyalty_modifier = -0.01
+		vaisyas_loyalty_modifier = -0.01
+		jains_loyalty_modifier = -0.01
+		rajput_loyalty_modifier = -0.01
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_4_10
+	}
+	
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+###################################################################
+####### Recruit Explorer
+###################################################################
+
+estate_priv_idea_variation_4_11 = {
+	icon = IV_privileges_icon_2
+	
+	can_select = {
+		estate_influence = {
+		estate = estate_burghers
+		influence = 20
+		}
+	}
+		
+	on_granted = {
+		
+			if = {
+				limit = { 
+					army_tradition = 100
+				}
+				create_explorer = { tradition = 100 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 90
+					NOT = { army_tradition = 100 }
+				}
+				create_explorer = { tradition = 90 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 80
+					NOT = { army_tradition = 90 }
+				}
+				create_explorer = { tradition = 80 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 70
+					NOT = { army_tradition = 80 }
+				}
+				create_explorer = { tradition = 70 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 60
+					NOT = { army_tradition = 70 }
+				}
+				create_explorer = { tradition = 60 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 50
+					NOT = { army_tradition = 60 }
+				}
+				create_explorer = { tradition = 50 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 0
+					NOT = { army_tradition = 50 }
+				}
+				create_explorer = { tradition = 40 }
+			}
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.01
+		church_loyalty_modifier = -0.01
+		nationalist_loyalty_modifier = -0.01
+		janissary_loyalty_modifier = -0.01
+		cossacks_loyalty_modifier = -0.01
+		dhimmi_loyalty_modifier = -0.01
+		brahmins_hindu_loyalty_modifier = -0.01
+		brahmins_muslim_loyalty_modifier = -0.01 
+		brahmins_other_loyalty_modifier = -0.01
+		maratha_loyalty_modifier = -0.01
+		vaisyas_loyalty_modifier = -0.01
+		jains_loyalty_modifier = -0.01
+		rajput_loyalty_modifier = -0.01
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_4_11
+	}
+	
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+
+###################################################################
+####### Province Administration
+###################################################################
+
+estate_priv_idea_variation_4_12 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+
+	is_valid = {
+		estate_territory = {
+		estate = estate_burghers
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_burghers
+		territory = 15
+		}
+	}
+	penalties = {
+		state_maintenance_modifier = 0.1
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+	
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_burghers
+					influence = 90
+				}
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_territories = 1 }
+		}
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+	}
+}
+
+
+###################################################################
+####### Conscript Work Force
+###################################################################
+
+estate_priv_idea_variation_4_13 = {
+	icon = IV_privileges_icon_3
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_burghers
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_burghers
+		territory = 10
+		}
+	}
+	penalties = {
+		
+	}
+	benefits = {
+		development_cost = -0.1
+	}
+	
+	ai_will_do = {
+		factor = 0	
+	}
+}
+
+###################################################################
+####### Draft Heavy Ships
+###################################################################
+
+estate_priv_idea_variation_4_14 = {
+	icon = IV_privileges_icon_4
+	influence = -0.2
+	loyalty = -0.2
+	
+	is_valid = {
+		num_of_ports = 1
+	}
+	
+	can_select = {
+		num_of_ports = 10
+		estate_influence = {
+		estate = estate_burghers
+		influence = 20
+		}
+	}
+
+		
+	on_granted = {
+		custom_tooltip = estate_draft_heavies
+		hidden_effect = {
+		ships_scaled_to_fl_heavy = yes	
+		}
+		add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = -10
+			}	
+	}
+	
+	cooldown_years = 15
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_4_14
+	}
+	
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+###################################################################
+####### Draft Galleys
+###################################################################
+
+estate_priv_idea_variation_4_15 = {
+	icon = IV_privileges_icon_5
+	influence = -0.2
+	loyalty = -0.2
+	
+	is_valid = {
+		num_of_ports = 1
+	}
+	
+	can_select = {
+		num_of_ports = 10
+		estate_influence = {
+		estate = estate_burghers
+		influence = 20
+		}
+	}
+		
+	on_granted = {
+		custom_tooltip = estate_draft_galleys
+		hidden_effect = {
+		ships_scaled_to_fl_galley = yes	
+		}
+		add_estate_loyalty = {
+				estate = estate_burghers
+				loyalty = -10
+			}
+	}
+	
+	cooldown_years = 15
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_4_15
+	}
+	
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+###################################################################
+###################################################################
+####### Burghers / Bürger End
+###################################################################
+###################################################################
+
+
+###################################################################
+###################################################################
+####### Maratha Start
+###################################################################
+###################################################################
+
+###################################################################
+####### Mil Power
+###################################################################
+
+estate_priv_idea_variation_3_1 = {
+	icon = privilege_military_power
+	influence = 0.20
+	loyalty = -0.1
+	
+	is_valid = {
+		estate_territory = {
+		estate = estate_maratha
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_maratha
+		territory = 15
+		}
+	}
+	benefits = {
+		country_military_power = 1
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_maratha
+					influence = 80
+			}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 1 (Commandant)
+###################################################################
+
+estate_priv_idea_variation_3_2 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = commandant
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = commandant
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}				
+	}
+	
+	penalties = {
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_3_2
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_maratha
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 2 (Siege Expert)
+###################################################################
+
+estate_priv_idea_variation_3_3 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = idea_var_advisor_11
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = idea_var_advisor_11
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}			
+	}
+	
+	penalties = {
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_3_3
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_maratha
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Influence (Estate)
+###################################################################
+
+estate_priv_idea_variation_3_4 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+	loyalty = 0.1
+	is_valid = {
+		has_iv_gov_estate_9 = yes
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_maratha
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Power
+###################################################################
+
+estate_priv_idea_variation_3_5 = {
+	icon = privilege_empty_throne
+	influence = 0.2
+
+
+	penalties = {
+		church_influence_modifier = -0.05
+		burghers_influence_modifier = -0.05
+		nationalist_influence_modifier = -0.05
+		janissary_influence_modifier = -0.05
+		cossacks_influence_modifier = -0.05
+		dhimmi_influence_modifier = -0.05
+		brahmins_hindu_influence_modifier = -0.05
+		brahmins_muslim_influence_modifier = -0.05
+		brahmins_other_influence_modifier = -0.05
+		vaisyas_influence_modifier = -0.05
+		jains_influence_modifier = -0.05
+		rajput_influence_modifier = -0.05	
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_maratha
+					influence = 75
+				}
+		}
+	}
+}
+
+
+###################################################################
+####### Tax the Land
+###################################################################
+
+estate_priv_idea_variation_3_6 = {
+	icon = privilege_give_money
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_maratha
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_maratha
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_tax_modifier = 1.0
+	}
+	
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_maratha
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_maratha
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_maratha
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_maratha
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_maratha
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_maratha
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_maratha
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_maratha
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_maratha
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_maratha
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_maratha
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_maratha
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Conscript from their lands
+###################################################################
+
+estate_priv_idea_variation_3_7 = {
+	icon = privilege_demand_more_troops
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_maratha
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_maratha
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_manpower_modifier = 1.0
+		global_sailors_modifier = 0.5
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_maratha
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_maratha
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_maratha
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_maratha
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_maratha
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_maratha
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_maratha
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_maratha
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_maratha
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_maratha
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_maratha
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_maratha
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Support Reforms
+###################################################################
+
+estate_priv_idea_variation_3_8 = {
+	icon = IV_privileges_icon_1
+	influence = 0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_influence = {
+		estate = estate_maratha
+		influence = 20
+		}
+	}
+	can_select = {
+		estate_influence = {
+		estate = estate_maratha
+		influence = 50
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		reform_progress_growth = 0.5
+		global_institution_spread = 0.25
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_maratha
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_maratha
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_maratha
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_maratha
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_maratha
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_maratha
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_maratha
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_maratha
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_maratha
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_maratha
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_maratha
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_maratha
+			territory = 30
+			}
+		}
+	}
+}
+
+###################################################################
+####### New World Rights
+###################################################################
+
+estate_priv_idea_variation_3_9 = {
+	icon = privilege_grant_new_world_charter
+	influence = 0.15
+
+	penalties = {
+		native_uprising_chance = 0.33
+	}
+	benefits = {
+		colonists = 1
+	}
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_maratha
+					influence = 75
+				}
+		}
+	}
+}
+
+###################################################################
+####### Recruit General
+###################################################################
+
+estate_priv_idea_variation_3_11 = {
+	icon = IV_privileges_icon_2
+	
+	can_select = {
+		estate_influence = {
+		estate = estate_maratha
+		influence = 20
+		}
+	}
+		
+	on_granted = {
+		
+			if = {
+				limit = { 
+					army_tradition = 100
+				}
+				create_general = { tradition = 100 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 90
+					NOT = { army_tradition = 100 }
+				}
+				create_general = { tradition = 90 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 80
+					NOT = { army_tradition = 90 }
+				}
+				create_general = { tradition = 80 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 70
+					NOT = { army_tradition = 80 }
+				}
+				create_general = { tradition = 70 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 60
+					NOT = { army_tradition = 70 }
+				}
+				create_general = { tradition = 60 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 50
+					NOT = { army_tradition = 60 }
+				}
+				create_general = { tradition = 50 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 0
+					NOT = { army_tradition = 50 }
+				}
+				create_general = { tradition = 40 }
+			}
+	}
+	
+	penalties = {
+		church_loyalty_modifier = -0.01
+		burghers_loyalty_modifier = -0.01
+		nationalist_loyalty_modifier = -0.01
+		janissary_loyalty_modifier = -0.01
+		cossacks_loyalty_modifier = -0.01
+		dhimmi_loyalty_modifier = -0.01
+		brahmins_hindu_loyalty_modifier = -0.01
+		brahmins_muslim_loyalty_modifier = -0.01 
+		brahmins_other_loyalty_modifier = -0.01
+		vaisyas_loyalty_modifier = -0.01
+		jains_loyalty_modifier = -0.01
+		rajput_loyalty_modifier = -0.01
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_3_11
+	}
+	
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+
+###################################################################
+####### Province Administration
+###################################################################
+
+estate_priv_idea_variation_3_12 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+
+	is_valid = {
+		estate_territory = {
+		estate = estate_maratha
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_maratha
+		territory = 15
+		}
+	}
+	penalties = {
+		state_maintenance_modifier = 0.1
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+	
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_maratha
+					influence = 90
+				}
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_territories = 1 }
+		}
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+	}
+}
+
+###################################################################
+###################################################################
+####### Maratha End
+###################################################################
+###################################################################
+
+###################################################################
+###################################################################
+####### Vaisyas Start
+###################################################################
+###################################################################
+
+###################################################################
+####### Dip Power
+###################################################################
+
+estate_priv_idea_variation_5_1 = {
+	icon = privilege_diplo_power
+	influence = 0.20
+	loyalty = -0.1
+	
+	is_valid = {
+		estate_territory = {
+		estate = estate_vaisyas
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_vaisyas
+		territory = 15
+		}
+	}
+	benefits = {
+		country_diplomatic_power = 1
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_vaisyas
+					influence = 80
+			}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 1 (Master of Mint)
+###################################################################
+
+estate_priv_idea_variation_5_2 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = master_of_mint
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = master_of_mint
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}				
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025		
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_5_2
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_vaisyas
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 2 (Naval Reformer)
+###################################################################
+
+estate_priv_idea_variation_5_3 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = naval_reformer
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = naval_reformer
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}			
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025			
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_5_3
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_vaisyas
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Influence (Estate)
+###################################################################
+
+estate_priv_idea_variation_5_4 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+	loyalty = 0.1
+	is_valid = {
+		has_iv_gov_estate_10 = yes
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_vaisyas
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Power
+###################################################################
+
+estate_priv_idea_variation_5_5 = {
+	icon = privilege_empty_throne
+	influence = 0.2
+
+
+	penalties = {
+		nobles_influence_modifier = -0.05
+		church_influence_modifier = -0.05
+		burghers_influence_modifier = -0.05
+		nationalist_influence_modifier = -0.05
+		janissary_influence_modifier = -0.05
+		cossacks_influence_modifier = -0.05
+		dhimmi_influence_modifier = -0.05
+		brahmins_hindu_influence_modifier = -0.05
+		brahmins_muslim_influence_modifier = -0.05
+		brahmins_other_influence_modifier = -0.05
+		maratha_influence_modifier = -0.05
+		jains_influence_modifier = -0.05
+		rajput_influence_modifier = -0.05	
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_vaisyas
+					influence = 75
+				}
+		}
+	}
+}
+
+
+###################################################################
+####### Tax the Land
+###################################################################
+
+estate_priv_idea_variation_5_6 = {
+	icon = privilege_give_money
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_vaisyas
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_vaisyas
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_tax_modifier = 2.0
+	}
+	
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_vaisyas
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_vaisyas
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_vaisyas
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_vaisyas
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_vaisyas
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Conscript from their lands
+###################################################################
+
+estate_priv_idea_variation_5_7 = {
+	icon = privilege_demand_more_troops
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_vaisyas
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_vaisyas
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_manpower_modifier = 0.5
+		global_sailors_modifier = 1.0
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_vaisyas
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_vaisyas
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_vaisyas
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_vaisyas
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_vaisyas
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Support Reforms
+###################################################################
+
+estate_priv_idea_variation_5_8 = {
+	icon = IV_privileges_icon_1
+	influence = 0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_influence = {
+		estate = estate_vaisyas
+		influence = 20
+		}
+	}
+	can_select = {
+		estate_influence = {
+		estate = estate_vaisyas
+		influence = 50
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		reform_progress_growth = 0.5
+		global_institution_spread = 0.25
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_vaisyas
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_vaisyas
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_vaisyas
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_vaisyas
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_vaisyas
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_vaisyas
+			territory = 30
+			}
+		}
+	}
+}
+
+###################################################################
+####### New World Rights
+###################################################################
+
+estate_priv_idea_variation_5_9 = {
+	icon = privilege_grant_new_world_charter
+	influence = 0.15
+
+	benefits = {
+		global_colonial_growth = 10
+	}
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_vaisyas
+					influence = 75
+				}
+		}
+	}
+}
+
+###################################################################
+####### Recruit Admiral
+###################################################################
+
+estate_priv_idea_variation_5_10 = {
+	icon = privilege_admiral
+	
+	can_select = {
+		estate_influence = {
+		estate = estate_vaisyas
+		influence = 20
+		}
+	}
+		
+	on_granted = {
+		
+			if = {
+				limit = { 
+					army_tradition = 100
+				}
+				create_admiral = { tradition = 100 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 90
+					NOT = { army_tradition = 100 }
+				}
+				create_admiral = { tradition = 90 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 80
+					NOT = { army_tradition = 90 }
+				}
+				create_admiral = { tradition = 80 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 70
+					NOT = { army_tradition = 80 }
+				}
+				create_admiral = { tradition = 70 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 60
+					NOT = { army_tradition = 70 }
+				}
+				create_admiral = { tradition = 60 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 50
+					NOT = { army_tradition = 60 }
+				}
+				create_admiral = { tradition = 50 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 0
+					NOT = { army_tradition = 50 }
+				}
+				create_admiral = { tradition = 40 }
+			}
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.01
+		church_loyalty_modifier = -0.01
+		burghers_loyalty_modifier = -0.01
+		nationalist_loyalty_modifier = -0.01
+		janissary_loyalty_modifier = -0.01
+		cossacks_loyalty_modifier = -0.01
+		dhimmi_loyalty_modifier = -0.01
+		brahmins_hindu_loyalty_modifier = -0.01
+		brahmins_muslim_loyalty_modifier = -0.01 
+		brahmins_other_loyalty_modifier = -0.01
+		maratha_loyalty_modifier = -0.01
+		jains_loyalty_modifier = -0.01
+		rajput_loyalty_modifier = -0.01
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_5_10
+	}
+	
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+###################################################################
+####### Recruit Explorer
+###################################################################
+
+estate_priv_idea_variation_5_11 = {
+	icon = IV_privileges_icon_2
+	
+	can_select = {
+		estate_influence = {
+		estate = estate_vaisyas
+		influence = 20
+		}
+	}
+		
+	on_granted = {
+		
+			if = {
+				limit = { 
+					army_tradition = 100
+				}
+				create_explorer = { tradition = 100 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 90
+					NOT = { army_tradition = 100 }
+				}
+				create_explorer = { tradition = 90 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 80
+					NOT = { army_tradition = 90 }
+				}
+				create_explorer = { tradition = 80 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 70
+					NOT = { army_tradition = 80 }
+				}
+				create_explorer = { tradition = 70 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 60
+					NOT = { army_tradition = 70 }
+				}
+				create_explorer = { tradition = 60 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 50
+					NOT = { army_tradition = 60 }
+				}
+				create_explorer = { tradition = 50 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 0
+					NOT = { army_tradition = 50 }
+				}
+				create_explorer = { tradition = 40 }
+			}
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.01
+		church_loyalty_modifier = -0.01
+		burghers_loyalty_modifier = -0.01
+		nationalist_loyalty_modifier = -0.01
+		janissary_loyalty_modifier = -0.01
+		cossacks_loyalty_modifier = -0.01
+		dhimmi_loyalty_modifier = -0.01
+		brahmins_hindu_loyalty_modifier = -0.01
+		brahmins_muslim_loyalty_modifier = -0.01 
+		brahmins_other_loyalty_modifier = -0.01
+		maratha_loyalty_modifier = -0.01
+		jains_loyalty_modifier = -0.01
+		rajput_loyalty_modifier = -0.01
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_5_11
+	}
+	
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+
+###################################################################
+####### Province Administration
+###################################################################
+
+estate_priv_idea_variation_5_12 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+
+	is_valid = {
+		estate_territory = {
+		estate = estate_vaisyas
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_vaisyas
+		territory = 15
+		}
+	}
+	penalties = {
+		state_maintenance_modifier = 0.1
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+	
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_vaisyas
+					influence = 90
+				}
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_territories = 1 }
+		}
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+	}
+}
+
+
+###################################################################
+####### Conscript Work Force
+###################################################################
+
+estate_priv_idea_variation_5_13 = {
+	icon = IV_privileges_icon_3
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_vaisyas
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_vaisyas
+		territory = 10
+		}
+	}
+	penalties = {
+		
+	}
+	benefits = {
+		development_cost = -0.1
+	}
+	
+	ai_will_do = {
+		factor = 0	
+	}
+}
+
+###################################################################
+####### Draft Heavy Ships
+###################################################################
+
+estate_priv_idea_variation_5_14 = {
+	icon = IV_privileges_icon_4
+	influence = -0.2
+	loyalty = -0.2
+	
+	is_valid = {
+		num_of_ports = 1
+	}
+	
+	can_select = {
+		num_of_ports = 10
+		estate_influence = {
+		estate = estate_vaisyas
+		influence = 20
+		}
+	}
+
+		
+	on_granted = {
+		custom_tooltip = estate_draft_heavies
+		hidden_effect = {
+		ships_scaled_to_fl_heavy = yes	
+		}
+		add_estate_loyalty = {
+				estate = estate_vaisyas
+				loyalty = -10
+			}	
+	}
+	
+	cooldown_years = 15
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_5_14
+	}
+	
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+###################################################################
+####### Draft Galleys
+###################################################################
+
+estate_priv_idea_variation_5_15 = {
+	icon = IV_privileges_icon_5
+	influence = -0.2
+	loyalty = -0.2
+	
+	is_valid = {
+		num_of_ports = 1
+	}
+	
+	can_select = {
+		num_of_ports = 10
+		estate_influence = {
+		estate = estate_vaisyas
+		influence = 20
+		}
+	}
+		
+	on_granted = {
+		custom_tooltip = estate_draft_galleys
+		hidden_effect = {
+		ships_scaled_to_fl_galley = yes	
+		}
+		add_estate_loyalty = {
+				estate = estate_vaisyas
+				loyalty = -10
+			}
+	}
+	
+	cooldown_years = 15
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_5_15
+	}
+	
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+###################################################################
+###################################################################
+####### Vaisyas End
+###################################################################
+###################################################################
+
+###################################################################
+###################################################################
+####### Brahmins Start
+###################################################################
+###################################################################
+
+###################################################################
+####### Adm Power
+###################################################################
+
+estate_priv_idea_variation_6_1 = {
+	icon = privilege_seek_support_of_clergy
+	influence = 0.20
+	loyalty = -0.1
+	
+	is_valid = {
+		estate_territory = {
+		estate = estate_brahmins
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_brahmins
+		territory = 15
+		}
+	}
+	benefits = {
+		country_admin_power = 1
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_brahmins
+					influence = 80
+			}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 1 (Theologian)
+###################################################################
+
+estate_priv_idea_variation_6_2 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = theologian
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = theologian
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}				
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_6_2
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_brahmins
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 2 (Treasurer)
+###################################################################
+
+estate_priv_idea_variation_6_3 = {
+	icon = privilege_recruit_inouisitor
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = treasurer
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = treasurer
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}			
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_6_3
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_brahmins
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Influence (Estate)
+###################################################################
+
+estate_priv_idea_variation_6_4 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+	loyalty = 0.1
+	is_valid = {
+		has_iv_gov_estate_8 = yes
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_brahmins
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Power
+###################################################################
+
+estate_priv_idea_variation_6_5 = {
+	icon = privilege_empty_throne
+	influence = 0.2
+
+
+	penalties = {
+		nobles_influence_modifier = -0.05
+		church_influence_modifier = -0.05
+		burghers_influence_modifier = -0.05
+		nationalist_influence_modifier = -0.05
+		janissary_influence_modifier = -0.05
+		cossacks_influence_modifier = -0.05
+		dhimmi_influence_modifier = -0.05
+		maratha_influence_modifier = -0.05
+		vaisyas_influence_modifier = -0.05
+		jains_influence_modifier = -0.05
+		rajput_influence_modifier = -0.05	
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_brahmins
+					influence = 75
+				}
+		}
+	}
+}
+
+
+###################################################################
+####### Tax the Land
+###################################################################
+
+estate_priv_idea_variation_6_6 = {
+	icon = privilege_give_money
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_brahmins
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_brahmins
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_tax_modifier = 1.0
+	}
+	
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_brahmins
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_brahmins
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_brahmins
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_brahmins
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_brahmins
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Conscript from their lands
+###################################################################
+
+estate_priv_idea_variation_6_7 = {
+	icon = privilege_demand_more_troops
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_brahmins
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_brahmins
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		manpower_in_true_faith_provinces = 1.0
+		global_sailors_modifier = 0.5
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_brahmins
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_brahmins
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_brahmins
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_brahmins
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_brahmins
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Support Reforms
+###################################################################
+
+estate_priv_idea_variation_6_8 = {
+	icon = IV_privileges_icon_1
+	influence = 0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_influence = {
+		estate = estate_brahmins
+		influence = 20
+		}
+	}
+	can_select = {
+		estate_influence = {
+		estate = estate_brahmins
+		influence = 50
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		reform_progress_growth = 0.5
+		institution_spread_from_true_faith = 0.5
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_brahmins
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_brahmins
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_brahmins
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_brahmins
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_brahmins
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_brahmins
+			territory = 30
+			}
+		}
+	}
+}
+
+###################################################################
+####### New World Rights
+###################################################################
+
+estate_priv_idea_variation_6_9 = {
+	icon = privilege_grant_new_world_charter
+	influence = 0.05
+
+	can_select = {
+		has_colonist = yes
+	}
+		
+	penalties = {
+		native_uprising_chance = 0.33
+	}
+	benefits = {
+		native_assimilation = 1.0
+	}
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_brahmins
+					influence = 75
+				}
+		}
+	}
+}
+
+###################################################################
+####### Recruit Conquistador
+###################################################################
+
+estate_priv_idea_variation_6_11 = {
+	icon = IV_privileges_icon_2
+	
+	can_select = {
+		estate_influence = {
+		estate = estate_brahmins
+		influence = 20
+		}
+	}
+		
+	on_granted = {
+		
+			if = {
+				limit = { 
+					army_tradition = 100
+				}
+				create_conquistador = { tradition = 100 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 90
+					NOT = { army_tradition = 100 }
+				}
+				create_conquistador = { tradition = 90 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 80
+					NOT = { army_tradition = 90 }
+				}
+				create_conquistador = { tradition = 80 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 70
+					NOT = { army_tradition = 80 }
+				}
+				create_conquistador = { tradition = 70 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 60
+					NOT = { army_tradition = 70 }
+				}
+				create_conquistador = { tradition = 60 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 50
+					NOT = { army_tradition = 60 }
+				}
+				create_conquistador = { tradition = 50 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 0
+					NOT = { army_tradition = 50 }
+				}
+				create_conquistador = { tradition = 40 }
+			}
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.01
+		church_loyalty_modifier = -0.01
+		burghers_loyalty_modifier = -0.01
+		nationalist_loyalty_modifier = -0.01
+		janissary_loyalty_modifier = -0.01
+		cossacks_loyalty_modifier = -0.01
+		dhimmi_loyalty_modifier = -0.01
+		maratha_loyalty_modifier = -0.01
+		vaisyas_loyalty_modifier = -0.01
+		jains_loyalty_modifier = -0.01
+		rajput_loyalty_modifier = -0.01
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_6_11
+	}
+	
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+
+###################################################################
+####### Province Administration
+###################################################################
+
+estate_priv_idea_variation_6_12 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+
+	is_valid = {
+		estate_territory = {
+		estate = estate_brahmins
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_brahmins
+		territory = 15
+		}
+	}
+	penalties = {
+		state_maintenance_modifier = 0.1
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+	
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_brahmins
+					influence = 90
+				}
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_territories = 1 }
+		}
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+	}
+}
+
+###################################################################
+###################################################################
+####### Brahmins End
+###################################################################
+###################################################################
+
+###################################################################
+###################################################################
+####### Cossacks Start
+###################################################################
+###################################################################
+
+###################################################################
+####### Cossack Leader
+###################################################################
+
+estate_priv_idea_variation_7_1 = {
+	icon = IV_privileges_icon_6
+	
+	can_select = {
+		estate_influence = {
+		estate = estate_cossacks
+		influence = 20
+		}
+	}
+		
+	on_granted = {
+		
+			if = {
+				limit = { 
+					army_tradition = 100
+				}
+				create_general = { tradition = 100 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 90
+					NOT = { army_tradition = 100 }
+				}
+				create_general = { tradition = 90 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 80
+					NOT = { army_tradition = 90 }
+				}
+				create_general = { tradition = 80 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 70
+					NOT = { army_tradition = 80 }
+				}
+				create_general = { tradition = 70 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 60
+					NOT = { army_tradition = 70 }
+				}
+				create_general = { tradition = 60 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 50
+					NOT = { army_tradition = 60 }
+				}
+				create_general = { tradition = 50 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 0
+					NOT = { army_tradition = 50 }
+				}
+				create_general = { tradition = 40 }
+			}
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.01
+		church_loyalty_modifier = -0.01
+		burghers_loyalty_modifier = -0.01
+		nationalist_loyalty_modifier = -0.01
+		janissary_loyalty_modifier = -0.01
+		dhimmi_loyalty_modifier = -0.01
+		brahmins_hindu_loyalty_modifier = -0.01
+		brahmins_muslim_loyalty_modifier = -0.01 
+		brahmins_other_loyalty_modifier = -0.01
+		maratha_loyalty_modifier = -0.01
+		vaisyas_loyalty_modifier = -0.01
+		jains_loyalty_modifier = -0.01
+		rajput_loyalty_modifier = -0.01
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_7_1
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_cossacks
+					influence = 80
+			}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 1 (Amry Reformer)
+###################################################################
+
+estate_priv_idea_variation_7_2 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = army_reformer
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = army_reformer
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}				
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025		
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_7_2
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_cossacks
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 2 (Cav)
+###################################################################
+
+estate_priv_idea_variation_7_3 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = idea_var_advisor_13
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = idea_var_advisor_13
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}			
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025				
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_7_3
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_cossacks
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Influence (Estate)
+###################################################################
+
+estate_priv_idea_variation_7_4 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+	loyalty = 0.1
+	is_valid = {
+		has_iv_gov_estate_6 = yes
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_cossacks
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Power
+###################################################################
+
+estate_priv_idea_variation_7_5 = {
+	icon = privilege_empty_throne
+	influence = 0.2
+
+
+	penalties = {
+		nobles_influence_modifier = -0.05
+		church_influence_modifier = -0.05
+		burghers_influence_modifier = -0.05
+		nationalist_influence_modifier = -0.05
+		janissary_influence_modifier = -0.05
+		dhimmi_influence_modifier = -0.05
+		brahmins_hindu_influence_modifier = -0.05
+		brahmins_muslim_influence_modifier = -0.05
+		brahmins_other_influence_modifier = -0.05
+		maratha_influence_modifier = -0.05
+		vaisyas_influence_modifier = -0.05
+		jains_influence_modifier = -0.05
+		rajput_influence_modifier = -0.05
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_cossacks
+					influence = 75
+				}
+		}
+	}
+}
+
+
+###################################################################
+####### Tax the Land
+###################################################################
+
+estate_priv_idea_variation_7_6 = {
+	icon = privilege_give_money
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_cossacks
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_cossacks
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_tax_modifier = 2.0
+	}
+	
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_cossacks
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_cossacks
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_cossacks
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_cossacks
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_cossacks
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Conscript from their lands
+###################################################################
+
+estate_priv_idea_variation_7_7 = {
+	icon = privilege_demand_more_troops
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_cossacks
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_cossacks
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_manpower_modifier = 1.0
+		global_sailors_modifier = 0.5
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_cossacks
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_cossacks
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_cossacks
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_cossacks
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_cossacks
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Support Reforms
+###################################################################
+
+estate_priv_idea_variation_7_8 = {
+	icon = IV_privileges_icon_1
+	influence = 0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_influence = {
+		estate = estate_cossacks
+		influence = 20
+		}
+	}
+	can_select = {
+		estate_influence = {
+		estate = estate_cossacks
+		influence = 50
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		reform_progress_growth = 0.5
+		global_institution_spread = 0.25
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_cossacks
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_cossacks
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_cossacks
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_cossacks
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_cossacks
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_cossacks
+			territory = 30
+			}
+		}
+	}
+}
+
+###################################################################
+####### Cossack Regiments 1 (Vanilla - Changed)
+###################################################################
+
+estate_cossacks_establish_the_cossack_regiments = {
+	icon = privilege_raise_host
+
+	influence = 0.15
+	can_select = {
+		estate_influence = {
+		estate = estate_cossacks
+		influence = 20
+		}
+		estate_territory = {
+		estate = estate_cossacks
+		territory = 5
+		}
+	}
+
+	modifier_by_land_ownership = {
+		special_unit_forcelimit = 0.5
+	}
+
+	mechanics = {
+		enables_cossack_regiments
+	}
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 10
+			any_owned_province = {
+				has_terrain = steppe
+			}
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				NOT = { crown_land_share = 25 }
+				estate_influence = {
+					estate = estate_cossacks
+					influence = 75
+				}
+			}
+			NOT = { has_estate_privilege = estate_cossacks_establish_the_cossack_regiments }
+		}
+	}
+}
+
+###################################################################
+####### Cossack Regiments 2 (Vanilla - Changed)
+###################################################################
+
+estate_cossacks_expand_the_cossack_regiments = {
+	icon = privilege_conscript_cossack_elite
+
+	influence = 0.15
+	is_valid = {
+		#has_estate_privilege = estate_cossacks_establish_the_cossack_regiments
+	}
+	can_select = {
+		estate_influence = {
+		estate = estate_cossacks
+		influence = 40
+		}
+		estate_territory = {
+		estate = estate_cossacks
+		territory = 15
+		}
+	}
+	modifier_by_land_ownership = {
+		special_unit_forcelimit = 0.5
+	}
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025	
+	}
+
+	ai_will_do = {
+		factor = 1
+		modifier = {
+			factor = 10
+			any_owned_province = {
+				has_terrain = steppe
+			}
+			is_absolutism_active = no
+		}
+		modifier = {
+			factor = 0
+			OR = {
+				NOT = { crown_land_share = 25 }
+				estate_influence = {
+					estate = estate_cossacks
+					influence = 75
+				}
+			}
+			NOT = { has_estate_privilege = estate_cossacks_establish_the_cossack_regiments }
+		}
+	}
+}
+
+###################################################################
+####### Cossack Regiments 3
+###################################################################
+
+estate_priv_idea_variation_7_11 = {
+	icon = IV_privileges_icon_7
+	influence = 0.15
+	can_select = {
+		estate_influence = {
+		estate = estate_cossacks
+		influence = 70
+		}
+		estate_territory = {
+		estate = estate_cossacks
+		territory = 25
+		}
+		has_estate_privilege = estate_cossacks_expand_the_cossack_regiments
+	}
+		
+	modifier_by_land_ownership = {
+		special_unit_forcelimit = 0.5
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025	
+	}
+	
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+
+###################################################################
+####### Province Administration
+###################################################################
+
+estate_priv_idea_variation_7_12 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+
+	is_valid = {
+		estate_territory = {
+		estate = estate_cossacks
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_cossacks
+		territory = 15
+		}
+	}
+	penalties = {
+		state_maintenance_modifier = 0.1
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+	
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_cossacks
+					influence = 90
+				}
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_territories = 1 }
+		}
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+	}
+}
+
+
+###################################################################
+###################################################################
+####### Cossacks End
+###################################################################
+###################################################################
+
+###################################################################
+###################################################################
+####### Rajput Start
+###################################################################
+###################################################################
+
+###################################################################
+####### Rajput Leader
+###################################################################
+
+estate_priv_idea_variation_8_1 = {
+	icon = privilege_military_power
+	
+	can_select = {
+		estate_influence = {
+		estate = estate_rajput
+		influence = 20
+		}
+	}
+		
+	on_granted = {
+		
+			if = {
+				limit = { 
+					army_tradition = 100
+				}
+				create_general = { tradition = 100 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 90
+					NOT = { army_tradition = 100 }
+				}
+				create_general = { tradition = 90 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 80
+					NOT = { army_tradition = 90 }
+				}
+				create_general = { tradition = 80 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 70
+					NOT = { army_tradition = 80 }
+				}
+				create_general = { tradition = 70 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 60
+					NOT = { army_tradition = 70 }
+				}
+				create_general = { tradition = 60 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 50
+					NOT = { army_tradition = 60 }
+				}
+				create_general = { tradition = 50 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 0
+					NOT = { army_tradition = 50 }
+				}
+				create_general = { tradition = 40 }
+			}
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.01
+		church_loyalty_modifier = -0.01
+		burghers_loyalty_modifier = -0.01
+		nationalist_loyalty_modifier = -0.01
+		janissary_loyalty_modifier = -0.01
+		dhimmi_loyalty_modifier = -0.01
+		brahmins_hindu_loyalty_modifier = -0.01
+		brahmins_muslim_loyalty_modifier = -0.01 
+		brahmins_other_loyalty_modifier = -0.01
+		maratha_loyalty_modifier = -0.01
+		vaisyas_loyalty_modifier = -0.01
+		jains_loyalty_modifier = -0.01
+		rajput_loyalty_modifier = -0.01
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_8_1
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_rajput
+					influence = 80
+			}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 1 (Fire Damage)
+###################################################################
+
+estate_priv_idea_variation_8_2 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = idea_var_advisor_17
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = idea_var_advisor_17
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}				
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_8_2
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_rajput
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 2 (Inf)
+###################################################################
+
+estate_priv_idea_variation_8_3 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = idea_var_advisor_12
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = idea_var_advisor_12
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}			
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025			
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_8_3
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_rajput
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Influence (Estate)
+###################################################################
+
+estate_priv_idea_variation_8_4 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+	loyalty = 0.1
+	is_valid = {
+		has_iv_gov_estate_12 = yes
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_rajput
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Power
+###################################################################
+
+estate_priv_idea_variation_8_5 = {
+	icon = privilege_empty_throne
+	influence = 0.2
+
+
+	penalties = {
+		nobles_influence_modifier = -0.05
+		church_influence_modifier = -0.05
+		burghers_influence_modifier = -0.05
+		nationalist_influence_modifier = -0.05
+		janissary_influence_modifier = -0.05
+		cossacks_influence_modifier = -0.05
+		dhimmi_influence_modifier = -0.05
+		brahmins_hindu_influence_modifier = -0.05
+		brahmins_muslim_influence_modifier = -0.05
+		brahmins_other_influence_modifier = -0.05
+		maratha_influence_modifier = -0.05
+		vaisyas_influence_modifier = -0.05
+		jains_influence_modifier = -0.05
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_rajput
+					influence = 75
+				}
+		}
+	}
+}
+
+
+###################################################################
+####### Tax the Land
+###################################################################
+
+estate_priv_idea_variation_8_6 = {
+	icon = privilege_give_money
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_rajput
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_rajput
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_tax_modifier = 2.0
+	}
+	
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_rajput
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_rajput
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_rajput
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_rajput
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_rajput
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_rajput
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_rajput
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_rajput
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_rajput
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_rajput
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_rajput
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_rajput
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Conscript from their lands
+###################################################################
+
+estate_priv_idea_variation_8_7 = {
+	icon = privilege_demand_more_troops
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_rajput
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_rajput
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_manpower_modifier = 1.0
+		global_sailors_modifier = 0.5
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_rajput
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_rajput
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_rajput
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_rajput
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_rajput
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_rajput
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_rajput
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_rajput
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_rajput
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_rajput
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_rajput
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_rajput
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Support Reforms
+###################################################################
+
+estate_priv_idea_variation_8_8 = {
+	icon = IV_privileges_icon_1
+	influence = 0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_influence = {
+		estate = estate_rajput
+		influence = 20
+		}
+	}
+	can_select = {
+		estate_influence = {
+		estate = estate_rajput
+		influence = 50
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		reform_progress_growth = 0.5
+		global_institution_spread = 0.25
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_rajput
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_rajput
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_rajput
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_rajput
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_rajput
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_rajput
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_rajput
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_rajput
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_rajput
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_rajput
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_rajput
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_rajput
+			territory = 30
+			}
+		}
+	}
+}
+
+###################################################################
+####### Rajput Regiments 1
+###################################################################
+
+estate_priv_idea_variation_8_9 = {
+	icon = IV_privileges_icon_7
+	influence = 0.15
+
+	can_select = {
+		estate_influence = {
+		estate = estate_rajput
+		influence = 20
+		}
+		estate_territory = {
+		estate = estate_rajput
+		territory = 5
+		}
+	}
+		
+	mechanics = {
+		enables_rajput_regiments
+	}
+	
+	modifier_by_land_ownership = {
+		special_unit_forcelimit = 0.5
+	}
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_rajput
+					influence = 75
+				}
+		}
+	}
+}
+
+
+###################################################################
+####### Rajput Regiments 2
+###################################################################
+
+estate_priv_idea_variation_8_10 = {
+	icon = IV_privileges_icon_7
+	influence = 0.15
+	can_select = {
+		estate_influence = {
+		estate = estate_rajput
+		influence = 40
+		}
+		estate_territory = {
+		estate = estate_rajput
+		territory = 15
+		}
+		has_estate_privilege = estate_priv_idea_variation_8_9
+	}
+		
+	modifier_by_land_ownership = {
+		special_unit_forcelimit = 0.5
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025	
+	}
+	
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+
+###################################################################
+####### Rajput Regiments 3
+###################################################################
+
+estate_priv_idea_variation_8_11 = {
+	icon = IV_privileges_icon_7
+	influence = 0.15
+	can_select = {
+		estate_influence = {
+		estate = estate_rajput
+		influence = 70
+		}
+		estate_territory = {
+		estate = estate_rajput
+		territory = 25
+		}
+		has_estate_privilege = estate_priv_idea_variation_8_10
+	}
+		
+	modifier_by_land_ownership = {
+		special_unit_forcelimit = 0.5
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+	}
+	
+	ai_will_do = {
+		factor = 10
+	}
+}
+
+
+###################################################################
+####### Province Administration
+###################################################################
+
+estate_priv_idea_variation_8_12 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+
+	is_valid = {
+		estate_territory = {
+		estate = estate_rajput
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_rajput
+		territory = 15
+		}
+	}
+	penalties = {
+		state_maintenance_modifier = 0.1
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+	
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_rajput
+					influence = 90
+				}
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_territories = 1 }
+		}
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+	}
+}
+
+
+###################################################################
+###################################################################
+####### Rajput End
+###################################################################
+###################################################################
+
+
+###################################################################
+###################################################################
+####### Janissaries Start
+###################################################################
+###################################################################
+
+###################################################################
+####### Leader
+###################################################################
+
+estate_priv_idea_variation_9_1 = {
+	icon = IV_privileges_icon_6
+	
+	can_select = {
+		estate_influence = {
+		estate = estate_janissary
+		influence = 20
+		}
+	}
+		
+	on_granted = {
+		
+			if = {
+				limit = { 
+					army_tradition = 100
+				}
+				create_general = { tradition = 100 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 90
+					NOT = { army_tradition = 100 }
+				}
+				create_general = { tradition = 90 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 80
+					NOT = { army_tradition = 90 }
+				}
+				create_general = { tradition = 80 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 70
+					NOT = { army_tradition = 80 }
+				}
+				create_general = { tradition = 70 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 60
+					NOT = { army_tradition = 70 }
+				}
+				create_general = { tradition = 60 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 50
+					NOT = { army_tradition = 60 }
+				}
+				create_general = { tradition = 50 }
+			}
+			if = {
+				limit = { 
+					army_tradition = 0
+					NOT = { army_tradition = 50 }
+				}
+				create_general = { tradition = 40 }
+			}
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.01
+		church_loyalty_modifier = -0.01
+		burghers_loyalty_modifier = -0.01
+		nationalist_loyalty_modifier = -0.01
+		janissary_loyalty_modifier = -0.01
+		dhimmi_loyalty_modifier = -0.01
+		brahmins_hindu_loyalty_modifier = -0.01
+		brahmins_muslim_loyalty_modifier = -0.01 
+		brahmins_other_loyalty_modifier = -0.01
+		maratha_loyalty_modifier = -0.01
+		vaisyas_loyalty_modifier = -0.01
+		jains_loyalty_modifier = -0.01
+		rajput_loyalty_modifier = -0.01
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_9_1
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_janissary
+					influence = 80
+			}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 1 (Arti)
+###################################################################
+
+estate_priv_idea_variation_9_2 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = idea_var_advisor_14
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = idea_var_advisor_14
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}				
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025	
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_9_2
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_janissary
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 2 (Inf)
+###################################################################
+
+estate_priv_idea_variation_9_3 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = idea_var_advisor_12
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = idea_var_advisor_12
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}			
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025			
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_9_3
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_janissary
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Influence (Estate)
+###################################################################
+
+estate_priv_idea_variation_9_4 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+	loyalty = 0.1
+	is_valid = {
+		has_iv_gov_estate_5 = yes
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_janissary
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Power
+###################################################################
+
+estate_priv_idea_variation_9_5 = {
+	icon = privilege_empty_throne
+	influence = 0.2
+
+
+	penalties = {
+		nobles_influence_modifier = -0.05
+		church_influence_modifier = -0.05
+		burghers_influence_modifier = -0.05
+		nationalist_influence_modifier = -0.05
+		cossacks_influence_modifier = -0.05
+		dhimmi_influence_modifier = -0.05
+		brahmins_hindu_influence_modifier = -0.05
+		brahmins_muslim_influence_modifier = -0.05
+		brahmins_other_influence_modifier = -0.05
+		maratha_influence_modifier = -0.05
+		vaisyas_influence_modifier = -0.05
+		jains_influence_modifier = -0.05
+		rajput_influence_modifier = -0.05	
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_janissary
+					influence = 75
+				}
+		}
+	}
+}
+
+
+###################################################################
+####### Tax the Land
+###################################################################
+
+estate_priv_idea_variation_9_6 = {
+	icon = privilege_give_money
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_janissary
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_janissary
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_tax_modifier = 2.0
+	}
+	
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_janissary
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_janissary
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_janissary
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_janissary
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_janissary
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_janissary
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_janissary
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_janissary
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_janissary
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_janissary
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_janissary
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_janissary
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Conscript from their lands
+###################################################################
+
+estate_priv_idea_variation_9_7 = {
+	icon = privilege_demand_more_troops
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_janissary
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_janissary
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_manpower_modifier = 1.0
+		global_sailors_modifier = 1.0
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_janissary
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_janissary
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_janissary
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_janissary
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_janissary
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_janissary
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_janissary
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_janissary
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_janissary
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_janissary
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_janissary
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_janissary
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Support Reforms
+###################################################################
+
+estate_priv_idea_variation_9_8 = {
+	icon = IV_privileges_icon_1
+	influence = 0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_influence = {
+		estate = estate_janissary
+		influence = 20
+		}
+	}
+	can_select = {
+		estate_influence = {
+		estate = estate_janissary
+		influence = 50
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		reform_progress_growth = 0.5
+		global_institution_spread = 0.25
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_janissary
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_janissary
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_janissary
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_janissary
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_janissary
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_janissary
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_janissary
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_janissary
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_janissary
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_janissary
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_janissary
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_janissary
+			territory = 30
+			}
+		}
+	}
+}
+
+###################################################################
+####### Province Administration
+###################################################################
+
+estate_priv_idea_variation_9_12 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+
+	is_valid = {
+		estate_territory = {
+		estate = estate_janissary
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_janissary
+		territory = 15
+		}
+	}
+	penalties = {
+		state_maintenance_modifier = 0.1
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+	
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_janissary
+					influence = 90
+				}
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_territories = 1 }
+		}
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+	}
+}
+
+
+###################################################################
+###################################################################
+####### Janissaries End
+###################################################################
+###################################################################
+
+###################################################################
+###################################################################
+####### Dhimmi Start
+###################################################################
+###################################################################
+
+###################################################################
+####### Advisor 1 (Trader)
+###################################################################
+
+estate_priv_idea_variation_10_2 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = trader
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = trader
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}				
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025		
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_10_2
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_dhimmi
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 2 (Humanist)
+###################################################################
+
+estate_priv_idea_variation_10_3 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = idea_var_advisor_6
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = idea_var_advisor_6
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}			
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025				
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_10_3
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_dhimmi
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Influence (Estate)
+###################################################################
+
+estate_priv_idea_variation_10_4 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+	loyalty = 0.1
+	is_valid = {
+		has_iv_gov_estate_7 = yes
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_dhimmi
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Power
+###################################################################
+
+estate_priv_idea_variation_10_5 = {
+	icon = privilege_empty_throne
+	influence = 0.2
+
+
+	penalties = {
+		nobles_influence_modifier = -0.05
+		church_influence_modifier = -0.05
+		burghers_influence_modifier = -0.05
+		nationalist_influence_modifier = -0.05
+		janissary_influence_modifier = -0.05
+		cossacks_influence_modifier = -0.05
+		brahmins_hindu_influence_modifier = -0.05
+		brahmins_muslim_influence_modifier = -0.05
+		brahmins_other_influence_modifier = -0.05
+		maratha_influence_modifier = -0.05
+		vaisyas_influence_modifier = -0.05
+		jains_influence_modifier = -0.05
+		rajput_influence_modifier = -0.05
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_dhimmi
+					influence = 75
+				}
+		}
+	}
+}
+
+
+###################################################################
+####### Tax the Land
+###################################################################
+
+estate_priv_idea_variation_10_6 = {
+	icon = privilege_give_money
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_dhimmi
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_dhimmi
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_tax_modifier = 2.0
+	}
+	
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_dhimmi
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_dhimmi
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_dhimmi
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_dhimmi
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_dhimmi
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Conscript from their lands
+###################################################################
+
+estate_priv_idea_variation_10_7 = {
+	icon = privilege_demand_more_troops
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_dhimmi
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_dhimmi
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_manpower_modifier = 0.5
+		global_sailors_modifier = 1.0
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_dhimmi
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_dhimmi
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_dhimmi
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_dhimmi
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_dhimmi
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Support Reforms
+###################################################################
+
+estate_priv_idea_variation_10_8 = {
+	icon = IV_privileges_icon_1
+	influence = 0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_influence = {
+		estate = estate_dhimmi
+		influence = 20
+		}
+	}
+	can_select = {
+		estate_influence = {
+		estate = estate_dhimmi
+		influence = 50
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		reform_progress_growth = 0.5
+		global_institution_spread = 0.25
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_dhimmi
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_dhimmi
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_dhimmi
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_dhimmi
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_dhimmi
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_dhimmi
+			territory = 30
+			}
+		}
+	}
+}
+
+###################################################################
+####### Province Administration
+###################################################################
+
+estate_priv_idea_variation_10_12 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+
+	is_valid = {
+		estate_territory = {
+		estate = estate_dhimmi
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_dhimmi
+		territory = 15
+		}
+	}
+	penalties = {
+		state_maintenance_modifier = 0.1
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+	
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_dhimmi
+					influence = 90
+				}
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_territories = 1 }
+		}
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+	}
+}
+
+
+###################################################################
+###################################################################
+####### Dhimmi End
+###################################################################
+###################################################################
+
+
+###################################################################
+###################################################################
+####### Jains Start
+###################################################################
+###################################################################
+
+###################################################################
+####### Advisor 1 (Corruption)
+###################################################################
+
+estate_priv_idea_variation_11_2 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = idea_var_advisor_8
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = idea_var_advisor_8
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}				
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025		
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_11_2
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_jains
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 2 (Interest)
+###################################################################
+
+estate_priv_idea_variation_11_3 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = idea_var_advisor_20
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = idea_var_advisor_20
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}			
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		nationalist_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025			
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_11_3
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_jains
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Influence (Estate)
+###################################################################
+
+estate_priv_idea_variation_11_4 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+	loyalty = 0.1
+	is_valid = {
+		has_iv_gov_estate_11 = yes
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_jains
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Power
+###################################################################
+
+estate_priv_idea_variation_11_5 = {
+	icon = privilege_empty_throne
+	influence = 0.2
+
+
+	penalties = {
+		nobles_influence_modifier = -0.05
+		church_influence_modifier = -0.05
+		burghers_influence_modifier = -0.05
+		nationalist_influence_modifier = -0.05
+		janissary_influence_modifier = -0.05
+		cossacks_influence_modifier = -0.05
+		dhimmi_influence_modifier = -0.05
+		brahmins_hindu_influence_modifier = -0.05
+		brahmins_muslim_influence_modifier = -0.05
+		brahmins_other_influence_modifier = -0.05
+		maratha_influence_modifier = -0.05
+		vaisyas_influence_modifier = -0.05
+		rajput_influence_modifier = -0.05
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_jains
+					influence = 75
+				}
+		}
+	}
+}
+
+
+###################################################################
+####### Tax the Land
+###################################################################
+
+estate_priv_idea_variation_11_6 = {
+	icon = privilege_give_money
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_jains
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_jains
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_tax_modifier = 2.0
+	}
+	
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_jains
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_jains
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_jains
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_jains
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_jains
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_jains
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_jains
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_jains
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_jains
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_jains
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_jains
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_jains
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Conscript from their lands
+###################################################################
+
+estate_priv_idea_variation_11_7 = {
+	icon = privilege_demand_more_troops
+	influence = -0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_jains
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_jains
+		territory = 5
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_manpower_modifier = 0.5
+		global_sailors_modifier = 1.0
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_jains
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_jains
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_jains
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_jains
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_jains
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_jains
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_jains
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_jains
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_jains
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_jains
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_jains
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_jains
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Support Reforms
+###################################################################
+
+estate_priv_idea_variation_11_8 = {
+	icon = IV_privileges_icon_1
+	influence = 0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_influence = {
+		estate = estate_jains
+		influence = 20
+		}
+	}
+	can_select = {
+		estate_influence = {
+		estate = estate_jains
+		influence = 50
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		reform_progress_growth = 0.5
+		global_institution_spread = 0.25
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_jains
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_jains
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_jains
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_jains
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_jains
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_jains
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_jains
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_jains
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_jains
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_jains
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_jains
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_jains
+			territory = 30
+			}
+		}
+	}
+}
+
+###################################################################
+####### Province Administration
+###################################################################
+
+estate_priv_idea_variation_11_12 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+
+	is_valid = {
+		estate_territory = {
+		estate = estate_jains
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_jains
+		territory = 15
+		}
+	}
+	penalties = {
+		state_maintenance_modifier = 0.1
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+	
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_jains
+					influence = 90
+				}
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_territories = 1 }
+		}
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+	}
+}
+
+###################################################################
+###################################################################
+####### Jains End
+###################################################################
+###################################################################
+
+
+###################################################################
+###################################################################
+####### Nationalists Start
+###################################################################
+###################################################################
+
+###################################################################
+####### Powerpoints
+###################################################################
+
+estate_priv_idea_variation_12_1 = {
+	icon = IV_privileges_icon_8
+	influence = 0.30
+	loyalty = -0.2
+	
+	is_valid = {
+		estate_territory = {
+		estate = estate_nationalist
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_nationalist
+		territory = 25
+		}
+		NOT = {	
+			estate_influence = {
+			estate = estate_nationalist
+			influence = 75
+			}
+		}
+	}
+	benefits = {
+		country_diplomatic_power = 1
+		country_military_power = 1
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.1
+		church_loyalty_modifier = -0.1
+		burghers_loyalty_modifier = -0.1
+		janissary_loyalty_modifier = -0.1
+		cossacks_loyalty_modifier = -0.1
+		dhimmi_loyalty_modifier = -0.1
+		brahmins_hindu_loyalty_modifier = -0.1
+		brahmins_muslim_loyalty_modifier = -0.1 
+		brahmins_other_loyalty_modifier = -0.1
+		maratha_loyalty_modifier = -0.1
+		vaisyas_loyalty_modifier = -0.1
+		jains_loyalty_modifier = -0.1
+		rajput_loyalty_modifier = -0.1		
+	}
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_nationalist
+					influence = 80
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Advisor 1 (Culture)
+###################################################################
+
+estate_priv_idea_variation_12_2 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+	
+	can_select = {
+		NOT = {	
+			estate_influence = {
+			estate = estate_nationalist
+			influence = 75
+			}
+		}
+	}
+	
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = idea_var_advisor_19
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = idea_var_advisor_19
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}				
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025		
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_12_2
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_nationalist
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Advisor 2 (War Score)
+###################################################################
+
+estate_priv_idea_variation_12_3 = {
+	icon = privilege_recruit_minister
+	influence = 0.15
+	
+	can_select = {
+		NOT = {	
+			estate_influence = {
+			estate = estate_nationalist
+			influence = 75
+			}
+		}
+	}
+	
+	on_granted = {
+		if = {
+				limit = {
+					monthly_income = 25
+				}
+				define_advisor = {
+					type = idea_var_advisor_23
+					skill = 3
+					cost_multiplier = 0.5
+				}
+			}
+			if = {
+				limit = { NOT = { monthly_income = 25 } }
+				define_advisor = {
+					type = idea_var_advisor_23
+					skill = 2
+					cost_multiplier = 0.5
+				}
+			}			
+	}
+	
+	penalties = {
+		nobles_loyalty_modifier = -0.025
+		church_loyalty_modifier = -0.025
+		burghers_loyalty_modifier = -0.025
+		janissary_loyalty_modifier = -0.025
+		cossacks_loyalty_modifier = -0.025
+		dhimmi_loyalty_modifier = -0.025
+		brahmins_hindu_loyalty_modifier = -0.025
+		brahmins_muslim_loyalty_modifier = -0.025 
+		brahmins_other_loyalty_modifier = -0.025
+		maratha_loyalty_modifier = -0.025
+		vaisyas_loyalty_modifier = -0.025
+		jains_loyalty_modifier = -0.025
+		rajput_loyalty_modifier = -0.025			
+	}
+	
+	cooldown_years = 10
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_priv_idea_variation_12_3
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_nationalist
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Influence (Estate)
+###################################################################
+
+estate_priv_idea_variation_12_4 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+	loyalty = 0.1
+	is_valid = {
+		has_iv_gov_estate_4 = yes
+	}
+	
+	can_select = {
+		NOT = {	
+			estate_influence = {
+			estate = estate_nationalist
+			influence = 75
+			}
+		}
+	}
+	
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_nationalist
+					influence = 80
+				}
+		}
+	}
+}
+
+###################################################################
+####### Underline Power
+###################################################################
+
+estate_priv_idea_variation_12_5 = {
+	icon = privilege_empty_throne
+	influence = 0.05
+	loyalty = 0.1
+	can_select = {
+		NOT = {	
+			estate_influence = {
+			estate = estate_nationalist
+			influence = 75
+			}
+		}
+	}
+	
+	penalties = {
+		nobles_influence_modifier = -0.05
+		church_influence_modifier = -0.05
+		burghers_influence_modifier = -0.05
+		janissary_influence_modifier = -0.05
+		cossacks_influence_modifier = -0.05
+		dhimmi_influence_modifier = -0.05
+		brahmins_hindu_influence_modifier = -0.05
+		brahmins_muslim_influence_modifier = -0.05
+		brahmins_other_influence_modifier = -0.05
+		maratha_influence_modifier = -0.05
+		vaisyas_influence_modifier = -0.05
+		jains_influence_modifier = -0.05
+		rajput_influence_modifier = -0.05	
+	}
+
+	ai_will_do = {
+		factor = 10
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_nationalist
+					influence = 75
+				}
+		}
+	}
+}
+
+
+###################################################################
+####### Tax the Land
+###################################################################
+
+estate_priv_idea_variation_12_6 = {
+	icon = privilege_give_money
+	influence = 0.15
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_nationalist
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_nationalist
+		territory = 5
+		}
+		NOT = {	
+			estate_influence = {
+			estate = estate_nationalist
+			influence = 75
+			}
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_tax_modifier = 2.0
+	}
+	
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nationalist
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nationalist
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nationalist
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nationalist
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nationalist
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Conscript from their lands
+###################################################################
+
+estate_priv_idea_variation_12_7 = {
+	icon = privilege_demand_more_troops
+	influence = 0.15
+	loyalty = -0.1
+	is_valid = {
+		estate_territory = {
+		estate = estate_nationalist
+		territory = 1
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_nationalist
+		territory = 5
+		}
+		NOT = {	
+			estate_influence = {
+			estate = estate_nationalist
+			influence = 75
+			}
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		global_manpower_modifier = 1.0
+		global_sailors_modifier = 1.0
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nationalist
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nationalist
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nationalist
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nationalist
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nationalist
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 30
+			}
+		}
+	}
+}
+
+
+###################################################################
+####### Support Reforms
+###################################################################
+
+estate_priv_idea_variation_12_8 = {
+	icon = IV_privileges_icon_1
+	influence = 0.1
+	loyalty = -0.1
+	is_valid = {
+		estate_influence = {
+		estate = estate_nationalist
+		influence = 20
+		}
+	}
+	can_select = {
+		NOT = {	
+			estate_influence = {
+			estate = estate_nationalist
+			influence = 75
+			}
+		}
+	}
+	
+	modifier_by_land_ownership = {
+		reform_progress_growth = 0.5
+		global_institution_spread = 0.25
+	}
+
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 0
+			}
+		}
+		modifier = {
+			factor = 1
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 5
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nationalist
+				territory = 10
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 10
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nationalist
+				territory = 15
+				}
+			}
+		}
+		modifier = {
+			factor = 3
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 15
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nationalist
+				territory = 20
+				}
+			}
+		}
+		modifier = {
+			factor = 4
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 20
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nationalist
+				territory = 25
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 25
+			}
+			NOT = { 
+				estate_territory = {
+				estate = estate_nationalist
+				territory = 30
+				}
+			}
+		}
+		modifier = {
+			factor = 5
+			estate_territory = {
+			estate = estate_nationalist
+			territory = 30
+			}
+		}
+	}
+}
+
+###################################################################
+####### Province Administration
+###################################################################
+
+estate_priv_idea_variation_12_12 = {
+	icon = privilege_grant_autonomy
+	influence = 0.1
+
+	is_valid = {
+		estate_territory = {
+		estate = estate_nationalist
+		territory = 5
+		}
+	}
+	can_select = {
+		estate_territory = {
+		estate = estate_nationalist
+		territory = 15
+		}
+		NOT = {	
+			estate_influence = {
+			estate = estate_nationalist
+			influence = 75
+			}
+		}
+	}
+	penalties = {
+		state_maintenance_modifier = 0.1
+	}
+	benefits = {
+		governing_capacity = 100
+	}
+	
+	ai_will_do = {
+		factor = 5
+		modifier = {
+			factor = 0
+				estate_influence = {
+					estate = estate_nationalist
+					influence = 90
+				}
+		}
+		modifier = {
+			factor = 0
+			NOT = { num_of_territories = 1 }
+		}
+		modifier = {
+			factor = 1.4
+			num_of_territories = 5
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 10
+		}
+		modifier = {
+			factor = 1.5
+			num_of_territories = 15
+		}
+	}
+}
+
+
+###################################################################
+###################################################################
+####### Nationalists End
+###################################################################
+###################################################################
