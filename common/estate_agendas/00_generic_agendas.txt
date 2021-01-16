@@ -1997,7 +1997,7 @@ estate_nobles_build_fort_building_in_y = {
 								}
 							}
 						}
-						is_highland = yes
+						has_terrain = highlands
 					}
 					AND = {
 						NOT = { has_building = fort_15th }
@@ -2036,7 +2036,7 @@ estate_nobles_build_fort_building_in_y = {
 								}
 							}
 						}
-						is_highland = yes
+						has_terrain = highlands
 					}
 					AND = {
 						has_building = fort_15th
@@ -2092,7 +2092,7 @@ estate_nobles_build_fort_building_in_y = {
 								}
 							}
 						}
-						is_mountain = yes
+						has_terrain = mountain
 					}
 					AND = {
 						NOT = { has_building = fort_15th }
@@ -2131,7 +2131,7 @@ estate_nobles_build_fort_building_in_y = {
 								}
 							}
 						}
-						is_mountain = yes
+						has_terrain = mountain
 					}
 					AND = {
 						has_building = fort_15th
@@ -2618,7 +2618,7 @@ estate_rajput_build_fort_building_in_y = {
 								}
 							}
 						}
-						is_highland = yes
+						has_terrain = highlands
 					}
 					AND = {
 						NOT = { has_building = fort_15th }
@@ -2657,7 +2657,7 @@ estate_rajput_build_fort_building_in_y = {
 								}
 							}
 						}
-						is_highland = yes
+						has_terrain = highlands
 					}
 					AND = {
 						has_building = fort_15th
@@ -2713,7 +2713,7 @@ estate_rajput_build_fort_building_in_y = {
 								}
 							}
 						}
-						is_mountain = yes
+						has_terrain = mountain
 					}
 					AND = {
 						NOT = { has_building = fort_15th }
@@ -2752,7 +2752,7 @@ estate_rajput_build_fort_building_in_y = {
 								}
 							}
 						}
-						is_mountain = yes
+						has_terrain = mountain
 					}
 					AND = {
 						has_building = fort_15th
@@ -3239,7 +3239,7 @@ estate_maratha_build_fort_building_in_y = {
 								}
 							}
 						}
-						is_highland = yes
+						has_terrain = highlands
 					}
 					AND = {
 						NOT = { has_building = fort_15th }
@@ -3278,7 +3278,7 @@ estate_maratha_build_fort_building_in_y = {
 								}
 							}
 						}
-						is_highland = yes
+						has_terrain = highlands
 					}
 					AND = {
 						has_building = fort_15th
@@ -3334,7 +3334,7 @@ estate_maratha_build_fort_building_in_y = {
 								}
 							}
 						}
-						is_mountain = yes
+						has_terrain = mountain
 					}
 					AND = {
 						NOT = { has_building = fort_15th }
@@ -3373,7 +3373,7 @@ estate_maratha_build_fort_building_in_y = {
 								}
 							}
 						}
-						is_mountain = yes
+						has_terrain = mountain
 					}
 					AND = {
 						has_building = fort_15th
