@@ -8,16 +8,38 @@ country_decisions = {
 		provinces_to_highlight = {
 			owned_by = ROOT
 			OR = {
-				has_state_edict = edict_advancement_effort
-				has_state_edict = edict_centralization_effort
 				has_state_edict = edict_defensive_edict
-				has_state_edict = edict_of_absolutism
-				has_state_edict = edict_encourage_development
-				has_state_edict = edict_feudal_de_jure_law
+				has_state_edict = edict_defensive_edict_2
+				has_state_edict = edict_defensive_edict_3
+				has_state_edict = edict_defensive_edict_4
 				has_state_edict = edict_promote_military_recruitment
+				has_state_edict = edict_promote_military_recruitment_2
+				has_state_edict = edict_promote_military_recruitment_3
+				has_state_edict = edict_promote_military_recruitment_4
 				has_state_edict = edict_protect_trade
-				has_state_edict = edict_religion_enforced
+				has_state_edict = edict_protect_trade_2
+				has_state_edict = edict_protect_trade_3
+				has_state_edict = edict_protect_trade_4
+				has_state_edict = edict_encourage_development
+				has_state_edict = edict_encourage_development_2
+				has_state_edict = edict_encourage_development_3
+				has_state_edict = edict_encourage_development_4
 				has_state_edict = edict_religious_unity
+				has_state_edict = edict_religious_unity_2
+				has_state_edict = edict_religious_unity_3
+				has_state_edict = edict_religious_unity_4
+				has_state_edict = edict_advancement_effort
+				has_state_edict = edict_advancement_effort_2
+				has_state_edict = edict_advancement_effort_3
+				has_state_edict = edict_advancement_effort_4
+				has_state_edict = edict_of_absolutism
+				has_state_edict = edict_feudal_de_jure_law
+				has_state_edict = edict_religion_enforced
+				has_state_edict = edict_idea_variation_1_1
+				has_state_edict = edict_idea_variation_1_2
+				has_state_edict = edict_idea_variation_1_3
+				has_state_edict = edict_idea_variation_1_4
+				has_state_edict = edict_centralization_effort
 				has_state_edict = silvar_ishu_edict
 				has_state_edict = state_council_edict
 			}
@@ -25,16 +47,38 @@ country_decisions = {
 		allow = {
 			any_state = {
 				OR = {
-					has_state_edict = edict_advancement_effort
-					has_state_edict = edict_centralization_effort
 					has_state_edict = edict_defensive_edict
-					has_state_edict = edict_of_absolutism
-					has_state_edict = edict_encourage_development
-					has_state_edict = edict_feudal_de_jure_law
+					hidden_trigger = { has_state_edict = edict_defensive_edict_2 }
+					hidden_trigger = { has_state_edict = edict_defensive_edict_3 }
+					hidden_trigger = { has_state_edict = edict_defensive_edict_4 }
 					has_state_edict = edict_promote_military_recruitment
+					hidden_trigger = { has_state_edict = edict_promote_military_recruitment_2 }
+					hidden_trigger = { has_state_edict = edict_promote_military_recruitment_3 }
+					hidden_trigger = { has_state_edict = edict_promote_military_recruitment_4 }
 					has_state_edict = edict_protect_trade
-					has_state_edict = edict_religion_enforced
+					hidden_trigger = { has_state_edict = edict_protect_trade_2 }
+					hidden_trigger = { has_state_edict = edict_protect_trade_3 }
+					hidden_trigger = { has_state_edict = edict_protect_trade_4 }
+					has_state_edict = edict_encourage_development
+					hidden_trigger = { has_state_edict = edict_encourage_development_2 }
+					hidden_trigger = { has_state_edict = edict_encourage_development_3 }
+					hidden_trigger = { has_state_edict = edict_encourage_development_4 }
 					has_state_edict = edict_religious_unity
+					hidden_trigger = { has_state_edict = edict_religious_unity_2 }
+					hidden_trigger = { has_state_edict = edict_religious_unity_3 }
+					hidden_trigger = { has_state_edict = edict_religious_unity_4 }
+					has_state_edict = edict_advancement_effort
+					hidden_trigger = { has_state_edict = edict_advancement_effort_2 }
+					hidden_trigger = { has_state_edict = edict_advancement_effort_3 }
+					hidden_trigger = { has_state_edict = edict_advancement_effort_4 }
+					has_state_edict = edict_of_absolutism
+					has_state_edict = edict_feudal_de_jure_law
+					has_state_edict = edict_religion_enforced
+					has_state_edict = edict_idea_variation_1_1
+					hidden_trigger = { has_state_edict = edict_idea_variation_1_2 }
+					hidden_trigger = { has_state_edict = edict_idea_variation_1_3 }
+					hidden_trigger = { has_state_edict = edict_idea_variation_1_4 }
+					has_state_edict = edict_centralization_effort
 					has_state_edict = silvar_ishu_edict
 					has_state_edict = state_council_edict
 				}
@@ -116,16 +160,38 @@ country_decisions = {
 			clr_country_flag = state_edicts_everywhere
 			
 			every_owned_province = {
-				remove_province_modifier = edict_advancement_effort
-				remove_province_modifier = edict_centralization_effort
 				remove_province_modifier = edict_defensive_edict
-				remove_province_modifier = edict_of_absolutism
-				remove_province_modifier = edict_encourage_development
-				remove_province_modifier = edict_feudal_de_jure_law
+				remove_province_modifier = edict_defensive_edict_2
+				remove_province_modifier = edict_defensive_edict_3
+				remove_province_modifier = edict_defensive_edict_4
 				remove_province_modifier = edict_promote_military_recruitment
+				remove_province_modifier = edict_promote_military_recruitment_2
+				remove_province_modifier = edict_promote_military_recruitment_3
+				remove_province_modifier = edict_promote_military_recruitment_4
 				remove_province_modifier = edict_protect_trade
-				remove_province_modifier = edict_religion_enforced
+				remove_province_modifier = edict_protect_trade_2
+				remove_province_modifier = edict_protect_trade_3
+				remove_province_modifier = edict_protect_trade_4
+				remove_province_modifier = edict_encourage_development
+				remove_province_modifier = edict_encourage_development_2
+				remove_province_modifier = edict_encourage_development_3
+				remove_province_modifier = edict_encourage_development_4
 				remove_province_modifier = edict_religious_unity
+				remove_province_modifier = edict_religious_unity_2
+				remove_province_modifier = edict_religious_unity_3
+				remove_province_modifier = edict_religious_unity_4
+				remove_province_modifier = edict_advancement_effort
+				remove_province_modifier = edict_advancement_effort_2
+				remove_province_modifier = edict_advancement_effort_3
+				remove_province_modifier = edict_advancement_effort_4
+				remove_province_modifier = edict_of_absolutism
+				remove_province_modifier = edict_feudal_de_jure_law
+				remove_province_modifier = edict_religion_enforced
+				remove_province_modifier = edict_idea_variation_1_1
+				remove_province_modifier = edict_idea_variation_1_2
+				remove_province_modifier = edict_idea_variation_1_3
+				remove_province_modifier = edict_idea_variation_1_4
+				remove_province_modifier = edict_centralization_effort
 				remove_province_modifier = silvar_ishu_edict
 				remove_province_modifier = state_council_edict
 			}

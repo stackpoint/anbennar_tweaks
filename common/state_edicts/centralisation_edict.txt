@@ -2,21 +2,25 @@ edict_centralization_effort = {
 	potential = {
 		always = yes		#we support "potential" if modders want to have lots and just show some.
 	}
-	
+
 	allow = {
 		custom_trigger_tooltip = {
 			tooltip = disable_state_edicts_active.tooltip
-			NOT = { has_country_flag = disable_state_edicts_active }
+			ROOT = {
+				NOT = {
+					has_country_flag = disable_state_edicts_active
+				}
+			}
 		}
 	}
-	
+
 	modifier = {
-		local_autonomy = -0.03
+		local_autonomy = -0.08
 	}
-	
+
 	color = {  220 178 155 }
-	
-	
+
+
 	ai_will_do = {
 		factor = 10
 		modifier = {

@@ -28,16 +28,38 @@ country_event = {
 			clr_country_flag = disable_state_edicts_active
 			
 			every_owned_province = {
-				remove_province_modifier = edict_advancement_effort
-				remove_province_modifier = edict_centralization_effort
 				remove_province_modifier = edict_defensive_edict
-				remove_province_modifier = edict_of_absolutism
-				remove_province_modifier = edict_encourage_development
-				remove_province_modifier = edict_feudal_de_jure_law
+				remove_province_modifier = edict_defensive_edict_2
+				remove_province_modifier = edict_defensive_edict_3
+				remove_province_modifier = edict_defensive_edict_4
 				remove_province_modifier = edict_promote_military_recruitment
+				remove_province_modifier = edict_promote_military_recruitment_2
+				remove_province_modifier = edict_promote_military_recruitment_3
+				remove_province_modifier = edict_promote_military_recruitment_4
 				remove_province_modifier = edict_protect_trade
-				remove_province_modifier = edict_religion_enforced
+				remove_province_modifier = edict_protect_trade_2
+				remove_province_modifier = edict_protect_trade_3
+				remove_province_modifier = edict_protect_trade_4
+				remove_province_modifier = edict_encourage_development
+				remove_province_modifier = edict_encourage_development_2
+				remove_province_modifier = edict_encourage_development_3
+				remove_province_modifier = edict_encourage_development_4
 				remove_province_modifier = edict_religious_unity
+				remove_province_modifier = edict_religious_unity_2
+				remove_province_modifier = edict_religious_unity_3
+				remove_province_modifier = edict_religious_unity_4
+				remove_province_modifier = edict_advancement_effort
+				remove_province_modifier = edict_advancement_effort_2
+				remove_province_modifier = edict_advancement_effort_3
+				remove_province_modifier = edict_advancement_effort_4
+				remove_province_modifier = edict_of_absolutism
+				remove_province_modifier = edict_feudal_de_jure_law
+				remove_province_modifier = edict_religion_enforced
+				remove_province_modifier = edict_idea_variation_1_1
+				remove_province_modifier = edict_idea_variation_1_2
+				remove_province_modifier = edict_idea_variation_1_3
+				remove_province_modifier = edict_idea_variation_1_4
+				remove_province_modifier = edict_centralization_effort
 				remove_province_modifier = silvar_ishu_edict
 				remove_province_modifier = state_council_edict
 			}
@@ -61,16 +83,38 @@ province_event = {
 	trigger = {
 		owner = { ai = yes }
 		OR = {
-			has_province_modifier = edict_advancement_effort
-			has_province_modifier = edict_centralization_effort
 			has_province_modifier = edict_defensive_edict
-			has_province_modifier = edict_of_absolutism
-			has_province_modifier = edict_encourage_development
-			has_province_modifier = edict_feudal_de_jure_law
+			has_province_modifier = edict_defensive_edict_2
+			has_province_modifier = edict_defensive_edict_3
+			has_province_modifier = edict_defensive_edict_4
 			has_province_modifier = edict_promote_military_recruitment
+			has_province_modifier = edict_promote_military_recruitment_2
+			has_province_modifier = edict_promote_military_recruitment_3
+			has_province_modifier = edict_promote_military_recruitment_4
 			has_province_modifier = edict_protect_trade
-			has_province_modifier = edict_religion_enforced
+			has_province_modifier = edict_protect_trade_2
+			has_province_modifier = edict_protect_trade_3
+			has_province_modifier = edict_protect_trade_4
+			has_province_modifier = edict_encourage_development
+			has_province_modifier = edict_encourage_development_2
+			has_province_modifier = edict_encourage_development_3
+			has_province_modifier = edict_encourage_development_4
 			has_province_modifier = edict_religious_unity
+			has_province_modifier = edict_religious_unity_2
+			has_province_modifier = edict_religious_unity_3
+			has_province_modifier = edict_religious_unity_4
+			has_province_modifier = edict_advancement_effort
+			has_province_modifier = edict_advancement_effort_2
+			has_province_modifier = edict_advancement_effort_3
+			has_province_modifier = edict_advancement_effort_4
+			has_province_modifier = edict_of_absolutism
+			has_province_modifier = edict_feudal_de_jure_law
+			has_province_modifier = edict_religion_enforced
+			has_province_modifier = edict_idea_variation_1_1
+			has_province_modifier = edict_idea_variation_1_2
+			has_province_modifier = edict_idea_variation_1_3
+			has_province_modifier = edict_idea_variation_1_4
+			has_province_modifier = edict_centralization_effort
 			has_province_modifier = silvar_ishu_edict
 			has_province_modifier = state_council_edict
 		}
@@ -80,16 +124,38 @@ province_event = {
         name = edict_events.2.a
 		
 		every_owned_province = {
-			remove_province_modifier = edict_advancement_effort
-			remove_province_modifier = edict_centralization_effort
 			remove_province_modifier = edict_defensive_edict
-			remove_province_modifier = edict_of_absolutism
-			remove_province_modifier = edict_encourage_development
-			remove_province_modifier = edict_feudal_de_jure_law
+			remove_province_modifier = edict_defensive_edict_2
+			remove_province_modifier = edict_defensive_edict_3
+			remove_province_modifier = edict_defensive_edict_4
 			remove_province_modifier = edict_promote_military_recruitment
+			remove_province_modifier = edict_promote_military_recruitment_2
+			remove_province_modifier = edict_promote_military_recruitment_3
+			remove_province_modifier = edict_promote_military_recruitment_4
 			remove_province_modifier = edict_protect_trade
-			remove_province_modifier = edict_religion_enforced
+			remove_province_modifier = edict_protect_trade_2
+			remove_province_modifier = edict_protect_trade_3
+			remove_province_modifier = edict_protect_trade_4
+			remove_province_modifier = edict_encourage_development
+			remove_province_modifier = edict_encourage_development_2
+			remove_province_modifier = edict_encourage_development_3
+			remove_province_modifier = edict_encourage_development_4
 			remove_province_modifier = edict_religious_unity
+			remove_province_modifier = edict_religious_unity_2
+			remove_province_modifier = edict_religious_unity_3
+			remove_province_modifier = edict_religious_unity_4
+			remove_province_modifier = edict_advancement_effort
+			remove_province_modifier = edict_advancement_effort_2
+			remove_province_modifier = edict_advancement_effort_3
+			remove_province_modifier = edict_advancement_effort_4
+			remove_province_modifier = edict_of_absolutism
+			remove_province_modifier = edict_feudal_de_jure_law
+			remove_province_modifier = edict_religion_enforced
+			remove_province_modifier = edict_idea_variation_1_1
+			remove_province_modifier = edict_idea_variation_1_2
+			remove_province_modifier = edict_idea_variation_1_3
+			remove_province_modifier = edict_idea_variation_1_4
+			remove_province_modifier = edict_centralization_effort
 			remove_province_modifier = silvar_ishu_edict
 			remove_province_modifier = state_council_edict
 		}
@@ -105,7 +171,6 @@ country_event = {
 	is_triggered_only = yes
 	
 	trigger = {
-		#always = no
 		has_country_flag = state_edicts_everywhere
 		variable_arithmetic_trigger = {
 			export_to_variable = {
@@ -137,9 +202,38 @@ country_event = {
 			limit = {
 				is_state = yes
 			}
-			add_province_modifier = {
-				name = edict_advancement_effort
-				duration = -1
+			if = {
+				limit = {
+					has_building = government_lvl_4
+				}
+				add_province_modifier = {
+					name = edict_advancement_effort_4
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = government_lvl_3
+				}
+				add_province_modifier = {
+					name = edict_advancement_effort_3
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = town_hall
+				}
+				add_province_modifier = {
+					name = edict_advancement_effort_2
+					duration = -1
+				}
+			}
+			else = {
+				add_province_modifier = {
+					name = edict_advancement_effort
+					duration = -1
+				}
 			}
 		}
 	}
@@ -167,9 +261,38 @@ country_event = {
 			limit = {
 				is_state = yes
 			}
-			add_province_modifier = {
-				name = edict_defensive_edict
-				duration = -1
+			if = {
+				limit = {
+					has_building = government_lvl_4
+				}
+				add_province_modifier = {
+					name = edict_defensive_edict_4
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = government_lvl_3
+				}
+				add_province_modifier = {
+					name = edict_defensive_edict_3
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = town_hall
+				}
+				add_province_modifier = {
+					name = edict_defensive_edict_2
+					duration = -1
+				}
+			}
+			else = {
+				add_province_modifier = {
+					name = edict_defensive_edict
+					duration = -1
+				}
 			}
 		}
 	}
@@ -205,9 +328,38 @@ country_event = {
 			limit = {
 				is_state = yes
 			}
-			add_province_modifier = {
-				name = edict_encourage_development
-				duration = -1
+			if = {
+				limit = {
+					has_building = government_lvl_4
+				}
+				add_province_modifier = {
+					name = edict_encourage_development_4
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = government_lvl_3
+				}
+				add_province_modifier = {
+					name = edict_encourage_development_3
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = town_hall
+				}
+				add_province_modifier = {
+					name = edict_encourage_development_2
+					duration = -1
+				}
+			}
+			else = {
+				add_province_modifier = {
+					name = edict_encourage_development
+					duration = -1
+				}
 			}
 		}
 	}
@@ -220,9 +372,38 @@ country_event = {
 			limit = {
 				is_state = yes
 			}
-			add_province_modifier = {
-				name = edict_religious_unity
-				duration = -1
+			if = {
+				limit = {
+					has_building = government_lvl_4
+				}
+				add_province_modifier = {
+					name = edict_religious_unity_4
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = government_lvl_3
+				}
+				add_province_modifier = {
+					name = edict_religious_unity_3
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = town_hall
+				}
+				add_province_modifier = {
+					name = edict_religious_unity_2
+					duration = -1
+				}
+			}
+			else = {
+				add_province_modifier = {
+					name = edict_religious_unity
+					duration = -1
+				}
 			}
 		}
 	}
@@ -251,6 +432,62 @@ country_event = {
 	}
 	
 	option = {
+        name = edict_idea_variation_1_1
+		
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = edict_idea_variation_1_tooltip
+				has_country_flag = edict_idea_variation_1_1
+			}
+			any_owned_province = {
+				is_state = yes
+				has_port = yes
+			}
+		}
+		
+		#edict
+		every_owned_province = {
+			limit = {
+				is_state = yes
+				has_port = yes
+			}
+			if = {
+				limit = {
+					has_building = government_lvl_4
+				}
+				add_province_modifier = {
+					name = edict_idea_variation_1_4
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = government_lvl_3
+				}
+				add_province_modifier = {
+					name = edict_idea_variation_1_3
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = town_hall
+				}
+				add_province_modifier = {
+					name = edict_idea_variation_1_2
+					duration = -1
+				}
+			}
+			else = {
+				add_province_modifier = {
+					name = edict_idea_variation_1_1
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	option = {
         name = edict_promote_military_recruitment
 		
 		#edict
@@ -258,9 +495,38 @@ country_event = {
 			limit = {
 				is_state = yes
 			}
-			add_province_modifier = {
-				name = edict_promote_military_recruitment
-				duration = -1
+			if = {
+				limit = {
+					has_building = government_lvl_4
+				}
+				add_province_modifier = {
+					name = edict_promote_military_recruitment_4
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = government_lvl_3
+				}
+				add_province_modifier = {
+					name = edict_promote_military_recruitment_3
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = town_hall
+				}
+				add_province_modifier = {
+					name = edict_promote_military_recruitment_2
+					duration = -1
+				}
+			}
+			else = {
+				add_province_modifier = {
+					name = edict_promote_military_recruitment
+					duration = -1
+				}
 			}
 		}
 	}
@@ -273,9 +539,38 @@ country_event = {
 			limit = {
 				is_state = yes
 			}
-			add_province_modifier = {
-				name = edict_protect_trade
-				duration = -1
+			if = {
+				limit = {
+					has_building = government_lvl_4
+				}
+				add_province_modifier = {
+					name = edict_protect_trade_4
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = government_lvl_3
+				}
+				add_province_modifier = {
+					name = edict_protect_trade_3
+					duration = -1
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = town_hall
+				}
+				add_province_modifier = {
+					name = edict_protect_trade_2
+					duration = -1
+				}
+			}
+			else = {
+				add_province_modifier = {
+					name = edict_protect_trade
+					duration = -1
+				}
 			}
 		}
 	}
