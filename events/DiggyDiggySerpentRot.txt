@@ -936,7 +936,7 @@ country_event = {
         name = serpent_rot.16.a
         ai_chance = { factor = 1 }
 		add_prestige = 50
-		add_stability = 3
+		add_stability3 = yes
 		custom_tooltip = serpent_cure_tooltip
 		if = {
 			limit = { capital_scope = { continent = serpentspine} }
@@ -979,7 +979,7 @@ country_event = {
 			any_owned_province = { OR = { has_terrain = dwarven_hold has_terrain = dwarven_hold_surface } }
 		}
 		add_prestige = 50
-		add_stability = 3
+		add_stability3 = yes
 		custom_tooltip = serpent_cure_ventilation_tooltip
 		add_country_modifier = {
 			name = cure_bringer

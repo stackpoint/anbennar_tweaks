@@ -1845,7 +1845,7 @@ country_event = {
 	option = {
         name = diggy.30.b
         ai_chance = { factor = 10 }
-		add_stability = 2
+		add_stability2 = yes
 		capital_scope = {
 			hidden_effect = { change_variable = { cons_prog = -0.125 } }
 			tooltip = { change_variable = { cons_prog = -0.25 } }

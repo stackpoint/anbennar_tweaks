@@ -1365,7 +1365,7 @@ country_event = {
 			change_government = republic
 		}
 		add_government_reform = noble_republic
-		add_stability = 2
+		add_stability2 = yes
 		define_ruler = {
 			adm = 5
 			dip = 5

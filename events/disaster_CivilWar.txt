@@ -78,7 +78,7 @@ country_event = {
 		add_legitimacy = 10
 		add_horde_unity = 10
 		add_mandate_large_effect = yes
-		add_stability = 3
+		add_stability3 = yes
 	}
 }
 

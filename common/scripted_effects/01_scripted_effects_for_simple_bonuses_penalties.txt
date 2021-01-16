@@ -16,6 +16,49 @@ add_stability_or_adm_power = {
 		add_stability = 1
 	}
 }
+add_stability2 = {
+	if = {
+		limit = {
+			stability = 3
+		}
+		add_adm_power = 100
+	}
+	else_if = {
+		limit = {
+			stability = 2
+		}
+		add_stability = 1
+		add_adm_power = 50
+	}
+	else = {
+		add_stability = 2
+	}
+}
+add_stability3 = {
+	if = {
+		limit = {
+			stability = 3
+		}
+		add_adm_power = 150
+	}
+	else_if = {
+		limit = {
+			stability = 2
+		}
+		add_stability = 1
+		add_adm_power = 100
+	}
+	else_if = {
+		limit = {
+			stability = 1
+		}
+		add_stability = 2
+		add_adm_power = 50
+	}
+	else = {
+		add_stability = 3
+	}
+}
 reduce_stability_or_adm_power = {
 	if = {
 		limit = {

@@ -2120,7 +2120,7 @@ rezankand_3_b = {
 		}
 		
 		effect = {
-			add_stability = 2
+			add_stability2 = yes
 			add_prestige = 50
 			add_country_modifier = {
 				name = rezankand_ynn_grain
@@ -2811,7 +2811,7 @@ rezankand_5 = {
 		}
 		
 		effect = {
-			add_stability = 2
+			add_stability2 = yes
 		}
 	}
 	

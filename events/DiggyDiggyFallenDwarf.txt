@@ -534,7 +534,7 @@ country_event = {
         name = diggy_fallen.7.a
         ai_chance = { factor = 100 }
 		trigger = { NOT = { exists = H94 } }
-		add_stability = 2
+		add_stability2 = yes
 		add_prestige = 50
 		add_country_modifier = {
 			name = onyx_breaker
@@ -581,7 +581,7 @@ country_event = {
 	option = {
         name = diggy_fallen.8.a
         ai_chance = { factor = 100 }
-		add_stability = 3
+		add_stability3 = yes
 		add_prestige = 30
 		increase_legitimacy_large_effect = yes
 		add_manpower = 30

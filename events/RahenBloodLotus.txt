@@ -149,7 +149,7 @@ country_event = { #The Blood Lotus Rebellion Ends
 		}
 		trigger = { NOT = { has_country_flag = blood_lotus_lost } has_country_modifier = blood_lotus_hardline_stance }
 		
-		add_stability = 3
+		add_stability3 = yes
 		add_prestige = 50
 		add_country_modifier = {
 			name = blood_lotus_powerful_government

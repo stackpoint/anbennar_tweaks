@@ -2479,7 +2479,7 @@ country_event = {
 				change_statists_vs_orangists = 1
 			}
 		}
-		add_stability = 2 #One is for placating the aristocrats and clergy the other to counteract the -1 stab on monarch death
+		add_stability2 = yes #One is for placating the aristocrats and clergy the other to counteract the -1 stab on monarch death
 		if = {
 			limit = {
 				has_estate = estate_nobles

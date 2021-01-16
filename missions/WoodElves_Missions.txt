@@ -352,7 +352,7 @@ deepwoods_3_b = {
 		effect = {
 			if = {
 				limit = { ai = yes }
-				add_stability = 2
+				add_stability2 = yes
 			}
 			deepwoods_superregion = {
 				limit = {

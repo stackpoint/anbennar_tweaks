@@ -558,7 +558,7 @@ country_decisions = {
 		}
 		effect = {
 			change_religion = capital
-			add_stability = 1
+			add_stability_or_adm_power = yes
 			add_legitimacy = 10
 			clr_country_flag = sultan_titles_for_non_muslims
 			remove_country_modifier = islamic_titles
