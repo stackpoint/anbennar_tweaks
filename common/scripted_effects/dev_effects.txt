@@ -33,9 +33,9 @@ MAX_value = {
 set_base_value = {
 	set_variable = { #100% base cost
 		which = $which$
-		value = 1 
+		value = 1
 	}
-	
+
 	export_to_variable = {
 		variable_name = apowerCost
 		value = modifier:all_power_cost
@@ -45,7 +45,7 @@ set_base_value = {
 		which = $which$
 		which = apowerCost
 	}
-	
+
 	export_to_variable = {
 		variable_name = devCost
 		value = modifier:development_cost
@@ -55,7 +55,7 @@ set_base_value = {
 		which = $which$
 		which = devCost
 	}
-	
+
 	export_to_variable = {
 		variable_name = ldevCost
 		value = modifier:local_development_cost
@@ -64,7 +64,7 @@ set_base_value = {
 		which = $which$
 		which = ldevCost
 	}
-	
+
 	#same day development
 	export_to_variable = {
 		variable_name = pDev
@@ -93,7 +93,7 @@ set_base_value = {
 			which = targetDev
 			which = counter
 		}
-		
+
 		if = {
 			limit = {
 				check_variable = {
@@ -143,7 +143,7 @@ set_base_value = {
 			}
 		}
 	}
-	
+
 	if = { #5% in capital per 100 country dev (up to 50%)
 		limit = {
 			is_capital = yes
@@ -153,7 +153,7 @@ set_base_value = {
 			value = total_development
 			who = owner
 		}
-		if = { 
+		if = {
 			limit = {
 				check_variable = {
 					which = totalDev
@@ -171,26 +171,26 @@ set_base_value = {
 				value = -2000
 			}
 		}
-		change_variable = { 
+		change_variable = {
 			which = $which$
 			which = totalDev
 		}
 	}
-	
+
 	if = { #dev efficiency from adm tech affects base cost by -10%
 		limit = {
-			owner = { adm_tech = 27 } 
+			owner = { adm_tech = 27 }
 		}
-		multiply_variable = { 
+		multiply_variable = {
 			which = $which$
 			value = 35
 		}
 	}
 	else_if  = {
 		limit = {
-			owner = { adm_tech = 23 } 
+			owner = { adm_tech = 23 }
 		}
-		multiply_variable = { 
+		multiply_variable = {
 			which = $which$
 			value = 40
 		}
@@ -199,13 +199,13 @@ set_base_value = {
 		limit = {
 			owner = { adm_tech = 17 }
 		}
-		multiply_variable = { 
+		multiply_variable = {
 			which = $which$
 			value = 45
 		}
 	}
 	else = {
-		multiply_variable = { 
+		multiply_variable = {
 			which = $which$
 			value = 50
 		}
@@ -214,7 +214,7 @@ set_base_value = {
 
 set_base_target = {
 	set_country_flag = $base$_flag
-	
+
 	set_variable = {
 		which = baseCost
 		value = 999
@@ -223,21 +223,21 @@ set_base_target = {
 		limit = {
 			is_state_core = owner
 		}
-		
+
 		export_to_variable = { which = bTax 	value = base_tax }
 		export_to_variable = { which = bPro 	value = base_production }
 		export_to_variable = { which = bMan 	value = base_manpower }
-		
+
 		set_variable 	= { which = notTax 	which = bPro }
 		change_variable = { which = notTax 	which = bMan }
-		
+
 		set_variable 	= { which = notPro 	which = bMan }
 		change_variable = { which = notPro 	which = bTax }
-		
+
 		set_variable 	= { which = notMan 	which = bTax }
 		change_variable = { which = notMan 	which = bPro }
-		
-		
+
+
 		if = {
 			limit = {
 				owner = {
@@ -289,13 +289,13 @@ set_base_target = {
 			set_base_value = {
 				which = baseCost
 			}
-			
+
 			if = { #dip prefer gold
 				limit = {
 					owner = {
 						has_country_flag = dip_flag
 					}
-						trade_goods = gold
+					trade_goods = gold
 				}
 				owner = {
 					multiply_variable = {
@@ -303,7 +303,7 @@ set_base_target = {
 						value = 2
 					}
 				}
-				
+
 				if = {
 					limit = {
 						NOT = {
@@ -321,7 +321,7 @@ set_base_target = {
 					}
 					save_event_target_as = $which$
 				}
-				
+
 				owner = {
 					multiply_variable = {
 						which = baseCost
@@ -363,7 +363,7 @@ set_base_target = {
 			}
 		}
 	}
-	
+
 	clr_country_flag = $base$_flag
 }
 
@@ -378,7 +378,7 @@ binary_ad20 = {
 		owner = {
 			add_$addcommand$_power = $valueSub$
 		}
-		
+
 		subtract_variable = {
 			which = $variable$
 			value = $valueAdd$
@@ -391,7 +391,7 @@ add_power = { #reddit.com/r/eu4/comments/dy7lyv
 		which = temp
 		which = baseCost
 	}
-	
+
 	binary_ad20 = { variable = temp	addcommand = $power$	valueAdd = 1024 	valueSub = -1024 }
 	binary_ad20 = { variable = temp	addcommand = $power$	valueAdd = 512		valueSub = -512 }
 	binary_ad20 = { variable = temp	addcommand = $power$	valueAdd = 256		valueSub = -256 }
@@ -411,13 +411,13 @@ spawn_institution = {
 		which = base_target
 		base = $institution$
 	}
-	
+
 	event_target:base_target = {
 		set_variable = {
 			which = devCount
 			value = 0
 		}
-		
+
 		while = {
 			limit = {
 				NOT = { $institution$ = 100 }
@@ -425,12 +425,12 @@ spawn_institution = {
 			set_base_value = {
 				which = baseCost
 			}
-			
+
 			export_to_variable = { variable_name = admPower 	value = trigger_value:adm_power 	who = PREV }
 			export_to_variable = { variable_name = dipPower 	value = trigger_value:dip_power 	who = PREV }
 			export_to_variable = { variable_name = milPower 	value = trigger_value:mil_power 	who = PREV }
 
-			
+
 			if = {
 				limit = {
 					check_variable = { which = admPower 	which = dipPower }
@@ -462,7 +462,7 @@ spawn_institution = {
 				add_base_manpower = 1
 				log = dev_info.3
 			}
-			
+
 			add_devastation_reduction = yes
 			owner = {
 				change_estate_land_share = {
@@ -470,13 +470,13 @@ spawn_institution = {
 					share = -0.2
 				}
 			}
-			
+
 			change_variable = {
 				which = devCount
 				value = 1
 			}
 		}
-		
+
 		set_variable = {
 			which = devCount
 			value = 0
@@ -493,7 +493,7 @@ binary_ad2 = {
 			}
 		}
 		add_$addcommand$_power = $valueSub$
-		
+
 		subtract_variable = {
 			which = $variable$
 			value = $valueAdd$
@@ -523,7 +523,7 @@ stab_cost = {
 		value = 100
 	}
 	log = dev_info.5
-	
+
 	binary_ad2 = { variable = stabCost	addcommand = adm	valueAdd = 1024 	valueSub = -1024 }
 	binary_ad2 = { variable = stabCost	addcommand = adm	valueAdd = 512		valueSub = -512 }
 	binary_ad2 = { variable = stabCost	addcommand = adm	valueAdd = 256		valueSub = -256 }
@@ -546,7 +546,7 @@ binary_ad3 = {
 			}
 		}
 		add_devastation = $valueSub$
-		
+
 		subtract_variable = {
 			which = $variable$
 			value = $valueAdd$
@@ -567,7 +567,7 @@ add_devastation_reduction = {
 		which = pDev2
 		value = 6
 	}
-	
+
 	binary_ad3 = { variable = pDev2 	valueAdd = 64 	valueSub = -64 }
 	binary_ad3 = { variable = pDev2 	valueAdd = 32 	valueSub = -32 }
 	binary_ad3 = { variable = pDev2 	valueAdd = 16 	valueSub = -16 }
@@ -599,7 +599,7 @@ general_cost = {
 		value = 50
 	}
 	log = dev_info.5
-	
+
 	binary_ad2 = { variable = generalCost	addcommand = mil	valueAdd = 64		valueSub = -64 }
 	binary_ad2 = { variable = generalCost	addcommand = mil	valueAdd = 32		valueSub = -32 }
 	binary_ad2 = { variable = generalCost	addcommand = mil	valueAdd = 16		valueSub = -16 }

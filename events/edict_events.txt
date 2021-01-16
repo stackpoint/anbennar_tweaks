@@ -230,12 +230,12 @@ country_event = {
 				}
 			}
 			else = {
-				add_province_modifier = {
-					name = edict_advancement_effort
-					duration = -1
-				}
+			add_province_modifier = {
+				name = edict_advancement_effort
+				duration = -1
 			}
 		}
+	}
 	}
 	
 	option = {
@@ -289,12 +289,12 @@ country_event = {
 				}
 			}
 			else = {
-				add_province_modifier = {
-					name = edict_defensive_edict
-					duration = -1
-				}
+			add_province_modifier = {
+				name = edict_defensive_edict
+				duration = -1
 			}
 		}
+	}
 	}
 	
 	option = {
@@ -356,12 +356,12 @@ country_event = {
 				}
 			}
 			else = {
-				add_province_modifier = {
-					name = edict_encourage_development
-					duration = -1
-				}
+			add_province_modifier = {
+				name = edict_encourage_development
+				duration = -1
 			}
 		}
+	}
 	}
 	
 	option = {
@@ -400,12 +400,12 @@ country_event = {
 				}
 			}
 			else = {
-				add_province_modifier = {
-					name = edict_religious_unity
-					duration = -1
-				}
+			add_province_modifier = {
+				name = edict_religious_unity
+				duration = -1
 			}
 		}
+	}
 	}
 	
 	option = {
@@ -523,12 +523,12 @@ country_event = {
 				}
 			}
 			else = {
-				add_province_modifier = {
-					name = edict_promote_military_recruitment
-					duration = -1
-				}
+			add_province_modifier = {
+				name = edict_promote_military_recruitment
+				duration = -1
 			}
 		}
+	}
 	}
 	
 	option = {
@@ -567,9 +567,9 @@ country_event = {
 				}
 			}
 			else = {
-				add_province_modifier = {
-					name = edict_protect_trade
-					duration = -1
+			add_province_modifier = {
+				name = edict_protect_trade
+				duration = -1
 				}
 			}
 		}

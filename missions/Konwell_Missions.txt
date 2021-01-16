@@ -721,7 +721,7 @@ konwell_4_security = {
 				}
 				num_of_owned_provinces_with = {
 					value = 1
-					fort_level = 1	
+					fort_level = 1
 					area = the_commons_area
 				}
 			}

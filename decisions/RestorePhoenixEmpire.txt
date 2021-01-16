@@ -38,9 +38,9 @@ country_decisions = {
 					superregion = bulwar_superregion
 				}
 				AND = {
-					num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
-						value = 100
-						superregion = bulwar_superregion
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 100
+				superregion = bulwar_superregion
 					}
 					custom_trigger_tooltip = {
 						tooltip = phoenix_empire_subjects_trigger_tt

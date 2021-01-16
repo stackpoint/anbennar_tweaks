@@ -1312,7 +1312,7 @@ guiTypes = {
 		position = { x = 208 y = 435 }
 		spriteType = "GFX_building_upgrade_icon"
 	}
-  	checkboxType = {
+  checkboxType = {
 		#name = "build_forcelimit_lvl_3"
 		name = "build_conscription_center"
 		position = { x = 265 y = 426 }
@@ -1328,13 +1328,13 @@ guiTypes = {
 		maxHeight = 18
 		text = "2000¤"
 	}
-  	iconType = {
+  iconType = {
 		name = "forcelimit_lvl_2_to_forcelimit_lvl_3_arrow"
 		position = { x = 258 y = 435 }
 		spriteType = "GFX_building_upgrade_icon"
 	}
 
- 	##############################################################
+  ##############################################################
 	######### Mercenaries  Doesn't work with only flogi ideas
 	##############################################################
 	# iconType = {
@@ -1479,8 +1479,8 @@ guiTypes = {
 	  name = "navyforcelimit_lvl_1_to_navyforcelimit_lvl_2_arrow"
 	  position = { x = 150 y = 532 }
 	  spriteType = "GFX_building_upgrade_icon"
-  	}
-  	##############################################################
+  }
+  ##############################################################
 	######### / Ideagroup Fleetbase
 	##############################################################
 	## changed position y +200
@@ -1488,14 +1488,14 @@ guiTypes = {
 	  name = "fleetbase"
 	  position = { x = 210 y = 491 }
 	  spriteType = "GFX_banner_left_3"
-	}
-	iconType = {
-		name ="fleetbase_icon"
-		spriteType = "GFX_macro_buildings_category_strip"
-		position = { x = 220 y = 494 }
-		frame = 3
-	}
-	instantTextBoxType = {
+  }
+  iconType = {
+	  name ="fleetbase_icon"
+	  spriteType = "GFX_macro_buildings_category_strip"
+	  position = { x = 220 y = 494 }
+	  frame = 3
+  }
+  instantTextBoxType = {
 	  name = "title_fleetbase"
 	  position = {x = 240 y = 500 }
 	  font = "vic_18"
@@ -1503,13 +1503,13 @@ guiTypes = {
 	  maxWidth = 160
 	  maxHeight = 18
 	  text = "FLEETBASE"
-  	}
-  	checkboxType = {
+  }
+  checkboxType = {
 	  name = "build_navalbase_lvl_1"
 	  position = { x = 215 y = 523 }
 	  quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
-  	}
-  	instantTextBoxType = {
+  }
+  instantTextBoxType = {
 	  name = "navalbase_lvl_1_cost"
 	  position = {x = 215 y = 573 }
 	  font = "vic_18"
@@ -1517,13 +1517,13 @@ guiTypes = {
 	  maxWidth = 128
 	  maxHeight = 18
 	  text = "2000¤"
-  	}
-  	checkboxType = {
+  }
+  checkboxType = {
 	  name = "build_navalbase_lvl_2"
 	  position = { x = 265 y = 523 }
 	  quadTextureSprite = "GFX_courthouse_muslimgfx" #Placeholder, real sprite is decided by game (based on button name).
-  	}
-  	instantTextBoxType = {
+  }
+  instantTextBoxType = {
 	  name = "navalbase_lvl_2_cost"
 	  position = {x = 265 y = 573 }
 	  font = "vic_18"
@@ -1531,12 +1531,12 @@ guiTypes = {
 	  maxWidth = 128
 	  maxHeight = 18
 	  text = "2000¤"
-  	}
-  	iconType = {
+  }
+  iconType = {
 	  name = "arrow_fleet_idea_1"
 	  position = { x = 254 y = 532 }
 	  spriteType = "GFX_building_upgrade_icon"
-  	}
+  }
 	##############################################################
 	######### Festungen / Fortresses / Defense
 	##############################################################
@@ -1633,64 +1633,66 @@ guiTypes = {
 		spriteType = "GFX_building_upgrade_icon"
 	}
 
-  	##############################################################
+  ##############################################################
 	######### Coastal
 	####################################################
 
-	iconType = {
-		name = "naval_defense_banner"
-		position = { x = 330 y = 588 }
-		spriteType = "GFX_banner_right_2"
-	}
-	iconType ={
-		name ="naval_defense_icon"
-		spriteType = "GFX_macro_buildings_category_strip"
-		position = { x = 344 y = 591}
-		frame = 9
-	}
-	instantTextBoxType={
-		name = "title_naval_defense"
-		position = {x = 374 y = 597 }
-		font = "vic_18"
-		borderSize = {x = 0 y = 0}
-		maxWidth = 160
-		maxHeight = 18
-		text = "COASTAL_DEF"
-	}
-	checkboxType = {
-		name = "build_coastal_defence"
-		position = { x = 335 y = 620 }
-		quadTextureSprite = "GFX_courthouse_muslimgfx"
-	}
-	instantTextBoxType={
-		name = "coastal_defence_cost"
-		position = {x = 335 y = 670 }
-		font = "vic_18"
-		borderSize = {x = 0 y = 0}
-		maxWidth = 128
-		maxHeight = 18
-		text = "2000¤"
-	}
+  iconType = {
+	  name = "naval_defense_banner"
+	  position = { x = 330 y = 588 }
+	  spriteType = "GFX_banner_right_2"
+  }
+  iconType ={
+	  name ="naval_defense_icon"
+	  spriteType = "GFX_macro_buildings_category_strip"
+	  position = { x = 344 y = 591}
+	  frame = 9
+  }
+  instantTextBoxType={
+	  name = "title_naval_defense"
+	  position = {x = 374 y = 597 }
+	  font = "vic_18"
+	  borderSize = {x = 0 y = 0}
+	  maxWidth = 160
+	  maxHeight = 18
+	  text = "COASTAL_DEF"
+  }
+  checkboxType = {
+	  name = "build_coastal_defence"
+	  position = { x = 335 y = 620 }
+	  quadTextureSprite = "GFX_courthouse_muslimgfx"
+  }
+  instantTextBoxType={
+	  name = "coastal_defence_cost"
+	  position = {x = 335 y = 670 }
+	  font = "vic_18"
+	  borderSize = {x = 0 y = 0}
+	  maxWidth = 128
+	  maxHeight = 18
+	  text = "2000¤"
+  }
 
-	checkboxType = {
-		name = "build_naval_battery"
-		position = { x = 385 y = 620 }
-		quadTextureSprite = "GFX_courthouse_muslimgfx"
-	}
-	instantTextBoxType={
-		name = "naval_battery_cost"
-		position = {x = 385 y = 670 }
-		font = "vic_18"
-		borderSize = {x = 0 y = 0}
-		maxWidth = 128
-		maxHeight = 18
-		text = "2000¤"
-	}
-	iconType = {
-		name = "coastal_defence_to_naval_battery_arrow"
-		position = { x = 380 y = 629 }
-		spriteType = "GFX_building_upgrade_icon"
-	}
+  checkboxType = {
+	  name = "build_naval_battery"
+	  position = { x = 385 y = 620 }
+	  quadTextureSprite = "GFX_courthouse_muslimgfx"
+  }
+  instantTextBoxType={
+	  name = "naval_battery_cost"
+	  position = {x = 385 y = 670 }
+	  font = "vic_18"
+	  borderSize = {x = 0 y = 0}
+	  maxWidth = 128
+	  maxHeight = 18
+	  text = "2000¤"
+  }
+  iconType = {
+	  name = "coastal_defence_to_naval_battery_arrow"
+	  position = { x = 380 y = 629 }
+	  spriteType = "GFX_building_upgrade_icon"
+  }
+
+
 
 	##############################################################
 	######### Ideengruppe Festung / Ideagroup Fortress
@@ -1799,12 +1801,12 @@ guiTypes = {
 		maxHeight = 18
 		text = "2000¤"
 	}
-  	iconType = {
+  iconType = {
 		name = "arrow_fort_idea_1"
 		position = { x = 250 y = 729 }
 		spriteType = "GFX_building_upgrade_icon"
 	}
-  	iconType = {
+  iconType = {
 		name = "arrow_fort_idea_2"
 		position = { x = 50 y = 729 }
 		spriteType = "GFX_building_upgrade_icon"

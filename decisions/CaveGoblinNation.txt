@@ -227,7 +227,7 @@ country_decisions = {
 				tag = H88
 				tag = H92
 				tag = H93
-				#tag = H74 #chaingrasper should maybe become something else
+	#			tag = H74 #chaingrasper should maybe become something else
 			}
 			NOT = { tag = I98 } #udzenklan
 			NOT = { tag = I99 } #Zarjiplaj

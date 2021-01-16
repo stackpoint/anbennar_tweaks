@@ -261,12 +261,12 @@ g_mountainshark_lotr_column_4 = {
 		}
 		trigger = {
 			government = monarchy
-			AND = {
-				philosopher = 5
-				statesman = 5
-				army_organiser = 5
+				AND = {
+					philosopher = 5
+					statesman = 5
+					army_organiser = 5
+				}
 			}
-		}
 		
 		effect = {
 			add_adm_power = 100

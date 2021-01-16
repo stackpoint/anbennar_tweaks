@@ -1,3 +1,4 @@
+
 #This one or the next one will always be valid
 estate_dhimmi_hire_advisor = {
 	can_select = {
@@ -492,7 +493,7 @@ estate_dhimmi_build_temple_in_y = {
 			event_target:agenda_province = {
 				OR = {
 					has_building = taxation_lvl_2
-					has_building = cathedral
+				has_building = cathedral
 					has_building = taxation_lvl_4
 				}
 			}
@@ -962,8 +963,8 @@ estate_dhimmi_three_privileges = {
 		factor = 1
 	}
 	task_requirements = {
-		num_of_estate_privileges = {
-			estate = estate_dhimmi
+			num_of_estate_privileges = {
+				estate = estate_dhimmi
 			value = 1
 		}
 	}
