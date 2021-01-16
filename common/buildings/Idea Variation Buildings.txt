@@ -2032,7 +2032,7 @@ fortress_barracks = {
 	modifier = {
 		local_defensiveness = 0.25
 		local_manpower = 0.25
-		max_attrition = 0.5
+		max_attrition = 1
 	}
 	ai_will_do = {
 		factor = 50

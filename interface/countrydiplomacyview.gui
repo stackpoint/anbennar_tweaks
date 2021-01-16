@@ -3235,8 +3235,8 @@ guiTypes = {
 				min_height = 1048
 				position = { x = 216 y = 812 }
 			}
-			spriteType ="GFX_land_forcelimit_icon"
-			scale = 0.7
+			spriteType ="GFX_icon_manpower"
+			scale = 0.9
 		}
 
 		instantTextBoxType = {
@@ -3403,8 +3403,8 @@ guiTypes = {
 				min_height = 1048
 				position = { x = 478 y = 812 }
 			}
-			spriteType ="GFX_land_forcelimit_icon"
-			scale = 0.7
+			spriteType ="GFX_icon_manpower"
+			scale = 0.9
 		}
 
 		iconType = {
