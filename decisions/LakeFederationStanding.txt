@@ -10,8 +10,8 @@ country_decisions = {
 			hidden_trigger = { always = yes }
 		}
 		effect = {
-			custom_tooltip = standing_header_tooltip
 			custom_tooltip = click_to_hide_tooltip
+			custom_tooltip = standing_header_tooltip
 			custom_tooltip = our_standing_start
 			trigger_switch = {
 				on_trigger = tag

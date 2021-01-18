@@ -624,6 +624,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/lake_federation/countries/J01/J01_SWORDstanding_high.tga"
 	}
 	spriteType = {
+		name = "GFX_our_nation"
+		texturefile = "gfx/interface/lake_federation/our_nation.tga"
+	}
+	spriteType = {
 		name = "GFX_J02_SWORDstanding_high"
 		texturefile = "gfx/interface/lake_federation/countries/J02/J02_SWORDstanding_high.tga"
 	}
