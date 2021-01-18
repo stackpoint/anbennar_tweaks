@@ -22,11 +22,40 @@ country_event = {
 	
 	option = {
 		name = republics.1.a
+		ai_chance = { factor = 10 }
 		add_republican_tradition = -25
 		add_prestige = 10
 	}
 	option = {
 		name = republics.1.b
+		ai_chance = {
+			factor = 190
+
+			modifier = {
+				factor = 0.25
+				NOT = { stability = -2 }
+			}
+			modifier = {
+				factor = 0.57
+				NOT = { stability = -1 }
+			}
+			modifier = {
+				factor = 0.70
+				NOT = { stability = 0 }
+			}
+			modifier = {
+				factor = 0.77
+				NOT = { stability = 1 }
+			}
+			modifier = {
+				factor = 0.81
+				NOT = { stability = 2 }
+			}
+			modifier = {
+				factor = 0.84
+				NOT = { stability = 3 }
+			}
+		}
 		add_republican_tradition = 20
 		add_stability = -1
 	}
