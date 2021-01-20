@@ -13,43 +13,8 @@ country_decisions = {
 			custom_tooltip = click_to_hide_tooltip
 			custom_tooltip = standing_header_tooltip
 			custom_tooltip = our_standing_start
-			trigger_switch = {
-				on_trigger = tag
-				
-				J01 = { custom_tooltip = J01_standing_tooltip }
-				J02 = { custom_tooltip = J02_standing_tooltip }
-				J03 = { custom_tooltip = J03_standing_tooltip }
-				J04 = { custom_tooltip = J04_standing_tooltip }
-				J05 = { custom_tooltip = J05_standing_tooltip }
-				J06 = { custom_tooltip = J06_standing_tooltip }
-				J07 = { custom_tooltip = J07_standing_tooltip }
-				J08 = { custom_tooltip = J08_standing_tooltip }
-				J09 = { custom_tooltip = J09_standing_tooltip }
-				J10 = { custom_tooltip = J10_standing_tooltip }
-				J11 = { custom_tooltip = J11_standing_tooltip }
-				J12 = { custom_tooltip = J12_standing_tooltip }
-				J13 = { custom_tooltip = J13_standing_tooltip }
-				J14 = { custom_tooltip = J14_standing_tooltip }
-				J15 = { custom_tooltip = J15_standing_tooltip }
-				J16 = { custom_tooltip = J16_standing_tooltip }
-				J17 = { custom_tooltip = J17_standing_tooltip }
-				J18 = { custom_tooltip = J18_standing_tooltip }
-				J19 = { custom_tooltip = J19_standing_tooltip }
-				J20 = { custom_tooltip = J20_standing_tooltip }
-				J21 = { custom_tooltip = J21_standing_tooltip }
-				J22 = { custom_tooltip = J22_standing_tooltip }
-				J23 = { custom_tooltip = J23_standing_tooltip }
-				J24 = { custom_tooltip = J24_standing_tooltip }
-				J25 = { custom_tooltip = J25_standing_tooltip }
-				J26 = { custom_tooltip = J26_standing_tooltip }
-				J27 = { custom_tooltip = J27_standing_tooltip }
-				J28 = { custom_tooltip = J28_standing_tooltip }
-				J29 = { custom_tooltip = J29_standing_tooltip }
-				J30 = { custom_tooltip = J30_standing_tooltip }
-				J31 = { custom_tooltip = J31_standing_tooltip }
-				J34 = { custom_tooltip = J34_standing_tooltip }
-			}
-			custom_tooltip = our_standing_end
+
+			custom_tooltip = federation_line_break
 
 				######## abc
 				if = { # Akuutengen

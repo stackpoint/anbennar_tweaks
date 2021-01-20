@@ -2929,6 +2929,7 @@ country_event = {
 			}
 			set_country_flag = federation_leader
 			country_event = { id = lake.40 }
+			country_event = { id = federation_elections_happens.2 }
 		}
 		else = {
 			clr_country_flag = federation_leader
