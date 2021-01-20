@@ -628,6 +628,18 @@ spriteTypes = {
 		texturefile = "gfx/interface/lake_federation/our_nation.tga"
 	}
 	spriteType = {
+		name = "GFX_purse"
+		texturefile = "gfx/interface/lake_federation/purse.png"
+	}
+	spriteType = {
+		name = "GFX_sword"
+		texturefile = "gfx/interface/lake_federation/sword.png"
+	}
+	spriteType = {
+		name = "GFX_no_faction"
+		texturefile = "gfx/interface/lake_federation/no_faction.png"
+	}
+	spriteType = {
 		name = "GFX_J02_SWORDstanding_high"
 		texturefile = "gfx/interface/lake_federation/countries/J02/J02_SWORDstanding_high.tga"
 	}

@@ -7,7 +7,7 @@ country_decisions = {
 		}
 
 		allow = {
-			hidden_trigger = { always = yes }
+			hidden_trigger = { always = no }
 		}
 		effect = {
 			custom_tooltip = click_to_hide_tooltip
@@ -68,11 +68,13 @@ country_decisions = {
 					limit = { J05 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J05_standing_tooltip
 				}
+
+				custom_tooltip = federation_line_break
+
 				if = { # Jungyukaroy
 					limit = { J19 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J19_standing_tooltip
 				}
-				custom_tooltip = federation_line_break
 				if = { # Khirntozgon
 					limit = { J04 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J04_standing_tooltip
@@ -85,6 +87,9 @@ country_decisions = {
 					limit = { J01 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J01_standing_tooltip
 				}
+
+				custom_tooltip = federation_line_break
+
 				if = { # Kozuurigur
 					limit = { J08 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J08_standing_tooltip
@@ -93,7 +98,6 @@ country_decisions = {
 					limit = { J30 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J30_standing_tooltip
 				}
-				custom_tooltip = federation_line_break
 				if = { # Lankuuhsta
 					limit = { J09 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J09_standing_tooltip
@@ -102,6 +106,9 @@ country_decisions = {
 					limit = { J21 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J21_standing_tooltip
 				}
+
+				custom_tooltip = federation_line_break
+
 				if = { # Mizaqtoch
 					limit = { J17 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J17_standing_tooltip
@@ -114,11 +121,13 @@ country_decisions = {
 					limit = { J13 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J13_standing_tooltip
 				}
-				custom_tooltip = federation_line_break
 				if = { # Orilgbulrek
 					limit = { J14 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J14_standing_tooltip
 				}
+
+				custom_tooltip = federation_line_break
+
 				if = { # Raattakod
 					limit = { J26 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J26_standing_tooltip
@@ -135,7 +144,9 @@ country_decisions = {
 					limit = { J34 = { NOT = { tag = ROOT } exists = yes } }
 					custom_tooltip = J34_standing_tooltip
 				}
+
 				custom_tooltip = federation_line_break
+
 				if = { # Sinesadma
 					limit = { J27 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J27_standing_tooltip
@@ -152,11 +163,13 @@ country_decisions = {
 					limit = { J07 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J07_standing_tooltip
 				}
+
+				custom_tooltip = federation_line_break
+				
 				if = { # Vahjevgiiv
 					limit = { J10 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J10_standing_tooltip
 				}
-				custom_tooltip = federation_line_break
 				if = { # Valralahdi
 					limit = { J28 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J28_standing_tooltip
@@ -169,6 +182,9 @@ country_decisions = {
 					limit = { J03 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J03_standing_tooltip
 				}
+
+				custom_tooltip = federation_line_break
+
 				if = { # Yikashlay
 					limit = { J23 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J23_standing_tooltip
@@ -177,7 +193,6 @@ country_decisions = {
 					limit = { J15 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J15_standing_tooltip
 				}
-				custom_tooltip = federation_line_break
 				if = { # Zabyos'tlar
 					limit = { J24 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J24_standing_tooltip
