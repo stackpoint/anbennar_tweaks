@@ -1,0 +1,100 @@
+fpRankAdd = {
+	fpCheck = { value = 1 }
+	fpCheck = { value = 2 }
+	fpCheck = { value = 3 }
+	fpCheck = { value = 4 }
+	fpCheck = { value = 5 }
+	fpCheck = { value = 6 }
+	fpCheck = { value = 7 }
+	fpCheck = { value = 8 }
+	fpCheck = { value = 9 }
+	fpCheck = { value = 10 }
+	fpCheck = { value = 11 }
+	fpCheck = { value = 12 }
+	fpCheck = { value = 13 }
+	fpCheck = { value = 14 }
+	fpCheck = { value = 15 }
+	fpCheck = { value = 16 }
+	fpCheck = { value = 17 }
+	fpCheck = { value = 18 }
+	fpCheck = { value = 19 }
+	fpCheck = { value = 20 }
+	fpCheck = { value = 21 }
+	fpCheck = { value = 22 }
+	fpCheck = { value = 23 }
+	fpCheck = { value = 24 }
+	fpCheck = { value = 25 }
+	fpCheck = { value = 26 }
+	fpCheck = { value = 27 }
+	fpCheck = { value = 28 }
+	fpCheck = { value = 29 }
+	fpCheck = { value = 30 }
+	fpCheck = { value = 31 }
+	fpCheck = { value = 32 }
+	fpCheck = { value = 33 }
+	fpCheck = { value = 34 }
+	fpCheck = { value = 35 }
+}
+
+fpRankClear = {
+	clear_global_event_target = fpr1
+	clear_global_event_target = fpr2
+	clear_global_event_target = fpr3
+	clear_global_event_target = fpr4
+	clear_global_event_target = fpr5
+	clear_global_event_target = fpr6
+	clear_global_event_target = fpr7
+	clear_global_event_target = fpr8
+	clear_global_event_target = fpr9
+	clear_global_event_target = fpr10
+	clear_global_event_target = fpr11
+	clear_global_event_target = fpr12
+	clear_global_event_target = fpr13
+	clear_global_event_target = fpr14
+	clear_global_event_target = fpr15
+	clear_global_event_target = fpr16
+	clear_global_event_target = fpr17
+	clear_global_event_target = fpr18
+	clear_global_event_target = fpr19
+	clear_global_event_target = fpr20
+	clear_global_event_target = fpr21
+	clear_global_event_target = fpr22
+	clear_global_event_target = fpr23
+	clear_global_event_target = fpr24
+	clear_global_event_target = fpr25
+	clear_global_event_target = fpr26
+	clear_global_event_target = fpr27
+	clear_global_event_target = fpr28
+	clear_global_event_target = fpr29
+	clear_global_event_target = fpr30
+	clear_global_event_target = fpr31
+	clear_global_event_target = fpr32
+	clear_global_event_target = fpr33
+	clear_global_event_target = fpr34
+	clear_global_event_target = fpr35
+}
+
+fpCheck = {
+	if = {
+		limit = {
+			REB = {
+				is_variable_equal = {
+					which = fpRank
+					value = $value$
+				}
+			}
+		}
+		save_global_event_target_as = fpr$value$
+	}
+}
+
+fpTooltip = {
+	if = {
+		limit = {
+			REB = {
+				check_variable = { fpRank = $value$ }
+			}
+		}
+		custom_tooltip = fpr$value$_standing_tooltip
+	}
+}

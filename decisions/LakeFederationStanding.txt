@@ -7,7 +7,7 @@ country_decisions = {
 		}
 
 		allow = {
-			hidden_trigger = { always = no }
+			hidden_trigger = { always = yes }
 		}
 		effect = {
 			custom_tooltip = click_to_hide_tooltip
@@ -15,7 +15,17 @@ country_decisions = {
 			custom_tooltip = our_standing_start
 
 			custom_tooltip = federation_line_break
-
+			
+			if = {
+				limit = {
+					REB = {
+						NOT = {
+							check_variable = {
+								fpRank = 1
+							}
+						}
+					}
+				}
 				######## abc
 				if = { # Akuutengen
 					limit = { J31 = { NOT = { tag = ROOT } } }
@@ -166,6 +176,111 @@ country_decisions = {
 					limit = { J02 = { NOT = { tag = ROOT } } }
 					custom_tooltip = J02_standing_tooltip
 				}
+			}
+			else = {
+				######## ranking
+				fpTooltip = { value = 1 }
+				fpTooltip = { value = 2 }
+				fpTooltip = { value = 3 }
+				fpTooltip = { value = 4 }
+				fpTooltip = { value = 5 }
+				fpTooltip = { value = 6 }
+				fpTooltip = { value = 7 }
+				fpTooltip = { value = 8 }
+				fpTooltip = { value = 9 }
+				fpTooltip = { value = 10 }
+				fpTooltip = { value = 11 }
+				fpTooltip = { value = 12 }
+				fpTooltip = { value = 13 }
+				fpTooltip = { value = 14 }
+				fpTooltip = { value = 15 }
+				fpTooltip = { value = 16 }
+				fpTooltip = { value = 17 }
+				fpTooltip = { value = 18 }
+				fpTooltip = { value = 19 }
+				fpTooltip = { value = 20 }
+				fpTooltip = { value = 21 }
+				fpTooltip = { value = 22 }
+				fpTooltip = { value = 23 }
+				fpTooltip = { value = 24 }
+				fpTooltip = { value = 25 }
+				fpTooltip = { value = 26 }
+				fpTooltip = { value = 27 }
+				fpTooltip = { value = 28 }
+				fpTooltip = { value = 29 }
+				fpTooltip = { value = 30 }
+				fpTooltip = { value = 31 }
+				fpTooltip = { value = 32 }
+				fpTooltip = { value = 33 }
+				fpTooltip = { value = 34 }
+				fpTooltip = { value = 35 }
+			}
+			
+			hidden_effect = {
+				set_global_flag = FederationPoints
+				REB = {
+					set_variable = {
+						fpRank = 0
+					}
+				}
+				fpRankClear = yes
+
+				while = {
+					limit = {
+						has_global_flag = FederationPoints
+					}
+					
+					clr_global_flag = FederationPoints
+					
+					random_country = {
+						limit = {
+							has_country_modifier = lake_federation_member
+							NOT = { has_country_flag = FederationPoints }
+							
+							all_country = {
+								OR = {
+									has_country_flag = FederationPoints
+									
+									AND = {
+										NOT = { has_country_flag = FederationPoints }
+										
+										OR = {
+											NOT = {
+												check_variable = {
+													which = FederationPoints
+													which = PREV
+												}
+											}
+											is_variable_equal = {
+												which = FederationPoints
+												which = PREV
+											}
+										}
+									}
+								}
+							}
+						}
+						
+						log = "[This.GetName] [This.FederationPoints.GetValue]"
+						REB = {
+							change_variable = { fpRank = 1 }
+						}
+						
+						fpRankAdd = yes
+						
+						set_country_flag = FederationPoints
+						set_global_flag = FederationPoints
+					}
+				}
+
+				every_country = {
+					limit = {
+						has_country_flag = FederationPoints
+					}
+					
+					clr_country_flag = FederationPoints
+				}
+			}
 		}
 	}
 }
