@@ -361,8 +361,8 @@ advanced_rail = {
 	local_institution_spread = 1.5
 	local_friendly_movement_speed = 0.75
 	province_trade_power_value = 4
-	state_governing_cost = -0.5
-	local_governing_cost = -0.1
+	local_governing_cost = -0.5
+	statewide_governing_cost = -0.1
 	local_state_maintenance_modifier = 3
 	picture = "advanced_rail"
 }
@@ -474,6 +474,9 @@ serpent_rot_outbreak = {
 	war_exhaustion = 0.1
 	trade_goods_size = -0.02
 	picture = "serpent_rot_2"
+}
+
+ignoring_serpent_rot = {
 }
 
 using_fire = {

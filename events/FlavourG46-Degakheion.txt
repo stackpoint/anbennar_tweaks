@@ -1,5 +1,4 @@
 
-
 namespace = flavor_degakheion
 
 country_event = {

@@ -1,10 +1,4 @@
 ﻿l_english:
- lake_leader:0 "§TFederation Leader§!"
- lake_very_high_standing:0 "§G"
- lake_high_standing:0 "§W"
- lake_normal_standing:0 "§W"
- lake_low_standing:0 "§W"
- lake_very_low_standing:0 "§W"
  J01_standing_tooltip:0 "[J01.FederationFaction] §W[J01.GetName]: [J01.FederationStanding] - [J01.FederationPoints.GetValue]§! points"
  J02_standing_tooltip:0 "[J02.FederationFaction] §W[J02.GetName]: [J02.FederationStanding] - [J02.FederationPoints.GetValue]§! points"
  J03_standing_tooltip:0 "[J03.FederationFaction] §W[J03.GetName]: [J03.FederationStanding] - [J03.FederationPoints.GetValue]§! points"
@@ -76,7 +70,7 @@
  fpr34_standing_tooltip:0 "[fpr34.FederationFaction] §W[fpr34.GetName]: [fpr34.FederationStanding] - [fpr34.FederationPoints.GetValue]§! points"
  fpr35_standing_tooltip:0 "[fpr35.FederationFaction] §W[fpr35.GetName]: [fpr35.FederationStanding] - [fpr35.FederationPoints.GetValue]§! points"
  
- our_standing_start:0 "§Y£our_nation£ [Root.FederationFaction] [Root.GetName]: [Root.FederationStanding] - [Root.FederationPoints.GetValue]§! points"
+ our_standing_start:0 "§Y£our_nation£ [Root.FederationFaction] [Root.GetName]: [Root.FederationStanding] - [Root.FederationPoints.GetValue]§! points§!"
  federation_line_break:0 "§b§!"
 
  
@@ -86,6 +80,12 @@
  basic_no_faction:0 "£no_faction£"
  basic_sword_faction:0 "£sword£"
  basic_purse_faction:0 "£purse£"
+ lake_leader:0 "§TFederation Leader"
+ lake_very_high_standing:0 "§G"
+ lake_high_standing:0 "§W"
+ lake_normal_standing:0 "§W"
+ lake_low_standing:0 "§W"
+ lake_very_low_standing:0 "§W"
 
  
 

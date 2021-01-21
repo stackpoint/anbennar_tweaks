@@ -18,11 +18,11 @@ country_event = {
 		
 		if = {
 			limit = { ruler_culture = ROOT }
-		set_ruler_culture = star_elf
+			set_ruler_culture = star_elf
 		}
 		if = {
 			limit = { has_heir = yes heir_culture = ROOT }
-		set_heir_culture = star_elf
+			set_heir_culture = star_elf
 		}
 		if = {
 			limit = { has_consort = yes consort_culture = ROOT }
@@ -123,7 +123,7 @@ country_event = {
 				add_mil_power = 500
 				add_adm_power = 500
 				add_dip_power = 500
-				add_stability2 = yes
+				add_stability = 2
 				add_historical_friend = Z43
 			}
 			add_historical_friend = Z44
@@ -214,7 +214,7 @@ country_event = {
 	option = {
         name = aelnar.6.a
         ai_chance = { factor = 100 }
-		add_stability2 = yes
+		add_stability = 2
 		define_ruler = {
 			adm = 6
 			dip = 6
@@ -668,7 +668,7 @@ country_event = {
         name = aelnar.18.a
         ai_chance = { factor = 100 }
 		set_country_flag = aelnar_civil_war_end
-		add_stability3 = yes
+		add_stability = 3
 		add_legitimacy = 100
 		if = {
 			limit = { ai = no }
@@ -1112,7 +1112,7 @@ country_event = {
 		}
 		hidden_effect = { 
 			add_queen_personality = immortal_personality
-			set_consort_flag = lithiel_is_consort
+			set_country_flag = lithiel_is_consort
 		}
 	}
 }
@@ -1127,7 +1127,7 @@ country_event = {
 	
 	trigger = {
 		tag = Z43
-		has_consort_flag = lithiel_is_consort
+		has_country_flag = lithiel_is_consort
 	}
 	
 	#She become queen
