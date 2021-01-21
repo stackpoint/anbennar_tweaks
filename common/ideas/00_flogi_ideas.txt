@@ -3149,9 +3149,8 @@ monarchie0 = {
 	}
 		
 	trigger = {
-	
-		has_government_attribute = enables_monarchie_idea_group
-	
+		has_government_attribute = monarchy
+		NOT = { has_government_attribute = nomad }
 	}
 	
 	monarchie1 = {
@@ -3222,7 +3221,8 @@ republik0 = {
 	}
 		
 	trigger = {
-	has_government_attribute = enables_republik_idea_group
+		has_government_attribute = republic
+		NOT = { has_government_attribute = dictatorship }
 	}	
 	
 	
@@ -3306,9 +3306,7 @@ aristo0 = {
 	}
 
 	trigger = {
-
-		has_government_attribute = enables_theokratie_idea_group
-
+		has_government_attribute = has_devotion
 	}
 
 	aristo1 = {
@@ -3375,8 +3373,7 @@ diktatur0 = {
 	}
 	
 	trigger = {
-
-		has_government_attribute = enables_diktatur_idea_group
+		has_government_attribute = dictatorship
 	}	
 	
 	diktatur1 = {
@@ -3442,9 +3439,7 @@ horde0 = {
 	}
 		
 	trigger = {
-	
-	has_government_attribute = enables_horde_idea_group
-			
+		has_government_attribute = nomad
 	}
 	
 	horde1 = {
