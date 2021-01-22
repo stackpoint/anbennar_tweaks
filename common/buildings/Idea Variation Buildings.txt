@@ -1759,8 +1759,9 @@ shipyard = {
 		OR = {
 			has_idea = handel5
 			has_idea = galle1
-			has_idea = merchant_marine_2
 			has_idea = gross6
+			has_idea = grand_navy_2
+			has_idea = merchant_marine_2
 		}
 	}
 
