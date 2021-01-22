@@ -200,9 +200,9 @@ float4 GetTIColor( float3 vPos, in sampler2D TITexture )
 
 float GetFoW( float3 vPos, float4 vFoWColor, in sampler2D FoWDiffuse )
 {
-	float vFoWDiffuse = tex2D( FoWDiffuse, 0.5f ).r;
-	vFoWDiffuse = vFoWDiffuse * 0.01f;
-	float vShade = vFoWDiffuse + 0.66f;
+	float vFoWDiffuse = tex2D( FoWDiffuse, ( vPos.xz + 0.5f ) / 256.0f + vFoWOpacity_Time.y * 0.02f ).r;
+	vFoWDiffuse = vFoWDiffuse * 0.1f;
+	float vShade = vFoWDiffuse + 0.6f;
 	float vIsFow = vFoWColor.a;
 	return lerp( 1.0f, saturate( vIsFow + vShade ), vFoWOpacity_Time.x );
 }
