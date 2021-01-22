@@ -73,7 +73,7 @@
  our_standing_start:0 "§Y£our_nation£ [Root.FederationFaction] [Root.GetName]: [Root.FederationStanding] - [Root.FederationPoints.GetValue]§! points§!"
  federation_line_break:0 "§b§!"
 
- 
+ click_to_sort_tooltip:0 "Take decision to sort standings"
  click_to_hide_tooltip:0 "§T------------ Elections happens every 4 years ------------§!\n Next elections : [REB.FederationElectionsHappens.GetValue]"
  standing_header_tooltip:0 "§M------------------ Federation Standings --------------------§!\n"
  

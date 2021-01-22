@@ -7,6 +7,10 @@ country_decisions = {
 		}
 
 		allow = {
+			custom_trigger_tooltip = {
+				tooltip = click_to_sort_tooltip
+				always = yes
+			}
 			hidden_trigger = { always = yes }
 		}
 		effect = {
@@ -312,44 +316,46 @@ country_decisions = {
 					
 					clr_global_flag = FederationPoints
 					
-					random_country = {
-						limit = {
-							has_country_modifier = lake_federation_member
-							NOT = { has_country_flag = FederationPoints }
-							
-							all_country = {
-								OR = {
-									has_country_flag = FederationPoints
-									
-									AND = {
-										NOT = { has_country_flag = FederationPoints }
+					REB = {
+						random_country = {
+							limit = {
+								has_country_modifier = lake_federation_member
+								NOT = { has_country_flag = FederationPoints }
+								
+								all_country = {
+									OR = {
+										has_country_flag = FederationPoints
 										
-										OR = {
-											NOT = {
-												check_variable = {
+										AND = {
+											NOT = { has_country_flag = FederationPoints }
+											
+											OR = {
+												NOT = {
+													check_variable = {
+														which = FederationPoints
+														which = PREV
+													}
+												}
+												is_variable_equal = {
 													which = FederationPoints
 													which = PREV
 												}
-											}
-											is_variable_equal = {
-												which = FederationPoints
-												which = PREV
 											}
 										}
 									}
 								}
 							}
+							
+							#log = "[This.GetName] [This.FederationPoints.GetValue]"
+							REB = {
+								change_variable = { fpRank = 1 }
+							}
+							
+							fpRankAdd = yes
+							
+							set_country_flag = FederationPoints
+							set_global_flag = FederationPoints
 						}
-						
-						log = "[This.GetName] [This.FederationPoints.GetValue]"
-						REB = {
-							change_variable = { fpRank = 1 }
-						}
-						
-						fpRankAdd = yes
-						
-						set_country_flag = FederationPoints
-						set_global_flag = FederationPoints
 					}
 				}
 
