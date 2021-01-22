@@ -183,34 +183,114 @@ country_decisions = {
 				fpTooltip = { value = 2 }
 				fpTooltip = { value = 3 }
 				fpTooltip = { value = 4 }
+				
+				if = {
+					limit = {
+						REB = {
+							check_variable = { fpRank = 5 }
+						}
+					}
+					custom_tooltip = federation_line_break
+				}
+				
 				fpTooltip = { value = 5 }
 				fpTooltip = { value = 6 }
 				fpTooltip = { value = 7 }
 				fpTooltip = { value = 8 }
+				
+				if = {
+					limit = {
+						REB = {
+							check_variable = { fpRank = 9 }
+						}
+					}
+					custom_tooltip = federation_line_break
+				}
+				
 				fpTooltip = { value = 9 }
 				fpTooltip = { value = 10 }
 				fpTooltip = { value = 11 }
 				fpTooltip = { value = 12 }
+				
+				if = {
+					limit = {
+						REB = {
+							check_variable = { fpRank = 13 }
+						}
+					}
+					custom_tooltip = federation_line_break
+				}
+				
 				fpTooltip = { value = 13 }
 				fpTooltip = { value = 14 }
 				fpTooltip = { value = 15 }
 				fpTooltip = { value = 16 }
+				
+				if = {
+					limit = {
+						REB = {
+							check_variable = { fpRank = 17 }
+						}
+					}
+					custom_tooltip = federation_line_break
+				}
+				
 				fpTooltip = { value = 17 }
 				fpTooltip = { value = 18 }
 				fpTooltip = { value = 19 }
 				fpTooltip = { value = 20 }
+				
+				if = {
+					limit = {
+						REB = {
+							check_variable = { fpRank = 21 }
+						}
+					}
+					custom_tooltip = federation_line_break
+				}
+				
 				fpTooltip = { value = 21 }
 				fpTooltip = { value = 22 }
 				fpTooltip = { value = 23 }
 				fpTooltip = { value = 24 }
+				
+				if = {
+					limit = {
+						REB = {
+							check_variable = { fpRank = 25 }
+						}
+					}
+					custom_tooltip = federation_line_break
+				}
+				
 				fpTooltip = { value = 25 }
 				fpTooltip = { value = 26 }
 				fpTooltip = { value = 27 }
 				fpTooltip = { value = 28 }
+				
+				if = {
+					limit = {
+						REB = {
+							check_variable = { fpRank = 29 }
+						}
+					}
+					custom_tooltip = federation_line_break
+				}
+				
 				fpTooltip = { value = 29 }
 				fpTooltip = { value = 30 }
 				fpTooltip = { value = 31 }
 				fpTooltip = { value = 32 }
+				
+				if = {
+					limit = {
+						REB = {
+							check_variable = { fpRank = 33 }
+						}
+					}
+					custom_tooltip = federation_line_break
+				}
+				
 				fpTooltip = { value = 33 }
 				fpTooltip = { value = 34 }
 				fpTooltip = { value = 35 }
