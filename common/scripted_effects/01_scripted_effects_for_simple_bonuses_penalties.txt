@@ -2,6 +2,7 @@
 
 #Stability
 #Country Scope
+#adm
 add_stability_or_adm_power = {
 	if = {
 		limit = {
@@ -69,6 +70,55 @@ reduce_stability_or_adm_power = {
 	else = { add_adm_power = -50 }
 }
 
+#dip
+add_stability_or_dip_power = {
+	if = {
+		limit = {
+			stability = 3
+		}
+		add_dip_power = 50
+	}
+	if = {
+		limit = {
+			NOT = { stability = 3 }
+		}
+		add_stability = 1
+	}
+}
+reduce_stability_or_dip_power = {
+	if = {
+		limit = {
+			stability = -2
+		}
+		add_stability = -1
+	}
+	else = { add_dip_power = -50 }
+}
+
+#mil
+add_stability_or_mil_power = {
+	if = {
+		limit = {
+			stability = 3
+		}
+		add_mil_power = 50
+	}
+	if = {
+		limit = {
+			NOT = { stability = 3 }
+		}
+		add_stability = 1
+	}
+}
+reduce_stability_or_mil_power = {
+	if = {
+		limit = {
+			stability = -2
+		}
+		add_stability = -1
+	}
+	else = { add_mil_power = -50 }
+}
 
 #Legitimacy
 #Country Scope
