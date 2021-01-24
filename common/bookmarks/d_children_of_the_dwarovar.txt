@@ -5,7 +5,7 @@ bookmark =
 	date = 1444.11.11
 	
 	center = 2931
-	default = no
+	# default = no # can only be default = yes
 	
 	country = B17	#Asra Expedition
 	country = H69	#Silverforge Expedition

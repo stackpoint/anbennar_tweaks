@@ -920,7 +920,7 @@ temple = {
 			NOT = { base_tax = 5 }
 			NOT = {
 				trade_goods = gold
-				trade_goods = silver
+				#trade_goods = silver
 			}
 		}
 		modifier = {
@@ -966,7 +966,7 @@ taxation_lvl_2 = {
 			NOT = { base_tax = 5 }
 			NOT = {
 				trade_goods = gold
-				trade_goods = silver
+				#trade_goods = silver
 			}
 		}
 		modifier = {
@@ -1012,7 +1012,7 @@ cathedral = {
 			NOT = { base_tax = 5 }
 			NOT = {
 				trade_goods = gold
-				trade_goods = silver
+				#trade_goods = silver
 			}
 		}
 		modifier = {
@@ -1057,7 +1057,7 @@ taxation_lvl_4 = {
 			NOT = { base_tax = 5 }
 			NOT = {
 				trade_goods = gold
-				trade_goods = silver
+				#trade_goods = silver
 			}
 		}
 		modifier = {
@@ -1756,12 +1756,12 @@ shipyard = {
 
 	build_trigger = {
 		has_port = yes
-		OR = {
-			has_idea = handel5
-			has_idea = galle1
-			has_idea = gross6
-			has_idea = grand_navy_2
-			has_idea = merchant_marine_2
+		owner = {
+			OR = {
+				has_idea = handel5
+				has_idea = galle1
+				has_idea = gross6
+			}
 		}
 	}
 
@@ -1813,12 +1813,12 @@ drydock = {
 
 	build_trigger = {
 		has_port = yes
-		OR = {
-			has_idea = handel5
-			has_idea = galle1
-			has_idea = gross6
-			has_idea = grand_navy_2
-			has_idea = merchant_marine_2
+		owner = {
+			OR = {
+				has_idea = handel5
+				has_idea = galle1
+				has_idea = gross6
+			}
 		}
 	}
 
@@ -1869,12 +1869,12 @@ grand_shipyard = {
 
 	build_trigger = {
 		has_port = yes
-		OR = {
-			has_idea = handel5
-			has_idea = galle1
-			has_idea = gross6
-			has_idea = grand_navy_2
-			has_idea = merchant_marine_2
+		owner = {
+			OR = {
+				has_idea = handel5
+				has_idea = galle1
+				has_idea = gross6
+			}
 		}
 	}
 
@@ -1931,7 +1931,7 @@ navalbase_lvl_1 = {
 
 	build_trigger = {
 		has_port = yes
-		has_idea = flottenbasis2
+		owner = {has_idea = flottenbasis2}
 		OR = {
 			has_building = fort_15th
 			has_building = fort_16th
@@ -1961,7 +1961,7 @@ navalbase_lvl_2 = {
 
 	build_trigger = {
 		has_port = yes
-		has_idea = flottenbasis2
+		owner = {has_idea = flottenbasis2}
 		OR = {
 			has_building = fort_15th
 			has_building = fort_16th
@@ -2001,7 +2001,7 @@ fortress_keep = {
 			has_building = fort_17th
 			has_building = fort_18th
 		}
-		has_idea = festung4
+		owner = {has_idea = festung4}
 	}
 
 	modifier = {
@@ -2025,7 +2025,7 @@ fortress_barracks = {
 			has_building = fort_17th
 			has_building = fort_18th
 		}
-		has_idea = festung4
+		owner = {has_idea = festung4}
 	}
 
 	make_obsolete = fortress_keep
@@ -2051,7 +2051,7 @@ fortress_towers = {
 			has_building = fort_17th
 			has_building = fort_18th
 		}
-		has_idea = festung4
+		owner = {has_idea = festung4}
 	}
 
 	make_obsolete = fortress_barracks
@@ -2078,7 +2078,7 @@ fortress_artillery = {
 			has_building = fort_17th
 			has_building = fort_18th
 		}
-		has_idea = festung4
+		owner = {has_idea = festung4}
 	}
 
 	make_obsolete = fortress_towers
@@ -2106,7 +2106,7 @@ fortress_wall = {
 			has_building = fort_17th
 			has_building = fort_18th
 		}
-		has_idea = festung4
+		owner = {has_idea = festung4}
 	}
 
 	make_obsolete = fortress_artillery
@@ -2134,7 +2134,7 @@ fortress_supply = {
 			has_building = fort_17th
 			has_building = fort_18th
 		}
-		has_idea = festung4
+		owner = {has_idea = festung4}
 	}
 
 	make_obsolete = fortress_wall
@@ -2158,10 +2158,10 @@ fortress_supply = {
 
 mercenary_infantry_building = {
 	cost = 0
-	time = 0.5
+	time = 0
 	
 	build_trigger = {
-		has_idea = soldnerheer5
+		owner = {has_idea = soldnerheer5}
 	}
 
 	on_built = {
@@ -2180,10 +2180,10 @@ mercenary_infantry_building = {
 
 mercenary_cavalry_building = {
 	cost = 0
-	time = 0.5
+	time = 0
 	
 	build_trigger = {
-		has_idea = soldnerheer5
+		owner = {has_idea = soldnerheer5}
 	}
 	
 	on_built = {

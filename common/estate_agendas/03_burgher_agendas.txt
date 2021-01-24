@@ -738,7 +738,7 @@ estate_burghers_build_a_fleet = {
 		}
 		modifier = {
 			factor = 2
-			has_idea_group = naval_ideas
+			has_idea_group = flottenbasis0
 		}
 	}
 	task_requirements = {
@@ -1635,15 +1635,6 @@ estate_burghers_expand_trade_company = {
 	selection_weight = {
 		factor = 2.5
 		modifier = {
-			factor = 2
-			OR = {
-				tag = POR
-				tag = CAS
-				tag = GBR
-				tag = NED
-			}
-		}
-		modifier = {
 			factor = 1.5
 			num_of_colonists = 1
 		}
@@ -2157,7 +2148,6 @@ estate_burghers_spice_trade = {
 		any_owned_province = {
 			OR = {
 				superregion = rahen_superregion
-				trade_company_region = trade_company_indonesia
 			}
 		}
 		NOT = { spices = 3 }
@@ -2236,13 +2226,6 @@ estate_burghers_tea_trade = {
 		modifier = {
 			factor = 2
 			num_of_strong_trade_companies = 2
-		}
-		modifier = {
-			factor = 2.5
-			OR = {
-				tag = ENG
-				tag = GBR
-			}
 		}
 	}
 	provinces_to_highlight = {

@@ -4,7 +4,7 @@ bookmark = {
 	date = 1444.11.11
 	
 	center = 1805
-	default = no
+	# default = no # can only be default = yes
 	
 	country = H01
 	country = H08

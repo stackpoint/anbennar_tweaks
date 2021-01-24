@@ -837,10 +837,6 @@ estate_cossacks_colonise_X = {
 			factor = 2
 			num_of_colonists = 2
 		}
-		modifier = {
-			factor = 2
-			tag = RUS
-		}
 	}
 	pre_effect = {
 		random_owned_province = {

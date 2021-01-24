@@ -346,8 +346,7 @@ cb_independence_war = {
 					has_reform = senapti_reform 
 				}
 				NOT = { 
-					AND = { 
-						tag = SOO 
+					AND = {
 						OR = { 
 							has_reform = pirate_republic_reform 
 							has_reform = pirate_king_reform 
@@ -448,8 +447,7 @@ cb_daimyo_annex = {
 		} 
 		OR = { 
 			has_reform = daimyo 
-			AND = { 
-				tag = SOO 
+			AND = {
 				OR = { 
 					has_reform = pirate_republic_reform 
 					has_reform = pirate_king_reform 
@@ -477,8 +475,7 @@ cb_independent_daimyo_annex = {
 		} 
 		OR = { 
 			has_reform = indep_daimyo 
-			AND = { 
-				tag = SOO 
+			AND = {
 				OR = { 
 					has_reform = pirate_republic_reform 
 					has_reform = pirate_king_reform 
@@ -502,8 +499,7 @@ cb_shogun_annex = {
 		from = { 
 			OR = { 
 				has_reform = daimyo 
-				AND = { 
-					tag = SOO 
+				AND = {
 					OR = { 
 						has_reform = pirate_republic_reform 
 						has_reform = pirate_king_reform 
@@ -530,8 +526,7 @@ cb_sengoku = {
 	prerequisites = { 
 		OR = { 
 			has_reform = daimyo 
-			AND = { 
-				tag = SOO 
+			AND = {
 				OR = { 
 					has_reform = pirate_republic_reform 
 					has_reform = pirate_king_reform 
@@ -545,8 +540,7 @@ cb_sengoku = {
 		from = { 
 			OR = { 
 				has_reform = daimyo 
-				AND = { 
-					tag = SOO 
+				AND = {
 					OR = { 
 						has_reform = pirate_republic_reform 
 						has_reform = pirate_king_reform 
@@ -1140,9 +1134,7 @@ cb_chinese_unification = {
 			AND = { 
 				NOT = { has_dlc = "Mandate of Heaven" } 
 				culture_group = east_asian #Chinese 
-				OR = {	#Manchus won't get this unless they unify 
-					tag = MCH 
-					tag = QNG 
+				OR = {	#Manchus won't get this unless they unify
 					NOT = { primary_culture = manchu } 
 				} 
 			} 
@@ -1234,23 +1226,7 @@ cb_force_tributary = {
 	} 
 	war_goal = take_capital_force_tributary 
 } 
- 
-cb_hundred_years_union = { 
-	valid_for_subject = no 
- 
-	is_triggered_only = yes 
-	months = 360 
-	 
-	prerequisites = { 
-		OR = { 
-			tag = ENG 
-			tag = GBR 
-		} 
-	} 
- 
-	war_goal = take_capital_personal_union 
-} 
- 
+  
 cb_force_join_hre = { 
 	valid_for_subject = no 
  
@@ -1418,8 +1394,7 @@ cb_prabhi_claim_raj = {
 				has_reform = prabhi_reform 
 				has_reform = senapti_reform 
 			} 
-			AND = { 
-				tag = SOO 
+			AND = {
 				OR = { 
 					has_reform = pirate_republic_reform 
 					has_reform = pirate_king_reform 
@@ -1450,8 +1425,7 @@ cb_independent_prabhi_claim_raj = {
 				has_reform = senapti_reform 
 				has_reform = indep_prabhi_reform 
 			} 
-			AND = { 
-				tag = SOO 
+			AND = {
 				OR = { 
 					has_reform = pirate_republic_reform 
 					has_reform = pirate_king_reform 
@@ -1508,8 +1482,7 @@ cb_pacify_raj = {
 					has_reform = prabhi_reform 
 					has_reform = senapti_reform 
 				} 
-				AND = { 
-					tag = SOO 
+				AND = {
 					OR = { 
 						has_reform = pirate_republic_reform 
 						has_reform = pirate_king_reform 
@@ -1539,8 +1512,7 @@ cb_raj_wars = {
 				has_reform = prabhi_reform 
 				has_reform = senapti_reform 
 			} 
-			AND = { 
-				tag = SOO 
+			AND = {
 				OR = { 
 					has_reform = pirate_republic_reform 
 					has_reform = pirate_king_reform 
@@ -1557,8 +1529,7 @@ cb_raj_wars = {
 					has_reform = prabhi_reform 
 					has_reform = senapti_reform 
 				} 
-				AND = { 
-					tag = SOO 
+				AND = {
 					OR = { 
 						has_reform = pirate_republic_reform 
 						has_reform = pirate_king_reform 

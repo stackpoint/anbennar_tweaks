@@ -5,7 +5,7 @@ bookmark =
 	date = 1444.11.11
 	
 	center = 4472
-	default = no
+	# default = no # can only be default = yes
 	
 	country = R51
 	country = R62
