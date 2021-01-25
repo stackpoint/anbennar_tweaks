@@ -733,8 +733,6 @@ fort_15th = {
 
 coastal_defence = {
 
-coastal_defence = {
-
 	cost = 100
 	time = 12
 	build_trigger = {
