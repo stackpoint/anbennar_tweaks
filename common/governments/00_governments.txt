@@ -59,7 +59,6 @@ monarchy = {
 				mengotsa
 				underkingdom_reform
 				reformed_goblinoid_kingdom_reform
-				corvurian_midnight_reform
 			}
 		}
 		hereditary_vs_nobility = {
@@ -359,7 +358,6 @@ republic = {
 				lake_republic
 				united_federation
 				damescrown_republic_reform
-				roilsard_elective
 			}
 		}
 		republican_virtues = {
@@ -995,7 +993,4 @@ pre_dharma_mapping = {
 		government = monarchy
 		legacy_government = orcish_kingdom_legacy
 	}
-	corvurian_midnight_reform = {
-		government = monarchy
-		legacy_government = corvurian_midnight_legacy
 }

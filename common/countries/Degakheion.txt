@@ -1,6 +1,6 @@
 #Country Name: Please see filename.
 
-graphical_culture = kheionaigfx
+graphical_culture = southamericagfx
 
 color = { 225  40  88 }
 

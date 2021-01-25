@@ -1,6 +1,6 @@
 #Country Name: Please see filename.
 
-graphical_culture = elvengfx
+graphical_culture = westerngfx
 
 color = { 133  133  160 }
 

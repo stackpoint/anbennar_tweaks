@@ -409,7 +409,6 @@ province_event = {
 				}
 			}
 		}
-		add_human_minority_size_effect = yes
 	}
 }
 

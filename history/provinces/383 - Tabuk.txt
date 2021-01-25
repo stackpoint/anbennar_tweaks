@@ -3,15 +3,14 @@
 owner = F06
 controller = F06
 add_core = F06
-add_core = F57
-culture = khasani
+culture = desha
 religion = mother_akan
 
 hre = no
 
 base_tax = 3
-base_production = 4
-base_manpower = 3
+base_production = 6
+base_manpower = 4
 
 trade_goods = iron
 

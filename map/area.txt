@@ -1217,11 +1217,11 @@ oris_area = {
 }
 
 ohitsopot_area = {
-	454 455 456 457 
+	454 455 459
 }
 
-garpix_brrtekuh_area = {
-	460 461 459
+rasu_area = {
+	456 457 460 461
 }
 
 coast_of_tears_area = {

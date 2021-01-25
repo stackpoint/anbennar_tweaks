@@ -1,6 +1,6 @@
 #Country Name: Please see filename.
 
-graphical_culture = elvengfx
+graphical_culture = muslimgfx
 
 color = { 207  177  52 }
 

@@ -47,7 +47,7 @@ anbennarian	= {
 		primary = A25 #Damescrown
 		
 		dynasty_names = {
-			"síl Crowne" "síl Aranmas" "síl Crothán" "síl Ebenaire" "síl Aramar" "sílna Gol" "of Ainway" Silnara "of Vanbury" "síl Gabmórionn" "síl Themarenn" "síl Estallen"
+			"síl Crowne" "síl Aranmas" "síl Crothán" "síl Ebenaire" "síl Aramar" "sílna Gol" "of Ainway" Silcalas Silnara "of Vanbury" "síl Gabmórionn" "síl Themarenn" "síl Estallen"
 		}
 	}
 	vernman = {
@@ -186,7 +186,7 @@ alenic = {
 }
 
 businori	= {
-	graphical_culture = divenhalgfx
+	graphical_culture = westerngfx
 
 	busilari = {
 		primary = A29 #Busilar
@@ -402,23 +402,20 @@ divenori = {
 	far_akani = {
 		primary = F08 #Ekha
 	}
-	khasani = {
-		primary = F57 #Khasa
-	}
 	dynasty_names = {
-		Crodamos Korosh Aakha Desha Akanos Khasa "ges Rasu" Orikes Khesen Akhaat
+		Crodamos Korosh Aakha Desha Akanos
 	}
 	male_names = {
-		Aban Abazu Absol Adad Akur Aloros Anshar Arad Arashk Arhab Arsham Arvand Ashan Ashur Asor Atbin Athan Awbal Baraz Barid Barseen Bavar Behlil Berk 
-		Bullud Bupalos Cahit Dagan Darab Darian Dariush Dartaxes Demartos Demos Durul Duzan Duzar Duzi Ekrem Erbay Erol Erten Fazil Giz Hazan Hermeias Himmet 
-		Huran Husaam Hyaclos Idad Idris Ikelos Irran Iskrates Jahangir Jareer Kalib Kaptan Kartal Kaveh Kikud Korydon Laris Larza Limer Lykidas Marod Marodeen 
-		Mehran Mesten Nahroon Naram Numair Oktan Oreias Panthes Raafi Rabon Radin Rimush Saamir Sabum Saed Samiun Sargin Sepeh Serim Sharaf Suhlamu Temenos Theron 
-		Tozan Tydeos Udish Ufuk Yazkur Zaid Zamman Zimud Zimudar
+		Adran Albert Aldred Alfons Alfred Alos Alain Ardan Ardor Aril Artorian Artur Aucan Austyn Awen Borian Brandon Brayan Brayden Calas Castén Castín Daran 
+		Darran Denar Edmund Elran Erel Eren Erlan Evin Galin Gelman Kalas Laurens Marion Maurise Nara Olor Otó Reán Riannón Ricain Ríon Robin Rogier Sandur 
+		Taelar Thal Thiren Tomás Trian Trystan Varian Varion Varil Varilor Vincen Willam Dustin Avery Lucian Luciana Dominic Vernell Arman Cecill Tristan Alvar 
+		Adelar Teagan Andrel Frederic Adrien Adrian Ademar Valeran Valen Corin
+	
 	}
 	female_names = {
-		Aamina Abella Amata Amina Anatu Aqeela Araha Arahuna Arwia Asiah Baila Benan Canfeda Damrina Derya Dilara Elif Elina Elmas Emmita Ettu Fatma Gula Haala Haamida 
-		Hasibe Ia Iltani Ishtara Jannat Kamelya Kishar Kullaa Leja Lubna Mardina Mudam Musheera Nadide Nahrina Nardina Nesrin Ninsunu Nuriye Nusaiba Nuzha Omara Pari Qamara 
-		Rahma Saba Sabahat Samra Semiha Seyma Sireen Ura Yamima Yamina Zakiti Zeyni
+		Adra Alara Amarien Aria Calassa Aucanna Casténnia Castína Cela Celadora Clarimonde Eilís Eilísabet Erela Erella Galina Galinda Laurenne Lianne Madaléin 
+		Maria Marianna Mariana Marianne Marien Marina Réanna Thalia Varina Varinna Alina Arabella Margery Cecille Kerstin Alisanne Isobel Isabel 
+		Isabella Bella Adeline Amina Willamina Aldresia Sofie Sofia Sybille Constance Eléanore Valence Emilíe Gisíle Athana Corina Cora
 	}
 }
 
@@ -789,7 +786,7 @@ giantkind = {
 }
 
 elven = {
-	graphical_culture = elvengfx
+	graphical_culture = westerngfx
 
 	moon_elf = {
 		primary = A31 #Moonhaven
@@ -1598,7 +1595,7 @@ harimari = {
 }
 
 centaur = {
-	graphical_culture = nomadgfx
+	graphical_culture = muslimgfx
 
 	plain_centaur = {
 		primary = I89
@@ -1713,7 +1710,7 @@ ogre = {
 }
 
 triunic = {
-	graphical_culture = triunicgfx
+	graphical_culture = westerngfx
 
 	metsamic = {
 		primary = J33
@@ -1780,7 +1777,7 @@ triunic = {
 }
 
 kheionai_ruinborn_elf = {
-	graphical_culture = kheionaigfx
+	graphical_culture = southamericagfx
 
 	degabhen = { #Degakheion
 		primary = G46

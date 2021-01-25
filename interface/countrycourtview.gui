@@ -58,14 +58,6 @@ guiTypes = {
 			maxHeight = 32
 			format = centre
 		}
-
-		guiButtonType = {
-			name = "reset_all3533"
-			position = { x = 40 y = 700 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool"
-			delayedTooltipText = ""
-		}
 		
 		
 		### ------- Ruler -------	
