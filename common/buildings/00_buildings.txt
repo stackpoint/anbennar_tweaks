@@ -577,7 +577,7 @@ castonath_preparation = {
 	
 	modifier = {
 	}
-
+	
 	on_built = {
 		hidden_effect = {
 			remove_building = castonath_preparation
@@ -593,7 +593,7 @@ castonath_preparation = {
 	
 	ai_will_do = {
 		factor = 0
-		}
+	}
 }
 
 castonath_build = {
@@ -603,10 +603,10 @@ castonath_build = {
 	indestructible = yes
 	
 	build_trigger = {
-		}
+	}
 	
-		modifier = {
-		}
+	modifier = {
+	}
 	
 	on_built = {
 		hidden_effect = {
@@ -617,14 +617,57 @@ castonath_build = {
 				833 = { province_event = { id = castonath_wonders.2 } } #North Castonath - Splendid Court
 				832 = { province_event = { id = castonath_wonders.4 } } #Lower Castonath - Grand Bazaar
 				831 = { province_event = { id = castonath_wonders.6 } } #South Castonath - Dragonforge
-					}
-				}
 			}
+		}
+    }
 	
 	ai_will_do = {
 		factor = 0
-		}
+	}
 }
+	
+################################################
+# Tier 1, 15th Century Buildings
+################################################
+fort_15th = {
+	cost = 200
+	time = 30
+	modifier = {
+		fort_level = 2
+		# allowed_num_of_buildings = 1 #Optional, helps AI slightly
+	}
+
+	onmap = yes
+	influencing_fort = yes
+	ai_will_do = {
+		factor = 6
+		modifier = {
+			factor = 100
+			is_capital = yes
+		}
+		modifier = {
+			factor = 1.05
+			num_free_building_slots  = 4
+		}
+		modifier = {
+			factor = 0
+			island = yes
+			NOT = { is_capital = yes }
+		}
+		modifier = {
+			factor = 0.5
+			AND	= {
+				is_overseas = yes
+				NOT = {
+					OR = {
+						has_building = fort_15th
+						has_building = fort_16th
+						has_building = fort_17th
+						has_building = fort_18th
+					}
+				}
+			}
+		}
 		modifier = {
 			factor = 1.25
 			AND = {
@@ -687,6 +730,8 @@ castonath_build = {
 		}
 	}
 }
+
+coastal_defence = {
 
 coastal_defence = {
 
