@@ -164,9 +164,6 @@ monarch_names = {
 	"Mujagh #0" = -10
 }
 
-leader_names = {
-}
-
 ship_names = {
 	Skogutsa Elksko Kelagor Gortal Sankir Bravakti Kothran Ktar Kelak Kelaktar Azarkur Ortifkral Ubnok Soklesh Sokli Maghar Tsahtsil
 	Krotav Tanvlis Ghalrtif Atv'q'al Mem Mushkoba Nakrotav Hatsvi Khebur Barzaus Trajom Ankad Atzaugri Atomb Shevrilkad Chobesh Kvakein

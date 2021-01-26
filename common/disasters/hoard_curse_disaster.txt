@@ -3,7 +3,7 @@ hoardcurse = {
 		ai = no
 		culture_group = dwarven
 		NOT = { has_country_flag = hoardcurse_happened }
-			total_development = 600
+		total_development = 600
 		OR = {
 			capital_scope = { continent = serpentspine }
 			any_owned_province = {
@@ -12,7 +12,7 @@ hoardcurse = {
 					has_terrain = dwarven_hold
 					has_terrain = dwarven_hold_surface
 				}
-				NOT = { id = 4097 }
+				NOT = { province_id = 4097 }
 			}
 		}
 	}

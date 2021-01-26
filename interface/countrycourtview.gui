@@ -66,6 +66,48 @@ guiTypes = {
 			pdx_tooltip ="IcW_tool"
 			delayedTooltipText = ""
 		}
+		guiButtonType = {
+			name = "reset_all353433"
+			position = { x = 30 y = 660 }
+			quadTextureSprite ="GFX_button_reset_shortcuts"	
+			pdx_tooltip ="IcW_tool2"
+			delayedTooltipText = ""
+		}
+		guiButtonType = {
+			name = "reset_3433"
+			position = { x = 70 y = 660 }
+			quadTextureSprite ="GFX_button_reset_shortcuts"	
+			pdx_tooltip ="IcW_tool3"
+			delayedTooltipText = ""
+		}
+		guiButtonType = {
+			name = "reset_34565433"
+			position = { x = 80 y = 700 }
+			quadTextureSprite ="GFX_button_reset_shortcuts"	
+			pdx_tooltip ="IcW_tool4"
+			delayedTooltipText = ""
+		}
+		guiButtonType = {
+			name = "reset_3456345433"
+			position = { x = 120 y = 700 }
+			quadTextureSprite ="GFX_button_reset_shortcuts"	
+			pdx_tooltip ="IcW_tool5"
+			delayedTooltipText = ""
+		}
+		guiButtonType = {
+			name = "res67633"
+			position = { x = 110 y = 660 }
+			quadTextureSprite ="GFX_button_reset_shortcuts"	
+			pdx_tooltip ="IcW_tool6"
+			delayedTooltipText = ""
+		}
+		guiButtonType = {
+			name = "res676tzt33"
+			position = { x = 150 y = 660 }
+			quadTextureSprite ="GFX_button_reset_shortcuts"	
+			pdx_tooltip ="IcW_tool7"
+			delayedTooltipText = ""
+		}
 		
 		
 		### ------- Ruler -------	

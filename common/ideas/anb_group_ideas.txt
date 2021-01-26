@@ -2202,7 +2202,7 @@ bom_ideas = {
         leader_siege = 1
     }
     bom_tongues_both_quick_and_sharp = { #The Bom are known for their quick tongues and are capable of both deep insults and honeyed words at a moments notice
-		power_projection_from_insults = 0.5
+		power_projection_from_insults = 1
 		improve_relation_modifier = 0.05
     }
 }
@@ -2311,7 +2311,7 @@ fathide_ideas = {
     
     fathide_ogrish_diplomacy = {
         warscore_cost_vs_other_religion = -0.2
-        power_projection_from_insults = 0.5
+        power_projection_from_insults = 1
     }
     
     fathide_the_kelaktar = {

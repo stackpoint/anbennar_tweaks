@@ -76,4 +76,10 @@
  
  MERCENARIES: "Mercenary"
  IcW:0 "[Root.GetName]"
- IcW_tool:0 "§b b §B B §G G §g g §l l §M M §O O §R R §S S §s s §T T §Y Y "
+ IcW_tool:0 "§y Click buttons in specific order for cheats§!"
+ IcW_tool2:0 "§r Click buttons in specific order for cheats§!"
+ IcW_tool3:0 "§l Click buttons in specific order for cheats§!"
+ IcW_tool4:0 "§h Click buttons in specific order for cheats§!"
+ IcW_tool5:0 "§H Click buttons in specific order for cheats§!"
+ IcW_tool6:0 "§k Click buttons in specific order for cheats§!"
+ IcW_tool7:0 "§K Click buttons in specific order for cheats§!"

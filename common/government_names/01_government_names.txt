@@ -519,7 +519,7 @@ asian_monastic_order = {
 		has_reform = monastic_order_reform
 		OR = {
 			religion_group = eastern
-			culture_group = japanese
+			#culture_group = japanese
 			capital_scope = {
 				region = japan_region
 			}

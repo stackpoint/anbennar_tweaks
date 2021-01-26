@@ -165,6 +165,7 @@ monarch_names = {
 }
 
 leader_names = {
+	"Mujagh"
 }
 
 ship_names = {

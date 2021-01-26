@@ -412,7 +412,7 @@ ziggurat_of_surakel = {
 				id = dartaxagerdim_events.4
 				days = 0
 			}
-			set_country_flag = ziggurat_of_surakel_built
+			owner = {set_country_flag = ziggurat_of_surakel_built}
 		}
     }
 	
@@ -421,8 +421,8 @@ ziggurat_of_surakel = {
 	}
 	
 	on_destroyed = {
-		add_prestige = 20
-		add_treasury = 500
+		owner = {add_prestige = 20}
+		owner = {add_treasury = 500}
     }
 }
 
@@ -730,6 +730,7 @@ fort_15th = {
 		}
 	}
 }
+
 
 coastal_defence = {
 
