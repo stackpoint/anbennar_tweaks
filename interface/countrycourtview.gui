@@ -108,6 +108,13 @@ guiTypes = {
 			pdx_tooltip ="IcW_tool7"
 			delayedTooltipText = ""
 		}
+		guiButtonType = {
+			name = "res676zutzt33"
+			position = { x = 190 y = 660 }
+			quadTextureSprite ="GFX_button_reset_shortcuts"	
+			pdx_tooltip ="IcW_tool8"
+			delayedTooltipText = ""
+		}
 		
 		
 		### ------- Ruler -------	

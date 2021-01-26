@@ -1490,13 +1490,14 @@ guiTypes = {
 			name = "name"
 			position = { x = 2 y = 4 }
 			textureFile = ""
-			font = "vic_18"
+			font = "Stellaris_Small"
 			borderSize = {x = 4 y = 4}
 			text = "7"
-			maxWidth = 112
+			maxWidth = 120
 			maxHeight = 32
 			format = left
 			Orientation = "UPPER_LEFT"
+			fixedsize = yes
 		}
 
 		instantTextBoxType = {

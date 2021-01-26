@@ -466,7 +466,7 @@ guiTypes = {
 			font = "vic_18"
 			borderSize = {x = 4 y = 4}
 			text = "000k"
-			maxWidth = 36
+			maxWidth = 40
 			maxHeight = 26
 			format = right
 		}
@@ -765,7 +765,7 @@ guiTypes = {
 			font = "vic_18"
 			borderSize = {x = 4 y = 4}
 			text = "ENEMIES"
-			maxWidth = 64
+			maxWidth = 70
 			maxHeight = 20
 			fixedsize = yes
 			truncate = yes
