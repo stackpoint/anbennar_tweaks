@@ -204,7 +204,7 @@ declarewar = {
 			}
 		}
 	}
-	
+
 	#condition = {
 	#	tooltip = DWAROVAR_AI
 	#	potential = {
@@ -273,9 +273,12 @@ declarewar = {
 			limit = {
 				has_country_modifier = dwarovar_claimer
 				FROM = {
-					any_owned_province = {
-						continent = serpentspine
+					NOT = {
+						any_owned_province = {
+							continent = serpentspine
+						}
 					}
+					NOT = { coalition_target = FROM }
 				}
 			}
 			country_event = {
@@ -453,7 +456,7 @@ royal_marriage = {
 		tooltip = ELVEN_MONARCHY
 		potential = {
 			FROM = {
-			government = monarchy
+				government = monarchy
 				ruler_is_elven = yes
 				culture_group = elven
 				NOT = { ruler_culture = desert_elf }

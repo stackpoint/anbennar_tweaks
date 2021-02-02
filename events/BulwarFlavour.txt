@@ -1560,11 +1560,11 @@ province_event = {
 						if = { limit = { construction_progress = 0.96 }
 							if = { limit = { construction_progress = 0.98 }
 								check_variable = { cons_prog = 0.02 }
-			}
+							}
 							else = {
 								check_variable = { cons_prog = 0.04 }
-			}
-		}
+							}
+						}
 						else = {
 							if = { limit = { construction_progress = 0.95 }
 								check_variable = { cons_prog = 0.05 }

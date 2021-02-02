@@ -2757,13 +2757,13 @@ country_event = {
 				limit = { controlled_by = ROOT }
 				save_event_target_as = province
 			}
-			capital_scope = { 
+			capital_scope = {
 				if = {
-				limit = { controlled_by = ROOT }
-				save_event_target_as = province
+					limit = { controlled_by = ROOT }
+					save_event_target_as = province
+				}
 			}
 		}
-	}
 	}
 	
 	#Send them help
