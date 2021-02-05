@@ -196,7 +196,7 @@ country_event = {
 			}
 			else = {
 				event_target:base_target = {
-					add_power = {
+					add_power2 = {
 						power = adm
 					}
 					add_next_institution_embracement_scaled = 5
@@ -265,7 +265,7 @@ country_event = {
 			}
 			else = {
 				event_target:base_target = {
-					add_power = {
+					add_power2 = {
 						power = dip
 					}
 					add_next_institution_embracement_scaled = 5
@@ -356,7 +356,7 @@ country_event = {
 			}
 			else = {
 				event_target:base_target = {
-					add_power = {
+					add_power2 = {
 						power = mil
 					}
 					add_next_institution_embracement_scaled = 5

@@ -386,7 +386,7 @@ binary_ad200 = {
 	}
 }
 
-add_power = { #reddit.com/r/eu4/comments/dy7lyv
+add_power2 = { #reddit.com/r/eu4/comments/dy7lyv
 	set_variable = {
 		which = temp
 		which = baseCost
@@ -436,7 +436,7 @@ spawn_institution = {
 					check_variable = { which = admPower 	which = dipPower }
 					check_variable = { which = admPower 	which = milPower }
 				}
-				add_power = {
+				add_power2 = {
 					power = adm
 				}
 				add_next_institution_embracement_scaled = 5
@@ -447,7 +447,7 @@ spawn_institution = {
 				limit = {
 					check_variable = { which = dipPower	which = milPower }
 				}
-				add_power = {
+				add_power2 = {
 					power = dip
 				}
 				add_next_institution_embracement_scaled = 5
@@ -455,7 +455,7 @@ spawn_institution = {
 				log = dev_info.2
 			}
 			else = {
-				add_power = {
+				add_power2 = {
 					power = mil
 				}
 				add_next_institution_embracement_scaled = 5
