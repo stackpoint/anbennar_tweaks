@@ -4316,7 +4316,7 @@ nationalismus0 = {
 	}
 	
 	ai_will_do = {
-		factor = 15
+		factor = 0
 		modifier = {
 			factor = 2
 			personality = ai_diplomat
