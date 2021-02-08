@@ -3869,8 +3869,7 @@ estate_burghers_build_port_building_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					can_build = grand_shipyard
-					has_building = drydock
+					can_build = dock
 				}
 				ROOT = {
 					set_variable = {
@@ -3881,8 +3880,7 @@ estate_burghers_build_port_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					can_build = drydock
-					has_building = shipyard
+					can_build = shipyard
 				}
 				ROOT = {
 					set_variable = {
@@ -3893,8 +3891,7 @@ estate_burghers_build_port_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					can_build = shipyard
-					has_building = dock
+					can_build = drydock
 				}
 				ROOT = {
 					set_variable = {
@@ -3905,7 +3902,7 @@ estate_burghers_build_port_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					can_build = dock
+					can_build = grand_shipyard
 				}
 				ROOT = {
 					set_variable = {
@@ -3916,7 +3913,7 @@ estate_burghers_build_port_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					has_building = navalbase_lvl_1
+					can_build = navalbase_lvl_1
 				}
 				ROOT = {
 					set_variable = {
@@ -3952,7 +3949,12 @@ estate_burghers_build_port_building_in_y = {
 				}
 			}
 			event_target:agenda_province = {
-				has_building = grand_shipyard
+				OR = {
+					has_building = dock
+					has_building = shipyard
+					has_building = drydock
+					has_building = grand_shipyard
+				}
 			}
 		}
 		else_if = {
@@ -3964,6 +3966,7 @@ estate_burghers_build_port_building_in_y = {
 			}
 			event_target:agenda_province = {
 				OR = {
+					has_building = shipyard
 					has_building = drydock
 					has_building = grand_shipyard
 				}
@@ -3978,7 +3981,6 @@ estate_burghers_build_port_building_in_y = {
 			}
 			event_target:agenda_province = {
 				OR = {
-					has_building = shipyard
 					has_building = drydock
 					has_building = grand_shipyard
 				}
@@ -3992,12 +3994,7 @@ estate_burghers_build_port_building_in_y = {
 				}
 			}
 			event_target:agenda_province = {
-				OR = {
-					has_building = dock
-					has_building = shipyard
-					has_building = drydock
-					has_building = grand_shipyard
-				}
+				has_building = grand_shipyard
 			}
 		}
 		else_if = {
@@ -4008,15 +4005,15 @@ estate_burghers_build_port_building_in_y = {
 				}
 			}
 			event_target:agenda_province = {
-				has_building = navalbase_lvl_2
-			}
-		}
-		else = {
-			event_target:agenda_province = {
 				OR = {
 					has_building = navalbase_lvl_1
 					has_building = navalbase_lvl_2
 				}
+			}
+		}
+		else = {
+			event_target:agenda_province = {
+				has_building = navalbase_lvl_2
 			}
 		}
     }
@@ -4396,8 +4393,7 @@ estate_vaisyas_build_port_building_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					can_build = grand_shipyard
-					has_building = drydock
+					can_build = dock
 				}
 				ROOT = {
 					set_variable = {
@@ -4408,8 +4404,7 @@ estate_vaisyas_build_port_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					can_build = drydock
-					has_building = shipyard
+					can_build = shipyard
 				}
 				ROOT = {
 					set_variable = {
@@ -4420,8 +4415,7 @@ estate_vaisyas_build_port_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					can_build = shipyard
-					has_building = dock
+					can_build = drydock
 				}
 				ROOT = {
 					set_variable = {
@@ -4432,7 +4426,7 @@ estate_vaisyas_build_port_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					can_build = dock
+					can_build = grand_shipyard
 				}
 				ROOT = {
 					set_variable = {
@@ -4443,7 +4437,7 @@ estate_vaisyas_build_port_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					has_building = navalbase_lvl_1
+					can_build = navalbase_lvl_1
 				}
 				ROOT = {
 					set_variable = {
@@ -4479,7 +4473,12 @@ estate_vaisyas_build_port_building_in_y = {
 				}
 			}
 			event_target:agenda_province = {
-				has_building = grand_shipyard
+				OR = {
+					has_building = dock
+					has_building = shipyard
+					has_building = drydock
+					has_building = grand_shipyard
+				}
 			}
 		}
 		else_if = {
@@ -4491,6 +4490,7 @@ estate_vaisyas_build_port_building_in_y = {
 			}
 			event_target:agenda_province = {
 				OR = {
+					has_building = shipyard
 					has_building = drydock
 					has_building = grand_shipyard
 				}
@@ -4505,7 +4505,6 @@ estate_vaisyas_build_port_building_in_y = {
 			}
 			event_target:agenda_province = {
 				OR = {
-					has_building = shipyard
 					has_building = drydock
 					has_building = grand_shipyard
 				}
@@ -4519,12 +4518,7 @@ estate_vaisyas_build_port_building_in_y = {
 				}
 			}
 			event_target:agenda_province = {
-				OR = {
-					has_building = dock
-					has_building = shipyard
-					has_building = drydock
-					has_building = grand_shipyard
-				}
+				has_building = grand_shipyard
 			}
 		}
 		else_if = {
@@ -4535,15 +4529,15 @@ estate_vaisyas_build_port_building_in_y = {
 				}
 			}
 			event_target:agenda_province = {
-				has_building = navalbase_lvl_2
-			}
-		}
-		else = {
-			event_target:agenda_province = {
 				OR = {
 					has_building = navalbase_lvl_1
 					has_building = navalbase_lvl_2
 				}
+			}
+		}
+		else = {
+			event_target:agenda_province = {
+				has_building = navalbase_lvl_2
 			}
 		}
     }
@@ -5185,8 +5179,7 @@ estate_jains_build_port_building_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					can_build = grand_shipyard
-					has_building = drydock
+					can_build = dock
 				}
 				ROOT = {
 					set_variable = {
@@ -5197,8 +5190,7 @@ estate_jains_build_port_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					can_build = drydock
-					has_building = shipyard
+					can_build = shipyard
 				}
 				ROOT = {
 					set_variable = {
@@ -5209,8 +5201,7 @@ estate_jains_build_port_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					can_build = shipyard
-					has_building = dock
+					can_build = drydock
 				}
 				ROOT = {
 					set_variable = {
@@ -5221,7 +5212,7 @@ estate_jains_build_port_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					can_build = dock
+					can_build = grand_shipyard
 				}
 				ROOT = {
 					set_variable = {
@@ -5232,7 +5223,7 @@ estate_jains_build_port_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					has_building = navalbase_lvl_1
+					can_build = navalbase_lvl_1
 				}
 				ROOT = {
 					set_variable = {
@@ -5268,7 +5259,12 @@ estate_jains_build_port_building_in_y = {
 				}
 			}
 			event_target:agenda_province = {
-				has_building = grand_shipyard
+				OR = {
+					has_building = dock
+					has_building = shipyard
+					has_building = drydock
+					has_building = grand_shipyard
+				}
 			}
 		}
 		else_if = {
@@ -5280,6 +5276,7 @@ estate_jains_build_port_building_in_y = {
 			}
 			event_target:agenda_province = {
 				OR = {
+					has_building = shipyard
 					has_building = drydock
 					has_building = grand_shipyard
 				}
@@ -5294,7 +5291,6 @@ estate_jains_build_port_building_in_y = {
 			}
 			event_target:agenda_province = {
 				OR = {
-					has_building = shipyard
 					has_building = drydock
 					has_building = grand_shipyard
 				}
@@ -5308,12 +5304,7 @@ estate_jains_build_port_building_in_y = {
 				}
 			}
 			event_target:agenda_province = {
-				OR = {
-					has_building = dock
-					has_building = shipyard
-					has_building = drydock
-					has_building = grand_shipyard
-				}
+				has_building = grand_shipyard
 			}
 		}
 		else_if = {
@@ -5324,15 +5315,15 @@ estate_jains_build_port_building_in_y = {
 				}
 			}
 			event_target:agenda_province = {
-				has_building = navalbase_lvl_2
-			}
-		}
-		else = {
-			event_target:agenda_province = {
 				OR = {
 					has_building = navalbase_lvl_1
 					has_building = navalbase_lvl_2
 				}
+			}
+		}
+		else = {
+			event_target:agenda_province = {
+				has_building = navalbase_lvl_2
 			}
 		}
     }
