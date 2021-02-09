@@ -271,7 +271,7 @@ province_razed = {
 }
 
 development = {
-	allowed_num_of_buildings = 0.4
+	allowed_num_of_buildings = 0.1
 	supply_limit_modifier = 0.02
 	local_missionary_strength = -0.001
 	land_forcelimit	= 0.1			# special case, affected by autonomy
@@ -279,11 +279,10 @@ development = {
 	local_sailors = 30			# special case, affected by autonomy & set to 0 by code if not port
 	province_trade_power_value = 0.2
 	local_amount_of_banners = 0.066
-	local_build_cost = 0.005
 }
 
 development_scaled = {
-	local_development_cost = 0.025
+	local_development_cost = 0.03
 }
 
 capital_city = {
@@ -318,7 +317,7 @@ pasha_state = {
 colony_level = {
 	local_colonist_placement_chance = -0.01
 	local_tax_modifier = 0.02
-
+	
 	#Anbennar
 	adv_pioneers_influence = 0.05
 }
@@ -533,7 +532,7 @@ base_values = {
 	max_absolutism = 65
 	merchants = 2							#Start with 2 merchants
 	diplomats = 2							#Start with 2 diplomats..
-	missionaries = 3					#1 missionary
+	missionaries = 1						#1 missionary
 	army_tradition_decay = 0.05				#lose 5% yearly
 	navy_tradition_decay = 0.05				#lose 5% yearly
 	prestige_decay = 0.05					#lose 5% prestige each year
@@ -543,22 +542,22 @@ base_values = {
 	tolerance_heretic = -2
 	global_missionary_strength = 0.02
 	global_manpower = 10.0
-	advisor_pool = 6
+	advisor_pool = 3
 	colonist_placement_chance = 0.05
-	free_leader_pool = 3
+	free_leader_pool = 1
 	republican_tradition = 1
-	monthly_fervor_increase = 5
+	monthly_fervor_increase = 1
 	vassal_income = 0.10
 	horde_unity = -2
 	devotion = -0.5
 	meritocracy = -2
 	governing_capacity = 200
 	num_accepted_cultures = 2
-	monthly_splendor = 2
+	monthly_splendor = 1
 	artillery_bonus_vs_fort = 5
 	cav_to_inf_ratio = 0.5
 	merc_maintenance_modifier = 0.5
-
+	
 	#Anbennar
 	hob_lion_command_influence = 0.1
 }
@@ -596,12 +595,12 @@ positive_stability = {
 	yearly_corruption = -0.02
 	global_institution_spread = 0.05
 	yearly_harmony = 0.25
-
+	
 	#Anbennar
 	#adv_pioneers_influence = 0.03
 	tec_manufacturers_influence = 0.03
 	hob_lion_command_influence = 0.03
-
+	
 	mages_loyalty_modifier = 0.02
 }
 
@@ -617,7 +616,7 @@ negative_stability = {
 	devotion = 1
 	caravan_power = 0.05
 	monthly_militarized_society = 0.05
-
+	
 	#Anbennar
 	mages_loyalty_modifier = 0.02
 }
@@ -692,7 +691,7 @@ bankruptcy = {
 	technology_cost = 0.5
 	idea_cost = 0.5
 	imperial_mandate = -0.1
-
+	
 	#Anbennar
 	adv_fortune_seekers_influence = 0.25
 	tec_manufacturers_influence = 0.25
@@ -701,7 +700,7 @@ bankruptcy = {
 
 war = {
 	rr_girondists_influence = 0.15
-
+	
 	#Anbennar
 	adv_marchers_influence = 0.2
 	tec_military_engineers_influence = 0.3
@@ -715,7 +714,7 @@ peace = {
 	global_institution_spread = 0.1
 	rr_girondists_influence = -0.1
 	pr_smugglers_influence = 0.1
-
+	
 	#Anbennar
 	# adv_marchers_influence = -0.05
 	adv_pioneers_influence = 0.02
@@ -747,7 +746,7 @@ war_exhaustion = {
 	sailors_recovery_speed = -0.01
 	siege_ability = -0.01
 	global_trade_goods_size_modifier = -0.02
-
+	
 	#Anbennar
 	adv_marchers_influence = 0.05
 	tec_military_engineers_influence = 0.05
@@ -787,7 +786,7 @@ mercantilism = {
 	embargo_efficiency = 0.5
 	burghers_loyalty_modifier = 0.05
 	vaisyas_loyalty_modifier = 0.05
-
+	
 	#Anbennar
 	tec_manufacturers_influence = 0.1
 	#adv_fortune_seekers_influence = 0.1
@@ -805,7 +804,7 @@ army_tradition = {
 	nobles_loyalty_modifier = 0.05
 	maratha_loyalty_modifier = 0.05
 	rajput_loyalty_modifier = 0.05
-
+	
 	#Anbennar
 	adv_marchers_influence = 0.1
 	tec_military_engineers_influence = 0.1
@@ -901,7 +900,7 @@ num_of_marriages = {
 
 num_of_provinces = {
 	monthly_militarized_society = -0.025
-
+	
 	#Anbennar
 	adv_fortune_seekers_influence = 0.01
 	hob_wolf_command_influence = 0.002
@@ -911,7 +910,6 @@ num_of_provinces = {
 # Multiplied by Development
 country_development = {
 	yearly_tribal_allegiance = -0.005
-	free_leader_pool = 0.004
 }
 
 # Multiplied by Tribal Allegiance / 100
@@ -948,7 +946,7 @@ devotion = {
 	global_tax_modifier = 0.50
 	church_loyalty_modifier = 0.05
 	brahmins_hindu_loyalty_modifier = 0.05
-
+	
 	#Anbennar
 	mages_loyalty_modifier = 0.05
 }
@@ -986,12 +984,12 @@ corruption = {
 	jains_loyalty_modifier = 0.1
 	rajput_loyalty_modifier = 0.1
 	vampires_loyalty_modifier = 0.1
-
+	
 	#Anbennar
 	adv_fortune_seekers_influence = 0.05
 	tec_manufacturers_influence = 0.05
 	hob_lion_command_influence = 0.05
-
+	
 	mages_loyalty_modifier = 0.05
 	artificers_loyalty_modifier = 0.05
 	adventurers_loyalty_modifier = 0.05
@@ -1000,7 +998,7 @@ corruption = {
 
 root_out_corruption = {
 	yearly_corruption = -1.0
-
+	
 	#Anbennar
 	adv_fortune_seekers_influence = -0.05
 	tec_manufacturers_influence = -0.05
@@ -1016,7 +1014,7 @@ recovery_motivation = {
 	global_unrest = -5
 	interest = -1
 	horde_unity = 10
-
+	
 	#Anbennar
 	hob_boar_command_influence = 2
 }
@@ -1072,9 +1070,9 @@ over_extension = {
 	bureaucrats_influence = 0.5
 	mr_guilds_influence = 0.5
 	yearly_corruption = 0.5
-
+	
 	#Anbennar
-	adv_fortune_seekers_influence = 0.5
+	adv_fortune_seekers_influence = 0.5			
 	monthly_militarized_society = -0.05
 	hob_wolf_command_influence = 0.5
 }
@@ -1104,13 +1102,13 @@ prestige = {
 	jains_loyalty_modifier = 0.05
 	rajput_loyalty_modifier = 0.05
 	vampires_loyalty_modifier = 0.05
-
+	
 	#Anbennar
 	adv_marchers_influence = 0.5
 	hob_boar_command_influence = 0.2
 	monthly_militarized_society = 0.25
 	tec_inventors_influence = 0.15
-
+	
 	mages_loyalty_modifier = 0.05
 	artificers_loyalty_modifier = 0.05
 	adventurers_loyalty_modifier = 0.05
@@ -1129,7 +1127,7 @@ republican_tradition = {
 	reform_progress_growth = 1.0
 	burghers_loyalty_modifier = 0.05
 	vaisyas_loyalty_modifier = 0.05
-
+	
 	#Anbennar
 	tec_inventors_influence = 0.1
 }
@@ -1137,7 +1135,7 @@ republican_tradition = {
 inverse_republican_tradition = {
 	stability_cost_modifier = 2.0
 	rr_jacobins_influence = -0.1
-
+	
 	#Anbennar
 	tec_inventors_influence = -0.1
 }
@@ -1241,7 +1239,7 @@ is_great_power = {						#Only works with Rights of Man DLC enabled
 	prestige_decay = -0.01
 	embracement_cost = -0.1
 	max_absolutism = 5
-
+	
 	#Anbennar
 	monthly_militarized_society = -10
 }
@@ -1847,7 +1845,7 @@ over_governing_capacity_modifier = {
 	core_creation = 0.2
 	advisor_cost = 1.0
 	monthly_militarized_society = -1.0
-
+	
 }
 
 

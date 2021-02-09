@@ -1,267 +1,20 @@
+
 #Triggers: any province has the basic conditions, country has adm tech 4
-
-estate_burghers_build_trade_building_in_y = {
-	can_select = {
-		any_owned_province = {
-			is_state_core = root
-			OR = {
-				can_build = stock_exchange
-				can_build = trade_depot
-				can_build = trade_lvl_2
-				can_build = marketplace
-			}
-		}
-	}
-	selection_weight = {
-		factor = 1
-		modifier = {
-			factor = 0.65
-			NOT = {
-				any_owned_province = {
-					is_state_core = root
-					OR = {
-						province_has_center_of_trade_of_level = 1
-						province_trade_power = 10
-					}
-					OR = {
-						can_build = stock_exchange
-						can_build = trade_depot
-						can_build = trade_lvl_2
-						can_build = marketplace
-					}
-				}
-			}
-		}
-		modifier = {
-			factor = 1.2
-			any_owned_province = {
-				is_state_core = root
-				OR = {
-					province_has_center_of_trade_of_level = 2
-					province_trade_power = 20
-				}
-				OR = {
-					can_build = stock_exchange
-					can_build = trade_depot
-					can_build = trade_lvl_2
-					can_build = marketplace
-				}
-			}
-		}
-		modifier = {
-			factor = 2
-			is_institution_enabled = global_trade
-			NOT = { has_institution = global_trade }
-		}
-		modifier = {
-			factor = 2
-			NOT = {
-				crown_land_share = 15
-			}
-		}
-	}
-	pre_effect = {
-		set_variable = {
-			which = estate_burghers_build_trade_building_in_y_var
-			value = 0
-		}
-		random_owned_province = {
-			limit = {
-				is_state_core = root
-				OR = {
-					can_build = stock_exchange
-					can_build = trade_depot
-					can_build = trade_lvl_2
-					can_build = marketplace
-				}
-			}
-			save_event_target_as = agenda_province
-		}
-		random_owned_province = {
-			limit = {
-				is_state_core = root
-				OR = {
-					province_has_center_of_trade_of_level = 1
-					province_trade_power = 10
-				}
-				OR = {
-					can_build = stock_exchange
-					can_build = trade_depot
-					can_build = trade_lvl_2
-					can_build = marketplace
-				}
-			}
-			save_event_target_as = agenda_province
-		}
-		random_owned_province = {
-			limit = {
-				is_state_core = root
-				OR = {
-					province_has_center_of_trade_of_level = 2
-					province_trade_power = 20
-				}
-				OR = {
-					can_build = stock_exchange
-					can_build = trade_depot
-					can_build = trade_lvl_2
-					can_build = marketplace
-				}
-			}
-			save_event_target_as = agenda_province
-		}
-		event_target:agenda_province = {
-			if = {
-				limit = {
-					has_building = trade_depot
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_trade_building_in_y_var
-						value = 4
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_building = trade_lvl_2
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_trade_building_in_y_var
-						value = 3
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_building = marketplace
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_trade_building_in_y_var
-						value = 2
-					}
-				}
-			}
-			else = {
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_trade_building_in_y_var
-						value = 1
-					}
-				}
-			}
-		}
-	}
-	provinces_to_highlight = {
-		province_id = event_target:agenda_province
-	}
-	fail_if = {
-		event_target:agenda_province = {
-			NOT = { owned_by = root }
-		}
-	}
-    task_requirements = {
-		if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_trade_building_in_y_var
-					value = 4
-				}
-			}
-			event_target:agenda_province = {
-				has_building = stock_exchange
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_trade_building_in_y_var
-					value = 3
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = trade_depot
-					has_building = stock_exchange
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_trade_building_in_y_var
-					value = 2
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = trade_lvl_2
-					has_building = trade_depot
-					has_building = stock_exchange
-				}
-			}
-		}
-		else = {
-			event_target:agenda_province = {
-				OR = {
-					has_building = marketplace
-					has_building = trade_lvl_2
-					has_building = trade_depot
-					has_building = stock_exchange
-				}
-			}
-		}
-    }
-    task_completed_effect = {
-		add_estate_loyalty = {
-			estate = estate_burghers
-			loyalty = 10
-		}
-		if = {
-			limit = {
-				NOT = { crown_land_share = 15 }
-				estate_territory = {
-					estate = estate_burghers
-					territory = 10
-				}
-			}
-			take_estate_land_share_small = { estate = estate_burghers }
-		}
-		else = {
-			event_target:agenda_province = {
-				add_base_production = 1
-			}
-		}
-    }
-    failing_effect = {
-		event_target:agenda_province = {
-			if = {
-				limit = { owned_by = root }
-				add_named_unrest = {
-					name = local_burghers_displeased
-					value = 5
-				}
-			}
-		}
-        add_estate_loyalty_modifier = {
-            estate = estate_burghers
-			desc = EST_VAL_AGENDA_DENIED
-			loyalty = -5
-			duration = 7300
-        }
-    }
-}
-
 estate_church_build_temple_in_y = {
 	can_select = {
+		adm_tech = 4
 		any_owned_province = {
 			is_state_core = root
+			NOT = { has_building = cathedral }
 			OR = {
-				can_build = taxation_lvl_4
-				can_build = cathedral
-				can_build = taxation_lvl_2
-				can_build = temple
+				AND = {
+					NOT = { has_building = temple }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { adm_tech = 19 }
+					has_building = temple
+				}
 			}
 		}
 	}
@@ -273,11 +26,16 @@ estate_church_build_temple_in_y = {
 				any_owned_province = {
 					is_state_core = root
 					base_tax = 4
+					NOT = { has_building = cathedral }
 					OR = {
-						can_build = taxation_lvl_4
-						can_build = cathedral
-						can_build = taxation_lvl_2
-						can_build = temple
+						AND = {
+							NOT = { has_building = temple }
+							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { adm_tech = 19 }
+							has_building = temple
+						}
 					}
 				}
 			}
@@ -287,11 +45,16 @@ estate_church_build_temple_in_y = {
 			any_owned_province = {
 				is_state_core = root
 				base_tax = 7
+				NOT = { has_building = cathedral }
 				OR = {
-					can_build = taxation_lvl_4
-					can_build = cathedral
-					can_build = taxation_lvl_2
-					can_build = temple
+					AND = {
+						NOT = { has_building = temple }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 19 }
+						has_building = temple
+					}
 				}
 			}
 		}
@@ -310,11 +73,16 @@ estate_church_build_temple_in_y = {
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				NOT = { has_building = cathedral }
 				OR = {
-					can_build = taxation_lvl_4
-					can_build = cathedral
-					can_build = taxation_lvl_2
-					can_build = temple
+					AND = {
+						NOT = { has_building = temple }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 19 }
+						has_building = temple
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -323,11 +91,16 @@ estate_church_build_temple_in_y = {
 			limit = {
 				is_state_core = root
 				base_tax = 4
+				NOT = { has_building = cathedral }
 				OR = {
-					can_build = taxation_lvl_4
-					can_build = cathedral
-					can_build = taxation_lvl_2
-					can_build = temple
+					AND = {
+						NOT = { has_building = temple }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 19 }
+						has_building = temple
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -336,11 +109,16 @@ estate_church_build_temple_in_y = {
 			limit = {
 				is_state_core = root
 				base_tax = 7
+				NOT = { has_building = cathedral }
 				OR = {
-					can_build = taxation_lvl_4
-					can_build = cathedral
-					can_build = taxation_lvl_2
-					can_build = temple
+					AND = {
+						NOT = { has_building = temple }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 19 }
+						has_building = temple
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -348,34 +126,12 @@ estate_church_build_temple_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					has_building = cathedral
+					NOT = { has_building = temple }
 				}
 				ROOT = {
 					set_variable = {
 						which = estate_church_build_temple_in_y_var
-						value = 4
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_building = taxation_lvl_2
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_church_build_temple_in_y_var
-						value = 3
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_building = temple
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_church_build_temple_in_y_var
-						value = 2
+						value = 1
 					}
 				}
 			}
@@ -383,7 +139,7 @@ estate_church_build_temple_in_y = {
 				ROOT = {
 					set_variable = {
 						which = estate_church_build_temple_in_y_var
-						value = 1
+						value = 2
 					}
 				}
 			}
@@ -402,49 +158,18 @@ estate_church_build_temple_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_church_build_temple_in_y_var
-					value = 4
-				}
-			}
-			event_target:agenda_province = {
-				has_building = taxation_lvl_4
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_church_build_temple_in_y_var
-					value = 3
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = cathedral
-					has_building = taxation_lvl_4
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_church_build_temple_in_y_var
 					value = 2
 				}
 			}
 			event_target:agenda_province = {
-				OR = {
-					has_building = taxation_lvl_2
-					has_building = cathedral
-					has_building = taxation_lvl_4
-				}
+				has_building = cathedral
 			}
 		}
 		else = {
 			event_target:agenda_province = {
 				OR = {
 					has_building = temple
-					has_building = taxation_lvl_2
 					has_building = cathedral
-					has_building = taxation_lvl_4
 				}
 			}
 		}
@@ -489,8 +214,10 @@ estate_church_build_temple_in_y = {
     }
 }
 
+
 estate_brahmins_build_temple_in_y = {
 	can_select = {
+		adm_tech = 4
 		if = {
 			limit = {
 				NOT = { religion = hinduism }
@@ -498,22 +225,32 @@ estate_brahmins_build_temple_in_y = {
 			any_owned_province = {
 				is_state_core = root
 				religion = hinduism
+				NOT = { has_building = cathedral }
 				OR = {
-					can_build = taxation_lvl_4
-					can_build = cathedral
-					can_build = taxation_lvl_2
-					can_build = temple
+					AND = {
+						NOT = { has_building = temple }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 19 }
+						has_building = temple
+					}
 				}
 			}
 		}
 		else = {
 			any_owned_province = {
 				is_state_core = root
+				NOT = { has_building = cathedral }
 				OR = {
-					can_build = taxation_lvl_4
-					can_build = cathedral
-					can_build = taxation_lvl_2
-					can_build = temple
+					AND = {
+						NOT = { has_building = temple }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 19 }
+						has_building = temple
+					}
 				}
 			}
 		}
@@ -527,11 +264,16 @@ estate_brahmins_build_temple_in_y = {
 					religion = hinduism
 					is_state_core = root
 					base_tax = 4
+					NOT = { has_building = cathedral }
 					OR = {
-						can_build = taxation_lvl_4
-						can_build = cathedral
-						can_build = taxation_lvl_2
-						can_build = temple
+						AND = {
+							NOT = { has_building = temple }
+							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { adm_tech = 19 }
+							has_building = temple
+						}
 					}
 				}
 			}
@@ -542,11 +284,16 @@ estate_brahmins_build_temple_in_y = {
 				religion = hinduism
 				is_state_core = root
 				base_tax = 7
+				NOT = { has_building = cathedral }
 				OR = {
-					can_build = taxation_lvl_4
-					can_build = cathedral
-					can_build = taxation_lvl_2
-					can_build = temple
+					AND = {
+						NOT = { has_building = temple }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 19 }
+						has_building = temple
+					}
 				}
 			}
 		}
@@ -571,11 +318,16 @@ estate_brahmins_build_temple_in_y = {
 					religion = hinduism
 				}
 				is_state_core = root
+				NOT = { has_building = cathedral }
 				OR = {
-					can_build = taxation_lvl_4
-					can_build = cathedral
-					can_build = taxation_lvl_2
-					can_build = temple
+					AND = {
+						NOT = { has_building = temple }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 19 }
+						has_building = temple
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -590,11 +342,16 @@ estate_brahmins_build_temple_in_y = {
 				}
 				is_state_core = root
 				base_tax = 4
+				NOT = { has_building = cathedral }
 				OR = {
-					can_build = taxation_lvl_4
-					can_build = cathedral
-					can_build = taxation_lvl_2
-					can_build = temple
+					AND = {
+						NOT = { has_building = temple }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 19 }
+						has_building = temple
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -609,11 +366,16 @@ estate_brahmins_build_temple_in_y = {
 				}
 				is_state_core = root
 				base_tax = 7
+				NOT = { has_building = cathedral }
 				OR = {
-					can_build = taxation_lvl_4
-					can_build = cathedral
-					can_build = taxation_lvl_2
-					can_build = temple
+					AND = {
+						NOT = { has_building = temple }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 19 }
+						has_building = temple
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -621,34 +383,12 @@ estate_brahmins_build_temple_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					has_building = cathedral
+					NOT = { has_building = temple }
 				}
 				ROOT = {
 					set_variable = {
 						which = estate_church_build_temple_in_y_var
-						value = 4
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_building = taxation_lvl_2
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_church_build_temple_in_y_var
-						value = 3
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_building = temple
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_church_build_temple_in_y_var
-						value = 2
+						value = 1
 					}
 				}
 			}
@@ -656,7 +396,7 @@ estate_brahmins_build_temple_in_y = {
 				ROOT = {
 					set_variable = {
 						which = estate_church_build_temple_in_y_var
-						value = 1
+						value = 2
 					}
 				}
 			}
@@ -675,49 +415,18 @@ estate_brahmins_build_temple_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_church_build_temple_in_y_var
-					value = 4
-				}
-			}
-			event_target:agenda_province = {
-				has_building = taxation_lvl_4
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_church_build_temple_in_y_var
-					value = 3
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = cathedral
-					has_building = taxation_lvl_4
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_church_build_temple_in_y_var
 					value = 2
 				}
 			}
 			event_target:agenda_province = {
-				OR = {
-					has_building = taxation_lvl_2
-					has_building = cathedral
-					has_building = taxation_lvl_4
-				}
+				has_building = cathedral
 			}
 		}
 		else = {
 			event_target:agenda_province = {
 				OR = {
 					has_building = temple
-					has_building = taxation_lvl_2
 					has_building = cathedral
-					has_building = taxation_lvl_4
 				}
 			}
 		}
@@ -775,15 +484,39 @@ estate_brahmins_build_temple_in_y = {
 
 estate_nobles_build_army_building_in_y = {
 	can_select = {
+		mil_tech = 6
 		any_owned_province = {
 			is_state_core = root
 			OR = {
-				can_build = training_fields
-				can_build = barracks
-				can_build = manpower_lvl_1
-				can_build = conscription_center
-				can_build = regimental_camp
-				can_build = forcelimit_lvl_1
+				NOT = { has_building = training_fields }
+				NOT = { has_building = conscription_center }
+			}
+			OR = {
+				AND = {
+					NOT = { has_building = barracks }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { mil_tech = 8 }
+					NOT = { has_building = regimental_camp }
+					num_free_building_slots = 1
+				}
+				AND = {
+					NOT = { has_building = training_fields }
+					ROOT = { mil_tech = 16 }
+					OR = {
+						has_building = barracks
+						num_free_building_slots = 1
+					}
+				}
+				AND = {
+					NOT = { has_building = conscription_center }
+					ROOT = { mil_tech = 22 }
+					OR = {
+						has_building = regimental_camp
+						num_free_building_slots = 1
+					}
+				}
 			}
 		}
 	}
@@ -796,12 +529,35 @@ estate_nobles_build_army_building_in_y = {
 					is_state_core = root
 					base_manpower = 3
 					OR = {
-						can_build = training_fields
-						can_build = barracks
-						can_build = manpower_lvl_1
-						can_build = conscription_center
-						can_build = regimental_camp
-						can_build = forcelimit_lvl_1
+						NOT = { has_building = training_fields }
+						NOT = { has_building = conscription_center }
+					}
+					OR = {
+						AND = {
+							NOT = { has_building = barracks }
+							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { mil_tech = 8 }
+							NOT = { has_building = regimental_camp }
+							num_free_building_slots = 1
+						}
+						AND = {
+							NOT = { has_building = training_fields }
+							ROOT = { mil_tech = 16 }
+							OR = {
+								has_building = barracks
+								num_free_building_slots = 1
+							}
+						}
+						AND = {
+							NOT = { has_building = conscription_center }
+							ROOT = { mil_tech = 22 }
+							OR = {
+								has_building = regimental_camp
+								num_free_building_slots = 1
+							}
+						}
 					}
 				}
 			}
@@ -812,12 +568,35 @@ estate_nobles_build_army_building_in_y = {
 				is_state_core = root
 				base_manpower = 6
 				OR = {
-					can_build = training_fields
-					can_build = barracks
-					can_build = manpower_lvl_1
-					can_build = conscription_center
-					can_build = regimental_camp
-					can_build = forcelimit_lvl_1
+					NOT = { has_building = training_fields }
+					NOT = { has_building = conscription_center }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = barracks }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { mil_tech = 8 }
+						NOT = { has_building = regimental_camp }
+						num_free_building_slots = 1
+					}
+					AND = {
+						NOT = { has_building = training_fields }
+						ROOT = { mil_tech = 16 }
+						OR = {
+							has_building = barracks
+							num_free_building_slots = 1
+						}
+					}
+					AND = {
+						NOT = { has_building = conscription_center }
+						ROOT = { mil_tech = 22 }
+						OR = {
+							has_building = regimental_camp
+							num_free_building_slots = 1
+						}
+					}
 				}
 			}
 		}
@@ -837,12 +616,35 @@ estate_nobles_build_army_building_in_y = {
 			limit = {
 				is_state_core = root
 				OR = {
-					can_build = training_fields
-					can_build = barracks
-					can_build = manpower_lvl_1
-					can_build = conscription_center
-					can_build = regimental_camp
-					can_build = forcelimit_lvl_1
+					NOT = { has_building = training_fields }
+					NOT = { has_building = conscription_center }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = barracks }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { mil_tech = 8 }
+						NOT = { has_building = regimental_camp }
+						num_free_building_slots = 1
+					}
+					AND = {
+						NOT = { has_building = training_fields }
+						ROOT = { mil_tech = 16 }
+						OR = {
+							has_building = barracks
+							num_free_building_slots = 1
+						}
+					}
+					AND = {
+						NOT = { has_building = conscription_center }
+						ROOT = { mil_tech = 22 }
+						OR = {
+							has_building = regimental_camp
+							num_free_building_slots = 1
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -852,12 +654,35 @@ estate_nobles_build_army_building_in_y = {
 				is_state_core = root
 				base_manpower = 3
 				OR = {
-					can_build = training_fields
-					can_build = barracks
-					can_build = manpower_lvl_1
-					can_build = conscription_center
-					can_build = regimental_camp
-					can_build = forcelimit_lvl_1
+					NOT = { has_building = training_fields }
+					NOT = { has_building = conscription_center }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = barracks }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { mil_tech = 8 }
+						NOT = { has_building = regimental_camp }
+						num_free_building_slots = 1
+					}
+					AND = {
+						NOT = { has_building = training_fields }
+						ROOT = { mil_tech = 16 }
+						OR = {
+							has_building = barracks
+							num_free_building_slots = 1
+						}
+					}
+					AND = {
+						NOT = { has_building = conscription_center }
+						ROOT = { mil_tech = 22 }
+						OR = {
+							has_building = regimental_camp
+							num_free_building_slots = 1
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -867,12 +692,35 @@ estate_nobles_build_army_building_in_y = {
 				is_state_core = root
 				base_manpower = 6
 				OR = {
-					can_build = training_fields
-					can_build = barracks
-					can_build = manpower_lvl_1
-					can_build = conscription_center
-					can_build = regimental_camp
-					can_build = forcelimit_lvl_1
+					NOT = { has_building = training_fields }
+					NOT = { has_building = conscription_center }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = barracks }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { mil_tech = 8 }
+						NOT = { has_building = regimental_camp }
+						num_free_building_slots = 1
+					}
+					AND = {
+						NOT = { has_building = training_fields }
+						ROOT = { mil_tech = 16 }
+						OR = {
+							has_building = barracks
+							num_free_building_slots = 1
+						}
+					}
+					AND = {
+						NOT = { has_building = conscription_center }
+						ROOT = { mil_tech = 22 }
+						OR = {
+							has_building = regimental_camp
+							num_free_building_slots = 1
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -880,31 +728,12 @@ estate_nobles_build_army_building_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					can_build = training_fields
-					has_building = barracks
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_nobles_build_army_building_in_y_var
-						value = 6
+					NOT = { has_building = training_fields }
+					ROOT = { mil_tech = 16 }
+					OR = {
+						num_free_building_slots = 1
+						has_building = barracks
 					}
-				}
-			}
-			else_if = {
-				limit = {
-					can_build = barracks
-					has_building = manpower_lvl_1
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_nobles_build_army_building_in_y_var
-						value = 5
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					can_build = manpower_lvl_1
 				}
 				ROOT = {
 					set_variable = {
@@ -915,18 +744,20 @@ estate_nobles_build_army_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					has_building = regimental_camp
+					NOT = { has_building = barracks }
+					NOT = { has_building = training_fields }
+					num_free_building_slots = 1
 				}
 				ROOT = {
 					set_variable = {
 						which = estate_nobles_build_army_building_in_y_var
-						value = 2
+						value = 3
 					}
 				}
 			}
 			else_if = {
 				limit = {
-					has_building = forcelimit_lvl_1
+					has_building = regimental_camp
 				}
 				ROOT = {
 					set_variable = {
@@ -958,7 +789,7 @@ estate_nobles_build_army_building_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_nobles_build_army_building_in_y_var
-					value = 6
+					value = 4
 				}
 			}
 			event_target:agenda_province = {
@@ -969,40 +800,14 @@ estate_nobles_build_army_building_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_nobles_build_army_building_in_y_var
-					value = 5
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = barracks
-					has_building = training_fields
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_nobles_build_army_building_in_y_var
-					value = 4
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = manpower_lvl_1
-					has_building = barracks
-					has_building = training_fields
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_nobles_build_army_building_in_y_var
 					value = 3
 				}
 			}
 			event_target:agenda_province = {
-				has_building = conscription_center
+				OR = {
+					has_building = barracks
+					has_building = training_fields
+				}
 			}
 		}
 		else_if = {
@@ -1013,16 +818,12 @@ estate_nobles_build_army_building_in_y = {
 				}
 			}
 			event_target:agenda_province = {
-				OR = {
-					has_building = regimental_camp
-					has_building = conscription_center
-				}
+				has_building = conscription_center
 			}
 		}
 		else = {
 			event_target:agenda_province = {
 				OR = {
-					has_building = forcelimit_lvl_1
 					has_building = regimental_camp
 					has_building = conscription_center
 				}
@@ -1071,15 +872,39 @@ estate_nobles_build_army_building_in_y = {
 
 estate_rajput_build_army_building_in_y = {
 	can_select = {
+		mil_tech = 6
 		any_owned_province = {
 			is_state_core = root
 			OR = {
-				can_build = training_fields
-				can_build = barracks
-				can_build = manpower_lvl_1
-				can_build = conscription_center
-				can_build = regimental_camp
-				can_build = forcelimit_lvl_1
+				NOT = { has_building = training_fields }
+				NOT = { has_building = conscription_center }
+			}
+			OR = {
+				AND = {
+					NOT = { has_building = barracks }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { mil_tech = 8 }
+					NOT = { has_building = regimental_camp }
+					num_free_building_slots = 1
+				}
+				AND = {
+					NOT = { has_building = training_fields }
+					ROOT = { mil_tech = 16 }
+					OR = {
+						has_building = barracks
+						num_free_building_slots = 1
+					}
+				}
+				AND = {
+					NOT = { has_building = conscription_center }
+					ROOT = { mil_tech = 22 }
+					OR = {
+						has_building = regimental_camp
+						num_free_building_slots = 1
+					}
+				}
 			}
 		}
 	}
@@ -1092,12 +917,35 @@ estate_rajput_build_army_building_in_y = {
 					is_state_core = root
 					base_manpower = 3
 					OR = {
-						can_build = training_fields
-						can_build = barracks
-						can_build = manpower_lvl_1
-						can_build = conscription_center
-						can_build = regimental_camp
-						can_build = forcelimit_lvl_1
+						NOT = { has_building = training_fields }
+						NOT = { has_building = conscription_center }
+					}
+					OR = {
+						AND = {
+							NOT = { has_building = barracks }
+							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { mil_tech = 8 }
+							NOT = { has_building = regimental_camp }
+							num_free_building_slots = 1
+						}
+						AND = {
+							NOT = { has_building = training_fields }
+							ROOT = { mil_tech = 16 }
+							OR = {
+								has_building = barracks
+								num_free_building_slots = 1
+							}
+						}
+						AND = {
+							NOT = { has_building = conscription_center }
+							ROOT = { mil_tech = 22 }
+							OR = {
+								has_building = regimental_camp
+								num_free_building_slots = 1
+							}
+						}
 					}
 				}
 			}
@@ -1108,12 +956,35 @@ estate_rajput_build_army_building_in_y = {
 				is_state_core = root
 				base_manpower = 6
 				OR = {
-					can_build = training_fields
-					can_build = barracks
-					can_build = manpower_lvl_1
-					can_build = conscription_center
-					can_build = regimental_camp
-					can_build = forcelimit_lvl_1
+					NOT = { has_building = training_fields }
+					NOT = { has_building = conscription_center }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = barracks }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { mil_tech = 8 }
+						NOT = { has_building = regimental_camp }
+						num_free_building_slots = 1
+					}
+					AND = {
+						NOT = { has_building = training_fields }
+						ROOT = { mil_tech = 16 }
+						OR = {
+							has_building = barracks
+							num_free_building_slots = 1
+						}
+					}
+					AND = {
+						NOT = { has_building = conscription_center }
+						ROOT = { mil_tech = 22 }
+						OR = {
+							has_building = regimental_camp
+							num_free_building_slots = 1
+						}
+					}
 				}
 			}
 		}
@@ -1133,12 +1004,35 @@ estate_rajput_build_army_building_in_y = {
 			limit = {
 				is_state_core = root
 				OR = {
-					can_build = training_fields
-					can_build = barracks
-					can_build = manpower_lvl_1
-					can_build = conscription_center
-					can_build = regimental_camp
-					can_build = forcelimit_lvl_1
+					NOT = { has_building = training_fields }
+					NOT = { has_building = conscription_center }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = barracks }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { mil_tech = 8 }
+						NOT = { has_building = regimental_camp }
+						num_free_building_slots = 1
+					}
+					AND = {
+						NOT = { has_building = training_fields }
+						ROOT = { mil_tech = 16 }
+						OR = {
+							has_building = barracks
+							num_free_building_slots = 1
+						}
+					}
+					AND = {
+						NOT = { has_building = conscription_center }
+						ROOT = { mil_tech = 22 }
+						OR = {
+							has_building = regimental_camp
+							num_free_building_slots = 1
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -1148,12 +1042,35 @@ estate_rajput_build_army_building_in_y = {
 				is_state_core = root
 				base_manpower = 3
 				OR = {
-					can_build = training_fields
-					can_build = barracks
-					can_build = manpower_lvl_1
-					can_build = conscription_center
-					can_build = regimental_camp
-					can_build = forcelimit_lvl_1
+					NOT = { has_building = training_fields }
+					NOT = { has_building = conscription_center }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = barracks }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { mil_tech = 8 }
+						NOT = { has_building = regimental_camp }
+						num_free_building_slots = 1
+					}
+					AND = {
+						NOT = { has_building = training_fields }
+						ROOT = { mil_tech = 16 }
+						OR = {
+							has_building = barracks
+							num_free_building_slots = 1
+						}
+					}
+					AND = {
+						NOT = { has_building = conscription_center }
+						ROOT = { mil_tech = 22 }
+						OR = {
+							has_building = regimental_camp
+							num_free_building_slots = 1
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -1163,12 +1080,35 @@ estate_rajput_build_army_building_in_y = {
 				is_state_core = root
 				base_manpower = 6
 				OR = {
-					can_build = training_fields
-					can_build = barracks
-					can_build = manpower_lvl_1
-					can_build = conscription_center
-					can_build = regimental_camp
-					can_build = forcelimit_lvl_1
+					NOT = { has_building = training_fields }
+					NOT = { has_building = conscription_center }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = barracks }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { mil_tech = 8 }
+						NOT = { has_building = regimental_camp }
+						num_free_building_slots = 1
+					}
+					AND = {
+						NOT = { has_building = training_fields }
+						ROOT = { mil_tech = 16 }
+						OR = {
+							has_building = barracks
+							num_free_building_slots = 1
+						}
+					}
+					AND = {
+						NOT = { has_building = conscription_center }
+						ROOT = { mil_tech = 22 }
+						OR = {
+							has_building = regimental_camp
+							num_free_building_slots = 1
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -1176,31 +1116,12 @@ estate_rajput_build_army_building_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					can_build = training_fields
-					has_building = barracks
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_nobles_build_army_building_in_y_var
-						value = 6
+					NOT = { has_building = training_fields }
+					ROOT = { mil_tech = 16 }
+					OR = {
+						num_free_building_slots = 1
+						has_building = barracks
 					}
-				}
-			}
-			else_if = {
-				limit = {
-					can_build = barracks
-					has_building = manpower_lvl_1
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_nobles_build_army_building_in_y_var
-						value = 5
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					can_build = manpower_lvl_1
 				}
 				ROOT = {
 					set_variable = {
@@ -1211,18 +1132,20 @@ estate_rajput_build_army_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					has_building = regimental_camp
+					NOT = { has_building = training_fields }
+					NOT = { has_building = barracks }
+					num_free_building_slots = 1
 				}
 				ROOT = {
 					set_variable = {
 						which = estate_nobles_build_army_building_in_y_var
-						value = 2
+						value = 3
 					}
 				}
 			}
 			else_if = {
 				limit = {
-					has_building = forcelimit_lvl_1
+					has_building = regimental_camp
 				}
 				ROOT = {
 					set_variable = {
@@ -1254,7 +1177,7 @@ estate_rajput_build_army_building_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_nobles_build_army_building_in_y_var
-					value = 6
+					value = 4
 				}
 			}
 			event_target:agenda_province = {
@@ -1265,40 +1188,14 @@ estate_rajput_build_army_building_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_nobles_build_army_building_in_y_var
-					value = 5
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = barracks
-					has_building = training_fields
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_nobles_build_army_building_in_y_var
-					value = 4
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = manpower_lvl_1
-					has_building = barracks
-					has_building = training_fields
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_nobles_build_army_building_in_y_var
 					value = 3
 				}
 			}
 			event_target:agenda_province = {
-				has_building = conscription_center
+				OR = {
+					has_building = barracks
+					has_building = training_fields
+				}
 			}
 		}
 		else_if = {
@@ -1309,16 +1206,12 @@ estate_rajput_build_army_building_in_y = {
 				}
 			}
 			event_target:agenda_province = {
-				OR = {
-					has_building = regimental_camp
-					has_building = conscription_center
-				}
+				has_building = conscription_center
 			}
 		}
 		else = {
 			event_target:agenda_province = {
 				OR = {
-					has_building = forcelimit_lvl_1
 					has_building = regimental_camp
 					has_building = conscription_center
 				}
@@ -1367,15 +1260,39 @@ estate_rajput_build_army_building_in_y = {
 
 estate_maratha_build_army_building_in_y = {
 	can_select = {
+		mil_tech = 6
 		any_owned_province = {
 			is_state_core = root
 			OR = {
-				can_build = training_fields
-				can_build = barracks
-				can_build = manpower_lvl_1
-				can_build = conscription_center
-				can_build = regimental_camp
-				can_build = forcelimit_lvl_1
+				NOT = { has_building = training_fields }
+				NOT = { has_building = conscription_center }
+			}
+			OR = {
+				AND = {
+					NOT = { has_building = barracks }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { mil_tech = 8 }
+					NOT = { has_building = regimental_camp }
+					num_free_building_slots = 1
+				}
+				AND = {
+					NOT = { has_building = training_fields }
+					ROOT = { mil_tech = 16 }
+					OR = {
+						has_building = barracks
+						num_free_building_slots = 1
+					}
+				}
+				AND = {
+					NOT = { has_building = conscription_center }
+					ROOT = { mil_tech = 22 }
+					OR = {
+						has_building = regimental_camp
+						num_free_building_slots = 1
+					}
+				}
 			}
 		}
 	}
@@ -1388,12 +1305,35 @@ estate_maratha_build_army_building_in_y = {
 					is_state_core = root
 					base_manpower = 3
 					OR = {
-						can_build = training_fields
-						can_build = barracks
-						can_build = manpower_lvl_1
-						can_build = conscription_center
-						can_build = regimental_camp
-						can_build = forcelimit_lvl_1
+						NOT = { has_building = training_fields }
+						NOT = { has_building = conscription_center }
+					}
+					OR = {
+						AND = {
+							NOT = { has_building = barracks }
+							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { mil_tech = 8 }
+							NOT = { has_building = regimental_camp }
+							num_free_building_slots = 1
+						}
+						AND = {
+							NOT = { has_building = training_fields }
+							ROOT = { mil_tech = 16 }
+							OR = {
+								has_building = barracks
+								num_free_building_slots = 1
+							}
+						}
+						AND = {
+							NOT = { has_building = conscription_center }
+							ROOT = { mil_tech = 22 }
+							OR = {
+								has_building = regimental_camp
+								num_free_building_slots = 1
+							}
+						}
 					}
 				}
 			}
@@ -1404,12 +1344,35 @@ estate_maratha_build_army_building_in_y = {
 				is_state_core = root
 				base_manpower = 6
 				OR = {
-					can_build = training_fields
-					can_build = barracks
-					can_build = manpower_lvl_1
-					can_build = conscription_center
-					can_build = regimental_camp
-					can_build = forcelimit_lvl_1
+					NOT = { has_building = training_fields }
+					NOT = { has_building = conscription_center }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = barracks }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { mil_tech = 8 }
+						NOT = { has_building = regimental_camp }
+						num_free_building_slots = 1
+					}
+					AND = {
+						NOT = { has_building = training_fields }
+						ROOT = { mil_tech = 16 }
+						OR = {
+							has_building = barracks
+							num_free_building_slots = 1
+						}
+					}
+					AND = {
+						NOT = { has_building = conscription_center }
+						ROOT = { mil_tech = 22 }
+						OR = {
+							has_building = regimental_camp
+							num_free_building_slots = 1
+						}
+					}
 				}
 			}
 		}
@@ -1429,12 +1392,35 @@ estate_maratha_build_army_building_in_y = {
 			limit = {
 				is_state_core = root
 				OR = {
-					can_build = training_fields
-					can_build = barracks
-					can_build = manpower_lvl_1
-					can_build = conscription_center
-					can_build = regimental_camp
-					can_build = forcelimit_lvl_1
+					NOT = { has_building = training_fields }
+					NOT = { has_building = conscription_center }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = barracks }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { mil_tech = 8 }
+						NOT = { has_building = regimental_camp }
+						num_free_building_slots = 1
+					}
+					AND = {
+						NOT = { has_building = training_fields }
+						ROOT = { mil_tech = 16 }
+						OR = {
+							has_building = barracks
+							num_free_building_slots = 1
+						}
+					}
+					AND = {
+						NOT = { has_building = conscription_center }
+						ROOT = { mil_tech = 22 }
+						OR = {
+							has_building = regimental_camp
+							num_free_building_slots = 1
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -1444,12 +1430,35 @@ estate_maratha_build_army_building_in_y = {
 				is_state_core = root
 				base_manpower = 3
 				OR = {
-					can_build = training_fields
-					can_build = barracks
-					can_build = manpower_lvl_1
-					can_build = conscription_center
-					can_build = regimental_camp
-					can_build = forcelimit_lvl_1
+					NOT = { has_building = training_fields }
+					NOT = { has_building = conscription_center }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = barracks }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { mil_tech = 8 }
+						NOT = { has_building = regimental_camp }
+						num_free_building_slots = 1
+					}
+					AND = {
+						NOT = { has_building = training_fields }
+						ROOT = { mil_tech = 16 }
+						OR = {
+							has_building = barracks
+							num_free_building_slots = 1
+						}
+					}
+					AND = {
+						NOT = { has_building = conscription_center }
+						ROOT = { mil_tech = 22 }
+						OR = {
+							has_building = regimental_camp
+							num_free_building_slots = 1
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -1459,12 +1468,35 @@ estate_maratha_build_army_building_in_y = {
 				is_state_core = root
 				base_manpower = 6
 				OR = {
-					can_build = training_fields
-					can_build = barracks
-					can_build = manpower_lvl_1
-					can_build = conscription_center
-					can_build = regimental_camp
-					can_build = forcelimit_lvl_1
+					NOT = { has_building = training_fields }
+					NOT = { has_building = conscription_center }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = barracks }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { mil_tech = 8 }
+						NOT = { has_building = regimental_camp }
+						num_free_building_slots = 1
+					}
+					AND = {
+						NOT = { has_building = training_fields }
+						ROOT = { mil_tech = 16 }
+						OR = {
+							has_building = barracks
+							num_free_building_slots = 1
+						}
+					}
+					AND = {
+						NOT = { has_building = conscription_center }
+						ROOT = { mil_tech = 22 }
+						OR = {
+							has_building = regimental_camp
+							num_free_building_slots = 1
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -1472,31 +1504,12 @@ estate_maratha_build_army_building_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					can_build = training_fields
-					has_building = barracks
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_nobles_build_army_building_in_y_var
-						value = 6
+					NOT = { has_building = training_fields }
+					ROOT = { mil_tech = 16 }
+					OR = {
+						num_free_building_slots = 1
+						has_building = barracks
 					}
-				}
-			}
-			else_if = {
-				limit = {
-					can_build = barracks
-					has_building = manpower_lvl_1
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_nobles_build_army_building_in_y_var
-						value = 5
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					can_build = manpower_lvl_1
 				}
 				ROOT = {
 					set_variable = {
@@ -1507,18 +1520,20 @@ estate_maratha_build_army_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					has_building = regimental_camp
+					NOT = { has_building = barracks }
+					NOT = { has_building = training_fields }
+					num_free_building_slots = 1
 				}
 				ROOT = {
 					set_variable = {
 						which = estate_nobles_build_army_building_in_y_var
-						value = 2
+						value = 3
 					}
 				}
 			}
 			else_if = {
 				limit = {
-					has_building = forcelimit_lvl_1
+					has_building = regimental_camp
 				}
 				ROOT = {
 					set_variable = {
@@ -1550,7 +1565,7 @@ estate_maratha_build_army_building_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_nobles_build_army_building_in_y_var
-					value = 6
+					value = 4
 				}
 			}
 			event_target:agenda_province = {
@@ -1561,40 +1576,14 @@ estate_maratha_build_army_building_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_nobles_build_army_building_in_y_var
-					value = 5
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = barracks
-					has_building = training_fields
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_nobles_build_army_building_in_y_var
-					value = 4
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = manpower_lvl_1
-					has_building = barracks
-					has_building = training_fields
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_nobles_build_army_building_in_y_var
 					value = 3
 				}
 			}
 			event_target:agenda_province = {
-				has_building = conscription_center
+				OR = {
+					has_building = barracks
+					has_building = training_fields
+				}
 			}
 		}
 		else_if = {
@@ -1605,16 +1594,12 @@ estate_maratha_build_army_building_in_y = {
 				}
 			}
 			event_target:agenda_province = {
-				OR = {
-					has_building = regimental_camp
-					has_building = conscription_center
-				}
+				has_building = conscription_center
 			}
 		}
 		else = {
 			event_target:agenda_province = {
 				OR = {
-					has_building = forcelimit_lvl_1
 					has_building = regimental_camp
 					has_building = conscription_center
 				}
@@ -3524,17 +3509,34 @@ estate_maratha_build_fort_building_in_y = {
     }
 }
 
-estate_burghers_build_production_building_in_y = {
+estate_burghers_build_trade_building_in_y = {
 	can_select = {
+		dip_tech = 4
 		any_owned_province = {
 			is_state_core = root
+			NOT = { has_building = stock_exchange }
 			OR = {
-				can_build = counting_house
-				can_build = production_lvl_3
-				can_build = production_lvl_2
-				can_build = workshop
+				AND = {
+					NOT = { has_building = marketplace }
+					NOT = { has_building = trade_depot }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { dip_tech = 17 }
+					NOT = { has_building = trade_depot }
+					OR = {
+						num_free_building_slots = 1
+						has_building = marketplace
+					}
+				}
+				AND = {
+					ROOT = { dip_tech = 22 }
+					OR = {
+						num_free_building_slots = 1
+						has_building = trade_depot
+					}
+				}
 			}
-			NOT = { trade_goods = gold }
 		}
 	}
 	selection_weight = {
@@ -3544,14 +3546,33 @@ estate_burghers_build_production_building_in_y = {
 			NOT = {
 				any_owned_province = {
 					is_state_core = root
-					base_production = 4
 					OR = {
-						can_build = counting_house
-						can_build = production_lvl_3
-						can_build = production_lvl_2
-						can_build = workshop
+						province_has_center_of_trade_of_level = 1
+						province_trade_power = 10
 					}
-					NOT = { trade_goods = gold }
+					NOT = { has_building = stock_exchange }
+					OR = {
+						AND = {
+							NOT = { has_building = marketplace }
+							NOT = { has_building = trade_depot }
+							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { dip_tech = 17 }
+							NOT = { has_building = trade_depot }
+							OR = {
+								num_free_building_slots = 1
+								has_building = marketplace
+							}
+						}
+						AND = {
+							ROOT = { dip_tech = 22 }
+							OR = {
+								num_free_building_slots = 1
+								has_building = trade_depot
+							}
+						}
+					}
 				}
 			}
 		}
@@ -3560,24 +3581,38 @@ estate_burghers_build_production_building_in_y = {
 			any_owned_province = {
 				is_state_core = root
 				OR = {
-					base_production = 7
-					has_building = wharf
-					has_building = weapons
-					has_building = textile
-					has_building = tradecompany
-					has_building = farm_estate
-					has_building = mills
-					has_building = plantations
-					has_building = furnace
+					province_has_center_of_trade_of_level = 2
+					province_trade_power = 20
 				}
+				NOT = { has_building = stock_exchange }
 				OR = {
-					can_build = counting_house
-					can_build = production_lvl_3
-					can_build = production_lvl_2
-					can_build = workshop
+					AND = {
+						NOT = { has_building = marketplace }
+						NOT = { has_building = trade_depot }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 17 }
+						NOT = { has_building = trade_depot }
+						OR = {
+							num_free_building_slots = 1
+							has_building = marketplace
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 22 }
+						OR = {
+							num_free_building_slots = 1
+							has_building = trade_depot
+						}
+					}
 				}
-				NOT = { trade_goods = gold }
 			}
+		}
+		modifier = {
+			factor = 2
+			is_institution_enabled = global_trade
+			NOT = { has_institution = global_trade }
 		}
 		modifier = {
 			factor = 2
@@ -3588,33 +3623,68 @@ estate_burghers_build_production_building_in_y = {
 	}
 	pre_effect = {
 		set_variable = {
-			which = estate_burghers_build_production_building_in_y_var
+			which = estate_burghers_build_trade_building_in_y_var
 			value = 0
 		}
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				NOT = { has_building = stock_exchange }
 				OR = {
-					can_build = counting_house
-					can_build = production_lvl_3
-					can_build = production_lvl_2
-					can_build = workshop
+					AND = {
+						NOT = { has_building = marketplace }
+						NOT = { has_building = trade_depot }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 17 }
+						NOT = { has_building = trade_depot }
+						OR = {
+							num_free_building_slots = 1
+							has_building = marketplace
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 22 }
+						OR = {
+							num_free_building_slots = 1
+							has_building = trade_depot
+						}
+					}
 				}
-				NOT = { trade_goods = gold }
 			}
 			save_event_target_as = agenda_province
 		}
 		random_owned_province = {
 			limit = {
 				is_state_core = root
-				base_production = 4
 				OR = {
-					can_build = counting_house
-					can_build = production_lvl_3
-					can_build = production_lvl_2
-					can_build = workshop
+					province_has_center_of_trade_of_level = 1
+					province_trade_power = 10
 				}
-				NOT = { trade_goods = gold }
+				NOT = { has_building = stock_exchange }
+				OR = {
+					AND = {
+						NOT = { has_building = marketplace }
+						NOT = { has_building = trade_depot }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 17 }
+						NOT = { has_building = trade_depot }
+						OR = {
+							num_free_building_slots = 1
+							has_building = marketplace
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 22 }
+						OR = {
+							num_free_building_slots = 1
+							has_building = trade_depot
+						}
+					}
+				}
 			}
 			save_event_target_as = agenda_province
 		}
@@ -3622,56 +3692,54 @@ estate_burghers_build_production_building_in_y = {
 			limit = {
 				is_state_core = root
 				OR = {
-					base_production = 7
-					has_building = wharf
-					has_building = weapons
-					has_building = textile
-					has_building = tradecompany
-					has_building = farm_estate
-					has_building = mills
-					has_building = plantations
-					has_building = furnace
+					province_has_center_of_trade_of_level = 2
+					province_trade_power = 20
 				}
+				NOT = { has_building = stock_exchange }
 				OR = {
-					can_build = counting_house
-					can_build = production_lvl_3
-					can_build = production_lvl_2
-					can_build = workshop
+					AND = {
+						NOT = { has_building = marketplace }
+						NOT = { has_building = trade_depot }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 17 }
+						NOT = { has_building = trade_depot }
+						OR = {
+							num_free_building_slots = 1
+							has_building = marketplace
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 22 }
+						OR = {
+							num_free_building_slots = 1
+							has_building = trade_depot
+						}
+					}
 				}
-				NOT = { trade_goods = gold }
 			}
 			save_event_target_as = agenda_province
 		}
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					has_building = production_lvl_3
+					has_building = trade_depot
 				}
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_production_building_in_y_var
-						value = 4
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_building = production_lvl_2
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_production_building_in_y_var
+						which = estate_burghers_build_trade_building_in_y_var
 						value = 3
 					}
 				}
 			}
 			else_if = {
 				limit = {
-					has_building = workshop
+					has_building = marketplace
 				}
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_production_building_in_y_var
+						which = estate_burghers_build_trade_building_in_y_var
 						value = 2
 					}
 				}
@@ -3679,7 +3747,7 @@ estate_burghers_build_production_building_in_y = {
 			else = {
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_production_building_in_y_var
+						which = estate_burghers_build_trade_building_in_y_var
 						value = 1
 					}
 				}
@@ -3698,50 +3766,34 @@ estate_burghers_build_production_building_in_y = {
 		if = {
 			limit = {
 				check_variable = {
-					which = estate_burghers_build_production_building_in_y_var
-					value = 4
-				}
-			}
-			event_target:agenda_province = {
-				has_building = counting_house
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_production_building_in_y_var
+					which = estate_burghers_build_trade_building_in_y_var
 					value = 3
 				}
 			}
 			event_target:agenda_province = {
-				OR = {
-					has_building = production_lvl_3
-					has_building = counting_house
-				}
+				has_building = stock_exchange
 			}
 		}
 		else_if = {
 			limit = {
 				check_variable = {
-					which = estate_burghers_build_production_building_in_y_var
+					which = estate_burghers_build_trade_building_in_y_var
 					value = 2
 				}
 			}
 			event_target:agenda_province = {
 				OR = {
-					has_building = production_lvl_2
-					has_building = production_lvl_3
-					has_building = counting_house
+					has_building = trade_depot
+					has_building = stock_exchange
 				}
 			}
 		}
 		else = {
 			event_target:agenda_province = {
 				OR = {
-					has_building = workshop
-					has_building = production_lvl_2
-					has_building = production_lvl_3
-					has_building = counting_house
+					has_building = marketplace
+					has_building = trade_depot
+					has_building = stock_exchange
 				}
 			}
 		}
@@ -3786,18 +3838,43 @@ estate_burghers_build_production_building_in_y = {
     }
 }
 
+
 estate_burghers_build_port_building_in_y = {
 	can_select = {
+		dip_tech = 6
 		any_owned_province = {
 			is_state_core = root
 			has_port = yes
 			OR = {
-				can_build = grand_shipyard
-				can_build = drydock
-				can_build = shipyard
-				can_build = dock
-				can_build = navalbase_lvl_2
-				can_build = navalbase_lvl_1
+				NOT = { has_building = grand_shipyard }
+				NOT = { has_building = drydock }
+			}
+			OR = {
+				AND = {
+					NOT = { has_building = dock }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { dip_tech = 8 }
+					NOT = { has_building = shipyard }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { dip_tech = 19 }
+					NOT = { has_building = drydock }
+					OR = {
+						num_free_building_slots = 1
+						has_building = dock
+					}
+				}
+				AND = {
+					ROOT = { dip_tech = 24 }
+					NOT = { has_building = grand_shipyard }
+					OR = {
+						num_free_building_slots = 1
+						has_building = shipyard
+					}
+				}
 			}
 		}
 	}
@@ -3824,12 +3901,35 @@ estate_burghers_build_port_building_in_y = {
 				is_state_core = root
 				has_port = yes
 				OR = {
-					can_build = grand_shipyard
-					can_build = drydock
-					can_build = shipyard
-					can_build = dock
-					can_build = navalbase_lvl_2
-					can_build = navalbase_lvl_1
+					NOT = { has_building = grand_shipyard }
+					NOT = { has_building = drydock }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = dock }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 8 }
+						NOT = { has_building = shipyard }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 19 }
+						NOT = { has_building = drydock }
+						OR = {
+							num_free_building_slots = 1
+							has_building = dock
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 24 }
+						NOT = { has_building = grand_shipyard }
+						OR = {
+							num_free_building_slots = 1
+							has_building = shipyard
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -3840,12 +3940,35 @@ estate_burghers_build_port_building_in_y = {
 				development = 12
 				has_port = yes
 				OR = {
-					can_build = grand_shipyard
-					can_build = drydock
-					can_build = shipyard
-					can_build = dock
-					can_build = navalbase_lvl_2
-					can_build = navalbase_lvl_1
+					NOT = { has_building = grand_shipyard }
+					NOT = { has_building = drydock }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = dock }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 8 }
+						NOT = { has_building = shipyard }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 19 }
+						NOT = { has_building = drydock }
+						OR = {
+							num_free_building_slots = 1
+							has_building = dock
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 24 }
+						NOT = { has_building = grand_shipyard }
+						OR = {
+							num_free_building_slots = 1
+							has_building = shipyard
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -3856,12 +3979,35 @@ estate_burghers_build_port_building_in_y = {
 				development = 20
 				has_port = yes
 				OR = {
-					can_build = grand_shipyard
-					can_build = drydock
-					can_build = shipyard
-					can_build = dock
-					can_build = navalbase_lvl_2
-					can_build = navalbase_lvl_1
+					NOT = { has_building = grand_shipyard }
+					NOT = { has_building = drydock }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = dock }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 8 }
+						NOT = { has_building = shipyard }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 19 }
+						NOT = { has_building = drydock }
+						OR = {
+							num_free_building_slots = 1
+							has_building = dock
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 24 }
+						NOT = { has_building = grand_shipyard }
+						OR = {
+							num_free_building_slots = 1
+							has_building = shipyard
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -3869,29 +4015,9 @@ estate_burghers_build_port_building_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					can_build = dock
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_port_building_in_y_var
-						value = 6
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					can_build = shipyard
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_port_building_in_y_var
-						value = 5
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					can_build = drydock
+					has_building = shipyard
+					NOT = { has_building = grand_shipyard }
+					ROOT = { dip_tech = 24 }
 				}
 				ROOT = {
 					set_variable = {
@@ -3902,18 +4028,20 @@ estate_burghers_build_port_building_in_y = {
 			}
 			else_if = {
 				limit = {
-					can_build = grand_shipyard
+					NOT = { has_building = shipyard }
+					NOT = { has_building = grand_shipyard }
+					ROOT = { dip_tech = 8 }
 				}
 				ROOT = {
 					set_variable = {
 						which = estate_burghers_build_port_building_in_y_var
-						value = 2
+						value = 3
 					}
 				}
 			}
 			else_if = {
 				limit = {
-					can_build = navalbase_lvl_1
+					has_building = dock
 				}
 				ROOT = {
 					set_variable = {
@@ -3945,52 +4073,7 @@ estate_burghers_build_port_building_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_burghers_build_port_building_in_y_var
-					value = 6
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = dock
-					has_building = shipyard
-					has_building = drydock
-					has_building = grand_shipyard
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_port_building_in_y_var
-					value = 5
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = shipyard
-					has_building = drydock
-					has_building = grand_shipyard
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_port_building_in_y_var
 					value = 4
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = drydock
-					has_building = grand_shipyard
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_port_building_in_y_var
-					value = 3
 				}
 			}
 			event_target:agenda_province = {
@@ -4001,19 +4084,33 @@ estate_burghers_build_port_building_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_burghers_build_port_building_in_y_var
-					value = 2
+					value = 3
 				}
 			}
 			event_target:agenda_province = {
 				OR = {
-					has_building = navalbase_lvl_1
-					has_building = navalbase_lvl_2
+					has_building = shipyard
+					has_building = grand_shipyard
 				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = estate_burghers_build_port_building_in_y_var
+					value = 2
+				}
+			}
+			event_target:agenda_province = {
+				has_building = drydock
 			}
 		}
 		else = {
 			event_target:agenda_province = {
-				has_building = navalbase_lvl_2
+				OR = {
+					has_building = dock
+					has_building = drydock
+				}
 			}
 		}
     }
@@ -4057,16 +4154,26 @@ estate_burghers_build_port_building_in_y = {
     }
 }
 
-estate_vaisyas_build_trade_building_in_y = {
+estate_burghers_build_production_building_in_y = {
 	can_select = {
+		adm_tech = 6
 		any_owned_province = {
 			is_state_core = root
+			NOT = { has_building = counting_house }
 			OR = {
-				can_build = stock_exchange
-				can_build = trade_depot
-				can_build = trade_lvl_2
-				can_build = marketplace
+				AND = {
+					NOT = { has_building = workshop }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { adm_tech = 24 }
+					OR = {
+						has_building = workshop
+						num_free_building_slots = 1
+					}
+				}
 			}
+			NOT = { trade_goods = gold }
 		}
 	}
 	selection_weight = {
@@ -4076,16 +4183,22 @@ estate_vaisyas_build_trade_building_in_y = {
 			NOT = {
 				any_owned_province = {
 					is_state_core = root
+					base_production = 4
+					NOT = { has_building = counting_house }
 					OR = {
-						province_has_center_of_trade_of_level = 1
-						province_trade_power = 10
+						AND = {
+							NOT = { has_building = workshop }
+							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { adm_tech = 24 }
+							OR = {
+								has_building = workshop
+								num_free_building_slots = 1
+							}
+						}
 					}
-					OR = {
-						can_build = stock_exchange
-						can_build = trade_depot
-						can_build = trade_lvl_2
-						can_build = marketplace
-					}
+					NOT = { trade_goods = gold }
 				}
 			}
 		}
@@ -4094,21 +4207,32 @@ estate_vaisyas_build_trade_building_in_y = {
 			any_owned_province = {
 				is_state_core = root
 				OR = {
-					province_has_center_of_trade_of_level = 2
-					province_trade_power = 20
+					base_production = 7
+					has_building = wharf
+					has_building = weapons
+					has_building = textile
+					has_building = tradecompany
+					has_building = farm_estate
+					has_building = mills
+					has_building = plantations
+					has_building = furnace
 				}
+				NOT = { has_building = counting_house }
 				OR = {
-					can_build = stock_exchange
-					can_build = trade_depot
-					can_build = trade_lvl_2
-					can_build = marketplace
+					AND = {
+						NOT = { has_building = workshop }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 24 }
+						OR = {
+							has_building = workshop
+							num_free_building_slots = 1
+						}
+					}
 				}
+				NOT = { trade_goods = gold }
 			}
-		}
-		modifier = {
-			factor = 2
-			is_institution_enabled = global_trade
-			NOT = { has_institution = global_trade }
 		}
 		modifier = {
 			factor = 2
@@ -4119,18 +4243,49 @@ estate_vaisyas_build_trade_building_in_y = {
 	}
 	pre_effect = {
 		set_variable = {
-			which = estate_burghers_build_trade_building_in_y_var
+			which = estate_burghers_build_production_building_in_y_var
 			value = 0
 		}
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				NOT = { has_building = counting_house }
 				OR = {
-					can_build = stock_exchange
-					can_build = trade_depot
-					can_build = trade_lvl_2
-					can_build = marketplace
+					AND = {
+						NOT = { has_building = workshop }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 24 }
+						OR = {
+							has_building = workshop
+							num_free_building_slots = 1
+						}
+					}
 				}
+				NOT = { trade_goods = gold }
+			}
+			save_event_target_as = agenda_province
+		}
+		random_owned_province = {
+			limit = {
+				is_state_core = root
+				base_production = 4
+				NOT = { has_building = counting_house }
+				OR = {
+					AND = {
+						NOT = { has_building = workshop }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 24 }
+						OR = {
+							has_building = workshop
+							num_free_building_slots = 1
+						}
+					}
+				}
+				NOT = { trade_goods = gold }
 			}
 			save_event_target_as = agenda_province
 		}
@@ -4138,64 +4293,42 @@ estate_vaisyas_build_trade_building_in_y = {
 			limit = {
 				is_state_core = root
 				OR = {
-					province_has_center_of_trade_of_level = 1
-					province_trade_power = 10
+					base_production = 7
+					has_building = wharf
+					has_building = weapons
+					has_building = textile
+					has_building = tradecompany
+					has_building = farm_estate
+					has_building = mills
+					has_building = plantations
+					has_building = furnace
 				}
+				NOT = { has_building = counting_house }
 				OR = {
-					can_build = stock_exchange
-					can_build = trade_depot
-					can_build = trade_lvl_2
-					can_build = marketplace
+					AND = {
+						NOT = { has_building = workshop }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 24 }
+						OR = {
+							has_building = workshop
+							num_free_building_slots = 1
+						}
+					}
 				}
-			}
-			save_event_target_as = agenda_province
-		}
-		random_owned_province = {
-			limit = {
-				is_state_core = root
-				OR = {
-					province_has_center_of_trade_of_level = 2
-					province_trade_power = 20
-				}
-				OR = {
-					can_build = stock_exchange
-					can_build = trade_depot
-					can_build = trade_lvl_2
-					can_build = marketplace
-				}
+				NOT = { trade_goods = gold }
 			}
 			save_event_target_as = agenda_province
 		}
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					has_building = trade_depot
+					has_building = workshop
 				}
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_trade_building_in_y_var
-						value = 4
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_building = trade_lvl_2
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_trade_building_in_y_var
-						value = 3
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_building = marketplace
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_trade_building_in_y_var
+						which = estate_burghers_build_production_building_in_y_var
 						value = 2
 					}
 				}
@@ -4203,7 +4336,7 @@ estate_vaisyas_build_trade_building_in_y = {
 			else = {
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_trade_building_in_y_var
+						which = estate_burghers_build_production_building_in_y_var
 						value = 1
 					}
 				}
@@ -4222,8 +4355,323 @@ estate_vaisyas_build_trade_building_in_y = {
 		if = {
 			limit = {
 				check_variable = {
-					which = estate_burghers_build_trade_building_in_y_var
-					value = 4
+					which = estate_burghers_build_production_building_in_y_var
+					value = 2
+				}
+			}
+			event_target:agenda_province = {
+				has_building = counting_house
+			}
+		}
+		else = {
+			event_target:agenda_province = {
+				OR = {
+					has_building = workshop
+					has_building = counting_house
+				}
+			}
+		}
+    }
+    task_completed_effect = {
+		add_estate_loyalty = {
+			estate = estate_burghers
+			loyalty = 10
+		}
+		if = {
+			limit = {
+				NOT = { crown_land_share = 15 }
+				estate_territory = {
+					estate = estate_burghers
+					territory = 10
+				}
+			}
+			take_estate_land_share_small = { estate = estate_burghers }
+		}
+		else = {
+			event_target:agenda_province = {
+				add_base_production = 1
+			}
+		}
+    }
+    failing_effect = {
+		event_target:agenda_province = {
+			if = {
+				limit = { owned_by = root }
+				add_named_unrest = {
+					name = local_burghers_displeased
+					value = 5
+				}
+			}
+		}
+        add_estate_loyalty_modifier = {
+            estate = estate_burghers
+			desc = EST_VAL_AGENDA_DENIED
+			loyalty = -5
+			duration = 7300
+        }
+    }
+}
+
+
+estate_vaisyas_build_trade_building_in_y = {
+	can_select = {
+		dip_tech = 4
+		any_owned_province = {
+			is_state_core = root
+			NOT = { has_building = stock_exchange }
+			OR = {
+				AND = {
+					NOT = { has_building = marketplace }
+					NOT = { has_building = trade_depot }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { dip_tech = 17 }
+					NOT = { has_building = trade_depot }
+					OR = {
+						num_free_building_slots = 1
+						has_building = marketplace
+					}
+				}
+				AND = {
+					ROOT = { dip_tech = 22 }
+					OR = {
+						num_free_building_slots = 1
+						has_building = trade_depot
+					}
+				}
+			}
+		}
+	}
+	selection_weight = {
+		factor = 1
+		modifier = {
+			factor = 0.65
+			NOT = {
+				any_owned_province = {
+					is_state_core = root
+					OR = {
+						province_has_center_of_trade_of_level = 1
+						province_trade_power = 10
+					}
+					NOT = { has_building = stock_exchange }
+					OR = {
+						AND = {
+							NOT = { has_building = marketplace }
+							NOT = { has_building = trade_depot }
+							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { dip_tech = 17 }
+							NOT = { has_building = trade_depot }
+							OR = {
+								num_free_building_slots = 1
+								has_building = marketplace
+							}
+						}
+						AND = {
+							ROOT = { dip_tech = 22 }
+							OR = {
+								num_free_building_slots = 1
+								has_building = trade_depot
+							}
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 1.2
+			any_owned_province = {
+				is_state_core = root
+				OR = {
+					province_has_center_of_trade_of_level = 2
+					province_trade_power = 20
+				}
+				NOT = { has_building = stock_exchange }
+				OR = {
+					AND = {
+						NOT = { has_building = marketplace }
+						NOT = { has_building = trade_depot }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 17 }
+						NOT = { has_building = trade_depot }
+						OR = {
+							num_free_building_slots = 1
+							has_building = marketplace
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 22 }
+						OR = {
+							num_free_building_slots = 1
+							has_building = trade_depot
+						}
+					}
+				}
+			}
+		}
+		modifier = {
+			factor = 2
+			is_institution_enabled = global_trade
+			NOT = { has_institution = global_trade }
+		}
+		modifier = {
+			factor = 2
+			NOT = {
+				crown_land_share = 15
+			}
+		}
+	}
+	pre_effect = {
+		set_variable = {
+			which = estate_vaisyas_build_trade_building_in_y_var
+			value = 0
+		}
+		random_owned_province = {
+			limit = {
+				is_state_core = root
+				NOT = { has_building = stock_exchange }
+				OR = {
+					AND = {
+						NOT = { has_building = marketplace }
+						NOT = { has_building = trade_depot }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 17 }
+						NOT = { has_building = trade_depot }
+						OR = {
+							num_free_building_slots = 1
+							has_building = marketplace
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 22 }
+						OR = {
+							num_free_building_slots = 1
+							has_building = trade_depot
+						}
+					}
+				}
+			}
+			save_event_target_as = agenda_province
+		}
+		random_owned_province = {
+			limit = {
+				is_state_core = root
+				OR = {
+					province_has_center_of_trade_of_level = 1
+					province_trade_power = 10
+				}
+				NOT = { has_building = stock_exchange }
+				OR = {
+					AND = {
+						NOT = { has_building = marketplace }
+						NOT = { has_building = trade_depot }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 17 }
+						NOT = { has_building = trade_depot }
+						OR = {
+							num_free_building_slots = 1
+							has_building = marketplace
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 22 }
+						OR = {
+							num_free_building_slots = 1
+							has_building = trade_depot
+						}
+					}
+				}
+			}
+			save_event_target_as = agenda_province
+		}
+		random_owned_province = {
+			limit = {
+				is_state_core = root
+				OR = {
+					province_has_center_of_trade_of_level = 2
+					province_trade_power = 20
+				}
+				NOT = { has_building = stock_exchange }
+				OR = {
+					AND = {
+						NOT = { has_building = marketplace }
+						NOT = { has_building = trade_depot }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 17 }
+						NOT = { has_building = trade_depot }
+						OR = {
+							num_free_building_slots = 1
+							has_building = marketplace
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 22 }
+						OR = {
+							num_free_building_slots = 1
+							has_building = trade_depot
+						}
+					}
+				}
+			}
+			save_event_target_as = agenda_province
+		}
+		event_target:agenda_province = {
+			if = {
+				limit = {
+					has_building = trade_depot
+				}
+				ROOT = {
+					set_variable = {
+						which = estate_vaisyas_build_trade_building_in_y_var
+						value = 3
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_building = marketplace
+				}
+				ROOT = {
+					set_variable = {
+						which = estate_vaisyas_build_trade_building_in_y_var
+						value = 2
+					}
+				}
+			}
+			else = {
+				ROOT = {
+					set_variable = {
+						which = estate_vaisyas_build_trade_building_in_y_var
+						value = 1
+					}
+				}
+			}
+		}
+	}
+	provinces_to_highlight = {
+		province_id = event_target:agenda_province
+	}
+	fail_if = {
+		event_target:agenda_province = {
+			NOT = { owned_by = root }
+		}
+	}
+    task_requirements = {
+		if = {
+			limit = {
+				check_variable = {
+					which = estate_vaisyas_build_trade_building_in_y_var
+					value = 3
 				}
 			}
 			event_target:agenda_province = {
@@ -4233,27 +4681,12 @@ estate_vaisyas_build_trade_building_in_y = {
 		else_if = {
 			limit = {
 				check_variable = {
-					which = estate_burghers_build_trade_building_in_y_var
-					value = 3
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = trade_depot
-					has_building = stock_exchange
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_trade_building_in_y_var
+					which = estate_vaisyas_build_trade_building_in_y_var
 					value = 2
 				}
 			}
 			event_target:agenda_province = {
 				OR = {
-					has_building = trade_lvl_2
 					has_building = trade_depot
 					has_building = stock_exchange
 				}
@@ -4263,7 +4696,6 @@ estate_vaisyas_build_trade_building_in_y = {
 			event_target:agenda_province = {
 				OR = {
 					has_building = marketplace
-					has_building = trade_lvl_2
 					has_building = trade_depot
 					has_building = stock_exchange
 				}
@@ -4310,18 +4742,43 @@ estate_vaisyas_build_trade_building_in_y = {
     }
 }
 
+
 estate_vaisyas_build_port_building_in_y = {
 	can_select = {
+		dip_tech = 6
 		any_owned_province = {
 			is_state_core = root
 			has_port = yes
 			OR = {
-				can_build = grand_shipyard
-				can_build = drydock
-				can_build = shipyard
-				can_build = dock
-				can_build = navalbase_lvl_2
-				can_build = navalbase_lvl_1
+				NOT = { has_building = grand_shipyard }
+				NOT = { has_building = drydock }
+			}
+			OR = {
+				AND = {
+					NOT = { has_building = dock }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { dip_tech = 8 }
+					NOT = { has_building = shipyard }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { dip_tech = 19 }
+					NOT = { has_building = drydock }
+					OR = {
+						num_free_building_slots = 1
+						has_building = dock
+					}
+				}
+				AND = {
+					ROOT = { dip_tech = 24 }
+					NOT = { has_building = grand_shipyard }
+					OR = {
+						num_free_building_slots = 1
+						has_building = shipyard
+					}
+				}
 			}
 		}
 	}
@@ -4340,7 +4797,7 @@ estate_vaisyas_build_port_building_in_y = {
 	}
 	pre_effect = {
 		set_variable = {
-			which = estate_burghers_build_port_building_in_y_var
+			which = estate_vaisyas_build_port_building_in_y_var
 			value = 0
 		}
 		random_owned_province = {
@@ -4348,12 +4805,35 @@ estate_vaisyas_build_port_building_in_y = {
 				is_state_core = root
 				has_port = yes
 				OR = {
-					can_build = grand_shipyard
-					can_build = drydock
-					can_build = shipyard
-					can_build = dock
-					can_build = navalbase_lvl_2
-					can_build = navalbase_lvl_1
+					NOT = { has_building = grand_shipyard }
+					NOT = { has_building = drydock }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = dock }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 8 }
+						NOT = { has_building = shipyard }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 19 }
+						NOT = { has_building = drydock }
+						OR = {
+							num_free_building_slots = 1
+							has_building = dock
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 24 }
+						NOT = { has_building = grand_shipyard }
+						OR = {
+							num_free_building_slots = 1
+							has_building = shipyard
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -4364,12 +4844,35 @@ estate_vaisyas_build_port_building_in_y = {
 				development = 12
 				has_port = yes
 				OR = {
-					can_build = grand_shipyard
-					can_build = drydock
-					can_build = shipyard
-					can_build = dock
-					can_build = navalbase_lvl_2
-					can_build = navalbase_lvl_1
+					NOT = { has_building = grand_shipyard }
+					NOT = { has_building = drydock }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = dock }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 8 }
+						NOT = { has_building = shipyard }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 19 }
+						NOT = { has_building = drydock }
+						OR = {
+							num_free_building_slots = 1
+							has_building = dock
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 24 }
+						NOT = { has_building = grand_shipyard }
+						OR = {
+							num_free_building_slots = 1
+							has_building = shipyard
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -4380,12 +4883,35 @@ estate_vaisyas_build_port_building_in_y = {
 				development = 20
 				has_port = yes
 				OR = {
-					can_build = grand_shipyard
-					can_build = drydock
-					can_build = shipyard
-					can_build = dock
-					can_build = navalbase_lvl_2
-					can_build = navalbase_lvl_1
+					NOT = { has_building = grand_shipyard }
+					NOT = { has_building = drydock }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = dock }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 8 }
+						NOT = { has_building = shipyard }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 19 }
+						NOT = { has_building = drydock }
+						OR = {
+							num_free_building_slots = 1
+							has_building = dock
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 24 }
+						NOT = { has_building = grand_shipyard }
+						OR = {
+							num_free_building_slots = 1
+							has_building = shipyard
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -4393,55 +4919,37 @@ estate_vaisyas_build_port_building_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					can_build = dock
+					has_building = shipyard
+					NOT = { has_building = grand_shipyard }
+					ROOT = { dip_tech = 24 }
 				}
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_port_building_in_y_var
-						value = 6
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					can_build = shipyard
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_port_building_in_y_var
-						value = 5
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					can_build = drydock
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_port_building_in_y_var
+						which = estate_vaisyas_build_port_building_in_y_var
 						value = 4
 					}
 				}
 			}
 			else_if = {
 				limit = {
-					can_build = grand_shipyard
+					NOT = { has_building = shipyard }
+					NOT = { has_building = grand_shipyard }
+					ROOT = { dip_tech = 8 }
 				}
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_port_building_in_y_var
-						value = 2
+						which = estate_vaisyas_build_port_building_in_y_var
+						value = 3
 					}
 				}
 			}
 			else_if = {
 				limit = {
-					can_build = navalbase_lvl_1
+					has_building = dock
 				}
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_port_building_in_y_var
+						which = estate_vaisyas_build_port_building_in_y_var
 						value = 2
 					}
 				}
@@ -4449,7 +4957,7 @@ estate_vaisyas_build_port_building_in_y = {
 			else = {
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_port_building_in_y_var
+						which = estate_vaisyas_build_port_building_in_y_var
 						value = 1
 					}
 				}
@@ -4468,53 +4976,8 @@ estate_vaisyas_build_port_building_in_y = {
 		if = {
 			limit = {
 				check_variable = {
-					which = estate_burghers_build_port_building_in_y_var
-					value = 6
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = dock
-					has_building = shipyard
-					has_building = drydock
-					has_building = grand_shipyard
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_port_building_in_y_var
-					value = 5
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = shipyard
-					has_building = drydock
-					has_building = grand_shipyard
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_port_building_in_y_var
+					which = estate_vaisyas_build_port_building_in_y_var
 					value = 4
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = drydock
-					has_building = grand_shipyard
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_port_building_in_y_var
-					value = 3
 				}
 			}
 			event_target:agenda_province = {
@@ -4524,20 +4987,34 @@ estate_vaisyas_build_port_building_in_y = {
 		else_if = {
 			limit = {
 				check_variable = {
-					which = estate_burghers_build_port_building_in_y_var
-					value = 2
+					which = estate_vaisyas_build_port_building_in_y_var
+					value = 3
 				}
 			}
 			event_target:agenda_province = {
 				OR = {
-					has_building = navalbase_lvl_1
-					has_building = navalbase_lvl_2
+					has_building = shipyard
+					has_building = grand_shipyard
 				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = estate_vaisyas_build_port_building_in_y_var
+					value = 2
+				}
+			}
+			event_target:agenda_province = {
+				has_building = drydock
 			}
 		}
 		else = {
 			event_target:agenda_province = {
-				has_building = navalbase_lvl_2
+				OR = {
+					has_building = dock
+					has_building = drydock
+				}
 			}
 		}
     }
@@ -4583,13 +5060,22 @@ estate_vaisyas_build_port_building_in_y = {
 
 estate_vaisyas_build_production_building_in_y = {
 	can_select = {
+		adm_tech = 6
 		any_owned_province = {
 			is_state_core = root
+			NOT = { has_building = counting_house }
 			OR = {
-				can_build = counting_house
-				can_build = production_lvl_3
-				can_build = production_lvl_2
-				can_build = workshop
+				AND = {
+					NOT = { has_building = workshop }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { adm_tech = 24 }
+					OR = {
+						has_building = workshop
+						num_free_building_slots = 1
+					}
+				}
 			}
 			NOT = { trade_goods = gold }
 		}
@@ -4602,11 +5088,19 @@ estate_vaisyas_build_production_building_in_y = {
 				any_owned_province = {
 					is_state_core = root
 					base_production = 4
+					NOT = { has_building = counting_house }
 					OR = {
-						can_build = counting_house
-						can_build = production_lvl_3
-						can_build = production_lvl_2
-						can_build = workshop
+						AND = {
+							NOT = { has_building = workshop }
+							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { adm_tech = 24 }
+							OR = {
+								has_building = workshop
+								num_free_building_slots = 1
+							}
+						}
 					}
 					NOT = { trade_goods = gold }
 				}
@@ -4627,11 +5121,19 @@ estate_vaisyas_build_production_building_in_y = {
 					has_building = plantations
 					has_building = furnace
 				}
+				NOT = { has_building = counting_house }
 				OR = {
-					can_build = counting_house
-					can_build = production_lvl_3
-					can_build = production_lvl_2
-					can_build = workshop
+					AND = {
+						NOT = { has_building = workshop }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 24 }
+						OR = {
+							has_building = workshop
+							num_free_building_slots = 1
+						}
+					}
 				}
 				NOT = { trade_goods = gold }
 			}
@@ -4645,17 +5147,25 @@ estate_vaisyas_build_production_building_in_y = {
 	}
 	pre_effect = {
 		set_variable = {
-			which = estate_burghers_build_production_building_in_y_var
+			which = estate_vaisyas_build_production_building_in_y_var
 			value = 0
 		}
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				NOT = { has_building = counting_house }
 				OR = {
-					can_build = counting_house
-					can_build = production_lvl_3
-					can_build = production_lvl_2
-					can_build = workshop
+					AND = {
+						NOT = { has_building = workshop }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 24 }
+						OR = {
+							has_building = workshop
+							num_free_building_slots = 1
+						}
+					}
 				}
 				NOT = { trade_goods = gold }
 			}
@@ -4665,11 +5175,19 @@ estate_vaisyas_build_production_building_in_y = {
 			limit = {
 				is_state_core = root
 				base_production = 4
+				NOT = { has_building = counting_house }
 				OR = {
-					can_build = counting_house
-					can_build = production_lvl_3
-					can_build = production_lvl_2
-					can_build = workshop
+					AND = {
+						NOT = { has_building = workshop }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 24 }
+						OR = {
+							has_building = workshop
+							num_free_building_slots = 1
+						}
+					}
 				}
 				NOT = { trade_goods = gold }
 			}
@@ -4689,11 +5207,19 @@ estate_vaisyas_build_production_building_in_y = {
 					has_building = plantations
 					has_building = furnace
 				}
+				NOT = { has_building = counting_house }
 				OR = {
-					can_build = counting_house
-					can_build = production_lvl_3
-					can_build = production_lvl_2
-					can_build = workshop
+					AND = {
+						NOT = { has_building = workshop }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 24 }
+						OR = {
+							has_building = workshop
+							num_free_building_slots = 1
+						}
+					}
 				}
 				NOT = { trade_goods = gold }
 			}
@@ -4702,33 +5228,11 @@ estate_vaisyas_build_production_building_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					has_building = production_lvl_3
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_production_building_in_y_var
-						value = 4
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_building = production_lvl_2
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_production_building_in_y_var
-						value = 3
-					}
-				}
-			}
-			else_if = {
-				limit = {
 					has_building = workshop
 				}
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_production_building_in_y_var
+						which = estate_vaisyas_build_production_building_in_y_var
 						value = 2
 					}
 				}
@@ -4736,7 +5240,7 @@ estate_vaisyas_build_production_building_in_y = {
 			else = {
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_production_building_in_y_var
+						which = estate_vaisyas_build_production_building_in_y_var
 						value = 1
 					}
 				}
@@ -4755,49 +5259,18 @@ estate_vaisyas_build_production_building_in_y = {
 		if = {
 			limit = {
 				check_variable = {
-					which = estate_burghers_build_production_building_in_y_var
-					value = 4
+					which = estate_vaisyas_build_production_building_in_y_var
+					value = 2
 				}
 			}
 			event_target:agenda_province = {
 				has_building = counting_house
 			}
 		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_production_building_in_y_var
-					value = 3
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = production_lvl_3
-					has_building = counting_house
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_production_building_in_y_var
-					value = 2
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = production_lvl_2
-					has_building = production_lvl_3
-					has_building = counting_house
-				}
-			}
-		}
 		else = {
 			event_target:agenda_province = {
 				OR = {
 					has_building = workshop
-					has_building = production_lvl_2
-					has_building = production_lvl_3
 					has_building = counting_house
 				}
 			}
@@ -4843,15 +5316,34 @@ estate_vaisyas_build_production_building_in_y = {
     }
 }
 
+
 estate_jains_build_trade_building_in_y = {
 	can_select = {
+		dip_tech = 4
 		any_owned_province = {
 			is_state_core = root
+			NOT = { has_building = stock_exchange }
 			OR = {
-				can_build = stock_exchange
-				can_build = trade_depot
-				can_build = trade_lvl_2
-				can_build = marketplace
+				AND = {
+					NOT = { has_building = marketplace }
+					NOT = { has_building = trade_depot }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { dip_tech = 17 }
+					NOT = { has_building = trade_depot }
+					OR = {
+						num_free_building_slots = 1
+						has_building = marketplace
+					}
+				}
+				AND = {
+					ROOT = { dip_tech = 22 }
+					OR = {
+						num_free_building_slots = 1
+						has_building = trade_depot
+					}
+				}
 			}
 		}
 	}
@@ -4866,11 +5358,28 @@ estate_jains_build_trade_building_in_y = {
 						province_has_center_of_trade_of_level = 1
 						province_trade_power = 10
 					}
+					NOT = { has_building = stock_exchange }
 					OR = {
-						can_build = stock_exchange
-						can_build = trade_depot
-						can_build = trade_lvl_2
-						can_build = marketplace
+						AND = {
+							NOT = { has_building = marketplace }
+							NOT = { has_building = trade_depot }
+							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { dip_tech = 17 }
+							NOT = { has_building = trade_depot }
+							OR = {
+								num_free_building_slots = 1
+								has_building = marketplace
+							}
+						}
+						AND = {
+							ROOT = { dip_tech = 22 }
+							OR = {
+								num_free_building_slots = 1
+								has_building = trade_depot
+							}
+						}
 					}
 				}
 			}
@@ -4883,11 +5392,28 @@ estate_jains_build_trade_building_in_y = {
 					province_has_center_of_trade_of_level = 2
 					province_trade_power = 20
 				}
+				NOT = { has_building = stock_exchange }
 				OR = {
-					can_build = stock_exchange
-					can_build = trade_depot
-					can_build = trade_lvl_2
-					can_build = marketplace
+					AND = {
+						NOT = { has_building = marketplace }
+						NOT = { has_building = trade_depot }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 17 }
+						NOT = { has_building = trade_depot }
+						OR = {
+							num_free_building_slots = 1
+							has_building = marketplace
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 22 }
+						OR = {
+							num_free_building_slots = 1
+							has_building = trade_depot
+						}
+					}
 				}
 			}
 		}
@@ -4905,17 +5431,34 @@ estate_jains_build_trade_building_in_y = {
 	}
 	pre_effect = {
 		set_variable = {
-			which = estate_burghers_build_trade_building_in_y_var
+			which = estate_jains_build_trade_building_in_y_var
 			value = 0
 		}
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				NOT = { has_building = stock_exchange }
 				OR = {
-					can_build = stock_exchange
-					can_build = trade_depot
-					can_build = trade_lvl_2
-					can_build = marketplace
+					AND = {
+						NOT = { has_building = marketplace }
+						NOT = { has_building = trade_depot }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 17 }
+						NOT = { has_building = trade_depot }
+						OR = {
+							num_free_building_slots = 1
+							has_building = marketplace
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 22 }
+						OR = {
+							num_free_building_slots = 1
+							has_building = trade_depot
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -4927,11 +5470,28 @@ estate_jains_build_trade_building_in_y = {
 					province_has_center_of_trade_of_level = 1
 					province_trade_power = 10
 				}
+				NOT = { has_building = stock_exchange }
 				OR = {
-					can_build = stock_exchange
-					can_build = trade_depot
-					can_build = trade_lvl_2
-					can_build = marketplace
+					AND = {
+						NOT = { has_building = marketplace }
+						NOT = { has_building = trade_depot }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 17 }
+						NOT = { has_building = trade_depot }
+						OR = {
+							num_free_building_slots = 1
+							has_building = marketplace
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 22 }
+						OR = {
+							num_free_building_slots = 1
+							has_building = trade_depot
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -4943,11 +5503,28 @@ estate_jains_build_trade_building_in_y = {
 					province_has_center_of_trade_of_level = 2
 					province_trade_power = 20
 				}
+				NOT = { has_building = stock_exchange }
 				OR = {
-					can_build = stock_exchange
-					can_build = trade_depot
-					can_build = trade_lvl_2
-					can_build = marketplace
+					AND = {
+						NOT = { has_building = marketplace }
+						NOT = { has_building = trade_depot }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 17 }
+						NOT = { has_building = trade_depot }
+						OR = {
+							num_free_building_slots = 1
+							has_building = marketplace
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 22 }
+						OR = {
+							num_free_building_slots = 1
+							has_building = trade_depot
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -4959,18 +5536,7 @@ estate_jains_build_trade_building_in_y = {
 				}
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_trade_building_in_y_var
-						value = 4
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_building = trade_lvl_2
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_trade_building_in_y_var
+						which = estate_jains_build_trade_building_in_y_var
 						value = 3
 					}
 				}
@@ -4981,7 +5547,7 @@ estate_jains_build_trade_building_in_y = {
 				}
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_trade_building_in_y_var
+						which = estate_jains_build_trade_building_in_y_var
 						value = 2
 					}
 				}
@@ -4989,7 +5555,7 @@ estate_jains_build_trade_building_in_y = {
 			else = {
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_trade_building_in_y_var
+						which = estate_jains_build_trade_building_in_y_var
 						value = 1
 					}
 				}
@@ -5008,8 +5574,8 @@ estate_jains_build_trade_building_in_y = {
 		if = {
 			limit = {
 				check_variable = {
-					which = estate_burghers_build_trade_building_in_y_var
-					value = 4
+					which = estate_jains_build_trade_building_in_y_var
+					value = 3
 				}
 			}
 			event_target:agenda_province = {
@@ -5019,27 +5585,12 @@ estate_jains_build_trade_building_in_y = {
 		else_if = {
 			limit = {
 				check_variable = {
-					which = estate_burghers_build_trade_building_in_y_var
-					value = 3
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = trade_depot
-					has_building = stock_exchange
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_trade_building_in_y_var
+					which = estate_jains_build_trade_building_in_y_var
 					value = 2
 				}
 			}
 			event_target:agenda_province = {
 				OR = {
-					has_building = trade_lvl_2
 					has_building = trade_depot
 					has_building = stock_exchange
 				}
@@ -5049,7 +5600,6 @@ estate_jains_build_trade_building_in_y = {
 			event_target:agenda_province = {
 				OR = {
 					has_building = marketplace
-					has_building = trade_lvl_2
 					has_building = trade_depot
 					has_building = stock_exchange
 				}
@@ -5098,16 +5648,40 @@ estate_jains_build_trade_building_in_y = {
 
 estate_jains_build_port_building_in_y = {
 	can_select = {
+		dip_tech = 6
 		any_owned_province = {
 			is_state_core = root
 			has_port = yes
 			OR = {
-				can_build = grand_shipyard
-				can_build = drydock
-				can_build = shipyard
-				can_build = dock
-				can_build = navalbase_lvl_2
-				can_build = navalbase_lvl_1
+				NOT = { has_building = grand_shipyard }
+				NOT = { has_building = drydock }
+			}
+			OR = {
+				AND = {
+					NOT = { has_building = dock }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { dip_tech = 8 }
+					NOT = { has_building = shipyard }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { dip_tech = 19 }
+					NOT = { has_building = drydock }
+					OR = {
+						num_free_building_slots = 1
+						has_building = dock
+					}
+				}
+				AND = {
+					ROOT = { dip_tech = 24 }
+					NOT = { has_building = grand_shipyard }
+					OR = {
+						num_free_building_slots = 1
+						has_building = shipyard
+					}
+				}
 			}
 		}
 	}
@@ -5126,7 +5700,7 @@ estate_jains_build_port_building_in_y = {
 	}
 	pre_effect = {
 		set_variable = {
-			which = estate_burghers_build_port_building_in_y_var
+			which = estate_jains_build_port_building_in_y_var
 			value = 0
 		}
 		random_owned_province = {
@@ -5134,12 +5708,35 @@ estate_jains_build_port_building_in_y = {
 				is_state_core = root
 				has_port = yes
 				OR = {
-					can_build = grand_shipyard
-					can_build = drydock
-					can_build = shipyard
-					can_build = dock
-					can_build = navalbase_lvl_2
-					can_build = navalbase_lvl_1
+					NOT = { has_building = grand_shipyard }
+					NOT = { has_building = drydock }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = dock }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 8 }
+						NOT = { has_building = shipyard }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 19 }
+						NOT = { has_building = drydock }
+						OR = {
+							num_free_building_slots = 1
+							has_building = dock
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 24 }
+						NOT = { has_building = grand_shipyard }
+						OR = {
+							num_free_building_slots = 1
+							has_building = shipyard
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -5150,12 +5747,35 @@ estate_jains_build_port_building_in_y = {
 				development = 12
 				has_port = yes
 				OR = {
-					can_build = grand_shipyard
-					can_build = drydock
-					can_build = shipyard
-					can_build = dock
-					can_build = navalbase_lvl_2
-					can_build = navalbase_lvl_1
+					NOT = { has_building = grand_shipyard }
+					NOT = { has_building = drydock }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = dock }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 8 }
+						NOT = { has_building = shipyard }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 19 }
+						NOT = { has_building = drydock }
+						OR = {
+							num_free_building_slots = 1
+							has_building = dock
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 24 }
+						NOT = { has_building = grand_shipyard }
+						OR = {
+							num_free_building_slots = 1
+							has_building = shipyard
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -5166,12 +5786,35 @@ estate_jains_build_port_building_in_y = {
 				development = 20
 				has_port = yes
 				OR = {
-					can_build = grand_shipyard
-					can_build = drydock
-					can_build = shipyard
-					can_build = dock
-					can_build = navalbase_lvl_2
-					can_build = navalbase_lvl_1
+					NOT = { has_building = grand_shipyard }
+					NOT = { has_building = drydock }
+				}
+				OR = {
+					AND = {
+						NOT = { has_building = dock }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 8 }
+						NOT = { has_building = shipyard }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { dip_tech = 19 }
+						NOT = { has_building = drydock }
+						OR = {
+							num_free_building_slots = 1
+							has_building = dock
+						}
+					}
+					AND = {
+						ROOT = { dip_tech = 24 }
+						NOT = { has_building = grand_shipyard }
+						OR = {
+							num_free_building_slots = 1
+							has_building = shipyard
+						}
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -5179,55 +5822,37 @@ estate_jains_build_port_building_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					can_build = dock
+					has_building = shipyard
+					NOT = { has_building = grand_shipyard }
+					ROOT = { dip_tech = 24 }
 				}
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_port_building_in_y_var
-						value = 6
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					can_build = shipyard
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_port_building_in_y_var
-						value = 5
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					can_build = drydock
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_port_building_in_y_var
+						which = estate_jains_build_port_building_in_y_var
 						value = 4
 					}
 				}
 			}
 			else_if = {
 				limit = {
-					can_build = grand_shipyard
+					NOT = { has_building = shipyard }
+					NOT = { has_building = grand_shipyard }
+					ROOT = { dip_tech = 8 }
 				}
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_port_building_in_y_var
-						value = 2
+						which = estate_jains_build_port_building_in_y_var
+						value = 3
 					}
 				}
 			}
 			else_if = {
 				limit = {
-					can_build = navalbase_lvl_1
+					has_building = dock
 				}
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_port_building_in_y_var
+						which = estate_jains_build_port_building_in_y_var
 						value = 2
 					}
 				}
@@ -5235,7 +5860,7 @@ estate_jains_build_port_building_in_y = {
 			else = {
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_port_building_in_y_var
+						which = estate_jains_build_port_building_in_y_var
 						value = 1
 					}
 				}
@@ -5254,53 +5879,8 @@ estate_jains_build_port_building_in_y = {
 		if = {
 			limit = {
 				check_variable = {
-					which = estate_burghers_build_port_building_in_y_var
-					value = 6
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = dock
-					has_building = shipyard
-					has_building = drydock
-					has_building = grand_shipyard
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_port_building_in_y_var
-					value = 5
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = shipyard
-					has_building = drydock
-					has_building = grand_shipyard
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_port_building_in_y_var
+					which = estate_jains_build_port_building_in_y_var
 					value = 4
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = drydock
-					has_building = grand_shipyard
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_port_building_in_y_var
-					value = 3
 				}
 			}
 			event_target:agenda_province = {
@@ -5310,20 +5890,34 @@ estate_jains_build_port_building_in_y = {
 		else_if = {
 			limit = {
 				check_variable = {
-					which = estate_burghers_build_port_building_in_y_var
-					value = 2
+					which = estate_jains_build_port_building_in_y_var
+					value = 3
 				}
 			}
 			event_target:agenda_province = {
 				OR = {
-					has_building = navalbase_lvl_1
-					has_building = navalbase_lvl_2
+					has_building = shipyard
+					has_building = grand_shipyard
 				}
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = estate_jains_build_port_building_in_y_var
+					value = 2
+				}
+			}
+			event_target:agenda_province = {
+				has_building = drydock
 			}
 		}
 		else = {
 			event_target:agenda_province = {
-				has_building = navalbase_lvl_2
+				OR = {
+					has_building = dock
+					has_building = drydock
+				}
 			}
 		}
     }
@@ -5369,13 +5963,22 @@ estate_jains_build_port_building_in_y = {
 
 estate_jains_build_production_building_in_y = {
 	can_select = {
+		adm_tech = 6
 		any_owned_province = {
 			is_state_core = root
+			NOT = { has_building = counting_house }
 			OR = {
-				can_build = counting_house
-				can_build = production_lvl_3
-				can_build = production_lvl_2
-				can_build = workshop
+				AND = {
+					NOT = { has_building = workshop }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { adm_tech = 24 }
+					OR = {
+						has_building = workshop
+						num_free_building_slots = 1
+					}
+				}
 			}
 			NOT = { trade_goods = gold }
 		}
@@ -5388,11 +5991,19 @@ estate_jains_build_production_building_in_y = {
 				any_owned_province = {
 					is_state_core = root
 					base_production = 4
+					NOT = { has_building = counting_house }
 					OR = {
-						can_build = counting_house
-						can_build = production_lvl_3
-						can_build = production_lvl_2
-						can_build = workshop
+						AND = {
+							NOT = { has_building = workshop }
+							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { adm_tech = 24 }
+							OR = {
+								has_building = workshop
+								num_free_building_slots = 1
+							}
+						}
 					}
 					NOT = { trade_goods = gold }
 				}
@@ -5413,11 +6024,19 @@ estate_jains_build_production_building_in_y = {
 					has_building = plantations
 					has_building = furnace
 				}
+				NOT = { has_building = counting_house }
 				OR = {
-					can_build = counting_house
-					can_build = production_lvl_3
-					can_build = production_lvl_2
-					can_build = workshop
+					AND = {
+						NOT = { has_building = workshop }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 24 }
+						OR = {
+							has_building = workshop
+							num_free_building_slots = 1
+						}
+					}
 				}
 				NOT = { trade_goods = gold }
 			}
@@ -5431,17 +6050,25 @@ estate_jains_build_production_building_in_y = {
 	}
 	pre_effect = {
 		set_variable = {
-			which = estate_burghers_build_production_building_in_y_var
+			which = estate_jains_build_production_building_in_y_var
 			value = 0
 		}
 		random_owned_province = {
 			limit = {
 				is_state_core = root
+				NOT = { has_building = counting_house }
 				OR = {
-					can_build = counting_house
-					can_build = production_lvl_3
-					can_build = production_lvl_2
-					can_build = workshop
+					AND = {
+						NOT = { has_building = workshop }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 24 }
+						OR = {
+							has_building = workshop
+							num_free_building_slots = 1
+						}
+					}
 				}
 				NOT = { trade_goods = gold }
 			}
@@ -5451,11 +6078,19 @@ estate_jains_build_production_building_in_y = {
 			limit = {
 				is_state_core = root
 				base_production = 4
+				NOT = { has_building = counting_house }
 				OR = {
-					can_build = counting_house
-					can_build = production_lvl_3
-					can_build = production_lvl_2
-					can_build = workshop
+					AND = {
+						NOT = { has_building = workshop }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 24 }
+						OR = {
+							has_building = workshop
+							num_free_building_slots = 1
+						}
+					}
 				}
 				NOT = { trade_goods = gold }
 			}
@@ -5475,11 +6110,19 @@ estate_jains_build_production_building_in_y = {
 					has_building = plantations
 					has_building = furnace
 				}
+				NOT = { has_building = counting_house }
 				OR = {
-					can_build = counting_house
-					can_build = production_lvl_3
-					can_build = production_lvl_2
-					can_build = workshop
+					AND = {
+						NOT = { has_building = workshop }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 24 }
+						OR = {
+							has_building = workshop
+							num_free_building_slots = 1
+						}
+					}
 				}
 				NOT = { trade_goods = gold }
 			}
@@ -5488,33 +6131,11 @@ estate_jains_build_production_building_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					has_building = production_lvl_3
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_production_building_in_y_var
-						value = 4
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_building = production_lvl_2
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_burghers_build_production_building_in_y_var
-						value = 3
-					}
-				}
-			}
-			else_if = {
-				limit = {
 					has_building = workshop
 				}
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_production_building_in_y_var
+						which = estate_jains_build_production_building_in_y_var
 						value = 2
 					}
 				}
@@ -5522,7 +6143,7 @@ estate_jains_build_production_building_in_y = {
 			else = {
 				ROOT = {
 					set_variable = {
-						which = estate_burghers_build_production_building_in_y_var
+						which = estate_jains_build_production_building_in_y_var
 						value = 1
 					}
 				}
@@ -5541,49 +6162,18 @@ estate_jains_build_production_building_in_y = {
 		if = {
 			limit = {
 				check_variable = {
-					which = estate_burghers_build_production_building_in_y_var
-					value = 4
+					which = estate_jains_build_production_building_in_y_var
+					value = 2
 				}
 			}
 			event_target:agenda_province = {
 				has_building = counting_house
 			}
 		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_production_building_in_y_var
-					value = 3
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = production_lvl_3
-					has_building = counting_house
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_burghers_build_production_building_in_y_var
-					value = 2
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = production_lvl_2
-					has_building = production_lvl_3
-					has_building = counting_house
-				}
-			}
-		}
 		else = {
 			event_target:agenda_province = {
 				OR = {
 					has_building = workshop
-					has_building = production_lvl_2
-					has_building = production_lvl_3
 					has_building = counting_house
 				}
 			}
@@ -5628,6 +6218,7 @@ estate_jains_build_production_building_in_y = {
         }
     }
 }
+
 
 estate_nobles_build_manufactory_in_y = {
 	can_select = {
@@ -5701,7 +6292,7 @@ estate_nobles_build_manufactory_in_y = {
 		event_target:agenda_province = {
 			custom_trigger_tooltip = {
 				tooltip = has_manufactory_trigger_tooltip
-
+				
 				if = {
 					limit = {
 						OR = {
@@ -5882,7 +6473,7 @@ estate_rajput_build_manufactory_in_y = {
 		event_target:agenda_province = {
 			custom_trigger_tooltip = {
 				tooltip = has_manufactory_trigger_tooltip
-
+				
 				if = {
 					limit = {
 						OR = {
@@ -6063,7 +6654,7 @@ estate_maratha_build_manufactory_in_y = {
 		event_target:agenda_province = {
 			custom_trigger_tooltip = {
 				tooltip = has_manufactory_trigger_tooltip
-
+				
 				if = {
 					limit = {
 						OR = {
@@ -6245,7 +6836,7 @@ estate_burghers_build_manufactory_in_y = {
 		event_target:agenda_province = {
 			custom_trigger_tooltip = {
 				tooltip = has_manufactory_trigger_tooltip
-
+				
 				if = {
 					limit = {
 						OR = {
@@ -6426,7 +7017,7 @@ estate_vaisyas_build_manufactory_in_y = {
 		event_target:agenda_province = {
 			custom_trigger_tooltip = {
 				tooltip = has_manufactory_trigger_tooltip
-
+				
 				if = {
 					limit = {
 						OR = {
@@ -6607,7 +7198,7 @@ estate_jains_build_manufactory_in_y = {
 		event_target:agenda_province = {
 			custom_trigger_tooltip = {
 				tooltip = has_manufactory_trigger_tooltip
-
+				
 				if = {
 					limit = {
 						OR = {
@@ -6792,7 +7383,7 @@ estate_church_build_manufactory_in_y = {
 		event_target:agenda_province = {
 			custom_trigger_tooltip = {
 				tooltip = has_manufactory_trigger_tooltip
-
+				
 				if = {
 					limit = {
 						OR = {
@@ -6977,7 +7568,7 @@ estate_brahmins_build_manufactory_in_y = {
 		event_target:agenda_province = {
 			custom_trigger_tooltip = {
 				tooltip = has_manufactory_trigger_tooltip
-
+				
 				if = {
 					limit = {
 						OR = {
@@ -7086,7 +7677,10 @@ estate_brahmins_build_manufactory_in_y = {
     }
 }
 
+
+
 #Universities
+
 estate_church_build_university_in_y = {
 	can_select = {
 		government = theocracy
@@ -7314,6 +7908,7 @@ estate_brahmins_build_university_in_y = {
         }
     }
 }
+
 
 estate_nobles_build_university_in_y = {
 	can_select = {
@@ -7999,7 +8594,11 @@ estate_jains_build_university_in_y = {
     }
 }
 
+
+
+
 #### Develop the province
+
 estate_church_develop_x = {
 	selection_weight = {
 		factor = 1
@@ -9075,6 +9674,8 @@ estate_jains_develop_x = {
     }
 }
 
+
+
 estate_nomadic_tribes_develop_x = {
 	selection_weight = {
 		factor = 1
@@ -9342,6 +9943,7 @@ estate_nomadic_tribes_develop_x = {
     }
 }
 
+
 estate_cossacks_develop_x = {
 	selection_weight = {
 		factor = 1
@@ -9571,3 +10173,4 @@ estate_cossacks_develop_x = {
         }
     }
 }
+

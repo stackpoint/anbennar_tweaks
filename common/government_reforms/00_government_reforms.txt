@@ -103,7 +103,7 @@ feudal_monarchy = {
 		modifier = {
 			factor = 0
 			NOT = {
-				#has_idea_group = aristocracy_ideas
+				has_idea_group = aristocracy_ideas
 				has_reform = feudal_monarchy
 			}
 		}

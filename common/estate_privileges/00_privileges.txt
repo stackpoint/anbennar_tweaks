@@ -1040,6 +1040,7 @@ estate_nobles_french_strong_duchies = {
 		OR = {
 			has_estate_privilege = estate_nobles_french_strong_duchies
 			AND = {
+				tag = FRA
 				NOT = { has_estate_privilege = estate_nobles_strong_duchies }
 			}
 		}
@@ -1432,6 +1433,7 @@ estate_church_inwards_perfection = {
 		factor = 1
 		modifier = {
 			factor = 7.5
+			tag = KOR
 			NOT = { num_of_cities = 30 }
 			religion = confucianism
 			is_absolutism_active = no
@@ -1740,6 +1742,13 @@ estate_cossacks_exploration_expedition = {
 	}
 	ai_will_do = {
 		factor = 1
+		modifier = {
+			factor = 10
+			OR = {
+				tag = MOS
+				tag = RUS
+			}
+		}
 		modifier = {
 			factor = 0
 			OR = {
@@ -3192,6 +3201,13 @@ estate_nomadic_tribes_primacy_to_the_bannermen = {
 	}
 	ai_will_do = {
 		factor = 1
+		modifier = {
+			factor = 10
+			OR = {
+				tag = MCH
+				tag = MJZ
+			}
+		}
 	}
 }
 
@@ -5825,6 +5841,7 @@ estate_nobles_strong_duchies = {
 		NOT = { has_estate_privilege = estate_nobles_french_strong_duchies }
 		NOT = {
 			AND = {
+				tag = FRA
 				NOT = { has_estate_privilege = estate_nobles_strong_duchies }
 			}
 		}

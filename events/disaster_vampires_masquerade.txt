@@ -711,7 +711,7 @@ country_event = {
 	option = {
 		name = disaster_vampire_masquerade.16.a
 		ai_chance = { factor = 50 }
-		add_stability2 = yes
+		add_stability = 2
 		add_prestige = 50
 		add_estate_loyalty_modifier = {
 			estate = estate_vampires
@@ -1127,7 +1127,7 @@ country_event = {
 			loyalty = 20
 		}
 		add_prestige = 30
-		add_stability2 = yes
+		add_stability = 2
 		end_disaster = estate_vampires_install_thrall_disaster
 		hidden_effect = {
 			every_owned_province = {

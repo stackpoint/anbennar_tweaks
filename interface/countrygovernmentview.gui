@@ -852,7 +852,7 @@ guiTypes = {
 			name = "modifier_view_button"
 			position = { x = 510 y = 113 }
 			quadTextureSprite ="GFX_country_modifier_button"
-			shortcut = "v" #Arumba
+			shortcut = "m"
 			Orientation = "UPPER_LEFT"
 			clicksound = close_window
 		}
@@ -1490,14 +1490,13 @@ guiTypes = {
 			name = "name"
 			position = { x = 2 y = 4 }
 			textureFile = ""
-			font = "Stellaris_Small"
+			font = "vic_18"
 			borderSize = {x = 4 y = 4}
 			text = "7"
-			maxWidth = 120
+			maxWidth = 112
 			maxHeight = 32
 			format = left
 			Orientation = "UPPER_LEFT"
-			fixedsize = yes
 		}
 
 		instantTextBoxType = {

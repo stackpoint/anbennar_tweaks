@@ -58,63 +58,6 @@ guiTypes = {
 			maxHeight = 32
 			format = centre
 		}
-
-		guiButtonType = {
-			name = "reset_all3533"
-			position = { x = 40 y = 700 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool"
-			delayedTooltipText = ""
-		}
-		guiButtonType = {
-			name = "reset_all353433"
-			position = { x = 30 y = 660 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool2"
-			delayedTooltipText = ""
-		}
-		guiButtonType = {
-			name = "reset_3433"
-			position = { x = 70 y = 660 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool3"
-			delayedTooltipText = ""
-		}
-		guiButtonType = {
-			name = "reset_34565433"
-			position = { x = 80 y = 700 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool4"
-			delayedTooltipText = ""
-		}
-		guiButtonType = {
-			name = "reset_3456345433"
-			position = { x = 120 y = 700 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool5"
-			delayedTooltipText = ""
-		}
-		guiButtonType = {
-			name = "res67633"
-			position = { x = 110 y = 660 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool6"
-			delayedTooltipText = ""
-		}
-		guiButtonType = {
-			name = "res676tzt33"
-			position = { x = 150 y = 660 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool7"
-			delayedTooltipText = ""
-		}
-		guiButtonType = {
-			name = "res676zutzt33"
-			position = { x = 190 y = 660 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool8"
-			delayedTooltipText = ""
-		}
 		
 		
 		### ------- Ruler -------	
@@ -231,7 +174,7 @@ guiTypes = {
 		listboxType = 
 		{
 			name ="monarch_ruler_personality_list"
-			position = { x=160 y =130}
+			position = { x=160 y =128}
 			backGround=""
 			size = { x=300 y =300}
 			Orientation = "UPPER_LEFT"
@@ -377,7 +320,7 @@ guiTypes = {
 		listboxType = 
 		{
 			name ="monarch_heir_personality_list"
-			position = { x=160 y =193}
+			position = { x=160 y =191}
 			backGround=""
 			size = { x=220 y =100}
 			Orientation = "UPPER_LEFT"
@@ -531,7 +474,7 @@ guiTypes = {
 		listboxType = 
 		{
 			name ="monarch_queen_personality_list"
-			position = { x=160 y =256}
+			position = { x=160 y =254}
 			backGround=""
 			size = { x=220 y =100}
 			Orientation = "UPPER_LEFT"
@@ -686,19 +629,7 @@ guiTypes = {
 				name ="court_select_slider"
 				position = { x=86 y =170}
 				backGround=""
-				if_resolution = {
-					max_height = 899
-					size = { x=382 y =400} #was y =350
-				}
-				if_resolution = {
-					max_height = 1079
-					min_height = 900
-					size = { x=382 y =400} #was y =350
-				}
-				if_resolution = {
-					min_height = 1080
-				size = { x=382 y =635} #was y =350
-				}
+				size = { x=382 y =350}
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 2
@@ -708,19 +639,7 @@ guiTypes = {
 			
 			guiButtonType = {
 				name = "back_button"
-				if_resolution = {
-					max_height = 899
-					position = { x=240 y =581} #was y =531
-				}
-				if_resolution = {
-					max_height = 1079
-					min_height = 900
-					position = { x=240 y =581} #was y =531
-				}
-				if_resolution = {
-					min_height = 1080
-				position = { x=240 y =856} #was y =531
-				}
+				position = { x=240 y =531}
 				quadTextureSprite ="GFX_standard_button_71"	
 				tooltip = ""
 				tooltipText =""
@@ -797,17 +716,18 @@ guiTypes = {
 		listboxType = {
 			name = "advisor_modifier_listbox"
 			backGround = ""
-			position = { x=82 y=25 }
-			size = { x=140 y=80 }
+			position = { x=82 y=28 }
+			size = { x=100 y=100 }
 			Orientation = "UPPER_LEFT"
-			horizontal = 0
+			horizontal = 1
 			spacing = 2.5
-			borderSize = {x = 1 y = 1}
+			scrollbartype = "standardlistbox_slider"
+			borderSize = {x = 0 y = 0}
 		}
 		
 		instantTextBoxType = {
 			name = "advisor_cost"
-			position = { x=82 y=58 }
+			position = { x=82 y=51 }
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 4 y = 4}	
@@ -819,7 +739,7 @@ guiTypes = {
 
 		instantTextBoxType = {
 			name = "advisor_activefor"
-			position = { x = 261 y = 58 }
+			position = { x = 271 y = 51 }
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 4 y = 4}	
@@ -969,7 +889,7 @@ guiTypes = {
 		name = "advisor_modifier_item"
 		backGround =""
 		position = { x=0 y=0 }	
-		size = { x=48 y=12 }
+		size = { x=48 y=30 }
 		moveable = 0
 		dontRender = ""
 		horizontalBorder = ""
@@ -980,10 +900,10 @@ guiTypes = {
 			position = { x = 30 y = 5 }
 			textureFile = ""
 			font = "vic_18"
-			borderSize = {x = 4 y = 1 }	
+			borderSize = {x = 4 y = 4}	
 			text = ""	
-			maxWidth = 330
-			maxHeight = 20
+			maxWidth = 260
+			maxHeight = 25
 			format = left
 			truncate = yes
 			fixedsize = no
@@ -996,11 +916,10 @@ guiTypes = {
 			tooltip = ""
 			tooltipText =""
 			delayedTooltipText = ""
-			position = { x= -3 y = -3 }
+			position = { x= -7 y = -7 }
 			Orientation = "UPPER_LEFT"
-			scale = 0.5
+			scale = 0.7
 		}
-		
 	}
 		
 
@@ -1010,7 +929,7 @@ guiTypes = {
 		name = "advisor_selection_entry"
 		backGround=""
 		position = { x=0 y=0 }	
-		size = { x=150 y= 100 } #150 #87
+		size = { x=150 y= 87 }
 		moveable = 0
 		dontRender = ""
 		horizontalBorder= ""
@@ -1023,7 +942,7 @@ guiTypes = {
 		{
 			name ="banner"
 			spriteType = "GFX_advisor_banner"
-			position = { x= -78 y = -10 }
+			position = { x= -42 y = -10 }
 			Orientation = "UPPER_LEFT"
 		}
 			
@@ -1031,27 +950,28 @@ guiTypes = {
 		{
 			name ="advisor_button"
 			quadTextureSprite= "GFX_greatmen_button"
-			position = { x= -60 y = 18 }
+			position = { x= -15 y = 1 }
 			Orientation = "UPPER_LEFT"
 			tooltip = ""
 			tooltipText =""
 			delayedTooltipText = ""
 		}
 		
+
 		
 		iconType ={
 			name ="advisor_indicator_religion"
 			spriteType = "GFX_advisor_indicator_religion"
-			position = { x= -76 y = 21 }
+			position = { x= -42 y = 3 }
 			Orientation = "UPPER_LEFT"
 		}
 
 		iconType ={
 			name ="advisor_indicator_religion_icon"
 			spriteType = "GFX_province_view_religion"
-			position = { x= -74 y = 23 }
+			position = { x= -37 y = 8 }
 			Orientation = "UPPER_LEFT"
-			scale = 1.0
+			scale = 0.9
 			allwaystransparent = yes
 			frame = 17
 		}
@@ -1059,7 +979,7 @@ guiTypes = {
 		iconType ={
 			name ="advisor_indicator_culture"
 			spriteType = "GFX_advisor_indicator_culture"
-			position = { x= -76 y = 55 }
+			position = { x= -42 y = 37 }
 			Orientation = "UPPER_LEFT"
 			frame = 1
 		}		
@@ -1068,8 +988,8 @@ guiTypes = {
 		
 
 		instantTextBoxType = {
-			name = "name"            # Name des Advisors
-			position = { x = -75 y =0 }
+			name = "name"
+			position = { x = 68 y =0 }
 			format = left
 			textureFile = ""
 			font = "vic_18"
@@ -1083,7 +1003,7 @@ guiTypes = {
 		
 		instantTextBoxType = {
 			name = "skill_value"
-			position = { x = 315 y =0 }   
+			position = { x = 270 y =0 }
 			format = left
 			textureFile = ""
 			font = "vic_18"
@@ -1103,7 +1023,7 @@ guiTypes = {
 			tooltip = ""
 			tooltipText =""
 			delayedTooltipText = ""
-			position = { x= 285 y = -8 }
+			position = { x= 240 y = -8 }
 			Orientation = "UPPER_LEFT"
 		}
 		
@@ -1114,7 +1034,7 @@ guiTypes = {
 			tooltip = ""
 			tooltipText =""
 			delayedTooltipText = ""
-			position = { x= 285 y = -8 }
+			position = { x= 240 y = -8 }
 			Orientation = "UPPER_LEFT"
 		}
 		
@@ -1125,13 +1045,13 @@ guiTypes = {
 			tooltip = ""
 			tooltipText =""
 			delayedTooltipText = ""
-			position = { x= 285 y = -8 }
+			position = { x= 240 y = -8 }
 			Orientation = "UPPER_LEFT"
 		}
 		
 		instantTextBoxType = {
 			name = "title"
-			position = { x = 150 y =34 }   #x = 203
+			position = { x = 203 y =34 }
 			format = left
 			textureFile = ""
 			font = "vic_18"
@@ -1142,10 +1062,9 @@ guiTypes = {
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
-			#this is advisor monthly cost #arumba
-			name = "value"			#  Monatliche Kosten
-			position = { x = 230 y =73 }    #35  # 83
-			format = right
+			name = "value"
+			position = { x = 193 y =34 }
+			format = left
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}
@@ -1155,10 +1074,9 @@ guiTypes = {
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
-			#this is actually advisor age, not desc #arumba
-			name = "desc"				# Alter 
-			position = { x = 210 y =20 }   # 270
-			format = right
+			name = "desc"
+			position = { x = 68 y =49 }
+			format = left
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}
@@ -1169,22 +1087,22 @@ guiTypes = {
 		}
 		
 		instantTextBoxType = {
-			name = "home"				# Herkunftsort
-			position = { x = 30 y =0 }
-			format = center
+			name = "home"
+			position = { x = 193 y =49 }
+			format = left
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}
 			text = ""	
-			maxWidth = 250
+			maxWidth = 168
 			maxHeight = 32	
 			Orientation = "UPPER_LEFT"
 		}
 		
 		instantTextBoxType = {
-			name = "purchase"			# Kaufkosten Name
-			position = { x = 170 y =58 } #20 ## 260/68
-			format = right
+			name = "purchase"
+			position = { x = 68 y =34 }
+			format = left
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}
@@ -1194,9 +1112,9 @@ guiTypes = {
 			Orientation = "UPPER_LEFT"
 		}
 		instantTextBoxType = {
-			name = "purchase_cost"		# Kaufkosten Summe
-			position = { x = 220 y =58 } #260/35    ##310/68
-			format = right
+			name = "purchase_cost"
+			position = { x = 113 y =34 }
+			format = left
 			textureFile = ""
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}
@@ -1209,26 +1127,26 @@ guiTypes = {
 		{
 			name ="effect_icon"
 			spriteType = "GFX_idea_unknown"
-			position = { x= 15 y = 14 }
+			position = { x= 62 y = 14 }
 			Orientation = "UPPER_LEFT"
 			scale = 0.4
 		}
 		instantTextBoxType = {
 			name = "effect"
-			position = { x = 41 y =18 }
+			position = { x = 88 y =18 }
 			format = left
 			textureFile = ""
-			font = "Arial_12"
+			font = "vic_18"
 			borderSize = {x = 0 y = 0}
 			text = ""	
 			maxWidth = 240
-			maxHeight = 25	
+			maxHeight = 32	
 			Orientation = "UPPER_LEFT"
 		}
 		
 		guiButtonType = {
 			name = "dismiss_button"
-			position = { x = 400 y = -8}
+			position = { x = 330 y = -8}
 			quadTextureSprite ="GFX_dismiss_advisor"	
 			tooltip = ""
 			tooltipText =""

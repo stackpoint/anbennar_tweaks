@@ -568,7 +568,7 @@ orcish_clan = {
 	}
 	trigger = {
 		OR = {
-			#government = orcish_horde
+			government = orcish_horde
 			is_tribal = yes
 		}
 		culture_group = orcish

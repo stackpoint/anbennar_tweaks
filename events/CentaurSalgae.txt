@@ -511,7 +511,7 @@ country_event = {
 	option = {
 		name = salgae.6.a
 		ai_chance = { factor = 100 }
-		add_stability3 = yes
+		add_stability = 3
 		hidden_effect = { set_country_flag = the_salgae_end }
 	}
 }

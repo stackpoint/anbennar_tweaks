@@ -619,7 +619,7 @@ vanrahar_1 = {
 		}
 		
 		effect = {
-			add_stability2 = yes
+			add_stability = 2
 			add_country_modifier = {
 				name = vanrahar_the_rule_of_the_royal_harimari
 				duration = 7300

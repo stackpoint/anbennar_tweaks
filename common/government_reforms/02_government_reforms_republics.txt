@@ -2225,7 +2225,7 @@ admiralty_reform = {
 		is_revolutionary = no
 	}
 	trigger = {
-		full_idea_group = flottenbasis0
+		full_idea_group = naval_ideas
 		NOT = { has_reform = pirate_republic_reform }
 	}
 	modifiers = {

@@ -8,21 +8,10 @@ spriteTypes = {
 	}
 
 	spriteType = {
-		name = "GFX_transfer_occupation_button2"
-		texturefile = "gfx//interface//list_button_good.dds"
-		loadType = "INGAME"
-	}
-
-	spriteType = {
 		name = "GFX_development_icon"
 		texturefile = "gfx/interface/development_icon.dds"
 	}
 	
-	spriteType = {
-		name = "GFX_tc_investment_bg"
-		texturefile = "gfx/interface/tc_investment_bg.dds"
-	}
-
 	spriteType = {
 		name = "GFX_province_institutions_button"
 		texturefile = "gfx/interface/institutions//province_institutions_button.dds"
@@ -458,13 +447,6 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_edicts_bg_overlay"
 		texturefile = "gfx/interface/edicts_bg_overlay.dds"
-		loadType = "INGAME"
-		transparencecheck = yes
-	}
-	
-	spriteType = {
-		name = "GFX_edicts_bg_overlay_big"
-		texturefile = "gfx/interface/edicts_bg_overlay_big.dds"
 		loadType = "INGAME"
 		transparencecheck = yes
 	}

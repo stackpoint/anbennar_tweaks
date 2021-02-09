@@ -4,18 +4,11 @@ edict_centralization_effort = {
 	}
 	
 	allow = {
-		custom_trigger_tooltip = {
-			tooltip = disable_state_edicts_active.tooltip
-			ROOT = {
-				NOT = {
-					has_country_flag = disable_state_edicts_active
-				}
-			}
-		}
+		always = yes
 	}
 	
 	modifier = {
-		local_autonomy = -0.08
+		local_autonomy = -0.03
 	}
 	
 	color = {  220 178 155 }

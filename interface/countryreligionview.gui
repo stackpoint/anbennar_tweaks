@@ -379,7 +379,7 @@ guiTypes = {
 
 			instantTextBoxType = {
 				name = "religious_school_name"
-				position = { x = 50 y = 156 }
+				position = { x = 80 y = 156 }
 				textureFile = ""
 				font = "vic_18"
 				borderSize = {x = 4 y = 4}	
@@ -962,18 +962,18 @@ guiTypes = {
 			{
 				name ="holy_site_icon_1"
 				spriteType = "GFX_icon_religion_small"
-				position = { x = 35 y = 266 }
-				frame = 14
-				#scale = 0.75
+				position = { x = 35 y = 236 }
+				frame = 15
+#				scale = 0.75
 			}
 			
 			instantTextBoxType = {
 				name = "holy_site_name_1"
-				position = { x = 65 y = 271 }
+				position = { x = 65 y = 241 }
 				font = "vic_22"
 				borderSize = {x = 0 y = 0}
 				text = "Alexanderia"	
-				maxWidth = 128
+				maxWidth = 93
 				maxHeight = 24
 				Orientation = "UPPER_LEFT"
 				format = left
@@ -983,18 +983,18 @@ guiTypes = {
 			{
 				name ="holy_site_icon_2"
 				spriteType = "GFX_icon_religion_small"
-				position = { x = 35 y = 296 }
-				frame = 14
-				#scale = 0.75
+				position = { x = 35 y = 266 }
+				frame = 15
+#				scale = 0.75
 			}
 			
 			instantTextBoxType = {
 				name = "holy_site_name_2"
-				position = { x = 65 y = 301 }
+				position = { x = 65 y = 271 }
 				font = "vic_22"
 				borderSize = {x = 0 y = 0}
 				text = "Alexanderia"	
-				maxWidth = 128
+				maxWidth = 93
 				maxHeight = 24
 				Orientation = "UPPER_LEFT"
 				format = left
@@ -1004,18 +1004,18 @@ guiTypes = {
 			{
 				name ="holy_site_icon_3"
 				spriteType = "GFX_icon_religion_small"
-				position = { x = 195 y = 236 }
-				frame = 14
-				#scale = 0.75
+				position = { x = 35 y = 296 }
+				frame = 15
+#				scale = 0.75
 			}
 			
 			instantTextBoxType = {
 				name = "holy_site_name_3"
-				position = { x = 225 y = 241 }
+				position = { x = 65 y = 301 }
 				font = "vic_22"
 				borderSize = {x = 0 y = 0}
 				text = "Alexanderia"	
-				maxWidth = 128
+				maxWidth = 93
 				maxHeight = 24
 				Orientation = "UPPER_LEFT"
 				format = left
@@ -1025,18 +1025,18 @@ guiTypes = {
 			{
 				name ="holy_site_icon_4"
 				spriteType = "GFX_icon_religion_small"
-				position = { x = 195 y = 266 }
-				frame = 14
-				#scale = 0.75
+				position = { x = 160 y = 236 }
+				frame = 15
+#				scale = 0.75
 			}
 			
 			instantTextBoxType = {
 				name = "holy_site_name_4"
-				position = { x = 225 y = 271 }
+				position = { x = 190 y = 241 }
 				font = "vic_22"
 				borderSize = {x = 0 y = 0}
 				text = "Alexanderia"	
-				maxWidth = 128
+				maxWidth = 93
 				maxHeight = 24
 				Orientation = "UPPER_LEFT"
 				format = left
@@ -1046,14 +1046,14 @@ guiTypes = {
 			{
 				name ="holy_site_icon_5"
 				spriteType = "GFX_icon_religion_small"
-				position = { x = 195 y = 296 }
-				frame = 14
-				#scale = 0.75
+				position = { x = 160 y = 266 }
+				frame = 15
+#				scale = 0.75
 			}
 			
 			instantTextBoxType = {
 				name = "holy_site_name_5"
-				position = { x = 225 y = 301 }
+				position = { x = 190 y = 271 }
 				font = "vic_22"
 				borderSize = {x = 0 y = 0}
 				text = "Alexanderia"	
@@ -2098,7 +2098,7 @@ guiTypes = {
 				name = "religions_listbox"
 				backGround = ""
 				position = { x=-30 y =180 }
-				size = { x=555 y =667 } #was x=555 y =340
+				size = { x=555 y =340 }
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 2
@@ -2108,7 +2108,7 @@ guiTypes = {
 			
 			guiButtonType = {
 				name = "back_button"
-				position = {  x=240 y =858} #was x=240 y =531
+				position = {  x=240 y =531}
 				quadTextureSprite ="GFX_standard_button_71"	
 				tooltip = ""
 				tooltipText =""
@@ -2142,7 +2142,7 @@ guiTypes = {
 				name ="deity_listbox"
 				position = { x=56 y = -55}
 				backGround=""
-				size = { x=319 y =552} #was x=319 y =300
+				size = { x=319 y =300}
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 1
@@ -2152,7 +2152,7 @@ guiTypes = {
 			
 			guiButtonType = {
 				name = "cancel"
-				position = { x=190 y = 558 } #was x=190 y = 230
+				position = { x=190 y = 230 }
 				quadTextureSprite ="GFX_standard_button_71"
 				buttonText = "BACK"
 				buttonFont = "vic_18"
@@ -2183,7 +2183,7 @@ guiTypes = {
 				name ="icon_listbox"
 				position = { x=56 y = -64}
 				backGround=""
-				size = { x=398 y =612} #was y =300
+				size = { x=398 y =300}
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 1
@@ -2193,7 +2193,7 @@ guiTypes = {
 			
 			guiButtonType = {
 				name = "cancel"
-				position = { x=190 y = 562 } #was y=234
+				position = { x=190 y = 234 }
 				quadTextureSprite ="GFX_standard_button_71"
 				buttonText = "BACK"
 				buttonFont = "vic_18"
@@ -2224,7 +2224,7 @@ guiTypes = {
 				name ="listbox"
 				position = { x=56 y = -60}
 				backGround=""
-				size = { x=398 y =552} #was y = 290
+				size = { x=398 y =290}
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 1
@@ -2234,7 +2234,7 @@ guiTypes = {
 
 			guiButtonType = {
 				name = "cancel"
-				position = { x=190 y = 562 } #was y = 234
+				position = { x=190 y = 234 }
 				quadTextureSprite ="GFX_standard_button_71"
 				buttonText = "BACK"
 				buttonFont = "vic_18"
@@ -2264,7 +2264,7 @@ guiTypes = {
 				name ="cult_listbox"
 				position = { x=16 y = -55}
 				backGround=""
-				size = { x=452 y=552 } #was x=452 y=290
+				size = { x=452 y=290 }
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 1
@@ -2274,7 +2274,7 @@ guiTypes = {
 			
 			guiButtonType = {
 				name = "cancel"
-				position = { x=190 y = 558 } #was x=190 y = 230
+				position = { x=190 y = 230 }
 				quadTextureSprite ="GFX_standard_button_71"
 				buttonText = "BACK"
 				buttonFont = "vic_18"
@@ -2318,7 +2318,7 @@ guiTypes = {
 				name ="aspect_listbox"
 				position = { x=56 y = -53}
 				backGround=""
-				size = { x=398 y =560} #was y=280
+				size = { x=398 y =280}
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 1
@@ -2328,7 +2328,7 @@ guiTypes = {
 			
 			guiButtonType = {
 				name = "cancel"
-				position = { x=190 y = 558 } #was x=190 y = 230
+				position = { x=190 y = 230 }
 				quadTextureSprite ="GFX_standard_button_71"
 				buttonText = "BACK"
 				buttonFont = "vic_18"

@@ -313,7 +313,7 @@ army_reformer = {
 	monarch_power = MIL
 	
 	# Bonus
-	land_morale = 0.075
+	land_morale = 0.10
 
 	skill_scaled_modifier = { meritocracy = 0.25 }	
 
@@ -331,7 +331,7 @@ army_organiser = {
 	monarch_power = MIL
 	
 	# Bonus
-	land_forcelimit_modifier = 0.20
+	land_forcelimit_modifier = 0.10
 	
 	skill_scaled_modifier = { meritocracy = 0.25 }
 
@@ -349,7 +349,7 @@ commandant = {
 	monarch_power = MIL
 	
 	# Bonus
-	discipline = 0.035
+	discipline = 0.05
 	
 	skill_scaled_modifier = { meritocracy = 0.25 }
 

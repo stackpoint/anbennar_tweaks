@@ -46,55 +46,6 @@ country_event = {
 			republican_tradition = 50
 		}
 	}
-	
-	immediate = {
-		hidden_effect = {
-			random_ruler = yes
-			
-			clr_country_flag = adm_flag
-			clr_country_flag = dip_flag
-			clr_country_flag = mil_flag
-			clr_country_flag = adm2_flag
-			clr_country_flag = dip2_flag
-			clr_country_flag = mil2_flag
-
-			random_list = {
-				1 = {
-					set_country_flag = adm_flag
-					random_list = {
-						1 = {
-							set_country_flag = dip2_flag
-						}
-						1 = {
-							set_country_flag = mil2_flag
-						}
-					}
-				}
-				1 = {
-					set_country_flag = dip_flag
-					random_list = {
-						1 = {
-							set_country_flag = adm2_flag
-						}
-						1 = {
-							set_country_flag = mil2_flag
-						}
-					}
-				}
-				1 = {
-					set_country_flag = mil_flag
-					random_list = {
-						1 = {
-							set_country_flag = adm2_flag
-						}
-						1 = {
-							set_country_flag = dip2_flag
-						}
-					}
-				}
-			}
-		}
-	}
 
 	after = {
 		clr_country_flag = caretaker_revolutionary_government
@@ -107,187 +58,34 @@ country_event = {
 			NOT = { has_ruler_flag = leader_has_been_pushed_out }
 		}
 		ai_chance = { 
-			factor = 120
+			factor = 60
 			modifier = {
 				factor = 0
+				NOT = { republican_tradition = 25 }
+			}	
+			modifier = {
+				factor = 0.5
 				NOT = { republican_tradition = 50 }
-			}
+			}				
 			modifier = {
-				factor = 0
-				variable_arithmetic_trigger = {
-					export_to_variable = {
-						which = admSkill
-						value = ADM
-					}
-					export_to_variable = {
-						which = dipSkill
-						value = DIP
-					}
-					export_to_variable = {
-						which = milSkill
-						value = MIL
-					}
-					change_variable = {
-						which = admSkill
-						which = dipSkill
-					}
-					change_variable = {
-						which = admSkill
-						which = milSkill
-					}
-					NOT = {
-						check_variable = {
-							which = admSkill
-							value = 9
-						}
-					}
-				}
-			}
+				factor = 0.5
+				NOT = { republican_tradition = 75 }
+			}	
 			modifier = {
-				factor = 0
-				NOT = { has_ruler_flag = ruler_reelected }
-				OR = {
-					NOT = { republican_tradition = 100 }
-					NOT = {
-						has_global_modifier_value = {
-							which = republican_tradition
-							value = 0.5
-						}
-					}
-				}
-				OR = {
-					NOT = { republican_tradition = 90 }
-					NOT = {
-						has_global_modifier_value = {
-							which = republican_tradition
-							value = 1
-						}
-					}
-				}
-				OR = {
-					NOT = { republican_tradition = 80 }
-					NOT = {
-						has_global_modifier_value = {
-							which = republican_tradition
-							value = 1.5
-						}
-					}
-				}
-				OR = {
-					NOT = { republican_tradition = 70 }
-					NOT = {
-						has_global_modifier_value = {
-							which = republican_tradition
-							value = 2
-						}
-					}
-				}
-				OR = {
-					NOT = { republican_tradition = 60 }
-					NOT = {
-						has_global_modifier_value = {
-							which = republican_tradition
-							value = 2.5
-						}
-					}
-				}
-				OR = {
-					NOT = { republican_tradition = 50 }
-					NOT = {
-						has_global_modifier_value = {
-							which = republican_tradition
-							value = 3
-						}
-					}
-				}
-			}
+				factor = 2.0
+				republican_tradition = 90
+			}		
+			
+			#Anbennar
+			modifier = {
+				factor = 2.0
+				ruler_has_personality = mage_personality
+			}	
 		}
 		custom_tooltip = remains_ruler
-		
-		if = {
-			limit = {
-				NOT = { adm = 6 }
-				has_country_flag = adm_flag
-			}
-			change_adm = 1
-			add_dip_power = 15
-			add_mil_power = 15
-		}
-		else_if = {
-			limit = {
-				NOT = { dip = 6 }
-				has_country_flag = dip_flag
-			}
-			add_adm_power = 15
-			change_dip = 1
-			add_mil_power = 15
-		}
-		else_if = {
-			limit = {
-				NOT = { mil = 6 }
-				has_country_flag = mil_flag
-			}
-			add_adm_power = 15
-			add_dip_power = 15
-			change_mil = 1
-		}
-		else_if = {
-			limit = {
-				NOT = { adm = 6 }
-				has_country_flag = adm2_flag
-			}
-			change_adm = 1
-			add_dip_power = 15
-			add_mil_power = 15
-		}
-		else_if = {
-			limit = {
-				NOT = { dip = 6 }
-				has_country_flag = dip2_flag
-			}
-			add_adm_power = 15
-			change_dip = 1
-			add_mil_power = 15
-		}
-		else_if = {
-			limit = {
-				NOT = { mil = 6 }
-				has_country_flag = mil2_flag
-			}
-			add_adm_power = 15
-			add_dip_power = 15
-			change_mil = 1
-		}
-		else_if = {
-			limit = {
-				NOT = { adm = 6 }
-			}
-			change_adm = 1
-			add_dip_power = 15
-			add_mil_power = 15
-		}
-		else_if = {
-			limit = {
-				NOT = { dip = 6 }
-			}
-			add_adm_power = 15
-			change_dip = 1
-			add_mil_power = 15
-		}
-		else_if = {
-			limit = {
-				NOT = { mil = 6 }
-			}
-			add_adm_power = 15
-			add_dip_power = 15
-			change_mil = 1
-		}
-		else = {
-			add_adm_power = 15
-			add_dip_power = 15
-			add_mil_power = 15
-		}
-		
+		change_adm = 1
+		change_dip = 1
+		change_mil = 1
 		if = {
 			limit = {
 				is_tribal = no 
@@ -325,42 +123,51 @@ country_event = {
 			clr_country_flag = strengthened_signoria_flag
 		}
 		else = {
-				 if = { limit = { months_of_ruling = 600 } add_scaled_republican_tradition = -20 }
-			else_if = { limit = { months_of_ruling = 540 } add_scaled_republican_tradition = -19 }
-			else_if = { limit = { months_of_ruling = 480 } add_scaled_republican_tradition = -18 }
-			else_if = { limit = { months_of_ruling = 420 } add_scaled_republican_tradition = -17 }
-			else_if = { limit = { months_of_ruling = 360 } add_scaled_republican_tradition = -16 }
-			else_if = { limit = { months_of_ruling = 300 } add_scaled_republican_tradition = -15 }
-			else_if = { limit = { months_of_ruling = 240 } add_scaled_republican_tradition = -14 }
-			else_if = { limit = { months_of_ruling = 180 } add_scaled_republican_tradition = -13 }
-			else_if = { limit = { months_of_ruling = 120 } add_scaled_republican_tradition = -12 }
-			else_if = { limit = { months_of_ruling =  60 } add_scaled_republican_tradition = -11 }
-			else	= {									   add_scaled_republican_tradition = -10 }
+			add_scaled_republican_tradition = -10
+		}
+		random_list = {
+			10 = {
+				add_adm_power = 50
+			}
+			10 = {
+				add_dip_power = 50
+			}
+			10 = {
+				add_mil_power = 50
+			}
 		}
 		add_karma = -5
-		
-		set_ruler_flag = ruler_reelected
 	}
 	option = {
 		name = "EVTOPTB700"	# An administrator type
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 0
-				republican_tradition = 50
-				has_ruler_flag = ruler_reelected
-			}
-		}
+		ai_chance = { factor = 20 }
 		if = {
 			limit = { has_country_modifier = harpy_administration }
-			adm_ruler3 = yes
+			define_ruler = {
+				mil = 1
+				adm = 4
+				dip = 1
+				fixed = yes
+				female = yes # Makes harpies always have female ruler
+			}
 		}
 		else_if = {
 			limit = { republic_with_female_rulers_trigger = yes }
-			adm_ruler2 = yes
+			define_ruler = {
+				mil = 1
+				adm = 4
+				dip = 1
+				fixed = yes
+				random_gender = yes # Allows random gender for republics
+			}
 		}
 		else = {
-			adm_ruler = yes
+			define_ruler = {
+				mil = 1
+				adm = 4
+				dip = 1					
+				fixed = yes
+			}
 		}
 		if = {
 			limit = { 
@@ -375,24 +182,34 @@ country_event = {
 	}
 	option = {
 		name = "EVTOPTC700"	# A diplomat
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 0
-				republican_tradition = 50
-				has_ruler_flag = ruler_reelected
-			}
-		}
+		ai_chance = { factor = 20 }
 		if = {
 			limit = { has_country_modifier = harpy_administration }
-			dip_ruler3 = yes
+			define_ruler = {
+				dip = 4
+				adm = 1
+				mil = 1		
+				fixed = yes
+				female = yes # Makes harpies always have female ruler
+			}
 		}
 		else_if = {
 			limit = { republic_with_female_rulers_trigger = yes }
-			dip_ruler2 = yes
+			define_ruler = {
+				dip = 4
+				adm = 1
+				mil = 1					
+				fixed = yes
+				random_gender = yes # Allows random gender for republics
+			}
 		}
 		else = {
-			dip_ruler = yes
+			define_ruler = {
+				dip = 4
+				adm = 1
+				mil = 1					
+				fixed = yes
+			}
 		}
 		if = {
 			limit = { 
@@ -407,24 +224,34 @@ country_event = {
 	}
 	option = {
 		name = "EVTOPTD700"	# A military man
-		ai_chance = {
-			factor = 20
-			modifier = {
-				factor = 0
-				republican_tradition = 50
-				has_ruler_flag = ruler_reelected
-			}
-		}
+		ai_chance = { factor = 20 }
 		if = {
 			limit = { has_country_modifier = harpy_administration }
-			mil_ruler3 = yes
+			define_ruler = {
+				mil = 4
+				adm = 1
+				dip = 1	
+				fixed = yes
+				female = yes # Makes harpies always have female ruler
+			}
 		}
 		else_if = {
 			limit = { republic_with_female_rulers_trigger = yes }
-			mil_ruler2 = yes
+			define_ruler = {
+				mil = 4
+				adm = 1
+				dip = 1					
+				fixed = yes
+				random_gender = yes # Allows random gender for republics
+			}
 		}
 		else = {
-			mil_ruler = yes
+			define_ruler = {
+				mil = 4
+				adm = 1
+				dip = 1					
+				fixed = yes
+			}
 		}
 		if = {
 			limit = { 
@@ -443,14 +270,7 @@ country_event = {
 		trigger = {
 			has_government_attribute = enables_nepotism
 		}
-		ai_chance = {
-			factor = 10
-			modifier = {
-				factor = 0
-				republican_tradition = 50
-				has_ruler_flag = ruler_reelected
-			}
-		}
+		ai_chance = { factor = 10 }
 		if = {
 			limit = {
 				has_country_flag = strengthened_signoria_flag
@@ -577,14 +397,6 @@ country_event = {
 		#NOT = { has_country_flag = lich_ruler }
 		NOT = { has_reform = roilsard_elective }
 		NOT = { has_reform = ar_callein_reform }
-		
-		
-	}
-	
-	immediate = {
-		hidden_effect = {
-			random_ruler = yes
-		}
 	}
 	
 	# #New Anbennar one for liches
@@ -607,16 +419,34 @@ country_event = {
 	option = {
 		name = "EVTOPTB700"	# An administrator type
 		ai_chance = { factor = 40 }
+		ai_chance = { factor = 30 }
 		if = {
 			limit = { has_country_modifier = harpy_administration }
-			adm_ruler3 = yes
+			define_ruler = {
+				mil = 1
+				adm = 4
+				dip = 1				
+				fixed = yes
+				female = yes # Allows random gender for republics
+			}
 		}
 		else_if = {
 			limit = { republic_with_female_rulers_trigger = yes }
-			adm_ruler2 = yes
+			define_ruler = {
+				mil = 1
+				adm = 4
+				dip = 1					
+				fixed = yes
+				random_gender = yes # Allows random gender for republics
+			}
 		}
 		else = {
-			adm_ruler = yes
+			define_ruler = {
+				mil = 1
+				adm = 4
+				dip = 1					
+				fixed = yes
+			}
 		}
 		if = {
 			limit = { 
@@ -633,14 +463,31 @@ country_event = {
 		ai_chance = { factor = 30 }
 		if = {
 			limit = { has_country_modifier = harpy_administration }
-			dip_ruler3 = yes
+			define_ruler = {
+				dip = 4
+				adm = 1
+				mil = 1					
+				fixed = yes
+				female = yes # Allows random gender for republics
+			}
 		}
 		else_if = {
 			limit = { republic_with_female_rulers_trigger = yes }
-			dip_ruler2 = yes
+			define_ruler = {
+				dip = 4
+				adm = 1
+				mil = 1					
+				fixed = yes
+				random_gender = yes # Allows random gender for republics
+			}
 		}
 		else = {
-			dip_ruler = yes
+			define_ruler = {
+				dip = 4
+				adm = 1
+				mil = 1					
+				fixed = yes
+			}
 		}
 		if = {
 			limit = { 
@@ -657,14 +504,31 @@ country_event = {
 		ai_chance = { factor = 30 }
 		if = {
 			limit = { has_country_modifier = harpy_administration }
-			mil_ruler3 = yes
+			define_ruler = {
+				mil = 4
+				adm = 1
+				dip = 1	
+				fixed = yes
+				female = yes # Makes harpies always have female ruler
+			}
 		}
 		else_if = {
 			limit = { republic_with_female_rulers_trigger = yes }
-			mil_ruler2 = yes
+			define_ruler = {
+				mil = 4
+				adm = 1
+				dip = 1					
+				fixed = yes
+				random_gender = yes # Allows random gender for republics
+			}
 		}
 		else = {
-			mil_ruler = yes
+			define_ruler = {
+				mil = 4
+				adm = 1
+				dip = 1					
+				fixed = yes
+			}
 		}
 		if = {
 			limit = { 
@@ -1249,11 +1113,8 @@ country_event = {
 					min_age = 50
 					max_age = 70
 					adm = 2
-					dip = 1
-					mil = 1
-					max_random_adm = 6
-					max_random_dip = 5
-					max_random_mil = 5
+					dip = -1
+					mil = -1
 					female = yes # Makes harpies always have female ruler
 					option = 0
 				}
@@ -1269,11 +1130,8 @@ country_event = {
 					min_age = 50
 					max_age = 75
 					adm = 2
-					dip = 1
-					mil = 1
-					max_random_adm = 6
-					max_random_dip = 5
-					max_random_mil = 5
+					dip = -1
+					mil = -1
 					option = 0
 				}
 			}
@@ -1288,11 +1146,8 @@ country_event = {
 					min_age = 50
 					max_age = 75
 					adm = 3
-					dip = 1
-					mil = 1
-					max_random_adm = 6
-					max_random_dip = 5
-					max_random_mil = 5
+					dip = -1
+					mil = -1
 					option = 0
 				}
 			}
@@ -1306,11 +1161,8 @@ country_event = {
 					min_age = 50
 					max_age = 75
 					adm = 3
-					dip = 1
-					mil = 1
-					max_random_adm = 6
-					max_random_dip = 5
-					max_random_mil = 5
+					dip = -1
+					mil = -1
 					option = 0
 				}
 			}
@@ -1320,11 +1172,8 @@ country_event = {
 					min_age = 50
 					max_age = 75
 					adm = 2
-					dip = 1
-					mil = 1
-					max_random_adm = 6
-					max_random_dip = 5
-					max_random_mil = 5
+					dip = -1
+					mil = -1
 					option = 0
 				}
 			}
@@ -1336,12 +1185,9 @@ country_event = {
 					exiled_as = lottery_candidate_b_@ROOT
 					min_age = 50
 					max_age = 70
-					adm = 1
+					adm = -1
 					dip = 2
-					mil = 1
-					max_random_adm = 5
-					max_random_dip = 6
-					max_random_mil = 5
+					mil = -1
 					female = yes # Makes harpies always have female ruler
 					option = 1
 				}
@@ -1356,12 +1202,9 @@ country_event = {
 					exiled_as = lottery_candidate_b_@ROOT
 					min_age = 50
 					max_age = 75
-					adm = 1
+					adm = -1
 					dip = 2
-					mil = 1
-					max_random_adm = 5
-					max_random_dip = 6
-					max_random_mil = 5
+					mil = -1
 					random_gender = yes
 					option = 1
 				}
@@ -1376,12 +1219,9 @@ country_event = {
 					random_gender = yes
 					min_age = 50
 					max_age = 75
-					adm = 1
+					adm = -1
 					dip = 3
-					mil = 1
-					max_random_adm = 5
-					max_random_dip = 6
-					max_random_mil = 5
+					mil = -1
 					option = 0
 				}
 			}
@@ -1394,12 +1234,9 @@ country_event = {
 					exiled_as = lottery_candidate_b_@ROOT
 					min_age = 50
 					max_age = 75
-					adm = 1
+					adm = -1
 					dip = 3
-					mil = 1
-					max_random_adm = 5
-					max_random_dip = 6
-					max_random_mil = 5
+					mil = -1
 					option = 0
 				}
 			}
@@ -1408,12 +1245,9 @@ country_event = {
 					exiled_as = lottery_candidate_b_@ROOT
 					min_age = 50
 					max_age = 75
-					adm = 1
+					adm = -1
 					dip = 2
-					mil = 1
-					max_random_adm = 5
-					max_random_dip = 6
-					max_random_mil = 5
+					mil = -1
 					option = 1
 				}
 			}
@@ -1425,12 +1259,9 @@ country_event = {
 					exiled_as = lottery_candidate_c_@ROOT
 					min_age = 50
 					max_age = 70
-					adm = 1
-					dip = 1
+					adm = -1
+					dip = -1
 					mil = 2
-					max_random_adm = 5
-					max_random_dip = 5
-					max_random_mil = 6
 					female = yes # Makes harpies always have female ruler
 					option = 2
 				}
@@ -1445,12 +1276,9 @@ country_event = {
 					exiled_as = lottery_candidate_c_@ROOT
 					min_age = 50
 					max_age = 75
-					adm = 1
-					dip = 1
+					adm = -1
+					dip = -1
 					mil = 2
-					max_random_adm = 5
-					max_random_dip = 5
-					max_random_mil = 6
 					random_gender = yes
 					option = 2
 				}
@@ -1465,12 +1293,9 @@ country_event = {
 					random_gender = yes
 					min_age = 50
 					max_age = 75
-					adm = 1
-					dip = 1
+					adm = -1
+					dip = -1
 					mil = 3
-					max_random_adm = 5
-					max_random_dip = 5
-					max_random_mil = 6
 					option = 0
 				}
 			}
@@ -1483,12 +1308,9 @@ country_event = {
 					exiled_as = lottery_candidate_c_@ROOT
 					min_age = 50
 					max_age = 75
-					adm = 1
-					dip = 1
+					adm = -1
+					dip = -1
 					mil = 3
-					max_random_adm = 5
-					max_random_dip = 5
-					max_random_mil = 6
 					option = 0
 				}
 			}
@@ -1497,12 +1319,9 @@ country_event = {
 					exiled_as = lottery_candidate_c_@ROOT
 					min_age = 50
 					max_age = 75
-					adm = 1
-					dip = 1
+					adm = -1
+					dip = -1
 					mil = 2
-					max_random_adm = 5
-					max_random_dip = 5
-					max_random_mil = 6
 					option = 2
 				}
 			}

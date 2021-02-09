@@ -4,10 +4,7 @@ silvar_ishu_edict = {
 	}
 	
 	allow = {
-		custom_trigger_tooltip = {
-			tooltip = disable_state_edicts_active.tooltip
-			NOT = { has_country_flag = disable_state_edicts_active }
-		}
+		always = yes
 	}
 	
 	modifier = {

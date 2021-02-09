@@ -307,13 +307,19 @@ estate_dhimmi_develop_x = {
 
 estate_dhimmi_build_temple_in_y = {
 	can_select = {
+		adm_tech = 4
 		any_owned_province = {
 			NOT = { religion_group = root }
+			NOT = { has_building = cathedral }
 			OR = {
-				can_build = taxation_lvl_4
-				can_build = cathedral
-				can_build = taxation_lvl_2
-				can_build = temple
+				AND = {
+					NOT = { has_building = temple }
+					num_free_building_slots = 1
+				}
+				AND = {
+					ROOT = { adm_tech = 19 }
+					has_building = temple
+				}
 			}
 		}
 	}
@@ -326,11 +332,16 @@ estate_dhimmi_build_temple_in_y = {
 					NOT = { religion_group = root }
 					is_state_core = root
 					base_tax = 4
+					NOT = { has_building = cathedral }
 					OR = {
-						can_build = taxation_lvl_4
-						can_build = cathedral
-						can_build = taxation_lvl_2
-						can_build = temple
+						AND = {
+							NOT = { has_building = temple }
+							num_free_building_slots = 1
+						}
+						AND = {
+							ROOT = { adm_tech = 19 }
+							has_building = temple
+						}
 					}
 				}
 			}
@@ -341,11 +352,16 @@ estate_dhimmi_build_temple_in_y = {
 				NOT = { religion_group = root }
 				is_state_core = root
 				base_tax = 7
+				NOT = { has_building = cathedral }
 				OR = {
-					can_build = taxation_lvl_4
-					can_build = cathedral
-					can_build = taxation_lvl_2
-					can_build = temple
+					AND = {
+						NOT = { has_building = temple }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 19 }
+						has_building = temple
+					}
 				}
 			}
 		}
@@ -365,11 +381,16 @@ estate_dhimmi_build_temple_in_y = {
 			limit = {
 				NOT = { religion_group = root }
 				is_state_core = root
+				NOT = { has_building = cathedral }
 				OR = {
-					can_build = taxation_lvl_4
-					can_build = cathedral
-					can_build = taxation_lvl_2
-					can_build = temple
+					AND = {
+						NOT = { has_building = temple }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 19 }
+						has_building = temple
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -379,11 +400,16 @@ estate_dhimmi_build_temple_in_y = {
 				NOT = { religion_group = root }
 				is_state_core = root
 				base_tax = 4
+				NOT = { has_building = cathedral }
 				OR = {
-					can_build = taxation_lvl_4
-					can_build = cathedral
-					can_build = taxation_lvl_2
-					can_build = temple
+					AND = {
+						NOT = { has_building = temple }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 19 }
+						has_building = temple
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -393,11 +419,16 @@ estate_dhimmi_build_temple_in_y = {
 				NOT = { religion_group = root }
 				is_state_core = root
 				base_tax = 7
+				NOT = { has_building = cathedral }
 				OR = {
-					can_build = taxation_lvl_4
-					can_build = cathedral
-					can_build = taxation_lvl_2
-					can_build = temple
+					AND = {
+						NOT = { has_building = temple }
+						num_free_building_slots = 1
+					}
+					AND = {
+						ROOT = { adm_tech = 19 }
+						has_building = temple
+					}
 				}
 			}
 			save_event_target_as = agenda_province
@@ -405,34 +436,12 @@ estate_dhimmi_build_temple_in_y = {
 		event_target:agenda_province = {
 			if = {
 				limit = {
-					has_building = cathedral
+					NOT = { has_building = temple }
 				}
 				ROOT = {
 					set_variable = {
 						which = estate_church_build_temple_in_y_var
-						value = 4
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_building = taxation_lvl_2
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_church_build_temple_in_y_var
-						value = 3
-					}
-				}
-			}
-			else_if = {
-				limit = {
-					has_building = temple
-				}
-				ROOT = {
-					set_variable = {
-						which = estate_church_build_temple_in_y_var
-						value = 2
+						value = 1
 					}
 				}
 			}
@@ -440,7 +449,7 @@ estate_dhimmi_build_temple_in_y = {
 				ROOT = {
 					set_variable = {
 						which = estate_church_build_temple_in_y_var
-						value = 1
+						value = 2
 					}
 				}
 			}
@@ -462,49 +471,18 @@ estate_dhimmi_build_temple_in_y = {
 			limit = {
 				check_variable = {
 					which = estate_church_build_temple_in_y_var
-					value = 4
-				}
-			}
-			event_target:agenda_province = {
-				has_building = taxation_lvl_4
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_church_build_temple_in_y_var
-					value = 3
-				}
-			}
-			event_target:agenda_province = {
-				OR = {
-					has_building = cathedral
-					has_building = taxation_lvl_4
-				}
-			}
-		}
-		else_if = {
-			limit = {
-				check_variable = {
-					which = estate_church_build_temple_in_y_var
 					value = 2
 				}
 			}
 			event_target:agenda_province = {
-				OR = {
-					has_building = taxation_lvl_2
 				has_building = cathedral
-					has_building = taxation_lvl_4
-				}
 			}
 		}
 		else = {
 			event_target:agenda_province = {
 				OR = {
 					has_building = temple
-					has_building = taxation_lvl_2
 					has_building = cathedral
-					has_building = taxation_lvl_4
 				}
 			}
 		}
@@ -955,17 +933,55 @@ estate_dhimmi_three_privileges = {
 		NOT = {
 			num_of_estate_privileges = {
 				estate = estate_dhimmi
-				value = 1
+				value = 2
 			}
 		}
 	}
 	selection_weight = {
 		factor = 1
 	}
+	pre_effect = {
+		set_variable = {
+			which = estate_dhimmi_three_privileges_var
+			value = 0
+		}
+		if = {
+			limit = {
+				num_of_estate_privileges = {
+					estate = estate_dhimmi
+					value = 1
+				}
+			}
+			set_variable = {
+				which = estate_dhimmi_three_privileges_var
+				value = 2
+			}
+		}
+		else = {
+			set_variable = {
+				which = estate_dhimmi_three_privileges_var
+				value = 1
+			}
+		}
+	}
 	task_requirements = {
+		if = {
+			limit = {
+				check_variable = {
+					which = estate_dhimmi_three_privileges_var
+					value = 2
+				}
+			}
 			num_of_estate_privileges = {
 				estate = estate_dhimmi
-			value = 1
+				value = 3
+			}
+		}
+		else = {
+			num_of_estate_privileges = {
+				estate = estate_dhimmi
+				value = 2
+			}
 		}
 	}
     task_completed_effect = {

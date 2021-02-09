@@ -831,7 +831,7 @@ country_event = {
 				religion = kodave_followers
 			}
 		}
-		add_stability2 = yes
+		add_stability = 2
 	}
 }
 
@@ -952,7 +952,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 		trigger = { religion = kalyin_worshippers }
 		add_prestige = 5
-		add_stability_or_adm_power = yes
+		add_stability = 1
 	}
 	
 	#Fuck the Usuper
@@ -961,7 +961,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 		trigger = { NOT = { religion = kalyin_worshippers } }
 		add_prestige = 5
-		add_stability_or_adm_power = yes
+		add_stability = 1
 	}
 }
 
@@ -1062,7 +1062,7 @@ country_event = {
 		trigger = { religion = kalyin_worshippers }
 		every_owned_province = { change_religion = kalyin_worshippers }
 		lake_federation_gain_10_points = yes
-		add_stability3 = yes
+		add_stability = 3
 		add_prestige = 50
 		add_country_modifier = {
 			name = victor_fed_religious_war
@@ -1078,7 +1078,7 @@ country_event = {
 				}
 			}
 			add_prestige = 25
-			add_stability_or_adm_power = yes
+			add_stability = 1
 			lake_federation_gain_5_points = yes
 			add_country_modifier = {
 				name = victor_fed_religious_war
@@ -1106,7 +1106,7 @@ country_event = {
 		ai_chance = { factor = 100 }
 		trigger = { NOT = { religion = kalyin_worshippers } }
 		lake_federation_gain_10_points = yes
-		add_stability3 = yes
+		add_stability = 3
 		add_prestige = 50
 		add_country_modifier = {
 			name = victor_fed_religious_war
@@ -1115,7 +1115,7 @@ country_event = {
 		every_known_country = {
 			limit = { has_country_modifier = lake_federation_member NOT = { religion = kalyin_worshippers } }
 			add_prestige = 25
-			add_stability_or_adm_power = yes
+			add_stability = 1
 			lake_federation_gain_5_points = yes
 			every_owned_province = { change_religion = yukel_followers }
 			add_country_modifier = {
@@ -1846,7 +1846,7 @@ country_event = {
 		name = fed_religious.35.a
 		ai_chance = { factor = 100 }
 		add_prestige = 25
-		add_stability2 = yes
+		add_stability = 2
 		lake_federation_gain_15_points = yes
 		add_country_modifier = { 
 			name = lake_stability_maintained
@@ -1855,7 +1855,7 @@ country_event = {
 		every_known_country = { 
 			limit = { has_country_flag = yukel_faction }
 			add_prestige = 20
-			add_stability_or_adm_power = yes
+			add_stability = 1
 			add_country_modifier = { 
 				name = lake_stability_maintained
 				duration = 9125
@@ -1894,7 +1894,7 @@ country_event = {
 		name = fed_religious.36.a
 		ai_chance = { factor = 100 }
 		add_prestige = 25
-		add_stability2 = yes
+		add_stability = 2
 		lake_federation_gain_15_points = yes
 		add_country_modifier = { 
 			name = lake_religious_reparation_bonus
@@ -1903,7 +1903,7 @@ country_event = {
 		every_known_country = { 
 			limit = { has_country_flag = enuuk_faction }
 			add_prestige = 20
-			add_stability_or_adm_power = yes
+			add_stability = 1
 			add_country_modifier = { 
 				name = lake_stability_maintained
 				duration = 9125
@@ -1951,7 +1951,7 @@ country_event = {
 		name = fed_religious.37.a
 		ai_chance = { factor = 100 }
 		add_prestige = 25
-		add_stability2 = yes
+		add_stability = 2
 		lake_federation_gain_15_points = yes
 		add_country_modifier = { 
 			name = lake_religious_reparation_bonus
@@ -1960,7 +1960,7 @@ country_event = {
 		every_known_country = { 
 			limit = { has_country_flag = kodave_faction }
 			add_prestige = 20
-			add_stability_or_adm_power = yes
+			add_stability = 1
 			add_country_modifier = { 
 				name = lake_stability_maintained
 				duration = 9125

@@ -545,7 +545,7 @@ maghargma_three = {
 	
 	effect = {
 		add_prestige = 25
-		add_stability2 = yes
+		add_stability = 2
 		5037 = {
 			add_institution_embracement = {
 				which = feudalism
