@@ -324,29 +324,24 @@ country_decisions = {
 								
 								all_country = {
 									OR = {
+										exists = no
 										has_country_flag = FederationPoints
 										
-										AND = {
-											NOT = { has_country_flag = FederationPoints }
-											
-											OR = {
-												NOT = {
-													check_variable = {
-														which = FederationPoints
-														which = PREV
-													}
-												}
-												is_variable_equal = {
-													which = FederationPoints
-													which = PREV
-												}
+										NOT = {
+											check_variable = {
+												which = FederationPoints
+												which = PREV
 											}
+										}
+										is_variable_equal = {
+											which = FederationPoints
+											which = PREV
 										}
 									}
 								}
 							}
 							
-							#log = "[This.GetName] [This.FederationPoints.GetValue]"
+							log = "[This.GetName] [This.FederationPoints.GetValue]"
 							REB = {
 								change_variable = { fpRank = 1 }
 							}
