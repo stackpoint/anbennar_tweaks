@@ -321,6 +321,8 @@ province_has_building_of_group = {
 					has_building = shipyard
 					has_building = drydock
 					has_building = grand_shipyard
+					has_building = navalbase_lvl_1
+					has_building = navalbase_lvl_2
 				}
 			}
 			else_if = {
@@ -337,6 +339,8 @@ province_has_building_of_group = {
 					has_building = shipyard
 					has_building = drydock
 					has_building = grand_shipyard
+					has_building = navalbase_lvl_1
+					has_building = navalbase_lvl_2
 				}
 			}
 			else_if = {
@@ -352,10 +356,14 @@ province_has_building_of_group = {
 				OR = {
 					has_building = drydock
 					has_building = grand_shipyard
+					has_building = navalbase_lvl_1
+					has_building = navalbase_lvl_2
 				}
 			}
 			else = {
 				has_building = grand_shipyard
+				has_building = navalbase_lvl_1
+				has_building = navalbase_lvl_2
 			}
 		]
 	}

@@ -361,8 +361,10 @@ busilar_3 = {
 			365 = {
 				AND = {
 					development = 35
-					has_building = drydock
-					has_building = grand_shipyard
+					province_has_building_of_group = {
+						group = navy
+						equal_or_more_advanced_than = drydock
+					}
 				}
 			}
 		}
@@ -699,8 +701,10 @@ busilar_4 = {
 			365 = {
 				AND = {
 					development = 25
-					has_building = dock
-					has_building = shipyard
+					province_has_building_of_group = {
+						group = navy
+						all = yes
+					}
 				}
 			}
 		}
