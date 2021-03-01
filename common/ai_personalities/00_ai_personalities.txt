@@ -217,11 +217,6 @@ ai_militarist = {
 			is_march = yes
 		}
 		modifier = {
-			factor = 100
-			religion = nahuatl
-			is_religion_reformed = no
-		}
-		modifier = {
 			factor = 0.5
 			num_of_loans = 1
 		}
