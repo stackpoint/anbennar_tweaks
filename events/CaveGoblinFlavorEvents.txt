@@ -802,9 +802,22 @@ province_event = {
 				}
 			}
 			FROM = {
-				country_event = {
-					id = cavegoblinflavor.11
-					days = 0
+				if = {
+					limit = {
+						is_subject = yes
+					}
+					overlord = {
+						country_event = {
+							id = cavegoblinflavor.11
+							days = 0
+						}
+					}
+				}
+				else = {
+					country_event = {
+						id = cavegoblinflavor.11
+						days = 0
+					}
 				}
 			}
 		}
@@ -815,9 +828,22 @@ province_event = {
 				}
 			}
 			FROM = {
-				country_event = {
-					id = cavegoblinflavor.12
-					days = 0
+				if = {
+					limit = {
+						is_subject = yes
+					}
+					overlord = {
+						country_event = {
+							id = cavegoblinflavor.12
+							days = 0
+						}
+					}
+				}
+				else = {
+					country_event = {
+						id = cavegoblinflavor.12
+						days = 0
+					}
 				}
 			}
 		}
@@ -828,9 +854,22 @@ province_event = {
 				}
 			}
 			FROM = {
-				country_event = {
-					id = cavegoblinflavor.13
-					days = 0
+				if = {
+					limit = {
+						is_subject = yes
+					}
+					overlord = {
+						country_event = {
+							id = cavegoblinflavor.13
+							days = 0
+						}
+					}
+				}
+				else = {
+					country_event = {
+						id = cavegoblinflavor.13
+						days = 0
+					}
 				}
 			}
 		}
