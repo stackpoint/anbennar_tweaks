@@ -1040,6 +1040,8 @@ estate_nobles_french_strong_duchies = {
 		OR = {
 			has_estate_privilege = estate_nobles_french_strong_duchies
 			AND = {
+				#tag = FRA
+				always = no
 				NOT = { has_estate_privilege = estate_nobles_strong_duchies }
 			}
 		}
@@ -1430,12 +1432,6 @@ estate_church_inwards_perfection = {
 	}
 	ai_will_do = {
 		factor = 1
-		modifier = {
-			factor = 7.5
-			NOT = { num_of_cities = 30 }
-			religion = confucianism
-			is_absolutism_active = no
-		}
 	}
 }
 
