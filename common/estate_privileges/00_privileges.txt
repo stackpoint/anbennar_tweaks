@@ -6773,3 +6773,380 @@ estate_brahmins_statutory_rights = {
 	}
 	cooldown_years = 20
 }
+
+estate_church_crown_charter = {
+	icon = privilege_grant_autonomy
+	is_valid = {
+		has_estate_privilege = estate_church_crown_charter
+	}
+	penalties = {
+		#church_loyalty_modifier = -0.1
+		nobles_loyalty_modifier = -0.1
+		burghers_loyalty_modifier = -0.1
+		cossacks_loyalty_modifier = -0.1
+		nomadic_tribes_loyalty_modifier = -0.1
+		nationalist_loyalty_modifier = -0.1
+		raj_ministries_loyalty_modifier = -0.1
+		monstrous_tribes_loyalty_modifier = -0.1
+		mages_loyalty_modifier = -0.1
+		adventurers_loyalty_modifier = -0.1
+		artificers_loyalty_modifier = -0.1
+		vampires_loyalty_modifier = -0.1
+		castonath_patricians_loyalty_modifier = -0.1
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_church_crown_charter
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_nobles_crown_charter = {
+	icon = privilege_grant_autonomy
+	is_valid = {
+		has_estate_privilege = estate_nobles_crown_charter
+	}
+	penalties = {
+		church_loyalty_modifier = -0.1
+		#nobles_loyalty_modifier = -0.1
+		burghers_loyalty_modifier = -0.1
+		cossacks_loyalty_modifier = -0.1
+		nomadic_tribes_loyalty_modifier = -0.1
+		nationalist_loyalty_modifier = -0.1
+		raj_ministries_loyalty_modifier = -0.1
+		monstrous_tribes_loyalty_modifier = -0.1
+		mages_loyalty_modifier = -0.1
+		adventurers_loyalty_modifier = -0.1
+		artificers_loyalty_modifier = -0.1
+		vampires_loyalty_modifier = -0.1
+		castonath_patricians_loyalty_modifier = -0.1
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_nobles_crown_charter
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_burghers_crown_charter = {
+	icon = privilege_grant_autonomy
+	is_valid = {
+		has_estate_privilege = estate_burghers_crown_charter
+	}
+	penalties = {
+		church_loyalty_modifier = -0.1
+		nobles_loyalty_modifier = -0.1
+		#burghers_loyalty_modifier = -0.1
+		cossacks_loyalty_modifier = -0.1
+		nomadic_tribes_loyalty_modifier = -0.1
+		nationalist_loyalty_modifier = -0.1
+		raj_ministries_loyalty_modifier = -0.1
+		monstrous_tribes_loyalty_modifier = -0.1
+		mages_loyalty_modifier = -0.1
+		adventurers_loyalty_modifier = -0.1
+		artificers_loyalty_modifier = -0.1
+		vampires_loyalty_modifier = -0.1
+		castonath_patricians_loyalty_modifier = -0.1
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_burghers_crown_charter
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_cossacks_crown_charter = {
+	icon = privilege_grant_autonomy
+	is_valid = {
+		has_estate_privilege = estate_cossacks_crown_charter
+	}
+	penalties = {
+		church_loyalty_modifier = -0.1
+		nobles_loyalty_modifier = -0.1
+		burghers_loyalty_modifier = -0.1
+		#cossacks_loyalty_modifier = -0.1
+		nomadic_tribes_loyalty_modifier = -0.1
+		nationalist_loyalty_modifier = -0.1
+		raj_ministries_loyalty_modifier = -0.1
+		monstrous_tribes_loyalty_modifier = -0.1
+		mages_loyalty_modifier = -0.1
+		adventurers_loyalty_modifier = -0.1
+		artificers_loyalty_modifier = -0.1
+		vampires_loyalty_modifier = -0.1
+		castonath_patricians_loyalty_modifier = -0.1
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_cossacks_crown_charter
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_nomadic_tribes_crown_charter = {
+	icon = privilege_grant_autonomy
+	is_valid = {
+		has_estate_privilege = estate_nomadic_tribes_crown_charter
+	}
+	penalties = {
+		church_loyalty_modifier = -0.1
+		nobles_loyalty_modifier = -0.1
+		burghers_loyalty_modifier = -0.1
+		cossacks_loyalty_modifier = -0.1
+		#nomadic_tribes_loyalty_modifier = -0.1
+		nationalist_loyalty_modifier = -0.1
+		raj_ministries_loyalty_modifier = -0.1
+		monstrous_tribes_loyalty_modifier = -0.1
+		mages_loyalty_modifier = -0.1
+		adventurers_loyalty_modifier = -0.1
+		artificers_loyalty_modifier = -0.1
+		vampires_loyalty_modifier = -0.1
+		castonath_patricians_loyalty_modifier = -0.1
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_nomadic_tribes_crown_charter
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_nationalist_crown_charter = {
+	icon = privilege_grant_autonomy
+	is_valid = {
+		has_estate_privilege = estate_nationalist_crown_charter
+	}
+	penalties = {
+		church_loyalty_modifier = -0.1
+		nobles_loyalty_modifier = -0.1
+		burghers_loyalty_modifier = -0.1
+		cossacks_loyalty_modifier = -0.1
+		nomadic_tribes_loyalty_modifier = -0.1
+		#nationalist_loyalty_modifier = -0.1
+		raj_ministries_loyalty_modifier = -0.1
+		monstrous_tribes_loyalty_modifier = -0.1
+		mages_loyalty_modifier = -0.1
+		adventurers_loyalty_modifier = -0.1
+		artificers_loyalty_modifier = -0.1
+		vampires_loyalty_modifier = -0.1
+		castonath_patricians_loyalty_modifier = -0.1
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_nationalist_crown_charter
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_raj_ministries_crown_charter = {
+	icon = privilege_grant_autonomy
+	is_valid = {
+		has_estate_privilege = estate_raj_ministries_crown_charter
+	}
+	penalties = {
+		church_loyalty_modifier = -0.1
+		nobles_loyalty_modifier = -0.1
+		burghers_loyalty_modifier = -0.1
+		cossacks_loyalty_modifier = -0.1
+		nomadic_tribes_loyalty_modifier = -0.1
+		nationalist_loyalty_modifier = -0.1
+		#raj_ministries_loyalty_modifier = -0.1
+		monstrous_tribes_loyalty_modifier = -0.1
+		mages_loyalty_modifier = -0.1
+		adventurers_loyalty_modifier = -0.1
+		artificers_loyalty_modifier = -0.1
+		vampires_loyalty_modifier = -0.1
+		castonath_patricians_loyalty_modifier = -0.1
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_raj_ministries_crown_charter
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_monstrous_tribes_crown_charter = {
+	icon = privilege_grant_autonomy
+	is_valid = {
+		has_estate_privilege = estate_monstrous_tribes_crown_charter
+	}
+	penalties = {
+		church_loyalty_modifier = -0.1
+		nobles_loyalty_modifier = -0.1
+		burghers_loyalty_modifier = -0.1
+		cossacks_loyalty_modifier = -0.1
+		nomadic_tribes_loyalty_modifier = -0.1
+		nationalist_loyalty_modifier = -0.1
+		raj_ministries_loyalty_modifier = -0.1
+		#monstrous_tribes_loyalty_modifier = -0.1
+		mages_loyalty_modifier = -0.1
+		adventurers_loyalty_modifier = -0.1
+		artificers_loyalty_modifier = -0.1
+		vampires_loyalty_modifier = -0.1
+		castonath_patricians_loyalty_modifier = -0.1
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_monstrous_tribes_crown_charter
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_mages_crown_charter = {
+	icon = privilege_grant_autonomy
+	is_valid = {
+		has_estate_privilege = estate_mages_crown_charter
+	}
+	penalties = {
+		church_loyalty_modifier = -0.1
+		nobles_loyalty_modifier = -0.1
+		burghers_loyalty_modifier = -0.1
+		cossacks_loyalty_modifier = -0.1
+		nomadic_tribes_loyalty_modifier = -0.1
+		nationalist_loyalty_modifier = -0.1
+		raj_ministries_loyalty_modifier = -0.1
+		monstrous_tribes_loyalty_modifier = -0.1
+		#mages_loyalty_modifier = -0.1
+		adventurers_loyalty_modifier = -0.1
+		artificers_loyalty_modifier = -0.1
+		vampires_loyalty_modifier = -0.1
+		castonath_patricians_loyalty_modifier = -0.1
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_mages_crown_charter
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_adventurers_crown_charter = {
+	icon = privilege_grant_autonomy
+	is_valid = {
+		has_estate_privilege = estate_adventurers_crown_charter
+	}
+	penalties = {
+		church_loyalty_modifier = -0.1
+		nobles_loyalty_modifier = -0.1
+		burghers_loyalty_modifier = -0.1
+		cossacks_loyalty_modifier = -0.1
+		nomadic_tribes_loyalty_modifier = -0.1
+		nationalist_loyalty_modifier = -0.1
+		raj_ministries_loyalty_modifier = -0.1
+		monstrous_tribes_loyalty_modifier = -0.1
+		mages_loyalty_modifier = -0.1
+		#adventurers_loyalty_modifier = -0.1
+		artificers_loyalty_modifier = -0.1
+		vampires_loyalty_modifier = -0.1
+		castonath_patricians_loyalty_modifier = -0.1
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_adventurers_crown_charter
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_artificers_crown_charter = {
+	icon = privilege_grant_autonomy
+	is_valid = {
+		has_estate_privilege = estate_artificers_crown_charter
+	}
+	penalties = {
+		church_loyalty_modifier = -0.1
+		nobles_loyalty_modifier = -0.1
+		burghers_loyalty_modifier = -0.1
+		cossacks_loyalty_modifier = -0.1
+		nomadic_tribes_loyalty_modifier = -0.1
+		nationalist_loyalty_modifier = -0.1
+		raj_ministries_loyalty_modifier = -0.1
+		monstrous_tribes_loyalty_modifier = -0.1
+		mages_loyalty_modifier = -0.1
+		adventurers_loyalty_modifier = -0.1
+		#artificers_loyalty_modifier = -0.1
+		vampires_loyalty_modifier = -0.1
+		castonath_patricians_loyalty_modifier = -0.1
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_artificers_crown_charter
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_vampires_crown_charter = {
+	icon = privilege_grant_autonomy
+	is_valid = {
+		has_estate_privilege = estate_vampires_crown_charter
+	}
+	penalties = {
+		church_loyalty_modifier = -0.1
+		nobles_loyalty_modifier = -0.1
+		burghers_loyalty_modifier = -0.1
+		cossacks_loyalty_modifier = -0.1
+		nomadic_tribes_loyalty_modifier = -0.1
+		nationalist_loyalty_modifier = -0.1
+		raj_ministries_loyalty_modifier = -0.1
+		monstrous_tribes_loyalty_modifier = -0.1
+		mages_loyalty_modifier = -0.1
+		adventurers_loyalty_modifier = -0.1
+		artificers_loyalty_modifier = -0.1
+		#vampires_loyalty_modifier = -0.1
+		castonath_patricians_loyalty_modifier = -0.1
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_vampires_crown_charter
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}
+
+estate_castonath_patricians_crown_charter = {
+	icon = privilege_grant_autonomy
+	is_valid = {
+		has_estate_privilege = estate_castonath_patricians_crown_charter
+	}
+	penalties = {
+		church_loyalty_modifier = -0.1
+		nobles_loyalty_modifier = -0.1
+		burghers_loyalty_modifier = -0.1
+		cossacks_loyalty_modifier = -0.1
+		nomadic_tribes_loyalty_modifier = -0.1
+		nationalist_loyalty_modifier = -0.1
+		raj_ministries_loyalty_modifier = -0.1
+		monstrous_tribes_loyalty_modifier = -0.1
+		mages_loyalty_modifier = -0.1
+		adventurers_loyalty_modifier = -0.1
+		artificers_loyalty_modifier = -0.1
+		vampires_loyalty_modifier = -0.1
+		#castonath_patricians_loyalty_modifier = -0.1
+	}
+	cooldown_years = 5
+	on_cooldown_expires = {
+		remove_estate_privilege = estate_castonath_patricians_crown_charter
+	}
+	ai_will_do = {
+		factor = 0
+	}
+}

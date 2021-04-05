@@ -294,6 +294,7 @@ estate_raj_ministries =
 		estate_raj_ministries_ceremonial_ruler_act
 		estate_raj_ministries_establish_the_ministry_of_war
 		estate_raj_ministries_control_over_monetary_policy
+		estate_raj_ministries_crown_charter
 	}
 
 	agendas = {

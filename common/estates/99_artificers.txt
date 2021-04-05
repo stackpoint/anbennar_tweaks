@@ -295,6 +295,7 @@ estate_artificers =
 		estate_artificers_organization_state
 		estate_artificers_organization_independent_unions
 		estate_artificers_organization_ravelian_control
+		estate_artificers_crown_charter
 	}
 
 	agendas = {

@@ -60,6 +60,7 @@ estate_nationalist = {
 		estate_priv_idea_variation_12_7
 		estate_priv_idea_variation_12_8
 		estate_priv_idea_variation_12_12
+		estate_nationalist_crown_charter
 	}
 	
 	agendas = {
