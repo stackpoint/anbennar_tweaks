@@ -17,7 +17,7 @@ guiTypes = {
 		{
 			name ="domesticpanel_bg"
 			spriteType = "GFX_country_ideas_view_bg"
-			position = {  x= -12 y = -10 }
+			position = {  x= -7 y = -10 }
 			Orientation = "UPPER_LEFT"
 		}
 		
