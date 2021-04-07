@@ -1714,7 +1714,7 @@ country_event = {
 			NOT = { has_country_flag = monstrous_event_happened }
 			had_country_flag = {
 				flag = monstrous_event_happened
-				days = 365
+				days = 90
 			}
 		}
 	}

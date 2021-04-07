@@ -5318,7 +5318,7 @@ decrease_monstrous_10 = {
 	if = {
 		limit = { has_country_flag = removing_monstrous has_country_modifier = monstrous_nation }
 		custom_tooltip = decrease_monstrous_10_tooltip
-		hidden_effect = { subtract_variable = { monstrousPoints = 10 } }
+		hidden_effect = { subtract_variable = { monstrousPoints = 50 } }
 	}
 }
 
@@ -5326,7 +5326,7 @@ decrease_monstrous_5 = {
 	if = {
 		limit = { has_country_flag = removing_monstrous has_country_modifier = monstrous_nation }
 		custom_tooltip = decrease_monstrous_5_tooltip
-		hidden_effect = { subtract_variable = { monstrousPoints = 5 } }
+		hidden_effect = { subtract_variable = { monstrousPoints = 25 } }
 	}
 }
 
@@ -5334,7 +5334,7 @@ decrease_monstrous_3 = {
 	if = {
 		limit = { has_country_flag = removing_monstrous has_country_modifier = monstrous_nation }
 		custom_tooltip = decrease_monstrous_3_tooltip
-		hidden_effect = { subtract_variable = { monstrousPoints = 3 } }
+		hidden_effect = { subtract_variable = { monstrousPoints = 15 } }
 	}
 }
 
@@ -5342,7 +5342,7 @@ decrease_monstrous_2 = {
 	if = {
 		limit = { has_country_flag = removing_monstrous has_country_modifier = monstrous_nation }
 		custom_tooltip = decrease_monstrous_2_tooltip
-		hidden_effect = { subtract_variable = { monstrousPoints = 2 } }
+		hidden_effect = { subtract_variable = { monstrousPoints = 7 } }
 	}
 }
 
@@ -5350,7 +5350,7 @@ decrease_monstrous_1 = {
 	if = {
 		limit = { has_country_flag = removing_monstrous has_country_modifier = monstrous_nation }
 		custom_tooltip = decrease_monstrous_1_tooltip
-		hidden_effect = { subtract_variable = { monstrousPoints = 1 } }
+		hidden_effect = { subtract_variable = { monstrousPoints = 5 } }
 	}
 }
 
@@ -5359,7 +5359,7 @@ increase_monstrous_5 = {
 	if = {
 		limit = { has_country_flag = removing_monstrous has_country_modifier = monstrous_nation }
 		custom_tooltip = increase_monstrous_5_tooltip
-		hidden_effect = { change_variable = { monstrousPoints = 5 } }
+		hidden_effect = { change_variable = { monstrousPoints = 50 } }
 	}
 }
 
@@ -5367,7 +5367,7 @@ increase_monstrous_3 = {
 	if = {
 		limit = { has_country_flag = removing_monstrous has_country_modifier = monstrous_nation }
 		custom_tooltip = increase_monstrous_3_tooltip
-		hidden_effect = { change_variable = { monstrousPoints = 3 } }
+		hidden_effect = { change_variable = { monstrousPoints = 15 } }
 	}
 }
 
@@ -5375,7 +5375,7 @@ increase_monstrous_2 = {
 	if = {
 		limit = { has_country_flag = removing_monstrous has_country_modifier = monstrous_nation }
 		custom_tooltip = increase_monstrous_2_tooltip
-		hidden_effect = { change_variable = { monstrousPoints = 2 } }
+		hidden_effect = { change_variable = { monstrousPoints = 7 } }
 	}
 }
 
@@ -5383,7 +5383,7 @@ increase_monstrous_1 = {
 	if = {
 		limit = { has_country_flag = removing_monstrous has_country_modifier = monstrous_nation }
 		custom_tooltip = increase_monstrous_1_tooltip
-		hidden_effect = { change_variable = { monstrousPoints = 1 } }
+		hidden_effect = { change_variable = { monstrousPoints = 5 } }
 	}
 }
 
