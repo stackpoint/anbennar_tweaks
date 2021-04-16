@@ -1,4 +1,4 @@
-name="Anbennar Tweaks"
+name="anbennar_tweaks"
 path="mod/anbennar_tweaks"
 tags={"Alternative History""Total Conversion""Fantasy"}
 

@@ -1216,8 +1216,17 @@ expansion_ideas = {
 					has_idea_group = expansion_ideas
 				}
 			}
-			any_owned_province = {
-				has_empty_adjacent_province = yes
+		}
+		modifier = {
+			factor = 0.1
+			NOT = {
+				technology_group = tech_cannorian
+				technology_group = tech_gerudian
+				technology_group = tech_gnomish
+				technology_group = tech_salahadesi
+				technology_group = tech_elven
+				technology_group = tech_bulwari
+				technology_group = tech_islanders
 			}
 		}
 	}
