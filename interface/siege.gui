@@ -366,14 +366,14 @@ guiTypes = {
 		}
 		instantTextBoxType = {
 			name = "garrison_value"
-			position = { x = 159 y = 267 }
+			position = { x = 135 y = 267 }
 			textureFile = ""
 			font = "vic_22"
 			borderSize = {x = 0 y = 0}
 			text = ""	
 			maxWidth = 60
 			maxHeight = 24	
-			format = left
+			format = right
 		}		
 		
 		iconType =

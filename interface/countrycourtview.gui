@@ -61,60 +61,15 @@ guiTypes = {
 
 		guiButtonType = {
 			name = "reset_all3533"
-			position = { x = 40 y = 700 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
+			position = { x = 30 y = 600 }
+			quadTextureSprite ="GFX_abdicate_button"	
 			pdx_tooltip ="IcW_tool"
 			delayedTooltipText = ""
+			clicksound = call_to_arms
+			shortcut = "x"
 		}
-		guiButtonType = {
-			name = "reset_all353433"
-			position = { x = 30 y = 660 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool2"
-			delayedTooltipText = ""
-		}
-		guiButtonType = {
-			name = "reset_3433"
-			position = { x = 70 y = 660 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool3"
-			delayedTooltipText = ""
-		}
-		guiButtonType = {
-			name = "reset_34565433"
-			position = { x = 80 y = 700 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool4"
-			delayedTooltipText = ""
-		}
-		guiButtonType = {
-			name = "reset_3456345433"
-			position = { x = 120 y = 700 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool5"
-			delayedTooltipText = ""
-		}
-		guiButtonType = {
-			name = "res67633"
-			position = { x = 110 y = 660 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool6"
-			delayedTooltipText = ""
-		}
-		guiButtonType = {
-			name = "res676tzt33"
-			position = { x = 150 y = 660 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool7"
-			delayedTooltipText = ""
-		}
-		guiButtonType = {
-			name = "res676zutzt33"
-			position = { x = 190 y = 660 }
-			quadTextureSprite ="GFX_button_reset_shortcuts"	
-			pdx_tooltip ="IcW_tool8"
-			delayedTooltipText = ""
-		}
+
+		
 		
 		
 		### ------- Ruler -------	
@@ -130,6 +85,17 @@ guiTypes = {
 		guiButtonType = {
 			name = "abdicate_ruler_button"
 			position = { x= 486	y = 139 }
+			quadTextureSprite ="GFX_abdicate_button"	
+			tooltip = ""
+			tooltipText =""
+			delayedTooltipText = ""
+			buttonFont = "vic_18"
+			clicksound = back_click
+		}			
+
+		guiButtonType = {
+			name = "extend_regency_button"
+			position = { x= 440	y = 139 }
 			quadTextureSprite ="GFX_abdicate_button"	
 			tooltip = ""
 			tooltipText =""
@@ -553,7 +519,7 @@ guiTypes = {
 			spacing = 2.5
 			scrollbartype = "standardlistbox_slider"
 			borderSize = {x = 0 y = 0}
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 		
 
@@ -686,19 +652,7 @@ guiTypes = {
 				name ="court_select_slider"
 				position = { x=86 y =170}
 				backGround=""
-				if_resolution = {
-					max_height = 899
-					size = { x=382 y =400} #was y =350
-				}
-				if_resolution = {
-					max_height = 1079
-					min_height = 900
-					size = { x=382 y =400} #was y =350
-				}
-				if_resolution = {
-					min_height = 1080
-				size = { x=382 y =635} #was y =350
-				}
+				size = { x=382 y =635}
 				Orientation = "UPPER_LEFT"
 				horizontal = 0
 				spacing = 2
@@ -857,7 +811,7 @@ guiTypes = {
 			position = { x= -13 y = 10 }
 			Orientation = "UPPER_LEFT"
 			scale = 0.9
-			allwaystransparent = yes
+			alwaystransparent = yes
 			frame = 17
 		}
 
@@ -948,7 +902,7 @@ guiTypes = {
 			maxWidth = 125
 			maxHeight = 32
 			format = center
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}	
 
 		guiButtonType = 
@@ -1000,7 +954,6 @@ guiTypes = {
 			Orientation = "UPPER_LEFT"
 			scale = 0.5
 		}
-		
 	}
 		
 
@@ -1039,6 +992,7 @@ guiTypes = {
 		}
 		
 		
+		
 		iconType ={
 			name ="advisor_indicator_religion"
 			spriteType = "GFX_advisor_indicator_religion"
@@ -1052,7 +1006,7 @@ guiTypes = {
 			position = { x= -74 y = 23 }
 			Orientation = "UPPER_LEFT"
 			scale = 1.0
-			allwaystransparent = yes
+			alwaystransparent = yes
 			frame = 17
 		}
 

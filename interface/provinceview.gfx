@@ -127,6 +127,11 @@ spriteTypes = {
 	}
 
 	spriteType = {
+		name = "GFX_maintenance_lock_icon"
+		texturefile = "gfx/interface/maintenance_lock_icon.dds"
+	}
+
+	spriteType = {
 		name = "GFX_add_parliament_icon"
 		texturefile = "gfx/interface/add_parliament_icon.dds"
 	}
@@ -207,6 +212,16 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_exploit_button"
 		texturefile = "gfx/interface/exploit_button.dds"
+	}
+
+	spriteType = {
+		name = "GFX_exploit_button_expand_infrastructure"
+		texturefile = "gfx/interface/exploit_button_expand_infrastructure.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_exploit_button_reduce_infrastructure"
+		texturefile = "gfx/interface/exploit_button_reduce_infrastructure.dds"
 	}
 
 	spriteType = {
@@ -397,6 +412,13 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_provinceview_bg_large"
 		texturefile = "gfx/interface/provinceview_bg_large.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}
+
+	spriteType = {
+		name = "GFX_provinceview_bg_new"
+		texturefile = "gfx/interface/provinceview_bg_new.dds"
 		loadType = "INGAME"
 		transparencecheck = yes
 	}
@@ -616,6 +638,13 @@ spriteTypes = {
 	}	
 	
 	spriteType = {	
+		name = "GFX_provinceview_foreign_bg_new"
+		texturefile = "gfx/interface/provinceview_foreign_bg_new.dds"
+		loadType = "INGAME"
+		transparencecheck = yes
+	}	
+
+	spriteType = {	
 		name = "GFX_move_capital"
 		texturefile = "gfx//interface//move_capital.dds"
 		effectFile = "gfx/FX/buttonstate.lua"
@@ -687,18 +716,18 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_provinceView_religion_bg"
 		texturefile = "gfx//interface//provinceView_religion_bg.tga"
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 	
 	spriteType = {
 		name = "GFX_provinceView_religion_bg_glow"
 		texturefile = "gfx//interface//provinceView_religion_bg_glow.tga"
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 	spriteType = {
 		name = "GFX_small_red_glow"
 		texturefile = "gfx//interface//small_red_glow.tga"
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 	spriteType = {
 		name = "GFX_looted_icon"
@@ -719,6 +748,11 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_client_state_button"
 		texturefile = "gfx/interface/client_state_button.dds"
+	}
+
+	spriteType = {
+		name = "GFX_province_governing_cost"
+		texturefile = "gfx/interface/province_governing_cost.dds"
 	}
 
 	spriteType = {
@@ -832,13 +866,13 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_provinceView_build_ship_amount_and_name_bg"
 		texturefile = "gfx//interface//provinceView_build_ship_amount_and_name_bg.tga"
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 	
 	spriteType = {
 		name = "GFX_provinceView_build_army_amount_bg"
 		texturefile = "gfx//interface//provinceView_build_army_amount_bg.tga"
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 
 	
@@ -858,7 +892,7 @@ spriteTypes = {
 	spriteType = {
 		name = "GFX_provinceView_build_manufactory_bg"
 		texturefile = "gfx//interface//provinceView_build_manufactory_bg.tga"
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 
 	textSpriteType = {
@@ -894,14 +928,14 @@ spriteTypes = {
 		texturefile = "gfx//interface//building_canbuild.dds"
 		
 		effectFile = "gfx/FX/buttonstate.lua"
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 	spriteType = {
 		name = "GFX_building_canbuild_unique"
 		texturefile = "gfx//interface//building_canbuild_unique.dds"
 		
 		effectFile = "gfx/FX/buttonstate.lua"
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 	progressbartype = {
 		name = "GFX_building_progress"
@@ -972,7 +1006,7 @@ spriteTypes = {
 		noOfFrames = 35
 		loadType = "INGAME"
 		
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 
 	spriteType = {
@@ -1034,7 +1068,7 @@ spriteTypes = {
 		loadType = "INGAME"
 		
 		effectFile = "gfx/FX/buttonstate.lua"
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 
 	spriteType = {	
@@ -1297,10 +1331,17 @@ spriteTypes = {
 		texturefile = "gfx/interface/abandon_state_button.dds"
 	}	
 	spriteType = {
+		name = "GFX_concentrate_development"
+		texturefile = "gfx/interface/concentrate_development.dds"
+	}	
+	spriteType = {
 		name = "GFX_core_all_button"
 		texturefile = "gfx/interface/core_all_button.dds"
 	}	
-	
+	spriteType = {
+		name = "GFX_centralize_state_button"
+		texturefile = "gfx/interface/centralize_state.dds"
+	}	
 	
 	spriteType = {
 		name = "GFX_settlement_growth_button"

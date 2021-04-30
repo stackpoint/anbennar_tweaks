@@ -695,7 +695,10 @@ guiTypes = {
 				shortcut = "c"
 			}
 
-		listboxType =	{
+			
+
+		listboxType = 
+			{
 			name ="left_list"
 			position = { x = 53 y = 157 }
 			backGround=""
@@ -707,7 +710,8 @@ guiTypes = {
 			borderSize = {x = 0 y = 0}
 		}
 
-		listboxType =	{
+		listboxType = 
+			{
 			name ="right_list"
 			position = { x = 407 y = 157 }
 			backGround=""

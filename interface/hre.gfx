@@ -11,14 +11,14 @@ spriteTypes = {
 		name = "GFX_outliner_elector"
 		texturefile = "gfx//interface//outliner_elector.dds"
 		loadType = "INGAME"
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 
 		spriteType = {
 		name = "GFX_outliner_free_city"
 		texturefile = "gfx//interface//outliner_free_city.dds"
 		loadType = "INGAME"
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 
 	spriteType = {
@@ -133,6 +133,19 @@ spriteTypes = {
 		loadType = "INGAME"
 	}
 
+	spriteType = {
+		name = "GFX_zoroastrian_blessing_select"
+		texturefile = "gfx//interface//zoroastrian_blessing_select.dds"
+		effectFile = "gfx/FX/buttonstate.lua"
+		loadType = "INGAME"
+	}	
+
+	spriteType = {
+		name = "GFX_zoroastrian_blessing_select_glow"
+		texturefile = "gfx//interface//zoroastrian_blessing_select_glow.dds"
+		loadType = "INGAME"
+	}		
+	
 	spriteType = {
 		name = "GFX_hre_bg_extended"
 		texturefile = "gfx//interface//hre_bg_extended.dds"

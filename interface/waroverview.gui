@@ -939,11 +939,11 @@ guiTypes = {
 		}
 
 		instantTextBoxType={
-			position = {x = 248 y = -10 }
+			position = {x = 248 y = 8 }
 			name = "economyValue"
 			font = "vic_18"
 			borderSize = {x = 0 y = 0}
-			maxWidth = 40
+			maxWidth = 50
 			maxHeight = 18
 			text = "x"
 			orientation = "UPPER_LEFT"

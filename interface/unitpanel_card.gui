@@ -94,13 +94,17 @@ guiTypes = {
 				}
 			}
 
-			iconType = {
+
+
+		iconType =
+		{
 				name ="unitpanel_bg_pc"
 				spriteType = "GFX_unitpanel_bg"
 				position = { x= 0 y = 35 }
 				Orientation = "UPPER_LEFT"
 			}
 
+		
 			windowType = {
 				name = "land_units"
 				backGround=""
@@ -112,7 +116,8 @@ guiTypes = {
 				verticalBorder= ""
 				fullScreen = no
 
-				guiButtonType =	{
+			guiButtonType = 
+			{
 					name = "unit1_type"
 					position = { x= 21 y = 8 }
 					quadTextureSprite = "GFX_unit_types_strip_nontransp"
@@ -132,7 +137,8 @@ guiTypes = {
 					format = left
 				}
 
-				guiButtonType =	{
+			guiButtonType = 
+			{
 					name = "unit2_type"
 					position = { x= 107 y = 8 }
 					quadTextureSprite = "GFX_unit_types_strip_nontransp"
@@ -152,7 +158,8 @@ guiTypes = {
 					format = left
 				}
 
-				guiButtonType =	{
+			guiButtonType = 
+			{
 					name = "unit3_type"
 					position = { x= 186 y = 9 }
 					quadTextureSprite = "GFX_unit_types_strip_nontransp"
@@ -322,28 +329,32 @@ guiTypes = {
 				Orientation = "UPPER_LEFT"
 			}
 
-			iconType = {
+		iconType =
+		{
 				name ="unit_low_morale_icon"
 				spriteType = "GFX_unit_low_morale"
 				position = { x= 9 y = 88 }
 				Orientation = "UPPER_LEFT"
 			}
 
-			iconType = {
+		iconType =
+		{
 				name = "unit_naming_icon"
 				spriteType = "GFX_unit_naming"
 				position = { x = 28 y = 42 }
 				Orientation = "UPPER_LEFT"
 			}
 
-			iconType = {
+		iconType =
+		{
 				name ="unit_exile_icon"
 				spriteType = "GFX_unitpanel_exile"
 				position = { x= 19 y = 66 }
 				Orientation = "UPPER_LEFT"
 			}
 
-			iconType = {
+		iconType =
+		{
 				name ="unit_shattered_retreat_icon"
 				spriteType = "GFX_unit_shattered_retreat"
 				position = { x= 19 y = 66 }
@@ -360,7 +371,8 @@ guiTypes = {
 				orientation = "UPPER_LEFT"
 			}
 
-			iconType = {
+		iconType =
+		{
 				name = "navy_seperate"
 				spriteType = "GFX_unitpanel_ship_separator"
 				position = { x = 279 y = 73 }
@@ -376,6 +388,7 @@ guiTypes = {
 				text = ""
 				maxWidth = 32
 				maxHeight = 32
+
 				format = centre
 			}
 
@@ -388,10 +401,12 @@ guiTypes = {
 				text = ""
 				maxWidth = 100
 				maxHeight = 32
+
 				format = centre
 			}
 
-			iconType = {
+		iconType =
+		{
 				name ="blockade_icon"
 				spriteType = "GFX_combat_blockade"
 				position = { x = 316 y = 80 }
@@ -408,10 +423,12 @@ guiTypes = {
 				text = "50"
 				maxWidth = 28
 				maxHeight = 32
+
 				format = center
 			}
 
-			iconType = {
+		iconType =
+		{
 				name ="leader_personality"
 				spriteType = "GFX_idea_unknown"
 				position = { x= 160 y = 42 }
@@ -419,7 +436,8 @@ guiTypes = {
 				scale = 0.5
 			}
 
-			iconType = {
+		iconType =
+		{
 				name ="leader_types"
 				spriteType = "GFX_leader_types"
 				position = { x= 184 y = 46 }
@@ -427,11 +445,15 @@ guiTypes = {
 				scale = 0.7
 			}
 
-			guiButtonType =  {
+		
+
+		guiButtonType = 
+		{
 				name ="leader_button"
 				quadTextureSprite = "GFX_leader_button02"
 				position = { x= 210 y = 47 }
 				Orientation = "UPPER_LEFT"
+
 				tooltip = ""
 				tooltipText =""
 				delayedTooltipText = ""
@@ -444,8 +466,11 @@ guiTypes = {
 				spriteType = "GFX_no_leader_glow"
 				position = { x=207 y = 43 }
 				Orientation = "UPPER_LEFT"
+			
 			}
 
+		
+		
 			instantTextBoxType = {
 				name = "unitleader"
 				position = { x = 220 y = 52 }
@@ -460,7 +485,8 @@ guiTypes = {
 				hint_tag = "hint_leader"
 			}
 
-			iconType = {
+		iconType =
+		{
 				name ="unit_destination"
 				spriteType = "GFX_icon_unit_destination"
 				position = { x= 130 y = 105 }
@@ -477,7 +503,9 @@ guiTypes = {
 				text = ""
 				maxWidth = 80
 				maxHeight = 16
+
 				fixedsize = yes
+
 				format = left
 			}
 
@@ -490,10 +518,12 @@ guiTypes = {
 				text = ""
 				maxWidth = 49
 				maxHeight = 17
+
 				format = right
 			}
 
-			iconType = {
+		iconType =
+		{
 				name ="loot_capability_icon"
 				spriteType = "GFX_tiny_loot_icon"
 				position = { x= 167 y = 105 }
@@ -509,10 +539,12 @@ guiTypes = {
 				text = "§G9§!"
 				maxWidth = 35
 				maxHeight = 17
+
 				format = left
 			}
 
-			iconType = {
+		iconType =
+		{
 				name ="siege_capability_icon"
 				spriteType = "GFX_siege_capability_icon"
 				position = { x= 238 y = 105 }
@@ -528,10 +560,12 @@ guiTypes = {
 				text = "§G9§!"
 				maxWidth = 35
 				maxHeight = 17
+
 				format = left
 			}
 
-			guiButtonType = {
+		guiButtonType =
+		{
 				name ="attach_to_transport_button"
 				spriteType = "GFX_attach_to_transport_button"
 				position = { x= 420 y = 71 }
@@ -556,14 +590,16 @@ guiTypes = {
 				position = { x=451 y=72 }
 			}
 
-			iconType = {
+		iconType =
+		{
 				name ="connected_overlay"
 				spriteType = "GFX_provinceView_religion_bg_glow"
 				position = { x=420 y=71 }
 				scale = 0.71
 			}
 
-			iconType = {
+		iconType =
+		{
 				name ="unit_attrition_icon"
 				spriteType = "GFX_unit_attrition_icon"
 				position = { x= 289 y = 105 }
@@ -583,7 +619,8 @@ guiTypes = {
 				buttonFont = "vic_18"
 			}
 
-			guiButtonType = {
+		guiButtonType =
+		{
 				name ="select_army_button"
 				quadTextureSprite= "GFX_select_army_button"
 				position = { x= 384 y = 47 }
@@ -695,7 +732,7 @@ guiTypes = {
 			maxWidth = 390
 			maxHeight = 32
 			format = center
-			allwaystransparent = yes
+			alwaystransparent = yes
 			fixedsize = yes
 			truncate = yes
 		}
@@ -749,7 +786,7 @@ guiTypes = {
 			maxWidth = 200
 			maxHeight = 32
 			format = left
-			allwaystransparent = yes
+			alwaystransparent = yes
 			fixedsize = yes
 			truncate = yes
 		}
@@ -763,7 +800,7 @@ guiTypes = {
 			maxWidth =64
 			maxHeight = 32
 			format = left
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 		instantTextBoxType = {
 			name = "cav"
@@ -774,7 +811,7 @@ guiTypes = {
 			maxWidth =64
 			maxHeight = 32
 			format = left
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 		instantTextBoxType = {
 			name = "art"
@@ -785,7 +822,7 @@ guiTypes = {
 			maxWidth =64
 			maxHeight = 32
 			format = left
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 	}
 
@@ -815,7 +852,7 @@ guiTypes = {
 			maxWidth = 200
 			maxHeight = 32
 			format = left
-			allwaystransparent = yes
+			alwaystransparent = yes
 			fixedsize = yes
 			truncate = yes
 		}
@@ -829,7 +866,7 @@ guiTypes = {
 			maxWidth =64
 			maxHeight = 32
 			format = left
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 		instantTextBoxType = {
 			name = "light"
@@ -840,7 +877,7 @@ guiTypes = {
 			maxWidth =64
 			maxHeight = 32
 			format = left
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 		instantTextBoxType = {
 			name = "galley"
@@ -851,7 +888,7 @@ guiTypes = {
 			maxWidth =64
 			maxHeight = 32
 			format = left
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 		instantTextBoxType = {
 			name = "transport"
@@ -862,7 +899,7 @@ guiTypes = {
 			maxWidth =64
 			maxHeight = 32
 			format = left
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 	}
 

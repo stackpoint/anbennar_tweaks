@@ -332,7 +332,7 @@ guiTypes = {
 			
 			instantTextBoxType = {
 				name = "no_colony_label"
-				position = { x = 75 y = -4 }
+				position = { x = 75 y = -16 }
 				font = "vic_29"	
 				borderSize = {x = 0 y = 0}	
 				text = "NO_COLONY_PRESENT"	
@@ -350,6 +350,64 @@ guiTypes = {
 				maxHeight = 40	
 				format = center	
 			}			
+			instantTextBoxType = {
+				name = "tribal_owner"
+				position = { x = 75 y = 8 }
+				font = "vic_18"	
+				borderSize = {x = 0 y = 0}	
+				text = "TRIBAL_OWNER"	
+				maxWidth = 185
+				maxHeight = 29	
+				format = center	
+			}
+			iconType =
+			{
+				name = "devastation_icon"
+				spriteType = "GFX_devestation_icon"
+				position = { x= 245 y = 15 }
+				Orientation = "UPPER_LEFT"
+			}
+			instantTextBoxType = {
+				name = "devastation_value"
+				position = { x = 270 y = 20 }
+				font = "vic_18"	
+				borderSize = {x = 0 y = 0}	
+				text = "0%"	
+				maxWidth = 50
+				maxHeight = 29	
+				format = right	
+			}
+			guiButtonType = {
+				name = "migrate_tribe_button"
+				position = { x=245 y = 40}
+				quadTextureSprite ="GFX_button_straight_87_32"	
+				tooltip = ""
+				tooltipText =""
+				delayedTooltipText = ""
+				buttonText = "MIGRATE"
+				buttonFont = "vic_18"
+			}
+
+			guiButtonType = {
+				name = "settle_tribe_button"
+				position = { x=245 y = 40}
+				quadTextureSprite ="GFX_button_straight_87_32"	
+				tooltip = ""
+				tooltipText =""
+				delayedTooltipText = ""
+				buttonText = "SETTLE"
+				buttonFont = "vic_18"
+			}
+			guiButtonType = {
+				name = "add_tribal_land_button"
+				position = { x=245 y = 40}
+				quadTextureSprite ="GFX_button_straight_87_32"	
+				tooltip = ""
+				tooltipText =""
+				delayedTooltipText = ""
+				buttonText = "ADD_TRIBAL_LAND_COL_WIN"
+				buttonFont = "vic_18"
+			}
 		}
 		
 		### Shows the current controller if colony exist
@@ -415,6 +473,16 @@ guiTypes = {
 				fixedsize = yes
 			}
 			
+			instantTextBoxType = {
+				name = "tribal_owner"
+				position = { x = 75 y = 8 }
+				font = "vic_18"	
+				borderSize = {x = 0 y = 0}	
+				text = "TRIBAL_OWNER"	
+				maxWidth = 185
+				maxHeight = 29	
+				format = center	
+			}
 			instantTextBoxType = {
 				name = "region_text"
 				position = { x = 70 y = 20 }
@@ -939,7 +1007,7 @@ windowType = {
 			maxHeight = 20	
 			format = centre
 			fixedsize = yes
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}	
 	}	
 	
@@ -969,7 +1037,7 @@ windowType = {
 			maxHeight = 20	
 			format = left
 			fixedsize = yes
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 
 
@@ -983,14 +1051,14 @@ windowType = {
 			maxHeight = 20	
 			format = right
 			fixedsize = yes
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}		
 		
 		iconType = {
 			name ="development_icon"
 			spriteType = "GFX_development_icon"
 			position = { x = 45 y = 22 }
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
@@ -1003,14 +1071,14 @@ windowType = {
 			maxHeight = 20	
 			format = right
 			fixedsize = yes
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}		
 		
 		iconType = {
 			name ="colonist_placement_chance_icon"
 			spriteType = "GFX_colonist_placement_chance"
 			position = { x = 145 y = 20 }
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 
 		
@@ -1019,7 +1087,7 @@ windowType = {
 			spriteType ="GFX_province_view_religion"	
 			position = { x = 285 y = 12 }
 			frame = 14
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 	}		
 }

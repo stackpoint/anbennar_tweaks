@@ -1589,7 +1589,7 @@ guiTypes = {
 			maxHeight = 22
 			fixedsize = yes
 			format = centre
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 
 	}
@@ -1626,7 +1626,7 @@ guiTypes = {
 			maxHeight = 22
 			fixedsize = yes
 			format = centre
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 	}
 
@@ -1662,7 +1662,7 @@ guiTypes = {
 			maxHeight = 22
 			fixedsize = yes
 			format = centre
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 	}
 
@@ -1677,7 +1677,7 @@ guiTypes = {
 	horizontalBorder= ""
 	verticalBorder= ""
 	fullScreen = no
-	#allwaystransparent = yes
+	#alwaystransparent = yes
 
 	instantTextBoxType = {
 		name = "demand_text"
@@ -1690,7 +1690,7 @@ guiTypes = {
 		maxHeight = 70
 		format = left
 		fixedsize = yes
-		allwaystransparent = yes
+		alwaystransparent = yes
 	}
 }
 

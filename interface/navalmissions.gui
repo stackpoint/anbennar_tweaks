@@ -20,7 +20,7 @@ guiTypes = {
 			spriteType = "GFX_naval_missions"
 			position = { x= 4 y = -4 }
 			Orientation = "UPPER_LEFT"
-			allwaystransparent = yes
+			alwaystransparent = yes
 		}
 
 		instantTextBoxType = {
@@ -33,7 +33,7 @@ guiTypes = {
 			maxHeight = 15
 			format = left
 			fixedsize = yes
-			allwaystransparent = yes
+			alwaystransparent = yes	
 		}
 	}
 
@@ -149,3 +149,4 @@ guiTypes = {
 
 
 }
+

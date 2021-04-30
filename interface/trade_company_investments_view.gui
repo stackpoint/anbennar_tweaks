@@ -23,7 +23,6 @@ guiTypes = {
 			position = { x = 0 y = -15 }
 		}
 
-
 		instantTextBoxType = {
 			name = "title"
 			position = { x = 48 y = 3 }

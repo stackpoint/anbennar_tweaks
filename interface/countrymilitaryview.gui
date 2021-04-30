@@ -1108,13 +1108,26 @@ guiTypes = {
 			fullScreen = yes
 
 			instantTextBoxType = {
-				name = "leaders_label"
-				position = { x = 224 y =416 }
+				name = "army_label"
+				position = { x = 204 y =416 }
 				textureFile = ""
 				font = "vic_18"
 				borderSize = {x = 0 y = 0 }
 				text = ""
-				maxWidth = 256
+				maxWidth = 128
+				maxHeight = 20
+				format = centre
+				hint_tag = "hint_leaders"
+			}
+
+			instantTextBoxType = {
+				name = "navy_label"
+				position = { x = 324 y =416 }
+				textureFile = ""
+				font = "vic_18"
+				borderSize = {x = 0 y = 0 }	
+				text = ""	
+				maxWidth = 128
 				maxHeight = 20
 				format = centre
 				hint_tag = "hint_leaders"
@@ -1605,26 +1618,30 @@ guiTypes = {
 		}
 
 
-		iconType = {
-			name ="mothball_icon"
-			spriteType= "GFX_active_forts_icon"
-			position = { x= 17 y = 482 }
-			hint_tag = "hint_leadersiege"
-		}
 
+		iconType = {
+			name ="naval_engagement_icon"
+			spriteType= "GFX_engagement_width_icon"
+			position = { x= 17 y = 482 }
+			scale = 0.8
+
+		}
 		instantTextBoxType = {
-			name = "mothball_label"
-			position = { x = 24 y = 486 }
+			name = "naval_engagement_value"
 			textureFile = ""
 			font = "vic_18"
-			#			borderSize = {x = 4 y = 4}
-			text = "99/99 Forts Active"
+			position = { x = 24 y = 486 }
+#			borderSize = {x = 4 y = 4}	
+			text = "88%"	
 			maxWidth = 80
 			maxHeight = 20
 			format = right
-			fixedsize = yes
 		}
 
+
+
+
+		
 		guiButtonType =	{
 			name = "mothball_all"
 			quadTextureSprite= "GFX_mothball_all_forts_button"
@@ -1664,13 +1681,31 @@ guiTypes = {
 			}
 
 		}
-
 		guiButtonType =	{
 			name = "slacken_button"
 			quadTextureSprite= "GFX_slacken_button"
 
 			if_resolution = {
             max_height = 867
+			position = { x=207 y =507 }
+            }
+            if_resolution = {
+			min_height = 868
+			max_height = 1047
+			position = { x=155 y =511 }
+            }
+            if_resolution = {
+			min_height = 1048
+			position = { x=155 y =511 }
+			}
+			
+		}
+		
+		iconType = {
+			name ="mothball_icon"
+			spriteType= "GFX_active_forts_icon"
+			if_resolution = {
+				max_height = 867
 			position = { x=157 y =507 }
             }
             if_resolution = {
@@ -1682,9 +1717,35 @@ guiTypes = {
 			min_height = 1048
 			position = { x=105 y =511 }
 			}
+			}
+			
+		instantTextBoxType = {
+			name = "mothball_label"
+			#if_resolution = {
+			#	max_height = 867
+			#	position = { x=157 y =527 }
+            #}
+            #if_resolution = {
+			#	min_height = 868
+			#	max_height = 1047
+            #}
+            #if_resolution = {
+			#	min_height = 1048
+			#	position = { x=105 y =531 }
+			#}
 
+			position = { x=55 y =534 }
+			textureFile = ""
+			font = "vic_18"
+			text = "99/99 Forts Active"	
+			maxWidth = 80
+			maxHeight = 20
+			format = right
+			fixedsize = yes
 		}
 
+		
+		
 		guiButtonType =	{
 			name = "naval_doctrine_button"
 			quadTextureSprite= "GFX_naval_doctrine_icons_small"
